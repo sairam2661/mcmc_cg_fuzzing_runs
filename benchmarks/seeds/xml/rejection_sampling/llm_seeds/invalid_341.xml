@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+<!ENTITY book "book">
+<!ELEMENT books (book*)>
+<!ELEMENT book (#PCDATA|author|title|year|genre|publisher)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT genre (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ATTLIST book
+  id ID #REQUIRED
+  author CDATA #IMPLIED
+  title CDATA #IMPLIED
+  year CDATA #IMPLIED
+  genre CDATA #IMPLIED
+  publisher CDATA #IMPLIED
+>
+]>
+<books>
+  <book id="bk1">
+    <author>Stephen King</author>
+    <title>The Shining</title>
+    <year>1977</year>
+    <genre>Horror</genre>
+    <publisher>Anchor Books</publisher>
+  </book>
+  <book id="bk2">
+    <author>Dean Koontz</author>
+    <title>Intensity</title>
+    <year>1995</year>
+    <genre>Thriller</genre>
+    <publisher>Bantam Books</publisher>
+  </book>
+</books>

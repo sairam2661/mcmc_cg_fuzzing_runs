@@ -1,0 +1,23 @@
+<?xml version="1.1" encoding="ISO-8859-1"?>
+<!DOCTYPE books [
+  <!ELEMENT books (book*)>
+  <!ATTLIST books lang CDATA #IMPLIED>
+  <!ENTITY book-id "1">
+  <!ENTITY % entity-ref "<">
+  <!NOTATION book-format SYSTEM "e">
+  %entity-ref;
+  <!--
+    Some in element content
+  -->
+  <!ELEMENT book (#PCDATA|title|author|year)>
+
+]>
+<books lang="x" xmlns="x">
+  <book id="&book-id;"><!--
+    Embedded document
+  --> 
+    <title>This is a title</title>
+    <author>A. U Thor</author>
+    <year>2023</year>
+  </book>
+</books>

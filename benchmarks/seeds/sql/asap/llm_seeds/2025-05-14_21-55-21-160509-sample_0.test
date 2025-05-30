@@ -1,0 +1,141 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix query_cache
+
+set ::timeout 60000
+
+proc f1 {a b c d} {
+  set x $a
+  set y $b
+  return $c$d
+}
+
+proc f2 {a b c} {
+  set x $a
+  set y $b
+  return $c
+}
+
+proc setup_query_cache_test {} {
+  db eval {CREATE TABLE a(a)}
+  db eval {CREATE TABLE b(b)}
+  db eval {CREATE TABLE c(c)}
+  db eval {CREATE INDEX i_a ON a(a)}
+  db eval {CREATE INDEX i_b ON b(b)}
+  db eval {CREATE INDEX i_c ON c(c)}
+  db eval {INSERT INTO a VALUES('abc')}
+  db eval {INSERT INTO b VALUES('def')}
+  db eval {INSERT INTO c VALUES('ghi')}
+}
+
+do_test query_cache-1.0 {
+  setup_query_cache_test
+  sqlite3 db2 "$::DB_NAME"
+  execsql {
+    SELECT * FROM a WHERE a = 'abc';
+  } db
+} {abc}
+
+do_test query_cache-1.1 {
+  execsql {
+    SELECT * FROM b WHERE b = 'def';
+  } db
+} {def}
+
+if 1 {
+  do_test query_cache_1_2_1 {
+    db eval {
+      SELECT i_b FROM sqlite_master WHERE name='b';
+    }
+  } {}
+}
+
+ifcapable explain {
+  do_test query_cache-1.3 {
+    execsql {
+      SELECT a FROM a WHERE a = 'abc'
+        } db
+    db eval {
+      SELECT b FROM b WHERE b = 'def'
+    }
+    expr 1
+  } {1}
+}
+
+ifcapable explain {
+  do_test query_cache-1.4 {
+    catchsql {
+      PRAGMA cache_size=10
+    }
+  } {}
+}
+
+ifcapable explain {
+  do_test query_cache-1.5 {
+    execsql {
+      SELECT a FROM a WHERE a = 'abc'
+    } db
+    expr 1
+  } {1}
+}
+
+ifcapable explain {
+  do_test query_cache-1.6 {
+    execsql {
+      SELECT a FROM a WHERE a = 'abc'
+    } db
+    expr 1
+  } {1}
+}
+
+do_execsql_test query_cache-1.8 {
+  SELECT a FROM a WHERE a = 'abc'
+} {abc}
+
+do_execsql_test query_cache-1.9 {
+  SELECT b FROM b WHERE b = 'def'
+} {def}
+
+ifcapable truncate {
+  do_test query_cache-1.100 {
+    execsql {
+      PRAGMA synchronous = 'OFF'
+    }
+  } {}
+}
+
+do_test query_cache-1.101 {
+  execsql {
+    UPDATE a SET a 	'=''";
+  }
+  sqlite3 db2 "$::DB_NAME"
+  catchsql {
+    SELECT a FROM a WHERE a = ''"'
+  } db2
+} {1 {database disk image is malformed}}
+
+ifcapable truncate {
+  do_test query_cache-1.102 {
+      execsql {PRAGMA synchronous = 'ON'}
+    }
+  {} 
+}
+
+ifcapable explain {
+  do_test query_cache-1.103 {
+    execsql {
+      SELECT a FROM a WHERE a = 'abc';
+    }
+  } {abc}
+}
+
+do_execsql_test query_cache-1.104 {
+  SELECT b FROM b WHERE b = 'def';
+} {def}
+
+do_test query_cache-1.105 {
+  execsql {
+    SELECT * FROM a WHERE a 	=	'abc'
+  }
+} {abc}
+finish_test

@@ -1,0 +1,53 @@
+set   testdir 
+ {  	 file 
+
+ dirname  $argv0 
+  }    source 
+ $testdir/tester.tcl 	 set    testprefix  n 
+ set 
+ timeout 
+	 
+  60000   set   U4K  { 	
+	 BEGIN 
+    
+  }  	   set 	
+ w   { 	 ROLLBACK   	 ;  
+ CREATE TABLE 	 Y  ( 	 b_   J   
+
+	  , 	 Z 	 f    
+
+	  )   
+ ;  COMMIT   
+ 		
+	  ;  	 
+ PRAGMA 	 L  
+ = 
+ 1      ; 	 WITH  o 
+ ( 
+ WW  
+ )   AS 	 (  ROLLBACK   	 UNION ALL 
+ COMMIT    )  
+ CREATE INDEX 
+ q3 
+ ON 
+ P 
+
+   (   l 
+
+ )     
+  ; 
+ PRAGMA 
+ e_EK_  =  ''    
+	 ;   }  	    set  C2_f    {  		 $t  
+ } 	        proc 	  	  	 JC3 
+ { 	 N_o 
+ }  	
+  
+ { 	 return   $B    
+
+
+
+ 
+ } 
+   			  finish_test 
+	  

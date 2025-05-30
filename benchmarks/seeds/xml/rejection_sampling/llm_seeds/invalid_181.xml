@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ENTITY book-id SYSTEM "book-id.xml">
+  <!ENTITY chapter SYSTEM "chapter.xml">
+  <!ENTITY title SYSTEM "title.xml">
+  ]>
+<book xmlns="http://www.example.com/book">
+  <metadata>
+    <author>John Smith</author>
+    <date>2018-01-01</date>
+  </metadata>
+  <content>
+    <chapter ref="#chapter">
+      <title ref="#title"/>
+      <para>lorem ipsum</para>
+    </chapter>
+  </content>
+  <entities>
+    <entity ref="#book-id"/>
+  </entities>
+</book>

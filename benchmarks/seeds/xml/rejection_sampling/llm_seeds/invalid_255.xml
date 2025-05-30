@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE root SYSTEM "root.dtd">
+<!ENTITY % ent SYSTEM "ent.ent">
+<!ENTITY % ext SYSTEM "ext.ent">
+<!ENTITY &ent;>
+<!ENTITY &ext;>
+<!ATTLIST root (version CDATA #REQUIRED) (source CDATA #IMPLIED)>
+<root version="1.0" source="https://example.org">
+  <person name="John">
+    <address>
+      <street>123 Main St</street>
+      <city>New York</city>
+      <state>NY</state>
+      <zip>10001</zip>
+    </address>
+    <phone>
+      <type>home</type>
+      <number>555-1234</number>
+    </phone>
+  </person>
+  <person name="Jane">
+    <address>
+      <street>456 Elm St</street>
+      <city>Chicago</city>
+      <state>IL</state>
+      <zip>60601</zip>
+    </address>
+    <phone>
+      <type>work</type>
+      <number>555-5678</number>
+    </phone>
+  </person>
+  <group>
+    <name>Friends</name>
+    <member>
+      <person name="Bob"/>
+    </member>
+    <member>
+      <person name="Alice"/>
+    </member>
+  </group>
+</root>

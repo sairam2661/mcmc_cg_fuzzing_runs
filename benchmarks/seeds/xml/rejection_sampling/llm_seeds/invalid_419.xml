@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<!DOCTYPE root SYSTEM "root.dtd" [
+<!ENTITY % ent SYSTEM "ent.ent">
+<!ENTITY % att SYSTEM "att.att">
+<!ATTLIST % att;
+<!ENTITY % ext SYSTEM "ext.ext">
+<!ENTITY % root SYSTEM "root.xml">
+<!ELEMENT root (name, address, phone, email, group, person, subroot)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT group (#PCDATA)>
+<!ELEMENT person (name, address, phone, email)>
+<!ELEMENT subroot (name, address, phone, email)>
+<!ATTLIST root
+    id ID #REQUIRED
+    lang CDATA #IMPLIED
+    type CDATA #IMPLIED
+    xmlns:xs CDATA #IMPLIED
+    xmlns:xml CDATA #IMPLIED
+    xmlns:xsi CDATA #IMPLIED
+    xsi:schemaLocation CDATA #IMPLIED
+    xsi:noNamespaceSchemaLocation CDATA #IMPLIED
+    xmlns:xlink CDATA #IMPLIED
+    xmlns:xlink:href CDATA #IMPLIED
+    xmlns:xlink:title CDATA #IMPLIED
+    xmlns:xlink:show CDATA #IMPLIED
+    xmlns:xlink:actuate CDATA #IMPLIED
+    xmlns:xlink:type CDATA #IMPLIED
+    xmlns:xlink:href CDATA #IMPLIED
+    xmlns:xml:lang CDATA #IMPLIED
+    xmlns:xml:space CDATA #IMPLIED
+    xmlns:xml:base CDATA #IMPLIED
+    xmlns:xml:namespace CDATA #IMPLIED
+    xmlns:xml:prefix CDATA #IMPLIED
+    xmlns:xml:schema CDATA #IMPLIED
+    xmlns:xml:id CDATA #IMPLIED
+    xmlns:xml:lang CDATA #IMPLIED
+    xmlns:xml:space CDATA #IMPLIED
+    xmlns:xml:base CDATA #IMPLIED
+    xmlns:xml:namespace CDATA #IMPLIED
+    xmlns:xml:prefix CDATA #IMPLIED
+    xmlns:xml:schema CDATA #IMPLIED
+    xmlns:xml:id CDATA #IMPLIED
+    xmlns:xml:lang CDATA #IMPLIED
+    xmlns:xml:space CDATA #IMPLIED
+    xmlns:xml:base CDATA #IMPLIED
+    xmlns:xml:namespace CDATA #IMPLIED
+    xmlns:xml:prefix CDATA #IMPLIED
+    xmlns:xml:schema

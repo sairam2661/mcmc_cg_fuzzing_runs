@@ -1,0 +1,74 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix transactions
+
+set ::timeout 60000
+set sqlite3_enable_fts5 true
+
+do_test transaction-1.1 {
+  set fd1 fd2 $::tcl_interp
+  execsql {
+    CREATE TABLE a(x);
+    INSERT INTO a VALUES(1);
+    INSERT INTO a VALUES(2);
+    INSERT INTO a VALUES(3);
+  }
+  execsql {SELECT count(*) FROM a}
+} {3}
+
+do_execsql_test transaction-1.2 {
+  BEGIN;
+  INSERT INTO a VALUES(4);
+  COMMIT;
+  INSERT INTO a VALUES(5);
+  SELECT count(*) FROM a;
+} {5}
+
+do_catchsql_test transaction_2.1 {
+  ATTACH 'test.db' AS t1
+} {1 {database t1 is already in use}}
+
+do_execsql_test transaction_2.2 {
+  BEGIN;
+  INSERT INTO a VALUES(6);
+  SELECT * FROM t1;
+} {0 {}}
+
+proc transaction_test {} {
+  global sqlite3_enable_fts5
+  ifcapsable fts5 {
+    testvfs tvfts5
+    tvfts5 xAccess {t1 fts5}
+    testvfs tvfts5
+    set sqlite3_enable_fts5 0
+    execsql {
+      CREATE VIRTUAL TABLE t2 USING fts5 content
+    }
+    execsql {SELECT name FROM sqlite_master}
+  }
+  execsql {PRAGMA wal_checkpoint}
+}
+
+transaction_test
+
+set out "test2.txt"
+set in "test2.db"
+
+do_test transaction_2.3 {
+  set fd1 fd2 id $sqlite3 conn id
+  execsql {
+    INSERT INTO a VALUES(7);
+    SELECT * FROM a
+  }
+  select $in
+} $in
+set x 2
+set y 5
+set timeo 1000
+set sqlite3_default_cache_size 1024
+execsql {
+  PRAGMA synchronous=0
+}
+catch {rename sqlite_release_memory {} delete}
+rename fts3_get_property {t1 t2} {t2}
+finish_test

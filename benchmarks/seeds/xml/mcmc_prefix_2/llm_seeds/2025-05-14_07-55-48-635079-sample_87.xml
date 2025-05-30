@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ATTLIST catalog
+    id ID #REQUIRED
+  >
+  <!ENTITY phone "+"
+    ><!ENTITY
+    %email "&#x26;" >
+  <!NOTATION bookFormat PUBLIC "E"
+     "P"
+  > 
+  %bookFormat;
+  <!--
+
+<!ELEMENT product (#PCDATA)>
+<!ATTLIST product
+
+id ID #REQUIRED
+ean ID #REQUIRED
+name CDATA #REQUIRED
+price NMTokens #REQUIRED
+year CDATA #REQUIRED
+image CDATA #IMPLIED
+]>
+<catalog id="Catalog_2023">
+    &phone;
+    &email;
+    <product
+        id="Product_1", ean="EAN_123",
+        name="Product_1_name", price="10 50,99" year="2023",
+        image="https://example.com/image_1.jpg"/>
+    <product
+        id="Product_2" ean="EAN_456", name="Product_2_name",
+        price="7,99" year="2023" image="https://example.com/image_2.jpg" />
+</catalog> 
+&note;  
+<!--> 
+<!--
+
+<!ENTITY note "Take care!"> 
+<!ELEMENT document (#PCDATA)>
+<!ELEMENT section (#PCDATA)>
+<!ELEMENT message (#PCDATA)>
+<!ELEMENT raw (#PCDATA)>
+<!ATTLIST document
+!--> 
+
+<!ELEMENT xi:document (#PCDATA) > 
+<!ATTLIST xi:document
+xmlns:xi   CDATA #IMPLIED 
+xmlns   CDATA #IMPLIED
+  >
+<!--
+!--> 
+
+<!ELEMENT document (#PCDATA)> 
+<!ELEMENT note (#PCDATA)> 
+ <!--
+<!ATTLIST document 
+<!ELEMENT section (#PCDATA)>  
+ 
+<!ELEMENT section (#PCDATA)> 
+<!ELEMENT message (#PCDATA)> 
+!-->  <!--xmlns--> 
+<!ATTLIST document
+ xmlns:xi CDATA #IMPLIED 
+xmlns  CDATA #IMPLIED>
+<!ELEMENT xi:document (#PCDATA) > 
+<!ELEMENT document     (#PCDATA)> 
+<!ELEMENT section (#PCDATA)> 
+<!ELEMENT note (#PCDATA)> 
+<!ELEMENT message (#PCDATA)> 
+<!ELEMENT raw (#PCDATA)> 
+  <!--> 
+<!ATTLIST document  
+name CDATA #IMPLIED  
+ id CDATA #IMPLIED
+version CDATA #IMPLIED
+  > 
+<!ATTLIST raw  
+name CDATA #IMPLIED
+version CDATA #IMPLIED 
+ id ID #REQUIRED> 
+<!--> 
+<!ELEMENT docu (#PCDATA)> 
+<!ELEMENT doc (#PCDATA)> 
+<!--> 
+<!ELEMENT section (#PCDATA) >  name CDATA #IMPLIED id CDATA #IMPLIED 
+id ID #REQUIRED > 
+<!--> 
+<!ELEMENT message (#PCDATA)> 
+<!ELEMENT raw (#PCDATA)> 
+<!ELEMENT note (#PCDATA)> 
+<!ELEMENT document (#PCDATA )> 
+<!ELEMENT section (#PCDATA ) > 
+<!ELEMENT note (#PCDATA )> 
+<!ELEMENT message (#PCDATA )> 
+<!ELEMENT raw (#PCDATA )> 
+<!ATTLIST section 
+name CDATA #IMPLIED id CDATA #IMPLIED id ID #REQUIRED > 
+<!ELEMENT docu (#PCDATA)> 
+<!ELEMENT document (#PCDATA )> 
+<!ELEMENT doc (#PCDATA ) > 
+<!ATTLIST doc   
+name CDATA #IMPLIED 
+id CDATA #IMPLIED 
+id ID #REQUIRED > 
+<!ATTLIST document 
+name CDATA #IMPLIED id

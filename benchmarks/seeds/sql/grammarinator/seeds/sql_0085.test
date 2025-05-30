@@ -1,0 +1,54 @@
+set  testdir 	 { 
+	
+ file 	 dirname 
+ $argv0  
+ } 	 source    $testdir/tester.tcl 	 set 
+ testprefix 
+
+  I_  set 
+	
+
+  timeout  	 60000   set 	 G  {   $c  
+ {  { 
+
+ $::nx   { 	 Q412  	  { 	
+ BEGIN   IMMEDIATE   	 ;  
+ }   }      
+ }      {   
+
+ INSERT INTO  
+			 o_    (  u   ,   C 	
+ ,  B8_    ) 
+		 VALUES  		 (   ""   , 		  "Q"   
+ 	
+
+ , 	 3.7052    , 
+ 'J'    )   
+	 ;  WITH 
+	 P   	  ( 	 MH 
+ )   AS 
+ 	
+   (   ROLLBACK   	 )   PRAGMA 
+
+ F__B7      	 }  
+			 	 }       } 
+  
+  
+
+
+	   do_execsql_test  s6   -   2  . 
+ 3 9  	  { 	 COMMIT    	 } 
+
+ {  $j0s6V_    	 {   } 	   
+ } 	
+
+      if  $::T  
+ <=  $::j   
+ { 
+
+ } 	   
+ proc 	 o58N__  S  	 
+ { 
+ } 	    
+   finish_test 
+  

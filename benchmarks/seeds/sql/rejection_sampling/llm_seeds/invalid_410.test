@@ -1,0 +1,57 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix sync
+
+proc sync_proc {} {
+  global syncargs
+  lappend syncargs
+  expr {[llength $syncargs] <= 2}
+}
+
+set sqlite_options "-DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_COLUMN_METADATA"
+
+do_test sync-1.1 {
+  execsql {
+    CREATE TABLE a(x);
+    INSERT INTO a VALUES(1),(2),(3);
+  }
+  execsql {SELECT count(*) FROM a}
+} {3}
+
+ifcapable journalMode {
+  catchsql {PRAGMA journal_mode=WAL}
+} {0 {}}
+
+do_test sync-1.2 {
+  execsql {
+    CREATE TABLE b(y);
+    INSERT INTO b VALUES(4),(5),(6);
+  }
+  execsql {SELECT count(*) FROM b}
+} {3}
+
+ifcapable fts3 {
+  do_test sync-1.3 {
+    execsql {
+      CREATE VIRTUAL TABLE c USING fts3(x);
+      INSERT INTO c VALUES('one');
+      INSERT INTO c VALUES('two');
+      INSERT INTO c VALUES('three');
+    }
+    execsql {SELECT count(*) FROM c}
+  } {3}
+}
+
+ifcapable fts5 {
+  do_test sync-1.4 {
+    execsql {
+      CREATE VIRTUAL TABLE d USING fts5(x);
+      INSERT INTO d VALUES('one');
+      INSERT INTO d VALUES('two');
+      INSERT INTO d VALUES('three');
+    }
+    execsql {SELECT count(*) FROM d}
+  } {3}
+}
+
+finish_test

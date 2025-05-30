@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, chapter+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ATTLIST chapter id CDATA #REQUIRED>
+  <!ATTLIST chapter title CDATA #IMPLIED>
+]>
+<book>
+  <title>The Story of My Life</title>
+  <author>John Doe</author>
+  <chapter id="c1" title="The Early Years">I was born on a sunny day in a small village.</chapter>
+  <chapter id="c2">I went to school and learned many things.</chapter>
+  <chapter id="c3" title="The Dark Years">I struggled with my own demons.</chapter>
+  <chapter id="c4">I found peace and happiness.</chapter>
+</book>

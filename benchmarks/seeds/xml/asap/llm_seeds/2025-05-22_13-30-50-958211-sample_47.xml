@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, chapters)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    lang (eng|fre|ger) 'eng'
+  >
+  <!ENTITY title "A" >
+  <!ENTITY % chapter-pattern "Z">
+  <!NOTATION GIF PUBLIC "G" "I" >  
+  %chapter-pattern;
+  <!-- sample comment -->
+]>
+<book id="B" lang="f">
+  <title>&title;</title>
+  <author>
+    <name>John</name>
+    <address>
+      <street>abc</street>
+      <city>xyz</city>
+    </address>
+  </author>
+  <chapters>
+    <chapter>Introduction</chapter>
+    <chapter>&chapter-pattern;</chapter>
+  </chapters>
+</book>

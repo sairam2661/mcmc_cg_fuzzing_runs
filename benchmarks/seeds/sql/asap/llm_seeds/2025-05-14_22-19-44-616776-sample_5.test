@@ -1,0 +1,91 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix dbconfig
+
+set ::timeout 60000
+
+proc dbconfig_proc {} {
+  global dbconfigargs
+  lappend dbconfigargs
+  set len 0
+  foreach arg $dbconfigargs {
+    incr len
+  }
+  set len
+}
+
+proc check_schema {} {
+  set schema {
+    CREATE TABLE t1(a, b);
+    CREATE TABLE t2(a, b);
+  }
+  db eval $schema
+  execsql {
+    SELECT name FROM sqlite_master ORDER BY name DESC
+  }
+}
+
+proc check_query {} {
+  set query {
+    SELECT * FROM t1
+    WHERE a = 1
+  }
+  do_execsql_test dbconfig_query {
+    execsql $query
+  } {1 1}
+}
+
+proc check_journal_mode {} {
+  ifcapable journalMode {
+    catchsql {PRAGMA journal_mode = 1}
+  }
+}
+
+do_test dbconfig-1.1 {
+  execsql {
+    CREATE TABLE x(t);
+    INSERT INTO x VALUES(1);
+  }
+  execsql {
+    CREATE TABLE y(t);
+    INSERT INTO y VALUES(2);
+  }
+} {}
+
+do_execsql_test dbconfig-2.1 {
+  SELECT * FROM x;
+} {1}
+
+do_execsql_test dbconfig-3.1 {
+  SELECT * FROM y
+} {2}
+
+do_execsql_test dbconfig-4.1 {
+  SELECT COUNT(*) FROM t1
+} {1}
+
+do_test dbconfig-5.1 {
+  check_schema
+} {}
+
+do_execsql_test dbconfig-6.1 {
+  PRAGMA page_size = 1;
+} {1}
+
+do_execsql_test dbconfig-7.1 {
+  PRAGMA cache_size = 10
+} {10}
+
+do_test dbconfig-8.1 {
+  check_query
+} {}
+
+do_execsql_test dbconfig-9.1 {
+  BEGIN;
+  INSERT INTO x VALUES(3);
+  COMMIT;
+  SELECT * FROM x
+} {1 3}
+check_journal_mode
+
+finish_test

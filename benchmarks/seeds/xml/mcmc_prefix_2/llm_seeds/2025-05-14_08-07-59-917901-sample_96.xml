@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE paged-media [
+  <!ELEMENT book SYSTEM>
+  <!ATTLIST book lang CDATA #IMPLIED>
+  <!ENTITY pi SYSTEM "1">
+  <!ENTITY 	%pi5 SYSTEM "&#x3C0;">
+  <!NOTATION PDF SYSTEM "B"
+   >

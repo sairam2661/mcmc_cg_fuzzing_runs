@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE book SYSTEM 'book.dtd'>
+<!ELEMENT book (title,author,chapter+)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT chapter (#PCDATA)>
+<!ELEMENT section (#PCDATA)>
+<!ELEMENT paragraph (#PCDATA)>
+<!ELEMENT sentence (#PCDATA)>
+<!ELEMENT word (#PCDATA)>
+<!ELEMENT phrase (#PCDATA)>
+<!ELEMENT poem (#PCDATA)>
+
+<book>
+  <title>My Great Book</title>
+  <author>John Smith</author>
+  <chapter>
+    <section>Introduction</section>
+    <paragraph>
+      <sentence>This is the first sentence of the first paragraph.</sentence>
+      <sentence>This is the second sentence of the first paragraph.</sentence>
+    </paragraph>
+    <paragraph>
+      <sentence>This is the first sentence of the second paragraph.</sentence>
+      <sentence>This is the second sentence of the second paragraph.</sentence>
+    </paragraph>
+  </chapter>
+  <chapter>
+    <section>Conclusion</section>
+    <paragraph>
+      <sentence>This is the first sentence of the first paragraph of the second chapter.</sentence>
+      <sentence>This is the second sentence of the first paragraph of the second chapter.</sentence>
+    </paragraph>
+    <paragraph>
+      <sentence>This is the first sentence of the second paragraph of the second chapter.</sentence>
+      <sentence>This is the second sentence of the second paragraph of the second chapter.</sentence>
+    </paragraph>
+  </chapter>
+</book>

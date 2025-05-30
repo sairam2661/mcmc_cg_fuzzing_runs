@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, chapter*, section*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ELEMENT section (#PCDATA)>
+  <!ELEMENT note (#PCDATA)>
+  <!ELEMENT date (#PCDATA)>
+  <!ELEMENT page (#PCDATA)>
+  <!ELEMENT para (#PCDATA)>
+  <!ELEMENT line (#PCDATA)>
+  <!ELEMENT quote (#PCDATA)>
+  <!ELEMENT figure (#PCDATA)>
+  <!ELEMENT table (#PCDATA)>
+  <!ELEMENT row (#PCDATA)>
+  <!ELEMENT col (#PCDATA)>
+  <!ELEMENT bibref (#PCDATA)>
+]>
+<book>
+  <title>My Book</title>
+  <author>Me</author>
+  <chapter>Chapter 1</chapter>
+  <section>Section 1.1</section>
+  <note>This is a note.</note>
+  <date>2022-01-01</date>
+  <page>1</page>
+  <para>This is a paragraph.</para>
+  <line>This is a line.</line>
+  <quote>This is a quote.</quote>
+  <figure>Figure 1</figure>
+  <table>
+    <row>
+      <col>Column 1</col>
+      <col>Column 2</col>
+    </row>
+  </table>
+  <bibref>Reference 1</bibref>
+</book>

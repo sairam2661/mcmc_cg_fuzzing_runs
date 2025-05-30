@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!ENTITY nbsp "&#160;">
+<!ELEMENT book (title, author, &nbsp;, chapter*, section*)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT chapter (#PCDATA)>
+<!ELEMENT section (#PCDATA)>
+<!ATTLIST chapter
+id CDATA #IMPLIED
+author CDATA #IMPLIED
+date CDATA #IMPLIED>
+<!ATTLIST section
+id CDATA #IMPLIED
+author CDATA #IMPLIED
+date CDATA #IMPLIED>
+<!ENTITY chapter1 SYSTEM "chapter1.xml">
+<!ENTITY chapter2 SYSTEM "chapter2.xml">
+<!ENTITY section1 SYSTEM "section1.xml">
+<!ENTITY section2 SYSTEM "section2.xml">
+]>
+<book>
+<title>My Book</title>
+<author>Me</author>
+&nbsp;
+<chapter id="c1" author="J.K. Rowling" date="1997">Chapter 1</chapter>
+<chapter id="c2" author="J.R.R. Tolkien" date="1954">Chapter 2</chapter>
+<chapter id="c3" author="Me" date="2022">Chapter 3</chapter>
+<chapter id="c4" author="Me" date="2022">Chapter 4</chapter>
+<chapter id="c5" author="Me" date="2022">Chapter 5</chapter>
+<chapter id="c6" author="Me" date="2022">Chapter 6</chapter>
+<chapter id="c7" author="Me" date="2022">Chapter 7</chapter>
+<chapter id="c8" author="Me" date="2022">Chapter 8</chapter>
+<chapter id="c9" author="Me" date="2022">Chapter 9</chapter>
+<chapter id="c10" author="Me" date="2022">Chapter 10</chapter>
+<chapter id="c11" author="Me" date="2022">Chapter 11</chapter>
+<chapter id="c12" author="Me" date="2022">Chapter 12</chapter>
+<chapter id="c13" author="Me" date="2022">Chapter 13</chapter>
+<chapter id="c14" author="Me" date="2022">Chapter 14</chapter>
+<chapter id="c15" author="Me" date="2022">Chapter

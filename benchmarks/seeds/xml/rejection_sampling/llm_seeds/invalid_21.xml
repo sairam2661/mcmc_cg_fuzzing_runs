@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!ELEMENT book (title, author, publisher, price, content)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT content (#PCDATA)>
+<!ELEMENT chapter (#PCDATA)>
+<!ELEMENT section (#PCDATA)>
+<!ELEMENT paragraph (#PCDATA)>
+<!ELEMENT table (#PCDATA)>
+<!ELEMENT row (#PCDATA)>
+<!ELEMENT cell (#PCDATA)>
+<!ELEMENT header (#PCDATA)>
+<!ELEMENT footer (#PCDATA)>
+<!ATTLIST table
+  border CDATA #IMPLIED
+  width CDATA #IMPLIED
+  height CDATA #IMPLIED
+  align CDATA #IMPLIED
+  valign CDATA #IMPLIED
+  bordercolor CDATA #IMPLIED
+  borderwidth CDATA #IMPLIED
+  cellpadding CDATA #IMPLIED
+  cellspacing CDATA #IMPLIED>
+<!ATTLIST row
+  align CDATA #IMPLIED
+  valign CDATA #IMPLIED
+  colspan CDATA #IMPLIED
+  rowspan CDATA #IMPLIED>
+<!ATTLIST cell
+  align CDATA #IMPLIED
+  valign CDATA #IMPLIED
+  colspan CDATA #IMPLIED
+  rowspan CDATA #IMPLIED>
+<!ATTLIST header
+  level CDATA #IMPLIED
+  style CDATA #IMPLIED>
+<!ATTLIST footer
+  level CDATA #IMPLIED
+  style CDATA #IMPLIED>
+<!ENTITY % entity "Special characters">
+<!ENTITY % entity2 "&#x27;&#x27;&#x27;">
+<!ENTITY % entity3 "&#x21;&#x20;&#x21;">
+<!ENTITY % entity4 "&#x21;&#x20;&#x21;&#x20;&#x21;">
+<!ENTITY % entity5 "&#x21;&#x20;&#x21;&#x20;&#x21;&#x20;&#x21;">
+<!ENTITY % entity6 "&#x21;&#x20;&#x21;&#x20;&#x21;&#x20;&#x21;&#x20;&#x21;">
+<!ELEMENT bookinfo EMPTY>
+<!ELEMENT booklist EMPTY>
+<!ELEMENT bookinfoitem (#PCDATA)>
+<!ELEMENT booklistitem (#PCDATA)>
+<!ELEMENT bookitem (#PCDATA)>
+<!ELEMENT booktitle (#PCDATA)>
+<!ELEMENT bookauthor (#PCDATA)>
+<!ELEMENT bookpublisher (#PCDATA)>
+<!ELEMENT bookprice (#PCDATA)>
+<!ELEMENT bookcontent (#PCDATA)>
+<!ELEMENT bookchapter (#PCDATA)>
+<!ELEMENT

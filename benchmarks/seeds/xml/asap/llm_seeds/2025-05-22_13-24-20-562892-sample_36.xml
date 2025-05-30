@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE root SYSTEM "m"[<!ELEMENT root (#PCDATA)><!ATTLIST root xml:lang CDATA #REQUIRED> 
+<!ENTITY title "P" ><!ENTITY % cdata "<" > <!NOTATION e  SYSTEM "b">
+    %cdata;<!--
+    -->
+    ]><root xml:lang='en'><?ISO-8859-1?><para><code>&title;</code><i>&cdata;foo&cdata;</i></para><?e?><applet CODE='a.class'/></root>

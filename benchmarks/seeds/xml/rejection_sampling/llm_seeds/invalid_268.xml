@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!ELEMENT book (title, author, publisher)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ATTLIST author 
+    name CDATA #REQUIRED
+    age CDATA #IMPLIED
+>
+<!ELEMENT publisher (#PCDATA)>
+<!ELEMENT bookinfo (#PCDATA)>
+<!ELEMENT edition (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT lang (#PCDATA)>
+<!ELEMENT country (#PCDATA)>
+<!ELEMENT bookdata (#PCDATA)>
+<!ELEMENT books (#PCDATA)>
+<!ELEMENT authors (#PCDATA)>
+<!ELEMENT publishers (#PCDATA)>
+<!ELEMENT chapters (#PCDATA)>
+<!ELEMENT section (#PCDATA)>
+<!ELEMENT sectiontitle (#PCDATA)>
+<!ELEMENT sections (#PCDATA)>
+<!ELEMENT contents (#PCDATA)>
+<!ELEMENT index (#PCDATA)>
+<!ELEMENT glossary (#PCDATA)>
+<!ELEMENT notes (#PCDATA)>
+<!ELEMENT bibliography (#PCDATA)>
+<!ELEMENT references (#PCDATA)>
+<!ELEMENT keywords (#PCDATA)>
+<!ELEMENT summary (#PCDATA)>
+<!ELEMENT contributors (#PCDATA)>
+<!ELEMENT dedication (#PCDATA)>
+<!ELEMENT foreword (#PCDATA)>
+<!ELEMENT abstract (#PCDATA)>
+<!ELEMENT introduction (#PCDATA)>
+<!ELEMENT acknowledgements (#PCDATA)>
+<!ELEMENT appendices (#PCDATA)>
+<!ELEMENT figures (#PCDATA)>
+<!ELEMENT tables (#PCDATA)>
+<!ELEMENT figures (#PCDATA)>
+<!ELEMENT tables (#PCDATA)>
+<!ELEMENT figure (#PCDATA)>
+<!ELEMENT table (#PCDATA)>
+<!ELEMENT sectiontitle (#PCDATA)>
+<!ELEMENT sections (#PCDATA)>
+<!ELEMENT contents (#PCDATA)>
+<!ELEMENT index (#PCDATA)>
+<!ELEMENT glossary (#PCDATA)>
+<!ELEMENT notes (#PCDATA)>
+<!ELEMENT bibliography (#PCDATA)>
+<!ELEMENT references (#PCDATA)>
+<!ELEMENT keywords (#PCDATA)>
+<!ELEMENT summary (#PCDATA)>
+<!ELEMENT contributors (#PCDATA)>
+<!ELEMENT dedication (#PCDATA)>
+<!ELEMENT foreword (#PCDATA)>
+<!ELEMENT abstract (#PCDATA)>
+<!ELEMENT introduction (#PCDATA)>
+<!ELEMENT acknowledgements (#PCDATA)>
+<!ELEMENT appendices (#PCDATA)>
+<!ELEMENT figures (#PCDATA)>
+<!ELEMENT tables (#PCDATA)>
+]>
+<book>
+  <title>My Book</title>
+  <author name="John" age="30"/>
+  <publisher>Acme Publishers</publisher>
+  <bookinfo>Book Info</bookinfo>
+  <edition>

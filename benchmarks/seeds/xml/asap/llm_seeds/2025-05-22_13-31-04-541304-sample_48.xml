@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (brand*)>
+  <!ATTLIST catalog title CDATA #REQUIRED>
+  <!ENTITY name "W">
+  <!ENTITY % attr "("> 
+  <!NOTATION ISO PUBLIC "G"
+  "f">
+  	%attr;  <!-- internal subset parsed on inclusion -->
+]>
+<a:catalog xmlns:a="x" title="Y">
+  <brand><name>&name;</name></brand>
+  <person id="Z"><name>&name;</name></person>
+</a:catalog>

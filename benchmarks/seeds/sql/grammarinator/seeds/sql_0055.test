@@ -1,0 +1,53 @@
+set 
+   testdir 
+
+ { 
+ file   dirname   $argv0 		 }   	 source  $testdir/tester.tcl 			 set  testprefix  r7  set  	 timeout    60000   proc 
+ K 
+ C_7Kt  	 {   } 
+    
+ if 
+ { 
+ }  	    
+
+
+
+	 <=  	  { 	 BEGIN      	 ; 	 ROLLBACK   	 ;   PRAGMA   n____5__R2_   
+  ; 			
+ SELECT    53   	 FROM 	 U     ;  
+ 	
+	 }     	   { 
+ catchsql   
+ {   PRAGMA 	 K_   
+
+ ;   SELECT  
+
+ *    FROM 
+		 f    WHERE 
+  f548 	 = 	 p_31__    	 ;    CREATE TABLE 
+ c 
+ (   k 	 B    	
+
+	  )    
+	  }  	     lappend  C 
+
+ 
+ $::SC     
+
+	   
+  r_m 
+ $P  
+ $S  
+ {  $::g    }    
+ $t  		   		  } 
+   
+	 execsql  { 	 INSERT INTO   N 	 VALUES 
+ ( 	 6  	 ,  'e>'  
+ ,   2   	 )   		
+
+ ;    }      proc 	  m 
+	 e  
+ { 
+ } 	     finish_test 
+	 
+	    

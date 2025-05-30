@@ -1,0 +1,133 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix complex_test
+
+set ::timeout 60000
+
+proc write_file {filename contents} {
+  set fd2 "[file open $filename w]"
+  fileevent $fd2 writable $::mainloop
+  set fd3 $::writer
+  eval $::writer "puts -nonewline $fd3 $contents"
+}
+
+proc sqlite_callback {value} {
+  global sqlite_db
+  set sqlite_db $value
+}
+
+proc create_table {name columns} {
+  set query "CREATE TABLE $name ("
+  foreach col $columns {
+    lappend query "$col TEXT,"
+  }
+  set query "${query%,}"
+  set query "$query);"
+  return $query
+}
+
+proc drop_table {name} {
+  return "DROP TABLE $name;"
+}
+
+proc init_db {db name} {
+  db eval "ATTACH '$name' AS att" 
+  return "SELECT name FROM sqlite_master WHERE type='table'"
+}
+
+do_execsql_test complex-1.1 {
+  CREATE TABLE a(x,y);
+  INSERT INTO a VALUES('a',1);
+  INSERT INTO a VALUES('b',2);
+  SELECT * FROM a;
+} {a 1 b 2}
+
+do_execsql_test complex-1.2 {
+  CREATE TABLE b(x,z);
+  CREATE TABLE c(x,v);
+} {}
+
+do_test complex-1.3 {
+  set ret $::sqlite_db
+  execsql {
+    CREATE TABLE d(x);
+    INSERT INTO d VALUES(1);
+  }
+  set ret
+} {1}
+
+do_execsql_test complex-1.4 {
+  BEGIN;
+  INSERT INTO a VALUES('c',3);
+  ROLLBACK;
+  SELECT * FROM a;
+} {a 1 b 2}
+
+do_execsql_test complex-1.5 {
+  CREATE TABLE e(a);
+  INSERT INTO e(a) VALUES(1);
+  PRAGMA foreign_keys
+} {0}
+
+do_test complex-1.6 {
+  set ret {}
+  foreach table {a b c a c} {
+    lappend ret $::sqlite_db
+  }
+  $::sqlite_db
+} {a 1 b 0 c a c a 0 c 1 0 a 1 b 2 c a c 3}
+
+do_test complex-1.7 {
+  set db "$::tname"
+  init_db "$::db2name" "$::db2name.db"
+  execsql {
+    SELECT * FROM att;
+  }
+  $::sqlite_db
+} {{att 1}}
+
+do_test complex-1.8 {
+  set ret {}
+  foreach table {a b d a} {
+    lappend ret $::sqlite_db
+  }
+  $::sqlite_db
+} {a 1 b 0 d 1 a 1 d 1}
+
+do_test complex-1.9 {
+  eval "write_file test.db complex_test_write_file.txt"
+  SELECT name FROM att
+} {test 1}
+
+set writer stdout
+set tname "test.db"
+set db2name "test2.db"
+
+do_execsql_test complex-2.1 {
+  PRAGMA synchronous = 1;
+  CREATE TABLE f(y);
+  INSERT INTO f SELECT *
+  } {}
+
+do_execsql_test complex-2.2 {
+  CREATE TABLE g(a);
+  CREATE TABLE h(a,b);
+} {}
+
+proc get_data_line {{offset 0}} {
+  if {$offset} {
+    set offset "[lrange [split "SELECT $offset FROM a" "SELECT"] 2 end]"
+  }
+  return "[execsql {SELECT count(*) FROM a}]"
+}
+
+do_test complex-2.3 {
+  set ret {}
+  for {set i 1} {$i} {lappend ret $i}
+  foreach table {f g h f a g} {
+    set ret $::sqlite_db
+  }
+  $::sqlite_db
+} {1 0 0 1 0}
+
+finish_test

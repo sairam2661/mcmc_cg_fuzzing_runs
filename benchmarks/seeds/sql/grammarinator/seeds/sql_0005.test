@@ -1,0 +1,32 @@
+set 
+ testdir 
+ { 
+  file 
+ dirname   $argv0 	 } 
+ source 
+ $testdir/tester.tcl 	 set 	 testprefix 		 Ic 
+
+ set   timeout  60000 
+ set   u 
+ $::pz    
+     do_test   N_ 
+ -   3 1 0 7 1 1  .  6 7 1 0  
+
+	
+ { 
+ }  871.10     
+ ifcapable  Y6__ 
+ { 
+ do_execsql_test 	
+ C  	
+ - 
+	
+ 3 2 0 0 6  	 . 	 0  	 { 	 BEGIN 
+       } 	 { 
+ } 
+     			 }  	    
+	
+ catchsql  	
+ hi       	  finish_test 
+ 
+  

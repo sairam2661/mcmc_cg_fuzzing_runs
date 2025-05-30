@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book lang CDATA #REQUIRED>
+  <!ENTITY symbol "&#9679;">
+  <!ENTITY % symbol-list "1">
+  <!NOTATION SVG SYSTEM "a">
+  %symbol-list;
+  <!--
+    <!-->
+    <!-- comment 1 -->
+    <!-- comment 2 ( nested ) -->
+  <!-->
+]>
+<book lang="en">
+  <title><![CDATA[<xml:lang>en</xml:lang>]]></title>
+  <page n="1"><para>Para 1&symbol;Para 2</para></page>
+  <page n="2"><para><xi:include href='#p3'/></para></page>
+  <page id="p3"><para>Para 3<SVG system="a">inline SVG<!CDATA[Some text]]></SVG></para></page>
+</book><|eom_id|><|start_header_id|>assistant<|end_header_id|>
+
+This is solution 2 of the second question. 
+Please note that the use of <SVg> inside XML document may cause issues when the document will be processed by a specific XML parser because <svg> is usually associated with an external library or plugin. The processing instruction for the included SVG notation may also fail if the XML document isn’t

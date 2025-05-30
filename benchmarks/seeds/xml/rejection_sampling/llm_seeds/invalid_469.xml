@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ENTITY nbsp "&#160;">
+  <!ENTITY pi "&#x9C87;">
+]>
+<catalog>
+  <entry>
+    <product id="abc123">
+      <name>Widget</name>
+      <description>&nbsp;&pi; Widget</description>
+      <price>19.99</price>
+    </product>
+  </entry>
+  <entry>
+    <product id="def456">
+      <name>Thingy</name>
+      <description>Thingy</description>
+      <price>9.99</price>
+    </product>
+  </entry>
+  <entry>
+    <product id="ghi789">
+      <name>Gizmo</name>
+      <description>Gizmo</description>
+      <price>4.99</price>
+    </product>
+  </entry>
+</catalog>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!ELEMENT book (author, title, publisher, date, price)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ATTLIST author name CDATA #REQUIRED>
+<!ATTLIST publisher country CDATA #REQUIRED>
+<!ATTLIST book isbn CDATA #IMPLIED>
+<!ATTLIST book id CDATA #IMPLIED>
+<!ENTITY % general "yes">
+<!ENTITY % specific "no">
+<!ENTITY % external "http://example.com">
+<!ENTITY % internal "book internal entity">
+<!ENTITY % general2 "%general;">
+<!ENTITY % general3 "%general;%specific;">
+<!ENTITY % external2 "%external;">
+<!ENTITY % internal2 "%internal;">
+<!ENTITY % general4 "%general3;">
+<!ENTITY % general5 "%general4;">
+<!ENTITY % general6 "%general5;">
+<!ENTITY % general7 "%general6;">
+<!ENTITY % general8 "%general7;">
+<!ENTITY % general9 "%general8;">
+<!ENTITY % general10 "%general9;">
+<!ENTITY % general11 "%general10;">
+<!ENTITY % general12 "%general11;">
+<!ENTITY % general13 "%general12;">
+<!ENTITY % general14 "%general13;">
+<!ENTITY % general15 "%general14;">
+<!ENTITY % general16 "%general15;">
+<!ENTITY % general17 "%general16;">
+<!ENTITY % general18 "%general17;">
+<!ENTITY % general19 "%general18;">
+<!ENTITY % general20 "%general19;">
+<!ELEMENT book2 (#PCDATA)>
+<!ATTLIST book2 title CDATA #REQUIRED>
+<!ENTITY % book2 "%book2;">
+<!ENTITY % book3 "%book2;">
+<!ELEMENT book4 (#PCDATA)>
+<!ATTLIST book4 title CDATA #REQUIRED>
+<!ATTLIST book4 id CDATA #IMPLIED>
+<!ELEMENT book5 (#PCDATA)>
+<!ATTLIST book5 id CDATA #IMPLIED>
+<!ELEMENT book6 (#PCDATA)>
+<!ATTLIST book6 id CDATA #IMPLIED>
+<!ELEMENT book7 (#PCDATA)>
+<!ATTLIST book7 id CDATA #IMPLIED>
+<!ELEMENT book8 (#PCDATA)>
+<!ATTLIST book8 id CDATA #IMPLIED>
+<!ELEMENT book9 (#PCDATA)>
+<!ATTLIST book9 id CDATA #IMPLIED>
+<!ELEMENT book10 (#PCDATA)>
+<!ATTL

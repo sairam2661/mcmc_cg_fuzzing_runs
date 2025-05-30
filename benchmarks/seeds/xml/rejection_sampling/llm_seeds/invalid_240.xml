@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ENTITY % pubinfo SYSTEM "pubinfo.ent">
+  %pubinfo;
+]>
+<book xmlns:fn="http://www.w3.org/2005/xpath-functions"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:xs="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.w3.org/2001/XMLSchema http://www.w3.org/2001/XMLSchema.xsd"
+      xmlns="http://www.example.org/books"
+      version="2.0">
+  <title>My Book</title>
+  <author>John Doe</author>
+  <price>19.99</price>
+  <description>
+    <p>This is a <fn:concat>test</fn:concat> paragraph.</p>
+    <p>This is another <fn:concat>test</fn:concat> paragraph.</p>
+  </description>
+  <chapters>
+    <chapter>
+      <title>Chapter 1</title>
+      <text>
+        <p>This is a <fn:concat>test</fn:concat> paragraph.</p>
+        <p>This is another <fn:concat>test</fn:concat> paragraph.</p>
+      </text>
+    </chapter>
+    <chapter>
+      <title>Chapter 2</title>
+      <text>
+        <p>This is a <fn:concat>test</fn:concat> paragraph.</p>
+        <p>This is another <fn:concat>test</fn:concat> paragraph.</p>
+      </text>
+    </chapter>
+  </chapters>
+  <link xlink:href="http://www.example.org/books/mybook.epub">
+    <title>Download EPUB</title>
+  </link>
+  <link xlink:href="http://www.example.org/books/mybook.pdf">
+    <title>Download PDF</title>
+  </link>
+  <link xlink:href="http://www.example.org/books/mybook.mobi">
+    <title>Download MOBI</title>
+  </link>
+</book>  <!--  -->
+<!ENTITY % pubinfo SYSTEM "pubinfo.ent">  <!--  -->
+<!ATTLIST book 
+  title CDATA #REQUIRED
+  author CDATA #REQUIRED
+  price CDATA

@@ -1,0 +1,37 @@
+set  testdir  {   file  dirname   $argv0 	  } 	 source 
+  $testdir/tester.tcl 
+	 set 	 testprefix 	
+ m  
+	 set  	 timeout 
+ 	 60000 
+
+ set  T__ 	 { 	 }  
+   
+  
+ 	  set 	 	 h   $ue      
+ 
+  set 	
+ c_  $::IV  	   	
+
+ set 	 Y  ""      
+ set 
+	 a  {  }  	     	 set 
+ u_a 	 
+ $d__  	
+  	  ifcapable 	 h_ 		 { 	 lappend 
+ w 
+ $to      
+  	 if 
+	 l    { 	 }  else 
+ {   }  	     } 
+
+   	 proc   m_ 	
+ {  
+ E 
+ v_ 	 
+ fK 	 O_ 	 c  }  	  
+ {  db 
+ B29  	 $::N_      	
+ }     	 lappend   g   ''   	
+    	  finish_test 
+  

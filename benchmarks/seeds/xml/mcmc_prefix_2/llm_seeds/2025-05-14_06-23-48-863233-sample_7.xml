@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE note [
+  <!ELEMENT note (to,from,heading,body)>
+  <!ATTLIST note
+    id ID #REQUIRED
+    type (text|image) ">"
+  >
+  <!ENTITY data-system "L" >
+  <!ENTITY % system-public "#">
+  <!NOTATION SGML SYSTEM "H">
+ 	   
+ 	   
+ 	%iXHTML

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document [
+  <!ELEMENT document (title, (element1 | element2), element3, element4?, element5+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT element1 (#PCDATA)>
+  <!ELEMENT element2 (#PCDATA)>
+  <!ELEMENT element3 (element6*, element7+)>
+  <!ELEMENT element4 (#PCDATA)>
+  <!ELEMENT element5 (#PCDATA)>
+  <!ELEMENT element6 (#PCDATA)>
+  <!ELEMENT element7 (#PCDATA)>
+]>
+<document>
+  <title>This is a title</title>
+  <element1>Element 1</element1>
+  <element2>Element 2</element2>
+  <element3>
+    <element6>Element 6</element6>
+    <element7>Element 7</element7>
+    <element7>Element 8</element7>
+  </element3>
+  <element4>Optional Element 4</element4>
+  <element5>Element 5</element5>
+  <element5>Another Element 5</element5>
+  <element5>Yet Another Element 5</element5>
+</document>

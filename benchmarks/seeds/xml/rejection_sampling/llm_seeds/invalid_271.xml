@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<catalog xmlns:xs='http://www.w3.org/2001/XMLSchema'
+          xmlns:fn='http://www.w3.org/2005/xpath-functions'
+          xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+          xsi:schemaLocation='http://example.com/catalog.xsd'>
+  <book id='bk001'>
+    <author>John Smith</author>
+    <title>The Great Gatsby</title>
+    <genre>Classic</genre>
+    <price>29.99</price>
+    <publish_date>1925-01-01</publish_date>
+    <description>This is a classic novel.</description>
+    <rating>
+      <average>4.5</average>
+      <max>5</max>
+      <min>2</min>
+      <count>10</count>
+    </rating>
+    <award>
+      <name>Booker Prize</name>
+      <year>1925</year>
+    </award>
+    <image>
+      <url>http://example.com/image.jpg</url>
+      <width>800</width>
+      <height>600</height>
+    </image>
+    <tag>
+      <name>Classic</name>
+      <count>2</count>
+    </tag>
+    <tag>
+      <name>Best Seller</name>
+      <count>1</count>
+    </tag>
+  </book>
+  <book id='bk002'>
+    <author>Jane Doe</author>
+    <title>The Catcher in the Rye</title>
+    <genre>Classic</genre>
+    <price>19.99</price>
+    <publish_date>1951-01-01</publish_date>
+    <description>This is a classic novel.</description>
+    <rating>
+      <average>4.2</average>
+      <max>5</max>
+      <min>1</min>
+      <count>20</count>
+    </rating>
+    <award>
+      <name>National Book Award</name>
+      <year>1951</year>
+    </award>
+    <image>
+      <url>http://example.com/image2.jpg</url>
+      <width>640</width>
+      <height>480</height>
+    </image>
+  </book>
+</catalog>

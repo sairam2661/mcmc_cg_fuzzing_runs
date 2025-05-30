@@ -1,0 +1,99 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix concurrent
+
+set ::timeout 60000
+proc concurrent_test {} {
+  global db
+  if { $db handles 0 } {
+    return
+  }
+  for { set i 1 } { $i 10000 } { incr i } {
+    execsql {
+      INSERT INTO t1 VALUES(1);
+    }
+  }
+  execsql {INSERT INTO t2 VALUES(1)}
+}
+
+do_test concurrent-1.1 {
+  execsql {
+    CREATE TEMP TABLE t1 AS SELECT 1 AS a UNION ALL SELECT NULL
+  }
+  execsql {
+    CREATE TEMP TABLE t2 AS SELECT 1 AS b UNION ALL SELECT NULL
+  }
+  execsql {
+    BEGIN;
+  }
+  db interrupt
+} {1}
+
+do_test concurrent-2.1 {
+  execsql BEGIN
+} {1}
+
+do_execsql_test concurrent-3.1 {
+  CREATE TABLE t3(a,b);
+  INSERT INTO t3 VALUES(1, 2);
+} {1 2}
+
+ifcapable vacuum {
+  do_test concurrent-4.1 {
+    execsql {SELECT * FROM t3}
+  } {1 2}
+  catchsql {VACUUM}
+} 
+
+do_execsql_test concurrent-4.2 {
+  SELECT * FROM t3
+} {1 2}
+
+ifcapable attach {
+  do_test concurrent-5.1 {
+    execsql {
+      CREATE TABLE attached tbl1 AS SELECT 1 AS a UNION ALL SELECT NULL
+      ATTACH 'test.db' AS test2
+    }
+  } {} 
+  execsql {PRAGMA database_list}
+} 
+ifcapable attach {
+  catchsql{
+    DROP TABLE attached tbl1
+  }{} 
+}
+ifcapable attach {
+  catchsql{
+    DETACH test2 
+  }{} 
+}
+
+set testvfs test_vfs
+sqlite3_vfs_register $testvfs test_vfs
+
+do_test concurrent-7.1 {
+  db {
+    CREATE TABLE t4(a)
+  }
+  execsql {
+    PRAGMA temp_store=2
+  }
+  db {
+    CREATE TABLE t5 AS SELECT 1 AS a
+  }
+  execsql {
+    VACUUM
+  }
+  execsql {
+      PRAGMA temp_store=1
+  }
+  execsql {
+    VACUUM
+  }
+} {}
+
+set testvfs test_vfs
+sqlite3_vfs_unregister testvfs
+
+finish_test

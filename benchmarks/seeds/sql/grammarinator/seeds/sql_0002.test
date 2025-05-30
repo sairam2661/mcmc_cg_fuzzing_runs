@@ -1,0 +1,22 @@
+set   testdir 
+ {  
+ file  dirname   $argv0 
+		  }  
+ 
+ source 		 $testdir/tester.tcl 	 
+ 		 set   testprefix 
+ e   set 
+ timeout 
+ 60000     ifcapable 
+	 
+ Su 	 { 
+
+ if   	 u_9  	  { 	
+ }    
+ ifcapable 	   e1_ 
+ { 	 if   1969    ==  	  $::B    
+ {   } 
+ else    {   catchsql 	 $::E  			   	
+ }       }     
+ } 
+     finish_test 		   

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book SYSTEM "http://example.com/book.dtd">
+<book>
+  <title>XML for Dummies</title>
+  <author>
+    <name>John Doe</name>
+    <email>john@example.com</email>
+  </author>
+  <chapter id="chapter1">
+    <title>Introduction to XML</title>
+    <section id="section1">
+      <title>What is XML?</title>
+      <para>This is a paragraph of text.</para>
+    </section>
+    <section id="section2">
+      <title>Benefits of XML</title>
+      <itemizedlist>
+        <item>Easy to parse</item>
+        <item>Platform-independent</item>
+      </itemizedlist>
+    </section>
+  </chapter>
+  <chapter id="chapter2">
+    <title>XML Syntax</title>
+    <section id="section3">
+      <title>XML Elements</title>
+      <para>XML elements are represented by start and end tags.</para>
+    </section>
+  </chapter>
+</book>

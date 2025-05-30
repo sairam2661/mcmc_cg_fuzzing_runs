@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (book+)>
+  <!ELEMENT book (#PCDATA|author|publisher|year)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT edition (#PCDATA)>
+  <!ELEMENT isbn (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ELEMENT authorref (#PCDATA)>
+  <!ELEMENT publisherref (#PCDATA)>
+  <!ELEMENT yearref (#PCDATA)>
+]>
+<books>
+  <book>
+    <authorref>Smith</authorref>
+    <publisherref>John Wiley & Sons</publisherref>
+    <yearref>1999</yearref>
+    <title>Introduction to Computer Science</title>
+    <publisher>John Wiley & Sons</publisher>
+    <year>1999</year>
+    <author>Smith</author>
+    <isbn>123456789</isbn>
+    <edition>1st</edition>
+    <genre>Computer Science</genre>
+  </book>
+  <book>
+    <authorref>Johnson</authorref>
+    <publisherref>Springer</publisherref>
+    <yearref>2001</yearref>
+    <title>Introduction to Computer Science</title>
+    <publisher>Springer</publisher>
+    <year>2001</year>
+    <author>Johnson</author>
+    <isbn>987654321</isbn>
+    <edition>2nd</edition>
+    <genre>Computer Science</genre>
+  </book>
+</books> 
+<!ELEMENT bookref (#PCDATA)> 
+<!ELEMENT titleref (#PCDATA)> 
+<!ELEMENT publisherref2 (#PCDATA)> 
+<!ELEMENT authorref2 (#PCDATA)> 
+<!ELEMENT yearref2 (#PCDATA)> 
+<!ELEMENT editionref (#PCDATA)> 
+<!ELEMENT isbnref (#PCDATA)> 
+<!ELEMENT genre2 (#PCDATA)> 
+<!ELEMENT year3 (#PCDATA)> 
+<!ELEMENT author4 (#PCDATA)> 
+<!ELEMENT publisher5 (#PCDATA)> 
+<!ELEMENT title6 (#PCDATA)> 
+<!ELEMENT book7 (#PCDATA)> 
+<!ELEMENT book8 (#PCDATA)> 
+<!ELEMENT book9 (#PCDATA)> 
+<!ELEMENT book10 (#PCDATA)> 
+<!ELEMENT book11 (#PCDATA)> 
+<!ELEMENT book12 (#PCDATA)> 
+<!ELEMENT

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book SYSTEM "book.dtd">
+<book>
+  <title>My Book</title>
+  <author>
+    <name>John Doe</name>
+    <email>johndoe@example.com</email>
+    <phone>123-456-7890</phone>
+  </author>
+  <copyright>2019</copyright>
+  <pubdate>January 1, 2019</pubdate>
+  <publisher>
+    <name>My Publisher</name>
+    <address>
+      <street>123 Main St</street>
+      <city>Anytown</city>
+      <state>CA</state>
+      <zip>12345</zip>
+    </address>
+  </publisher>
+  <chapter>
+    <title>Chapter 1</title>
+    <section>
+      <title>Section 1.1</title>
+      <text>This is a paragraph of text.</text>
+    </section>
+    <section>
+      <title>Section 1.2</title>
+      <text>This is another paragraph of text.</text>
+    </section>
+  </chapter>
+  <chapter>
+    <title>Chapter 2</title>
+    <section>
+      <title>Section 2.1</title>
+      <text>This is a paragraph of text.</text>
+    </section>
+    <section>
+      <title>Section 2.2</title>
+      <text>This is another paragraph of text.</text>
+    </section>
+  </chapter>
+</book>
+<!ELEMENT book (title, author, copyright, pubdate, publisher, chapter+)>
+<!ELEMENT author (name, email, phone)>
+<!ELEMENT chapter (title, section+)>
+<!ELEMENT section (title, text)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT copyright (#PCDATA)>
+<!ELEMENT pubdate (#PCDATA)>
+<!ELEMENT publisher (name, address)>
+<!ELEMENT address (street, city, state, zip)>
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT state (#PCDATA)>
+<!ELEMENT zip (#PCDATA)>
+<!ELEMENT text (#PCDATA)> 
+<!ATTLIST chapter id CDATA #REQUIRED> 
+<!ATTLIST section id CDATA #REQUIRED> 
+
+
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>

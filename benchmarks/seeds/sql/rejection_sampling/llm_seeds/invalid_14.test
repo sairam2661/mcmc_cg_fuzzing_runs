@@ -1,0 +1,177 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix sync
+
+proc sync_proc {} {
+  global syncargs
+  lappend syncargs
+  expr {[llength $syncargs] <= 2}
+}
+
+do_test sync-1.1 {
+  execsql {
+    CREATE TABLE a(x);
+    INSERT INTO a VALUES(1),(2),(3);
+  }
+  execsql {SELECT count(*) FROM a}
+} {3}
+
+ifcapable journalMode {
+  catchsql {PRAGMA journal_mode=WAL}
+} {0 {}}
+
+set ::testdir [file dirname $argv0]
+set ::testprefix sync
+set ::sqlite_options {
+  cache_size 10
+  cache_spill 1
+  default_synchronous 2
+  default_temp_store 1
+  default_temp_store_directory ""
+  default_wal_autocheckpoint 100
+  default_wal_sync 1
+  default_wal_sync_delay 0
+  default_wal_sync_window 100
+  default_vfs {}
+  default_vfs_options {}
+  default_vfs_name {}
+  default_page_size 4096
+  default_journal_size 100
+  default_cache_size 10
+  default_journal_mode {}
+  default_temp_store {}
+  default_vacuum_mode {}
+  default_page_size {}
+  default_journal_mode {}
+  default_journal_size {}
+  default_cache_size {}
+  default_temp_store {}
+  default_vacuum_mode {}
+  default_temp_store_directory {}
+  default_vfs_name {}
+  default_vfs {}
+  default_vfs_options {}
+  default_wal_autocheckpoint {}
+  default_wal_sync_delay {}
+  default_wal_sync {}
+  default_wal_sync_window {}
+  default_synchronous {}
+  default_temp_store {}
+  default_journal_mode {}
+  default_page_size {}
+  default_temp_store {}
+  default_journal_size {}
+  default_vacuum_mode {}
+  default_vfs {}
+  default_vfs_name {}
+  default_vfs_options {}
+  default_wal_autocheckpoint {}
+  default_wal_sync {}
+  default_wal_sync_delay {}
+  default_wal_sync_window {}
+  default_synchronous {}
+  default_vacuum_mode {}
+  default_vacuum_mode {}
+  default_temp_store_directory {}
+  default_page_size {}
+  default_journal_mode {}
+  default_temp_store {}
+  default_vfs {}
+  default_vfs_options {}
+  default_wal_sync {}
+  default_vacuum_mode {}
+  default_journal_mode {}
+  default_vacuum_mode {}
+  default_temp_store {}
+  default_vfs_name {}
+  default_journal_size {}
+  default_wal_autocheckpoint {}
+  default_vacuum_mode {}
+  default_vacuum_mode {}
+  default_journal_mode {}
+  default_wal_sync_delay {}
+  default_vfs {}
+  default_temp_store_directory {}
+  default_vfs_options {}
+  default_journal_mode {}
+  default_temp_store {}
+  default_vfs_name {}
+  default_vfs {}
+  default_vacuum_mode {}
+  default_journal_size {}
+  default_temp_store {}
+  default_vfs {}
+  default_vfs_options {}
+  default_vacuum_mode {}
+  default_vfs {}
+  default_vfs_name {}
+  default_wal_sync {}
+  default_vacuum_mode {}
+  default_vfs {}
+  default_journal_size {}
+  default_journal_mode {}
+  default_vfs {}
+  default_temp_store {}
+  default_vacuum_mode {}
+  default_temp_store_directory {}
+  default_wal_autocheckpoint {}
+  default_temp_store {}
+  default_journal_size {}
+  default_journal_mode {}
+  default_vfs_options {}
+  default_temp_store {}
+  default_vacuum_mode {}
+  default_journal_mode {}
+  default_vfs {}
+  default_vfs_name {}
+  default_vacuum_mode {}
+  default_wal_sync {}
+  default_journal_size {}
+  default_vacuum_mode {}
+  default_wal_sync {}
+  default_temp_store {}
+  default_vacuum_mode {}
+  default_vacuum_mode {}
+  default_temp_store {}
+  default_vfs {}
+  default_journal_mode {}
+  default_vfs_name {}
+  default_vfs {}
+  default_journal_size {}
+  default_temp_store_directory {}
+  default_vfs_options {}
+  default_vfs {}
+  default_wal_sync {}
+  default_vfs_name {}
+  default_vacuum_mode {}
+  default_journal_mode {}
+  default_vfs {}
+  default_vacuum_mode {}
+  default_vfs_options {}
+  default_vfs {}
+  default_temp_store_directory {}
+  default_wal_autocheckpoint {}
+  default_vfs {}
+  default_vfs_name {}
+  default_vfs {}
+  default_vfs_name {}
+  default_vfs {}
+  default_vfs {}
+  default_vfs {}
+  default_vfs {}
+  default_vfs {}
+  default_vfs {}
+  default_vfs {}
+  default_vfs {}
+  default_vfs {}
+  default_vfs {}
+  default_vfs {}
+  default_vfs {}
+  default_vfs {}
+  default_vfs {}
+  default_vfs {}
+  default_vfs {}
+  default_vfs {}
+  default_vfs {}
+  default_vfs {}
+  default

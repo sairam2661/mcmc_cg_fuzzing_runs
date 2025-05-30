@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog SYSTEM "catalog.dtd">
+<catalog xmlns="http://example.com/catalog"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://example.com/catalog catalog.xsd">
+  <product id="1">
+    <name>Widget</name>
+    <description>
+      <p>This is a <em>really</em> great product.</p>
+      <p>It has a <strong>lot</strong> of features.</p>
+    </description>
+    <price currency="USD">19.99</price>
+  </product>
+  <product id="2">
+    <name>Gizmo</name>
+    <description>
+      <p>This is another <em>really</em> great product.</p>
+      <p>It has a <strong>lot</strong> of features.</p>
+    </description>
+    <price currency="EUR">14.99</price>
+  </product>
+</catalog>

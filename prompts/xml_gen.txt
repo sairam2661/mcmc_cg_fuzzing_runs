@@ -1,0 +1,19 @@
+Question 1:
+Generate a single, short but complex XML document. Include a variety of XML features and various markup declarations. Do not reuse previous solutions. 
+
+Solution 1:
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document [
+  <!ENTITY note "Take care!">
+]>
+<document xmlns="http://example.com/schema" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <!-- Sample comment -->
+  <section><![CDATA[Some <raw> text]]></section>
+  <message>&note;</message>
+</document>
+
+
+Question 2:
+Generate a single, short but complex XML document. Include a variety of XML features and various markup declarations. Do not reuse previous solutions. 
+
+Solution 2:

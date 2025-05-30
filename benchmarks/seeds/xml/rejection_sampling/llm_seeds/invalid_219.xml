@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE doc [
+  <!ENTITY % ent SYSTEM "entities.ent">
+  <!ENTITY % p1 SYSTEM "p1.ent">
+  <!ENTITY % p2 SYSTEM "p2.ent">
+  <!ENTITY % p3 SYSTEM "p3.ent">
+  <!ENTITY % p4 SYSTEM "p4.ent">
+  <!ENTITY % p5 SYSTEM "p5.ent">
+]>
+<doc xmlns:xs="http://www.w3.org/2001/XMLSchema"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.w3.org/2001/XMLSchema http://www.w3.org/2001/XMLSchema.xsd"
+     xmlns="http://www.example.com/doc"
+     xmlns:foo="http://www.example.com/foo"
+     xmlns:bar="http://www.example.com/bar">
+  <element1>
+    <foo:element2>
+      <foo:element3>
+        <bar:element4>
+          <bar:element5>
+            <bar:element6>
+              <bar:element7>
+                <bar:element8>
+                  <bar:element9>
+                    <bar:element10>
+                      <bar:element11>
+                        <bar:element12>
+                          <bar:element13>
+                            <bar:element14>
+                              <bar:element15>
+                                <bar:element16>
+                                  <bar:element17>
+                                    <bar:element18>
+                                      <bar:element19>
+                                        <bar:element20>
+                                          <bar:element21>
+                                            <bar:element22>
+                                              <bar:element23>
+                                                <bar:element24>
+                                                  <bar:element25>
+                                                    <bar:element26>
+                                                      <bar:element27>
+                                                        <bar:element28>
+                                                          <bar:element29>
+                                                            <bar:element30>
+                                                              <bar:element31>
+                                                                <bar:element32>
+                                                                  <bar:element33>
+                                                                    <bar:element34>
+																	  <bar:element35>
+																		  <bar:element36>
+																			  <bar:element37>
+																				  <bar:element38>
+																					  <bar:element39>
+																						  <bar:element40>
+																							  <bar:element41>
+																								  <bar:element42>
+																									  <bar:element43>
+																										  <bar:element44>

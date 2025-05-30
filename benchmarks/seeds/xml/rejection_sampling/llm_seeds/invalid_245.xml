@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE book [
+  <!ENTITY book 'book' >
+  <!ENTITY title 'title' >
+  <!ENTITY author 'author' >
+]>
+<book>
+  <&book;>
+    <&title;>The Great Gatsby</&title;>
+    <&author;>F. Scott Fitzgerald</&author;>
+  </&book;>
+  <chapter>
+    <&title;>Chapter 1</&title>
+    <&author;>F. Scott Fitzgerald</&author>
+    <para>
+      <&book;>
+        <&title;>The Great Gatsby</&title>
+        <&author;>F. Scott Fitzgerald</&author>
+      </&book;>
+    </para>
+  </chapter>
+  <chapter>
+    <&title;>Chapter 2</&title>
+    <&author;>F. Scott Fitzgerald</&author>
+  </chapter>
+  <chapter>
+    <&title;>Chapter 3</&title>
+    <&author;>F. Scott Fitzgerald</&author>
+    <para>
+      <note>
+        <&book;>
+          <&title;>The Great Gatsby</&title>
+          <&author;>F. Scott Fitzgerald</&author>
+        </&book;>
+      </note>
+    </para>
+  </chapter>
+  <&book;>
+    <&title;>The Great Gatsby</&title>
+    <&author;>F. Scott Fitzgerald</&author>
+  </&book;>
+</book>

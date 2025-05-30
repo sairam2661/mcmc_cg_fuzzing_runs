@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author,edition)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT edition (#PCDATA)>
+]>
+<book>
+  <title>XML</title>
+  <author>
+    <name>John Doe</name>
+    <address>
+      <street>123 Main St</street>
+      <city>New York</city>
+      <state>NY</state>
+      <country>USA</country>
+    </address>
+  </author>
+  <edition>1.0</edition>
+</book>

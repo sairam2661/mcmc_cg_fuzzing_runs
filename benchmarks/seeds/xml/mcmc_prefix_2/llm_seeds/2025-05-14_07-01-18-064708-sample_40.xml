@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT book (#PCDATA | author | title | price | description | publishers)>
+  <!ATTLIST book id CDATA #REQUIRED>
+  <!ENTITY publisher "P" > 
+  <!ENTITY 	%PUBLISHER	"P"	> 
+  <!NOTATION HTML SYSTEM "G">
+ 	%schema-location:IRI

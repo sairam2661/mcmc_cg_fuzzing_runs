@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE notes [
+  <!ELEMENT notes (note+)>
+  <!ATTLIST note id CDATA #REQUIRED>
+  <!ENTITY nnote "N">
+  <!ENTITY % ententity "&note;">
+  <!NOTATION PDF PUBLIC "-"
+  "Z"
+  >
+  %ententity;
+  <!--
+      Author: Foo Bar
+      Last updated: 2023-->  
+  ]>
+<notes xmlns="h" xmlns:xsi="w">
+  <note id="N">
+    Hello
+  </note>
+  <note id="N">
+    World
+  </note>
+</notes>

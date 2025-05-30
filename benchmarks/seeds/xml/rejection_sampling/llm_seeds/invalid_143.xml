@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author,chapter+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ATTLIST chapter id CDATA #REQUIRED>
+  <!ATTLIST chapter page CDATA #IMPLIED>
+  <!ENTITY % general "General Knowledge">
+  <!ENTITY % computer "Computer Science">
+]>
+<book>
+  <title>Programming</title>
+  <author>John Doe</author>
+  <chapter id="chap1" page="1">Introduction</chapter>
+  <chapter id="chap2" page="2">Variables</chapter>
+  <chapter id="chap3" page="3">%computer;</chapter>
+  <chapter id="chap4" page="4">%general;</chapter>
+</book>

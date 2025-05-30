@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE notes SYSTEM "notes.dtd">
+<notes>
+  <note id="n1">
+    <title>My Title</title>
+    <author name="John Doe"> 
+      <address>
+        <street>123 Main St</street>
+        <city>Anytown</city>
+        <state>CA</state>
+        <zip>12345</zip>
+      </address>
+    </author>
+    <date>2020-01-01</date>
+    <body>
+      <p>This is a sample note.</p>
+      <p>It has multiple paragraphs.</p>
+    </body>
+  </note>
+  <note id="n2">
+    <title>Another Title</title>
+    <author name="Jane Doe"> 
+      <address>
+        <street>456 Elm St</street>
+        <city>Othertown</city>
+        <state>NY</state>
+        <zip>67890</zip>
+      </address>
+    </author>
+    <date>2020-02-01</date>
+    <body>
+      <p>This is another sample note.</p>
+      <p>It also has multiple paragraphs.</p>
+    </body>
+  </note>
+</notes>

@@ -1,0 +1,53 @@
+set    testdir 	
+ { 
+ file  	  dirname 
+ $argv0  }   source    $testdir/tester.tcl 
+ set 
+ 
+ testprefix   k 
+ set 
+	 timeout 	
+	 60000 
+	  if  h  	 {  Oc  
+     } 	    	 if  $r9  
+   < 	 {   BEGIN     ; 
+	 CREATE INDEX   W   ON 
+ q 
+ (  	  UG 	 )     
+ }   
+	 { 
+
+ db2   t 
+ {   ""   
+  {  } 
+	   
+ ''   
+ ''   	 $Kgq_x_330  	 4   	 	 S_Fl41fo16  
+ }      {   SELECT   *  	 FROM 	 q 
+ WHERE 	 t 	 =   "0"     	 ; 
+ COMMIT    
+ ;  CREATE INDEX   u_ 	 ON  j 	
+	 ( 	
+ 	 
+ a 		 )   	 ; 	
+ 	
+ ROLLBACK     ; 	 PRAGMA 
+	 EP 
+ = 
+ 9.0     	 ; 
+ CREATE INDEX 
+ V 	 ON 
+			 p 
+ (   	 F    )   	 ;  	 }   	  { 
+ } 
+
+	    { 	 CREATE INDEX    g 
+
+ ON  M 	 ( 
+  XY5_H7  )      ;    }  
+
+   
+ I4   $Y  
+     } 	 else  {   } 
+	   
+   finish_test 	  

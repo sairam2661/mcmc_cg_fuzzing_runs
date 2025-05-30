@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE catalog SYSTEM "m"
+[
+  <!ELEMENT catalog (brand+)>
+  <!ATTLIST catalog author CDATA #REQUIRED>
+  <!ENTITY brand1 "M">
+  <!ENTITY % brand2 "A">
+  <!NOTATION svg PUBLIC "S" "v">
+  
+  %catalog-model-atts;
+  <!-- Internal DTD subset declaration -->
+]>
+<catalog author="C">
+  <brand>BMW</brand>
+  <model xlink:href="#">&brand1;</model>
+  <comment><![CDATA[Some <raw> text]]></comment>
+  <image MIME-type="&svg;"> <![CDATA[<a:img src=<svg/>/></a:img>]]></image>
+  <model>%brand2;</model>
+</catalog>

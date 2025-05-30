@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE doc [
+  <!ENTITY % entity1 "entity1">
+  <!ENTITY % entity2 "entity2">
+]>
+<doc>
+  <section id="section1" title="Section 1">
+    <para id="para1">This is a paragraph.</para>
+    <para id="para2">
+      <emphasis role="strong">Strong emphasis</emphasis>
+      <emphasis role="weak">Weak emphasis</emphasis>
+    </para>
+  </section>
+  <section id="section2" title="Section 2">
+    <para id="para3">
+      <itemizedlist>
+        <listitem>
+          <para id="item1">Item 1</para>
+        </listitem>
+        <listitem>
+          <para id="item2">Item 2</para>
+        </listitem>
+      </itemizedlist>
+    </para>
+  </section>
+  <section id="section3" title="Section 3">
+    <para id="para4">
+      <table>
+        <tgroup cols="2">
+          <colspec colwidth="*" name="col1"/>
+          <colspec colwidth="*" name="col2"/>
+          <tbody>
+            <row>
+              <entry>Column 1</entry>
+              <entry>Column 2</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </para>
+  </section>
+</doc>

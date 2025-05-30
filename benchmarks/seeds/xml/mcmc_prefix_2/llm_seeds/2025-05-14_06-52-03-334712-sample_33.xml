@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-32" standalone="no"?>
+<!DOCTYPE book [
+  <!ELEMENT book (author,chapter+)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    lang CDATA #IMPLIED
+  >
+  <!ENTITY chapter1 "A"
+         >
+  <!ENTITY % chapter-all "1" >
+  <!NOTATION svg SYSTEM "x" >
+  %chapter-all;  <!-- entity definition -->
+]>
+<book id="B"
+  xmlns:fb="u"
+  xmlns="o" xml:lang="C"
+  svg:xml-stylesheet-href="o" 
+  xi:nil="t">
+  <author>Author</author>
+  <chapter entity-ref="&chapter1;">Chapter Element with reference to chapter1 entity</chapter>
+  <chapter>Another long and important chapter</chapter>
+  <comment>Example comment.</comment>
+</book>

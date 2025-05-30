@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE employees [
+  <!ELEMENT employees (employee+)>
+  <!ATTLIST employees lang CDATA #IMPLIED>
+  <!ENTITY msg "W" >
+  <!ENTITY % ent "n">
+  <!NOTATION iso-8859-1 SYSTEM "f">
+  %ent;
+  <!-- internal subset -->
+]>
+<employees lang='en'>
+  <employee faxnum="&msg;">
+    <firstname>Jane</firstname>
+    <lastname>Doe</lastname>
+  </employee>
+</employees>

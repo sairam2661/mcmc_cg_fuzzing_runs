@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+<!ELEMENT books (book+)>
+<!ELEMENT book (title,author,year,genre,review)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT genre (#PCDATA)>
+<!ELEMENT review (#PCDATA)>
+<!ATTLIST book id CDATA #REQUIRED>
+<!ATTLIST book isbn CDATA #IMPLIED>
+<!ATTLIST book price CDATA #IMPLIED>
+<!ENTITY % bookEntities SYSTEM "bookEntities.dtd">
+<!ENTITY % bookAttList SYSTEM "bookAttList.dtd">
+<!ENTITY % bookPkg SYSTEM "bookPkg.dtd">
+<!ENTITY % bookGen SYSTEM "bookGen.dtd">
+<!ENTITY % bookSpec SYSTEM "bookSpec.dtd">
+<!ENTITY % bookAttr SYSTEM "bookAttr.dtd">
+<!ENTITY % bookAttr2 SYSTEM "bookAttr2.dtd">
+<!ENTITY % bookAttr3 SYSTEM "bookAttr3.dtd">
+<!ENTITY % bookAttr4 SYSTEM "bookAttr4.dtd">
+<!ENTITY % bookAttr5 SYSTEM "bookAttr5.dtd">
+<!ENTITY % bookAttr6 SYSTEM "bookAttr6.dtd">
+<!ENTITY % bookAttr7 SYSTEM "bookAttr7.dtd">
+<!ENTITY % bookAttr8 SYSTEM "bookAttr8.dtd">
+<!ENTITY % bookAttr9 SYSTEM "bookAttr9.dtd">
+<!ENTITY % bookAttr10 SYSTEM "bookAttr10.dtd">
+<!ENTITY % bookAttr11 SYSTEM "bookAttr11.dtd">
+<!ENTITY % bookAttr12 SYSTEM "bookAttr12.dtd">
+<!ENTITY % bookAttr13 SYSTEM "bookAttr13.dtd">
+<!ENTITY % bookAttr14 SYSTEM "bookAttr14.dtd">
+<!ENTITY % bookAttr15 SYSTEM "bookAttr15.dtd">
+<!ENTITY % bookAttr16 SYSTEM "bookAttr16.dtd">
+<!ENTITY % bookAttr17 SYSTEM "bookAttr17.dtd">
+<!ENTITY % bookAttr18 SYSTEM "bookAttr18.dtd">
+<!ENTITY % bookAttr19 SYSTEM "bookAttr19.dtd">
+<!ENTITY % bookAttr20 SYSTEM "bookAttr20.dtd">
+<!ENTITY % bookAttr21 SYSTEM "bookAttr21.dtd">
+<!ENTITY % bookAttr22 SYSTEM "bookAttr22.dtd">
+<!ENTITY % bookAttr23 SYSTEM "bookAttr23.dtd">
+<!ENTITY % bookAttr24 SYSTEM "bookAttr24.dtd">
+<!ENTITY % bookAttr25 SYSTEM "bookAttr25.dtd">
+<!ENTITY % bookAttr26 SYSTEM "bookAttr26.dtd">
+<!ENTITY % bookAttr27 SYSTEM "bookAttr

@@ -1,0 +1,77 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix sync2
+
+set ::timeout 60000
+set testvfs {}
+ifcapable!="$(getconf _SQLITE_TESTVFS)" {
+  set testvfs testvfs
+  db eval {
+    PRAGMA journal_mode = 'DELETE';
+    PRAGMA synchronous = 'NORMAL';
+    PRAGMA temp_store = 'MEMORY';
+  }
+  db eval {
+    CREATE VIRTUAL TABLE t USING $testvfs
+  }
+}
+
+proc errorfunc {code msg} {
+  return "[sqlite3-error-code $code]: $msg"
+}
+
+if { $::tcl_platformPLATFORM eq "macOS" } {
+  set sqlite_master_path "/System/Volumes/Data/Applications/MongoDB.app/Contents/MacOS/.sqlite_master"
+} elseif { $::tcl_platformPLATFORM eq "linux" } {
+  set sqlite_master_path "/home/user/sqlite3/sqlite_master"
+} else {
+  set sqlite_master_path "E:\sqlite\sqlite_master"
+}
+
+proc test_function {} {
+  errorfunc 1 "Test error"
+  execsql {SELECT name FROM sqlite_master}
+  execsql {CREATE TABLE temp_table(x)}
+}
+
+do_execsql_test sync2-1.1 {
+  CREATE TABLE a(x);
+  SELECT x FROM a
+} {}
+
+do_execsql_test sync2-1.2 {
+  CREATE TABLE IFNOTEXISTS(a);
+  SELECT name FROM sqlite_master WHERE name='a'
+} {a}
+
+do_execsql_test sync2-1.3 {
+  CREATE TABLE b(y);
+  SELECT name FROM sqlite_master WHERE name='b'
+} {b}
+
+do_test sync2-1.4 {
+  errorfunc error
+  expr 1
+} {1}
+
+do_test sync2-1.5 {
+  errorfunc 0
+} {0}
+
+ifcapable attach {
+  do_execsql_test sync2-1.6 {
+    CREATE TABLE main_test_attach(x);
+    CREATE TABLE test_attach(y);
+    SELECT name FROM main_test_attach WHERE name='a'
+    } {main_test_attach}
+}
+
+do_test sync2-1.7 {
+  execsql {
+    SELECT name FROM sqlite_master
+  }
+} {{name sqlite_master}}
+
+db close
+
+finish_test

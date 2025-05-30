@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note SYSTEM "note.dtd">
+<!ELEMENT note (to,from,heading,body)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+<!ATTLIST note
+  id ID #REQUIRED
+  date CDATA #IMPLIED
+  type (letter|memo) "letter"
+>
+<!ENTITY % note "note">
+<!ENTITY % ref SYSTEM "ref.dtd">
+<!ENTITY % refs "%ref;">
+
+<note id="n1" date="2020-01-01" type="letter">
+  <to>John</to>
+  <from>Sam</from>
+  <heading>Meeting Invitation</heading>
+  <body>This is a meeting invitation for next week.</body>
+</note>
+
+<%note;>
+  <to>Jim</to>
+  <from>Sue</from>
+  <heading>Meeting Reminder</heading>
+  <body>This is a meeting reminder for today.</body>
+</%note;> 
+
+<%refs;> 
+  <note id="n2" type="memo">
+    <to>John</to>
+    <from>Sam</from>
+    <heading>Meeting Notes</heading>
+    <body>This is a meeting note.</body>
+  </note>
+</%refs;> 
+
+<!ENTITY % ref SYSTEM "ref.dtd">
+<!ENTITY % ref SYSTEM "ref.dtd"> 
+
+<!ELEMENT ref (#PCDATA)>
+<!ATTLIST ref
+  id ID #REQUIRED
+>
+<!ENTITY % refs "%ref;">
+
+<%refs;> 
+  <ref id="r1">This is a reference.</ref>
+</%refs;> 
+
+<!ELEMENT ref (#PCDATA)>
+<!ATTLIST ref
+  id ID #REQUIRED
+>
+<!ENTITY % ref SYSTEM "ref.dtd">
+<!ENTITY % ref SYSTEM "ref.dtd"> 
+
+<ref id="r2">This is another reference.</ref> 
+
+<!ELEMENT ref (#PCDATA)>
+<!ATTLIST ref
+  id ID #REQUIRED
+>
+<!ENTITY % ref SYSTEM "ref.dtd">
+<!ENTITY % ref SYSTEM "ref.dtd"> 
+
+<!ELEMENT ref (#PCDATA)>
+<!ATTLIST ref
+  id ID #REQUIRED
+>
+<!ENTITY % ref SYSTEM "ref.dtd">
+<!ENTITY % ref SYSTEM "ref.dtd"> 
+
+<!ELEMENT ref (#PCDATA)>
+<!ATTLIST ref
+  id ID

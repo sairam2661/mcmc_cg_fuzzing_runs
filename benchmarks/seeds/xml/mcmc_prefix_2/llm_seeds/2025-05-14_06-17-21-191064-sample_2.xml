@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE root SYSTEM "d" [
+  <!ELEMENT root (meta+, content+)>
+  <!ATTLIST root lang CDATA #REQUIRED>
+  <!ENTITY entity "I"
+     >
+  <!ENTITY % entity-partial "C">
+ <!NOTATION RIAS SYSTEM "R">
+  %entity-partial;
+  <!--&entity;--><!NOTATION F SYSTEM "F" >]>
+<root lang="x"><meta name="x">x</meta><meta name="y">y</meta><meta name="z">z</meta><content>content</content><content>content</content></root>

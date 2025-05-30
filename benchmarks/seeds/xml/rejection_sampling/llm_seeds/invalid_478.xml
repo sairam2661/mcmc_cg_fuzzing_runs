@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE books [
+<!ELEMENT books (author, title, publisher, price, year, editor)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT editor (#PCDATA)>
+<!ATTLIST book id ID #REQUIRED>
+<!ATTLIST book title CDATA #REQUIRED>
+<!ATTLIST book author CDATA #REQUIRED>
+<!ATTLIST book publisher CDATA #REQUIRED>
+<!ATTLIST book price CDATA #REQUIRED>
+<!ATTLIST book year CDATA #REQUIRED>
+<!ATTLIST book editor CDATA #REQUIRED>
+]>
+<books>
+<book id="1" title="Book 1" author="Author 1" publisher="Publisher 1" price="10.99" year="2001" editor="Editor 1"/>
+<book id="2" title="Book 2" author="Author 2" publisher="Publisher 2" price="9.99" year="2002" editor="Editor 2"/>
+</books>  <?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE books [
+<!ELEMENT books (author, title, publisher, price, year, editor)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT editor (#PCDATA)>
+<!ATTLIST book id ID #REQUIRED>
+<!ATTLIST book title CDATA #REQUIRED>
+<!ATTLIST book author CDATA #REQUIRED>
+<!ATTLIST book publisher CDATA #REQUIRED>
+<!ATTLIST book price CDATA #REQUIRED>
+<!ATTLIST book year CDATA #REQUIRED>
+<!ATTLIST book editor CDATA #REQUIRED>
+]>
+<books>
+<book id="1" title="Book 1" author="Author 1" publisher="Publisher 1" price="10.99" year="2001" editor="Editor 1"/>
+<book id="2" title="Book 2" author="Author 2" publisher="Publisher 2" price="9.99" year="2002" editor="Editor 2"/>
+</books>  <?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE books [
+<!ELEMENT books (author, title, publisher,

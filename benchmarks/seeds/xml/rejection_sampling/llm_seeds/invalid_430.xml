@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ENTITY nbsp "&#160;">
+  <!ENTITY amp "&#38;">
+  <!ENTITY lt "&#60;">
+  <!ENTITY gt "&#62;">
+  <!ENTITY quot "&#34;">
+]>
+<book xmlns:xs="http://www.w3.org/2001/XMLSchema"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.example.com/book.xsd"
+       version="1.0">
+  <author>
+    <name>&nbsp;John&nbsp;Doe</name>
+    <affiliation>
+      <institution>ABC University</institution>
+      <department>Computer Science</department>
+    </affiliation>
+  </author>
+  <title>Some &amp; Great Title</title>
+  <description>This is a &lt;long&gt; and &gt; interesting book</description>
+  <content>
+    <chapter>
+      <title>Chapter 1</title>
+      <section>
+        <title>Section 1.1</title>
+        <para>This is a paragraph with some &quot;quotation&quot;.</para>
+      </section>
+    </chapter>
+  </content>
+</book>

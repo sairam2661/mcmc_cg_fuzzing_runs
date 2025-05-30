@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE note SYSTEM "note.dtd">
+<!ELEMENT note (to,from,heading,body)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+
+<note>
+    <to>John</to>
+    <from>Jane</from>
+    <heading>Reminder</heading>
+    <body>Do not forget to do your homework</body>
+</note>

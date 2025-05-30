@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE book [
+<!ENTITY % entity-set SYSTEM 'entity-set.ent'>
+%entity-set;
+<!ELEMENT book (#PCDATA)>
+<!ELEMENT chapter (#PCDATA)>
+<!ELEMENT section (#PCDATA)>
+<!ELEMENT paragraph (#PCDATA)>
+<!ELEMENT sentence (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ELEMENT copyright (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT title-type (#PCDATA)>
+<!ELEMENT title-type-type (#PCDATA)>
+<!ELEMENT title-type-code (#PCDATA)>
+<!ELEMENT title-type-code-code (#PCDATA)>
+<!ELEMENT title-type-code-code-code (#PCDATA)>
+<!ELEMENT book-id (#PCDATA)>
+<!ELEMENT book-id-type (#PCDATA)>
+<!ELEMENT book-id-type-type (#PCDATA)>
+<!ELEMENT book-id-type-code (#PCDATA)>
+<!ELEMENT book-id-type-code-code (#PCDATA)>
+<!ELEMENT book-id-type-code-code-code (#PCDATA)>
+<!ELEMENT isbn (#PCDATA)>
+<!ELEMENT isbn-type (#PCDATA)>
+<!ELEMENT isbn-type-type (#PCDATA)>
+<!ELEMENT isbn-type-code (#PCDATA)>
+<!ELEMENT isbn-type-code-code (#PCDATA)>
+<!ELEMENT isbn-type-code-code-code (#PCDATA)>
+<!ELEMENT contributor (#PCDATA)>
+<!ELEMENT contributor-type (#PCDATA)>
+<!ELEMENT contributor-type-type (#PCDATA)>
+<!ELEMENT contributor-type-code (#PCDATA)>
+<!ELEMENT contributor-type-code-code (#PCDATA)>
+<!ELEMENT contributor-type-code-code-code (#PCDATA)>
+<!ELEMENT contributor-id (#PCDATA)>
+<!ELEMENT contributor-id-type (#PCDATA)>
+<!ELEMENT contributor-id-type-type (#PCDATA)>
+<!ELEMENT contributor-id-type-code (#PCDATA)>
+<!ELEMENT contributor-id-type-code-code (#PCDATA)>
+<!ELEMENT contributor-id-type-code-code-code (#PCDA
+TA)>
+]>
+<book xmlns:xs='http://www.w3.org/2001/XMLSchema-instance'
+    xs:schemaLocation='http://www.example.org/book http://www.example.org/book.xsd'>
+<author>John Smith</author>
+<chapter>
+<date>2022-02-12</date>
+<section>
+<paragraph>
+The quick brown fox jumps over the lazy dog.
+</paragraph>
+<sentence>
+The fox is very quick.
+</sentence>
+</section>
+</chapter>
+<chapter>
+<section>
+<paragraph>
+This is a test of the XML parser.
+</paragraph>
+<sentence>
+This is only a test.

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog SYSTEM "catalog.dtd">
+<catalog xmlns="http://example.com/catalog">
+    <item>
+        <name>Widget</name>
+        <description>
+            <p>This is a widget.</p>
+            <p>It does something.</p>
+        </description>
+        <price currency="USD">19.99</price>
+        <image>
+            <url>http://example.com/image.jpg</url>
+            <mimetype>image/jpeg</mimetype>
+        </image>
+        <category>
+            <name>Electronics</name>
+            <description>Stuff that glows and beeps.</description>
+            <subcategories>
+                <subcategory>
+                    <name>Computers</name>
+                    <description>Things that process information.</description>
+                </subcategory>
+                <subcategory>
+                    <name>Phones</name>
+                    <description>Things that make calls.</description>
+                </subcategory>
+            </subcategories>
+        </category>
+    </item>
+    <item>
+        <name>Gadget</name>
+        <description>
+            <p>This is a gadget.</p>
+            <p>It does something else.</p>
+        </description>
+        <price currency="EUR">14.99</price>
+        <image>
+            <url>http://example.com/image2.jpg</url>
+            <mimetype>image/jpeg</mimetype>
+        </image>
+        <category>
+            <name>Home Goods</name>
+            <description>Stuff for the house.</description>
+            <subcategories>
+                <subcategory>
+                    <name>Kitchen</name>
+                    <description>Things for cooking.</description>
+                </subcategory>
+                <subcategory>
+                    <name>Bedroom</name>
+                    <description>Things for sleeping.</description>
+                </subcategory>
+            </subcategories>
+        </category>
+    </item>
+</catalog>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ENTITY % catalog SYSTEM "catalog.ent">
+  %catalog;
+]>
+<catalog>
+  <product id="P01">
+    <name>My Product</name>
+    <description>It's a thing.</description>
+    <category>
+      <name>Things</name>
+      <parent>Things</parent>
+    </category>
+    <price>9.99</price>
+    <image src="image1.jpg" alt="Image 1"/>
+    <image src="image2.jpg" alt="Image 2"/>
+  </product>
+  <product id="P02">
+    <name>Another Product</name>
+    <description>It's another thing.</description>
+    <category>
+      <name>Things</name>
+      <parent>Things</parent>
+    </category>
+    <price>19.99</price>
+    <image src="image3.jpg" alt="Image 3"/>
+  </product>
+  <product id="P03">
+    <name>A Third Product</name>
+    <description>It's a thing.</description>
+    <category>
+      <name>Things</name>
+      <parent>Things</parent>
+    </category>
+    <price>9.99</price>
+    <image src="image4.jpg" alt="Image 4"/>
+  </product>
+</catalog>

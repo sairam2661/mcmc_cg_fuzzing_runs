@@ -1,0 +1,130 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix complex_sql
+
+set ::timeout 60000
+set nDrop 5
+
+proc drop_all_tables {db} {
+  execsql {
+    DROP TABLE IF EXISTS t1a_0_1_0_1
+  } $db
+  execsql {
+    DROP TABLE IF EXISTS t1a_0_0_4_4
+  } $db
+  execsql {
+    DROP TABLE IF EXISTS t1a_0_2_3_3
+  } $db
+  execsql {
+    DROP TABLE IF EXISTS t1a_1_1_2_6
+  } $db
+  execsql {
+    DROP TABLE IF EXISTS t1b_1_3
+  } $db
+  execsql {
+    DROP TABLE IF EXISTS t1b_1_2_0
+  } $db
+  execsql {
+    DROP TABLE IF EXISTS t2_1_2
+  } $db
+  execsql {
+    DROP TABLE IF EXISTS t2_0_1
+  } $db
+  execsql {
+    DROP TABLE IF EXISTS t3_3_7
+  } $db
+  execsql {
+    DROP TABLE IF EXISTS t3a_2_1_4_6
+  } $db
+  execsql {
+    DROP TABLE IF EXISTS t3a_1_4_8_5
+  } $db
+  execsql {
+    DROP TABLE IF EXISTS t3a_0_5_4_3
+  } $db
+  execsql {
+    DROP TABLE IF EXISTS t3a_3_3_5_5_2
+  } $db
+  execsql {
+    DROP TABLE IF EXISTS t3b_8_2
+  } $db
+  execsql {
+    DROP TABLE IF EXISTS t3b_3_6_6
+  } $db
+  execsql {
+    DROP TABLE IF EXISTS t3b_0_4_0
+  } $db
+  execsql {
+    DROP TABLE IF EXISTS t3b_2_8
+  } $db
+  execsql {
+    DROP TABLE IF EXISTS t3b_6
+  } $db
+  execsql {
+    DROP TABLE IF EXISTS t4_7_0
+  } $db
+  execsql {
+    DROP TABLE IF EXISTS t4_3_3_0_1
+  } $db
+  execsql {
+    DROP TABLE IF EXISTS t4_5_8
+  } $db
+  execsql {
+    DROP TABLE IF EXISTS t4_0_4_8_8
+  } $db
+  execsql {
+    DROP TABLE IF EXISTS t4a_6_2_1_3
+  } $db
+  execsql {
+    DROP TABLE IF EXISTS t4a_3_2_1_6_4
+  } $db
+  execsql {
+    DROP TABLE IF EXISTS t4a_6_5_7_5
+  } $db
+  execsql {
+    DROP TABLE IF EXISTS t5
+  } $db
+  execsql {
+    DROP TABLE IF EXISTS t5a
+  } $db
+  execsql {
+    DROP TABLE IF EXISTS t6
+  } $db
+  execsql {
+    DROP TABLE IF EXISTS t6a
+  } $db
+}
+
+proc save_all_tables {db} {
+  execsql {
+    CREATE TABLE t6a AS SELECT 1 AS col1 FROM t6
+  } $db
+  execsql {
+    CREATE TABLE t6 AS SELECT 1 AS col1 FROM t1b
+  } $db
+  execsql {
+    CREATE TABLE t5a AS SELECT 1 AS col1 FROM t1a
+  } $db
+  execsql {
+    CREATE TABLE t5 AS SELECT 2 AS col1 FROM t3
+  } $db
+  execsql {
+    CREATE TABLE t4a AS SELECT 1 AS col1 FROM t1b
+  } $db
+  execsql {
+    CREATE TABLE t4_5_8 AS SELECT 1 AS col1 FROM t3b
+  } $db
+  execsql {
+    CREATE TABLE t4_0_4_8_8 AS SELECT 2 AS col1 FROM t4
+  } $db
+  execsql {
+    CREATE TABLE t4 AS SELECT 3 AS col1 FROM t2
+  } $db
+  execsql {
+    CREATE TABLE t3b_6 AS SELECT 5 AS col1 FROM t3b
+  } $db
+  execsql {
+    CREATE TABLE t3b_2_8 AS SELECT 1 AS col1 FROM t3a
+  } $db
+  execsql {
+    CREATE TABLE t3b_0_4

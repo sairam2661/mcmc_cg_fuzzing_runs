@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (category+)>
+  <!ATTLIST catalog id CDATA #REQUIRED>
+  <!ENTITY item1 "<" > <!ENTITY % genAtt "L" > <!NOTATION FISCH  PUBLIC "f" "s" >
+  %genAtt;
+  <!--[ This is a &comment;  ]-->
+  <!ELEMENT category (item+)>
+  <!ATTLIST category name CDATA #REQUIRED>
+  <!ENTITY % itemAtt "C" >
+  %itemAtt;
+  <!ELEMENT item (#PCDATA)>
+]>
+<catalog id="x">
+  <category name="A">
+    <item>Some text</item>
+  </category>
+  <category name="B">
+    <item>This is another item</item>
+  </category>
+</catalog>

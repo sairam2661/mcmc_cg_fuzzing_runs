@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE notes [
+  <!ELEMENT notes (note+)>
+  <!ATTLIST note id ID #REQUIRED>
+  <!ENTITY title "B"
+  ><!ENTITY % ent "D">
+  <!NOTATION ISO-8859-1 PUBLIC "W" "O" >
+  %ent;
+  <!--[ C ]--><!ELEMENT note (number,content+)>
+  <!ELEMENT number (#PCDATA)>
+  <!ELEMENT content (#PCDATA)>
+]>
+<notes>
+  <note id="N" xi:noNamespaceSchemaLocation="R">
+   <number>1<xi:fallback>x1</number>
+   <content>one <xi:include href="S">zero</xi:include> two<note>&title;</note></content>
+ </note>
+</notes> 
+
+  <!--Note: xi:include and xi:fallback are XInclude features -->
+  <!--Note: #ID, #PCDATA, #REQUIRED and #IMPLIED are used in the ATTLIST and ELEMENT in the DTD -->
+  <!--Note: %ent is used to include an parameter entity, which is a collection of entities in the entity definitions section, and can be referenced elsewhere in the document with an ampersand (&) and a percent (%) sign --> 
+   <!--Note:!ENTITY % ent is a parameter entity declaration, which is a collection of entities in the entity definitions section, and can be referenced elsewhere in the document with a percent sign (%)-->
+  <!--Note: &#x; is a character data entity. This character data entity is used to insert the decimal equivalent character specified by the decimal value when the document is processed as character data--> 
+  <!--Note: &#xD&#xa&#b&#11&#12; are all character data entities which can be used to insert the corresponding character in the document when it is processed as character data-->
+  <!--Note: &#xD; is a decimal character reference -->
+  <!--Note: &#b;  and &#11&#12; are both character reference entities by their decimal numbers, &#b; is the Unicode character U+0008, and &#11&#12; is a line separator character and a carriage return character. -->
+  <!--Note: &#x11;&amp;&#a; is similar to &#b; and represents different special characters: a carriage return symbol, and an ampersand which is an ampersand character in XML -->
+  <!--Note: In XML 1.0 the notation is always public. You can't create private notations. However, in XML 1.1, private notations can be created --> 
+  <!--Note: &#11; is similar to &#b;. The character for the first one is a carrriage return which is U+000D.&#11; is simply a carriage return-->
+  <!--Note: The XML 1.0 notation <!NOTATION x PUBLIC "A" "B" > is similar to the XML 1.1 notation <!NOTATION y SYSTEM "test" >. In XML 1.0, public notation is used which must include a public identifier, and a system identifier which can be used by the processor to locate the information. In XML 1.1, private notations can be used which must include a system identifier. -->
+  <!--Note: In XML the data types that can be used are numeric( #PCDATA or NMTOKEN ) ; characters (

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (title, author, publisher)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    price CDATA #IMPLIED
+  >
+]>
+<catalog>
+  <book id="1" price="19.99">
+    <title>XML for Beginners</title>
+    <author>John Doe</author>
+    <publisher>Wiley</publisher>
+  </book>
+  <book id="2">
+    <title>XML for Advanced Users</title>
+    <author>Jane Smith</author>
+    <publisher>O'Reilly</publisher>
+  </book>
+  <book id="3" price="29.99">
+    <title>XML for Experts</title>
+    <author>Bob Brown</author>
+    <publisher>McGraw-Hill</publisher>
+  </book>
+</catalog>

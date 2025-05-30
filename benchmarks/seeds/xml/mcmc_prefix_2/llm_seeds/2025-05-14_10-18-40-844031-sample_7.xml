@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+  <!ELEMENT book (chapter+, footnote*)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    lang (en|fr|de) "e"
+  >
+  <!ENTITY chapter1 "A">
+  <!ENTITY % chapter2-definitions "B">
+  <!NOTATION ISO-8859-1SYSTEM "h">
+  
+  %chapter2-definitions;
+  <!-->]>
+<book id="example" lang="en" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns="http://example.com/schema"
+  xsi:schemaLocation="http://example.com/schema example.xsd"
+  xsi:noNamespaceSchemaLocation="example.xsd"
+  xi:nil="true"
+  xsi:type="xs:string"
+  xsi:type="xs:integer"
+  xi:type="xs:date"
+  xi:type="xs:time"
+  xi:type="xs:gYear">
+  <chapter refid="reference1"><![CDATA[Norman]]></chapter>
+  <footnote><note>&chapter1;</note></footnote>
+  <footnote><note><![CDATA[note]]></note></footnote>
+</book> 
+
+<footnote idref="reference1"/>
+<reference id="reference1"><![CDATA[note]]></reference> 
+<element xmlns="namespace1"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xi:nil="true"
+	attribute1='value1' 
+	attribute2='value2'>
+  Text
+  xmlns:ns2="namespace2"
+</element> 
+<notation notationName="notation1" system="system1" publicId="publicId1"/>
+<!--><!-- --><!--   --><!--   --><!----><!--<!--><!----><!---->
+<!ELEMENT element (#PCDATA)>
+<!ELEMENT para (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT addressPart (#PCDATA)>
+<!ATTLIST addressPart
+  name CDATA #IMPLIED
+  id ID #IMPLIED
+>
+<!ELEMENT body (#PCDATA)>
+<!ELEMENT head (#PCDATA)>
+<!ELEMENT head1 (#PCDATA)>
+<!ELEMENT head2 (#PCDATA)>
+<!ELEMENT person (#PCDATA)> 
+<!ATTLIST person name CDATA #REQUIRED>
+<!ATTLIST person age CDATA #IMPLIED> 
+<!

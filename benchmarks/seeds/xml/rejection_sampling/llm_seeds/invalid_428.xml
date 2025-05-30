@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author,year,edition) >
+  <!ELEMENT title (#PCDATA) >
+  <!ELEMENT author (#PCDATA) >
+  <!ELEMENT year (#PCDATA) >
+  <!ELEMENT edition (#PCDATA) >
+  <!ELEMENT chapters (chapter+) >
+  <!ELEMENT chapter (#PCDATA) >
+  <!ELEMENT sections (section+) >
+  <!ELEMENT section (#PCDATA) >
+  <!ELEMENT paragraphs (paragraph+) >
+  <!ELEMENT paragraph (#PCDATA) >
+  <!ELEMENT figures (figure+) >
+  <!ELEMENT figure (#PCDATA) >
+  <!ELEMENT tables (table+) >
+  <!ELEMENT table (#PCDATA) >
+  <!ELEMENT rows (row+) >
+  <!ELEMENT row (#PCDATA) >
+  <!ELEMENT cols (col+) >
+  <!ELEMENT col (#PCDATA) >
+  <!ELEMENT headers (header+) >
+  <!ELEMENT header (#PCDATA) >
+  <!ELEMENT footers (footer+) >
+  <!ELEMENT footer (#PCDATA) >
+  <!ELEMENT references (reference+) >
+  <!ELEMENT reference (#PCDATA) >
+  <!ELEMENT bibliography (bibliography+) >
+  <!ELEMENT bibliography (#PCDATA) >
+  <!ELEMENT authors (author+) >
+  <!ELEMENT author (#PCDATA) >
+  <!ELEMENT titles (title+) >
+  <!ELEMENT title (#PCDATA) >
+  <!ELEMENT titles (title+) >
+  <!ELEMENT title (#PCDATA) >
+  <!ELEMENT footnotes (footnote+) >
+  <!ELEMENT footnote (#PCDATA) >
+  <!ELEMENT endnotes (endnote+) >
+  <!ELEMENT endnote (#PCDATA) >
+]>
+
+<book>
+  <title>The Book</title>
+  <author>Me</author>
+  <year>2023</year>
+  <edition>1</edition>
+  <chapters>
+    <chapter>Chapter 1</chapter>
+    <chapter>Chapter 2</chapter>
+  </chapters>
+  <sections>
+    <section>Section 1</section>
+    <section>Section 2</section>
+  </sections>
+  <paragraphs>
+    <paragraph>Paragraph 1</paragraph>
+    <paragraph>Paragraph 2</paragraph>
+  </paragraphs>
+  <figures>
+    <figure>Figure 1</figure>
+    <figure>Figure 2</figure>
+  </figures>
+  <tables>
+    <table

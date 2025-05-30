@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "http://example.com/dtd">
+<!ELEMENT document (title, section*, (section|paragraph)*)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT section (#PCDATA)>
+<!ELEMENT paragraph (#PCDATA)>
+<!ELEMENT item (#PCDATA)>
+<!ELEMENT items (item*)>
+<!ELEMENT list (items)>
+<!ATTLIST document
+  id CDATA #REQUIRED
+  lang CDATA #IMPLIED
+  xmlns CDATA #FIXED "http://example.com/ns"
+>
+<!ELEMENT chapter (#PCDATA)>
+<!ELEMENT book (chapter+, list)>
+<!ELEMENT figure (title, caption)>
+<!ELEMENT caption (#PCDATA)>
+<!ELEMENT image (#PCDATA)>
+<!ELEMENT table (caption, row+)>
+<!ELEMENT row (cell+)>
+<!ELEMENT cell (#PCDATA)>
+<!ELEMENT header (#PCDATA)>
+<!ELEMENT footer (#PCDATA)>
+<!ELEMENT pagebreak (#PCDATA)>
+<!ELEMENT bibliography (item*)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT editors (editor*)>
+<!ELEMENT editor (#PCDATA)>
+<!ELEMENT titlepage (title, subtitle)>
+<!ELEMENT subtitle (#PCDATA)>
+<!ELEMENT dedication (#PCDATA)>
+<!ELEMENT preface (#PCDATA)>
+<!ELEMENT introduction (#PCDATA)>
+<!ELEMENT acknowledgements (#PCDATA)>
+
+<document id="example" lang="en" xmlns="http://example.com/ns">
+  <title>This is a title</title>
+  <section>This is a section</section>
+  <section>This is another section</section>
+  <paragraph>This is a paragraph</paragraph>
+  <paragraph>This is another paragraph</paragraph>
+  <list>
+    <items>
+      <item>Item 1</item>
+      <item>Item 2</item>
+      <item>Item 3</item>
+    </items>
+  </list>
+  <book>
+    <chapter>Chapter 1</chapter>
+    <chapter>Chapter 2</chapter>
+    <list>
+      <items>
+        <item>Item 4</item>
+        <item>Item 5</item>
+        <item>Item 6</item>
+      </items>
+    </list>
+  </book>
+  <figure>
+    <title>Figure 1</title>
+    <caption>This is a caption</caption>
+    <image>This is an image</image>
+  </figure>
+  <table>
+    <caption>This is

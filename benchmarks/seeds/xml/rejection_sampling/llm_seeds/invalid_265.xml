@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE root [
+  <!ELEMENT root (head, body) >
+  <!ELEMENT head (#PCDATA) >
+  <!ELEMENT body (section*, (section | paragraph)*) >
+  <!ELEMENT section (#PCDATA) >
+  <!ELEMENT paragraph (#PCDATA) >
+  <!ATTLIST section
+    id CDATA #IMPLIED
+    class CDATA #IMPLIED
+    style CDATA #IMPLIED
+  >
+  <!ELEMENT link (#PCDATA) >
+  <!ATTLIST link
+    href CDATA #IMPLIED
+    title CDATA #IMPLIED
+  >
+  <!ELEMENT img (#PCDATA) >
+  <!ATTLIST img
+    src CDATA #IMPLIED
+    alt CDATA #IMPLIED
+    width CDATA #IMPLIED
+    height CDATA #IMPLIED
+  >
+]>
+<root>
+  <head>Header</head>
+  <body>
+    <section id="section1" class="cls1" style="color:blue;">This is a section.</section>
+    <section id="section2" class="cls2">This is another section.</section>
+    <paragraph>This is a paragraph with a link <link href="http://www.google.com" title="Google">Google</link> and an image <img src="http://www.google.com/intl/en_ALL/images/logo.gif" alt="Google Logo" width="100" height="100">.</paragraph>
+  </body>
+</root>  <!--  -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Sample Document</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="This is a sample document" />
+    <meta name="keywords" content="sample,document" />
+  </head>
+  <body>
+    <p>This is a paragraph of text.</p>
+    <p>This is another paragraph of text.</p>
+    <h1>This is a heading.</h1>
+    <h2>This is a subheading.</h2>
+    <h3>This is a sub-subheading.</h3>
+    <h4>This is a sub-sub-subheading.</h4>

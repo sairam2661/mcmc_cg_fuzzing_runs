@@ -1,0 +1,98 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix data_types
+
+set ::timeout 60000
+
+proc double_test {} {
+  global doubleargs
+  lappend doubleargs
+}
+proc int_test {} {
+  global intargs
+  lappend intargs
+}
+proc char_test {} {
+  global charargs
+  lappend charargs
+}
+
+do_test data_types-1.1 {
+  llength {}
+} {0}
+
+do_test data_types-1.2 {
+  append {} 123
+  llength {}
+} {0}
+
+do_test data_types-2.1 {
+  append {} 456.789
+  expr {123.321}
+  llength {}
+} {123.321}
+
+do_test data_types-2.2 {
+  append {} "hello"
+  for {set i 0} {$i STRING_SIZE} {incr i} {
+    expr {$i}
+  }
+  llength {}
+} {"hello"}
+
+do_execsql_test data_types-3.1 {
+  CREATE TABLE double(d);
+}
+{0 {}}
+
+do_execsql_test data_types-3.2 {
+  CREATE TABLE int(i);
+}
+{0 {}}
+
+do_execsql_test data_types-3.3 {
+  CREATE TABLE char(c);
+}
+{0 {}}
+
+do_execsql_test data_types-4.1 {
+  INSERT INTO double VALUES(123.45);
+  SELECT * FROM double;
+} {123.45}
+
+do_execsql_test data_types-4.2 {
+  INSERT INTO int VALUES(678);
+  SELECT * FROM int;
+} {678}
+
+do_execsql_test data_types-4.3 {
+  INSERT INTO char VALUES('world');
+  SELECT * FROM char;
+} {"world"}
+
+do_test data_types-5.1 {
+  sqlite_dbhandle {}
+} {}
+
+do_test data_types-5.2 {
+  double_test
+  int_test
+  char_test
+  set envvar {foo}
+  set globalvar {bar}
+  set localvar {foo}
+} {bar}
+
+do_test data_types-6.1 {
+  set doubleargs
+} {}
+
+do_test data_types-6.2 {
+  set intargs
+} {}
+
+do_test data_types-6.3 {
+  set charargs
+} {}
+
+finish_test

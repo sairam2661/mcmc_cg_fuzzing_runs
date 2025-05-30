@@ -1,0 +1,29 @@
+set    testdir  		  { 	
+		 file 
+		
+	 dirname   $argv0 	 }  	 source   $testdir/tester.tcl 		 set   
+
+ testprefix 
+ AL 
+ set  	 timeout 
+ 60000 	 				 set 
+ l_ 	 { 
+ 	 }    	
+  	  proc  	 I   J  	   {  }     	  	  do_execsql_test 
+  Y 	  -  9 3 
+ .  9  
+ {  	 ROLLBACK   	 ;  INSERT INTO  I0_  
+ ( 
+	 B  	  ) 
+ SELECT 	 960     	 
+
+ ; 
+	 INSERT INTO  	 o   ( 	 kZ    )   VALUES 
+
+ ( 
+	  "He"      
+   )   	 ; 			
+ SELECT 
+ "]T"     	 FROM  b      }   ""     
+
+  finish_test    

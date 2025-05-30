@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<!DOCTYPE note SYSTEM "note.dtd">
+<note id="1" xmlns="http://www.example.org/notes">
+  <to name="John">john@example.org</to>
+  <from name="Jane">jane@example.org</from>
+  <heading>Reminder</heading>
+  <body>This is a reminder.</body>
+  <date>2002-10-12</date>
+  <priority>high</priority>
+  <category>
+    <item>Work</item>
+    <item>Personal</item>
+  </category>
+  <attachments>
+    <file name="example.txt">This is a text file.</file>
+    <file name="example2.txt">This is another text file.</file>
+  </attachments>
+  <note id="2" xmlns="http://www.example.org/notes">
+    <to name="Jim">jim@example.org</to>
+    <from name="Jane">jane@example.org</from>
+    <heading>Meeting</heading>
+    <body>This is a meeting note.</body>
+    <date>2002-10-15</date>
+    <priority>low</priority>
+    <category>
+      <item>Work</item>
+    </category>
+  </note>
+</note> 
+
+<!ENTITY % p1 "p1">
+<!ENTITY % p2 "p2">
+<!ENTITY % p3 "p3">
+<!ENTITY % p4 "p4">
+<!ENTITY % p5 "p5">
+<!ENTITY % p6 "p6">
+<!ENTITY % p7 "p7">
+<!ENTITY % p8 "p8">
+<!ENTITY % p9 "p9">
+<!ENTITY % p10 "p10">
+<!ENTITY % p11 "p11">
+<!ENTITY % p12 "p12">
+<!ENTITY % p13 "p13">
+<!ENTITY % p14 "p14">
+<!ENTITY % p15 "p15">
+<!ENTITY % p16 "p16">
+<!ENTITY % p17 "p17">
+<!ENTITY % p18 "p18">
+<!ENTITY % p19 "p19">
+<!ENTITY % p20 "p20">
+<!ATTLIST %p1; attr1 CDATA #REQUIRED>
+<!ATTLIST %p2; attr2 CDATA #IMPLIED>
+<!ATTLIST %p3; attr3 CDATA #IMPLIED>
+<!ATTLIST %

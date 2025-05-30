@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root [
+<!ENTITY % ent SYSTEM "ent.xml">
+<!ENTITY % ext SYSTEM "http://example.com/ext.xml">
+<!ELEMENT root (#PCDATA | root | root | %ext; | %ent;)*>
+<!ELEMENT ent (#PCDATA | root | %ext;)*>
+<!ELEMENT ext (#PCDATA | root | %ent;)*>
+<!ATTLIST root id CDATA #REQUIRED>
+<!ATTLIST root lang CDATA #IMPLIED>
+<!ATTLIST root xmlns CDATA #IMPLIED>
+<!ATTLIST root xmlns:pref CDATA #IMPLIED>
+<!ATTLIST root xmlns:ns CDATA #IMPLIED>
+<!ATTLIST root xmlns:xs CDATA #IMPLIED>
+<!ATTLIST root xmlns:xi CDATA #IMPLIED>
+<!ATTLIST root xmlns:xml CDATA #IMPLIED>
+<!ATTLIST root xmlns:xsi CDATA #IMPLIED>
+<!ATTLIST root xmlns:xlink CDATA #IMPLIED>
+<!ATTLIST root xmlns:xsl CDATA #IMPLIED>
+<!ATTLIST root xmlns:soap CDATA #IMPLIED>
+<!ATTLIST root xmlns:dc CDATA #IMPLIED>
+<!ATTLIST root xmlns:cal CDATA #IMPLIED>
+<!ATTLIST root xmlns:op CDATA #IMPLIED>
+<!ATTLIST root xmlns:app CDATA #IMPLIED>
+<!ATTLIST root xmlns:dv CDATA #IMPLIED>
+<!ATTLIST root xmlns:ns2 CDATA #IMPLIED>
+<!ATTLIST root xmlns:ns3 CDATA #IMPLIED>
+<!ATTLIST root xmlns:ns4 CDATA #IMPLIED>
+<!ATTLIST root xmlns:ns5 CDATA #IMPLIED>
+<!ATTLIST root xmlns:ns6 CDATA #IMPLIED>
+<!ATTLIST root xmlns:ns7 CDATA #IMPLIED>
+<!ATTLIST root xmlns:ns8 CDATA #IMPLIED>
+<!ATTLIST root xmlns:ns9 CDATA #IMPLIED>
+<!ATTLIST root xmlns:ns10 CDATA #IMPLIED>
+<!ATTLIST root xmlns:ns11 CDATA #IMPLIED>
+<!ATTLIST root xmlns:ns12 CDATA #IMPLIED>
+<!ATTLIST root xmlns:ns13 CDATA #IMPLIED>
+<!ATTLIST root xmlns:ns14 CDATA #IMPLIED>
+<!ATTLIST root xmlns:ns15 CDATA #IMPLIED>
+<!ATTLIST root xmlns:ns16 CD

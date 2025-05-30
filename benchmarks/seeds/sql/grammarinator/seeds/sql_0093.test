@@ -1,0 +1,56 @@
+set 
+
+ testdir 
+ { 
+ file 	 dirname 
+ $argv0  }  
+ source 
+ $testdir/tester.tcl  
+ set   	 testprefix 	 N_4   set  
+ 
+	 timeout 	
+ 60000   set 	 T_ 
+  $::T   	
+    set  	  y  	 {  	 { 	 } 
+    
+ 
+ 
+ } 
+  	   
+  do_execsql_test 	 W   - 
+ 3 3 7 7 
+ .  
+ 0 4 8  
+ {  
+
+ WITH 	 q_D8_E0 
+ ( 
+  Z431   ) 
+
+ 	
+  AS  (  
+ SELECT  
+ *    	 FROM 
+ 	 bf_   
+
+ UNION ALL 	 SELECT   G  
+	 
+ (  	 *  )   FROM 
+ iP   	 UNION ALL   SELECT 
+ Z  	 FROM  w  
+	 WHERE  
+ OfEYP_ED  = 
+ 	 118     	 UNION ALL   PRAGMA   u 		 =   ""    	 UNION ALL 	 INSERT INTO 	  Je 
+ VALUES  	
+ (  ''  
+	 ,  "'"  		 ,  
+ 		 ""   			 )    	  UNION ALL 
+ BEGIN  EXCLUSIVE   	 UNION ALL 	 SELECT 	 count(*)   FROM  F   WHERE   J   = 
+
+ 30      
+ )  SELECT    263   
+ FROM 
+
+
+ i7       ;  	  } 	 {  }  	         finish_test 	
+  

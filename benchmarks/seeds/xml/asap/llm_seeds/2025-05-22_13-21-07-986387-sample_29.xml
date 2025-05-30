@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE glossary [
+  <!ELEMENT glossary (term+)>
+  <!ATTLIST glossary
+    id ID #REQUIRED
+    lang (en|fr|de) "c"
+  >
+  <!ENTITY percent "&#37;">
+  <!ENTITY % entities "c" >
+  <!NOTATION svg SYSTEM "3">
+  %entities;
+  <!--[<!ENTITY c "character entity">]-->  
+]>
+<glossary id="g" lang="c" xmlns:xi="x">
+  <term><![CDATA[<raw> char ]]></term>
+  <term>Entity: &c;</term>
+  <term>&percent;age</term>
+  <term>&note;</term>
+  <term xi:include.href="z"></term>
+</glossary>

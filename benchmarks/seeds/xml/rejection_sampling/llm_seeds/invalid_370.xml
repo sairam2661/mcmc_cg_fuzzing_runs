@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:fb="http://www.facebook.com/2008/fbml"
+      xmlns:og="http://opengraphprotocol.org/schema/"
+      xmlns:fb="http://www.facebook.com/2008/fbml">
+  <head>
+    <title>Example Document</title>
+    <meta name="keywords" content="example, document"/>
+    <meta name="description" content="This is an example document."/>
+    <link rel="stylesheet" type="text/css" href="example.css"/>
+    <script type="text/javascript" src="example.js"></script>
+    <style>
+      body { background-color: #f2f2f2; }
+      #container { width: 800px; margin: 0 auto; }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>Example Document</h1>
+      <p>This is an example document.</p>
+      <img src="example.jpg" alt="An example image"/>
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+      </ul>
+      <fb:like href="http://www.example.com" layout="button_count" width="450" height="80" show_faces="false"/>
+      <og:title>Example Document</og:title>
+      <og:description>This is an example document.</og:description>
+      <og:image>example.jpg</og:image>
+      <og:url>http://www.example.com</og:url>
+    </div>
+  </body>
+</html>

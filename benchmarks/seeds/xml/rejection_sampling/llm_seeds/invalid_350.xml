@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!ELEMENT book (title,author,editor,year)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT editor (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+<!ATTLIST book
+  id ID #REQUIRED
+  lang CDATA #IMPLIED
+  version CDATA #IMPLIED
+  source CDATA #IMPLIED
+  date CDATA #IMPLIED
+  creator CDATA #IMPLIED
+  title CDATA #IMPLIED
+  author CDATA #IMPLIED
+  editor CDATA #IMPLIED
+  year CDATA #IMPLIED
+>
+<!ENTITY % book.entity "book">
+<!ELEMENT %book.entity; (title,author,editor,year)>
+<!ATTLIST %book.entity; 
+  id ID #REQUIRED
+  lang CDATA #IMPLIED
+  version CDATA #IMPLIED
+  source CDATA #IMPLIED
+  date CDATA #IMPLIED
+  creator CDATA #IMPLIED
+  title CDATA #IMPLIED
+  author CDATA #IMPLIED
+  editor CDATA #IMPLIED
+  year CDATA #IMPLIED
+>
+<!ENTITY % book.id "ID">
+<!ENTITY % book.lang "CDATA">
+<!ENTITY % book.version "CDATA">
+<!ENTITY % book.source "CDATA">
+<!ENTITY % book.date "CDATA">
+<!ENTITY % book.creator "CDATA">
+<!ENTITY % book.title "CDATA">
+<!ENTITY % book.author "CDATA">
+<!ENTITY % book.editor "CDATA">
+<!ENTITY % book.year "CDATA">
+<!ENTITY % book.title2 "title">
+<!ENTITY % book.author2 "author">
+<!ELEMENT %book.title2; (#PCDATA)>
+<!ELEMENT %book.author2; (#PCDATA)>
+<!ATTLIST %book.title2; 
+  id %book.id; #IMPLIED
+  lang %book.lang; #IMPLIED
+  version %book.version; #IMPLIED
+  source %book.source; #IMPLIED
+  date %book.date; #IMPLIED
+  creator %book.creator; #IMPLIED
+>
+<!ATTLIST %book.author2; 
+  id %book.id; #IMPLIED
+  lang %book.lang; #IMPLIED
+  version %book.version; #IMPLIED
+  source %book.source; #IMPLIED
+  date %book.date; #IMPLIED
+  creator %book.creator; #IMPLIED
+>
+]>
+<book id="bk1" lang="en" version="2.0" source="https://www

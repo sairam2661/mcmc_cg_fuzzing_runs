@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE notes [
+<!ELEMENT notes (note+)>
+<!ELEMENT note (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+<!ELEMENT header (title, date, from, to)>
+<!ATTLIST note id CDATA #REQUIRED>
+<!ATTLIST note type (note|meeting|event) "note">
+<!ATTLIST header version CDATA #REQUIRED>
+<!ENTITY % noteEntities SYSTEM "noteentities.xml">
+<!ENTITY % headerEntities SYSTEM "headerentities.xml">
+<!ENTITY % bodyEntities SYSTEM "bodyentities.xml">
+<!ENTITY % footerEntities SYSTEM "footerentities.xml">
+<!ENTITY % entities SYSTEM "entities.xml">
+<!ENTITY % noteref SYSTEM "noteref.xml">
+<!ENTITY % ref SYSTEM "ref.xml">
+<!ENTITY % extref SYSTEM "extref.xml">
+<!ENTITY % extref2 SYSTEM "extref2.xml">
+<!ENTITY % extref3 SYSTEM "extref2.xml">
+<!ENTITY % extref4 SYSTEM "extref2.xml">
+<!ENTITY % extref5 SYSTEM "extref2.xml">
+<!ENTITY % extref6 SYSTEM "extref2.xml">
+<!ENTITY % extref7 SYSTEM "extref2.xml">
+<!ENTITY % extref8 SYSTEM "extref2.xml">
+<!ENTITY % extref9 SYSTEM "extref2.xml">
+<!ENTITY % extref10 SYSTEM "extref2.xml">
+<!ENTITY % extref11 SYSTEM "extref2.xml">
+<!ENTITY % extref12 SYSTEM "extref2.xml">
+<!ENTITY % extref13 SYSTEM "extref2.xml">
+<!ENTITY % extref14 SYSTEM "extref2.xml">
+<!ENTITY % extref15 SYSTEM "extref2.xml">
+<!ENTITY % extref16 SYSTEM "extref2.xml">
+<!ENTITY % extref17 SYSTEM "extref2.xml">
+<!ENTITY % extref18 SYSTEM "extref2.xml">
+<!ENTITY % extref19 SYSTEM "extref2.xml">
+<!ENTITY % extref20 SYSTEM "extref2.xml">
+<!ENTITY % extref21 SYSTEM "extref2.xml">
+<!ENTITY % extref22 SYSTEM "extref2.xml">
+<!ENTITY % extref23 SYSTEM "extref2.xml">
+<!ENTITY % extref24 SYSTEM "extref2.xml">
+<!ENTITY % extref25 SYSTEM "ext

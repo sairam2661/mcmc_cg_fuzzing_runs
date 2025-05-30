@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE complex-data [
+  <!ELEMENT complex-data (header,section*,footer)>
+  <!ATTLIST complex-data id ID #REQUIRED>
+  <!ENTITY title "G">
+  <!ENTITY  %idvalues "A">  
+  <!NOTATION ISO-8859-1 SYSTEM "A">
+  %idvalues;
+  <!--%ISO-->]>
+<complex-data id="1" xmlns:xi="x" xmlns="y">
+  <header>
+    <title entity-ref="#">G</title>
+  </header>
+  <section>
+    <p>Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah!</p>
+  </section>
+  <section>
+    <p>&ISO-8859-1;</p>
+  </section>
+</complex-data>

@@ -1,0 +1,33 @@
+set  	
+ testdir   {  file 
+ dirname 
+ $argv0 	 } 
+	   source   $testdir/tester.tcl 	 set   testprefix  
+
+	  w  set 	   timeout 
+
+ 60000   set 
+  f5  {  			 {   } 		     }  	  
+
+ 	  	
+  set   D 		
+			 { 
+ SELECT 
+	 *  
+ FROM   k_  
+	 WHERE 	 Q 		 =  'm'      		 ;  	 COMMIT   
+ ;   CREATE TABLE   r5 
+ ( 
+  g45   	 ,   q4L 
+ r   	 , 
+ KQ 
+
+ Mr_WY     	 DEFAULT 	 3.10   		 UNIQUE     , 		 O 	 l    	 )      }  
+  	  do_execsql_test 	 o  - 	 1 3 5 1  . 
+
+			 3 4  	 { 	 PRAGMA 		 F     ;   
+ } 
+ {  
+ }  
+      
+  finish_test 	  

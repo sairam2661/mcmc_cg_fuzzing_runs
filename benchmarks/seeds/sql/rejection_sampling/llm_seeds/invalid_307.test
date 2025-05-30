@@ -1,0 +1,89 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix sync
+
+proc sync_proc {} {
+  global syncargs
+  lappend syncargs
+  expr {[llength $syncargs] <= 2}
+}
+
+do_test sync-1.1 {
+  execsql {
+    CREATE TABLE a(x);
+    INSERT INTO a VALUES(1),(2),(3);
+  }
+  execsql {SELECT count(*) FROM a}
+} {3}
+
+ifcapable journalMode {
+  catchsql {PRAGMA journal_mode=WAL}
+} {0 {}}
+
+ifcapable rtree {
+  do_test sync-1.2 {
+    db eval {
+      CREATE VIRTUAL TABLE rtree USING rtree(id, x1, y1, x2, y2);
+      CREATE TABLE b(id INTEGER PRIMARY KEY, x, y);
+      CREATE TRIGGER b_insert AFTER INSERT ON b FOR EACH ROW
+        WHEN (SELECT count(*) FROM rtree WHERE x1 <= NEW.x AND NEW.x < x2) > 0
+        BEGIN
+          UPDATE rtree SET y1 = y1 + 1 WHERE id = NEW.id;
+        END;
+    }
+  }
+}
+
+do_test sync-1.3 {
+  execsql {
+    INSERT INTO b VALUES(1, 5, 5);
+    INSERT INTO b VALUES(2, 10, 10);
+  }
+  execsql {SELECT * FROM b}
+} {1 5 5 2 10 10}
+
+do_test sync-1.4 {
+  execsql {
+    SELECT * FROM rtree
+  }
+} {1 6 6 6 6 2 11 11 11 11}
+
+do_test sync-1.5 {
+  execsql {
+    SELECT * FROM b
+  }
+} {1 5 5 2 10 10}
+
+do_test sync-1.6 {
+  execsql {
+    SELECT * FROM rtree
+  }
+} {1 6 6 6 6 2 11 11 11 11}
+
+ifcapable vacuum {
+  do_test sync-1.7 {
+    execsql {
+      VACUUM;
+    }
+  }
+}
+
+do_test sync-1.8 {
+  execsql {
+    CREATE TABLE c(x PRIMARY KEY, y);
+    INSERT INTO c VALUES(1, 1);
+    INSERT INTO c VALUES(2, 2);
+    DELETE FROM c WHERE x = 2;
+  }
+  execsql {SELECT count(*) FROM c}
+} {1}
+
+ifcapable vacuum {
+  do_test sync-1.9 {
+    execsql {
+      VACUUM;
+    }
+  }
+}
+
+finish_test

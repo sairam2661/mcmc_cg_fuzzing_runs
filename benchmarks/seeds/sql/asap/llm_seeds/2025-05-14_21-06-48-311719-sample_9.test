@@ -1,0 +1,107 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix journalMode
+
+set ::timeout 60000
+
+proc test_jm {} {
+  global journal_mode wal_mode
+  expr {$journal_mode ne "WAL" $wal_mode ne "WAL"}
+}
+
+do_test journalMode-1.1 {
+  execsql {
+    CREATE TABLE t1(x);
+    INSERT INTO t1 VALUES(1);
+    SELECT x FROM t1
+  }
+} {1}
+
+do_execsql_test journalMode-2.1 {
+  PRAGMA journal_mode
+} {delete}
+
+do_execsql_test journalMode-2.2 {
+  PRAGMA journal_mode='WAL'
+} {WAL}
+
+do_execsql_test journalMode-2.3 {
+  SELECT x FROM t1
+} {1}
+
+do_execsql_test journalMode-3.1 {
+  BEGIN;
+  INSERT INTO t1 VALUES(2);
+  COMMIT;
+  SELECT x FROM t1
+} {1 2}
+
+do_execsql_test journalMode-3.2 {
+  BEGIN;
+  PRAGMA journal_mode
+} {WAL}
+do_execsql_test journalMode-3.3 {
+  COMMIT;
+  PRAGMA journal_mode
+} {WAL}
+
+do_execsql_test journalMode-4.1 {
+  PRAGMA wal_checkpoint
+} {}
+
+do_execsql_test journalMode-4.2 {
+  PRAGMA wal_checkpoint=2
+} {}
+
+do_execsql_test journalMode-4.3 {
+  PRAGMA wal_checkpoint
+} {}
+
+set default_mode {wal}
+
+do_test journalMode-5.1 {
+  execsql {
+    CREATE TABLE t2(x);
+    INSERT INTO t2 VALUES(1);
+  }
+  execsql {SELECT x FROM t2}
+} {1}
+
+do_execsql_test journalMode-5.2 {
+  PRAGMA journal_mode ='memory'
+} {}
+
+do_execsql_test journalMode-5.3 {
+  SELECT x FROM t2
+} {1}
+
+do_execsql_test journalMode-5.4 {
+  PRAGMA journal_mode
+} {memory}
+
+do_test journalMode-5.5 {
+  execsql {
+    SELECT x FROM t2
+  } {} journal_mode {wal}
+  execsql {SELECT x FROM t2} 0 journal_mode {memory}
+} {}
+do_execsql_test journalMode-1.5 {
+   SELECT x FROM t2
+} {1}
+
+do_execsql_test journalMode-6.1 {
+  PRAGMA journal_mode = 'WAL'
+} {WAL}
+
+ifcapable journalMode {
+  do_test journalMode-7.1 {
+    execsql {
+      BEGIN;
+      INSERT INTO t1 VALUES(3);
+      COMMIT;
+      SELECT x FROM t1
+    }
+  } {1 2 3}
+} journal_mode {delete}
+
+finish_test

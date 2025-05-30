@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE note SYSTEM "n" [
+  <!ELEMENT note (#PCDATA | title | category | body | author | ref | subnote | note)>
+  <!ATTLIST note type CDATA #REQUIRED>
+  <!ENTITY pi SYSTEM "p">
+  <!ENTITY % i "#"
+     >
+  <!NOTATION html SYSTEM "h">
+  %i;<!-- Notation -->
+]>
+<note type="m">A personal note for you.
+  <title>My Note</title>
+  <category>personal</category>
+  <body>Here is the body of the note.</body>
+  <author>you</author>
+  <ref SYSTEM="r">
+    A quick reference: 
+      <p>Example of a paragraph in the reference.</p>
+    &pi;
+  </ref>
+  <subnote>
+    A sub-note:
+    <p>Here is another paragraph in the sub-note.</p>
+  </subnote>
+</note>

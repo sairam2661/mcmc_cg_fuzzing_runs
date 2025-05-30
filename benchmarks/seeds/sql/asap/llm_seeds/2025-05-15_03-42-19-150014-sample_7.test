@@ -1,0 +1,87 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix large_test
+
+set ::timeout 60000
+
+proc large_proc {} {
+  global timeoout
+  list $timeoout {}
+}
+
+catch {execsql {
+  PRAGMA synchronous=2;
+  PRAGMA journal_mode=1;
+}}
+
+execsql {
+  CREATE TABLE t3(a);
+  CREATE TABLE t4(b);
+  INSERT INTO t3 VALUES('a');
+  INSERT INTO t4 VALUES('b');
+  CREATE TABLE t1(a,b,c,d DEFAULT 'hello',e);
+  CREATE TABLE t4_view(x,y);
+  CREATE TABLE t2(x,FOREIGN_KEY_ERROR PRIMARY KEY,y);
+
+  CREATE TABLE t13(c,n DEFAULT 'n');
+
+  CREATE INDEX z2 ON t2(c);
+  CREATE INDEX xx ON t1(x);
+  CREATE INDEX t1_a ON t1(a);
+  CREATE INDEX t1_b ON t1(b);
+  CREATE INDEX t2_b ON t2(b);
+  CREATE INDEX t2_d ON t2(d);
+  CREATE INDEX t2_x ON t2(x);
+
+  CREATE TABLE t6(
+    p,
+    a,b,c DEFAULT 'd'
+  );
+  CREATE TABLE t5(
+    f DEFAULT 'x',a,b,c,
+    k,
+    c2,a2 DEFAULT 'e',
+    d,k2 DEFAULT 'y' DEFAULT 'z'
+  );
+
+  CREATE TABLE t0(
+    d,v,DEFAULT,
+    a2 DEFAULT 'b',
+    PRIMARY_KEY DEFAULT 'c'
+  );
+}
+
+do_test large-0.1 {
+  execsql {PRAGMA table_info = 't2'}
+} {3 {x} 0 {} {} {FOREIGN_KEY_ERROR} 1 1}
+do_test large-0.2 {
+  execsql {SELECT name FROM sqlite_master WHERE type='table' }
+} {{t0} {t5} {t4_view} {t1}}
+do_test large-0.3 {
+  catchsql {ALTER TABLE t0 RENAME TO new_name}
+} {1 {Cannot add a PRIMARY KEY constraint on table "t0"}}
+do_test large-0.4 {
+  catchsql {ALTER TABLE t0 ADD column1 integer}
+} {1 {Cannot add a column with default value on table "t0"}}
+do_test large-0.5 {
+  execsql {SELECT name FROM sqlite_master}
+} {{t2} {t6} {t4_view} {t3} {t1} {t13} {t0} {t5}}
+do_execsql_test large-0.6 {
+  BEGIN;
+  INSERT INTO t5 VALUES('x',1,4,9);
+  COMMIT;
+}
+  "{9}"
+set sqlite_test_db_name testLargeDb
+
+do_test large-0.7 {
+  execsql {PRAGMA page_size}
+} 1024
+do_test large-0.8 {
+  execsql {SELECT sql FROM sqlite_master WHERE type='table' }
+} {1 {CREATE TABLE t1(a,b,c,d DEFAULT 'hello',e)}}  
+do_test large-0.9 {
+  execsql { SELECT sql FROM sqlite_master ORDER BY name LIMIT 2}
+} {1 {CREATE TABLE t0(d,v,DEFAULT,a2 DEFAULT 'b',PRIMARY_KEY DEFAULT 'c')} {CREATE TABLE t5(f DEFAULT 'x',a,b,c,k,c2,a2 DEFAULT 'e',d,k2 DEFAULT 'y' DEFAULT 'z')}}
+
+finish_test

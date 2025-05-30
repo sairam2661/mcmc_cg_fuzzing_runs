@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE note SYSTEM 'note.dtd'>
+<!ENTITY % entity 'Entity defined by %entity;'>
+<!ENTITY % entity2 'Entity2 defined by %entity2;'>
+<!ENTITY % entity3 'Entity3 defined by %entity3;'>
+<!ENTITY % entity4 'Entity4 defined by %entity4;'>
+<!ENTITY % entity5 'Entity5 defined by %entity5;'>
+<!ENTITY % entity6 'Entity6 defined by %entity6;'>
+<!ENTITY % entity7 'Entity7 defined by %entity7;'>
+<!ENTITY % entity8 'Entity8 defined by %entity8;'>
+<!ENTITY % entity9 'Entity9 defined by %entity9;'>
+<!ENTITY % entity10 'Entity10 defined by %entity10;'>
+<!ENTITY % entity11 'Entity11 defined by %entity11;'>
+<!ENTITY % entity12 'Entity12 defined by %entity12;'>
+<!ENTITY % entity13 'Entity13 defined by %entity13;'>
+<!ENTITY % entity14 'Entity14 defined by %entity14;'>
+<!ENTITY % entity15 'Entity15 defined by %entity15;'>
+<!ENTITY % entity16 'Entity16 defined by %entity16;'>
+<!ENTITY % entity17 'Entity17 defined by %entity17;'>
+<!ENTITY % entity18 'Entity18 defined by %entity18;'>
+<!ENTITY % entity19 'Entity19 defined by %entity19;'>
+<!ENTITY % entity20 'Entity20 defined by %entity20;'>
+<!ENTITY % entity21 'Entity21 defined by %entity21;'>
+<!ENTITY % entity22 'Entity22 defined by %entity22;'>
+<!ENTITY % entity23 'Entity23 defined by %entity23;'>
+<!ENTITY % entity24 'Entity24 defined by %entity24;'>
+<!ENTITY % entity25 'Entity25 defined by %entity25;'>
+<!ENTITY % entity26 'Entity26 defined by %entity26;'>
+<!ENTITY % entity27 'Entity27 defined by %entity27;'>
+<!ENTITY % entity28 'Entity28 defined by %entity28;'>
+<!ENTITY % entity29 'Entity29 defined by %entity29;'>
+<!ENTITY % entity30 'Entity30 defined by %entity30;'>
+<!ENTITY % entity31 'Entity31 defined by %entity31;'>
+<!ENTITY % entity32 'Entity32 defined by %entity32;'>
+<!ENTITY % entity33 'Entity33 defined

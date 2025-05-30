@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-16"?>
+<!DOCTYPE dataset [
+  <!ELEMENT dataset (record+, attr?)>
+  <!ATTLIST dataset id CDATA #REQUIRED>
+  <!ENTITY desc "I"
+    	><!ENTITY % ent "x" >
+  <!NOTATION HTML PUBLIC "-"
+    "/"
+    >
+  %ent;
+  <!--
+    %note;
+  -->
+]>
+<dataset xmlns:xsi="w"
+  id="1" xsi:schemaLocation="h">
+  <record>1 2 3</record>
+  <record>4 5 6</record>
+  <attr>extra attribute</attr>
+</dataset>

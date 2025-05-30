@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog SYSTEM "catalog.dtd">
+<!ENTITY % entities SYSTEM "entities.ent">
+<!ENTITY % general SYSTEM "general.ent">
+<!ENTITY % namespaces SYSTEM "namespaces.ent">
+<!ENTITY % schemaloc SYSTEM "schemaloc.ent">
+<!ENTITY % schemaloc SYSTEM "schemaloc.ent">
+<!ATTLIST catalog
+    id ID #REQUIRED
+    lang CDATA #IMPLIED
+    revision CDATA #IMPLIED
+    schema-location CDATA #IMPLIED
+    >
+<catalog id="c1" lang="en" revision="1.0" schema-location="http://example.com/schema">
+    <product>
+        <name lang="en">Product 1</name>
+        <description lang="fr">Description de produit 1</description>
+        <price currency="EUR">19.99</price>
+        <product-attributes>
+            <attribute name="color" value="red"/>
+            <attribute name="size" value="large"/>
+        </product-attributes>
+        <product-images>
+            <image url="image1.jpg" alt="Image 1"/>
+            <image url="image2.jpg" alt="Image 2"/>
+        </product-images>
+    </product>
+</catalog>

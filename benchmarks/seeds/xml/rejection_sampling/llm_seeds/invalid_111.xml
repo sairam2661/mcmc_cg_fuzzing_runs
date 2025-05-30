@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE book SYSTEM 'book.dtd'>
+<book id='BK123' lang='en'>
+    <title>XML for Dummies</title>
+    <author>John Doe</author>
+    <copyright notice='&copy; 2022' year='2022'/>
+    <publisher>
+        <name>ABC Press</name>
+        <address>
+            <street>123 Main St</street>
+            <city>Anytown</city>
+            <state>CA</state>
+            <country>USA</country>
+        </address>
+        <phone>555-1234</phone>
+    </publisher>
+    <copyright notice='&copy; 2022' year='2022'/>
+    <chapter id='CH1'>
+        <title>Introduction to XML</title>
+        <abstract>This is a sample abstract.</abstract>
+        <section id='SE1'>
+            <title>What is XML?</title>
+            <para>This is a sample paragraph.</para>
+        </section>
+        <section id='SE2'>
+            <title>XML Syntax</title>
+            <para>This is another sample paragraph.</para>
+        </section>
+    </chapter>
+</book>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note SYSTEM "note.dtd">
+<!ENTITY % ent SYSTEM "ent.ent">
+<!ENTITY % atts SYSTEM "atts.ent">
+<!ENTITY % s SYSTEM "s.ent">
+<!ENTITY % e SYSTEM "e.ent">
+<!ELEMENT note (to,from,heading,body)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+<!ATTLIST note
+    id ID #REQUIRED
+    date CDATA #IMPLIED
+    to CDATA #IMPLIED
+    from CDATA #IMPLIED
+    >
+<!ATTLIST to
+    addr CDATA #IMPLIED
+    >
+<!ATTLIST from
+    addr CDATA #IMPLIED
+    >
+<!ATTLIST heading
+    type CDATA #IMPLIED
+    >
+<!ATTLIST body
+    type CDATA #IMPLIED
+    >
+<!ENTITY % genid "ID">
+<!ENTITY % date "1999-12-31">
+<!ENTITY % addr "123 Main St">
+<!ENTITY % type "work">
+<!ENTITY % note1 SYSTEM "note1.xml">
+<!ENTITY % note2 SYSTEM "note2.xml">
+<!ENTITY % note3 SYSTEM "note3.xml">
+<!ENTITY % note4 SYSTEM "note4.xml">
+<!ENTITY % note5 SYSTEM "note5.xml">
+<!ENTITY % note6 SYSTEM %note5;>
+<!ENTITY % note7 SYSTEM %note4;>
+<!ENTITY % note8 SYSTEM %note3;>
+<!ENTITY % note9 SYSTEM %note2;>
+<!ENTITY % note10 SYSTEM %note1;>
+<!ENTITY % note11 SYSTEM "%note10;">
+<!ELEMENT addr (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT type (#PCDATA)>
+<!ELEMENT genid (#PCDATA)>
+<!ELEMENT note1 (#PCDATA)>
+<!ELEMENT note2 (#PCDATA)>
+<!ELEMENT note3 (#PCDATA)>
+<!ELEMENT note4 (#PCDATA)>
+<!ELEMENT note5 (#PCDATA)>
+<!ELEMENT note6 (#PCDATA)>
+<!ELEMENT note7 (#PCDATA)>
+<!ELEMENT note8 (#PCDATA)>
+<!ELEMENT note9 (#PCDATA)>
+<!ELEMENT note10 (#PCDATA)>
+<!ELEMENT note11 (#PCDATA)>
+<!ATTLIST addr
+    type CDATA #IMPLIED
+    >
+<!ATTLIST date
+    type CDATA #IMPLIED
+    >
+<!ATTLIST type
+    type CDATA #IMPLIED

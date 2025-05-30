@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE notes [
+  <!ELEMENT notes (note+)>
+  <!ATTLIST notes id CDATA #REQUIRED>
+  <!ENTITY x "x">
+  <!ENTITY % y "y">
+  <!NOTATION GIF-87a SYSTEM "G" >
+  %y;
+  <!--sample comment-->
+]>
+<notes id="2" xmlns:xi="x" xmlns:fo="f">
+  <note/>
+  <note>
+    <address>
+      <street>123 Main St</street>
+      <city>New York</city>
+      <fax> +1 123 4567</fax>
+      <postal />
+    </address>
+    <subject> Sample Subject Text </subject>
+  </note>
+</notes>

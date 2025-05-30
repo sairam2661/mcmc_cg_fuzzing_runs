@@ -1,0 +1,176 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix transactions
+
+set ::timeout 60000
+
+proc transactions_proc {} {
+  expr {0}
+}
+
+sqlite3_reset_auto_commit
+sqlite3_auto_executesql { PRAGMA foreign_keys = 1; }
+
+do_test transactions-1.1 {
+  execsql {
+    BEGIN;
+    INSERT INTO a(x) VALUES(1);
+    INSERT INTO a(x) VALUES(2);
+    COMMIT;
+  }
+} {}
+
+do_test transactions-1.2 {
+  execsql {
+    BEGIN;
+    INSERT INTO b(x) VALUES(1);
+    SELECT * FROM a;
+    ROLLBACK;
+    SELECT * FROM b;
+  }
+} {}
+
+do_execsql_test transactions-1.3 {
+  CREATE TABLE c(x UNIQUE);
+  WITH RECURSIVEubar(num) AS
+  (SELECT 1
+    FROM a
+    UNION ALL
+    SELECT num FROM ubar WHERE num   =  100)
+  BEGIN;
+    INSERT INTO c SELECT num
+    (   *   )
+     }   10000   FROM ubar num
+  COMMIT
+  PRAGMA integrity_check
+  CREATE VIEW b AS SELECT  x  a WHERE  x  1
+  SELECT rowid FROM c WHERE x BETWEEN 1 AND 1000
+  SELECT rowid FROM view b
+  CREATE TABLE e AS SELECT x FROM a ORDER BY x
+  CREATE INDEX i_e_1x ON e 1
+  SELECT sql FROMsqlite_master WHERE type  index AND name  i_e_1x
+  SELECT sql FROMsqlite_master WHERE type  view AND name  b
+  DROP VIEW b
+  DROP TABLE e
+  PRAGMA integrity_check
+  EXECUTEsql {INSERT INTO a VALUES(1)}
+  DROP TABLE c
+  PRAGMA integrity_check
+  DROP TABLE b
+  PRAGMA integrity_check
+  CREATE TABLE i AS SELECT x FROM a
+  CREATE TRIGGER upd_i BEFORE DELETE ON i FOR EACH ROW BEGIN SELECT ra
+  ROWid FROM i
+  END
+  UPDATE i SET x  3 WHERE rowid  2
+  SELECT rowid FROM i
+  DROP TABLE i
+  PRAGMA integrity_check
+  select x from a
+  DELETE FROM a WHERE rowid  2
+  CREATE TABLE k AS SELECT x FROM a
+  CREATE TABLE j AS SELECT x FROM a
+  UPDATE k SET x  1 WHERE rowid IN  2
+  SELECT rowid FROM k
+  UPDATE j SET x  2 WHERE a BETWEEN 2 AND 3
+  SELECT sql FROMsqlite_master WHERE type  table AND name  j
+  SELECT sql FROMsqlite_master WHERE type  table AND name  k
+  DROP TABLE j
+  DROP TABLE k
+  PRAGMA integrity_check
+  SELECT rowid FROM a
+  DROP TABLE a
+  PRAGMA integrity_check
+  PRAGMA journal_mode
+  PRAGMA wal_checkpoint
+  SELECT rowid FROM a
+  SELECT rowid FROM a
+  PRAGMA wal_checkpoint
+  PRAGMA wal_checkpoint
+  PRAGMA wal_checkpoint
+  PRAGMA freelist_count
+  SELECT rowid FROM a
+  SELECT rowid FROM a
+  SELECT rowid FROM a
+  SELECT rowid FROM a
+  SELECT rowid FROM a
+  PRAGMA journal_mode
+  select x FROM a
+  PRAGMA journal_mode
+  SELECT type FROMsqlite_master WHERE name  c
+  SELECT type FROMsqlite_master WHERE name  b
+  SELECT type FROMsqlite_master WHERE name  e
+  SELECT type FROMsqlite_master WHERE name  i
+  SELECT type FROMsqlite_master WHERE name  j
+  SELECT type FROMsqlite_master WHERE name  k
+  SELECT name FROMsqlite_master WHERE type  view AND name  b
+  SELECT name FROMsqlite_master WHERE type  table AND name  a
+  SELECT name FROMsqlite_master WHERE type  index AND name  i_e_1x
+  SELECT sql FROMsqlite_master WHERE type  index AND name  i_e_1x
+  SELECT name FROMsqlite_master WHERE type  view AND name  b
+  WITH t AS SELECT rowid AS e FROM a UNION SELECT rowid AS e FROM b
+  SELECT DISTINCT e FROM t
+  WITH t AS SELECT rowid AS e FROM a UNION SELECT rowid AS e FROM b
+  SELECT e FROM t ORDER BY e
+  WITH t AS SELECT rowid AS e FROM a UNION SELECT rowid AS e FROM b
+  SELECT e FROM t ORDER BY e LIMIT 5 OFFSET 3
+  WITH RECURSIVEubar AS SELECT rowid AS e FROM a UNION
+  SELECT rowid AS e FROM b
+  SELECT e FROMubar ORDER BY e
+  WITH RECURSIVEubar AS SELECT rowid AS e FROM a UNION
+  SELECT rowid AS e FROM b
+  SELECT e FROMubar ORDER BY e LIMIT 5 OFFSET 3
+  WITH RECURSIVubar AS SELECT rowid AS e FROM a UNION
+  SELECT rowid AS e FROM b
+  SELECT e FROMubar ORDER BY e ROWS  3
+  WITH RECURSIVubar AS SELECT rowid AS e FROM a UNION
+  SELECT rowid AS e FROM b
+  SELECT e FROMubar ORDER BY e ROWS  3 LIMIT 5 ROWS  3
+  WITH RECURSIVubar AS SELECT rowid AS e FROM a UNION
+  SELECT rowid AS e FROM b
+  SELECT e FROMubar UNBOUNDSame
+  WITH RECURSIVubar AS SELECT rowid AS e FROM a UNION
+  SELECT rowid AS e FROM b
+  SELECT e FROMubar UNBOUNDSame rows ORder BY e
+  WITH RECURSIVubar AS SELECT rowid AS e FROM a UNION
+  SELECT rowid AS e FROM b
+  SELECT e FROMubar UNBOUNDSame rows ORder BY e ROWS  3
+  WITH RECURSIVubar AS SELECT rowid AS e FROM a UNION
+  SELECT rowid AS e FROM b
+  SELECT e FROMubar UNBOUNDSame rows ORder BY e LIMIT 5 ROWS  3
+  WITH RECURSIVubar AS SELECT rowid AS e FROM a UNION
+  SELECT rowid AS e FROM b
+  SELECT e FROMubar same
+  WITH t AS SELECT rowid AS e FROM a UNION
+  SELECT rowid AS e FROM b
+  WITH RECURSIVubar AS SELECT rowid AS e FROM a UNION
+  SELECT rowid AS e FROM b
+  SELECT e FROMubar ORDering
+  WITH RECURSIVubar AS SELECT rowid AS e FROM a UNION
+  SELECT rowid AS e FROM b
+  SELECT e FROMubar ORDering BY e ROWS LIMIT 5 ROWS  3
+  WITH RECURSIVubar AS SELECT rowid AS e FROM a UNION
+  SELECT rowid AS e FROM b
+  SELECT e FROMubar row LIMIT
+
+do_test transactions-2.1 {
+  execsql {
+    CREATE TABLE a(x);
+    INSERT INTO a VALUES(1);
+  }
+} {}
+
+do_test transactions-2.2 {
+  set res 0
+  execsql {
+    BEGIN;
+    INSERT INTO a VALUES(2);
+    COMMIT;
+    SELECT COUNT(*) FROM a;
+  }
+  set res $res
+  expr {$res  2}
+} 1
+
+ifcapable journalMode {
+  catchsql

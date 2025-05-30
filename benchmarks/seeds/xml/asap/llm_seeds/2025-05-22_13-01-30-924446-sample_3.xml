@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE complexDoc [
+  <!ELEMENT complexDoc (header, body)>
+  <!ATTLIST complexDoc
+    id ID #REQUIRED
+    lang CDATA #IMPLIED
+  >
+  <!ENTITY section1 "A"> <!ENTITY % section2 "B"> <!NOTATION example PUBLIC "A" "B">
+ 	   
+ 	%i; <!-- This includes the notated "example" resource identified by the public URI --> 
+]>
+<complexDoc xmlns:xs="h"
+id="c"
+lang="x"
+xi:noNamespaceSchemaLocation="c"><![CDATA[<x>/x>]]></complexDoc>

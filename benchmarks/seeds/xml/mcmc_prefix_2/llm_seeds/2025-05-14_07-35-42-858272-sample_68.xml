@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author,chapter*)>
+  <!ATTLIST book language (en|fr|de) #REQUIRED>
+  <!ENTITY chapter1 "<" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  >
+  <!ENTITY % chapter2 '<sect2&chapter;>
+    <h2>Chapter 2</h2>
+    <p>This is the second chapter.</p>
+  </sect2&chapter;'>  <!NOTATION ISO-8859-15 PUBLIC '<-- notations -->' 'ISO 8859-15 notations'>
+  %chapter2;
+  <!-- Other standard entities -->
+  <!ENTITY section3 "<"  >
+  <!ENTITY section4 "<"  >
+  ]
+><book language="f"> 
+  <!-- Comment -->
+  <title>My Book</title>
+  <author>John</author>
+  <chapter>
+    &section3;
+      <h1>Chapter 1</h1>
+      <p>This is the first chapter.</p>
+    &section4;
+  </chapter>
+  <chapter>
+    &chapter1;
+      <h1>Chapter 1 - Fragmented chapter</h1>
+      <p>This is the first chapter (fragmented). 1</p>
+  </chapter>
+</book>

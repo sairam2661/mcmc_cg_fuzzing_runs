@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE inventory SYSTEM "m" [
+  <!ELEMENT inventory (product+)>
+  <!ATTLIST root xmlns:fb CDATA #IMPLIED>
+  <!ENTITY eur "E">
+  <!ENTITY % xml "t">
+  <!NOTATION isbn SYSTEM "c">
+  %xml;
+  <!--
+    This is a multi line comment
+  -->
+  <!ENTITY foo SYSTEM "d">
+]>
+<root xmlns:fb="a" xmlns="b" xml:lang="c" xmlns:xsi="d" xsi:schemaLocation="e">
+  <fb:foo><d/>Some &eur;500</fb:foo>
+  <inventory xmlns:i="g">
+    <product>
+      <name>Item 1</name>
+      <description>
+        <p>This is a product with an <isbn:isbn>ISBN number</isbn:isbn> 101/102/103</p>
+      </description>
+      <price currency="f">1.99</price>
+    </product>
+  </inventory>
+</root>

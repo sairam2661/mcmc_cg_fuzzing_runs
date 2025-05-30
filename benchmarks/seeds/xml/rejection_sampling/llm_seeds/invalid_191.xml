@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+<!DOCTYPE book [
+  <!ENTITY bookname "The Great Gatsby">
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT publication-date (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT quantity (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT book-list (#PCDATA)>
+  <!ELEMENT book-list-item (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+]>
+<book-list>
+  <book-list-item>
+    <title>&bookname;</title>
+    <author>Scott Fitzgerald</author>
+    <publisher>Penguin Books</publisher>
+    <publication-date>1925</publication-date>
+    <genre>Fiction</genre>
+    <price>10.99</price>
+    <quantity>5</quantity>
+    <address>
+      <street>123 Main St</street>
+      <city>New York</city>
+      <state>NY</state>
+      <zip>10001</zip>
+    </address>
+  </book-list-item>
+  <book-list-item>
+    <title>1984</title>
+    <author>George Orwell</author>
+    <publisher>Signet Classics</publisher>
+    <publication-date>1949</publication-date>
+    <genre>Fiction</genre>
+    <price>9.99</price>
+    <quantity>10</quantity>
+    <address>
+      <street>456 Elm St</street>
+      <city>Los Angeles</city>
+      <state>CA</state>
+      <zip>90001</zip>
+    </address>
+  </book-list-item>
+</book-list>

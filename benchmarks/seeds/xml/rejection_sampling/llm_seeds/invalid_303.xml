@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Complex XML Document</title>
+    <meta charset="UTF-8"/>
+    <meta name="description" content="This is a complex XML document"/>
+    <meta name="keywords" content="XML,complex,document"/>
+    <style type="text/css">
+      @media print {
+        @page {
+          size: landscape;
+          orientation: landscape;
+          margin: 1in;
+        }
+      }
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 12pt;
+        background-color: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>This is a complex XML document</h1>
+    <p>This document includes various XML features and markup declarations.</p>
+    <ul>
+      <li>XML Declaration</li>
+      <li>DTD Declaration</li>
+      <li>Namespace Declaration</li>
+      <li>Meta Tags</li>
+      <li>Stylesheet</li>
+      <li>Body Content</li>
+    </ul>
+    <script type="text/javascript">
+      // JavaScript code here
+    </script>
+  </body>
+</html>

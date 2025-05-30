@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!ENTITY % book.entities "ENTITY book.title 'The Great Gatsby'">
+<!ENTITY % book.author "ENTITY author.name 'F. Scott Fitzgerald'">
+<!ENTITY % book.date "ENTITY date.published '1925'">
+<!ENTITY % book.publisher "ENTITY publisher.name 'Charles Scribner's Sons'">
+<!ENTITY % book.price "ENTITY price.amount '$12.99'">
+<!ELEMENT book (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+<!ATTLIST book
+	lang CDATA #REQUIRED
+	year CDATA #IMPLIED
+>
+<!ATTLIST author
+	lang CDATA #REQUIRED
+	year CDATA #IMPLIED
+>
+<!ELEMENT address EMPTY>
+<!ATTLIST address
+	lang CDATA #IMPLIED
+>
+<!ELEMENT city EMPTY>
+<!ATTLIST city
+	lang CDATA #IMPLIED
+>
+<!ELEMENT state EMPTY>
+<!ATTLIST state
+	lang CDATA #IMPLIED
+>
+<!ELEMENT zip EMPTY>
+<!ATTLIST zip
+	lang CDATA #IMPLIED
+>
+<!ELEMENT street EMPTY>
+<!ATTLIST street
+	lang CDATA #IMPLIED
+>
+<!ELEMENT name EMPTY>
+<!ATTLIST name
+	lang CDATA #IMPLIED
+>
+]>
+<book lang="en" year="2022">
+<address lang="en"/>
+<city lang="en"/>
+<state lang="en"/>
+<zip lang="en"/>
+<street lang="en"/>
+<name lang="en"/>
+<author lang="en" year="2022">
+<address lang="en"/>
+<city lang="en"/>
+<state lang="en"/>
+<zip lang="en"/>
+<street lang="en"/>
+<name lang="en"/>
+<title lang="en">The Great Gatsby</title>
+</author>
+<publisher lang="en">Charles Scribner's Sons</publisher>
+<price lang="en">$12.99</price>
+<date lang="en">1925</date>
+</book>

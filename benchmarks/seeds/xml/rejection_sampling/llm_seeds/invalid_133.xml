@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<!DOCTYPE html SYSTEM "file:///C:/Users/John/Documents/Local/HTML_DTD.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>XML Document</title>
+<meta name="description" content="A single, short but complex XML document"/>
+<xml:namespace ns="http://www.w3.org/1999/xhtml" prefix="x"/>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="rss.xml"/>
+<link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+<link rel="stylesheet" type="text/css" media="print" href="print.css" />
+</head>
+<body>
+<p xml:lang="en" xml:space="preserve">
+Hello, world!
+</p>
+<x:p>Hello, world!</x:p>
+<p xml:lang="fr">
+Bonjour, monde!
+</p>
+<x:p>Bonjour, monde!</x:p>
+<p xml:lang="es">
+Hola, mundo!
+</p>
+<x:p>Hola, mundo!</x:p>
+</body>
+</html>

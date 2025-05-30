@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Sample XML Document</title>
+<meta name="author" content="John Doe" />
+<meta name="description" content="Sample XML document for demonstration purposes."/>
+</head>
+<body>
+<div id="sample">
+<p>Sample paragraph with some <b>bold</b> and <i>italic</i> text.</p>
+<ul>
+<li>Item 1</li>
+<li>Item 2
+<ul>
+<li>Subitem 1</li>
+<li>Subitem 2</li>
+</ul>
+</li>
+<li>Item 3</li>
+</ul>
+<p>Another paragraph with a <a href="#sample">link</a> to the top of this page.</p>
+</div>
+</body>
+</html>

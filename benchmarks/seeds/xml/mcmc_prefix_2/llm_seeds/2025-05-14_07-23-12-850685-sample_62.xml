@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (category+)>
+  <!ATTLIST catalog
+    id CDATA #IMPLIED
+    version CDATA #IMPLIED>
+  <!ENTITY catalog.title "F">  
+  <!ENTITY % catalog.abbrev "A">
+  <!NOTATION sgml-system PUBLIC "S" "S">
+  %catalog.abbrev;
+  <!--comment for the benefit of non--><!ELEMENT note (#PCDATA)>
+  <!ELEMENT category (name,description)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+]>
+<catalog xmlns="F"
+  id="1"
+  version="2">
+  <note>Take a note</note>
+  <category>
+    <name>Books</name>
+    <description>Some books</description>
+  </category>
+  <category>
+    <name>Games</name>
+    <description>Some games</description>
+  </category>
+</catalog>

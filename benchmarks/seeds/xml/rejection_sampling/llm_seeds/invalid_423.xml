@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, chapter*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapter (title, text)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT text (#PCDATA)>
+]>
+<book>
+  <title>My Book</title>
+  <author>Me</author>
+  <chapter>
+    <title>Chapter 1</title>
+    <text>This is chapter one.</text>
+  </chapter>
+  <chapter>
+    <title>Chapter 2</title>
+    <text>This is chapter two.</text>
+  </chapter>
+  <chapter>
+    <title>Chapter 3</title>
+    <text>This is chapter three.</text>
+  </chapter>
+</book>

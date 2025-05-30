@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE notes [
+  <!ELEMENT notes (note+)>
+  <!ATTLIST note
+    id ID #REQUIRED
+    author CDATA #REQUIRED
+  >
+  <!ENTITY address "1">
+  <!ENTITY % include SYSTEM "m" >
+  <!NOTATION ISO-8859-1 SYSTEM "a">
+  %include;
+  <!-- other notation declarations are treated as comments -->
+]>
+<notes xmlns="a">
+  <note id="n" author="b">Hello</note>
+  <note id="m" author="d">
+    <title>world</title>
+    <address>&address;</address>
+  </note>
+</notes>

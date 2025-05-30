@@ -1,0 +1,69 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix encryption
+
+set ::timeout 60000
+
+proc encrypt_proc {} {
+  global encryption_args
+  lappend encryption_args
+  set encryption_args
+}
+
+do_test encryption-1.1 {
+  execsql {
+    CREATE TABLE encryption_example(x);
+    INSERT INTO encryption_example VALUES(1);
+  }
+  execsql {SELECT x FROM encryption_example}
+} {1}
+
+do_test encryption-1.2 {
+  execsql {
+    CREATE TABLE encryption_example2(x);
+    INSERT INTO encryption_example2 VALUES('Hello, World!');
+  }
+  execsql {SELECT x FROM encryption_example2}
+} {Hello World}
+
+ifcapable sqlite_integrity_cacl {
+  do_execsql_test encryption-1.3 {
+    CREATE TABLE encryption_example3(
+      x PRIMARY KEY, y
+    );
+    INSERT INTO encryption_example3 VALUES('primary', 'value');
+  }
+  {primary value}
+} 
+
+ifcapable tempdb {
+  set db_name "enc_test"
+  set tempdir ".temp/testdir"
+  sqlite3 db $db_name
+  catchsql {
+    SELECT * FROM sqlite_master;
+    CREATE TABLE table_test(a)
+  }
+}
+
+do_execsql_test encryption-2.1 {
+  SELECT sql FROM sqlite_master
+} {CREATE TABLE table_test}
+
+ifcapable sqlite_schema {
+  catchsql {
+    REINDEX table_test
+  }
+}
+
+proc cleanup_encryption {} {
+  set db_name "enc_test"
+  sqlite3 db $db_name
+  catchsql {
+    PRAGMA integrity_check
+  }
+}
+
+after 3000 cleanup_encryption
+
+finish_test

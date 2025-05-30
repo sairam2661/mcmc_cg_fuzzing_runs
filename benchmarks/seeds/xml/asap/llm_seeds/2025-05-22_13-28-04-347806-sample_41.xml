@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ATTLIST catalog lang CDATA #IMPLIED>
+  <!ENTITY product1 "<"  >   <!ENTITY % iamp ";"   >
+  <!NOTATION PGM SYSTEM "m"
+  >
+  %iamp;  <!--  &  -->
+]>
+<catalog lang="C">
+  <product>
+    <name>&product1;</name>
+    <price>&number;</price>
+    <category>&entity;</category>
+  </product>
+</catalog>

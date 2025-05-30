@@ -1,0 +1,80 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix complex_sql
+
+set ::timeout 60000  TCL command to set the timeout value
+
+db timeout 10        TCL command to change the timeout value for the database connection
+
+proc complex_func {x} {
+  global complexdb
+  db close
+  complexdb db
+  lappend result $x
+  expr {rand64}
+} TCL command to generate a random number and insert it into a database variable called "result"
+
+catch {forcedelete complexdb}   TCL command to delete a database file with the name "complexdb"
+file mkdir complexdb            TCL command to create a new directory called "complexdb"
+forcedelete complexdb            TCL command to delete the "complexdb" directory and all its contents
+
+forcedelete complextest          TCL command to delete a file called "complextest"
+forcedelete complextest_step_1   TCL command to delete a file called "complextest_step_1"
+forcedelete complextest_step_2   TCL command to delete a file called "complextest_step_2"
+
+set complexdb {
+  CREATE TABLE t1(a,b);
+  CREATE TABLE t2(a,b);
+}
+set result {}
+
+for {set i 0} {$i 10} {incr i} {
+  set result {}
+
+  execsql $complexdb
+  execsql {
+    BEGIN;
+    INSERT INTO t1 VALUES(1,2);
+    COMMIT;
+  }
+  execsql {
+    INSERT INTO t2 SELECT *   } TCL command to select all data from a table
+
+  do_execsql_test complextest_step_1 {
+    SELECT * FROM t1;
+  } $result
+
+  do_execsql_test complextest_step_2 {
+    SELECT * FROM t2;
+  } $result
+}
+
+file mkdir complex_output       TCL command to create a new directory called "complex_output"
+
+forcedelete complex_output      TCL command to delete the "complex_output" directory and all its contents
+
+foreach line {1 2 3 4 5 6 7 8 9 10} {
+  set fd1 {open complex_output_output open in write}
+  puts $fd1 $line
+  close $fd1
+}
+
+do_test complex-1.1 {
+  execsql {
+    SELECT * FROM sqlite_master;
+  }
+} {1 {table t1} 2 {table t2}}
+
+do_test complex-1.2 {
+  execsql {
+    SELECT * FROM t1;
+  }
+} {1 2}
+
+do_test complex-1.3 {
+  execsql {
+    SELECT * FROM t2;
+  }
+} {1 2}
+
+finish_test

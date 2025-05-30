@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE notes SYSTEM "notes.dtd">
+<notes>
+	<note id="note1">
+		<title>Example Note</title>
+		<date>2020-01-01</date>
+		<author>John Doe</author>
+		<text>This is an example note.</text>
+		<tags>
+			<tag>example</tag>
+			<tag>note</tag>
+		</tags>
+	</note>
+	<note id="note2">
+		<title>Another Note</title>
+		<date>2020-01-02</date>
+		<author>Jane Doe</author>
+		<text>This is another example note.</text>
+		<tags>
+			<tag>example</tag>
+			<tag>note</tag>
+			<tag>second</tag>
+		</tags>
+	</note>
+</notes>
+<!ELEMENT notes (note+)>
+<!ELEMENT note (title, date, author, text, tags?)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT text (#PCDATA)>
+<!ELEMENT tags (tag+)>
+<!ELEMENT tag (#PCDATA)>
+<!ATTLIST note id CDATA #REQUIRED> 
+<!ATTLIST note date CDATA #IMPLIED>
+<!ATTLIST note author CDATA #IMPLIED>
+<!ATTLIST note text CDATA #IMPLIED>
+<!ATTLIST note tags CDATA #IMPLIED>
+<!ATTLIST tags required CDATA #IMPLIED>
+<!ATTLIST tag required CDATA #IMPLIED> 
+<!ENTITY % entities "entity1 entity2 entity3">
+<!ENTITY entity1 "value1">
+<!ENTITY entity1 "value2">
+<!ENTITY entity2 "value3">
+<!ENTITY entity2 "value4">
+<!ENTITY entity3 "value5">
+<!ENTITY % entities2 "entity6 entity7 entity8">
+<!ENTITY entity6 "value6">
+<!ENTITY entity6 "value7">
+<!ENTITY entity7 "value8">
+<!ENTITY entity7 "value9">
+<!ENTITY entity8 "value10">
+<!ENTITY entity8 "value11">
+<!ENTITY entity3 "value12">
+<!ENTITY % entities3 "entity13 entity14 entity15">
+<!ENTITY entity13 "value13">
+<!ENTITY entity13 "value14">
+<!ENTITY entity14 "value15">
+<!ENTITY entity14 "value16">
+<!

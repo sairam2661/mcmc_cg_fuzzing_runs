@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "document.dtd">
+<!ELEMENT document (header,footer,article)>
+
+<?xml-stylesheet href="document.css" type="text/css"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!ATTLIST document attr1 CDATA #REQUIRED>
+<!ATTLIST document attr2 (yes|no) "no">
+
+<header>
+    <title>Sample Title</title>
+    <meta name="description" content="Sample Description"/>
+</header>
+
+<article>
+    <title>Sample Article</title>
+    <section>
+        <p>Sample paragraph.</p>
+        <p>Sample paragraph 2.</p>
+    </section>
+</article>
+
+<footnote>
+    <sup>1</sup>
+    <p>This is a footnote.</p>
+</footnote>
+
+<figure>
+    <figcaption>Sample Figure</figcaption>
+    <img src="sample.jpg" alt="Sample Image"/>
+</figure>
+
+<sidebar>
+    <title>Sample Sidebar</title>
+    <p>Sample sidebar content.</p>
+</sidebar>
+
+<footer>
+    <p>&copy; 2023</p>
+    <p>&copy; 2022</p>
+</footer>

@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author,description,price,edition,chapter)*>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT edition (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ATTLIST book
+     lang CDATA #IMPLIED
+     type (novel|textbook) 'novel'>
+]>
+<book lang='en' type='novel'>
+  <title>The Catcher in the Rye</title>
+  <author>J.D. Salinger</author>
+  <description>A young boy navigates adolescence.</description>
+  <price>15.99</price>
+  <edition>First Edition</edition>
+  <chapter>Chapter 1: Summer</chapter>
+  <chapter>Chapter 2: All Summer in a Day</chapter>
+  <chapter>Chapter 3: The Secret Life of Trees</chapter>
+</book>  <!--  -->
+<book lang='fr' type='textbook'>
+  <title>Leçons d'algèbre</title>
+  <author>Professeur Jean-Pierre</author>
+  <description>Des leçons d'algèbre pour les étudiants.</description>
+  <price>29.99</price>
+  <edition>Seconde Édition</edition>
+  <chapter>Chapitre 1: Les nombres réels</chapter>
+  <chapter>Chapitre 2: Les fonctions linéaires</chapter>
+  <chapter>Chapitre 3: Les équations quadratiques</chapter>
+</book>  <!--  -->
+<book lang='es' type='novel'>
+  <title>El cuaderno de noah</title>
+  <author>Paula Arguelles</author>
+  <description>Un joven busca su lugar en el mundo.</description>
+  <price>19.99</price>
+  <edition>Primera Edición</edition>
+  <chapter>Capítulo 1: El fin de la infancia</chapter>
+  <chapter>Capítulo 2: El comienzo de la adultez</chapter>
+  <chapter>Capítulo 3: El descubrimiento de uno mismo</chapter>
+</book>  <!--  -->
+<

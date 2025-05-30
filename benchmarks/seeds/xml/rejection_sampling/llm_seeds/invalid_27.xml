@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE note SYSTEM "note.dtd">
+<!ENTITY % ent SYSTEM "ent.ent">
+<!ENTITY % ent2 SYSTEM "ent2.ent">
+<!ATTLIST note
+    xmlns CDATA #IMPLIED
+    xmlns:xsi CDATA #IMPLIED
+    xsi:schemaLocation CDATA #IMPLIED
+    xsi:noNamespaceSchemaLocation CDATA #IMPLIED
+>
+<note xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns="http://www.example.org/note"
+      xsi:schemaLocation="http://www.example.org/note note.xsd"
+      xsi:noNamespaceSchemaLocation="note.xsd">
+    <to>Tove</to>
+    <from>Jani</from>
+    <heading>Reminder</heading>
+    <body>Don't forget me this weekend!</body>
+    <category>Personal</category>
+    <priority>1</priority>
+    <content-type>text/plain</content-type>
+    <content-language>en</content-language>
+    <content-type-xml>
+        <note xmlns="http://www.example.org/note">
+            <to>Tove</to>
+            <from>Jani</from>
+            <heading>Reminder</heading>
+            <body>Don't forget me this weekend!</body>
+        </note>
+    </content-type-xml>
+</note>

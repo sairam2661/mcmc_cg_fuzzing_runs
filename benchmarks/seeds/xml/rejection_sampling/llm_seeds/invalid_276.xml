@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Complex XML Document</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="description" content="This is a complex XML document." />
+    <meta name="keywords" content="XML, complex, document" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+    <div id="container">
+        <h1>This is a complex XML document.</h1>
+        <p>This document includes various XML features and markup declarations.</p>
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+        <table>
+            <tr>
+                <th>Column 1</th>
+                <th>Column 2</th>
+            </tr>
+            <tr>
+                <td>Cell 1</td>
+                <td>Cell 2</td>
+            </tr>
+        </table>
+        <pre>
+            <?xml version="1.0" encoding="UTF-8"?>
+            <root>
+                <child>Child node</child>
+                <child>Another child node</child>
+            </root>
+        </pre>
+    </div>
+</body>
+</html>

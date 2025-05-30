@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, chapter)*>
+  <!ATTLIST book 
+   id ID #REQUIRED
+   lang CDATA #IMPLIED
+  >
+  <!ENTITY abstract "A"
+  ><!ENTITY 	%abbr "B">
+  <!NOTATION bookformat SYSTEM "m" >
+ 
+  																	 	
+ 	%note;	<!---->	
+]>
+
+<book id="1" lang="x" xmlns="x">
+  <title>Sample<b>Book</b></title>
+  <author>John Smith</author>
+  <chapter id="c">
+    <title>Chapter One</title>
+    <para>&abstract; Example paragraph with an &ab;bb;revi;<superscript>al</superscript>&emph; ab&amp;br;reviation.</para>
+  </chapter>
+  <chapter id="d">
+    <title>Chapter Two</title>
+    <para>This book is notated as a &bookformat; example.</para>
+  </chapter>
+</book>

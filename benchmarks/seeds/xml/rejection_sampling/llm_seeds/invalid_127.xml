@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE doc SYSTEM "doc.dtd">
+<!ENTITY % ent SYSTEM "ent.ent">
+<!ENTITY % inc SYSTEM "inc.inc">
+<!ENTITY &ent;>
+<!ENTITY % inc;>
+<!DOCTYPE doc [
+<!ELEMENT doc (#PCDATA)>
+<!ELEMENT para (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT item (#PCDATA)>
+<!ELEMENT opt (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT list (#PCDATA)>
+<!ELEMENT table (#PCDATA)>
+<!ELEMENT table-row (#PCDATA)>
+<!ELEMENT table-data (#PCDATA)>
+<!ELEMENT header (#PCDATA)>
+<!ELEMENT footer (#PCDATA)>
+<!ATTLIST doc
+  id CDATA #IMPLIED
+  title CDATA #IMPLIED
+  author CDATA #IMPLIED
+>
+<!ATTLIST para
+  id CDATA #IMPLIED
+  style CDATA #IMPLIED
+  type CDATA #IMPLIED
+>
+<!ATTLIST title
+  id CDATA #IMPLIED
+  style CDATA #IMPLIED
+>
+<!ATTLIST item
+  id CDATA #IMPLIED
+  style CDATA #IMPLIED
+  type CDATA #IMPLIED
+>
+<!ATTLIST opt
+  id CDATA #IMPLIED
+  style CDATA #IMPLIED
+>
+<!ATTLIST name
+  id CDATA #IMPLIED
+  style CDATA #IMPLIED
+>
+<!ATTLIST list
+  id CDATA #IMPLIED
+  style CDATA #IMPLIED
+  type CDATA #IMPLIED
+>
+<!ATTLIST table
+  id CDATA #IMPLIED
+  style CDATA #IMPLIED
+  type CDATA #IMPLIED
+>
+<!ATTLIST table-row
+  id CDATA #IMPLIED
+  style CDATA #IMPLIED
+>
+<!ATTLIST table-data
+  id CDATA #IMPLIED
+  style CDATA #IMPLIED
+  type CDATA #IMPLIED
+>
+<!ATTLIST header
+  id CDATA #IMPLIED
+  style CDATA #IMPLIED
+>
+<!ATTLIST footer
+  id CDATA #IMPLIED
+  style CDATA #IMPLIED
+>
+<!ELEMENT doc (title, para+, (item|opt)*)>
+<!ELEMENT para (item|opt)*>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT item (#PCDATA)>
+<!ELEMENT opt (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT list (#PCDATA)>
+<!ELEMENT table (#PCDATA)>
+<!ELEMENT table-row (#

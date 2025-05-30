@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE inventory SYSTEM "v" [
+  <!ELEMENT inventory (product,product) >
+  <!ATTLIST product id CDATA #REQUIRED>
+  <!ENTITY author "D" >
+  <!ENTITY % ent "#">
+  <!NOTATION print SYSTEM 'http://www.example.com/print'>
+  %ent;
+  <!--entity with attribute -->
+  <!ENTITY % entwithAtt "%" >
+  <!ENTITY % entwithAtt2 "1" >
+]>
+<inventory>
+<product id="A"><description><![CDATA[Nice <raw> product]]></description></product>
+<product id="B"><description Entities="B">Product B's description &amp;#163; &note;<![CDATA[&]]></description> &author; &print;</product>
+</inventory>

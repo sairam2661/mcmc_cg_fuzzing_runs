@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book SYSTEM "b"
+
+    [
+    <!ELEMENT book (author, year, title, body) >
+    <!ATTLIST body id ID #REQUIRED>
+    <!ENTITY addr '#38 Avenue de Champagne'>
+    <!ENTITY % author.attr "M">
+
+    <!NOTATION SVG PUBLIC "+"
+      " ">

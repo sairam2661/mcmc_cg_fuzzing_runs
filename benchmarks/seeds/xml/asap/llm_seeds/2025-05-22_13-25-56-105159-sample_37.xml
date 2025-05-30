@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-16"?><!DOCTYPE article SYSTEM "x" [
+<!ELEMENT article (head|body)*>
+<!ATTLIST article
+  id   CDATA  #REQUIRED
+  lang CDATA  #IMPLIED
+>
+<!ENTITY f1 SYSTEM "f"
+    NDATA ftype
+>
+<!ENTITY % ftype "F"
+  >
+<!NOTATION ftype PUBLIC "F"
+  "F"
+>
+    %f1;
+ <!---->
+<!ENTITY f2 SYSTEM "f" NDATA ftype>
+<!ELEMENT head (title)>
+<!ELEMENT body (paragraph)*>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT paragraph (#PCDATA)>
+<!ATTLIST paragraph type  CDATA #IMPLIED>
+<!NOTATION ISO-8859-1 PUBLIC "J" 
+ "G">
+<!NOTATION ISO-8859-15 PUBLIC "-" "J">
+<!NOTATION ISO-8859-16 PUBLIC "+"
+ "J"
+>
+<!ENTITY f3 "g">
+<!ENTITY f4 "g">
+<!ENTITY f5 "g">
+<!ENTITY f6 "g">
+    ]>
+<article id='a1' lang='en' xmlns:xi="&xi;">
+<head>
+<xi:include xmlns:xi="&xi;" href="h"/>
+<title> <p> <em> G </em> </p> <link href='l'/>  <p> <font> F </font> <img src="s"/> <font> F </font> <p> <font face='Arial'> G2 </font> <span style='color:green'> G3 </span> <font size='5'> G4 </font> <b> G5 </b> </p> <font color='blue'> H </font> <map name='m'> 
+ <area href='a' shape='rect' coords='0,0,60,60' alt='A'> 
+ <area href='b' shape='rect' coords='0,0,30,30' alt='B'> 
+ <area href='c' shape='rect' coords='0,0,10,10' alt='C'>
+</map> </p> </em>
+</p>  </title>
+</head>
+<body>
+<paragraph type='p'> <font size='6'> 1 <font face='Helvetica'> 2 </font> 3 </font>   <p> <font size='

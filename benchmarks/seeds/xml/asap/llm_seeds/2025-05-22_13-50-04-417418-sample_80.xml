@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE notes [
+  <!ELEMENT notes (note+)>
+  <!ATTLIST notes
+    lang CDATA #IMPLIED
+    version CDATA #IMPLIED
+  >
+  <!ENTITY entity1 "&#171;">
+  <!ENTITY % entity2 "<">
+  <!NOTATION print SYSTEM "C">
+  %entity2;
+  <!--[ Entity reference ]-->
+]>
+<notes lang="f" version="1">
+  <note>
+    <![CDATA[<p>This is a <b>valid</b> note<BR></p>]]>
+  </note>
+  <note>
+    <i>&entity1;</i>
+  </note>
+  <note>
+    <xsi:schemaLocation xmlns:xsi="&ns:xsi;"
+                        xmlns="&ns:aef;"
+                        xsi:noNamespaceSchemaLocation="&ns:aef;"/>
+    <a:b/>
+  </note>
+  <note xmlns:xi="&ns:xi;">
+    <xi:include href="&ns:xi;"/>
+  </note>
+</notes>

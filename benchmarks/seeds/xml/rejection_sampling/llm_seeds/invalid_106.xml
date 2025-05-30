@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "document.dtd">
+<!ELEMENT document (declaration, header, body)>
+<!ELEMENT declaration (#PCDATA)>
+<!ELEMENT header (#PCDATA)>
+<!ELEMENT body (section*, appendix*)>
+<!ELEMENT section (#PCDATA)>
+<!ELEMENT appendix (#PCDATA)>
+<!ELEMENT table (#PCDATA)>
+<!ELEMENT row (#PCDATA)>
+<!ELEMENT cell (#PCDATA)>
+<!ELEMENT link (#PCDATA)>
+<!ELEMENT href (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+
+<declaration>This is a declaration</declaration>
+<header>This is a header</header>
+<body>
+  <section>This is a section</section>
+  <section>This is another section</section>
+  <appendix>This is an appendix</appendix>
+  <table>
+    <row>
+      <cell>Cell 1</cell>
+      <cell>Cell 2</cell>
+    </row>
+    <row>
+      <cell>Cell 3</cell>
+      <cell>Cell 4</cell>
+    </row>
+  </table>
+  <link href="https://www.example.com">Example Link</link>
+  <title>This is a title</title>
+  <author>John Doe</author>
+  <date>2022-01-01</date>
+</body>
+<!ENTITY % entity "This is an entity">%entity;
+<!ENTITY % external SYSTEM "external.dtd">%external;
+<!ENTITY % param-entity "This is a parameter entity">%param-entity;
+<!ATTLIST section attr1 CDATA #IMPLIED attr2 CDATA #IMPLIED>
+<!ATTLIST appendix attr3 CDATA #IMPLIED>
+<!ATTLIST table attr4 CDATA #IMPLIED>
+<!ATTLIST link attr5 CDATA #IMPLIED>
+<!ATTLIST title attr6 CDATA #IMPLIED>
+<!ATTLIST author attr7 CDATA #IMPLIED>
+<!ATTLIST date attr8 CDATA #IMPLIED>
+<!ENTITY % attribute-entity "This is an attribute entity">%attribute-entity;
+<!ENTITY % attribute-external SYSTEM "attribute.dtd">%attribute-external;
+<!ENTITY % attribute-param-entity "This is an attribute parameter entity">%attribute-param-entity;
+<!ENTITY % dtd-entity "This is a DTD entity">%dtd-entity;
+<!ENTITY % dtd-external SYSTEM "dtd.dtd">%dtd-external;
+<!ENTITY % dtd

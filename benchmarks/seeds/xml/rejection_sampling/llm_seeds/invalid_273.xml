@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ENTITY chapter "Chapter">
+  <!ENTITY author "John Doe">
+  <!ENTITY booktitle "My Book">
+]>
+<book xmlns:xi="http://www.w3.org/2001/XInclude" 
+      xmlns:xlink="http://www.w3.org/1999/xlink" 
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+      xsi:schemaLocation="http://example.org/book.xsd"
+      version="1.0">
+  <title>&booktitle;</title>
+  <author>&author;</author>
+  <date>2001</date>
+  <xi:include href="part1.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <part>
+    <title>Part 1</title>
+    <chapter ref="ch1.xml">
+      <title>&chapter; 1</title>
+      <section ref="s1.xml">
+        <title>Section 1</title>
+        <paragraph>Text.</paragraph>
+        <graphic xlink:href="image1.jpg" xlink:title="Image 1" xlink:alt="An image"/>
+        <paragraph>More text.</paragraph>
+      </section>
+    </chapter>
+  </part>
+  <xi:include href="part2.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</book>

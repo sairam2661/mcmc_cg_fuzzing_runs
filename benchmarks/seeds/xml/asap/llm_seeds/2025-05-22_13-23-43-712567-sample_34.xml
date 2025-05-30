@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE note-system [
+  <!ELEMENT note-system (#PCDATA)>
+  <!ATTLIST note-system
+    id ID #REQUIRED
+  >
+  <!ENTITY myref SYSTEM "m"> 
+  <!ENTITY % ent "N">
+  <!NOTATION ISO-8859-1 SYSTEM "a">
+  %ent;
+  <!-- other notation definition -->
+]>
+<note-system id="A" xmlns:xs="w">
+  <!-- Sample comment -->
+  <note>
+    <to>John</to>
+    <from>Jane</from>
+    &myref;
+  </note>
+  <xs:schema xmlns:xs="w">
+    <xs:complexType name="a">
+      <xs:sequence>
+        <xs:element name="n" type="s"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:schema>
+</note-system>

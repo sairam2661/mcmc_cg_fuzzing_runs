@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, chapter*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapter (title, para+, fig+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT para (#PCDATA)>
+  <!ELEMENT fig (figid, desc)>
+  <!ELEMENT figid (#PCDATA)>
+  <!ELEMENT desc (#PCDATA)>
+]>
+<book>
+  <title>My Book</title>
+  <author>Me</author>
+  <chapter>
+    <title>Chapter 1</title>
+    <para>This is a paragraph of text.</para>
+    <para>This is another paragraph of text.</para>
+    <fig figid="fig1">
+      <desc>This is a figure.</desc>
+    </fig>
+  </chapter>
+  <chapter>
+    <title>Chapter 2</title>
+    <para>This is a paragraph of text.</para>
+    <para>This is another paragraph of text.</para>
+    <fig figid="fig2">
+      <desc>This is another figure.</desc>
+    </fig>
+  </chapter>
+</book>

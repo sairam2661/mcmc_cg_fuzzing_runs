@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!ENTITY % entity PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+"file:///usr/local/share/xml/docbook/stylesheet/docbookxsl.dtd">
+<!ENTITY % ext PUBLIC "-//OASIS//ENTITIES DocBook Extended//EN"
+"file:///usr/local/share/xml/docbook/external-entities/docbook-ext.ent">
+<!ENTITY % bookinfo PUBLIC "-//OASIS//ENTITIES DocBook Book Info//EN"
+"file:///usr/local/share/xml/docbook/external-entities/docbook-bookinfo.ent">
+<!ENTITY % productinfo PUBLIC "-//OASIS//ENTITIES DocBook Product Info//EN"
+"file:///usr/local/share/xml/docbook/external-entities/docbook-productinfo.ent">
+<!ENTITY % productnumber PUBLIC "-//OASIS//ENTITIES DocBook Product Number//EN"
+"file:///usr/local/share/xml/docbook/external-entities/docbook-productnumber.ent">
+<!ENTITY % productname PUBLIC "-//OASIS//ENTITIES DocBook Product Name//EN"
+"file:///usr/local/share/xml/docbook/external-entities/docbook-productname.ent">
+<!ENTITY % productdate PUBLIC "-//OASIS//ENTITIES DocBook Product Date//EN"
+"file:///usr/local/share/xml/docbook/external-entities/docbook-productdate.ent">
+<!ENTITY % productedition PUBLIC "-//OASIS//ENTITIES DocBook Product Edition//EN"
+"file:///usr/local/share/xml/docbook/external-entities/docbook-productedition.ent">
+<!ENTITY % productcopyright PUBLIC "-//OASIS//ENTITIES DocBook Product Copyright//EN"
+"file:///usr/local/share/xml/docbook/external-entities/docbook-productcopyright.ent">
+<!ENTITY % productabstract PUBLIC "-//OASIS//ENTITIES DocBook Product Abstract//EN"
+"file:///usr/local/share/xml/docbook/external-entities/docbook-productabstract.ent">
+<!ENTITY % productkeywords PUBLIC "-//OASIS//ENTITIES DocBook Product Keywords//EN"
+"file:///usr/local/share/xml/docbook/external-entities/docbook-productkeywords.ent">
+<!ENTITY % productrevision PUBLIC "-//OASIS//ENTITIES DocBook Product Revision//EN"
+"file:///usr/local/share/xml/docbook/external-entities/docbook-productrevision.ent">
+<!ENTITY % productversion PUBLIC "-//OASIS//ENTITIES DocBook Product Version//EN"
+"file:///usr/local/share/xml

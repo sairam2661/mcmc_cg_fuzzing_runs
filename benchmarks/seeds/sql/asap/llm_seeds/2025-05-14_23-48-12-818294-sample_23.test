@@ -1,0 +1,52 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix complex_sqlite_test
+
+set ::timeout 60000
+set temp_store 0
+
+proc complex_sqlite_test {} {
+  set x 10
+  foreach {a b} {1 2 3 4 5} {
+    lappend syncargs $a
+    if {$a eq 3} {
+      incr x
+    }
+  }
+  expr {$x eq 12}
+}
+
+do_execsql_test complex-1.1 {
+  CREATE TABLE users(
+    id     PRIMARY KEY NOT NULL,
+    name   NOT NULL,
+    email  NOT NULL
+  );
+  INSERT INTO users VALUES(1, 'John', 'john@example.com');
+  SELECT * FROM users;
+} {1 John john example com}
+
+do_execsql_test complex-1.2 {
+  CREATE TABLE orders(
+    id       PRIMARY KEY NOT NULL,
+    user_id  NOT NULL,
+    order_date NOT NULL,
+    FOREIGNKEY  NOT NULL,
+    CHECK  NOT NULL
+  );
+  BEGIN;
+  INSERT INTO orders VALUES(1, 1, '2022-01-01', '1');
+  INSERT INTO orders VALUES(2, 2, '2022-01-02', '2');
+  COMMIT;
+} {1 1 2022 01 01 1 2 2 2022 01 02 2}
+
+do_execsql_test complex-1.3 {
+  PRAGMA temp_store = 2;
+  SELECT temp_store FROM pragma_settings;
+} {2}
+
+do_execsql_test complex-1.4 {
+  SELECT * FROM sqlite_master WHERE type='table';
+} {0 {users} {users users id name email} 2 {orders} {orders orders id user_id order_date FOREIGNKEY CHECK}}
+
+finish_test

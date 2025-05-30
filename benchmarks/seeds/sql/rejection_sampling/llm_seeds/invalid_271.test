@@ -1,0 +1,179 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix sync
+
+proc sync_proc {} {
+  global syncargs
+  lappend syncargs
+  expr {[llength $syncargs] <= 2}
+}
+
+do_test sync-1.1 {
+  execsql {
+    CREATE TABLE a(x);
+    INSERT INTO a VALUES(1),(2),(3);
+  }
+  execsql {SELECT count(*) FROM a}
+} {3}
+
+ifcapable journalMode {
+  catchsql {PRAGMA journal_mode=WAL}
+} {0 {}}
+
+do_test sync-1.2 {
+  execsql {
+    SELECT x FROM a ORDER BY x DESC LIMIT 1
+  }
+} {3}
+
+do_test sync-1.3 {
+  execsql {
+    SELECT x FROM a ORDER BY x ASC LIMIT 1
+  }
+} {1}
+
+do_test sync-1.4 {
+  execsql {
+    SELECT x FROM a ORDER BY x DESC LIMIT 2
+  }
+} {3 2}
+
+do_test sync-1.5 {
+  execsql {
+    SELECT x FROM a ORDER BY x ASC LIMIT 2
+  }
+} {1 2}
+
+do_test sync-1.6 {
+  execsql {
+    SELECT x FROM a ORDER BY x DESC LIMIT 3
+  }
+} {3 2 1}
+
+do_test sync-1.7 {
+  execsql {
+    SELECT x FROM a ORDER BY x ASC LIMIT 3
+  }
+} {1 2 3}
+
+do_test sync-1.8 {
+  execsql {
+    SELECT x FROM a ORDER BY x DESC LIMIT 4
+  }
+} {3 2 1}
+
+do_test sync-1.9 {
+  execsql {
+    SELECT x FROM a ORDER BY x ASC LIMIT 4
+  }
+} {1 2 3}
+
+do_test sync-1.10 {
+  execsql {
+    SELECT x FROM a ORDER BY x DESC LIMIT 5
+  }
+} {3 2 1}
+
+do_test sync-1.11 {
+  execsql {
+    SELECT x FROM a ORDER BY x ASC LIMIT 5
+  }
+} {1 2 3}
+
+do_test sync-1.12 {
+  execsql {
+    SELECT x FROM a ORDER BY x DESC LIMIT 6
+  }
+} {3 2 1}
+
+do_test sync-1.13 {
+  execsql {
+    SELECT x FROM a ORDER BY x ASC LIMIT 6
+  }
+} {1 2 3}
+
+do_test sync-1.14 {
+  execsql {
+    SELECT x FROM a ORDER BY x DESC LIMIT 7
+  }
+} {3 2 1}
+
+do_test sync-1.15 {
+  execsql {
+    SELECT x FROM a ORDER BY x ASC LIMIT 7
+  }
+} {1 2 3}
+
+do_test sync-1.16 {
+  execsql {
+    SELECT x FROM a ORDER BY x DESC LIMIT 8
+  }
+} {3 2 1}
+
+do_test sync-1.17 {
+  execsql {
+    SELECT x FROM a ORDER BY x ASC LIMIT 8
+  }
+} {1 2 3}
+
+do_test sync-1.18 {
+  execsql {
+    SELECT x FROM a ORDER BY x DESC LIMIT 9
+  }
+} {3 2 1}
+
+do_test sync-1.19 {
+  execsql {
+    SELECT x FROM a ORDER BY x ASC LIMIT 9
+  }
+} {1 2 3}
+
+do_test sync-1.20 {
+  execsql {
+    SELECT x FROM a ORDER BY x DESC LIMIT 10
+  }
+} {3 2 1}
+
+do_test sync-1.21 {
+  execsql {
+    SELECT x FROM a ORDER BY x ASC LIMIT 10
+  }
+} {1 2 3}
+
+do_test sync-1.22 {
+  execsql {
+    SELECT x FROM a ORDER BY x DESC LIMIT 11
+  }
+} {3 2 1}
+
+do_test sync-1.23 {
+  execsql {
+    SELECT x FROM a ORDER BY x ASC LIMIT 11
+  }
+} {1 2 3}
+
+do_test sync-1.24 {
+  execsql {
+    SELECT x FROM a ORDER BY x DESC LIMIT 12
+  }
+} {3 2 1}
+
+do_test sync-1.25 {
+  execsql {
+    SELECT x FROM a ORDER BY x ASC LIMIT 12
+  }
+} {1 2 3}
+
+do_test sync-1.26 {
+  execsql {
+    SELECT x FROM a ORDER BY x DESC LIMIT 13
+  }
+} {3 2 1}
+
+do_test sync-1.27 {
+  execsql {
+    SELECT x FROM a ORDER BY x ASC LIMIT 13
+  }
+} {1 2 3}
+
+do_test sync-

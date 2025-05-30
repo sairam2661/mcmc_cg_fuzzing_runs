@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+<!ENTITY % ent SYSTEM "ent.xml">
+<!ENTITY % ext SYSTEM "ext.xml">
+<!ELEMENT books (book+)>
+<!ELEMENT book (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+<!ATTLIST book id ID #REQUIRED>
+<!ATTLIST book lang CDATA #IMPLIED>
+<!ATTLIST book date CDATA #IMPLIED>
+<!ENTITY &amp; "&#38;"/>
+<!ENTITY &lt; "&#60;"/>
+<!ENTITY &gt; "&#62;"/>
+<!ENTITY &apos; "&#39;"/>
+<!ENTITY &quot; "&#34;"/>
+]>
+<books>
+  <book id="bk1" lang="eng" date="2020-01-01">
+    <author>John Doe</author>
+    <title>Book Title</title>
+    <year>2020</year>
+  </book>
+  <book id="bk2" lang="spa" date="2020-02-01">
+    <author>Jane Doe</author>
+    <title>Libro Título</title>
+    <year>2020</year>
+  </book>
+</books>

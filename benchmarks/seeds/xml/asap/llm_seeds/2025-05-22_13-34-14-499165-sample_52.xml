@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE doc [
+  <!ELEMENT doc (header,bodies*)>
+  <!ATTLIST doc language (en|fr|de) #IMPLIED>
+  <!ENTITY emote "w"
+          >
+  <!ENTITY % pixture "x">
+  <!NOTATION xhtml PUBLIC '-//W3C//DTD XHTML 1.0//EN'
+               'http://www.w3.org/TR/xhtml1/DTD/xhtml1.dtd'>
+  %pixture;
+  <!--
+    This is
+    a
+   multi line
+  -->
+]>
+<doc language='fr'>
+  <header>
+    <title>Documentation</title>
+  </header>
+  <bodies>
+    <section>
+      <message>Useful messages are: &emote;</message>
+    </section>
+    <section>
+      <note>Check that your document is validated against a DTD</note>
+    </section>
+  </bodies>
+</doc>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE catalog SYSTEM "b"
+  [<!ELEMENT catalog (cd|message)*>
+   <!ATTLIST catalog 
+     id CDATA #IMPLIED>
+   <!ENTITY book "B">
+   <!ENTITY  % ent ">"
+   ><!NOTATION ebp PUBLIC "b" "d">
+    %ent;<!--%ent;  comment
+  ]>
+  <catalog id="xyz">
+    <cd><![CDATA[<note> CD note]]></cd>
+    <message>&book;</message>
+    <catalog>
+      <cd>&book;</cd>
+    </catalog>
+  </catalog>
+  <message>&note;</message> 
+
+  &ebsd; &ebsd;
+  &ebsd;
+  <NOTATION ebsd PUBLIC "c" "c" > b a
+  <NOTATION> a a
+  <![CDATA[a a]]>
+  abc
+</xml> in this line: NOTATION:&#0a; NOTATION:&#0b;
+<!--><!ENTITY % ent "A">%ent; <!-- a:&#x0a; <xml> <!--> 
+<!-- c:&#0b; a:&#x0a;  -->  <!--> 
+<!ENTITY % ent "A"><!--> 
+<!ENTITY % ent "A" >
+<!ENTITY % ent "A"  > 
+<!ENTITY % ent "A">
+<!ENTITY % ent "A" >  <!-- c:&#0b; a:&#x0a; -->  
+
+<!ENTITY % ent "A">]>  <xml>  <!--> <!--> NOTATION: 
+<![CDATA[a a a a]]>
+<![CDATA[a a a a]]><![CDATA[a a a a a a]]>
+ a a a a a  a a a a a a a a 
+ a a a a a 
+ a a a a a a 
+ a a a a a a
+ a a a a a 
+<!--[! -->[<!-->][<!-->] [<!-->]  ]]>  
+
+ a a a a a a a a 
+a a a a a a a a a a a 
+<!-->[<!-->[<!ENTITY % ent "A"> 
+<!ENTITY % ent "A"> 
+<!ENTITY % ent "A"> 
+<!ENTITY % ent "A"> 
+<!ENTITY % ent "A"> ]]> 
+<!-->

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*,offer) >
+  <!ATTLIST catalog id (CDATA) #IMPLIED >
+  <!ENTITY pi "3">
+  <!ENTITY % p1 "a">
+  <!NOTATION xsl SYSTEM "x" >
+  %p1; 
+  <!--Entity Reference-->
+]>
+<catalog id="#" xmlns="x" xmlns:xsi="x">
+    <product><title>Product A</title></product>
+    <product><title>Product B</title></product>
+    <offer><title>Offer C</title><price>$100</price></offer>
+   <?xsl?>
+   &pi;&note;
+</catalog>

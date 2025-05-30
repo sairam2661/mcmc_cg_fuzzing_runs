@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+<!ENTITY % ent SYSTEM "entities.ent">
+<!ENTITY % param SYSTEM "parameters.ent">
+<!ATTLIST catalog xmlns CDATA #FIXED "http://www.example.org/catalog">
+<!ATTLIST catalog xml:lang CDATA #IMPLIED>
+<!ELEMENT catalog (product*)>
+<!ELEMENT product (name,description,price,inventory)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT inventory (#PCDATA)>
+<!ELEMENT category (#PCDATA)>
+<!ATTLIST category cat-id CDATA #REQUIRED>
+<!ATTLIST category name CDATA #IMPLIED>
+<!ELEMENT product-ref (#PCDATA)>
+<!ATTLIST product-ref ref-id CDATA #REQUIRED>
+<!ATTLIST product-ref ref-name CDATA #IMPLIED>
+<!ENTITY cat1 SYSTEM "category1.xml">
+<!ENTITY cat2 SYSTEM "category2.xml">
+<!ENTITY product1 SYSTEM "product1.xml">
+<!ENTITY product2 SYSTEM "product1.xml">
+<!ENTITY product3 SYSTEM "product1.xml">
+<!ENTITY product4 SYSTEM "product1.xml">
+<!ENTITY product5 SYSTEM "product1.xml">
+<!ENTITY product-ref1 SYSTEM "product-ref1.xml">
+<!ENTITY product-ref2 SYSTEM "product-ref1.xml">
+<!ENTITY product-ref3 SYSTEM "product-ref1.xml">
+<!ENTITY product-ref4 SYSTEM "product-ref1.xml">
+<!ENTITY product-ref5 SYSTEM "product-ref1.xml">
+]>
+<catalog xml:lang="en" xmlns="http://www.example.org/catalog">
+  <category cat-id="C1" name="Electronics">
+    &cat1;
+    &cat2;
+  </category>
+  <product name="Product 1" description="This is product 1" price="$10.99" inventory="10">
+    &product1;
+  </product>
+  <product name="Product 2" description="This is product 2" price="$9.99" inventory="20">
+    &product2;
+  </product>
+  <product name="Product 3" description="This is product 3" price="$7.99" inventory="30">
+    &product3;
+  </product>
+  <product name="Product 4" description="This is product 4" price="$6.99" inventory="40">
+    &product4;
+  </product>
+  <product name="Product 5" description

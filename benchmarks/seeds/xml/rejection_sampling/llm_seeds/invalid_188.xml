@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE doc [
+  <!ENTITY % param "param1">
+  <!ENTITY % param2 "param2">
+]>
+<doc>
+  <root>
+    <child attr1="value1" attr2="value2">
+      <grandchild attr3="value3" attr4="value4">text</grandchild>
+    </child>
+    <child2>
+      <grandchild2 attr5="value5" attr6="value6">text2</grandchild2>
+    </child2>
+  </root>
+  <root2>
+    <child3>
+      <grandchild3 attr7="value7" attr8="value8">text3</grandchild3>
+    </child3>
+  </root2>
+  <root3>
+    <child4 attr9="value9" attr10="value10">
+      <grandchild4 attr11="value11" attr12="value12">text4</grandchild4>
+    </child4>
+  </root3>
+  <root4>
+    <child5>
+      <grandchild5 attr13="value13" attr14="value14">text5</grandchild5>
+    </child5>
+  </root4>
+  <root5>
+    <child6>
+      <grandchild6 attr15="value15" attr16="value16">text6</grandchild6>
+    </child6>
+  </root5>
+  <root6>
+    <child7 attr17="value17" attr18="value18">
+      <grandchild7 attr19="value19" attr20="value20">text7</grandchild7>
+    </child7>
+  </root6>
+  <root7>
+    <child8>
+      <grandchild8 attr21="value21" attr22="value22">text8</grandchild8>
+    </child8>
+  </root7>
+  <root8>
+    <child9 attr23="value23" attr24="value24">
+      <grandchild9 attr25="value25" attr26="value26">text9</grandchild9>
+    </child9>
+  </root8>
+</doc>

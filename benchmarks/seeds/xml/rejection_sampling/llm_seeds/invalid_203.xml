@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE document SYSTEM "document.dtd">
+<!ELEMENT document (title,section+)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT section (heading,para*,list*,item*,figure*,table*)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT para (#PCDATA)>
+<!ELEMENT list (item+)>
+<!ELEMENT item (#PCDATA)>
+<!ELEMENT figure (#PCDATA)>
+<!ELEMENT table (row+)>
+<!ELEMENT row (cell+)>
+<!ELEMENT cell (#PCDATA)>
+<?xml-stylesheet href="document.xsl" type="text/xsl"?>
+<document>
+  <title>My Document</title>
+  <section>
+    <heading>Introduction</heading>
+    <para>This is a paragraph.</para>
+    <list>
+      <item>Item 1</item>
+      <item>Item 2</item>
+      <item>Item 3</item>
+    </list>
+    <figure>Figure 1</figure>
+    <table>
+      <row>
+        <cell>Cell 1</cell>
+        <cell>Cell 2</cell>
+      </row>
+      <row>
+        <cell>Cell 3</cell>
+        <cell>Cell 4</cell>
+      </row>
+    </table>
+  </section>
+  <section>
+    <heading>Conclusion</heading>
+    <para>This is another paragraph.</para>
+  </section>
+</document> 
+<?xml version="1.0" encoding="utf-8"?>
+<!ELEMENT document (title,section+)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT section (heading,para*,list*,item*,figure*,table*)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT para (#PCDATA)>
+<!ELEMENT list (item+)>
+<!ELEMENT item (#PCDATA)>
+<!ELEMENT figure (#PCDATA)>
+<!ELEMENT table (row+)>
+<!ELEMENT row (cell+)>
+<!ELEMENT cell (#PCDATA)>
+<?xml-stylesheet href="document.xsl" type="text/xsl"?>
+<document>
+  <title>My Document</title>
+  <section>
+    <heading>Introduction</heading>
+    <para>This is a paragraph.</para>
+    <list>
+      <item>Item 1</item>
+      <item>Item 2</item>
+      <item>Item 3</item>
+    </list>
+    <figure>Figure 1</figure>
+    <table>

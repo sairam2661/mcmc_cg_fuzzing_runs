@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-16"?>
+<!DOCTYPE catalog SYSTEM "d"
+
+
+      [
+  <!ELEMENT address (name, street, state, country)>
+
+  <!ATTLIST address ID CDATA #IMPLIED>
+
+  <!ENTITY name "W"
+            >
+
+  <!ENTITY % address-attributes.
+
+  " ">
+  <!NOTATION PDF SYSTEM "�

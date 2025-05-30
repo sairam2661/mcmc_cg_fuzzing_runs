@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+ <!DOCTYPE notes [
+  <!ELEMENT notes (note+)>
+  <!ATTLIST note id ID #REQUIRED>
+  <!ENTITY title "S" > 
+  <!ENTITY % ent SYSTEM "d">
+  <!NOTATION iso-8859-1 SYSTEM "M">
+  %ent;
+  <!--
+    sample XML included from external source.
+  -->
+]>
+<notes xmlns:xs="W" xmlns:xsi="W">
+  <!-- sample comment -->
+  <note id="1"><title>&title;</title><![CDATA[<test>Some <text>Sample</text> Text]]></note>
+  <note id="2"><title>E</title><![CDATA[<test>Some <text>Sample</text> Text]]></note>
+  <note id="7" xsi:nil="1" />
+  <note id="3"><xs:schema xmlns:xs="W" targetNamespace="W">
+    <xs:element name="p"></xs:element>
+  </xs:schema></note>
+</notes>

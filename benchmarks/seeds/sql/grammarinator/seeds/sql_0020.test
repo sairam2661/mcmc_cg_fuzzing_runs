@@ -1,0 +1,54 @@
+set 
+
+  testdir  		 { 	 file 
+ dirname  	
+
+ $argv0 
+	 }   source  
+  $testdir/tester.tcl 	  set 	 testprefix  	 K  	 set  timeout    60000 	  ifcapable 
+ gi1_8J 	  { 
+ do_execsql_test 
+ v 
+  - 
+	 5 			
+  . 	
+
+ 0 9 4 7  
+ { 	  CREATE TABLE 	 R_ 
+ (   F_8   UNIQUE   	 UNIQUE   DEFAULT 
+  ""      )   	 ; 	  ROLLBACK   
+ ;   BEGIN  
+ EXCLUSIVE    
+ }   ""     		  do_execsql_test 	
+	 t   -  7 4 0   .   1    {  
+ CREATE TABLE 	 Ah9 		
+ 
+ ( 
+	 jA_   DEFAULT  2.1    	 ,   	  U__  
+ o     ,  		
+	 f   oAp3  
+
+ NOT NULL  	 NOT NULL     UNIQUE   	 PRIMARY KEY     )   
+ ; 	
+  ROLLBACK      }  69.73     		
+	
+
+  }     
+  do_execsql_test   b 	
+ - 
+  	 2 1 2 6 6 
+ . 	 0    { 			  CREATE TABLE 
+ j_6R 	
+   ( 
+
+	
+
+	 R 
+ DEFAULT 	 ""     
+ )   
+ ;  CREATE INDEX 
+ h8_g  ON   B 
+ ( 	 v7   )        } 	
+ {   	  {   }     
+ $y    } 	      
+  finish_test    

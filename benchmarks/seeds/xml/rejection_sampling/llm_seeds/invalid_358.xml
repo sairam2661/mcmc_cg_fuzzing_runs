@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+<!ELEMENT books (book+)>
+<!ELEMENT book (#PCDATA | title | author | price | publisher | ISBN | category | description | (review)+)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ELEMENT ISBN (#PCDATA)>
+<!ELEMENT category (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT review (#PCDATA)>
+<!ATTLIST book
+id ID #REQUIRED
+lang CDATA #IMPLIED
+date CDATA #IMPLIED>
+<!ATTLIST review
+author (#PCDATA) #IMPLIED
+rating (#PCDATA) #IMPLIED>
+]>
+<books>
+<book id="bk1" lang="en" date="2020">
+<title>Book One</title>
+<author>Author One</author>
+<price>$10.99</price>
+<publisher>Publisher One</publisher>
+<ISBN>1234567890</ISBN>
+<category>Category One</category>
+<description>This is a book.</description>
+<review author="Reviewer One" rating="5/5">This is a great book.</review>
+</book>
+<book id="bk2" lang="fr" date="2021">
+<title>Book Two</title>
+<author>Author Two</author>
+<price>$20.99</price>
+<publisher>Publisher Two</publisher>
+<ISBN>9876543210</ISBN>
+<category>Category Two</category>
+<description>This is another book.</description>
+<review author="Reviewer Two" rating="4/5">This is a good book.</review>
+</book>
+</books>

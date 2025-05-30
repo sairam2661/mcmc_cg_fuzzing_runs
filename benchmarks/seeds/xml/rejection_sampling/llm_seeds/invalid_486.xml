@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, chapter*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ATTLIST chapter id CDATA #REQUIRED>
+]>
+<book>
+  <title>My Book</title>
+  <author>John Doe</author>
+  <chapter id="ch1">Chapter 1: Introduction</chapter>
+  <chapter id="ch2">Chapter 2: The Main Idea</chapter>
+  <chapter id="ch3">Chapter 3: Conclusion</chapter>
+  <chapter id="ch4">Chapter 4: Appendices</chapter>
+  <chapter id="ch5">Chapter 5: References</chapter>
+</book>

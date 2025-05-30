@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ENTITY % bookentity SYSTEM "bookentity.ent">
+  %bookentity;
+]>
+<book xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:fn="http://www.w3.org/2005/xpath-functions"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns="http://www.example.org/book"
+  id="b1">
+  <title>My Book</title>
+  <author>John Doe</author>
+  <editor>Jane Doe</editor>
+  <edition>1</edition>
+  <language>en</language>
+  <pubdate>2020-01-01</pubdate>
+  <bookinfo>
+    <publisher>My Publisher</publisher>
+    <address>
+      <street>123 Main St</street>
+      <city>Anytown</city>
+      <state>CA</state>
+      <zip>12345</zip>
+    </address>
+  </bookinfo>
+  <chapter xlink:href="#c1">
+    <title>Chapter 1</title>
+    <sect1>
+      <title>Section 1</title>
+      <p>Here is some text.</p>
+    </sect1>
+  </chapter>
+  <chapter xlink:href="#c2">
+    <title>Chapter 2</title>
+    <sect1>
+      <title>Section 2</title>
+      <p>Here is some more text.</p>
+    </sect1>
+  </chapter>
+  <note>Some note.</note>
+</book>
+<chapter id="c1">
+  <title>Chapter 1</title>
+  <sect1>
+    <title>Section 1</title>
+    <p>Here is some text.</p>
+  </sect1>
+</chapter>
+<chapter id="c2">
+  <title>Chapter 2</title>
+  <sect1>
+    <title>Section 2</title>
+    <p>Here is some more text.</p>
+  </sect1>
+</chapter>  <!-- redundant chapter -->
+<chapter id="c3">
+  <title>Chapter 3</title>
+  <sect1>
+    <title>Section 3</title>
+    <p>Here is some text.</p>
+  </sect1>
+</chapter>  <!-- duplicate id -->
+<

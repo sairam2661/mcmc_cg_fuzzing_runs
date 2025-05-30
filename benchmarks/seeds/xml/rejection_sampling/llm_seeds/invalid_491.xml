@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ENTITY book-title "My Book">
+  <!ENTITY author-name "John Smith">
+  <!ENTITY publisher-name "Acme Publishing">
+]>
+<book xmlns:xs="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="book.xsd"
+      id="book-123"
+      lang="en"
+      xml:lang="en">
+  <metadata>
+    <author>
+      <name>
+        <given-name>&author-name;</given-name>
+        <family-name>Smith</family-name>
+      </name>
+      <email>john.smith@example.com</email>
+    </author>
+    <publisher>
+      <name>&publisher-name;</name>
+    </publisher>
+  </metadata>
+  <content>
+    <title>&book-title;</title>
+    <abstract>This is a sample abstract.</abstract>
+    <chapter>
+      <title>Chapter 1: Introduction</title>
+      <section>
+        <title>Section 1.1: Background</title>
+        <para>This is a sample paragraph.</para>
+      </section>
+    </chapter>
+  </content>
+</book>

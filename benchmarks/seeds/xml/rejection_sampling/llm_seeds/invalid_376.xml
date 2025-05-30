@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book SYSTEM "book.dtd">
+<!ENTITY % ent SYSTEM "ent.ent">
+<!ENTITY % amp "&#38;">
+
+<!ELEMENT book - - (title,author,chapter+)>
+<!ELEMENT title - - (#PCDATA)>
+<!ELEMENT author - - (#PCDATA)>
+<!ELEMENT chapter - - (#PCDATA)>
+
+<!ATTLIST chapter id ID #REQUIRED>
+<!ATTLIST chapter date CDATA #IMPLIED>
+
+<!ENTITY chapter1 "Introduction to Computers">
+<!ENTITY chapter2 "Hardware and Software">
+<!ENTITY chapter3 "Networking and Internet">
+
+<!ENTITY % book SYSTEM "book.xml">
+<!ENTITY % ent SYSTEM "ent.ent">
+<!ENTITY % amp "&#38;">
+
+<!ENTITY chapter1 "&chapter1;">
+<!ENTITY chapter2 "&chapter2;">
+<!ENTITY chapter3 "&chapter3;">
+
+<!ELEMENT book - - (title,author,chapter+)>
+<!ELEMENT title - - (#PCDATA)>
+<!ELEMENT author - - (#PCDATA)>
+<!ELEMENT chapter - - (#PCDATA)>
+
+<!ATTLIST chapter id ID #REQUIRED>
+<!ATTLIST chapter date CDATA #IMPLIED>
+
+<book>
+    <title>The Book</title>
+    <author>John Doe</author>
+    <chapter id="1" date="2022-01-01">Introduction to Computers</chapter>
+    <chapter id="2" date="2022-01-15">Hardware and Software</chapter>
+    <chapter id="3" date="2022-02-01">Networking and Internet</chapter>
+</book>

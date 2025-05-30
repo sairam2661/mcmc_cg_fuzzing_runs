@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE notes SYSTEM "notes.dtd">
+<!ELEMENT notes (note+)>
+<!ELEMENT note (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+
+<notes>
+    <note>
+        <title>First Note</title>
+        <author>John Doe</author>
+        <date>2021-01-01</date>
+        <body>
+            <p>This is the first note.</p>
+            <p>It contains two paragraphs.</p>
+        </body>
+    </note>
+    <note>
+        <title>Second Note</title>
+        <author>Jane Doe</author>
+        <date>2021-01-15</date>
+        <body>
+            <p>This is the second note.</p>
+            <p>It also contains two paragraphs.</p>
+        </body>
+    </note>
+    <note>
+        <title>Third Note</title>
+        <author>Bob Smith</author>
+        <date>2021-02-01</date>
+        <body>
+            <p>This is the third note.</p>
+        </body>
+    </note>
+</notes>

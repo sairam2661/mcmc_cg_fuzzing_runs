@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author,edition,chapter|section)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT edition (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ELEMENT section (#PCDATA)>
+  <!ATTLIST chapter id ID #REQUIRED>
+  <!ATTLIST section id ID #REQUIRED>
+  <!ELEMENT footnote (#PCDATA)>
+  <!ELEMENT biblioref (#PCDATA)>
+  <!ELEMENT note (#PCDATA)>
+  <!ELEMENT bibliography (#PCDATA)>
+  <!ELEMENT table (#PCDATA)>
+  <!ELEMENT figure (#PCDATA)>
+  <!ELEMENT image (#PCDATA)>
+  <!ELEMENT index (#PCDATA)>
+  <!ELEMENT glossary (#PCDATA)>
+  <!ELEMENT appendix (#PCDATA)>
+  <!ELEMENT glossentry (#PCDATA)>
+]>
+<book>
+  <title>My Book</title>
+  <author>John Doe</author>
+  <edition>First</edition>
+  <chapter id="chap1">
+    <title>Chapter 1</title>
+    <section id="sec1">
+      <title>Section 1</title>
+      <footnote>Footnote 1</footnote>
+      <biblioref>Ref 1</biblioref>
+      <note>Note 1</note>
+    </section>
+    <section id="sec2">
+      <title>Section 2</title>
+      <footnote>Footnote 2</footnote>
+      <biblioref>Ref 2</biblioref>
+      <note>Note 2</note>
+    </section>
+  </chapter>
+  <chapter id="chap2">
+    <title>Chapter 2</title>
+    <section id="sec3">
+      <title>Section 3</title>
+      <footnote>Footnote 3</footnote>
+      <biblioref>Ref 3</biblioref>
+      <note>Note 3</note>
+    </section>
+    <section id="sec4">
+      <title>Section 4</title>
+      <footnote>Footnote 4</footnote>
+      <biblioref>Ref 4</biblioref>
+      <note>Note 4</note>
+    </section>
+  </chapter>
+  <bibliography>
+    <note>Bibliography</note>
+    <

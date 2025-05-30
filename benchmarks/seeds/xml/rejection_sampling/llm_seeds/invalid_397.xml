@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ENTITY % entity1 SYSTEM "entity1.xml">
+  <!ENTITY % entity2 SYSTEM "entity2.xml">
+]>
+<book xmlns="http://www.example.org/book"
+      xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+      xs:noNamespaceSchemaLocation="book.xsd"
+      version="1.0">
+  <title xml:lang="en">My Book</title>
+  <author>
+    <name>John Smith</name>
+    <email>john.smith@example.com</email>
+    <phone>123-456-7890</phone>
+  </author>
+  <chapter id="ch1">
+    <title>Chapter 1</title>
+    <section id="s1">
+      <title>Section 1</title>
+      <para>Some text.</para>
+    </section>
+  </chapter>
+  <chapter id="ch2">
+    <title>Chapter 2</title>
+    <section id="s2">
+      <title>Section 2</title>
+      <para>Some more text.</para>
+    </section>
+  </chapter>
+  <bibl>
+    <author>
+      <name>Jane Doe</name>
+    </author>
+    <title>Another book</title>
+    <year>2020</year>
+  </bibl>
+</book>

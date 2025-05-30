@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE document [
+  <!ENTITY % ent SYSTEM "ent.dtd">
+  <!ENTITY % dtd SYSTEM "dtd.dtd">
+  <!ENTITY % p SYSTEM "p.dtd">
+]>
+<!ELEMENT document (title, section*, section)>
+<!ATTLIST document
+  id ID #REQUIRED
+  lang CDATA #IMPLIED
+  xmlns CDATA #IMPLIED
+>
+<!ENTITY % section SYSTEM "section.dtd">
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT section (header, p+, footer)>
+<!ATTLIST section
+  id ID #REQUIRED
+  level NMTOKEN #REQUIRED
+>
+<!ELEMENT header (#PCDATA)>
+<!ELEMENT p (#PCDATA)>
+<!ELEMENT footer (#PCDATA)>
+<!ATTLIST p
+  style NMTOKEN #IMPLIED
+>
+<!ENTITY % header SYSTEM "header.dtd">
+<!ENTITY % footer SYSTEM "footer.dtd">
+<!ENTITY % p1 SYSTEM "p1.dtd">
+<!ENTITY % p2 SYSTEM "p2.dtd">
+<!ELEMENT header2 (#PCDATA)>
+<!ELEMENT footer2 (#PCDATA)>
+<!ATTLIST header2
+  class NMTOKEN #IMPLIED
+>
+<!ATTLIST footer2
+  idref IDREF #IMPLIED
+>
+<!ELEMENT title2 (#PCDATA)>
+<!ELEMENT section2 (header2, p2+, footer2)>
+<!ATTLIST section2
+  level NMTOKEN #REQUIRED
+>
+<!ELEMENT title3 (#PCDATA)>
+<!ELEMENT section3 (header, p+, footer)>
+<!ATTLIST section3
+  idref IDREF #IMPLIED
+>
+<!ELEMENT p3 (#PCDATA)>
+<!ELEMENT header3 (#PCDATA)>
+<!ELEMENT footer3 (#PCDATA)>
+<!ATTLIST p3
+  style NMTOKEN #IMPLIED
+>
+<!ATTLIST header3
+  class NMTOKEN #IMPLIED
+>
+<!ATTLIST footer3
+  idref IDREF #IMPLIED
+>
+<!ELEMENT title4 (#PCDATA)>
+<!ELEMENT section4 (header, p+, footer)>
+<!ATTLIST section4
+  level NMTOKEN #REQUIRED
+>
+<!ELEMENT p4 (#PCDATA)>
+<!ELEMENT header4 (#PCDATA)>
+<!ELEMENT footer4 (#PCDATA)>
+<!ATTLIST p4
+  style NMTOKEN #IMPLIED
+>
+<!ATTLIST header4
+  class NMTOKEN #IMPLIED
+>
+<!ATTLIST footer4
+  idref IDREF #IMPLIED
+>

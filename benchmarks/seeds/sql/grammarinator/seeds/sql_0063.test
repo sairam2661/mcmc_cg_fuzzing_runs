@@ -1,0 +1,56 @@
+set  testdir 	 {  file 	 dirname 
+
+ $argv0 	 } 	
+ source  $testdir/tester.tcl   set 
+ 
+
+ testprefix    U  set 	
+ timeout  	  	 
+ 60000 
+ set  	
+ J 	   $c  
+	     proc   	 y 
+
+	 {   Q 	
+ }    	 { 	 aH   p  	
+ {  	
+	 {   PRAGMA 			 sD0  = 	 ""       }  
+ 91.2     { 	
+	
+ SELECT  ""   
+ FROM   Qy6  WHERE   Kz    =  7.19138     	
+		   ;  COMMIT     ;  
+ }  	 }           db2  	 d 
+   			 s 
+ $::n    	 $::M_    $q    {   { 	 '4'   	
+ $D    }  	   
+ $L    }   	    { 
+	 }  
+        
+ }      do_execsql_test 
+ y   -   5 9 
+ . 	   3   { 	 SELECT 		 *  		 FROM 			  Lg5_ 	 WHERE  f  
+	
+	 
+ = 		
+ ""     	 ; 
+ WITH    Ozr 
+ ( 		 M 
+ ) 	  AS  ( 
+ ROLLBACK   
+ ) 	 WITH 	
+ S  
+ (  	 b6   ) 
+ AS  ( 
+ BEGIN 
+	   
+ ) 	  PRAGMA 		 J 	 = 	   80.5        	 ; 
+ BEGIN 	 EXCLUSIVE     } 
+	 { 
+
+		 $w  
+ 266   	 $::i    	
+ 	 { 	
+		 } 
+    
+ }         finish_test 	  

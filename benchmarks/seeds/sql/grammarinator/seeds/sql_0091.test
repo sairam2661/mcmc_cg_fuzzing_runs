@@ -1,0 +1,99 @@
+set 
+ testdir   { 		 file   
+ dirname   $argv0   } 
+ source   	 $testdir/tester.tcl   set 
+
+	 testprefix 
+
+ D 
+ set 
+ timeout  	
+ 60000 
+  proc 
+	 l 	 w_   
+	 { 	 D8 
+ { 
+ CREATE TABLE 
+	 q6  (  c_eDM   z5   PRIMARY KEY    UNIQUE    
+	  )    
+ 
+ }    { 
+  ''   	 }     
+
+ 	  { 
+ { 	 
+ WITH 
+ v 
+ ( 
+  s  ) 	 AS  
+  (  	 CREATE INDEX 
+ Bi61z  ON 	 eF     ( 
+ S 	
+ 
+
+ )     ) 
+
+ PRAGMA 	
+ z7     	 ;   CREATE TABLE 
+
+ MJ3E   (  f_f 	 d_  		  PRIMARY KEY   	 , 
+		 N 
+ R  		 NOT NULL    	 )    ;  CREATE INDEX  v  ON 	 
+ o  (  V54_ 	 )     }  			  $::H    } 		   
+    
+ db2 		 o    	 execsql   {   CREATE INDEX 
+ W  ON  	 q_   (   V  
+ )   
+ ; 
+ SELECT 
+ count(*)  
+
+
+
+  FROM 
+ ML    ;   COMMIT    ;  
+ CREATE TABLE 
+	
+ nr 	
+ (  	 D__ 
+ V  
+	
+ UNIQUE    			 , 
+ xi 
+ G   
+ , 	 T  				 d__   DEFAULT 	  0    
+ , 
+ s_   L  
+ NOT NULL  	 PRIMARY KEY  
+ UNIQUE  		 UNIQUE   NOT NULL   		 , 
+			 z___ 
+ qH   	 ,   Gcu 		 R   
+ , 
+ UmuN 
+ UNIQUE   NOT NULL    	 )   	 ;  
+ } 	   		
+  db2 		
+ W 
+ 
+ c  
+ { 
+ } 	     {   8     } 	   
+ $::H_kY        }   
+     lappend   I7  {  CREATE TABLE 
+ h  	
+ (  
+		 lMo   
+ ,  	 G_5__ 	 DEFAULT  
+ 5.2     NOT NULL     , 
+	 y   
+ )    ; 
+	 WITH   HG8_t   (  U_   )  AS 	
+   ( 	 ROLLBACK    UNION ALL 
+	 CREATE TABLE 	 FP10t2  
+			
+
+		 (  	
+ 	 g 	 N    	 )   
+ ) 	 COMMIT     
+ ;  
+ }       	  finish_test     

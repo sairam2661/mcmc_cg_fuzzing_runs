@@ -1,0 +1,105 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix complex_queries
+
+set ::timeout 60000
+set up {CREATE TABLE t1(a PRIMARY KEY, b); CREATE TABLE t2(c PRIMARY KEY, d);}
+set db close_all
+
+proc complex_query {} {
+  global db
+  db eval {
+    BEGIN;
+    INSERT INTO t1 VALUES(1, 'hello');
+    INSERT INTO t2 VALUES(2, 'world');
+  }
+  execsql {
+    BEGIN;
+    SELECT * FROM t1;
+    SELECT * FROM t2;
+    SELECT * FROM t2 WHERE c = 2;
+    SELECT * FROM t2 WHERE c = 2;
+    SELECT * FROM t2;
+    COMMIT;
+  }
+  db eval {
+    SELECT * FROM t1;
+    SELECT * FROM t2;
+  }
+}
+
+do_test complex-1.1 {
+  execsql $up
+  list
+} {}
+do_test complex-1.2 {
+  execsql {
+    INSERT INTO t1 VALUES(3, 'foo');
+  }
+  execsql {
+    SELECT * FROM t1;
+  }
+} {1 hello 3 foo}
+do_test complex-1.3 {
+  execsql {
+    DELETE FROM t1 WHERE a IS NULL OR a IS NOT NULL
+  }
+  execsql {
+    SELECT * FROM t1;
+  }
+} {3 foo}
+
+do_execsql_test complex-1.4 {
+  CREATE TABLE abc(a PRIMARY KEY, b);
+  CREATE TABLE bca(c PRIMARY KEY, a);
+
+  INSERT INTO abc(a, b) VALUES('value1', 'b1');
+  INSERT INTO abc(a, b) VALUES('value2', 'b2');
+  INSERT INTO abc(a, b) VALUES('value3', 'b3');
+
+  INSERT INTO bca(c, a) VALUES('c1', 'value1');
+  INSERT INTO bca(c, a) VALUES('c2', 'value2');
+  INSERT INTO bca(c, a) VALUES('c3', 'value2');
+  INSERT INTO bca(c, a) VALUES('c3', 'value2');
+
+  SELECT abc1_rowid FROM abc WHERE abc1_rowid = 1;
+} {1}
+
+do_execsql_test complex-1.5 {
+  SELECT 10.2
+  FROM   abc
+  WHERE  abc1_rowid = 1;
+} {10.2}
+
+do_catchsql_test complex1.6 {
+  SELECT abc1_rowid
+  FROM   abc
+  WHERE  abc1_rowid = 2;
+  SELECT abc1_rowid
+  FROM   abc
+  WHERE  abc1_rowid = 1;
+} {1 {}}
+
+do_execsql_test complex1.7 {
+  CREATE TABLE abcd(a PRIMARY KEY, b, c, d);
+
+  INSERT INTO abcd VALUES('a1', 'b1', 'c1', 'd1');
+  INSERT INTO abcd VALUES('a2', 'b2', 'c2', 'd2');
+
+  SELECT a FROM abcd
+  WHERE a = 'a1' 
+  } {a1}
+
+do_execsql_test complex1.8 {
+  WITH RECURSIVE r AS RECURSIVE
+  SELECT a
+  FROM abc
+  WHERE a LIKE 'a%' 
+  UNION ALL
+  SELECT x FROM 
+  r
+  WHERE r2 IS NOT NULL 
+  LIMIT 10 
+  } {a1 a2 a11 a12 a21}
+
+ finish_test

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE book [
+  <!ENTITY % book_entities SYSTEM "book.ent">
+  %book_entities;
+]>
+<book xmlns:fb="http://www.facebook.com/2008/fbml">
+  <title>Harry Potter</title>
+  <author>
+    <name>J.K. Rowling</name>
+    <birthDate>1965-07-31</birthDate>
+  </author>
+  <publisher>
+    <name>Bloomsbury Publishing</name>
+    <address>
+      <street>10 Inverness Terrace</street>
+      <city>London</city>
+      <country>UK</country>
+    </address>
+  </publisher>
+  <chapter>
+    <title>The Boy Who Lived</title>
+    <text>
+      <p>
+        Mr. and Mrs. Dursley, of number four, Privet Drive,
+        were proud to say that they were perfectly normal,
+        thank you very much.
+      </p>
+    </text>
+  </chapter>
+  <note>
+    <fb:like href="http://www.facebook.com/harrypotter"/>
+  </note>
+</book>

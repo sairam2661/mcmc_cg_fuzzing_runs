@@ -1,0 +1,31 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix sync
+ifcapable!wal {
+  finish_test
+  return
+}
+set ::db [sqlite3 db test.db]
+execsql {
+  PRAGMA journal_mode=WAL;
+  CREATE TABLE t1(x);
+  INSERT INTO t1 VALUES(1);
+}
+execsql {
+  CREATE TABLE t2 AS SELECT x FROM t1;
+}
+do_test sync-2.1 {
+  execsql {
+    INSERT INTO t1 VALUES(2);
+  }
+  execsql {
+    SELECT * FROM t2
+  }
+} {1}
+execsql {
+  SELECT * FROM t2
+}
+if {[info commands sqlite3]} {
+  db close
+}
+finish_test

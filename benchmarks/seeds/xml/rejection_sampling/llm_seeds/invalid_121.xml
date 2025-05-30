@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note [
+  <!ENTITY % ent SYSTEM "entities.ent">
+  <!ENTITY % pubid SYSTEM "publicid.ent">
+]>
+<note>
+  <to>Tove</to>
+  <from>Jani</from>
+  <heading>Reminder</heading>
+  <body>Don't forget me this weekend!</body>
+  <p:para xml:lang="en">This is a paragraph with a special attribute.</p:para>
+  <greeting xml:space="preserve">
+    <name>John</name>
+    <age>35</age>
+    <address>
+      <street>123 Main St</street>
+      <city>Anytown</city>
+      <state>CA</state>
+      <zip>12345</zip>
+    </address>
+  </greeting>
+  <note>
+    <to>Anna</to>
+    <from>Jani</from>
+    <heading>Reminder</heading>
+    <body>Don't forget me this weekend!</body>
+  </note>
+</note>

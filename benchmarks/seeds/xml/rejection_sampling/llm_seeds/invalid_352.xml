@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ENTITY entity "example entity">
+  <!ELEMENT book (title,author,description,chapter+,section+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ELEMENT section (#PCDATA)>
+  <!ATTLIST chapter id CDATA #REQUIRED>
+  <!ATTLIST section id CDATA #REQUIRED>
+]>
+<book>
+  <title>Example Book</title>
+  <author>John Doe</author>
+  <description>This is an example book.</description>
+  <chapter id="chapter1">Chapter 1</chapter>
+  <chapter id="chapter2">Chapter 2</chapter>
+  <chapter id="chapter3">Chapter 3</chapter>
+  <section id="section1">Section 1</section>
+  <section id="section2">Section 2</section>
+  <section id="section3">Section 3</section>
+  &entity;
+</book>

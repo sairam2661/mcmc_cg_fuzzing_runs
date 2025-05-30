@@ -1,0 +1,155 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix transaction
+
+set ::timeout 60000 	sets timeout value of the tester
+interp alias new_testcase {
+  set tcl_timeout 30000
+  set testcase_number 1
+  } new_testcase
+
+proc init_db {} {
+  execsql {
+    CREATE TABLE a(x);
+    CREATE TABLE b(y);
+    CREATE TABLE c(z);
+  }
+}
+
+proc cleanup {} {
+  db close
+  forcedelete testdb
+}
+
+ifcapable journalMode {
+  catchsql {PRAGMA journal_mode='WAL'}
+} {0 {}}
+
+ifcapable temptable {
+  do_execsql_test 1.0 {
+    CREATE TEMPORARY TABLE t AS SELECT 1 AS x UNION ALL SELECT 1 AS x UNION ALL SELECT 1 AS x UNION ALL SELECT 1 AS x
+  }
+}
+
+for {set i 2} {$i le 5} {incr i} {
+  do_test $i {
+    set sql "SELECT sum(x) FROM a"
+    set rc {}
+    set handle "[db connection]"
+    set irowid $handle last_insert_rowid
+    execsql $sql
+    lappend rc $sql
+    lappend rc $handle
+    lappend rc $irowid
+  } {SELECT sum x FROM a {} {}}
+}
+
+do_test 6 {
+  execsql {
+    DELETE FROM a
+  }
+  execsql {
+    SELECT * FROM a
+  }
+} {}
+do_test 7 {
+  execsql {
+    INSERT INTO a VALUES(9)
+  }
+} {}
+do_test 8 {
+  catchsql {
+    PRAGMA integrity_check
+  }
+} {ok}
+
+proc subtest {} {
+  execsql {
+    DELETE FROM c
+  }
+}
+
+do_test 9 {
+  execsql {
+    BEGIN;
+    INSERT INTO b VALUES(2);
+    INSERT INTO c VALUES(2);
+    SELECT * FROM b;
+  }
+} {2}
+
+do_execsql_test 10 {
+  COMMIT
+  SELECT x FROM a WHERE x IN 2
+} {}
+
+for {set i 12} {$i le 16} {incr i} {
+  do_test $i {
+    set rc {}
+    expr {
+      set max_limit 10
+      execsql {
+        DELETE FROM c
+      }
+    }
+    lappend rc ""
+  } {}
+}
+
+do_test 17 {
+  catchsql {
+    SELECT x FROM a
+  }
+} {OK}
+
+do_execsql_test 18 {
+  UPDATE a SET x IN 4.5
+} {no such operation}
+
+do_test 19 {
+  catchsql {
+    PRAGMA page_size = 2
+  }
+} {1 {Cannot change page size from this schema}}
+
+create_test_and_source db4 19 do_test 21 {
+  set rc {}
+  set db "db4"
+  expr {
+    execsql {
+      CREATE TABLE t AS SELECT NULL AS t
+    }
+  }
+  lappend rc $db
+  if {$rc eq $db} { 
+    lappend rc {}
+  } else { 
+    lappend rc $rc
+  }
+} {db4 {}}
+
+cleanup
+catch {destroy db4}
+
+do_test 22 {
+  set rc {}
+  execsql {
+    CREATE TABLE b AS SELECT 5 AS x UNION ALL SELECT 5 AS x
+  }
+  execsql COMMIT
+  execsql{
+    SELECT sum (   *) FROM a
+  }
+  lappend rc "a"
+  lappend rc ""
+} a {}
+
+test_last_error {22}{0 {}}
+
+do_test 24 {
+  catchsql{
+    SELECT * FROM b
+  }
+} {0 {5 5}}
+
+finish_test

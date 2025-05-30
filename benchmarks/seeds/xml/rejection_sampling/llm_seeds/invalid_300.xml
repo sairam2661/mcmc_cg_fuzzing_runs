@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note SYSTEM "note.dtd">
+<note>
+    <to whom="John">John Doe</to>
+    <from whom="Jane">Jane Smith</from>
+    <heading>Reminder</heading>
+    <body xml:lang="en" xml:space="preserve">
+        &lt;strong&gt;Please&lt;/strong&gt; call &lt;strong&gt;me&lt;/strong&gt;.
+    </body>
+    <signature>
+        <p>Best regards</p>
+        <p>&#x00A0;</p>
+    </signature>
+    <address>
+        <street>123 Main St</street>
+        <city>New York</city>
+        <state>NY</state>
+        <country>USA</country>
+        <postal>10001</postal>
+    </address>
+    <note-type>Reminder</note-type>
+    <note-date>2023-02-20</note-date>
+</note>

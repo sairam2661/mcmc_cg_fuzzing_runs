@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE document SYSTEM "d"
+  [
+  <!ELEMENT document (element1, element2, element3)>
+  <!ATTLIST document attr1 CDATA #IMPLIED>
+  <!ENTITY entity "A">
+  <!ENTITY % ent2 "S">
+ <!NOTATION notation PUBLIC "v" "l">
+ 	%p:entity-system-declaration-OK;
+ 	<!----><!ELEMENT element1 (#PCDATA)>
+  <!ATTLIST element2 attr2 CDATA #REQUIRED>
+  <!ELEMENT element3 EMPTY>
+  ]>
+<document attr1="a" xmlns="f" xmlns:xlink="g">
+%xinclude href="c"?>
+  <element1>Some Text</element1>
+  <element2 attr2="b">Text</element2>
+  <xlink:href="x" xlink:title="t">Element3</xlink:href>
+  <notated>Test</notated>
+  <message>&entity;&ent2;</message>
+</document>

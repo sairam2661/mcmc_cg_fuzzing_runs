@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE catalog SYSTEM "m" [
+  <!ELEMENT catalog (section*)>
+  <!ATTLIST catalog id ID #REQUIRED>
+  <!ENTITY j "J">
+  <!ENTITY  
+                        
+                       
+  
+  %s1a-extra-data-entity-start
+  '">
+]>
+<catalog id="main" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <section xmlns:xi="http://www.w3.org/2001/XInclude">
+   <xi:include href="#b-fragment"/><name>Books</name>
+  </section>
+  <section id="b-fragment" xmlns="http://example.org">
+   <!-- Some content to be included from outside this document -->
+     <title>Sample Document &j;</title>
+   <!-- End of content to be included -->
+  </section> 
+</catalog>  <title>t</title>   <price>19.95</price>  <quantity>5</quantity>   <title>a</title>  <price>4.99</price>   <quantity>2</quantity>   <title></title>   <price>7.95</price>  <quantity>15</quantity>   <title>s</title>   <price>19.95</price>  <quantity>12</quantity>   <title></title>   <price>4.99</price>  <quantity>1</quantity>   <title>d</title>   <price>7.95</price>  <quantity>5</quantity>   <title>t</title>   <price>19.95</price>  <quantity>3</quantity>   <title></title>   <price>4.99</price>  <quantity>10</quantity>   <title></title>   <price>7.95</price>  <quantity>7</quantity>   <title>a</title>   <price>19.95</price>  <quantity>2</quantity>   <title>d</title>  <price>4.99</price>   <quantity>8</quantity>   <title></title>   <price>7.95</price>  <quantity>15</quantity>   <title>t</title>   <price>19.95</price>  <quantity>6</quantity>   <title></title>   <price>4.99</price>  <quantity>1</quantity>   <title>a</title>  <price>7.95</price>  <quantity>3</quantity>  </catalog

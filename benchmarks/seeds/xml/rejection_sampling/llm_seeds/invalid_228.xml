@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ENTITY nbsp "&#160;">
+  <!ENTITY amp "&#38;">
+  <!ENTITY lt "&#60;">
+  <!ENTITY gt "&#62;">
+  <!ENTITY quot "&#34;">
+]>
+<book xmlns:xs="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.w3.org/2001/XMLSchema-instance http://www.w3.org/2001/XMLSchema.xsd"
+      id="b1">
+  <title>La Nuit de l&#39;iguanodon</title>
+  <author>
+    <name>
+      <first-name>Jean</first-name>
+      <last-name>Renard</last-name>
+    </name>
+    <address>
+      <street>12, rue de la paix</street>
+      <city>Paris</city>
+      <country>France</country>
+    </address>
+  </author>
+  <publisher>
+    <name>Éditions du Bélier</name>
+    <address>
+      <street>23, rue de la République</street>
+      <city>Lyon</city>
+      <country>France</country>
+    </address>
+  </publisher>
+  <publication>
+    <year>2005</year>
+    <month>January</month>
+    <day>1</day>
+  </publication>
+  <genre>roman</genre>
+  <description>Un roman sur l&#39;iguanodon.</description>
+  <note>
+    <title>Note de l&#39;auteur</title>
+    <content>
+      <p>Je suis l&#39;auteur de ce roman.</p>
+      <p>C&#39;est un roman sur un iguanodon.</p>
+    </content>
+  </note>
+  <content>
+    <p>Il était une fois, dans une vallée lointaine, un iguanodon nommé Iggy.</p>
+    <p>Iggy était un iguanodon très gentil.</p>
+  </content>
+  <bibliography>
+    <reference>
+      <author>
+        <name>
+          <first-name>René</first-name>
+          <last-name>Renard</last-name>
+        </name>
+      </author>
+      <title>Les

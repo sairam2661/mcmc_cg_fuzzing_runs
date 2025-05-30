@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE book [
+<!ENTITY % entity "The Great Gatsby">
+<!ENTITY % booktitle "%entity; by F. Scott Fitzgerald">
+<!ENTITY % author "%booktitle; was written by %entity;">
+<!ENTITY % date "1925">
+<!ENTITY % publication "%date;">
+<!ATTLIST book id CDATA #REQUIRED>
+<!ATTLIST author first-name CDATA #REQUIRED last-name CDATA #REQUIRED>
+<!ATTLIST publication year CDATA #REQUIRED month CDATA #REQUIRED day CDATA #REQUIRED>
+<!ELEMENT book (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT publication (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT title-element EMPTY>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT title-element (#PCDATA)>
+<!ELEMENT

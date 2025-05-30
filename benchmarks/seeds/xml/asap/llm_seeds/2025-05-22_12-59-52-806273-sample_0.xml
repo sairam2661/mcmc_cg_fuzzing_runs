@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book PUBLIC
+    "T"  "T"
+    [
+        <!ELEMENT title (#PCDATA)>
+        <!ATTLIST author
+            id  ID  #REQUIRED
+            name CDATA  #IMPLIED
+        >
+    <!ENTITY t1 "T">
+    <!ENTITY % t2 "<">
+    <!NOTATION T SYSTEM "T">
+    %t2;
+    <!-- External DTD Subset -->
+    <!ELEMENT xinclude-only-public (section, section)>
+    <!ATTLIST xinclude-only-public
+        id   ID   #IMPLIED
+        ref  CDATA      #IMPLIED
+    >
+    ]>
+<book xmlns:xi="w" id="B">
+
+<!--
+<xinclude href="xinclude.xml" />
+-->
+<xi:include href="x" />
+<xi:include href="x">
+    <xi:fallback>
+        This is the fallback text.
+    </xi:fallback>
+</xi:include>
+<b id="B" ref="Y"><title>This is a title</title></b>
+</book>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ENTITY bookid "book123">
+  <!ENTITY authorid "auth123">
+  <!ENTITY booktitle "The Great Gatsby">
+  <!ENTITY bookauthor "F. Scott Fitzgerald">
+  <!ENTITY bookyear "1925">
+  <!ENTITY bookpublisher "Charles Scribner's Sons">
+  <!ENTITY bookisbn "978-0684804557">
+  <!ENTITY bookedition "1st edition">
+  <!ENTITY bookbinding "hardcover">
+  <!ENTITY bookpages "180">
+  <!ENTITY bookpublisheraddress "15 West 44th Street, New York, NY 10036">
+  <!ENTITY bookpublisherphone "1-800-333-BOOK">
+  <!ENTITY bookpublisherfax "1-800-333-BOOK-FAX">
+  <!ENTITY bookpublisheremail "books@scribner.com">
+  <!ENTITY bookpublisherurl "https://www.scribner.com/">
+  <!ENTITY bookpublishercontact "John Smith, Sales Manager">
+  <!ENTITY bookpublisherphone2 "1-800-333-BOOK-2">
+  <!ENTITY bookpublisherfax2 "1-800-333-BOOK-FAX-2">
+  <!ENTITY bookpublisheremail2 "john.smith@scribner.com">
+  <!ENTITY bookpublisherurl2 "https://www.scribner2.com/">
+  <!ENTITY bookpublishercontact2 "Jane Doe, Sales Manager">
+]>
+<book xmlns:isbn="http://www.isbn.org"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.isbn.org isbn.xsd"
+       id="&bookid;"
+       xml:lang="en">
+  <title>&booktitle;</title>
+  <author>
+    <name>&bookauthor;</name>
+    <birthplace>St. Paul, Minnesota</birthplace>
+    <deathplace>Los Angeles, California</deathplace>
+  </author>
+  <publisher>
+    <name>&bookpublisher;</name>
+    <address>&bookpublisheraddress;</address>
+    <phone>&bookpublisherphone;</phone>
+    <fax>&bookpublisherfax;</fax>
+    <email>&bookpublisheremail;</email>
+    <url>&bookpublisherurl;</url>
+    <contact>&bookpublishercontact;</contact>
+    <phone2>&bookpublisherphone2;</phone2>
+    <fax

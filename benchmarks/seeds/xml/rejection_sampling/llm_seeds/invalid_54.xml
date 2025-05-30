@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ENTITY booktitle "My Book">
+  <!ENTITY bookauthor "John Doe">
+  <!ENTITY bookyear "2022">
+]>
+<book xmlns="http://www.example.com/book"
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.example.com/book
+ http://www.example.com/book.xsd"
+>
+  <dc:identifier rdf:resource="urn:isbn:1-56592-526-0"/>
+  <title entity-ref="#booktitle">My Book</title>
+  <author entity-ref="#bookauthor">John Doe</author>
+  <year entity-ref="#bookyear">2022</year>
+  <chapter id="chap1">
+    <title>Chapter 1</title>
+    <section id="sect1">
+      <title>Section 1</title>
+      <p>Text of Section 1.</p>
+      <p>More text of Section 1.</p>
+    </section>
+  </chapter>
+  <chapter id="chap2">
+    <title>Chapter 2</title>
+    <section id="sect2">
+      <title>Section 2</title>
+      <p>Text of Section 2.</p>
+      <p>More text of Section 2.</p>
+    </section>
+  </chapter>
+  <chapter id="chap3">
+    <title>Chapter 3</title>
+    <section id="sect3">
+      <title>Section 3</title>
+      <p>Text of Section 3.</p>
+      <p>More text of Section 3.</p>
+    </section>
+  </chapter>
+</book>  <!-- close book element -->  <!-- end of document -->  <!-- end of file -->  <!-- end of life -->  <!-- end of the world -->  <!-- end of everything -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+ "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+ <head>
+  <title>XML document example</title>
+  <meta http-equiv="Content-Type" content="text

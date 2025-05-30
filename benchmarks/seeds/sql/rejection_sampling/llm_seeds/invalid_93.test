@@ -1,0 +1,153 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix sync
+
+proc sync_proc {} {
+  global syncargs
+  lappend syncargs
+  expr {[llength $syncargs] <= 2}
+}
+
+do_test sync-1.1 {
+  execsql {
+    CREATE TABLE a(x);
+    INSERT INTO a VALUES(1),(2),(3);
+  }
+  execsql {SELECT count(*) FROM a}
+} {3}
+
+ifcapable journalMode {
+  catchsql {PRAGMA journal_mode=WAL}
+} {0 {}}
+
+ifcapable auto_vacuum {
+  catchsql {
+    PRAGMA auto_vacuum = 0;
+    PRAGMA auto_vacuum = 1;
+    PRAGMA auto_vacuum = 0;
+    PRAGMA auto_vacuum = 1;
+  }
+} {0 {}}
+
+ifcapable temp_db {
+  do_test sync-1.2 {
+    execsql {
+      CREATE TABLE b(x);
+      INSERT INTO b VALUES(4);
+      CREATE TEMP TABLE c AS SELECT x FROM b;
+      SELECT * FROM c;
+    }
+  } {4}
+} 
+
+do_test sync-1.3 {
+  execsql {
+    CREATE TABLE d(x);
+    INSERT INTO d VALUES(5);
+    SELECT x FROM d;
+  }
+} {5}
+
+do_test sync-1.4 {
+  execsql {
+    CREATE TABLE e(x);
+    INSERT INTO e VALUES(6);
+    SELECT x FROM e;
+  }
+} {6}
+
+do_test sync-1.5 {
+  execsql {
+    CREATE TABLE f(x);
+    INSERT INTO f VALUES(7);
+    SELECT x FROM f;
+  }
+} {7}
+
+ifcapable triggers {
+  do_test sync-1.6 {
+    execsql {
+      CREATE TABLE g(x);
+      CREATE TRIGGER g_trig BEFORE INSERT ON g FOR EACH ROW
+        WHEN (SELECT count(*) FROM g) = 0 THEN
+        INSERT INTO g VALUES('initial value');
+    }
+    execsql {SELECT * FROM g}
+  } {initial value}
+  do_test sync-1.7 {
+    execsql {
+      INSERT INTO g VALUES('value1');
+      INSERT INTO g VALUES('value2');
+      SELECT * FROM g;
+    }
+  } {initial value value1 value2}
+  do_test sync-1.8 {
+    execsql {
+      DELETE FROM g;
+      SELECT * FROM g;
+    }
+  } {}
+}
+
+ifcapable view {
+  do_test sync-1.9 {
+    execsql {
+      CREATE VIEW h AS SELECT x FROM a;
+      SELECT * FROM h;
+    }
+  } {1 2 3}
+  do_test sync-1.10 {
+    execsql {
+      CREATE TABLE i(x);
+      INSERT INTO i VALUES(8);
+      SELECT * FROM i;
+    }
+  } {8}
+}
+
+ifcapable fts3 {
+  do_test sync-1.11 {
+    execsql {
+      CREATE VIRTUAL TABLE j USING fts3(a);
+      INSERT INTO j VALUES('value');
+      SELECT * FROM j;
+    }
+  } {value}
+}
+
+ifcapable fts4 {
+  do_test sync-1.12 {
+    execsql {
+      CREATE VIRTUAL TABLE k USING fts4(a);
+      INSERT INTO k VALUES('value');
+      SELECT * FROM k;
+    }
+  } {value}
+}
+
+ifcapable without_rowid {
+  do_test sync-1.13 {
+    execsql {
+      CREATE TABLE l(x);
+      INSERT INTO l VALUES(9);
+      SELECT * FROM l;
+    }
+  } {9}
+}
+
+ifcapable without_rowid && auto_vacuum {
+  do_test sync-1.14 {
+    execsql {
+      PRAGMA page_size = 1024;
+      PRAGMA cache_size = 100;
+      PRAGMA journal_mode = WAL;
+      PRAGMA synchronous = OFF;
+      PRAGMA temp_store = 2;
+      CREATE TABLE m(x);
+      INSERT INTO m VALUES(10);
+      SELECT * FROM m;
+    }
+  } {10}
+}
+
+finish_test

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note SYSTEM "note.dtd">
+<note>
+  <to name="John">John Doe</to>
+  <from> Jane Smith </from>
+  <heading>Reminder</heading>
+  <body xml:lang="en">
+    <p>This is a <b>test</b> note. 
+      <p>This is a <b>test</b> note.</p>
+  </body>
+  <attachment type="image" src="image1.jpg" size="1024" />
+  <attachment type="text" src="text1.txt" size="512" />
+</note>

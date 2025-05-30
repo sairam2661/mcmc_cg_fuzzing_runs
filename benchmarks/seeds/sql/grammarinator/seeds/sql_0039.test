@@ -1,0 +1,45 @@
+set 
+ testdir 
+ { 		 file  dirname   $argv0 
+ } 
+	 source 	 $testdir/tester.tcl 	  set 
+ 
+ testprefix 			
+ M1 
+ set  timeout 	
+ 60000  
+  proc 
+ BHh8  b_   
+	 { 
+ } 	    
+ return 
+ { 
+	 WITH 
+	 j  ( 	 s 
+ 	 ) 	 AS 
+ ( 
+ BEGIN 
+   
+	
+ ) 		 WITH 	  v 	
+ (   z7_4_4Rk  )  AS   ( 
+  SELECT  	 F 
+
+	 ( 
+	 *  )  
+ FROM 		 h 	 WHERE    B__ 
+ = 	 	 j     UNION ALL 
+ PRAGMA 		
+ uS4   
+
+
+ UNION ALL  CREATE INDEX 
+	
+ Tc 
+	 ON   Y0 
+ ( 
+ q2o  	 )   		  ) 	 CREATE INDEX    E  ON   QE_ 
+	 (   b 	 )       
+ ; 	
+ COMMIT   	 ;    }        finish_test 
+	  

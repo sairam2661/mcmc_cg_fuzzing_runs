@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE doc [
+  <!ELEMENT doc (header, body)>
+  <!ATTLIST doc id ID #REQUIRED>
+  <!ENTITY salutation "D">
+  <!ENTITY % entity "S">
+  <!NOTATION iso PUBLIC "I" "S">
+ %xinclude; <!-- not a regular include, but a Xinclude -->
+]>
+<doc id="1" xmlns="a">
+  <header>&salutation;, Dear &entity;</header>
+  <body>
+    <!-- sample comment -->
+    <p>Some <b>bold</b> <i>italic</i> text</p>
+    <xi:nil xmlns:xi="a" xmlns="a" >Nil</xi:nil>
+  </body>
+</doc>

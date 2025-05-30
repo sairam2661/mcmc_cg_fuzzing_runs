@@ -1,0 +1,70 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix complex
+
+set ::timeout 60000
+
+do_test complex-1.1 {
+  execsql {
+    CREATE TABLE complex1(x);
+    INSERT INTO complex1 VALUES(1.1);
+    INSERT INTO complex1 VALUES(2.2);
+    INSERT INTO complex1 VALUES(3.3);
+  }
+  llength $::tcl_result
+} {3}
+
+do_execsql_test complex-1.2 {
+  CREATE TABLE complex2(y);
+  SELECT COUNT(*) FROM complex1
+} {3}
+
+proc complex_func {} {
+  global complexargs
+  set complexargs append "complex_data"
+  expr {$complexargs}
+}
+
+do_test complex-1.3 {
+  execsql {
+    CREATE TABLE IF NOT EXISTS complex3 IF NOT EXISTS complex3
+    complex_func
+  }
+  execsql {
+    SELECT name
+    FROM sqlite_master
+    WHERE type = 'table'
+  }
+} {complex3}
+
+ifcapable wal mode_memory {
+  set wal_enable 1
+} else {
+  set wal_enable 0
+}
+
+do_execsql_test complex-1.4 {
+  PRAGMA wal_mode;
+} {{$wal_enable}}
+
+ifcapable wal mode_memory {
+  set wal_path "test.db-wal"
+  do_execsql_test complex1.5 {
+    PRAGMA journal_mode
+  } {wal}
+} elseifcapable journal_mode {
+  set wal_path "test.db-shm"
+  do_execsql_test complex1.5 {
+    PRAGMA journal_mode
+  } {wal}
+} else {
+  set wal_path "test.db-wal"
+  do_execsql_test complex1.5 {
+    PRAGMA journal_mode
+  } {wal}
+  do_execsql_test complex1.6 {
+    SELECT * FROM complex1
+  } {1.1 2.2 3.3}
+}
+
+finish_test

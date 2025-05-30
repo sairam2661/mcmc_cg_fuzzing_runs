@@ -1,0 +1,38 @@
+set 
+	 testdir 
+ { 
+  file 	 dirname 		 $argv0 	 } 		 source 
+ $testdir/tester.tcl   set   testprefix 			  j 	
+		 set 
+ timeout 
+ 60000 
+  db2  
+ y 	 { 
+  WITH 	 W 
+  ( 	 Mu4  
+ ) 
+	 AS 	 ( 
+  ROLLBACK    	 UNION ALL 	 ROLLBACK    ) 	 ROLLBACK      
+
+ ; 	 CREATE INDEX 	
+		 z4_l_   ON  	 N 
+ ( 
+	 V  	 
+	
+ )     
+  }     { 	 	
+ WITH   d   ( 	   P7 	 )  AS  				  (   CREATE TABLE     	 OI_ 	 ( 
+ G   NOT NULL  	 PRIMARY KEY  	 UNIQUE  
+ PRIMARY KEY   PRIMARY KEY  	 NOT NULL    	 )   
+  ) 
+ SELECT 	 *    FROM  	
+ f_       ; 	 INSERT INTO   Ml_4    ( 	 k  
+	 ) 	 SELECT    7.8     
+	 
+ ; 	 SELECT 
+ l  	 FROM  	 B_ 	 WHERE  a_ 
+	 =   ' '     		
+	 ; 
+  BEGIN 	   
+ ;   
+ }   		    	  finish_test 	  

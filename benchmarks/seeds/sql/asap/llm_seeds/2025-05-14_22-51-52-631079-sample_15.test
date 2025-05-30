@@ -1,0 +1,139 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix complex_test
+
+set ::timeout 60000 		 Kbills tcl
+set up  1
+lappend env TCLLIBPATH $testdir lib
+lappend env TCLLIBPATH $testdir lib64
+
+proc get_last_insert_row_id {} { return 0 }
+
+set up {
+  if { 0 } {
+    file delete tempfile
+  }
+}
+
+proc execsql_test {sql {db db_handle}} {
+  uplevel "sqlite3 $db_handle $sql"
+}
+
+proc query_test {sql {db db_handle}} {
+  return "SELECT * FROM $db WHERE $sql"
+}
+
+proc result_test {result {exp_result {}} } {
+  set ok 1
+  if {$exp_result ne ""} {
+    foreach item $exp_result {
+      if { $result eq $item } {
+        continue
+      } elseif {$result in $item } {
+        continue
+      } elseif {$result ni $item } {
+        set ok 0
+        break
+      }
+    }
+    if { $ok } { return 1 }
+  }
+  return 0
+}
+
+ifcapable!=vsize { set up 0 }
+
+do_execsql_test 1.1 {
+  CREATE TABLE a(x);
+  INSERT INTO a VALUES(1);
+}
+{1 {}}
+result_test $result
+
+do_execsql_test 2.1 {
+  BEGIN;
+  INSERT INTO a VALUES(2);
+  COMMIT;
+  SELECT x FROM a WHERE x = 2;
+}
+{2}
+result_test $result {2}
+
+ifcapable index {
+  execsql_test 3.1 {
+    CREATE INDEX i1 ON a(x);
+  }
+}
+{0} result_test $result {1}
+do_execsql_test 3.2 {PRAGMA index_list = 'a';}
+{i1 {}}
+do_execsql_test 3.3 {PRAGMA index_info = 'i1';}
+{x 1 {} {}}
+
+do_execsql_test 4.1 {
+  CREATE TABLE b(x, y);
+}
+
+set t0 5000
+set tmax 20000
+
+sqlite_extended_integrity_check
+do_execsql_test 4.2 {
+  INSERT INTO b VALUES(10, 20);
+  BEGIN;
+    INSERT INTO b VALUES(30, 40);
+    COMMIT;
+}
+{0 {}}
+
+catch { do_test 4.3 {execsql_test "SELECT x,y FROM a "} {0 {} }  }
+
+if {$::tmode eq "line"} {
+  do_test 4.4 {
+    catch {execsql_test {SELECT * FROM b} {db b}}
+    result_test { }
+  }
+}
+if {$::tmode eq "tcl"} {
+  do_test 4.4 {
+    execsql_test {SELECT x FROM b } { db b}
+    result_test { }
+  }
+}
+
+
+do_execsql_test 4.5 {
+  CREATE TABLE c(x, y);
+}
+{0 {}} result_test $result {0}
+
+testvfs vfsout
+vfs_get 2 vfsout
+vfs_control vfsout 1
+vfs_control vfsout 2 1
+vfs_control vfsout 6 100
+
+do_execsql_test 5.1 { PRAGMA synchronous = 0 }
+{0} result_test $result {0}
+
+do_execsql_test 6.1 {
+  BEGIN;
+  INSERT INTO c VALUES(50, 60);
+  COMMIT;
+}
+
+if {$::tmode eq "line"} {
+  do_test 6.2 {
+    execsql_test "SELECT * FROM c"
+  }
+}
+if {$::tmode eq "tcl"} {
+  do_execsql_test 6.2 "SELECT * FROM c"
+}
+
+catchsql {
+  SELECT * FROM c
+}
+{1 {out of memory}} result_test $result
+
+finish_test

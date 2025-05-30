@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ENTITY % book_entities SYSTEM "book_entities.xml">
+  %book_entities;
+  <!ELEMENT book (title, author, chapter*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+]>
+<book>
+  <title>Example Title</title>
+  <author>John Doe</author>
+  <chapter>Chapter 1</chapter>
+  <chapter>Chapter 2</chapter>
+  <chapter>Chapter 3</chapter>
+</book> 
+<?xml-stylesheet type="text/xsl" href="book_stylesheet.xsl"?>
+<!DOCTYPE book SYSTEM "book.dtd">
+<!DOCTYPE book PUBLIC "-//example//DTD Book DTD 1.0//EN" "book.dtd">
+<!DOCTYPE book [
+  <!ENTITY % book_entities SYSTEM "book_entities.xml">
+  %book_entities;
+  <!ELEMENT book (title, author, chapter*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+]>
+<!ATTLIST book
+  xmlns:xs CDATA #REQUIRED
+  xmlns:xsi CDATA #IMPLIED
+  xsi:schemaLocation CDATA #IMPLIED
+>
+<!DOCTYPE book [
+  <!ENTITY % book_entities SYSTEM "book_entities.xml">
+  %book_entities;
+  <!ELEMENT book (title, author, chapter*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+]>
+<!DOCTYPE book SYSTEM "book.dtd">
+<!DOCTYPE book PUBLIC "-//example//DTD Book DTD 1.0//EN" "book.dtd">
+<!DOCTYPE book [
+  <!ENTITY % book_entities SYSTEM "book_entities.xml">
+  %book_entities;
+  <!ELEMENT book (title, author, chapter*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+]>
+<book xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.example.com/book.xsd book.xsd"
+  xmlns:book="http://www.example.com/book"
+  xmlns="http://www.example.com/book"
+  book:version="1.0"
+  book:language="en"
+>
+  <title>Example Title</

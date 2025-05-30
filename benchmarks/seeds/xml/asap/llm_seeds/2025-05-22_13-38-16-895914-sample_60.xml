@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ATTLIST catalog language (en|fr|de) #REQUIRED>
+  <!ENTITY desc SYSTEM "W">
+  <!ENTITY % entmixture "m">
+  <!NOTATION PDF SYSTEM "x">
+  %entmixture;
+  <!--[ XML 1.1 only ]-->
+]>
+<catalog language="f">
+  <product name='p' id='1'><![CDATA[<raw>text]]></product>
+  <product>&desc;</product>
+  <xi:include xmlns:xi=" "httpwww.w3.org2001XInclude-strict
+                ="/" href="a">%entmixture;</xi:include>
+</catalog>

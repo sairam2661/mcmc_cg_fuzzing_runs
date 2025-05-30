@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE notes SYSTEM "notes.dtd">
+<!ELEMENT notes (note+)>
+<!ELEMENT note (#PCDATA|note*)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+<!ATTLIST note
+  id ID #REQUIRED
+  type (note|idea|question) #REQUIRED
+  status (open|closed) #REQUIRED
+  priority (low|medium|high) #REQUIRED
+>
+<notes>
+  <note id="n1" type="note" status="open" priority="high">
+    <title>This is a note</title>
+    <author>John Doe</author>
+    <date>2004-02-27</date>
+    <body>This is the body of the note.</body>
+    <note id="n2" type="idea" status="closed" priority="low">
+      <title>This is another note</title>
+      <author>Jane Doe</author>
+      <date>2004-02-28</date>
+      <body>This is the body of the other note.</body>
+    </note>
+  </note>
+</notes> 
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book SYSTEM "book.dtd">
+<!ELEMENT book (title,author,chapter*)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT chapter (#PCDATA)>
+<!ATTLIST book
+  title CDATA #REQUIRED
+  author CDATA #REQUIRED
+>
+<!ATTLIST chapter
+  number CDATA #REQUIRED
+>
+<book title="My Book" author="Me">
+  <title>This is the title of my book</title>
+  <author>I am the author of this book</author>
+  <chapter number="1">This is the first chapter of my book.</chapter>
+  <chapter number="2">This is the second chapter of my book.</chapter>
+</book> 
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog SYSTEM "catalog.dtd">
+<!ELEMENT catalog (product*)>
+<!ELEMENT product (#PCDATA)>
+<!ATTLIST product
+  id CDATA #REQUIRED
+  price CDATA #REQUIRED
+>
+<catalog>
+  <product id="p1" price="10.99">
+    This is the first product.
+  </product>

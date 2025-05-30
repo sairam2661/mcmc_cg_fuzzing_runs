@@ -1,0 +1,41 @@
+set 	 testdir 
+
+	 { 	 file 	 dirname 
+	  $argv0 
+ }  source   $testdir/tester.tcl  set 
+ testprefix 
+  w__ 
+
+
+ set   timeout   60000 
+ set 
+ BK  { 
+ }      	  ifcapable 	
+ X16nN_ 		 {   db 
+ D5  {   { 
+ SELECT 		 87   	  FROM   G   
+ ; 
+	 CREATE TABLE 
+
+ e_08 	  ( 	 a     ,  	   zPy   	 )   	 ;  
+ }   	 G  
+
+ ""    
+  }          	 } 
+     do_execsql_test 
+ t 
+ - 	 	 6 4 	 .  1 7  	 {   INSERT INTO 
+  
+ ok 
+ VALUES 
+
+ (     813  	 , 
+		  422   	 
+ )       }   {   $::C   $y07_M  	 } 
+      proc  
+		 Q  { 
+ w 	 } 		
+   
+ { 
+ } 
+      finish_test    

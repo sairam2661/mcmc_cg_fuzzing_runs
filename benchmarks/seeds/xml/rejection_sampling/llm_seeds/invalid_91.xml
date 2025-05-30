@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE notes [
+  <!ENTITY % ent SYSTEM "entities.ent">
+  %ent;
+]>
+<notes xmlns="http://example.org/notes">
+  <note id="n1">
+    <author xml:lang="en">
+      <name>John Doe</name>
+    </author>
+    <title>Some Note</title>
+    <content>
+      <p xml:space="preserve">This is a &quot;test&quot; note with <b>bold</b> text.</p>
+    </content>
+  </note>
+  <note id="n2">
+    <author xml:lang="fr">
+      <name>Jane Doe</name>
+    </author>
+    <title>Un autre note</title>
+    <content>
+      <p xml:space="preserve">Voici un autre note avec <b>texte en gras</b>.</p>
+    </content>
+  </note>
+  <note id="n3">
+    <author xml:lang="es">
+      <name>Juan Pérez</name>
+    </author>
+    <title>Otra nota</title>
+    <content>
+      <p xml:space="preserve">Aquí está otra nota con <b>texto en negrita</b>.</p>
+    </content>
+  </note>
+</notes>

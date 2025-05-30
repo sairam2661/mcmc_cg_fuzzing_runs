@@ -1,0 +1,140 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix concurrent
+
+set ::timeout 60000
+set DBNULL ""
+ifcapable vacuumoptimize {
+  for {set i 8} {$i 8} {incr i} {}
+}
+
+proc get_int_value {sqlite_string} {
+  set sqlite_int ''
+  scan $sqlite_string "%d" sqlite_int
+  return $sqlite_int
+}
+
+proc run_with_timeout {cmd timeout} {
+  global timeo
+  if { $timeout 0 } { return 1 }
+  close $timeo
+  if { $timeout 0 } {
+    finish_test
+  } else {
+    set timeoopen "timeo-$timeout"
+    set timeoopen2 {open $timeoopen w
+    puts $timeoopen2 "
+      fthread [list after $timeout {close $timeoopen2
+      eval $cmd}
+    ]
+    return 0
+  }
+}
+
+proc db_to_csv {db} {
+  db eval {PRAGMA automatic_index=on}
+  db eval {PRAGMA automatic_index=off}
+  set i 0
+  while {1} {
+    unset -nocomplain results
+    set results ""
+    if {!$i } { break }
+    set i [expr $i - 1]
+    set results [list ]
+    db eval {SELECT * FROM a} r {
+      if { $i 0 } break
+      lappend results [expr rand()]
+      set i [expr $i - 1]
+    }
+    if { $i 0 } break
+    if { $results!= "" } {
+      puts -nonewline "$sqlitedb_file"
+      set output {open $sqlitedb_file r
+      fcopy $output stdout
+      close $output}
+    }
+  }
+  return
+}
+
+do_test concurrent-1.1 {
+  set sqlite_version 3000001
+  if { $sqlite_version > 3000000 } { set sqlite_major_version 3 } else { set sqlite_major_version 2 }
+  if { $sqlite_major_version 3 } {
+    for {set i 1} {$i 17} {incr i} {
+      for {set i 1} {$i 1} {incr i} {}
+    }
+  } else {
+    for {set i 1} {$i 23} {incr i} {
+      for {set i 1} {$i 1} {incr i} {}
+    }
+  }
+} {}
+execsql {
+  PRAGMA synchronous = OFF;
+  PRAGMA cache_size = 10000
+}
+do_test concurrent-1.2 {
+  set sqlite_error ""
+  if { $sqlite_major_version 3 } {
+    set sqlite_error [db errorstring]
+  } else {
+    set sqlite_error ""
+  }
+  if { $sqlite_error!= "" } {
+    set ::error_message "$sqlite_error"
+    return -code error
+  }
+} {}
+db func random random
+db func db_to_csv db_to_csv
+execsql {
+  CREATE TABLE b(x INTEGER PRIMARY KEY);
+  CREATE TABLE a(i INTEGER,y,z REAL,x2 INTEGER,x3 INTEGER PRIMARY KEY,x4 REAL DEFAULT 33,x5 REAL DEFAULT 44,x6 REAL DEFAULT 55,x7 REAL);
+}
+
+set ::sqlite_file "sqlitefile"
+
+file delete -force $sqlite_file
+assert {[file writable $sqlite_file]}
+db close
+if { $sqlite_major_version == 3 } {
+  set DBNULL ""
+}
+set sqlite_file "sqlitefile"
+set ::sqlite_file $sqlite_file
+set ::DBNULL "$DBNULL"
+ifcapable waljournal_mode {
+  execsql {
+    PRAGMA journal_mode=WAL
+  }
+  do_test concurrent-2.1 {
+    db_to_csv db
+    execsql {
+      INSERT INTO a(x,x2,x3,x4,x5,x6,x7) VALUES (1234567890,7890123456,9876543210,1.23456789,2.34567890,3.45678901,4.56789012);
+    }
+    db_to_csv db
+    execsql {
+      INSERT INTO a(x4,x5,x6,x7) VALUES (10.12345,11.23456,12.34567,13.4567);
+    }
+    db_to_csv db
+    execsql {
+      SELECT x4 from a WHERE x=x4 order by x2,x3,x4,x7,x5,x6;
+    }
+  } {4.56789012}
+} else {
+  execsql {
+    PRAGMA journal_mode=MEMORY
+  }
+}
+
+ifcapable waljournal_mode {
+  execsql {
+    PRAGMA journal_mode=WAL
+  }
+}
+
+do_execsql_test concurrency-1.3 {
+  PRAGMAlock_timeout=25000
+  BEGIN;
+  INSERT INTO b VALUES(NULL);

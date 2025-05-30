@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "http://www.example.com/dtd">
+<document xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.example.com/dtd http://www.example.com/schema.xsd"
+          xml:lang="en">
+    <section>
+        <title>Example Section</title>
+        <para>Here is a paragraph of text.</para>
+        <para xml:lang="fr">Voici un paragraphe de texte.</para>
+        <para>
+            <subpara>First line.</subpara>
+            <subpara xml:lang="fr">Première ligne.</subpara>
+            <subpara>
+                <itemizedlist>
+                    <listitem>Item 1</listitem>
+                    <listitem xml:lang="fr">Item 1</listitem>
+                    <listitem>
+                        <itemizedlist>
+                            <listitem>Subitem 1</listitem>
+                            <listitem xml:lang="fr">Sous-item 1</listitem>
+                        </itemizedlist>
+                    </listitem>
+                </itemizedlist>
+            </subpara>
+        </para>
+        <para>Another paragraph.</para>
+        <para xml:lang="fr">Un autre paragraphe.</para>
+    </section>
+</document>

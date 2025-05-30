@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog SYSTEM "catalog.dtd">
+<catalog>
+  <bookset>
+    <book>
+      <title>Harry Potter</title>
+      <author>J.K. Rowling</author>
+      <genre>Young Adult</genre>
+      <price>19.99</price>
+      <inventory>
+        <book>Harry Potter 1</book>
+        <book>Harry Potter 2</book>
+      </inventory>
+    </book>
+    <book>
+      <title>The Lord of the Rings</title>
+      <author>J.R.R. Tolkien</author>
+      <genre>High Fantasy</genre>
+      <price>24.99</price>
+      <inventory>
+        <book>The Lord of the Rings 1</book>
+        <book>The Lord of the Rings 2</book>
+        <book>The Lord of the Rings 3</book>
+      </inventory>
+    </book>
+  </bookset>
+  <catalog>
+    <bookset>
+      <book>
+        <title>The Hunger Games</title>
+        <author>Suzanne Collins</author>
+        <genre>Dystopian</genre>
+        <price>14.99</price>
+        <inventory>
+          <book>The Hunger Games 1</book>
+          <book>The Hunger Games 2</book>
+          <book>The Hunger Games 3</book>
+        </inventory>
+      </book>
+      <book>
+        <title>The Catcher in the Rye</title>
+        <author>J.D. Salinger</author>
+        <genre>Classic</genre>
+        <price>10.99</price>
+        <inventory>
+          <book>The Catcher in the Rye</book>
+        </inventory>
+      </book>
+    </bookset>
+  </catalog>
+</catalog>

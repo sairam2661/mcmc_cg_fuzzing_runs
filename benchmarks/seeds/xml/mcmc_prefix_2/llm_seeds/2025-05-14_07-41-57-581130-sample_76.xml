@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE persons SYSTEM "l" [
+  <!ELEMENT persons (person+)>
+  <!ATTLIST person id ID #REQUIRED>
+  <!ENTITY addr "R" >
+  <!ENTITY % tempEntities "<" >
+  <!NOTATION book-format SYSTEM "m">
+  %tempEntities;  <!-- entity expansion -->
+]>
+<namespace:persons xmlns:namespace="b"  xmlns:xlink="c" xml:lang="f"> 
+  <person xlink:href="3" id="1"> 
+    <name>Cat</name> 
+    <description attr1="2" attr2="4">Doe</description> 
+  </person> 
+   <person> 
+    <name>Paul</name>  
+  </person> 
+</namespace:persons>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author,editorial)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (name,year)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT editorial (editorial-board/editorial-board-member)*>
+  <!ELEMENT editorial-board (#PCDATA)>
+  <!ELEMENT editorial-board-member (#PCDATA)>
+  <!ATTLIST editorial-board-member id ID #REQUIRED>
+]>
+<book>
+  <title>My Book</title>
+  <author>
+    <name>John Doe</name>
+    <year>2022</year>
+  </author>
+  <editorial>
+    <editorial-board>Editorial Board</editorial-board>
+    <editorial-board-member id="EBM1">Editor Board Member 1</editorial-board-member>
+    <editorial-board-member id="EBM2">Editor Board Member 2</editorial-board-member>
+    <editorial-board-member id="EBM3">Editor Board Member 3</editorial-board-member>
+  </editorial>
+</book>

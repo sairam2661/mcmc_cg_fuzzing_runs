@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE note SYSTEM "note.dtd">
+<note xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:xs2="http://www.example.com/XMLSchema-instance">
+  <to whom="Jenny">Jenny</to>
+  <from whom="John">John</from>
+  <heading>Meeting</heading>
+  <body>
+    <p xml:lang="en">You are invited to a meeting.</p>
+    <p xml:lang="fr">Vous êtes invité à une réunion.</p>
+  </body>
+  <content>
+    <section xml:id="sec1" xml:lang="en">
+      <title>Section 1</title>
+      <para xml:lang="en">This is a paragraph.</para>
+    </section>
+    <section xml:id="sec2" xml:lang="fr">
+      <title>Ceci est une section</title>
+      <para xml:lang="fr">Ceci est un paragraphe.</para>
+    </section>
+  </content>
+</note>

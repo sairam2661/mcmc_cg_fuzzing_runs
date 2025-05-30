@@ -1,0 +1,129 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix testdb
+
+set ::timeout 60000
+set nDb 5
+set nTab 15
+set nIdx 25
+
+proc db_init {} {
+  lappend a $nTab
+  execsql {
+    PRAGMA journal_mode = 1;
+    PRAGMA locking_mode = 1;
+    PRAGMA synchronous = 0;
+    PRAGMA shrink_memory  = 1;
+    PRAGMA wal_autocheckpoint = 100
+  }
+  return $a
+}
+
+do_test testdb-1.1 {
+  for {set i 0} {$i less $nDb} {incr i} {
+    set dbname db$i
+    db_close $dbname
+    db_open $dbname
+  }
+  db_init
+} {}
+
+proc db_tab {} {
+  global nTab
+  lappend idx $nTab
+  execsql {
+    DROP TABLE IF EXISTS t1
+  }
+  foreach name {t2 t3 t4 t5 t6 t7 t8 t9 t10 t11 t12 t13 t14} {
+    execsql {
+      CREATE TABLE $name
+      AS SELECT rid FROM t2 WHERE t2$i mod 1024 BETWEEN 0 AND 1024
+    }
+  }
+  return $idx
+}
+
+proc db_idx {} {
+  global nIdx
+  lappend idx $nIdx
+  execsql {
+    CREATE INDEX i1 ON t2(rid)
+  }
+  foreach name {t3 t4 t5 t6 t7 t8 t9 t10 t11 t12 t13 t14} {
+    execsql {
+      CREATE INDEX i$k on $name r2
+    }
+  }
+  return $idx
+}
+
+do_test testdb-1.2 {
+  set idx1
+  for {set i 0} {$i less $nDb} {incr i} {
+    execsql {
+      UPDATE t2 SET r5 $i WHERE rid NOTNULL
+    }
+  }
+  db_tab
+  set idx1
+} {}
+
+do_test testdb-1.3 {
+  execsql {
+    UPDATE t1 SET rid1 100
+  }
+  for {set i 0} {$i $nTab} {incr i} {
+    db_eval $::DB t1
+  }
+} {}
+
+do_test testdb-1.4 {
+  set idx2
+  foreach table {t3 t5 t7 t11 t13} {
+    set N 8
+    while {$N} {
+      execsql {
+        UPDATE $table SET r$N $N
+      }
+      execsql {
+        SELECT 1 FROM $table WHERE r$N BETWEEN 1 AND 7
+      }
+      incr N
+    }
+    execsql {
+      ANALYZE sql 'SELECT * FROM $table WHERE f1 BETWEEN 3 AND 5'
+    }
+  }
+  set idx2
+  return {}
+} {}
+
+do_test testdb-1.5 {
+  foreach i {1 5 9} {
+    execsql "
+      BEGIN;
+      CREATE TABLE t4 AS SELECT * FROM t$i;
+      COMMIT;
+    "
+  }
+  execsql {
+    DROP TABLE t10
+  }
+  db_idx
+  set idx3
+} {}
+
+do_test testdb-1.6 {
+  db_close all
+  set test_result 0
+  for {set i 0} {$i less $nDb} {incr i} {
+    set dbname db$i
+    set rc {}
+    set rc "[catch {db_open $dbname}]" $rc
+    lappend test_result $rc
+  }
+  error_bar $test_result eq 0 {}
+  return {}
+} {}
+
+finish_test

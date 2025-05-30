@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, publisher, edition, publication-date, content)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT edition (#PCDATA)>
+  <!ELEMENT publication-date (#PCDATA)>
+  <!ELEMENT content (#PCDATA)>
+]>
+<book>
+  <title>On the Origin of Species</title>
+  <author>Charles Darwin</author>
+  <publisher>John Murray</publisher>
+  <edition>First</edition>
+  <publication-date>24 November 1859</publication-date>
+  <content>
+    <chapter>
+      <title>Introduction</title>
+      <content>
+        <section>
+          <title>Why I wrote this book</title>
+          <content>
+            <p>This is a very long sentence that goes on and on and on.</p>
+          </content>
+        </section>
+      </content>
+    </chapter>
+  </content>
+</book>

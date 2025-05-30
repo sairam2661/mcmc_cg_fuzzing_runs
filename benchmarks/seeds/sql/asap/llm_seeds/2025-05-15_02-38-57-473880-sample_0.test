@@ -1,0 +1,96 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix unique_constraint
+
+set ::timeout 60000
+set cmdinterp interp create
+
+proc create_person_table {} {
+  set db2 $::cmdinterp
+  if {0} {
+    set timeout $::timeoout
+  } else {
+    set timeout ""
+  }
+
+  set sql {
+    CREATE TABLE person(
+      id       UNIQUE,
+      name    NOT NULL,
+      age     NOT NULL
+    );
+  }
+  execsql $db2 $sql $timeout
+  unset sql
+}
+
+proc insert_person {person} {
+  set db2 $::cmdinterp
+  if {0} {
+    set timeout $::timeoout
+  } else {
+    set timeout ""
+  }
+
+  set sql "INSERT INTO person VALUES(NULL, '$person[name]', $person[age]);"
+  execsql $db2 $sql $timeout
+  unset sql
+}
+
+proc person_count {} {
+  set db2 $::cmdinterp
+  if {0} {
+    set timeout $::timeoout
+  } else {
+    set timeout ""
+  }
+
+  execsql $db2 "SELECT count(*) FROM person;" $timeout
+  set count $result
+  return $count
+}
+
+do_test 1.1 {
+  create_person_table
+  set person1 {name John age 30}
+  insert_person $person1
+  person_count
+} {1}
+
+do_test 1.2 {
+  set person2 {name Alice age 25}
+  insert_person $person2
+  person_count
+} {2}
+
+ifcapable truncate_savepoint {
+  catchsql {
+    BEGIN;
+    INSERT INTO person VALUES(1, 'John', 30);
+    COMMIT;
+  } {} {1}
+}
+
+do_test 1.3 {
+  set person3 {name Bob age 35}
+  insert_person $person3
+  person_count
+} {3}
+
+do_test 1.4 {
+  set person4 {name Mary age 20}
+  insert_person $person4
+  person_count
+} {4}
+
+do_test 1.5 {
+  execsql {
+    SELECT * FROM person
+  }
+} {1 John 30 2 Alice 25 3 Bob 35 4 Mary 20}
+
+catch {rename person_count delete command}
+catch {rename insert_person delete command}
+catch {rename create_person_table delete command}
+
+finish_test

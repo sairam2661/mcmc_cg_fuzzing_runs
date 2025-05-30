@@ -1,0 +1,117 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix large
+
+set ::timeout 60000
+set large_size 1000000
+
+do_execsql_test large-1.1 {
+  CREATE TABLE large_data(i, d);
+  BEGIN;
+  CREATE INDEX i_data ON large_data(i);
+  COMMIT;
+}
+
+    {
+
+      unset ns
+      if { $tcl_platform_unix } {
+        set ns "ns_read /dev/null\nns_write Hello 10"
+      } else {
+        set ns "ns_read CONSOLE\nns_write Hello 10"
+      }
+      if {$ns ne "ns_read CONSOLE\nns_write Hello 10"} {
+        puts "Error: ns string is not as expected"
+        exit 1
+      }
+  }
+
+do_test large-1.2 {
+   sqlite3 db2 large_data
+   db2 eval {SELECT * FROM large_data WHERE i = 100000}
+   db2 close
+   db eval {SELECT * FROM large_data WHERE i = 100000}
+   expr {randrange 10000000}
+} {0}
+
+ proc large_data_tcl { large_file } {
+   set f "[sqlite3 db {}]/[file tail $large_file]"
+   db eval {CREATE TABLE $f AS SELECT 1 AS i UNION ALL SELECT 1 LIMIT 1000000}
+   sqlite3_db_file_close db $f
+   return $f
+ }
+
+do_test large-1.3 {
+   db eval {SELECT name FROM sqlite_master WHERE type='table'  }
+ } {large_data}
+do_test large-1.4 {
+   db eval {SELECT name FROM sqlite_master WHERE name="i_data" }
+ } {}
+ifcapable {wal} {
+  do_execsql_test large_2.1 {
+    PRAGMA journal_mode
+  } {WAL}
+  do_execsql_test large_2.2 {
+    PRAGMA synchronous = 0
+  } {1}
+}
+
+proc sqlite3_db_mtimes {db} {
+  set l {}
+  set tail ""
+  foreach tail {
+    "[file mtime [sqlite3_db_filename $db $tail]]"
+  } {
+    lappend l $tail
+  }
+  set l
+}
+
+proc eq_files {f1 f2} {
+  if { $f1 ne $f2 } {
+    error "Files $f1 and $f2 are not the same"
+  }
+}
+
+do_test large-2.3 {
+   eq_files "large_data" "[large_data_tcl large_data.db]"
+} {1}
+
+do_test large-2.4 {
+  eq_files "large_data" "[large_data_tcl large_data.db]"
+  for {set i 1000001} {$i less than 2000000} {incr i} {
+    db eval {INSERT INTO large_data VALUES(1, 1)}
+  }
+  db eval {SELECT 2}
+  file exists "[file tail [large_data_tcl large_data2.db]]"
+} {1}
+
+proc get_mtime {db f} {
+  if { $f eq "main" } { return 10000 }
+  return 0
+}
+
+do_test large-3.1 {
+   eq_files "large_data" "[large_data_tcl large_data.db]"
+} {1}
+do_test large-1.6 {
+   sqlite3 large_data_2 db2 large_data
+   sqlite3_db_mtimes large_data_2
+} {1}
+set last_mtime ""
+foreach row {1 {10012} 2 {10013}} {
+  lappend last_mtime $row
+}
+set got_mtime "1 10012 2 10013"
+set large_data_2 mtime "[sqlite3_db_mtimes large_data_2]"
+if { $got_mtime eq $last_mtime } {set large_data_2_mtimeseq 1}
+
+proc set_db_mtime {db f mtime} {
+  lappend mtimes "$f $mtime"
+}
+
+do_test large-1.7 {
+   lsort $large_data_2_mtimeseq
+} {0}
+
+finish_test

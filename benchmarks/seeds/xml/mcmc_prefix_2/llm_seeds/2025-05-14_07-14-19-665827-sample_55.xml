@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book SYSTEM "M" [
+  <!ELEMENT book (title, author) >
+  <!ATTLIST book id ID #REQUIRED>
+  <!ENTITY book-author "J">
+  <!ENTITY % note "("> 
+  <!NOTATION book-notation PUBLIC "N" "B">
+ 					     		
+ 	%xinclude
+ 	             
+ 	             
+ 	                 
+  				; <!---->
+]>
+<book xmlns:a="a" a:id="1" xmlns:n="n">
+  <a:title>Book</a:title>
+  <n:message>&note;</n:message>
+  <author>&book-author;</author>
+  <annotation n:notation="1" title="1" xmlns="b" xmlns:b="b">Test</annotation>
+  <a:before>&xinclude;</a:before>
+</book>

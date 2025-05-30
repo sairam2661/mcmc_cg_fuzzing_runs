@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (book+)>
+  <!ELEMENT book (title,author,price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT bookinfo (publisher, address, city, state, zip, phone, email)>
+]>
+<books>
+  <book>
+    <title>XML for Dummies</title>
+    <author>John Smith</author>
+    <price>29.95</price>
+    <bookinfo>
+      <publisher>O'Reilly</publisher>
+      <address>123 Main St</address>
+      <city>Anytown</city>
+      <state>CA</state>
+      <zip>12345</zip>
+      <phone>555-555-5555</phone>
+      <email>john.smith@oreilly.com</email>
+    </bookinfo>
+  </book>
+  <book>
+    <title>XML for Dummies 2</title>
+    <author>Jane Doe</author>
+    <price>39.95</price>
+    <bookinfo>
+      <publisher>O'Reilly</publisher>
+      <address>456 Elm St</address>
+      <city>Othertown</city>
+      <state>NY</state>
+      <zip>67890</zip>
+      <phone>555-555-1234</phone>
+      <email>jane.doe@oreilly.com</email>
+    </bookinfo>
+  </book>
+</books>

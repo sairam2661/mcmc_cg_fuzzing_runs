@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book SYSTEM "book.dtd">
+<book xmlns="http://www.example.org/book">
+  <title>XML Tutorial</title>
+  <author>
+    <name>John Doe</name>
+    <email>john@example.com</email>
+    <address>
+      <street>123 Main St</street>
+      <city>Anytown</city>
+      <state>CA</state>
+      <zip>12345</zip>
+    </address>
+  </assistant>
+  <assistant>
+    <name>Jane Doe</name>
+    <email>jane@example.com</email>
+    <address>
+      <street>456 Elm St</street>
+      <city>Anytown</city>
+      <state>CA</state>
+      <zip>12345</zip>
+    </address>
+  </assistant>
+  <translator>
+    <name>Bob Smith</name>
+    <email>bob@example.com</email>
+    <address>
+      <street>789 Oak St</street>
+      <city>Anytown</city>
+      <state>CA</state>
+      <zip>12345</zip>
+    </address>
+  </translator>
+  <section>
+    <title>XML Basics</title>
+    <para>
+      XML is a markup language.
+    </para>
+    <para>
+      XML is used for data exchange.
+    </para>
+  </section>
+  <section>
+    <title>XML Syntax</title>
+    <para>
+      XML elements are defined using tags.
+    </para>
+    <para>
+      XML elements must be properly nested.
+    </para>
+  </section>
+  <appendix>
+    <title>XML References</title>
+    <para>
+      See the <a href="http://www.example.org/xml">XML home page</a> for more information.
+    </para>
+  </appendix>
+</book>

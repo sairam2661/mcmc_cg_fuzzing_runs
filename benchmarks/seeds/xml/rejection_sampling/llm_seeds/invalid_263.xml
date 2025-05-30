@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ENTITY nbsp "&#160;">
+  <!ENTITY pi SYSTEM "pi.xml">
+  <!ENTITY e "&#x2B;">
+]>
+<book xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="book.xsd">
+  <title>Complex Book</title>
+  <author>
+    <name>John Smith</name>
+    <email>john.smith@example.com</email>
+  </author>
+  <chapter id="ch1">
+    <title>Chapter 1</title>
+    <section>
+      <para>This is a paragraph with a <xs:element name="italic" xmlns="http://www.w3.org/2001/XMLSchema">italic</xs:element> element.</para>
+    </section>
+    <section>
+      <para>This is another paragraph with an <xs:attribute name="bold" xmlns="http://www.w3.org/2001/XMLSchema">bold</xs:attribute> attribute.</para>
+    </section>
+  </chapter>
+  <chapter id="ch2">
+    <title>Chapter 2</title>
+    <section>
+      <para>This is a paragraph with a reference to <xs:IDREF xmlns="http://www.w3.org/2001/XMLSchema" ref="ch1"/>.</para>
+    </section>
+  </chapter>
+  <xs:annotation>
+    <xs:documentation>This is a comment in the XML Schema instance document.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="italic" type="xs:string"/>
+  <xs:attribute name="bold" type="xs:string"/>
+  <xs:ID id="ch1"/>
+  <xs:ID id="ch2"/>
+  <xs:IDREF idref="ch1"/>
+</book>

@@ -1,0 +1,75 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix mytest
+
+set ::timeout 60000
+set DB "mydb"
+
+proc myproc {} {
+  global DB
+  if { $::DB eq "" } {
+    return {1 {no such table}}
+  } else {
+    return {0 {}}
+  }
+}
+
+do_execsql_test mytest-1.1 {
+  CREATE TABLE t1(x);
+  INSERT INTO t1 VALUES(10);
+  INSERT INTO t1 VALUES(20);
+  INSERT INTO t1 VALUES(30);
+  SELECT x FROM t1;
+} {10 20 30}
+
+do_execsql_test mytest-1.2 {
+  CREATE TABLE t2(x, y);
+  INSERT INTO t2 VALUES(40, 50);
+  INSERT INTO t2 VALUES(60, 70);
+  INSERT INTO t2 VALUES(80, 90);
+  SELECT x FROM t2 WHERE y = 70;
+} {60}
+
+do_execsql_test mytest-1.3 {
+  CREATE TABLE t3(x, y);
+  INSERT INTO t3 VALUES('a', 10);
+  INSERT INTO t3 VALUES('b', 20);
+  INSERT INTO t3 VALUES('c', 30);
+  SELECT x FROM t3 WHERE y = 20;
+} {b}
+
+set db "mydb_open"
+do_execsql_test mytest-1.4 {
+  INSERT INTO t1 VALUES(100);
+  SELECT x FROM t1;
+} {10 20 30 100}
+
+proc my_function {x y} {
+  return {1 {}} 
+}
+
+do_test mytest-1.5 {
+  my_function 10 20
+} {1 {}}
+
+ifcapable vacuum { 
+  do_execsql_test mytest-1.6 {
+    CREATE TABLE t5(x);
+    BEGIN;
+    INSERT INTO t5 VALUES(1000);
+    INSERT INTO t5 VALUES(2000);
+    INSERT INTO t5 VALUES(3000);
+    COMMIT;
+    SELECT * FROM t5;
+  } {1000 2000 3000}
+  do_test mytest-1.7 {
+    catch {
+      execsql {
+        VACUUM t5
+      }
+    }
+    catch { execsql {DELETE FROM t5} }
+  } {}
+}
+
+finish_test

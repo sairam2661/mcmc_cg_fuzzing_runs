@@ -1,0 +1,55 @@
+set 
+ testdir 	
+ {    file 
+ dirname  
+
+ $argv0  
+ }    source  $testdir/tester.tcl 
+	 set 
+ testprefix   UI  set 	 timeout 
+ 60000 	
+
+	   proc  F  
+ { 
+ oG 
+ v   w 
+ }      {  }     
+ proc   Q9   {   P   } 	    { 	  db    W 
+ { 	 SELECT  count(*)  	
+  FROM 
+	 B    		  }  			  $Vk  	
+ ""    	 j8_s  		  { 
+  INSERT INTO  v   
+ ( 
+ W  , 	 kVt  
+ )   SELECT  009     
+			 ; 
+ INSERT INTO 
+ J 	 SELECT 		 w_77      ;  	   }  	    
+ }       execsql 
+
+
+ {   SELECT  count(*)    FROM 
+ C   	 
+ ;  	 }  	      XI6      ifcapable 	 tj 
+ { 	 if 
+ 
+ r0M8  	 {   
+	  } 	   
+	 proc   L 	
+ p     {  } 
+   
+	  do_test  
+ e  - 	 2 8 7 
+ . 
+ 8 8  	
+ { 
+  return 
+ { 	 } 	     		 execsql  {    CREATE INDEX  
+
+ y 	 ON 
+ m 	 (  PH  )    	 }     SBC   $::I3      	
+ }   "]%v#N"      } 
+   	 
+  finish_test 
+  

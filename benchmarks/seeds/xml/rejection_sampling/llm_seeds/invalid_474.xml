@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog SYSTEM "catalog.dtd">
+<!ELEMENT catalog (author*,book+)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT book (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT genre (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ELEMENT location (#PCDATA)>
+<!ATTLIST book id CDATA #REQUIRED>
+<!ATTLIST book year CDATA #REQUIRED>
+<!ELEMENT review (#PCDATA)>
+<!ELEMENT rating (#PCDATA)>
+<!ELEMENT author-review (#PCDATA)>
+<!ELEMENT reviewer (#PCDATA)>
+
+<catalog>
+  <author>John Smith</author>
+  <book id="123" year="2000">
+    <title>My Book</title>
+    <price>19.99</price>
+    <genre>Science Fiction</genre>
+    <publisher>Random House</publisher>
+    <location>NYC</location>
+    <review>This book is amazing</review>
+    <rating>5/5</rating>
+    <author-review>John Smith is a great author</author-review>
+    <reviewer>John Doe</reviewer>
+  </book>
+  <author>Jane Doe</author>
+  <book id="456" year="1999">
+    <title>Another Book</title>
+    <price>14.99</price>
+    <genre>Romance</genre>
+    <publisher>Penguin</publisher>
+    <location>London</location>
+    <review>This book is not so great</review>
+    <rating>3/5</rating>
+    <author-review>Jane Doe is a great author</author-review>
+    <reviewer>Jane Smith</reviewer>
+  </book>
+</catalog>

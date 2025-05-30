@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE catalog PUBLIC
+       "Y" "Z"
+  [
+    <!ELEMENT cat (name,age,sex) >
+    <!ATTLIST cat id ID #REQUIRED >
+    <!ENTITY catname "F">
+  <!ENTITY  %catdoc  "c">
+  <!NOTATION  ISO8601   SYSTEM  "w">
+ %XIncludeSetup

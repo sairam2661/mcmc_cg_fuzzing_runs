@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, publisher, date, chapter+|(#PCDATA))>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT date (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+]>
+<book>
+  <title>The Book of the Dead</title>
+  <author>Unknown</author>
+  <publisher>Unknown</publisher>
+  <date>Before 2500 BC</date>
+  <chapter>Chapter 1: The Weighing of the Heart</chapter>
+  <chapter>Chapter 2: The Weighing of the Tongue</chapter>
+  <chapter>Chapter 3: The Weighing of the Heart and Tongue</chapter>
+</book>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author,chapter*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ATTLIST chapter
+    id CDATA #REQUIRED
+    title CDATA #IMPLIED
+  >
+]>
+<book>
+  <title>The Great Gatsby</title>
+  <author>F. Scott Fitzgerald</author>
+  <chapter id="ch1" title="Chapter 1">The book begins.</chapter>
+  <chapter id="ch2">The world is a strange place.</chapter>
+  <chapter id="ch3">The past is a foreign country.</chapter>
+</book>

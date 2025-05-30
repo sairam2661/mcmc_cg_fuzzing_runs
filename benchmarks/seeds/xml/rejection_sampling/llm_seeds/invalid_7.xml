@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE inventory [
+<!ENTITY % pubid SYSTEM "http://example.org/publicid">
+%pubid;
+<!ENTITY % systemid SYSTEM "http://example.org/systemid">
+%systemid;
+<!ELEMENT inventory (item*)>
+<!ELEMENT item (#PCDATA | catalog| author| date)*>
+<!ELEMENT catalog (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+<!ATTLIST item
+  id CDATA #REQUIRED
+  title CDATA #IMPLIED
+  price CDATA #IMPLIED
+  quantity CDATA #IMPLIED
+  stock CDATA #IMPLIED
+>
+<!ATTLIST catalog
+  title CDATA #REQUIRED
+  author CDATA #IMPLIED
+>
+<!ATTLIST author
+  name CDATA #REQUIRED
+>
+<!ATTLIST date
+  year CDATA #REQUIRED
+  month CDATA #REQUIRED
+  day CDATA #REQUIRED
+>
+]>
+<inventory>
+<item id="12345" title="Book" price="20.00" quantity="5" stock="1000">
+  <catalog>Book Catalog</catalog>
+  <author>John Smith</author>
+  <date year="2022" month="01" day="01"/>
+</item>
+<item id="67890" title="Toy" price="10.00" quantity="10" stock="500">
+  <catalog>Toy Catalog</catalog>
+  <author>Jane Doe</author>
+  <date year="2022" month="02" day="01"/>
+</item>
+</inventory> 
+<!ENTITY % pubid SYSTEM "http://example.org/publicid">
+<!ENTITY % systemid SYSTEM "http://example.org/systemid">
+<!ELEMENT item (#PCDATA | catalog| author| date)*>
+<!ATTLIST item
+  id CDATA #REQUIRED
+  title CDATA #IMPLIED
+  price CDATA #IMPLIED
+  quantity CDATA #IMPLIED
+  stock CDATA #IMPLIED
+>
+<!ATTLIST catalog
+  title CDATA #REQUIRED
+  author CDATA #IMPLIED
+>
+<!ATTLIST author
+  name CDATA #REQUIRED
+>
+<!ATTLIST date
+  year CDATA #REQUIRED
+  month CDATA #REQUIRED
+  day CDATA #REQUIRED
+> 
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT catalog (#PCDATA)>
+<!ELEMENT inventory (item*)> 
+<!

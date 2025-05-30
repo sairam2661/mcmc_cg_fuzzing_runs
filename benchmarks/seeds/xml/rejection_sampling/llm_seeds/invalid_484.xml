@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE notes SYSTEM "notes.dtd">
+<root xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="notes.xsd">
+  <note>
+    <title>Test Note</title>
+    <author>
+      <dc:creator>John Doe</dc:creator>
+      <dc:date>2009-01-01</dc:date>
+    </author>
+    <content>
+      <p>This is a test note.</p>
+      <p>This note has multiple paragraphs.</p>
+      <p>It even has an image.</p>
+      <image src="test.jpg" width="100" height="100" alt="Test Image"/>
+    </content>
+  </note>
+</root>

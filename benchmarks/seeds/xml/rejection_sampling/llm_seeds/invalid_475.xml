@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root SYSTEM "http://www.example.com/dtd/abc.dtd">
+<root>
+    <name>
+        <first>John</first>
+        <last>Doe</last>
+    </name>
+    <age>25</age>
+    <contact>
+        <street>123 Main St</street>
+        <city>New York</city>
+        <state>NY</state>
+        <zip>10001</zip>
+    </contact>
+    <phone>
+        <type>home</type>
+        <number>555-1234</number>
+    </phone>
+    <phone>
+        <type>work</type>
+        <number>555-5678</number>
+    </phone>
+    <address type="mailing">
+        <street>456 Elm St</street>
+        <city>New York</city>
+        <state>NY</state>
+        <zip>10002</zip>
+    </address>
+    <notes>
+        <note>This is a test note</note>
+        <note>This is another test note</note>
+    </notes>
+</root>

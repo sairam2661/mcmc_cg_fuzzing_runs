@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<!DOCTYPE document SYSTEM "document.dtd">
+<!ENTITY % ent SYSTEM "ent.ent">
+<!ENTITY % dtd SYSTEM "dtd.dtd">
+<!ENTITY % ent2 SYSTEM "ent2.ent">
+<!ELEMENT document (title, section, section, section, section, section, section)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT section (#PCDATA)>
+<!ATTLIST section id ID #REQUIRED>
+<!ATTLIST section class CDATA #IMPLIED>
+<!ELEMENT p (#PCDATA)>
+<!ATTLIST p class CDATA #IMPLIED>
+<!ELEMENT img (#PCDATA)>
+<!ATTLIST img src CDATA #REQUIRED>
+<!ATTLIST img alt CDATA #IMPLIED>
+<!ELEMENT div (#PCDATA)>
+<!ATTLIST div class CDATA #IMPLIED>
+<!ELEMENT b (#PCDATA)>
+<!ELEMENT i (#PCDATA)>
+<!ELEMENT sup (#PCDATA)>
+<!ELEMENT sub (#PCDATA)>
+<!ELEMENT pre (#PCDATA)>
+<!ELEMENT code (#PCDATA)>
+<!ELEMENT abbr (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT blockquote (#PCDATA)>
+<!ELEMENT q (#PCDATA)>
+<!ELEMENT tt (#PCDATA)>
+<!ELEMENT var (#PCDATA)>
+<!ELEMENT cite (#PCDATA)>
+<!ELEMENT dfn (#PCDATA)>
+<!ELEMENT em (#PCDATA)>
+<!ELEMENT strong (#PCDATA)>
+<!ELEMENT br (#PCDATA)>
+<!ELEMENT hr (#PCDATA)>
+<!ELEMENT table (#PCDATA)>
+<!ELEMENT tr (#PCDATA)>
+<!ELEMENT td (#PCDATA)>
+<!ELEMENT th (#PCDATA)>
+<!ELEMENT caption (#PCDATA)>
+<!ELEMENT col (#PCDATA)>
+<!ELEMENT colgroup (#PCDATA)>
+<!ELEMENT thead (#PCDATA)>
+<!ELEMENT tbody (#PCDATA)>
+<!ELEMENT tfoot (#PCDATA)>
+<!ELEMENT option (#PCDATA)>
+<!ELEMENT optgroup (#PCDATA)>
+<!ELEMENT label (#PCDATA)>
+<!ELEMENT script (#PCDATA)>
+<!ELEMENT style (#PCDATA)>
+<!ELEMENT iframe (#PCDATA)>
+<!ELEMENT map (#PCDATA)>
+<!ELEMENT area (#PCDATA)>
+<!ELEMENT input (#PCDATA)>
+<!ELEMENT textarea (#PCDATA)>
+<!ELEMENT select (#PCDATA)>
+<!ELEMENT meter (#PCDATA)>
+<!ELEMENT progress (#PCDATA)>
+<!ELEMENT time (#PCDATA)>
+<!ELEMENT video (#PCDATA)>
+<!ELEMENT audio (#PCDATA)>
+<!ELEMENT canvas (#PCDATA)>
+<!ELEMENT noscript (#PCDATA)>
+<!ELEMENT style

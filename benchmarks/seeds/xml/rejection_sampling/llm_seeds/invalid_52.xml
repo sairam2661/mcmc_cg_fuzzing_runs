@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ENTITY book SYSTEM "book.xml">
+  <!ENTITY author SYSTEM "author.xml">
+  <!ENTITY title SYSTEM "title.xml">
+  <!ENTITY publisher SYSTEM "publisher.xml">
+]>
+<catalog xmlns="http://example.com/catalog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://example.com/catalog catalog.xsd">
+  <book id="bk1">
+    &book;
+  </book>
+  <book id="bk2">
+    &book;
+  </book>
+  <author id="aut1">
+    &author;
+  </author>
+  <author id="aut2">
+    &author;
+  </author>
+  <title id="ttl1">
+    &title;
+  </title>
+  <title id="ttl2">
+    &title;
+  </title>
+  <publisher id="pub1">
+    &publisher;
+  </publisher>
+  <publisher id="pub2">
+    &publisher;
+  </publisher>
+  <entry id="ent1">
+    <bookref refid="bk1"/>
+    <authorref refid="aut1"/>
+    <titleref refid="ttl1"/>
+    <publisherref refid="pub1"/>
+  </entry>
+  <entry id="ent2">
+    <bookref refid="bk2"/>
+    <authorref refid="aut2"/>
+    <titleref refid="ttl2"/>
+    <publisherref refid="pub2"/>
+  </entry>
+</catalog>

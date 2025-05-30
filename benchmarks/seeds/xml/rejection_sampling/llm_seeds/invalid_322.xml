@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ENTITY % ent SYSTEM "ent.xml">
+  %ent;
+]>
+<books>
+  <book>
+    <title>Book Title</title>
+    <author>
+      <name>Author Name</name>
+      <address>
+        <street>123 Street</street>
+        <city>New York</city>
+        <state>NY</state>
+        <zip>10001</zip>
+      </address>
+    </assistant>
+  </book>
+  <book>
+    <title>Another Book Title</title>
+    <author>
+      <name>Another Author Name</name>
+      <address>
+        <street>456 Street</street>
+        <city>Los Angeles</city>
+        <state>CA</state>
+        <zip>90001</zip>
+      </address>
+    </assistant>
+  </book>
+  <note>
+    <to>Tove</to>
+    <from>Jani</from>
+    <heading>Reminder</heading>
+    <body>Don't forget me this weekend!</body>
+  </note>
+</books>

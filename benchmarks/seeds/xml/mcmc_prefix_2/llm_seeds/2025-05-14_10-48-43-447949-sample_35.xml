@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE itemset [
+  <!ELEMENT itemset (item+)>
+  <!ATTLIST itemset
+    id ID #REQUIRED
+    version CDATA #IMPLIED>
+  <!ENTITY desc "<">
+
+<!ENTITY % general "<">
+<!NOTATION SGML PUBLIC " "
+     " ">
+  %general;<!-- -->
+  ]>
+<itemset id="1" version="1">
+  <item id="1">Item 1</item>
+  <item id="2"><message>&desc;Description 2</message>Item 2</item>
+</itemset>

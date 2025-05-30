@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE catalog SYSTEM "d"
+  [
+    <!ELEMENT cat (name+, description?, picture?)>
+    <!ATTLIST cat id ID #REQUIRED>
+    <!ENTITY d "d">
+    <!ENTITY % entities "<">
+  <!NOTATION isbn SYSTEM "1">

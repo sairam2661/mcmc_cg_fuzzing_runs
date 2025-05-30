@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (brand+)>
+  <!ATTLIST catalog lang CDATA #IMPLIED>
+  <!ENTITY brand-list "R" >
+  <!ENTITY % nameList "R">
+  <!NOTATION ISO-8859-1 PUBLIC 'ISO 8859-1//EN' 'ISO-8859-1.dtd'>
+  %nameList;
+  <!---->
+ ]>
+<catalog lang="e">
+  <brand>&brand-list;</brand>
+  &note;
+  <!-- Sample Comment -->
+</catalog>

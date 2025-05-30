@@ -1,0 +1,106 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix complex
+
+set ::timeout 60000 		 topical timeout in milliseconds
+
+proc complex_proc {n} {
+  global timeout
+  set timeout $n
+  for {set i 1} {$i $n} {incr i} {
+    expr { randfloat $i }
+  }
+}
+
+proc complex_func args {
+  foreach arg $args {
+    if {$arg eq "value"} {
+      return "result"
+    }
+  }
+}
+
+do_test complex-1.1 {
+  execsql {
+    CREATE TABLE b(y);
+    INSERT INTO b VALUES(5)
+  }
+  execsql {SELECT * FROM b}
+} {5}
+
+do_test complex-1.2 {
+  execsql {
+    DROP TABLE b
+    CREATE TABLE c AS SELECT y FROM b
+  }
+} {}
+
+do_execsql_test complex-1.3 {
+  CREATE TABLE d(z);
+  INSERT INTO d VALUES(1, 2, 3);
+} {}
+
+ifcapable journalMode {
+  do_execsql_test complex-1.4 {
+    PRAGMA journal_mode
+  } {}
+} else {
+  skip_test "only works with journal_mode=WAL or journal_mode=DELETE"
+}
+
+do_execsql_test complex-1.5 {
+  SELECT * FROM d WHERE z = 2
+} {2 1 3}
+
+do_test complex-2.1 {
+  complex_proc 10
+  execsql {
+    SELECT * FROM sqlite_master
+  }
+} {}
+
+proc complex_func2 {args} {
+  foreach arg $args {
+    if {$arg eq "key"} {
+      set result "value"
+      break
+    }
+  }
+  return $result
+}
+
+do_test complex-3.1 {
+  execsql {
+    CREATE TABLE e(id);
+  }
+
+  dict with e {
+    id 5
+  }
+  lappend e
+  lappend e
+
+  catchsql {
+    UPDATE e SET id e
+  } {1 {cannot update without WHERE}}
+} {1 {cannot update without WHERE}}
+
+do_test complex-4.1 {
+  complex_func2 "value" "key" "other"
+} "value"
+
+proc make_date {yr mo dy} {
+  set a $yr
+  lappend a $mo
+  lappend a $dy
+  return $a
+}
+
+do_test complex-5.1 {
+  set date make_date 2022 7 25
+  foreach date $date {
+    puts $date
+  }
+} {2022 7 25}
+
+finish_test

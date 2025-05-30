@@ -1,0 +1,82 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix sync
+
+proc sync_proc {} {
+  global syncargs
+  lappend syncargs
+  expr {[llength $syncargs] <= 2}
+}
+
+ifcapable!wal {
+  finish_test
+  return
+}
+
+set syncargs {}
+
+do_test sync-1.1 {
+  execsql {
+    CREATE TABLE a(x);
+    INSERT INTO a VALUES(1),(2),(3);
+  }
+  execsql {SELECT count(*) FROM a}
+} {3}
+
+catchsql {
+  PRAGMA journal_mode=WAL
+} {0 {}}
+
+do_test sync-1.2 {
+  execsql {
+    BEGIN;
+    INSERT INTO a VALUES(4);
+    COMMIT;
+  }
+  execsql {SELECT count(*) FROM a}
+} {4}
+
+do_test sync-1.3 {
+  execsql {
+    BEGIN;
+    INSERT INTO a VALUES(5);
+    ROLLBACK;
+  }
+  execsql {SELECT count(*) FROM a}
+} {4}
+
+do_test sync-1.4 {
+  execsql {
+    BEGIN;
+    INSERT INTO a VALUES(6);
+    ABORT;
+  }
+  execsql {SELECT count(*) FROM a}
+} {4}
+
+do_test sync-1.5 {
+  execsql {
+    BEGIN;
+    INSERT INTO a VALUES(7);
+    ROLLBACK;
+  }
+  execsql {SELECT count(*) FROM a}
+} {4}
+
+do_test sync-1.6 {
+  execsql {
+    CREATE TABLE b(y);
+    INSERT INTO b VALUES(8);
+  }
+  execsql {SELECT count(*) FROM b}
+} {1}
+
+do_test sync-1.7 {
+  execsql {
+    CREATE TABLE c(z);
+    INSERT INTO c VALUES(9);
+  }
+  execsql {SELECT count(*) FROM c}
+} {1}
+
+finish_test

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!ELEMENT book (title,author,description,chapter)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT chapter (#PCDATA)>
+<!ELEMENT section (#PCDATA)>
+<!ELEMENT figure (#PCDATA)>
+<!ELEMENT table (#PCDATA)>
+<!ELEMENT note (#PCDATA)>
+<!ELEMENT citation (#PCDATA)>
+<!ELEMENT bibliography (#PCDATA)>
+<!ELEMENT index (#PCDATA)>
+<!ELEMENT abstract (#PCDATA)>
+<!ELEMENT keywords (#PCDATA)>
+<!ELEMENT keywords-item (#PCDATA)>
+<!ELEMENT keywords-item-list (#PCDATA)>
+<!ATTLIST book
+author CDATA #REQUIRED
+title CDATA #REQUIRED
+date CDATA #IMPLIED
+isbn CDATA #IMPLIED
+publisher CDATA #IMPLIED
+keywords CDATA #IMPLIED
+abstract CDATA #IMPLIED
+]>
+<book author="John Doe" title="My Book" date="2022-01-01" isbn="1234567890" publisher="My Publisher" keywords="key1 key2 key3" abstract="This is my book.">
+  <title>My Book</title>
+  <author>John Doe</author>
+  <description>This is a description of my book.</description>
+  <chapter>
+    <section>Section 1</section>
+    <section>Section 2</section>
+    <figure>Figure 1</figure>
+    <table>Table 1</table>
+    <note>Note 1</note>
+    <citation>Citation 1</citation>
+    <bibliography>Bibliography 1</bibliography>
+    <index>Index 1</index>
+    <abstract>This is the abstract.</abstract>
+    <keywords>
+      <keywords-item>key1</keywords-item>
+      <keywords-item>key2</keywords-item>
+      <keywords-item-list>key3</keywords-item-list>
+    </keywords>
+  </chapter>
+  <chapter>
+    <section>Section 3</section>
+    <section>Section 4</section>
+    <figure>Figure 2</figure>
+    <table>Table 2</table>
+    <note>Note 2</note>
+    <citation>Citation 2</citation>
+    <bibliography>Bibliography 2</bibliography>
+    <index>Index 2</index>
+    <abstract>This is the abstract

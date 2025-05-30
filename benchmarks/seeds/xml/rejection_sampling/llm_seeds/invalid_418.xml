@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE root SYSTEM "http://www.w3.org/2001/XMLSchema.dtd">
+<root xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="book">
+      <xs:complexType>
+        <xs:sequence>
+          <xs:element name="title" type="xs:string"/>
+          <xs:element name="author">
+            <xs:complexType mixed="true">
+              <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element name="email" type="xs:string"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="publisher" type="xs:string"/>
+          <xs:element name="price" type="xs:decimal"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <book>
+    <title>My Book</title>
+    <author>
+      <name>John Smith</name>
+      <email>john.smith@example.com</email>
+    </author>
+    <publisher>ABC Publishing</publisher>
+    <price>19.99</price>
+  </book>
+</root>  <!-- THIS IS THE END OF THE FILE. DO NOT ADD ANYTHING. -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!--  -->

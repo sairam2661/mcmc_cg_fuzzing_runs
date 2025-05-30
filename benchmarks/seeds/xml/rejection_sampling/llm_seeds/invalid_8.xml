@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, publisher)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT book-info (#PCDATA)>
+  <!ELEMENT book-list (#PCDATA)>
+  <!ELEMENT book-item (#PCDATA)>
+  <!ELEMENT author-info (#PCDATA)>
+  <!ELEMENT author-list (#PCDATA)>
+  <!ELEMENT author-item (#PCDATA)>
+  <!ELEMENT publisher-info (#PCDATA)>
+  <!ELEMENT publisher-list (#PCDATA)>
+  <!ELEMENT publisher-item (#PCDATA)>
+  <!ELEMENT title-list (#PCDATA)>
+  <!ELEMENT title-item (#PCDATA)>
+  <!ELEMENT info-list (#PCDATA)>
+  <!ELEMENT info-item (#PCDATA)>
+  <!ELEMENT chapter (chapter-title, chapter-content)>
+  <!ELEMENT chapter-title (#PCDATA)>
+  <!ELEMENT chapter-content (#PCDATA)>
+]>
+<book>
+  <title-list>
+    <title-item>Book 1</title-item>
+    <title-item>Book 2</title-item>
+  </title-list>
+  <author-list>
+    <author-item>
+      <author-info>
+        <author-name>John Smith</author-name>
+        <author-date>1999</author-date>
+      </author-info>
+    </author-item>
+    <author-item>
+      <author-info>
+        <author-name>Jane Doe</author-name>
+        <author-date>2000</author-date>
+      </author-info>
+    </author-item>
+  </author-list>
+  <publisher-list>
+    <publisher-item>
+      <publisher-info>
+        <publisher-name>Publisher 1</publisher-name>
+        <publisher-date>2001</publisher-date>
+      </publisher-info>
+    </publisher-item>
+    <publisher-item>
+      <publisher-info>
+        <publisher-name>Publisher 2</publisher-name>
+        <publisher-date>2002</publisher-date>
+      </publisher-info>
+    </publisher-item>
+  </publisher-list>
+  <book-list>
+    <book-item>
+      <book-info>
+        <book-title>Book 1</book-title>
+        <book-author>John Smith</book-author>
+        <book-publisher>Publisher 1</book-publisher>
+      </book-info>
+    </book-item>
+    <book-item>
+      <book-info>
+        <book-title>Book 2</book

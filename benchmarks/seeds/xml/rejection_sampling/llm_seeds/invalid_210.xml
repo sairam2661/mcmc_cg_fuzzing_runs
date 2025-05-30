@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog SYSTEM "catalog.dtd">
+<catalog>
+    <book>
+        <title lang="en">The Great Gatsby</title>
+        <author>
+            <first-name>F. Scott</first-name>
+            <last-name>Fitzgerald</last-name>
+        </author>
+        <genre>Novel</genre>
+        <year>1925</year>
+        <publisher>
+            <name>Charles Scribner's Sons</name>
+            <location>New York</location>
+        </publisher>
+        <price>15.99</price>
+        <stock>
+            <quantity>20</quantity>
+            <units>books</units>
+        </stock>
+    </book>
+    <book>
+        <title lang="en">1984</title>
+        <author>
+            <first-name>George</first-name>
+            <last-name>Orwell</last-name>
+        </author>
+        <genre>Novel</genre>
+        <year>1949</year>
+        <publisher>
+            <name>Secker and Warburg</name>
+            <location>London</location>
+        </publisher>
+        <price>12.99</price>
+        <stock>
+            <quantity>30</quantity>
+            <units>books</units>
+        </stock>
+    </book>
+</catalog>

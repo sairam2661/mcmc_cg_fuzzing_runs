@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE book [
+  <!ENTITY % book-entities "">
+  %book-entities;
+]>
+<book xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+  xs:noNamespaceSchemaLocation="book.xsd"
+  xmlns:fn="http://www.w3.org/2005/xpath-functions">
+  <title>My Book</title>
+  <author>
+    <name>John Doe</name>
+    <email>john@example.com</email>
+  </author>
+  <edition>1.0</edition>
+  <publisher>
+    <name>My Publisher</name>
+    <address>
+      <street>123 Main St</street>
+      <city>Anytown</city>
+      <state>CA</state>
+      <zip>12345</zip>
+    </address>
+  </publisher>
+  <pubdate>2022-01-01</pubdate>
+  <copyright>
+    <year>2022</year>
+    <holder>My Company</holder>
+  </copyright>
+  <catalog>
+    <book id="bk1">
+      <title>Book 1</title>
+      <author>Author 1</author>
+    </book>
+    <book id="bk2">
+      <title>Book 2</title>
+      <author>Author 2</author>
+    </book>
+  </catalog>
+</book>

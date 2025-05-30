@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book SYSTEM "book.dtd">
+<book>
+    <title>La Belle Inconnue</title>
+    <author>
+        <name>Alain-René Lesage</name>
+        <born>1668</born>
+        <died>1747</died>
+        <biography>
+            <p>Alain-René Lesage was a French writer.</p>
+            <p>He was born in Sarzeau, Brittany.</p>
+        </biography>
+    </author>
+    <chapter>
+        <title>Chapter 1</title>
+        <section>
+            <title>Section 1</title>
+            <para>This is a paragraph of text.</para>
+            <para>This is another paragraph of text.</para>
+        </section>
+        <section>
+            <title>Section 2</title>
+            <para>This is another paragraph of text.</para>
+        </section>
+    </chapter>
+    <appendix>
+        <title>Appendix</title>
+        <para>This is an appendix.</para>
+    </appendix>
+</book>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE catalog [
+<!ENTITY % catalog.ent SYSTEM "catalog.ent">
+<!ENTITY % catalog.dtd SYSTEM "catalog.dtd">
+<!ENTITY % catalog.xsl SYSTEM "catalog.xsl">
+<!ENTITY % catalog.xsd SYSTEM "catalog.xsd">
+<!ENTITY % catalog.xml SYSTEM "catalog.xml">
+<!ENTITY % catalog.xhtml SYSTEM "catalog.xhtml">
+<!ENTITY % catalog.xmls SYSTEM "catalog.xmls">
+<!ENTITY % catalog.html SYSTEM "catalog.html">
+<!ENTITY % catalog.xsls SYSTEM "catalog.xsls">
+<!ENTITY % catalog.dtds SYSTEM "catalog.dtds">
+<!ENTITY % catalog.xsds SYSTEM "catalog.xsds">
+<!ENTITY % catalog.xmlxs SYSTEM "catalog.xmlxs">
+<!ENTITY % catalog.htmls SYSTEM "catalog.htmls">
+<!ENTITY % catalog.xslxs SYSTEM "catalog.xslxs">
+<!ENTITY % catalog.xsdsys SYSTEM "catalog.xsdsys">
+<!ENTITY % catalog.xsdssys SYSTEM "catalog.xsdssys">
+<!ENTITY % catalog.xmlssys SYSTEM "catalog.xmlssys">
+<!ENTITY % catalog.htmlsys SYSTEM "catalog.htmlsys">
+<!ENTITY % catalog.xslsys SYSTEM "catalog.xslsys">
+<!ENTITY % catalog.dtdsys SYSTEM "catalog.dtdsys">
+<!ENTITY % catalog.xsdsystems SYSTEM "catalog.xsdsystems">
+<!ENTITY % catalog.xsdssystems SYSTEM "catalog.xsdssystems">
+<!ENTITY % catalog.xmlssystems SYSTEM "catalog.xmlssystems">
+<!ENTITY % catalog.htmlsystems SYSTEM "catalog.htmlsystems">
+<!ENTITY % catalog.xslsystems SYSTEM "catalog.xslsystems">
+<!ENTITY % catalog.dtdsystems SYSTEM "catalog.dtdsystems">
+<!ENTITY % catalog.xsdssysx SYSTEM "catalog.xsdssysx">
+<!ENTITY % catalog.xmlssysx SYSTEM "catalog.xmlssysx">
+<!ENTITY % catalog.htmlsysx SYSTEM "catalog.htmlsysx">
+<!ENTITY % catalog.xslsysx SYSTEM "catalog.xslsysx">
+<!ENTITY % catalog.dtdsysx SYSTEM "catalog.dtdsysx">
+<!ENTITY % catalog.xsdssysxs SYSTEM "catalog.xsdssysxs">
+<!ENTITY % catalog.xmlssysxs SYSTEM "catalog.xmlssysxs">
+<!ENTITY % catalog.htmlsysxs SYSTEM "catalog.htmlsysxs">
+<!ENTITY % catalog.xslsysxs SYSTEM "catalog.xslsysxs">
+<!ENTITY % catalog.dtdsysxs SYSTEM "catalog.dtdsysxs">
+<!ENTITY

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE notes [
+  <!ENTITY % note "note">
+  <!ENTITY % note2 "note2">
+  <!ENTITY % note3 "note3">
+]>
+<root xmlns:ns1="http://example.com/namespace1" xmlns:ns2="http://example.com/namespace2">
+  <ns1:note>
+    <ns2:note2>
+      <ns1:note3>Text</ns1:note3>
+    </ns2:note2>
+    <ns2:note2>
+      <ns1:note3>Text</ns1:note3>
+    </ns2:note2>
+  </ns1:note>
+  <note>
+    <note2>
+      <note3>Text</note3>
+    </note2>
+    <note2>
+      <note3>Text</note3>
+    </note2>
+  </note>
+  <note3>Text</note3>
+</root>

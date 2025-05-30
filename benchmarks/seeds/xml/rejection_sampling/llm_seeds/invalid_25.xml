@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<!DOCTYPE note SYSTEM "note.dtd">
+<note>
+  <to name='John' xmlns:fn='http://www.w3.org/2005/xpath-functions'>
+    <fn:element>fn:element</fn:element>
+  </to>
+  <from name='Jane'/>
+  <heading>Reminder</heading>
+  <body>
+    <p>Don't forget the meeting at 2pm.</p>
+    <p>Best regards</p>
+  </body>
+  <note type='private'/>
+  <note type='public'>
+    <note type='private'>
+      <note type='public'>
+        <note type='private'/>
+        <note type='public'/>
+      </note>
+    </note>
+  </note>
+</note>

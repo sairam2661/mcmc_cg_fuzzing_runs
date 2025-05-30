@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Test Document</title>
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <script type="text/javascript" src="script.js"></script>
+        <meta name="description" content="A short test document" />
+        <meta name="keywords" content="test, document, sample" />
+        <style>
+            body { background-color: #f2f2f2; }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1>Test Heading</h1>
+            <p>This is a paragraph of text.</p>
+            <p>This is another paragraph of text.</p>
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+            <table border="1">
+                <tr>
+                    <th>Column 1</th>
+                    <th>Column 2</th>
+                    <th>Column 3</th>
+                </tr>
+                <tr>
+                    <td>Cell 1</td>
+                    <td>Cell 2</td>
+                    <td>Cell 3</td>
+                </tr>
+            </table>
+            <div class="container">
+                <p>This is a paragraph of text.</p>
+                <img src="image.jpg" alt="An image" />
+            </div>
+        </div>
+    </body>
+</html>

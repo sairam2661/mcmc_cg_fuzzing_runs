@@ -1,0 +1,28 @@
+set  	
+		 testdir   {   file   dirname  $argv0 	 } 	  source 
+	 $testdir/tester.tcl 
+
+ 
+ set 
+ testprefix 		 CD 	 
+
+	 	
+ set 		  timeout 	 	 60000 		 set  
+ cg   Wy8_       	  if 	 	 $::M    >  	
+ { 
+    
+	 COMMIT     ; 	 INSERT INTO  P3_   ( 
+ C_  	
+  ) 
+ SELECT 
+ "rpdy"     		 ; 
+ PRAGMA   U   
+ ; 	
+ BEGIN    IMMEDIATE     ;  	
+
+  }    {   P_1   $::v3x__    $L_  	 $::E7  
+ 
+   
+ } 		
+ else  {  } 
+   	  finish_test    

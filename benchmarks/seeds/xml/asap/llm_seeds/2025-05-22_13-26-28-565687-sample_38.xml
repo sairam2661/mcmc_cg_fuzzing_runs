@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author+, publication-date+)>
+  <!ATTLIST book 
+    id CDATA #IMPLIED
+    lang (en|fr|es) 'en'>
+  <!ENTITY author-first "A"
+         >
+  <!ENTITY 	%
+    book-tmpl SYSTEM "b" >		
+  <!NOTATION svg PUBLIC "S"
+  "m">
+  %book-tmpl;
+  <!--
+    The book template
+  -->
+]>
+<book id="b" lang="f">
+  <title>&note;</title>
+  <author>&author-first;</author>
+  <author>
+    Baudelaire
+  </author>
+  <publication-date>1848</publication-date>
+  <publication-date>1857</publication-date>
+  <title>T</title>
+</book>

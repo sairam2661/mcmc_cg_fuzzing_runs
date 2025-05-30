@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE inventory [
+  <!ELEMENT inventory (item*)>
+  <!ATTLIST item id ID #REQUIRED>
+  <!ENTITY desc "A" > 
+  <!ENTITY % genEnt "1" > 
+  <!NOTATION ISO-8859-1 SYSTEM "w" > 
+  %genEnt;
+  <!--(%genEnt;)-->]>
+<inventory version="1" xmlns="x" xmlns:xi="x">
+  <item id="x" > <!--comment -->
+     <title><![CDATA[The title, a piece of &note; text]]></title>
+      <description>&desc;</description>
+  </item>
+  <item id="y">
+     <category>Electronics</category>
+     <price unit="d">100</price>
+  </item>
+</inventory>

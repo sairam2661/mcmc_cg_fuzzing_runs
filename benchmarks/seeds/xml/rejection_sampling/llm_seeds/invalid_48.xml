@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>XML Document</title>
+	<metadata>
+		<dc:title>XML Document</dc:title>
+		<dc:creator>John Doe</dc:creator>
+		<dc:date>2023-02-20</dc:date>
+		<dc:description>This is an XML document.</dc:description>
+	</metadata>
+	<stylesheet href="styles.css" type="text/css" media="screen" />
+</head>
+<body>
+	<h1>Heading 1</h1>
+	<p>Paragraph 1</p>
+	<p>Paragraph 2</p>
+	<ol>
+		<li>Item 1</li>
+		<li>Item 2</li>
+		<li>Item 3</li>
+	</ol>
+	<table>
+		<caption>Table Caption</caption>
+		<thead>
+			<tr>
+				<th>Column 1</th>
+				<th>Column 2</th>
+				<th>Column 3</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Cell 1</td>
+				<td>Cell 2</td>
+				<td>Cell 3</td>
+			</tr>
+			<tr>
+				<td>Cell 4</td>
+				<td>Cell 5</td>
+				<td>Cell 6</td>
+			</tr>
+		</tbody>
+	</table>
+	<div>
+		<figure>
+			<img src="image.jpg" alt="Image" />
+			<figcaption>Image Caption</figcaption>
+		</figure>
+	</div>
+</body>
+</html>

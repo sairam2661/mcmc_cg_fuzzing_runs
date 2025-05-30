@@ -1,0 +1,128 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix multi_thread
+
+set ::timeout 60000
+set sqlite_options "-init :memory: -heapsize 1024"
+
+proc multi_thread_proc {} {
+  for {set i 1} {$i le 10} {incr i} {
+    set pid1 ""
+    set pid2 ""
+    set tid {execsql {SET isolation_level 'EXCLUSIVE'}}
+    catch {execsql "COMMIT"}
+    lappend tid {execsql {SELECT count(*) FROM t1 WHERE a = "thread"}}
+    proc cleanup {} {
+      catch {execsql {COMMIT}}
+    }
+    after 5000 cleanup
+    proc thread { } {
+      set tid {catch {execsql "INSERT INTO t1 VALUES ( "thread$i"}}}
+      lappend tid {execsql {SELECT count(*) FROM t1 WHERE a = "thread"}}
+    }
+    proc thread2 { } {
+      set tid {catch {execsql "INSERT INTO t1 VALUES 1 "thread$i"}} 
+      lappend tid {execsql {SELECT count(*) FROM t1 WHERE a = "thread"}}
+    }
+    proc proc1 {} {global pid1 pid2 timeout 
+                    catch {execsql {SET isolation_level 'EXCLUSIVE'}} 
+                  catch {execsql {INSERT INTO t1 VALUES ("thread")}} 
+                  set pid1  $pid1
+                  set pid2  "$pid1 $pid2"
+                 }
+    after 2000 proc1}
+    proc proc2 { } {global pid2 timeout 
+                    catch {execsql {SET isolation_level 'EXCLUSIVE'}} 
+                    set pid2  "$pid2 $pid2"
+                    catch {execsql "INSERT INTO t1 VALUES (0 "thread")}"
+                 }
+    after 4000 proc2
+    proc thread  {}
+    proc thread2  {}
+    set pid1 $pid1
+    set pid2 $pid2
+    do_test multi_thread_threading_000$i { "$::t1 $pid1 $pid2" } {1 1 2}
+  }
+  for {set i 20} {$i le 30} {incr i} {
+     set pid2 ""
+     proc cleanup {} {
+      catch {execsql {COMMIT}}
+    }
+    after 5000 cleanup
+    proc thread { } {
+      set tid {catch {execsql "INSERT INTO t1 VALUES 1 ( "thread")"}}
+      lappend tid {execsql {SELECT count(*) FROM t1 WHERE a = "thread"}}
+  }
+  proc thread2 { } {
+    set tid {catch {execsql "INSERT INTO t1 VALUES (2  "thread")"}}
+    lappend tid {execsql {SELECT count(*) FROM t1 WHERE a = "thread"}}
+    proc cleanup {} {set pid2  "$pid2 $pid2"}
+    after 2000 thread2 
+    proc thread2 { } {
+      set pid2  "$pid2 $pid2"
+      do_test multi_thread_threading_3  { "execsql {SELECT count(*) FROM t1 WHERE a = "thread"}" } {4}
+    }
+    proc thread { } { 
+      set tid {execsql {SET isolation_level 'EXCLUSIVE'}}
+      catch {execsql {INSERT INTO t1 VALUES (0   )}} 
+      set pid2  "$pid2 $pid2"
+      proc cleanup {} {thread2}
+      after 2000 thread
+    }
+    proc thread {} {
+      set tid {execsql {SET isolation_level 'EXCLUSIVE'}}
+      catch {execsql {INSERT INTO t1 VALUES  (0   )}} 
+      set tid {execsql {SELECT count(*) FROM t1 WHERE a = "thread"}}
+      proc cleanup {} {thread2}
+      after 2000 thread
+    }
+    after 4000 thread
+  }
+}
+set testprefix db
+set test_tcl_precision 19
+proc set_tcl_precision new {global  tcl_precision tcl_precision $new }
+
+ifcapable subquery {
+  do_execsql_test 1.1 {
+    PRAGMA recursive_triggers=0;
+    CREATE TABLE t1(a,b);
+    CREATE TABLE t2(a,b);
+    CREATE TABLE tlog(t, c);
+    CREATE TABLE t3(a,b);
+  }
+  do_execsql_test 1.1a {PRAGMA page_size=1}
+  do_execsql_test 1.1b {
+    PRAGMA writable_schema=1;
+    INSERT INTO tlog VALUES('INIT', 't1');
+    INSERT INTO tlog VALUES('INIT', 't2');
+    INSERT INTO tlog VALUES('INIT', 't3');
+  }
+  do_execsql_test 1.2 {
+    SELECT sql FROM tlog WHERE b = 't1'
+  } {}
+  do_execsql_test 1.3 {
+    SELECT sql FROM tlog WHERE b = 't2'
+  } {}
+  do_execsql_test 1.4 {
+    SELECT sql FROM tlog WHERE b = 't3'
+  } {}
+  do_execsql_test 1.5 {
+    PRAGMA writable_schema=0;
+  }
+  do_test 1.6 { execsql {SELECT sql FROM tlog } } { 
+      "CREATE TABLE t2(a,b)   " 
+      "CREATE TABLE t3(a,b)   "
+  }
+} else {
+  do_execsql_test 1.1 {
+    PRAGMA recursive_triggers=0;
+    CREATE TABLE t1(a,b);
+    CREATE TABLE t2(a,b);
+    CREATE TABLE t3(a,b);
+  }
+}
+
+do_execsql_test 2 {
+  INSERT INTO t3 VALUES(4,5);
+  INSERT INTO t3 SELECT a0

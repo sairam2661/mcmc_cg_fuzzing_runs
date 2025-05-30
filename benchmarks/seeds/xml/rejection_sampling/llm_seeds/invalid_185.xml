@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ENTITY chapter "Chapter ">
+  <!ENTITY title "Title ">
+  <!ENTITY author "Author ">
+]>
+<book>
+  <info>
+    <&chapter;1>&title;The Great Gatsby</&chapter;>&author;F. Scott Fitzgerald</&author;>
+  </info>
+  <&chapter;2>
+    <sect1 id="sect1">
+      <title>&title;The Valley of Ashes</title>
+      <p>It was like a valley of ashes.</p>
+    </sect1>
+    <sect1 id="sect2">
+      <title>&title;The Valley of Ashes</title>
+      <p>It was like a valley of ashes.</p>
+    </sect1>
+  </&chapter;2>
+</book>

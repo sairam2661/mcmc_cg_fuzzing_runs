@@ -1,0 +1,34 @@
+set   testdir 
+	
+	 { 
+ file 	
+
+ dirname  $argv0 
+	 }   source 	 $testdir/tester.tcl   set 
+  testprefix 
+ X8  set  timeout 
+	 60000 	  do_execsql_test   l 
+ 
+ -   6 5 3 	 . 	
+ 6 5    { 	 WITH 	 D9   ( 
+ L 
+ ) 	 AS  (  
+ SELECT 		 F 
+
+	 ( 	
+ *  )   FROM   rW   
+ UNION ALL 
+ SELECT 		 ""   		  FROM  y 
+	 WHERE  W 		 = 	 8       ) 		 WITH 
+	 Y_ 	 (  s_B0t_ 	 ) 	 AS  ( 	  CREATE INDEX 	 C2   ON 	  Q 
+	 (  	 p 	 )   
+ ) 	 ROLLBACK        ; 	 INSERT INTO 
+
+  Tz  VALUES 
+
+  (    ""  
+ , 	
+ "N"    ,   82    , 
+
+ 806568   	 
+ ,  ''   	 )     ;     } 	 ""        finish_test   

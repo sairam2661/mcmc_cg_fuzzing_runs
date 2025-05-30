@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note SYSTEM "note.dtd">
+<!ENTITY % xmlent "xml">
+<!ELEMENT note (to,from,heading,body)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT fax (#PCDATA)>
+
+<note>
+  <to>John</to>
+  <from>&xmlent;</from>
+  <heading>Reminder</heading>
+  <body>
+    <address>
+      <name>Jim</name>
+      <email>jim@example.com</email>
+      <phone>123-456-7890</phone>
+      <fax>123-456-7891</fax>
+    </address>
+    <address>
+      <name>Jane</name>
+      <email>jane@example.com</email>
+      <phone>987-654-3210</phone>
+      <fax>987-654-3211</fax>
+    </address>
+  </body>
+</note>

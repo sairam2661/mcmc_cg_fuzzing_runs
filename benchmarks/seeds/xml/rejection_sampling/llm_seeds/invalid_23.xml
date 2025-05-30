@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root [
+<!ELEMENT root (a|b|c)>
+<!ELEMENT a (#PCDATA)>
+<!ELEMENT b (c*)>
+<!ELEMENT c (#PCDATA)>
+<!ATTLIST b attr1 CDATA #IMPLIED>
+<!ATTLIST c attr2 CDATA #IMPLIED>
+<!ENTITY entity "entity value">
+]>
+<root xmlns="http://example.com">
+  <a>text</a>
+  <b attr1="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema.xsd"> 
+    <c attr2="value">text</c>
+  </b>
+  <c attr2="value">text</c>
+  <c attr2="value">text</c>
+  <c attr2="value">text</c>
+  <c attr2="internal entity" entity="entity"/>
+  <c attr2="external entity" entityref="entity"/>
+  <c attr2="character data" >&#65;&#66;&#67;</c>
+  <c attr2="numeric character reference" >&#x48;&#x49;&#x4a;</c>
+</root>

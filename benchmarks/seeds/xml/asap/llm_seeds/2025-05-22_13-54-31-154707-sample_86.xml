@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE catalog SYSTEM "c" [
+  <!ELEMENT catalog (movie+)>
+  <!ATTLIST movie id CDATA #REQUIRED title CDATA #REQUIRED>
+  <!ENTITY year "c">
+  <!ENTITY % data "b">
+  <!NOTATION iso-8859-1 PUBLIC " " " ">
+  %data;
+  <!--&ISO--> 
+]><catalog><movie id="1" title="a"/><movie id="c" title="a"/><movie id="a" title="a"/></catalog>

@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE notes SYSTEM 'notes.dtd'>
+<root xmlns:fb='http://www.example.org/fb' xmlns:fb2='http://www.example.org/fb2'>
+  <note id='n1'>
+    <title>Example Note</title>
+    <author>
+      <name>John Doe</name>
+      <email>john@example.com</email>
+    </author>
+    <content>
+      <p>This is an example note.</p>
+      <fb:status>Private</fb:status>
+      <fb2:rating>5</fb2:rating>
+    </content>
+  </note>
+  <note id='n2'>
+    <title>Another Note</title>
+    <author>
+      <name>Jane Doe</name>
+      <email>jane@example.com</email>
+    </author>
+    <content>
+      <p>This is another example note.</p>
+      <fb:status>Public</fb:status>
+      <fb2:rating>4</fb2:rating>
+    </content>
+  </note>
+  <note id='n3'>
+    <title>Third Note</title>
+    <author>
+      <name>Bob Smith</name>
+      <email>bob@example.com</email>
+    </author>
+    <content>
+      <p>This is the third example note.</p>
+      <fb:status>Private</fb:status>
+      <fb2:rating>5</fb2:rating>
+    </content>
+  </note>
+</root>

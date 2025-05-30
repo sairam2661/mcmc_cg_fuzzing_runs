@@ -1,0 +1,19 @@
+set    testdir  {   file 
+	 dirname  $argv0 
+ }  
+ source   $testdir/tester.tcl 	 set   testprefix 	 B6G 
+
+ set   	 timeout 		 60000 	 set 
+	  gp8c8     { 	 CREATE TABLE 
+ P 
+		 ( 
+ v_p 
+ NOT NULL     )      ;  
+ }    		  catchsql  	
+ $::u_   
+	
+ 	
+	     proc 
+	 ey   A_  
+ { 	
+ } 		   	  finish_test    

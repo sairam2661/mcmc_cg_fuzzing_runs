@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author+)>
+  <!ATTLIST book
+    lang (EN|FR) #REQUIRED
+    id CDATA #IMPLIED
+  >
+  <!ENTITY chap1 "A"
+         >
+  <!ENTITY % chap-entity "B">
+  <!NOTATION GIF PUBLIC "G" "f"
+    >
+ 	%DENFinition
+ 	;	<!--  The name of this entity  -->
+]>
+<book lang="f" id="f">
+  <title>Catalog</title>
+  <author>
+    <name>John</name>
+    <dob>1970</dob>
+  </author>
+  <author>
+    <name>Jane</name>
+    <dob>1975</dob>
+  </author>
+  <chapter xml:space="p" xlink:href="f" xref="C"
+        ENTITY="C">
+    <title xml:lang="f">
+
+  &chap1;&chap1;
+    </title>
+    <para>GIF<NOTATION GIFPUBLIC="f"></NOTATION></para>
+    &chap1; &chap1;
+    &chap-entity;
+  </chapter>
+</book>

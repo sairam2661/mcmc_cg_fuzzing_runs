@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!ENTITY % general-entities SYSTEM "general-entities.dtd">
+%general-entities;
+<!ENTITY % local-entities SYSTEM "local-entities.dtd">
+%local-entities;
+<!ELEMENT book (title,author,year,editor,translator,description,tableofcontents,chapter*,appendix*)>
+<!ATTLIST book
+  id CDATA #REQUIRED
+  lang (EN|FR|ES) "EN"
+  xmlns:dc "http://purl.org/dc/elements/1.1/"
+  xmlns:xsi "http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation "book.xsd"
+>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT editor (#PCDATA)>
+<!ELEMENT translator (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT tableofcontents (section*)>
+<!ELEMENT section (#PCDATA)>
+<!ELEMENT chapter (#PCDATA)>
+<!ELEMENT appendix (#PCDATA)>
+<!ELEMENT note (#PCDATA)>
+
+<book id="B001" lang="EN" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="book.xsd">
+  <title>My Book</title>
+  <author>John Smith</author>
+  <year>2020</year>
+  <editor>Jane Doe</editor>
+  <translator>Bob Brown</translator>
+  <description>This is my book.</description>
+  <tableofcontents>
+    <section>Introduction</section>
+    <section>Chapter 1</section>
+    <section>Chapter 2</section>
+    <section>Conclusion</section>
+  </tableofcontents>
+  <chapter>Chapter 1: Introduction</chapter>
+  <chapter>Chapter 2: History</chapter>
+  <chapter>Chapter 3: Conclusion</chapter>
+  <appendix>Appendix A: Glossary</appendix>
+  <appendix>Appendix B: References</appendix>
+  <note>This is a note.</note>
+  <dc:title>My Book</dc:title>
+  <dc:creator>John Smith</dc:creator>
+  <dc:date>2020</dc:date>
+  <dc:language>EN</dc:

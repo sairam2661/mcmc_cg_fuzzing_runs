@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE notes SYSTEM "notes.dtd">
+<notes xmlns="http://www.example.org/notes">
+    <note id="n1" author="John Doe">
+        <title>This is a note</title>
+        <content>Here is some content</content>
+        <tags>
+            <tag>note</tag>
+            <tag>example</tag>
+        </tags>
+        <reference refid="r1" uri="http://example.org/ref1" />
+        <reference refid="r2" uri="http://example.org/ref2" />
+    </note>
+    <note id="n2" author="Jane Doe">
+        <title>This is another note</title>
+        <content>Here is some more content</content>
+        <tags>
+            <tag>example</tag>
+            <tag>note</tag>
+        </tags>
+        <reference refid="r3" uri="http://example.org/ref3" />
+    </note>
+    <note id="n3" author="Bob Smith">
+        <title>This is a third note</title>
+        <content>Here is some more content again</content>
+        <tags>
+            <tag>example</tag>
+        </tags>
+    </note>
+    <reference id="r1" uri="http://example.org/ref1" />
+    <reference id="r2" uri="http://example.org/ref2" />
+    <reference id="r3" uri="http://example.org/ref3" />
+</notes> 
+<!ELEMENT notes (note+)>
+<!ELEMENT note (title,content,tags,reference*)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT content (#PCDATA)>
+<!ELEMENT tags (tag+)>
+<!ELEMENT tag (#PCDATA)>
+<!ELEMENT reference EMPTY>
+<!ATTLIST reference id CDATA #REQUIRED uri CDATA #REQUIRED>
+<!ELEMENT note EMPTY>
+<!ELEMENT reference EMPTY>
+<!ATTLIST note id CDATA #REQUIRED author CDATA #REQUIRED>
+<!ELEMENT reference EMPTY>
+<!ATTLIST reference refid CDATA #REQUIRED uri CDATA #REQUIRED>
+<!ELEMENT reference EMPTY>
+<!ELEMENT tags EMPTY>
+<!ELEMENT tag EMPTY>
+<!ELEMENT title EMPTY>
+<!ELEMENT content EMPTY>
+<!ELEMENT notes EMPTY>
+<!ELEMENT note EMPTY>
+<!ELEMENT tags EMPTY>
+<!ELEMENT reference EMPTY>
+<!ELEMENT note EMPTY>
+<!ELEMENT tags EMPTY>
+<!ELEMENT note EMPTY>
+<!ELEMENT reference EMPTY

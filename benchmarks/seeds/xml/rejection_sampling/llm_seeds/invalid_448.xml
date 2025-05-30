@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+<!ELEMENT book (title,author,chapter*)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT chapter (title,section+)>
+<!ELEMENT section (#PCDATA)>
+<!ELEMENT section2 (title,description)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ATTLIST chapter id ID #REQUIRED>
+]>
+<book>
+<chapter id="c1">
+<title>Chapter 1</title>
+<section>Section 1.1</section>
+<section2>
+<title>Subchapter 1.1</title>
+<description>This is a subchapter</description>
+</section2>
+</chapter>
+<chapter id="c2">
+<title>Chapter 2</title>
+<section>Section 2.1</section>
+<section2>
+<title>Subchapter 2.1</title>
+<description>This is another subchapter</description>
+</section2>
+</chapter>
+</book>

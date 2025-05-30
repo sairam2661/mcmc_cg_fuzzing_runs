@@ -1,0 +1,35 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix sync
+
+proc sync_proc {} {
+  global syncargs
+  lappend syncargs
+  expr {[llength $syncargs] <= 2}
+}
+
+do_test sync-1.1 {
+  execsql {
+    CREATE TABLE a(x);
+    INSERT INTO a VALUES(1),(2),(3);
+  }
+  execsql {SELECT count(*) FROM a}
+} {3}
+
+ifcapable journalMode {
+  catchsql {PRAGMA journal_mode=WAL}
+} {0 {}}
+
+ifcapable tempdb {
+  set ::tempdb_file [file join [file dirname $testdir] temp.db]
+  file delete -force $::tempdb_file
+  sqlite3 tempdb temp.db
+  tempdb eval {
+    CREATE TABLE t1(a INTEGER PRIMARY KEY);
+    INSERT INTO t1 VALUES(NULL);
+  }
+  tempdb close
+  file delete -force $::tempdb_file
+}
+
+finish_test

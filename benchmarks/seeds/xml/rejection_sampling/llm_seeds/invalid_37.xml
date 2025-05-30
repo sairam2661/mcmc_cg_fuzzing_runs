@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, publisher, date, content)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT date (#PCDATA)>
+  <!ELEMENT content (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ELEMENT section (#PCDATA)>
+  <!ELEMENT paragraph (#PCDATA)>
+  <!ELEMENT sentence (#PCDATA)>
+  <!ELEMENT word (#PCDATA)>
+  <!ELEMENT book-author (name, address, phone)>
+  <!ELEMENT book-publisher (name, address, phone)>
+  <!ELEMENT book-date (year, month, day)>
+  <!ELEMENT book-content (chapter+, section+, paragraph+, sentence+, word+)>
+  <!ELEMENT chapter-content (section+, paragraph+, sentence+, word+)>
+  <!ELEMENT section-content (paragraph+, sentence+, word+)>
+  <!ELEMENT paragraph-content (sentence+, word+)>
+  <!ELEMENT sentence-content (word+)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT month (#PCDATA)>
+  <!ELEMENT day (#PCDATA)>
+]>
+<book>
+  <title>My Book</title>
+  <author>
+    <book-author>
+      <name>John Doe</name>
+      <address>123 Main St</address>
+      <phone>555-1234</phone>
+    </book-author>
+  </author>
+  <publisher>
+    <book-publisher>
+      <name>Acme Publishing</name>
+      <address>456 Elm St</address>
+      <phone>555-5678</phone>
+    </book-publisher>
+  </publisher>
+  <date>
+    <book-date>
+      <year>2022</year>
+      <month>January</month>
+      <day>1</day>
+    </book-date>
+  </document-date>
+  <content>
+    <chapter>
+      <chapter-content>
+        <section>
+          <section-content>
+            <paragraph>
+              <paragraph-content>
+                <sentence>
+                  <sentence-content>
+                    <word>This</word>
+                    <word>is</word>
+                    <word>a</word>
+                    <word>test</word>
+                  </sentence-content>
+                </sentence>
+              </paragraph-content>
+            </paragraph>
+          </

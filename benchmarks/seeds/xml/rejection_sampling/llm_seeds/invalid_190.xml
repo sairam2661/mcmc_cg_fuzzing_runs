@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE root [
+<!ELEMENT root (name,desc,addr,phone,email,links)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT desc (#PCDATA)>
+<!ELEMENT addr (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT links (#PCDATA)>
+<!ELEMENT link (#PCDATA)>
+<!ELEMENT links_list (link+)>
+<!ELEMENT person (name,desc,addr,phone,email,links)>
+<!ELEMENT company (name,desc,addr,phone,email,links)>
+<!ELEMENT org (name,desc,addr,phone,email,links)>
+<!ELEMENT address (street,city,state,country)>
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT state (#PCDATA)>
+<!ELEMENT country (#PCDATA)>
+<!ELEMENT phone_list (phone+)>
+<!ELEMENT phone_type (#PCDATA)>
+<!ELEMENT email_list (email+)>
+<!ATTLIST person id CDATA #REQUIRED>
+<!ATTLIST company id CDATA #REQUIRED>
+<!ATTLIST org id CDATA #REQUIRED>
+<!ATTLIST address id CDATA #REQUIRED>
+<!ATTLIST phone id CDATA #REQUIRED>
+<!ATTLIST phone type CDATA #REQUIRED>
+<!ATTLIST phone_number CDATA #REQUIRED>
+<!ATTLIST email id CDATA #REQUIRED>
+<!ATTLIST email address CDATA #REQUIRED>
+<!ATTLIST email type CDATA #REQUIRED>
+<!ATTLIST link id CDATA #REQUIRED>
+<!ATTLIST link name CDATA #REQUIRED>
+<!ATTLIST link url CDATA #REQUIRED>
+<!ATTLIST links_list id CDATA #REQUIRED>
+<!ELEMENT root (person,company,org)>
+]>
+<root>
+<person id="1">
+<name>John Smith</name>
+<desc>Software Engineer</desc>
+<addr>
+<address id="1">
+<street>123 Main St</street>
+<city>Anytown</city>
+<state>CA</state>
+<country>USA</country>
+</address>
+</addr>
+<phone_list>
+<phone id="1" type="home" number="123-456-7890"/>
+<phone id="2" type="mobile" number="123-456-7891"/>
+</phone_list>
+<email_list>
+<email id="1" address="john.smith@example.com" type="personal"/>
+<email id="2"

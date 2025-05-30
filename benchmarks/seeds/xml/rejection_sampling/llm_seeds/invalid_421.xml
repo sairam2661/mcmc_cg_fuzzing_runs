@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document [
+  <!ENTITY nbsp "&#160;">
+  <!ENTITY lt "&#60;">
+  <!ENTITY gt "&#62;">
+  <!ENTITY amp "&#38;">
+  <!ENTITY quot "&#34;">
+  <!ENTITY apos "&#39;">
+]>
+<document xmlns="http://example.org/namespace">
+  <element1 xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+    xs:noNamespaceSchemaLocation="schema.xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://example.org/namespace schema.xsd">
+    <xs:element name="element2">
+      <xs:complexType>
+        <xs:sequence>
+          <xs:element name="element3" type="xs:string"/>
+          <xs:element name="element4" type="xs:date"/>
+          <xs:element name="element5" type="xs:integer"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>
+  </element1>
+  <element2>
+    <element3>hello world</element3>
+    <element4>2022-01-01</element4>
+    <element5>42</element5>
+  </element2>
+</document>

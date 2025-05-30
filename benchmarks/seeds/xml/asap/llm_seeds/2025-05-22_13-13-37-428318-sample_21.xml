@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE notes [
+  <!ELEMENT notes (note+)>
+  <!ATTLIST note id ID #REQUIRED>
+  <!ENTITY author "J">
+  <!ENTITY % entity-ref "#">
+  <!NOTATION NOTATION-SYS SYSTEM "m">
+  %entity-ref;<!--% NOTATION NOTATION--> 
+]>
+<notes>
+  <note id="N">
+    <title>&author;'s Note</title>
+    <description>This is a %m% 1 -  10 note
+          <formula math="S" >T=T+1
+        </formula>
+    </description>
+  </note>
+</notes>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, chapter*)>
+  <!ATTLIST book id CDATA #REQUIRED>
+  <!ENTITY chap1 "F" >
+  <!ENTITY  %Xchap2 "A" >
+  <!NOTATION XInclude SYSTEM "X" >
+ %Xinclude 	                  
+ 	;
+ 	<!--
+ 	]>
+<book xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://example.com/book" id="book1">
+  <author>
+    <first name="John"/><last name="Doe"/>
+  </author>
+  <title>Sample Book</title>
+  <chapter><content>&chap1;</content></chapter>
+  <chapter>
+    <content>&Xchap2;</content>
+  </chapter>
+</book> 
+<!% a% include%> 
+<!NOTATION  "http://example.com">http //example.com/include
+<!XML:stylesheet type="text/xsl" href="style.xsl" <?xml:namespace prefix = "x"?>    > a.xslt 
+<!DOCTYPE foo SYSTEM  "bar.dtd" > <!-->
+<?import namespace urel hrefdoc rels src  hrefdoc href rel hrefs rdfs rels rdf src  href rels rel rels rdfs rels rdfs rdfs rdfs rdfs rels rels rdfs rdfs rdfs rels rels rels rdfs rdfs rdfs rels rdfs rels rdfs rel rel rel rel rel rel rel rel rdfs rdfs rdfs rdfs rdfs rdfs rdfs rel rel rel rel rel rdfs rdfs rel rel rdfs rel rel rel rel rel rel xmlns urel rdfs rel rel rel rdfs rdfs rdfs rdfs rdfs rel rel rel rel rel rel rel rel rdfs rdfs rel rdfs rdfs rel rel rel rel rel rel rel rel rdfs rdfs rel rel rel rel rdfs rel rel rel rel rel rdfs rdfs rel rel rdfs rdfs rdfs rel rel rel rel rel rdfs rdfs rel rdfs rel rel rel rel rel rel rel xmlns rel rdfs rel rel rel rdfs rel rel rdfs rel rel rel rel rel rel rel rel rdfs rel rel rel rel rdfs rel rel rel rel rdfs rdfs rel xmlns rel rel rel rdfs rel rel rel rel rdfs rel rel

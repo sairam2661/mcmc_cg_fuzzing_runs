@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<!DOCTYPE root SYSTEM "root.dtd">
+<!ENTITY % ent SYSTEM "ent.ent">
+<!ENTITY % ext SYSTEM "ext.ent">
+<!ATTLIST root id CDATA #REQUIRED>
+<!ELEMENT root (#PCDATA|name|date|item*)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT item (#PCDATA)>
+<!ATTLIST item id CDATA #REQUIRED>
+<!ELEMENT itemref (#PCDATA)>
+<!ELEMENT group (#PCDATA|itemref*)>
+<!ELEMENT itemref (#PCDATA)>
+<!ELEMENT doc (#PCDATA|name|date|item|group|itemref*)>
+<!ATTLIST doc id CDATA #REQUIRED>
+<!ELEMENT docref (#PCDATA)>
+<!ATTLIST docref id CDATA #REQUIRED>
+<!ELEMENT itemref (#PCDATA)>
+<!ELEMENT group (#PCDATA|itemref*)>
+<!ELEMENT link (#PCDATA|name|date|item|group|itemref|doc|docref|link*)>
+<!ATTLIST link id CDATA #REQUIRED>
+<!ELEMENT link (#PCDATA|name|date|item|group|itemref|doc|docref|link*)>
+<!ELEMENT link (#PCDATA|name|date|item|group|itemref|doc|docref|link*)>
+<!ELEMENT link (#PCDATA|name|date|item|group|itemref|doc|docref|link*)>
+<!ELEMENT link (#PCDATA|name|date|item|group|itemref|doc|docref|link*)>
+<!ELEMENT link (#PCDATA|name|date|item|group|itemref|doc|docref|link*)>
+<!ELEMENT link (#PCDATA|name|date|item|group|itemref|doc|docref|link*)>
+<!ELEMENT link (#PCDATA|name|date|item|group|itemref|doc|docref|link*)>
+<!ELEMENT link (#PCDATA|name|date|item|group|itemref|doc|docref|link*)>
+<!ELEMENT link (#PCDATA|name|date|item|group|itemref|doc|docref|link*)>
+<!ELEMENT link (#PCDATA|name|date|item|group|itemref|doc|docref|link*)>
+<!ELEMENT link (#PCDATA|name|date|item|group|itemref|

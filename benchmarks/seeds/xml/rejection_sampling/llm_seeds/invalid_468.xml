@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE book [
+  <!ELEMENT book (author, title, chapter*, section*, appendix*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT chapter (title, section*)>
+  <!ELEMENT section (title, para*, figure*)>
+  <!ELEMENT para (#PCDATA)>
+  <!ELEMENT figure (#PCDATA)>
+  <!ELEMENT appendix (title, section*)>
+]>
+<book>
+  <author>John Smith</author>
+  <title>My Book</title>
+  <chapter>
+    <title>Chapter 1</title>
+    <section>
+      <title>Section 1</title>
+      <para>This is a paragraph of text.</para>
+      <figure>Figure 1</figure>
+    </section>
+    <section>
+      <title>Section 2</title>
+      <para>This is another paragraph of text.</para>
+      <figure>Figure 2</figure>
+    </section>
+  </chapter>
+  <chapter>
+    <title>Chapter 2</title>
+    <section>
+      <title>Section 1</title>
+      <para>This is a paragraph of text.</para>
+      <figure>Figure 1</figure>
+    </section>
+    <section>
+      <title>Section 2</title>
+      <para>This is another paragraph of text.</para>
+      <figure>Figure 2</figure>
+    </section>
+  </chapter>
+  <appendix>
+    <title>Appendix</title>
+    <section>
+      <title>Section 1</title>
+      <para>This is a paragraph of text.</para>
+      <figure>Figure 1</figure>
+    </section>
+  </appendix>
+</book>

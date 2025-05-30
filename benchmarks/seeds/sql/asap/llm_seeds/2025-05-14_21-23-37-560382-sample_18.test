@@ -1,0 +1,70 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix sync_mode
+
+set ::timeout 60000
+set sqlite_extension 2
+
+proc sync_mode_proc {} {
+  return {wal}
+}
+
+proc do_test_wal {} {
+  file delete test_wal_db
+}
+
+proc do_test_journal {} {
+  file delete test_journal_db
+}
+
+do_test sync-1.1 {
+  execsql {
+    CREATE TABLE a(x);
+    INSERT INTO a VALUES(1);
+  }
+  execsql {SELECT x FROM a WHERE x IS NOT NULL}
+} {1}
+
+do_test_wal {
+  file copy test_wal_db test_journal_db
+}
+
+do_testJournal {
+  execsql {
+    UPDATE a SET x IS NULL
+  }
+  execsql {SELECT x FROM a WHERE x IS NOT NULL}
+} {}
+
+do_execsql_test sync-2.1 {
+  INSERT INTO a VALUES(2);
+  SELECT x FROM a WHERE x = 2;
+} {2}
+
+foreach value {wal blob main temp} {
+  set tmp_file test_wal_db
+  set master_journal_mode $value
+  catch {file delete $tmp_file}
+  try crash $tmp_file
+  try crash "${tmp_file}"
+  try crash $tmp_file $tmp_file
+  try crash "${tmp_file} ${tmp_file}"
+
+  try {
+    set_master_journal_mode $value
+    execsql {
+      CREATE TABLE b(id, name);
+      INSERT INTO b VALUES(1,"test")
+    }
+  } on error {msg} {
+    set result 1
+  } finally {
+    catch {set_journal_mode wal}
+  }
+
+  execsql {
+    SELECT name FROM sqlite_master;
+  } $value
+}
+
+finish_test

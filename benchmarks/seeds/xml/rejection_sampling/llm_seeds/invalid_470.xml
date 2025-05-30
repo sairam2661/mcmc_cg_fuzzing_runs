@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document [
+<!ENTITY % entity PUBLIC "entity1" "entity1.dtd">
+<!ENTITY % entity2 "entity2">
+<!ENTITY % entity3 SYSTEM "entity3.txt">
+<!ENTITY % entity4 "entity4">
+<!ELEMENT document (header|body)>
+<!ELEMENT header (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+<!ATTLIST document
+  id CDATA #REQUIRED
+  title CDATA #IMPLIED
+  date CDATA #IMPLIED
+  author CDATA #IMPLIED
+>
+<!ELEMENT note (#PCDATA)>
+<!ATTLIST note
+  type CDATA #REQUIRED
+  date CDATA #IMPLIED
+>
+<!ELEMENT paragraph (#PCDATA)>
+<!ELEMENT list (#PCDATA)>
+<!ELEMENT item (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT state (#PCDATA)>
+<!ELEMENT zip (#PCDATA)>
+<!ELEMENT country (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT fax (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT company (#PCDATA)>
+<!ELEMENT department (#PCDATA)>
+<!ELEMENT jobtitle (#PCDATA)>
+<!ELEMENT url (#PCDATA)>
+<!ELEMENT link (#PCDATA)>
+<!ELEMENT comment (#PCDATA)>
+]>
+<!ENTITY % entity1 SYSTEM "entity1.txt">
+<!ENTITY % entity2 SYSTEM "entity2.txt">
+<!ENTITY % entity3 SYSTEM "entity3.txt">
+<!ELEMENT header>
+<!ELEMENT body>
+<!ELEMENT note>
+<!ELEMENT paragraph>
+<!ELEMENT list>
+<!ELEMENT item>
+<!ELEMENT title>
+<!ELEMENT name>
+<!ELEMENT address>
+<!ELEMENT street>
+<!ELEMENT city>
+<!ELEMENT state>
+<!ELEMENT zip>
+<!ELEMENT country>
+<!ELEMENT phone>
+<!ELEMENT fax>
+<!ELEMENT email>
+<!ELEMENT company>
+<!ELEMENT department>
+<!ELEMENT jobtitle>
+<!ELEMENT url>
+<!ELEMENT link>
+<!ELEMENT comment>
+<!ATTLIST note
+  id CDATA #REQUIRED
+  type CDATA #IMPLIED
+>
+<!ATTLIST header
+  id CDATA #REQUIRED
+>
+<!ATTLIST body
+  id CDATA #IMPLIED
+>
+<!ATTLIST paragraph
+  id CDATA #IMPLIED
+>
+<!ATTLIST list
+  id CDATA #IMPLIED
+>
+<!ATTLIST item
+  id CDATA #IMPLIED
+>
+<!ATTLIST

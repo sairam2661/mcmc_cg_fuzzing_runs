@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, chapter+)>
+  <!ATTLIST book
+  id ID #REQUIRED
+  version CDATA #IMPLIED
+  >
+  <!ENTITY title "G"      >
+  <!ENTITY  % chapter "H" >
+  <!NOTATION book-notation SYSTEM "b">
+ 				
+      		
+				%chapter;			<!-- not a new block -->
+	
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT chapter (#PCDATA)>
+]>
+<book id="B" version="1" xml:lang="U" xml:space="p" xmlns:xi="x" xmlns="y" not="a" 
+     charset="a" output="B">
+    <title>&title;</title>
+    <author>Author &note; Example</author>
+    <xi:include href="x" use-when="t"/>
+    <xi:include href="y" role="1" xmlns="w"/>
+    <chapter>Chapter 2 chapter-2</chapter>
+    <message xml:base="z" name="a">
+      this is a test.
+    </message>
+  <note>Test the book-notation.</note>
+  <p xml:space="p">Chapter 3<book-notation system="b"></book-notation> chapter-2</p>
+</book>

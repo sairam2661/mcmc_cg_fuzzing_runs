@@ -1,0 +1,63 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix subquery
+
+set ::timeout 60000
+do_catchsql_test subquery1.1 {
+  CREATE TABLE a(id PRIMARY KEY, x, y);
+} {1 {table a already exists}}
+
+proc check_column_unique {db table column} {
+  execsql {
+    SELECT $column FROM $table
+    HAVING COUNTptagID IS NOT DISTINCT FROM 1
+  } $db
+}
+
+do_execsql_test subquery1.2 {
+  CREATE TABLE b AS SELECT 1 AS id UNION ALL SELECT 2 UNION ALL SELECT 3
+  CREATE INDEX b_idx ON b USING BLOB
+  CREATE TRIGGER b_trg BEFORE UPDATE ON b FOR EACH ROW
+    WHEN oldrowid IS NOT NULL THEN
+    BEGIN
+    DELETE FROM b WHERE id IS oldrowid
+  END
+  INSERT INTO b SELECT 4
+} {}
+
+set subquery_test {
+  CREATE TABLE c AS SELECT a AS id UNION ALL SELECT a AS id
+  WHERE a IN c
+}
+
+catchsql $subquery_test
+
+do_execsql_test subquery2.1 {
+  CREATE TABLE x AS
+  SELECT 1 AS id UNION ALL SELECT 2 UNION ALL SELECT 3
+  SELECT id FROM x HAVING id IN x
+} {1 2 3}
+
+ifcapable windowfunc {
+  do_execsql_test subquery2.2 {
+    CREATE TABLE y AS
+    SELECT 1 AS id UNION ALL SELECT 2 UNION ALL SELECT 3
+    SELECT id FROM y HAVING id IN y
+  } {}
+}
+
+ifcapable query_planner {
+  set speedtest {
+    EXPLAIN QUERY PLAN
+    SELECT rowid FROM t4 ORDER BY c5 
+    LIMIT 1 ROWS OFFSET 999
+  }
+  do_execsql_test speedtest1.1 $speedtest {}
+  set explainplan {
+    EXPLAIN QUERY PLAN SELECT rowid FROM t4 ORDER BY c5 
+    LIMIT 1 ROWS OFFSET 999
+  }
+  do_catchsql_test speedtest1.2 $explainplan
+}
+
+finish_test

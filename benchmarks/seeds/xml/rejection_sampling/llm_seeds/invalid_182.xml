@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE note SYSTEM "note.dtd">
+<!ENTITY % ent SYSTEM "ent.ent">
+<!ELEMENT note (#PCDATA|address|to|from|heading|body)>
+<!ELEMENT address (#PCDATA|street|city|state|zip)>
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT state (#PCDATA)>
+<!ELEMENT zip (#PCDATA)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+<!ATTLIST note
+  id ID #REQUIRED
+  type (letter|memo) "letter">
+<!ATTLIST address
+  id ID #REQUIRED
+  type (residential|commercial) "residential">
+<!ENTITY ent1 "ENT-1">
+<!ENTITY ent2 "ENT-2">
+<!ENTITY ent3 "ENT-3">
+<!ENTITY ent4 "ENT-4">
+<!ENTITY ent5 "ENT-5">
+<!ENTITY ent6 "ENT-6">
+<!ENTITY ent7 "ENT-7">
+<!ENTITY ent8 "ENT-8">
+<!ENTITY ent9 "ENT-9">
+<!ENTITY ent10 "ENT-10">
+<!ENTITY ent11 "ENT-10">
+<!ENTITY ent12 "ENT-12">
+<!ENTITY ent13 "ENT-13">
+<!ENTITY ent14 "ENT-14">
+<!ENTITY ent15 "ENT-15">
+<!ENTITY ent16 "ENT-16">
+<!ENTITY ent17 "ENT-17">
+<!ENTITY ent18 "ENT-18">
+<!ENTITY ent19 "ENT-19">
+<!ENTITY ent20 "ENT-20">
+<!DOCTYPE note SYSTEM "note.dtd">
+<note id="A1" type="memo">
+  <heading>Meeting Notes</heading>
+  <body>Attendees were John, Mary, and Bob.</body>
+  <to>John</to>
+  <from>Bob</from>
+  <address id="A1" type="residential">
+    <street>123 Main St</street>
+    <city>Anytown</city>
+    <state>CA</state>
+    <zip>12345</zip>
+  </address>
+</note> 
+<!ENTITY ent21 "ENT-21">
+<!ENTITY ent22 "ENT-22">
+<!ENTITY ent23 "ENT-23">
+<!ENTITY ent24 "ENT-24">
+<!ENTITY ent25 "ENT-25">
+<!ENTITY ent26 "

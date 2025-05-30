@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE root SYSTEM 'root.dtd'>
+<root>
+  <para id='p1'><s id='s1'>Hello</s> <s id='s2'>world</s></para>
+  <para id='p2'><s id='s3'>Foo</s> <s id='s4'>bar</s></para>
+  <para id='p3'><s id='s5'>Baz</s> <s id='s6'>qux</s></para>
+  <para id='p4'><s id='s7'>Quux</s> <s id='s8'>corge</s></para>
+  <para id='p5'><s id='s9'>Grault</s> <s id='s10'>garply</s></para>
+  <para id='p6'><s id='s11'>Walrus</s> <s id='s12'>fred</s></para>
+</root>

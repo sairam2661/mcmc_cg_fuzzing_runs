@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT title (#PCDATA|image|bold|italic)>
+  <!ATTLIST title lang CDATA #REQUIRED>
+  <!ENTITY image SYSTEM "p"> 
+  <!ENTITY % bold "B">
+  <!NOTATION MathApplication SYSTEM "l">
+  %bold; 
+  <!--
+  This is a sample comment 
+  -->
+]>
+<books>
+  <title lang="f">XML is Fun</title>
+  <title lang="s">XML Software</title>
+  <message>&image;&MathApplication;</message>
+</books>

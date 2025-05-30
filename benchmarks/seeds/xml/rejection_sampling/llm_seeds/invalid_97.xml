@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+<!ENTITY % general " xmlns=\"http://www.example.org/catalog\"">
+<!ENTITY % namespace " xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"">
+<!ENTITY % schema " xsi:schemaLocation=\"http://www.example.org/catalog catalog.xsd\"">
+<!ENTITY % namespace2 " xmlns:local=\"http://www.example.org/local\"">
+<!ENTITY % namespace3 " xmlns:foreign=\"http://www.foreign.org/foreign\"">
+<!ENTITY % xml " xml:lang=\"en\"">
+<!ENTITY % xml2 " xml:space=\"preserve\"">
+<!ENTITY % xml3 " xml:base=\"http://www.example.org/base\"">
+<!ENTITY % xml4 " xml:namespace=\"http://www.example.org/namespace\"">
+<!ENTITY % xml5 " xml:version=\"1.0\"">
+<!ENTITY % xml6 " xml:encoding=\"UTF-8\"">
+<!ENTITY % xml7 " xml:id=\"doc\"">
+<!ENTITY % xml8 " xml:events=\"replace\"">
+<!ENTITY % xml9 " xml:lang2=\"fr\"">
+<!ENTITY % xml10 " xml:lang3=\"en\"">
+<!ENTITY % xml11 " xml:lang4=\"es\"">
+<!ENTITY % xml12 " xml:lang5=\"fr\"">
+<!ENTITY % xml13 " xml:lang6=\"en\"">
+<!ENTITY % xml14 " xml:lang7=\"es\"">
+<!ENTITY % xml15 " xml:lang8=\"fr\"">
+<!ENTITY % xml16 " xml:lang9=\"en\"">
+<!ENTITY % xml17 " xml:lang10=\"es\"">
+<!ENTITY % xml18 " xml:lang11=\"fr\"">
+<!ENTITY % xml19 " xml:lang12=\"en\"">
+<!ENTITY % xml20 " xml:lang13=\"es\"">
+<!ENTITY % xml21 " xml:lang14=\"fr\"">
+<!ENTITY % xml22 " xml:lang15=\"en\"">
+<!ENTITY % xml23 " xml:lang16=\"es\"">
+<!ENTITY % xml24 " xml:lang17=\"fr\"">
+<!ENTITY % xml25 " xml:lang18=\"en\"">
+<!ENTITY % xml26 " xml:lang19=\"es\"">
+<!ENTITY % xml27 " xml:lang20=\"fr\"">
+<!ENTITY % xml28 " xml:lang21=\"en

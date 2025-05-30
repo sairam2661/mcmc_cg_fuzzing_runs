@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author,chapter+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ATTLIST chapter id CDATA #REQUIRED>
+]>
+<book>
+  <title>The Adventures of Sherlock Holmes</title>
+  <author>Sir Arthur Conan Doyle</author>
+  <chapter id="chap1">Chapter 1: A Scandal in Bohemia</chapter>
+  <chapter id="chap2">Chapter 2: The Red-Headed League</chapter>
+  <chapter id="chap3">Chapter 3: A Case of Identity</chapter>
+  <chapter id="chap4">Chapter 4: The Boscombe Valley Mystery</chapter>
+  <chapter id="chap5">Chapter 5: The Five Orange Pips</chapter>
+</book>

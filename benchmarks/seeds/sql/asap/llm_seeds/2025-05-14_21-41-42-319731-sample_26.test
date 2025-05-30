@@ -1,0 +1,165 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix complex_test
+
+set ::timeout 60000
+
+proc my_trigger { } {
+
+  execsql {
+    DELETE FROM a
+  }
+
+}
+
+create_table {
+  CREATE TABLE a(x,y,z);
+}
+
+execsql {
+  CREATE TRIGGER a_trigger
+  AFTER INSERT ON a
+  FOR EACH ROW
+  BEGIN
+    WHEN x IS NOT NULL AND y IS NULL THEN
+      INSERT INTO b SELECT x FROM a
+  END
+}
+
+proc check_table { } {
+
+  set list ""
+
+  foreach row1 "" {
+    foreach row2 "" {
+      foreach row3 "" {
+        set row "$row1$row2$row3"
+        set value_list ""
+        foreach value "" {
+          lappend value_list "$row:$value"
+        }
+        lappend list "$value_list"
+      }
+    }
+  }
+
+  do_test complex_test {
+    if { "$list" } {
+      execsql {
+        BEGIN;
+        INSERT INTO a VALUES(1,2,3);
+        COMMIT;
+      }
+    } else {
+      execsql {
+        INSERT INTO a VALUES(1,2,3);
+      }
+    }
+    execsql {
+      SELECT * FROM b;
+    }
+  } $list
+}
+
+do_test complex_test-1.1 {
+  create_table {
+    CREATE TABLE b(x);
+  }
+  execsql {
+    BEGIN IMMEDIATE TRANSACTION
+  }
+  execsql {
+    INSERT INTO a VALUES(5,6,7);
+    COMMIT;
+  }
+  execsql {
+    BEGIN;
+    INSERT INTO a VALUES(9,8,10);
+    COMMIT;
+  }
+  set ret ""
+  foreach row {
+    SELECT x FROM b
+  } {
+    lappend ret "$row"
+  }
+  set ret
+} {5 6 7 5 6 7}
+
+do_test complex_test-1.2 {
+    ifcapable json1 {
+      create_function2 json1 json_object {}
+    }
+} {1 {}}
+do_test complex_test-1.3 {
+  execsql {
+    INSERT INTO a VALUES(1,2,3);
+  }
+  execsql {
+    BEGIN IMMEDIATE TRANSACTION
+    INSERT INTO a VALUES JSON_OBJECT 'foo' 1
+    COMMIT
+  }
+  list
+} {}
+
+set sqlite_limit_limit 99999999
+
+ifcapable tempdb  {
+  do_execsql_test complex_test-0.1 {
+  CREATE TABLE t1(a,b,Blob3);
+  CREATE TABLE t2(a,b,Blob9);
+  CREATE TABLE t3(a,b,Blob27);
+  }
+  ""
+  set out {}
+  for {set i 1} {$i 1000} {incr i} {
+    execsql "INSERT OR REPLACE INTO t1 VALUES ($i,i,$i)"
+  }
+  append out "[string range [execsql {SELECT count(*) FROM t1}] 0 2]"
+  for {set i 1001} {$i 2000} {incr i} {
+    execsql "INSERT OR REPLACE INTO t2 VALUES ($i,i,$i)"
+  }
+  append out "[string range [execsql {SELECT count(*) FROM t2}] 0 2]"
+  for {set i 2001} {$i 3000} {incr i} {
+    execsql "INSERT OR REPLACE INTO t3 VALUES ($i,i,$i)"
+  }
+  append out "[string range [execsql {SELECT count(*) FROM t3}] 0 2]"
+  for {set i 1} {$i 3} {incr i} {
+    execsql "INSERT INTO t2 VALUES ($i,i,$i)"
+  }
+  for {set i 1001} {$i 2000} {incr i} {
+    execsql "INSERT OR REPLACE INTO t2 VALUES ($i,i,$i)"
+  }
+  append out "[string range [execsql {SELECT count(*) FROM t2}] 0 2]"
+  set ret $out
+expect 3000
+
+finish_test
+
+proc temp_file {} {
+    forcedelete $::TEMP_FILE_NAME
+    set TNAME "temp-file-[incr ::temptest 1]"
+    return $TNAME
+}
+
+proc temp_directory {} {
+  error "not implemented yet"
+}
+
+proc forcedelete {filename} {
+  execsql {
+    PRAGMA temp_store = 2
+  }
+  execsql {
+    execsql {
+      CREATE TABLE temp1(a,b,c,d,e,f,g,h,i,j,k,l);
+    }
+    execsqll
+    UPDATE temp1 SET a WHERE a IS NOT NULL
+    UPDATE temp1 SET b WHERE b IS NOT NULL
+    UPDATE temp1 SET c WHERE c IS NOT NULL
+    UPDATE temp1 SET d WHERE d IS NOT NULL
+    UPDATE temp1 SET e WHERE e IS NOT NULL
+    UPDATE temp1 SET f WHERE f IS NOT NULL
+    UPDATE

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ENTITY booktitle "The Great Gatsby">
+  <!ENTITY bookauthor "F. Scott Fitzgerald">
+  <!ENTITY bookyear "1925">
+]>
+<book xmlns="http://www.example.com/book">
+  <title entity-ref="#booktitle"/>
+  <author entity-ref="#bookauthor">
+    <name entity-ref="#bookauthor"/>
+    <birthday entity-ref="#bookyear"/>
+  </author>
+  <info>
+    <publisher entity-ref="#bookauthor"/>
+    <date entity-ref="#bookyear"/>
+  </info>
+  <chapter>
+    <title>Chapter 1</title>
+    <text>It was a warm and lovely day...</text>
+    <section>
+      <title>Section 1</title>
+      <text>She stood on the sidewalk...</text>
+    </section>
+  </chapter>
+  <chapter>
+    <title>Chapter 2</title>
+    <text>He stood on the porch...</text>
+  </chapter>
+  <annotation>
+    <title>Annotation 1</title>
+    <text>This is an annotation...</text>
+  </annotation>
+</book>

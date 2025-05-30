@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE book [
+<!ENTITY nbsp "&#160;">
+<!ENTITY amp "&#38;">
+<!ENTITY lt "&#60;">
+<!ENTITY gt "&#62;">
+<!ENTITY quot "&#34;">
+<!ENTITY amp "&#38;">
+<!ENTITY quot "&#34;">
+<!ATTLIST book
+  title CDATA #REQUIRED
+  author CDATA #REQUIRED
+  date CDATA #IMPLIED
+  publisher CDATA #IMPLIED
+  edition CDATA #IMPLIED
+  isbn CDATA #IMPLIED
+  language CDATA #IMPLIED
+>
+<!ELEMENT book (title,author,edition,chapter)*>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT edition (#PCDATA)>
+<!ELEMENT chapter (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ELEMENT language (#PCDATA)>
+<!ELEMENT isbn (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+]>
+<book title="The Great Gatsby" author="F. Scott Fitzgerald" edition="1st">
+  <publisher>Penguin Books</publisher>
+  <language>English</language>
+  <isbn>978-1-101-11111-6</isbn>
+  <date>1925</date>
+  <chapter>
+    Chapter 1: Introduction
+  </chapter>
+  <chapter>
+    Chapter 2: The Valley of Ashes
+  </chapter>
+  <chapter>
+    Chapter 3: Myrtle's Death
+  </chapter>
+</book>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ENTITY % ent SYSTEM "ent.xml">
+  %ent;
+  <!ELEMENT book (author, title, publisher, (section | chapter)*, appendix?)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    lang (en|fr|de) "en"
+    xmlns CDATA #IMPLIED
+  >
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT section (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ELEMENT appendix (#PCDATA)>
+  <!ELEMENT table (#PCDATA)>
+  <!ELEMENT table-row (#PCDATA)>
+  <!ELEMENT table-cell (#PCDATA)>
+  <!ELEMENT figure (#PCDATA)>
+  <!ELEMENT figcaption (#PCDATA)>
+]>
+<book id="book-1" lang="en" xmlns="http://www.example.com/book">
+  <author>John Smith</author>
+  <title>XML book</title>
+  <publisher>Example Publisher</publisher>
+  <section>Introduction</section>
+  <table>
+    <table-row>
+      <table-cell>Cell 1</table-cell>
+      <table-cell>Cell 2</table-cell>
+    </table-row>
+    <table-row>
+      <table-cell>Cell 3</table-cell>
+      <table-cell>Cell 4</table-cell>
+    </table-row>
+  </table>
+  <chapter>Chapter 1</chapter>
+  <figure>Figure 1</figure>
+  <figcaption>Figure 1 caption</figcaption>
+  <appendix>Appendix 1</appendix>
+</book>

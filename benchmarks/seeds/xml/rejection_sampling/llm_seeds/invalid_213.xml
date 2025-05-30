@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<!DOCTYPE doc [
+  <!ELEMENT doc (title, content, author+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT content (#PCDATA)>
+  <!ELEMENT author (name, email, affiliation)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT affiliation (#PCDATA)>
+]>
+<doc>
+  <title>Complex Document</title>
+  <content>
+    <p>This is a paragraph of text.</p>
+    <p>This is another paragraph of text.</p>
+  </content>
+  <author>
+    <name>John Doe</name>
+    <email>johndoe@example.com</email>
+    <affiliation>Example University</affiliation>
+  </author>
+  <author>
+    <name>Jane Smith</name>
+    <email>janesmith@example.com</email>
+    <affiliation>Example University</affiliation>
+  </author>
+  <author>
+    <name>John Doe</name>
+    <email>johndoe@example.com</email>
+    <affiliation>Example University</affiliation>
+  </author>
+</doc>  <author>
+    <name>Jane Smith</name>
+    <email>janesmith@example.com</email>
+    <affiliation>Example University</affiliation>
+  </author>  <author>
+    <name>John Doe</name>
+    <email>johndoe@example.com</email>
+    <affiliation>Example University</affiliation>
+  </author>  <author>
+    <name>Jane Smith</name>
+    <email>janesmith@example.com</email>
+    <affiliation>Example University</affiliation>
+  </author>  <author>
+    <name>John Doe</name>
+    <email>johndoe@example.com</email>
+    <affiliation>Example University</affiliation>
+  </author>  <author>
+    <name>Jane Smith</name>
+    <email>janesmith@example.com</email>
+    <affiliation>Example University</affiliation>
+  </author>  <author>
+    <name>John Doe</name>
+    <email>johndoe@example.com</email>
+    <affiliation>Example University</affiliation>
+  </author>  <author>
+    <name>Jane Smith</name>
+    <email>janesmith@example.com</

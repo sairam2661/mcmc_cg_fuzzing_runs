@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE notes SYSTEM "notes.dtd">
+<notes>
+  <note>
+    <title>Important Note</title>
+    <author>John Smith</author>
+    <date>2021-01-01</date>
+    <content>This is a note about something.</content>
+    <tags>
+      <tag>Important</tag>
+      <tag>Urgent</tag>
+    </tags>
+  </note>
+  <note>
+    <title>Another Note</title>
+    <author>Jane Doe</author>
+    <date>2021-02-01</date>
+    <content>This is another note.</content>
+    <tags>
+      <tag>Reminder</tag>
+      <tag>Future</tag>
+    </tags>
+  </note>
+</notes>
+
+<?xml-stylesheet type="text/xsl" href="style.xsl"?>
+<!ENTITY % note SYSTEM "note.ent">
+<!ENTITY % tags SYSTEM "tags.ent">
+<!ATTLIST note
+  id ID #REQUIRED
+  date CDATA #IMPLIED
+  author CDATA #IMPLIED
+>
+<!ATTLIST tags
+  id ID #REQUIRED
+>
+<!ELEMENT note (title,author,date,content,tags)>
+<!ELEMENT tags (tag+)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT content (#PCDATA)>
+<!ELEMENT tag (#PCDATA)>
+<!ELEMENT id (#PCDATA)>
+
+<!ELEMENT notes (note+)>
+<!ATTLIST notes
+  version CDATA #IMPLIED
+  creator CDATA #IMPLIED
+>
+<!ELEMENT tag (#PCDATA)>
+<!ELEMENT id (#PCDATA)>
+
+<!ELEMENT style SYSTEM "style.xsl">
+<!ELEMENT xsl SYSTEM "style.xsl">
+<!ELEMENT stylesheet SYSTEM "style.xsl">
+<!ELEMENT stylesheet SYSTEM "style.xsl">
+<!ELEMENT stylesheet SYSTEM "style.xsl">
+<!ELEMENT stylesheet SYSTEM "style.xsl">
+<!ELEMENT stylesheet SYSTEM "style.xsl">
+<!ELEMENT stylesheet SYSTEM "style.xsl">
+<!ELEMENT stylesheet SYSTEM "style.xsl">
+<!ELEMENT stylesheet SYSTEM "style.xsl">
+<!ELEMENT stylesheet SYSTEM "style.xsl">
+<!ELEMENT stylesheet SYSTEM "style.xsl">
+<!ELEMENT stylesheet SYSTEM "style.xsl">
+<!ELEMENT stylesheet SYSTEM "style.xsl">
+<!ELEMENT stylesheet SYSTEM "style.xsl">
+<!ELEMENT stylesheet SYSTEM "style.xsl">
+<!ELEMENT stylesheet SYSTEM "style.xsl">
+<!

@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE notes [
+<!ENTITY % ent SYSTEM 'entities.ent'>
+%ent;
+<!ENTITY nbsp '&#160;'>
+<!ELEMENT notes (note+)>
+<!ATTLIST note
+id ID #REQUIRED
+title CDATA #IMPLIED
+author CDATA #IMPLIED
+date CDATA #IMPLIED
+<!ELEMENT note (title,author,date,notecontent)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT notecontent (#PCDATA)>
+<!ELEMENT summary (#PCDATA)>
+<!ELEMENT tag (#PCDATA)>
+<!ELEMENT tags (tag+)>
+<!ELEMENT tagref (tagref+)>
+<!ELEMENT tagref (tag)>
+<!ELEMENT link (#PCDATA)>
+<!ELEMENT links (link+)>
+<!ELEMENT linkref (linkref+)>
+<!ELEMENT linkref (link)>
+<!ELEMENT ref (ref+)>
+<!ELEMENT ref (notecontent)>
+<!ELEMENT references (ref+)>
+<!ELEMENT references (notecontent+)>
+<!ELEMENT notecontent (#PCDATA)>
+<!ELEMENT summary (#PCDATA)>
+<!ATTLIST link
+href CDATA #REQUIRED
+title CDATA #IMPLIED
+<!ATTLIST linkref
+href CDATA #REQUIRED
+title CDATA #IMPLIED
+<!ATTLIST tag
+name CDATA #REQUIRED
+title CDATA #IMPLIED
+<!ATTLIST tagref
+name CDATA #REQUIRED
+title CDATA #IMPLIED
+<!ATTLIST tag
+id ID #IMPLIED
+<!ATTLIST tagref
+id ID #IMPLIED
+<!ATTLIST note
+id ID #REQUIRED
+title CDATA #IMPLIED
+author CDATA #IMPLIED
+date CDATA #IMPLIED
+<!ELEMENT links (link+)>
+<!ELEMENT linkref (linkref+)>
+<!ELEMENT ref (notecontent)>
+<!ELEMENT notecontent (#PCDATA)>
+<!ELEMENT notecontent (#PCDATA)>
+<!ELEMENT summary (#PCDATA)>
+<!ELEMENT note (note+)>
+<!ELEMENT notecontent (#PCDATA)>
+<!ELEMENT notes (note+)>
+<!ELEMENT tags (tag+)>
+<!ELEMENT tags (tag+)>
+<!ELEMENT tags (tag+)>
+<!ELEMENT tag (tag+)>
+<!ELEMENT tagref (tagref+)>
+<!ELEMENT tagref (tagref+)>
+<!ELEMENT tagref (tagref+)>
+<!ELEMENT tagref (tagref+)>
+<!ELEMENT tags (tag+)>
+<!ELEMENT tagref (tagref+)>
+<!ELEMENT linkref (linkref+)

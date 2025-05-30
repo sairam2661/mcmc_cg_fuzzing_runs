@@ -1,0 +1,16 @@
+set 	
+ testdir 
+	  { 	 file 
+ dirname 
+ $argv0 
+ }  source 
+ $testdir/tester.tcl 
+ set   testprefix  u  set 
+	 timeout 	 60000    do_test 
+ 	 Ve  - 
+ 3  . 
+  	 7 1 4 5 3 0 5    { 
+ return  {   $::w_    $E  	 }      
+	 } 		 '<'     	 catchsql 	 $LHl         db 	
+ 		
+ h 		       finish_test 	  

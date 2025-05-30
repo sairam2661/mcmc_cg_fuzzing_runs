@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+<!ELEMENT book (title,author,chapter*)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT chapter (title,section*)>
+<!ELEMENT section (title,para+,note*)>
+<!ELEMENT para (#PCDATA)>
+<!ELEMENT note (#PCDATA)>
+<!ATTLIST chapter id CDATA #REQUIRED>
+<!ATTLIST section id CDATA #REQUIRED>
+<!ATTLIST note id CDATA #REQUIRED>
+]>
+<book>
+<title>The Adventures of Huckleberry Finn</title>
+<author>M. Twain</author>
+<chapter id="Chapter1">
+<title>Chapter 1</title>
+<section id="Section1">
+<title>Section 1</title>
+<para>This is a long and winding road.</para>
+<para>This is the way to the next town.</para>
+<note id="Note1">Note 1</note>
+</section>
+<section id="Section2">
+<title>Section 2</title>
+<para>This is a different road.</para>
+<para>This is the way to the next town.</para>
+<note id="Note2">Note 2</note>
+</section>
+</chapter>
+<chapter id="Chapter2">
+<title>Chapter 2</title>
+<section id="Section3">
+<title>Section 3</title>
+<para>This is a very long and winding road.</para>
+<para>This is the way to the next town.</para>
+<para>This is a long and winding road.</para>
+<note id="Note3">Note 3</note>
+</section>
+</chapter>
+</book>  <!-- end of book --> 
+<!-- end of XML document -->  <!-- end of XML declaration --> 
+<!-- end of XML document declaration --> 
+<!-- end of document type declaration --> 
+<!-- end of XML document --> 
+<!-- end of document -->  <!-- end of document -->  <!-- end of document -->  <!-- end of document -->  <!-- end of document -->  <!-- end of document -->  <!-- end of document -->  <!-- end of document -->  <!-- end of document -->  <!-- end of document -->  <!-- end of document -->  <!-- end of document -->  <!-- end of document -->  <!-- end of document -->  <!-- end of document -->  <!-- end of document -->  <!-- end of document -->  <!-- end of document -->  <!-- end of document -->  <!-- end

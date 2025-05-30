@@ -1,0 +1,329 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix query_optimization
+
+set ::timeout 60000
+
+proc random_string {} {
+  set str ""
+  for {set i 0} {$i le 10} {incr i} {
+    append str "[string range {abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789} [expr rand()] 1]"
+  }
+  return $str
+}
+
+proc random_number {} {
+  expr {int RandFromZeroToHiWithStep $hi 1 $hi 0}}
+proc RandomFromLowToHi {low hi} {
+  return $low
+}
+
+proc RandomFromZeroToHi {hi} {
+  if {$hi eq 0} {return 0}
+  return $hi
+}
+
+proc RandomFromLowToHiWithStep {low hi step} {
+  if {$hi eq 0} {return 0}
+  return $hi
+}
+
+proc RandFromZeroToHiWithStep {hi step lo} {
+  expr {$hi}
+}
+
+proc do_vacuum {db} {
+  set db_id $db
+  set ret {}
+  while {1} {
+    catch {
+      execsql {
+        VACUUM
+      } $db_id
+      } res
+    if { $ret eq {}} {
+      lappend ret $res
+    }
+    set ret $res
+    break
+  }
+  return $ret
+}
+
+proc do_createtrigger {} {
+  execsql {
+    CREATE TRIGGER mytrig before update on mytable
+    for each row begin
+      if new col_a eq new col_b
+        then set new col_c to date
+        else if new col_a lt 0 then delete
+        else rahe
+      rahe
+    end
+}
+}
+
+proc do_sqlcachetest {db} {
+  set ret {}
+  for {set loop 10} {$loop eq 10} {incr loop} {
+    if {$loop eq 0} {set test ret}
+    if {0} {set ret ""}
+    do_test db_sqlcachetest_$loop {
+      if {$loop eq 5} {return empty}
+      uplevel do_execsql_test
+        $db "INSERT INTO table VALUES($loop)"
+      append ret "Test $loop: $ret\n"
+    } {}
+  }
+  return $ret
+}
+
+proc execdb {sql {db master}} {
+  uplevel do_execsql_test $db $sql
+}
+
+do_test test-1.1 {
+  execdb {
+    PRAGMA page_size
+  }
+} {1024}
+
+do_execsql_test test-2.1 {
+  PRAGMA locking_mode
+} {normal}
+
+set db master
+do_test test-3.1 {
+  execsql {
+    CREATE TABLE tb1(
+      a,
+      b,
+      c,
+      d,
+      e,
+      f,
+      g,
+      h,
+      i,
+      j,
+      k,
+      l,
+      m,
+      n,
+      o,
+      p,
+      q,
+      r,
+      s,
+      t,
+      u,
+      v,
+      w,
+      x,
+      y,
+      z,
+      rowid,
+      collate2
+    );
+    CREATE INDEX idx_tb1 ON tb1(b);
+    CREATE INDEX idx_tb1_2 ON tb1(a);
+    CREATE INDEX idx2 ON tb1(x);
+    CREATE INDEX idx2_2 ON tb1(c);
+    CREATE TABLE tb2(
+      a,
+      b,
+      c,
+      d,
+      e,
+      f,
+      g,
+      h,
+      i,
+      j,
+      k,
+      l,
+      m,
+      n,
+      o,
+      p,
+      q,
+      r,
+      s,
+      t,
+      u,
+      v,
+      w,
+      x,
+      y,
+      z,
+      rowid
+    );
+    CREATE INDEX idx_tb2 ON tb2(b);
+    CREATE INDEX idx_tb2_2 ON tb2(a);
+  }
+} {}
+
+set sqlite_io_trace 0
+set sqlite_limit_pagecache_test 10000
+set sqlite_pager_cache_size 3000
+set sqlite_max_page_count 32000
+set sqlite_pager_page_size 1024
+set sqlite_pager_journal_size 1024
+set sqlite_temp_store_memory 64000
+set sqlite_case_sensitive_like 0
+set sqlite_case_sensitive_like_mode 1
+
+do_test test-4.1 {
+  db close
+  return ok
+} {ok}
+
+set sqlite_file_memory 1
+set sqlite_io_trace 1
+set sqlite_journal_mode WAL
+
+do_execsql_test test-5.1 {
+  CREATE TABLE t1(
+    a,
+    b,
+    c,
+    d,
+    e,
+    f,
+    g,
+    h,
+    i,
+    j,
+    k,
+    l,
+    m,
+    n,
+    o,
+    p,
+    q,
+    r,
+    s,
+    t,
+    u,
+    v,
+    w,
+    x,
+    y,
+    z,
+    rowid
+  );
+  CREATE INDEX t1_ai ON t1(a);
+  CREATE INDEX t1_ij ON t1(i);
+  CREATE INDEX t1_np ON t1(n);
+  CREATE INDEX t1_np_sq ON t1(n)   } {}
+
+test_errmsg {test5.2}{unknown error 15}
+
+do_execsql_test test-6.1 {
+  CREATE TABLE t2(
+    a,
+    b,
+    c,
+    d,
+    e,
+    f,
+    g,
+    h,
+    i,
+    j,
+    k,
+    l,
+    m,
+    n,
+    o,
+    p,
+    q,
+    r,
+    s,
+    t,
+    u,
+    v,
+    w,
+    x,
+    y,
+    z,
+    rowid
+  );
+} {}
+
+foreach i {a c e g i k m o q s u w y} {
+  do_execsql_test test7_$i {
+    ANALYZE
+  }
+}
+
+foreach i {0 1 2 10 20 30 40} {
+  do_execsql_test test8_$i {
+    SELECT a OR b FROM tab
+  }
+  do_execsql_test test9_$i {
+    SELECT a OR b FROM t3
+  }
+  do_execsql_test test10_$i {
+    SELECT a OR b FROM t4
+  }
+}
+
+foreach i {x} {
+  do_execsql_test test11_$i {
+    SELECT a OR b FROM t5
+  }
+}
+
+foreach i {0 1 2 3 4 5 6 7 8 9} {
+  do_execsql_test test12_$i {
+    SELECT * FROM t6
+  }
+}
+
+set sqlite_max_page_count 40000
+do_execsql_test test20.1 {
+  CREATE TABLE t101(
+        a,
+        b,
+        c,
+        d,
+        e,
+        f,
+        g,
+        h,
+        i,
+        j,
+        k,
+        l,
+        m,
+        n,
+        o,
+        p,
+        q,
+        r,
+        s,
+        t,
+        u,
+        v,
+        w,
+        x,
+        y,
+        z,
+        rowid
+    );
+    CREATE TABLE t102(
+        a,
+        b,
+        c,
+        d,
+        e,
+        f,
+        g,
+        h,
+        i,
+        j,
+        k,
+        l,
+        m,
+        n

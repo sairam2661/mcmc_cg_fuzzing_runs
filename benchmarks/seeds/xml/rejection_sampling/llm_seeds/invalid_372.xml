@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE doc SYSTEM "http://example.com/doc.dtd">
+<!ELEMENT doc (header, body)>
+<!ELEMENT header (#PCDATA)>
+<!ELEMENT body (sec+, note)>
+<!ELEMENT sec (#PCDATA)>
+<!ELEMENT note (#PCDATA)>
+<!ELEMENT list (item*)>
+<!ELEMENT item (#PCDATA)>
+<!ATTLIST list
+  type (ordered|unordered) "unordered"
+  >
+<!ATTLIST sec
+  id (ID) #REQUIRED
+  title (CDATA) #REQUIRED
+  >
+<!ATTLIST note
+  id (ID) #REQUIRED
+  >
+<?xml-stylesheet type="text/xsl" href="example.xsl"?>
+<doc>
+  <header>Example Document</header>
+  <body>
+    <sec id="sec1" title="Introduction">
+      This is the introduction.
+    </sec>
+    <sec id="sec2" title="Conclusion">
+      This is the conclusion.
+    </sec>
+    <note id="note1">
+      This is a note.
+    </note>
+    <note id="note2">
+      This is another note.
+    </note>
+    <list type="ordered">
+      <item>Item 1</item>
+      <item>Item 2</item>
+      <item>Item 3</item>
+    </list>
+  </body>
+</doc>

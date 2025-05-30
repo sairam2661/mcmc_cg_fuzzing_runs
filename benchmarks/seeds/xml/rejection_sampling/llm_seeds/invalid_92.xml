@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE doc [
+  <!ENTITY % ent SYSTEM "ent.xml">
+  <!ENTITY % ext SYSTEM "ext.xml">
+  <!ENTITY % pub SYSTEM "pub.xml">
+  <!ENTITY % inc SYSTEM "inc.xml">
+  <!ENTITY % sub SYSTEM "sub.xml">
+  <!ENTITY % gen SYSTEM "gen.xml">
+  <!ENTITY % ref SYSTEM "ref.xml">
+  <!ENTITY % dat SYSTEM "dat.xml">
+]>
+<doc>
+  <head>
+    <title>Sample XML Document</title>
+    <meta name="author" content="John Smith"/>
+    <meta name="date" content="2022-02-15"/>
+  </head>
+  <body>
+    <sect1 id="sect1">
+      <title>Section 1</title>
+      <p>This is the first section.</p>
+      <p>It has two paragraphs.</p>
+      <fig id="fig1">
+        <title>Figure 1</title>
+        <graphic src="image1.jpg" width="100" height="100"/>
+      </fig>
+    </sect1>
+    <sect2 id="sect2">
+      <title>Section 2</title>
+      <p>This is the second section.</p>
+      <p>It has a figure and a table.</p>
+      <fig id="fig2">
+        <title>Figure 2</title>
+        <graphic src="image2.jpg" width="100" height="100"/>
+      </fig>
+      <table id="tab1">
+        <title>Table 1</title>
+        <tgroup cols="2">
+          <colspec colname="c1" width="*" align="left"/>
+          <colspec colname="c2" width="*" align="right"/>
+          <thead>
+            <row>
+              <entry>Column 1</entry>
+              <entry>Column 2</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Row 1, Column 1</entry>
+              <entry>Row 1, Column 2</entry>
+            </row>
+            <row>
+              <entry>Row 2, Column 1</entry>
+              <entry>Row 2, Column 2</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </sect2>
+  </

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE article SYSTEM "R" [
+  <!ELEMENT article (title,section*,note+)>
+  <!ATTLIST article lang CDATA #REQUIRED>
+  <!ENTITY titleEntity "A">
+  <!ENTITY % link "a">
+  <!NOTATION sgml-system SYSTEM "N">
+  %link;
+  <!--%link;
+  %link;<![CDATA[-->]>
+<xi:sitemap xmlns:xi="x" xmlns:dc="d" xmlns:xsi="y">
+  <article lang="g" xsi:noNamespaceSchemaLocation="N">
+    <title>&titleEntity;</title>
+    <section>1</section>
+    <note>1</note>
+    <note>2</note>
+  </article>
+</xi:sitemap>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE notes [
+<!ENTITY % generalEnt SYSTEM "general.ent">
+<!ENTITY % notesEnt SYSTEM "notes.ent">
+<!ENTITY % entity1 "entity1">
+<!ENTITY % entity2 "entity2">
+<!ENTITY % entity3 "entity3">
+<!ENTITY % entity4 "entity4">
+<!ENTITY % entity5 "entity5">
+<!ENTITY % entity6 "entity6">
+<!ENTITY % entity7 "entity7">
+<!ENTITY % entity8 "entity8">
+<!ENTITY % entity9 "entity9">
+<!ENTITY % entity10 "entity10">
+<!ENTITY % entity11 "entity11">
+<!ENTITY % entity12 "entity12">
+<!ENTITY % entity13 "entity13">
+<!ENTITY % entity14 "entity14">
+<!ENTITY % entity15 "entity15">
+<!ENTITY % entity16 "entity16">
+<!ENTITY % entity17 "entity17">
+<!ENTITY % entity18 "entity18">
+<!ENTITY % entity19 "entity19">
+<!ENTITY % entity20 "entity20">
+<!ENTITY % entity21 "entity21">
+<!ENTITY % entity22 "entity22">
+<!ENTITY % entity23 "entity23">
+<!ENTITY % entity24 "entity24">
+<!ENTITY % entity25 "entity25">
+<!ENTITY % entity26 "entity26">
+<!ENTITY % entity27 "entity27">
+<!ENTITY % entity28 "entity28">
+<!ENTITY % entity29 "entity29">
+<!ENTITY % entity30 "entity30">
+<!ENTITY % entity31 "entity31">
+<!ENTITY % entity32 "entity32">
+<!ENTITY % entity33 "entity33">
+<!ENTITY % entity34 "entity34">
+<!ENTITY % entity35 "entity35">
+<!ENTITY % entity36 "entity36">
+<!ENTITY % entity37 "entity37">
+<!ENTITY % entity38 "entity38">
+<!ENTITY % entity39 "entity39">
+<!ENTITY % entity40 "entity40">
+<!ENTITY % entity41 "entity41">
+<!ENTITY % entity42 "entity42">
+<!ENTITY % entity43 "entity43">
+<!ENTITY % entity44 "entity44">
+<!ENTITY % entity45 "entity45">
+<!ENTITY % entity46 "entity46">
+<!ENTITY % entity47 "entity47">
+<!ENTITY % entity48 "entity48">
+<!ENTITY % entity49 "entity49">
+<!ENTITY % entity50 "entity50">
+<!ENTITY % entity51 "entity51">
+<!ENTITY % entity52 "entity52">
+<!ENTITY %

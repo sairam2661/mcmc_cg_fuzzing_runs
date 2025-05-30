@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ENTITY bookTitle "The Great Gatsby">
+  <!ENTITY bookAuthor "F. Scott Fitzgerald">
+]>
+<book xmlns:xs="http://www.w3.org/2001/XMLSchema"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.example.com/book.xsd"
+       xmlns:xs="http://www.w3.org/2001/XMLSchema"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.example.com/book.xsd"
+       id="bk-123"
+       lang="en-US">
+  <author>
+    <name>
+      <xs:complexType name="NameType">
+        <xs:sequence>
+          <xs:element name="firstName" type="xs:string"/>
+          <xs:element name="lastName" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </name>
+    <email>fitzgerald@example.com</email>
+  </author>
+  <title entity-ref="#bookTitle"/>
+  <publication>
+    <date>1925</date>
+    <publisher>Charles Scribner's Sons</publisher>
+  </publication>
+  <chapter>
+    <title>Chapter 1</title>
+    <text>&lt;p&gt;The rich are different from you and me.&lt;/p&gt;</text>
+  </chapter>
+  <chapter>
+    <title>Chapter 2</title>
+    <text>&lt;p&gt;They have more money.&lt;/p&gt;</text>
+  </chapter>
+  <chapter>
+    <title>Chapter 3</title>
+    <text>&lt;p&gt;And they have better taste.&lt;/p&gt;</text>
+  </chapter>
+  <annotation>
+    <para>This is an annotation.</para>
+    <para>This is another annotation.</para>
+  </annotation>
+</book>

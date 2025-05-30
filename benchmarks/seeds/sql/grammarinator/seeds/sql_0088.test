@@ -1,0 +1,38 @@
+set  
+ testdir   { 
+ file 	 dirname 	  $argv0 
+ } 
+	  source  $testdir/tester.tcl  set   testprefix 	
+ 	
+
+ P 	
+
+ set  timeout 
+ 	
+ 60000 	
+
+ set   
+ O2   	 {    WITH 	
+		 K8o 
+ (  			 m   ) 	 
+ AS 	 ( 			
+  CREATE INDEX 	 f_  ON    cB 
+  (    h 		 )     ) 	 PRAGMA 
+ aL_ 	 =  4.12        }        do_execsql_test 	 y 
+	 - 		 9   . 
+ 9 4  
+ { 	 BEGIN 
+		 IMMEDIATE   	 ;   COMMIT   
+ ;  	  CREATE TABLE   M_81_  	 
+ 
+	 (   Z_  
+   ,  	
+ 
+ n__0_  
+
+ j354   	 ,   F 	 NOT NULL   DEFAULT  	 "l5J"      )   
+ 	 		  ;    } 
+
+ { 	 }  
+          finish_test  	
+	  

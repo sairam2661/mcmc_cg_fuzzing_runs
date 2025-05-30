@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article [
+  <!ELEMENT article (title, section*)>
+  <!ATTLIST article id CDATA #REQUIRED>
+  <!ENTITY xref "X">
+  <!ENTITY % p1 "1">
+  <!NOTATION ISO-8859-1 SYSTEM "I">
+  %p1;
+  <!---->
+]>
+<article xmlns:html="x" xmlns:xsi="x" xsi:noNamespaceSchemaLocation="x"
+  id="x" xml:space="x">
+<html:head>
+<html:title>Some</html:title>
+</html:head>
+<html:body>
+<section>
+<!--
+--><!--
+<!-->
+<![CDATA[< > &]]>
+</section>
+<section>
+<!--
+<xref/>--><!--
+<!-->
+<![CDATA[Some]]></section>
+</html:body>
+</article>

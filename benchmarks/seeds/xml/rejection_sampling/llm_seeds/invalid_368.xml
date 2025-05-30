@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+<!ELEMENT catalog (book+)>
+<!ELEMENT book (#PCDATA|title|author|year|price|description|isbn|publisher)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT isbn (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ATTLIST book
+ id ID #REQUIRED
+ lang CDATA #IMPLIED
+ location CDATA #IMPLIED
+>
+<!ELEMENT catalog (book+, (author|description)*)>
+<!ELEMENT author (#PCDATA|book+)>
+<!ELEMENT description (#PCDATA|book+)>
+<!ATTLIST author
+ lang CDATA #IMPLIED
+ location CDATA #IMPLIED
+>
+<!ELEMENT book (title, year, price, isbn, publisher)>
+<!ATTLIST book
+ id ID #REQUIRED
+>
+<!ELEMENT publisher (#PCDATA|book+|author+|description+|catalog+)>]>
+<catalog>
+<book id="BK1" lang="en">
+ <title>My Book</title>
+ <year>2022</year>
+ <price>19.99</price>
+ <isbn>123456789</isbn>
+ <publisher>My Publisher</publisher>
+</book>
+<book id="BK2" lang="fr">
+ <title>Mon Livre</title>
+ <year>2023</year>
+ <price>14.99</price>
+ <isbn>987654321</isbn>
+ <publisher>Mon Editeur</publisher>
+</book>
+<book id="BK3" lang="de">
+ <title>Mir Buch</title>
+ <year>2024</year>
+ <price>9.99</price>
+ <isbn>456789012</isbn>
+ <publisher>Mein Verlag</publisher>
+</book>
+<author lang="en">
+ <description>This is a description</description>
+ <book id="BK4" lang="en">
+  <title>My Second Book</title>
+  <year>2025</year>
+  <price>24.99</price>
+  <isbn>012345678</isbn>
+  <publisher>My Publisher</publisher>
+ </book>
+</author>
+</catalog>  <?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE catalog [
+<!ELEMENT catalog (book+)>
+<!ELEMENT book (#PCDATA|title|

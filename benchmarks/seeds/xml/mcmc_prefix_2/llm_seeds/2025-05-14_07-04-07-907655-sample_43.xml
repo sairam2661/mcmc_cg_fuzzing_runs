@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE notes SYSTEM "m" [
+  <!ELEMENT group (#PCDATA) >
+  <!ATTLIST element att1 CDATA #REQUIRED >
+  <!ENTITY amp "&amp;">
+  <!ENTITY % temp "1" >
+  <!NOTATION xsl SYSTEM "x">
+  %temp;
+  <!---->
+]>
+<root xmlns="x" xmlns:xsi="w"
+  xsi:schemaLocation="y">
+  <![CDATA[Some text ]]>
+  <!-- Sample comment -->
+  <group Att1="1"><element attr="1"></element><element attr="2"></element></group>
+  <message>&amp;</message>
+  <x:tag>value</x:tag>
+</root>

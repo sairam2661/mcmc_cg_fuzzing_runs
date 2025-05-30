@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author,chapter*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ATTLIST chapter
+    id ID #REQUIRED
+    type (novel|non-fiction) "novel"
+  >
+]>
+<book>
+  <title>My Book</title>
+  <author>John Doe</author>
+  <chapter id="ch1" type="novel">This is the first chapter.</chapter>
+  <chapter id="ch2" type="non-fiction">This is the second chapter.</chapter>
+  <chapter id="ch3" type="novel">This is the third chapter.</chapter>
+  <chapter id="ch4" type="non-fiction">This is the fourth chapter.</chapter>
+  <chapter id="ch5" type="novel">This is the fifth chapter.</chapter>
+</book>

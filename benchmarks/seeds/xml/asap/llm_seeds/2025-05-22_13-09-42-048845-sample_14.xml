@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE books [
+  <!ELEMENT books (author+,editor?,publisher?) >
+  <!ATTLIST author name CDATA #REQUIRED>
+  <!ENTITY year  " ">
+  <!ENTITY  									
+              		%xinclude		'http://www.example.com/books/xinclude.xml'		>
+  <!NOTATION xsl PUBLIC '-//W3C//DTD XSLT 1.0//EN' 'http://www.w3.org/TR/xslt#dtd-xslt'>
+ 	%local-not			;
+  <!--) 
+]>
+<books xmlns:xi="http://www.w3.org/2001/XInclude">
+  <author name="John Smith"></author>
+  <author name="Jane Smith"></author>
+  <editor name="Editor1"></editor>
+  <publisher name="Publisher1">&year;</publisher>
+  <xi:include href="local.xsl" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"/>
+</books> 
+
+  <!-->
+  <!--
+    XSL:
+  <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+    <xsl:template match="/">
+      <h1><xsl:text>Books list:</xsl:text></h1>
+      <xsl:for-->  <!--loop of authors -->
+        <!-- loop over book info elements -->
+  <!-->.local.xsl
+  --> <!--> local.xml
+  -->
+  <!-- -->
+  <!-->.xsl
+   <book
+      <?xml version='1.0' encoding='ISO--> 
+
+ <?xsl-if  v  xsl  xsl  v  xsl  xsl  if v v xsl  v v xsl  if v xsl  v v xsl  v  xsl v  v xsl if  v  xsl v  v xsl if  v xslv xsl v xsl v  xsl if  v x tsl  v if  v  if v  v xsl if v xsl if  if  xsl xsl v xsl  v v xsl  v v xsl  xsl if v xsl v v xsl xsl v  if  v  v  if  v

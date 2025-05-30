@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document [
+  <!ELEMENT document (header | section)*>
+  <!ATTLIST document
+    id ID #REQUIRED
+    version CDATA #IMPLIED
+  >
+  <!ENTITY note "B"
+    >
+  <!ENTITY % xinclude "X"
+    >
+  <!NOTATION iso-8859-1 SYSTEM "w">
+  %xinclude;
+    <!--nota interna-->]>
+<document xmlns:foo="h" xml:id="d" version='c' xml:lang="t">
+<!--sample comment--><section></section>
+<message>&note;</message>
+<footer>
+  <table>
+    <cap>&iso-8859-1;</cap>
+  </table>
+</footer> 
+<quote xml:space="3">Hello <bworld/></quote> 
+<name xmlns="h" xmlns:xsi="n" xmlns:xyz='o'>
+<n>Smith</n>
+<surname>A</surname>
+</name>
+</document>

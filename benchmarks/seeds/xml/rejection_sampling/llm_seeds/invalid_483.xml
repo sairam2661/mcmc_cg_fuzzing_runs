@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root [
+  <!ELEMENT root (title, section*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT section (header, para+, list*)>
+  <!ELEMENT header (#PCDATA)>
+  <!ELEMENT para (#PCDATA)>
+  <!ELEMENT list (item*)>
+  <!ELEMENT item (#PCDATA)>
+]>
+<root>
+  <title>Sample Document</title>
+  <section>
+    <header>Introduction</header>
+    <para>This is a sample paragraph.</para>
+    <para>This is another sample paragraph.</para>
+    <list>
+      <item>First item</item>
+      <item>Second item</item>
+      <item>Third item</item>
+    </list>
+  </section>
+  <section>
+    <header>Conclusion</header>
+    <para>This is a sample paragraph.</para>
+  </section>
+</root>

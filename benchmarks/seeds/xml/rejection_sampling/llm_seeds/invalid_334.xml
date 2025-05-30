@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ENTITY % bookEntity SYSTEM "book.dtd">
+  %bookEntity;
+]>
+<book xmlns:xi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="book.xsd"
+  xml:lang="en">
+  <title>My Book</title>
+  <author>
+    <name>John Doe</name>
+    <address>
+      <street>123 Main St</street>
+      <city>New York</city>
+      <state>NY</state>
+      <zip>10001</zip>
+    </address>
+  </author>
+  <chapter>
+    <title>Chapter 1</title>
+    <section>
+      <title>Section 1.1</title>
+      <para>This is a paragraph of text.</para>
+    </section>
+  </chapter>
+  <appendix>
+    <title>Appendix A</title>
+    <section>
+      <title>Section A.1</title>
+      <para>This is another paragraph of text.</para>
+    </section>
+  </appendix>
+</book>

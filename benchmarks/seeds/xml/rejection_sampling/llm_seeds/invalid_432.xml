@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE notes SYSTEM "notes.dtd">
+<!ELEMENT notes (note+)>
+<!ELEMENT note (#PCDATA|date|name|address|phone|email|note*)>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT note (#PCDATA)>
+<!ATTLIST note
+  id ID #REQUIRED
+  date CDATA #IMPLIED
+  name CDATA #IMPLIED
+  address CDATA #IMPLIED
+  phone CDATA #IMPLIED
+  email CDATA #IMPLIED
+  note CDATA #IMPLIED
+>
+<notes>
+  <note id="n1" date="2020-01-01" name="John Smith" address="123 Main St" phone="123-456-7890" email="john.smith@example.com">
+    <note>This is a note</note>
+  </note>
+  <note id="n2" date="2020-01-02" name="Jane Doe" address="456 Elm St" phone="987-654-3210" email="jane.doe@example.com">
+    <note>This is another note</note>
+  </note>
+</notes>

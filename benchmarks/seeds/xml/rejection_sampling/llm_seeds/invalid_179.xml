@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!ENTITY booktitle "The Book Title">
+<!ENTITY bookauthor "John Doe">
+<!ELEMENT book (#PCDATA)>
+<!ELEMENT chapter (#PCDATA)>
+<!ELEMENT section (#PCDATA)>
+<!ELEMENT paragraph (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ELEMENT publication-date (#PCDATA)>
+<!ELEMENT book-info (title, author, publisher, publication-date)>
+<!ELEMENT chapter-info (title, author)>
+<!ELEMENT section-info (title)>
+<!ELEMENT paragraph-info (title)>
+<!ELEMENT paragraph (section-info, paragraph-info)>
+<!ELEMENT chapter (section+)>
+<!ELEMENT section (paragraph+)>
+<!ATTLIST chapter id ID #REQUIRED>
+<!ATTLIST section id ID #REQUIRED>
+<!ATTLIST paragraph id ID #REQUIRED>
+<!ATTLIST book title CDATA #IMPLIED>
+<!ATTLIST book author CDATA #IMPLIED>
+<!ATTLIST book publisher CDATA #IMPLIED>
+<!ATTLIST book publication-date CDATA #IMPLIED>
+<!ATTLIST book-info id ID #REQUIRED>
+<!ATTLIST chapter-info id ID #REQUIRED>
+<!ATTLIST section-info id ID #REQUIRED>
+<!ATTLIST paragraph-info id ID #REQUIRED>
+<!ELEMENT bibliography (reference+)>
+<!ELEMENT reference (#PCDATA)>
+<!ELEMENT cite (#PCDATA)>
+<!ELEMENT book-cite (cite, reference)>
+<!ATTLIST book-cite id ID #REQUIRED>
+<!ATTLIST reference id ID #REQUIRED>
+<!ATTLIST cite id ID #REQUIRED>
+<!ELEMENT frontmatter (titlepage, dedication)?>
+<!ELEMENT titlepage (#PCDATA)>
+<!ELEMENT dedication (#PCDATA)>
+<!ELEMENT backmatter (bibliography)>
+]>
+<book xmlns="http://www.example.com/book"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.example.com/book book.xsd"
+title="The Book Title" author="John Doe"
+publisher="Example Publisher" publication-date="2022-01-01">
+<book-info id="bookinfo">
+<title>Book Title</title>
+<author>John Doe</author>
+<publisher>Example Publisher</publisher>
+<publication-date>2022-01-01</publication-date>
+</book-info>
+<frontmatter>
+<titlepage>The Title Page</titlepage>
+<dedication>This book is dedicated

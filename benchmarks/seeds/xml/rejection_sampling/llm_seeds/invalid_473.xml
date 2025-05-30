@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+<!ENTITY book-author "John Doe">
+<!ENTITY book-title "The Book">
+<!ENTITY book-publisher "ABC Publishers">
+<!ENTITY book-year "2022">
+<!ENTITY book-isbn "1234567890">
+<!ENTITY book-price "19.99">
+<!ENTITY book-description "A great book about everything">
+<!ENTITY book-tagline "The best book ever written">
+<!ENTITY book-copyright "2022 ABC Publishers">
+<!ENTITY book-url "https://example.com/book">
+<!ENTITY book-email "info@example.com">
+<!ENTITY book-phone "1234567890">
+<!ENTITY book-fax "1234567890">
+<!ENTITY book-address "123 Main St, Anytown USA">
+<!ENTITY book-city "Anytown">
+<!ENTITY book-state "USA">
+<!ENTITY book-postal-code "12345">
+<!ENTITY book-country "USA">
+<!ENTITY book-language "English">
+<!ENTITY book-format "Paperback">
+<!ENTITY book-ISBN-13 "978-1234567890">
+<!ENTITY book-ISBN-10 "1234567890">
+<!ENTITY book-LOC "Anytown, USA">
+<!ENTITY book-URI "https://example.com/book">
+<!ENTITY book-Email "info@example.com">
+<!ENTITY book-Phone "1234567890">
+<!ENTITY book-Fax "1234567890">
+<!ENTITY book-Address "123 Main St, Anytown USA">
+<!ENTITY book-City "Anytown">
+<!ENTITY book-State "USA">
+<!ENTITY book-Postal-Code "12345">
+<!ENTITY book-Country "USA">
+<!ENTITY book-Language "English">
+<!ENTITY book-Format "Paperback">
+<!ENTITY book-Price "19.99">
+<!ENTITY book-Description "A great book about everything">
+<!ENTITY book-Tagline "The best book ever written">
+<!ENTITY book-Copyright "2022 ABC Publishers">
+<!ENTITY book-URL "https://example.com/book">
+<!ENTITY book-Email-2 "info@example.com">
+<!ENTITY book-Phone-2 "1234567890">
+<!ENTITY book-Fax-2 "1234567890">
+<!ENTITY book-Address-2 "123 Main St, Anytown USA">
+<!ENTITY book-City-2 "Anytown">
+<!ENTITY book-State-2 "USA">
+<!ENTITY book-Postal-Code-2 "12345">
+<!ENTITY book-Country-2 "USA">

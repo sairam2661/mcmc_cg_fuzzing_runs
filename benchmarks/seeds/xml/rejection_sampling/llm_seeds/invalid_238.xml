@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ENTITY % entity1 SYSTEM "entity1.txt">
+  <!ENTITY % entity2 SYSTEM "entity2.txt">
+]>
+<catalog>
+  <book>
+    <title>Book Title</title>
+    <author>
+      <first-name>John</first-name>
+      <last-name>Doe</last-name>
+    </author>
+    <price currency="USD">19.99</price>
+  </book>
+  <book>
+    <title>Book Title 2</title>
+    <author>
+      <first-name>Jane</first-name>
+      <last-name>Doe</last-name>
+    </author>
+    <price currency="EUR">14.99</price>
+  </book>
+  <book>
+    <title>Book Title 3</title>
+    <author>
+      <first-name>John</first-name>
+      <last-name>Doe</last-name>
+    </author>
+    <price currency="GBP">9.99</price>
+  </book>
+  <note>
+    <to>Tove</to>
+    <from>Jani</from>
+    <heading>Reminder</heading>
+    <body>Don't forget me this weekend!</body>
+  </note>
+  <note>
+    <to>Tove</to>
+    <from>Jani</from>
+    <heading>Reminder</heading>
+    <body>Don't forget me next weekend!</body>
+  </note>
+</catalog>
+<!ENTITY % entity1 SYSTEM "entity1.txt">
+<!ENTITY % entity2 SYSTEM "entity2.txt">

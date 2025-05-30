@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author,chapter*)>
+  <!ATTLIST book
+    lang CDATA #IMPLIED
+    id  ID #REQUIRED
+  >
+  <!ENTITY chapter1 "A"
+         >
+  <!ENTITY % chapter2 "B">
+  <!NOTATION image SYSTEM "J">
+  %chapter2;
+  <!--
+    Test comment
+   -->
+]>
+<book lang="x" id="b" xmlns:xi="x" xsi:noNamespaceSchemaLocation="y">
+  <title>Book</title>
+  <author name="A" xmlns="x">
+    <xi:include href="a"/>
+  </author>
+  <chapter id="1">&chapter1;</chapter>
+  <chapter> Chapter 2</chapter>
+  <note>!<!-- comment --><!--></note>
+  <image use-->"J" -mime-type="image/jpeg" />
+  <title2><data>This is a data</data></title2>
+</book>  <!--!--> .<chapter2/> .<chapter2/> .<chapter/>.<chapter/>.. <chapter/> <chapter><!-->[CDATA[X]]/></chapter><chapter/>..<chapter/>, 3 /chapter/>>   <chapter../.><chapter>..</chapter>,  4/>, 5.<chapter />.chapter /chapter..chapter>.<chapter />.chapter /chapter>, 4 <chapter../>, 5   <chapter />.chapter /chapter>...<chapter />..<chapter>.chapter/../chapter><chapter>..<chapter/../chapter><chapter/><chapter>..<chapter>..<chapter>..</chapter><chapter../<chapter>..<chapter/>.<chapter/><chapter></chapter><chapter>..<chapter/../chapter><chapter/../chapter>..<chapter><chapter/../chapter><chapter>..<chapter>..</chapter><chapter/><chapter><chapter><chapter/../chapter>..<chapter>..<chapter>..<chapter><chapter>..<chapter>..<chapter>..<chapter>..<chapter></chapter></book>  ,,<chapter><title> chapter title</title></chapter>  <chapter><title> chapter 2 title</title></chapter>,, ,,.chapter /chapter>  <chapter/../chapter>..<chapter>..<chapter/>, chapter 3 chapter... <

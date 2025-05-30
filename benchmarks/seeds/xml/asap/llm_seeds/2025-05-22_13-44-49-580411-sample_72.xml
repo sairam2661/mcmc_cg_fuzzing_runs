@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE notes [
+<!ELEMENT notes (note+)>
+<!ATTLIST note id CDATA #REQUIRED>
+<!ENTITY desc "A"
+  ><!ENTITY  % general-attributes
+   'xmlns= "http://www.notes.com"
+    xml:lang= "en"
+    xsi:schemaLocation= "notes.xsd">
+]>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <notes>
+  <xi:include href="../other.xml" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <xi:fallback><note id="f1">Missing file</note></xi:fallback>
+  </xi:include>
+   <note id="n1">Hello</note>
+  <note id="n2">World!</note>
+  </notes>
+</root> 
+<!ENTITY n1 "Hello">
+<!ENTITY n2 "World!"> 
+<!-- Note from developer: Added entities n1 and n2 as an example -->
+
+<!--&n1;, &n2;--> 
+<!-- &desc; --> 
+
+<note source="n3">Note from &n1; and &n2; and &desc; that makes something new</note>
+<note source="N3">This is note again</note> 
+<!--&n2;!--> 
+<!--&n1;!--> 
+<!--&desc;!--> 
+<!--&general-attributes;---> 
+
+<!--This is additional info about &desc; and &n1; and &n2;-->
+
+
+<note id="a2">Hello</note> 
+<note id="s2">World!</note>
+ 
+
+<note id="a3">Yet another n1-&n1; and desc- and n2-&n2; and desc-&desc;</note>
+</root>
+ 
+<!ATTLIST root idref CDATA #IMPLIED idref2 CDATA #IMPLIED idref3 CDATA #IMPLIED > 
+ 
+![CDATA[Yet another sample content with <,>,,,<]]> 
+<! [ CDATA [ another sample content with <,>,,,< ]] > 
+
+<!DOCTYPE root [
+<!ENTITY % main-params
+"ENTITY desc "A"
+<!ELEMENT root (note+,other+,note,other)>
+<!ATTLIST root xmlns "http://www.root.com"
+id "" CDATA #IMPLIED
+">
+<!

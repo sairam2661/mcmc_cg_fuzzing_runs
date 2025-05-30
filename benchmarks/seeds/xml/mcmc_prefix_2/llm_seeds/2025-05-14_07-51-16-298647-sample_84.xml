@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+  <!ELEMENT book (chapter+)>
+  <!ATTLIST book xmlns CDATA #IMPLIED>
+  <!ENTITY author "J">
+  <!ENTITY  % entities "e" >
+  <!NOTATION iso-8859-1 PUBLIC "M" "a">
+  %entities;
+  <!--comments only appear in this block -->
+]>
+<book xmlns="a" xml:lang="a" xml:space="a" lang="a" xmlns:xsi="a">
+  <chapter>
+    <title attr="a"><t>Chapter 1</t></title>
+    &author;
+  </chapter>
+  <iso-8859-1:notation/>
+</book>

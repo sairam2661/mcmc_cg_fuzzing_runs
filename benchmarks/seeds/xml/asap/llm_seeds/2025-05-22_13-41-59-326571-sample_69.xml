@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE catalog SYSTEM "b" [
+  <!ELEMENT catalog (book)+>
+  <!ATTLIST catalog
+    id   CDATA  #REQUIRED
+    revision CDATA #IMPLIED
+  >
+  <!ENTITY b "b">
+  <!ENTITY % e "%">
+  <!NOTATION book  PUBLIC "I" "B">
+  %e;
+  <!--
+    This is a sample comment.
+    It is not processed by the XML parser.
+  -->
+
+<!ELEMENT author (name, title)+>
+<!ELEMENT book (#PCDATA)>
+<!ELEMENT catalog (book)+>
+
+<!ATTLIST author
+  id CDATA #REQUIRED
+>
+
+<!ATTLIST book
+  id  CDATA #IMPLIED
+  not CDATA #IMPLIED
+  year CDATA #IMPLIED
+  price CDATA #REQUIRED
+>
+<!ATTLIST catalog
+  revision CDATA #IMPLIED
+>
+
+<!ELEMENT element EMPTY>
+<!ATTLIST element
+  attri1 CDATA #IMPLIED
+  attri2 CDATA #IMPLIED
+>
+<!NOTATION book SYSTEM "b">
+
+<!ELEMENT section EMPTY>
+<!ATTLIST section
+     id     CDATA  #IMPLIED
+  alt1    (a | b)  #IMPLIED
+  alt2    (c | b)  #IMPLIED
+  lang    (eng | fra | esp | ger)  #IMPLIED
+>
+
+
+<!ELEMENT msg (#PCDATA)>
+
+<!ELEMENT date (#PCDATA)>
+
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+
+<!ELEMENT title1 (#PCDATA)>
+
+<!ELEMENT title2 (#PCDATA)>
+
+<!ELEMENT addr EMPTY>
+<!ATTLIST addr
+     street  (a | b)  #IMPLIED
+    street2 (a | b)  #IMPLIED
+  city     CDATA  #IMPLIED
+  country  CDATA  #IMPLIED
+  state    CDATA  #IMPLIED
+>
+
+<!ELEMENT p EMPTY>
+<!ATTLIST p
+     content   (para|mixed)  #IMPLIED
+     cdata     CDATA  #IMPLIED
+  style     CDATA  #IMPLIED
+  lang      CDATA  #IMPLIED
+  dir       (ltr|rtl)  #IMPLIED
+  xml:lang  CDATA  #IMPLIED
+  xml:space (default|preserve)  #IMPLIED
+  space     (default|preserve)  #IMPLIED
+>
+
+<!ELEMENT h EMPTY>
+<!ATTLIST h
+     level    (h1|h2|h3|h4|h5|h6) #REQUIRED
+     title    CDATA  #IMPLIED
+      style   CDATA  #IMPLIED
+     class    CDATA  #IMPLIED
+     lang     CDATA  #IMPLIED
+     dir      (

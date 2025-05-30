@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, chapter+)>
+  <!ATTLIST book lang CDATA #IMPLIED>
+  <!ENTITY chapter "A">
+  <!ENTITY % chapterEntity "A">
+  <!NOTATION FPO SYSTEM "f" >
+ 
+        
+        
+ 	%dtd-comment-1; 
+ 	<!--%dtd comment2 -->
+]>
+<book lang="f">
+  <title>Book Title</title>
+  <notation name="F" system="f" publicId="-"/>
+  <notation name="F" system="f" publicId="-">
+    <FPO SYSTEM="f"/>
+  </notation>
+  <chapter>
+    &chapter;
+  </chapter>
+  <chapter>
+    &chapterEntity;
+  </chapter>
+  <chapter>
+    &note;
+  </chapter>
+  <chapter>
+    &sect;
+  </chapter>
+  <chapter>&lt;.</chapter>
+</book>

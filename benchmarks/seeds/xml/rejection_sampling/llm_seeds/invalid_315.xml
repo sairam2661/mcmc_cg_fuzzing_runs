@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (item+)>
+  <!ELEMENT item (name, description, price)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST item
+    id ID #REQUIRED
+    category CDATA #IMPLIED
+    availability CDATA #IMPLIED
+  >
+]>
+<catalog>
+  <item id="1" category="Electronics" availability="In Stock">
+    <name>Product 1</name>
+    <description>Product 1 Description</description>
+    <price>100.00</price>
+  </item>
+  <item id="2" category="Electronics" availability="Out of Stock">
+    <name>Product 2</name>
+    <description>Product 2 Description</description>
+    <price>200.00</price>
+  </item>
+  <item id="3" category="Books" availability="In Stock">
+    <name>Product 3</name>
+    <description>Product 3 Description</description>
+    <price>50.00</price>
+  </item>
+</catalog>  <?xml version="1.0" encoding="UTF-8"?>  <!DOCTYPE catalog [  <!ELEMENT catalog (item+) >  <!ELEMENT item (name, description, price)>  <!ELEMENT name (#PCDATA)>  <!ELEMENT description (#PCDATA)>  <!ELEMENT price (#PCDATA)>  <!ATTLIST item  id ID #REQUIRED  category CDATA #IMPLIED  availability CDATA #IMPLIED >]>  <catalog>  <item id="1" category="Electronics" availability="In Stock">  <name>Product 1</name>  <description>Product 1 Description</description>  <price>100.00</price>  </item>  <item id="2" category="Electronics" availability="Out of Stock">  <name>Product 2</name>  <description>Product 2 Description</description>  <price>200.00</price>  </item>  <item id="3" category="Books" availability="In Stock">  <name>Product 3</name>  <description>Product 3 Description</description>  <price>50.00</price>  </item>  </catalog>  <?xml version="1

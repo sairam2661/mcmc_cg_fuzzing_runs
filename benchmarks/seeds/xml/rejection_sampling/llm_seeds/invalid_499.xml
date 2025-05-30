@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book SYSTEM "book.dtd">
+<!ELEMENT book (title, author, publisher)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ELEMENT authors (author+)>
+<!ELEMENT publisherInfo (name, address, phone)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT bookInfo (title, authors, publisherInfo)>
+<!ELEMENT authorsList (author, authors*)>
+<!ELEMENT authorRef (authorRef)>
+<!ELEMENT titleInfo (title, subtitle)>
+<!ELEMENT subtitle (#PCDATA)>
+<!ELEMENT bookData (title, authorsList, publisherInfo)>
+<!ATTLIST book id CDATA #REQUIRED>
+<!ATTLIST authors name CDATA #REQUIRED>
+<!ATTLIST publisherInfo name CDATA #REQUIRED>
+<!ATTLIST titleInfo title CDATA #REQUIRED>
+<!ATTLIST authorRef id CDATA #REQUIRED>
+<book id="bk1">
+    <title>My Book</title>
+    <authors name="John Doe">
+        <author>John Doe</author>
+        <author>Emily Smith</author>
+    </authors>
+    <publisherInfo name="Penguin Books">
+        <address>123 Main St</address>
+        <phone>555-1234</phone>
+    </publisherInfo>
+    <bookInfo>
+        <title>My Book</title>
+        <authorsList>
+            <author>John Doe</author>
+            <author>Emily Smith</author>
+        </authorsList>
+        <publisherInfo name="Penguin Books">
+            <address>123 Main St</address>
+            <phone>555-1234</phone>
+        </publisherInfo>
+    </bookInfo>
+    <titleInfo>
+        <title>My Book</title>
+        <subtitle>A Subtitle</subtitle>
+    </titleInfo>
+    <authorRef id="author1"/>
+</book>

@@ -1,0 +1,134 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix complex_db
+
+set ::timeout 60000
+
+proc create_table1 {} {
+  global db
+  execsql {
+    DROP TABLE IF EXISTS t1
+  }
+  execsql {
+    CREATE TABLE t1(a, b)
+  }
+}
+
+proc create_table2 {} {
+  global db
+  execsql {
+    DROP TABLE IF EXISTS t2
+  }
+  execsql {
+    CREATE TABLE t2(c, d)
+  }
+}
+
+do_test complex_db-1.1 {
+  set sqlite_version $sqlite_srcversion
+  db close
+  sqlite3 db testdb
+} {}
+
+do_execsql_test complex_db-1.2 {
+  CREATE TABLE t1(a, b);
+  INSERT INTO t1 VALUES(1, 1);
+  INSERT INTO t1 VALUES(2, 2);
+  CREATE TABLE t2(c, d);
+  INSERT INTO t2 VALUES(3, 3);
+  INSERT INTO t2 VALUES(4, 4);
+} {}
+
+do_test complex_db-1.3 {
+  set rc 0
+  set ans 0
+  set dbHandle $db
+  execsql {
+    SELECT COUNT(*) FROM t1 WHERE a = 1;
+  }
+  set ans $rc
+  db close
+  sqlite3 db testdb
+  execsql {
+    SELECT COUNT(*) FROM t1 WHERE a = 1;
+  }
+  set ans $rc
+  expr {$ans eq 0}
+} {0}
+
+do_execsql_test complex_db-1.4 {
+  BEGIN;
+  INSERT INTO t1 VALUES(5, 5);
+  INSERT INTO t2 VALUES(5, 5);
+  ROLLBACK;
+  SELECT COUNT(*) FROM t1 WHERE a = 5;
+} {0}
+
+ifcapable walnut {
+  do_execsql_test complex_db-1.5 {
+    PRAGMA journal_mode = 'wal';
+  } {}
+}
+
+if { 0 } {
+  do_execsql_test complex_db_1_6 {
+    PRAGMA journal_mode;
+  } {WAL}
+}
+
+proc sync_db {} {
+  global db
+  execsql {
+    SELECT * FROM t1
+  }
+  execsql {
+    SELECT * FROM t2
+  }
+}
+
+set syncargs {}
+
+proc sync_proc {} {
+  global syncargs
+  lappend syncargs
+  expr {1}
+}
+
+do_test complex_db-1.7 {
+  set dbHandle $db
+  sync_db
+} {}
+
+if {0} {
+  do_test complex_db_1_8 {
+    get_db_handle
+  } {}
+}
+
+set syncargs {}
+
+proc sync2 {} {
+  global syncargs
+  lappend syncargs
+  expr {1}
+}
+
+do_test complex_db-1.9 {
+  set dbHandle $db
+  set rc 0
+  set ans 0
+  execsql {
+    SELECT COUNT(*) FROM t1 WHERE a = 1;
+  }
+  set ans $rc
+  sync2
+  set ans $rc
+  expr {$ans eq 0}
+} {0}
+
+proc get_db_handle {} {
+  global dbHandle
+  return $dbHandle
+}
+
+finish_test

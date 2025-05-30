@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (prod+,comment)>
+  <!ATTLIST catalog id ID #REQUIRED>
+  <!ENTITY entity1 "I">
+  <!ENTITY % entity2 "e">
+  <!NOTATION MyNotation SYSTEM "s">
+  %entity2;
+  <!--% MyNotation;>
+]>
+<catalog id="myCat" xmlns:myAttr="http://example.com/attribute">
+  <prod>
+    <name>
+      <myAttr:name>Product1</myAttr:name>
+      <myAttr:price>10.99</myAttr:price>
+    </name>
+  </prod>
+  <prod>
+    <name>
+      <myAttr:name>Product2</myAttr:name>
+      <myAttr:price>20.99</myAttr:price>
+    </name>
+  </prod>
+  <!-->
+  <!ELEMENT comment (#PCDATA)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!-->
+  A simple comment.
+  &entity1;&entity1;&entity1;
+  Entities with and&#160;without&nbsp;trailing semicolon.
+  &MyNotation;
+</catalog>  [CDATA[Some <raw> text]]]>  <message>&note;</message>>  </document>  [![CDATA]]]>[<message>&note;</message>  ]]>[<message>&note;</message>  ]]><![CDATA[Some <raw> text]]></section>    ]]>[<message>&note;</message>    <message>&note;</message>   ]]>[<message>&note;</message>  ]]><message>&note;</message>  ]]>[<document xmlns="http://example.com/schema" xmlns:xi="http://www.w3.org/2001/XInclude"  ]]><message>&note;</message>     <message>&note;</message> ]]>[![CDATA     [<!DOCTYPE catalog  ]]>[<!ATTLIST   ]]>] ]]></catalog>  <section><![CDATA[Some <raw> text]]></section>   <message>&note;</message> ]]>[<!DOCTYPE --><!ELEMENT  catalog (prod+,comment)
+  >  ]>  <message>&note;</message>

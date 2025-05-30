@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE data SYSTEM "C" [
+  <!ELEMENT data (entry+, entry*)>
+  <!ATTLIST entry
+    id  CDATA  #REQUIRED
+    name CDATA  #REQUIRED
+  >
+  <!ENTITY title "F"><!ENTITY % xmldecl ">"
+  ><!NOTATION XMLS SYSTEM " ">
+  %XCDATAElement:entryXCDATAExtension

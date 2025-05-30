@@ -1,0 +1,14 @@
+set 
+ testdir 
+ { 	 file   dirname 	 $argv0  }   source 
+ $testdir/tester.tcl  set  testprefix   	 Yq 		 set   timeout  60000 
+  do_execsql_test 
+		   n  - 
+ 4 6 	 . 	 6     {  ROLLBACK    
+ }   { 
+	
+	
+  210   	 $::oq  
+	
+
+	 }         finish_test 	   

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE library [
+  <!ELEMENT library (publisher+, author+)>
+  <!ATTLIST publisher CDATA #REQUIRED>
+  <!ENTITY author "J" >
+  <!ENTITY 	%author-pub "K" >
+  <!NOTATION print SYSTEM "c">
+ %Xinclude

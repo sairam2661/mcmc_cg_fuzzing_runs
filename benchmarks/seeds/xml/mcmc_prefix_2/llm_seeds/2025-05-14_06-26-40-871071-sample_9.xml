@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE root SYSTEM "f"
+ [
+   <!ELEMENT root (nested|attributes|text)>
+   <!ATTLIST root
+       id   CDATA   #REQUIRED
+       attr CDATA   "a"
+       >
+   <!ENTITY e "E">
+   <!ENTITY % ent "z">
+   <!NOTATION f SYSTEM "d">
+   %ent;
+  <!--
+    This is a block comment
+    a multi line one
+  -->   
+ ]>
+<root id="r" attr="b"
+     xmlns="h"
+     xmlns:html="i"
+     xmlns:xsi="j"
+     xsi:noNamespaceSchemaLocation="g"
+>
+  <nested>
+    <html:c>Child</html:c>
+  </nested>
+  <attributes href="e" t="t">text</attributes>
+</root>

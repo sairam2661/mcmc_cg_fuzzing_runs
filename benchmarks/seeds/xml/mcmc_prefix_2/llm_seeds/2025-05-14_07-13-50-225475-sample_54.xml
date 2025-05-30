@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+  <!ELEMENT book (#PCDATA|chapter|appendix)>
+  <!ATTLIST book 
+    id ID #REQUIRED
+    lang CDATA #IMPLIED>
+  <!ENTITY booktitle "A">
+  <!ENTITY % bookyear "1">
+  <!NOTATION FOP PUBLIC "F"
+    "F">
+  %xinclude;
+  <!-- other entities go here -->
+]>
+<book xmlns="a" xmlns:s="c" 
+  id="A" lang="E" xml:lang="f">
+  <xi:include xmlns:xi="a"
+    href="a" 
+    xpointer="a"/>
+  <!-- Sample comment -->
+  <chapter xml:lang="h">
+    Some <raw> text
+  </chapter>
+  <message>&booktitle;</message>
+  <appendix>Some Text &xexpr;</appendix>
+</book> 
+<!--&bookyear--> 
+
+<!---->
+<FOP PUBLIC = "F"> Foo Public</FOP>
+<!----> 
+<!--&note;--> 
+<!---->
+<!-- %xinclude; declaration. The %xinclude; is a parameter entity declared within the DTD. 
+The parameter entity can be used later in the DTD to declare an external subset or within the internal subset to reference an entity declared in the document type declaration. --> 
+<!----> aaaa; 
+<!---->
+<!---->
+
+<!-- some CDATA text in a comment -->
+<!---->  yyyyy
+  <xi:fallback xmlns:xi="a">
+    <p xmlns="a">The system supports the XML Include feature.
+      That is
+      why we need a "FALLBACK" section for systems that
+      don't;
+    </p>
+  </xi:fallback> 
+</book>

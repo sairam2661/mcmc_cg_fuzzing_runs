@@ -1,0 +1,6 @@
+set  		 testdir 
+ {  file  dirname 
+ $argv0 	 }  source 	 $testdir/tester.tcl 	  set 	
+	 testprefix   tO 
+
+ set 	 timeout 	 60000 	  catchsql  W  	    	  finish_test 	    

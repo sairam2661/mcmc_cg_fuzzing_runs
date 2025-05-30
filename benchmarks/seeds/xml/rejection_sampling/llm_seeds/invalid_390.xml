@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE notes SYSTEM "notes.dtd">
+<root xmlns:xs="http://www.w3.org/2001/XMLSchema-instance">
+  <note id="1">
+    <to>John</to>
+    <from>Jane</from>
+    <heading>Meeting</heading>
+    <body>
+      <p>Dear John, come to the meeting at 2 PM.</p>
+      <p>Best regards, Jane.</p>
+    </body>
+  </not>
+  <note id="2">
+    <to>Bob</to>
+    <from>Jane</from>
+    <heading>Meeting</heading>
+    <body>
+      <p>Dear Bob, come to the meeting at 2 PM.</p>
+      <p>Best regards, Jane.</p>
+    </body>
+  </note>
+</root>
+<!ELEMENT note (to, from, heading, body)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT body (p+, p+)>
+<!ELEMENT p (#PCDATA)>
+<!ATTLIST note id CDATA #REQUIRED>
+<!ATTLIST root xmlns:xs CDATA #IMPLIED>
+<!ENTITY % notes PUBLIC "notes" "notes.dtd">
+<!ENTITY % notes SYSTEM "notes.dtd" "notes.dtd">
+<!ELEMENT root (note+, note+)>
+<!ELEMENT p (#PCDATA)>
+<!ELEMENT body (p+, p+)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT note (to, from, heading, body)>
+<!ATTLIST note id CDATA #REQUIRED>
+<!ATTLIST root xmlns:xs CDATA #IMPLIED>
+<!ENTITY % notes PUBLIC "notes" "notes.dtd">
+<!ENTITY % notes SYSTEM "notes.dtd" "notes.dtd">
+<!DOCTYPE notes SYSTEM "notes.dtd">
+<!ELEMENT note (to, from, heading, body)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT body (p+, p+)>
+<!ELEMENT p (#PCDATA)>
+<!ATTLIST note id CDATA #REQUIRED>
+<!ATTLIST root xmlns:xs CDATA #IMPLIED>
+<!ENTITY % notes PUBLIC "notes" "notes.dtd">
+<!ENTITY % notes SYSTEM "notes.dtd" "notes.dtd">
+<!DOCTYPE notes SYSTEM "notes.dtd">
+<!ELEMENT note (to,

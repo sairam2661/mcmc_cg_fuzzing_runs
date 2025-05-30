@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE notes [
+  <!ELEMENT notes (note+)>
+  <!ATTLIST notes
+    version CDATA #REQUIRED
+    language (en|fr|de) "a"
+  >
+  <!ENTITY pi "5">
+  <!ENTITY % ext-entities "<">
+  <!NOTATION book-card SYSTEM "d">
+  %ext-entities;
+  <!--
+   a
+   note about
+   entity inclusion
+   -->
+]>
+<notes xmlns:g="c" version="2">
+  <note num="g" status="r">
+    <head>
+      <title>Meeting</title>
+    </head>
+    <body>
+      <text>This will be a meeting.</text>
+      <ref refid="r" title="&#94;">Ref 1</ref>
+    </body>
+  </note>
+  <ref refid="r">Some reference</ref>
+</notes>

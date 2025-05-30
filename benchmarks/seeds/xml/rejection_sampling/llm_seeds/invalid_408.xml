@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author,chapter+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapter (title,section+,footnote*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT section (#PCDATA)>
+  <!ELEMENT footnote (#PCDATA)>
+]>
+<book>
+  <title>My Book</title>
+  <author>Me</author>
+  <chapter>
+    <title>Chapter 1</title>
+    <section>This is a section</section>
+    <footnote>This is a footnote</footnote>
+  </chapter>
+  <chapter>
+    <title>Chapter 2</title>
+    <section>This is another section</section>
+    <footnote>This is another footnote</footnote>
+    <footnote>This is yet another footnote</footnote>
+  </chapter>
+</book>  <!-- -->
+<chapter>
+  <title>Chapter 3</title>
+  <section>This is a section in Chapter 3</section>
+</chapter>  <!-- -->
+<chapter>
+  <title>Chapter 4</title>
+</chapter>  <!-- -->
+<chapter>
+  <title>Chapter 5</title>
+  <section>This is a section in Chapter 5</section>
+  <footnote>This is a footnote in Chapter 5</footnote>
+</chapter>  <!-- -->  <!-- -->
+<chapter>
+  <title>Chapter 6</title>
+  <section>This is a section in Chapter 6</section>
+  <footnote>This is a footnote in Chapter 6</footnote>
+  <footnote>This is another footnote in Chapter 6</footnote>
+</chapter>  <!-- -->  <!-- -->
+<chapter>
+  <title>Chapter 7</title>
+  <section>This is a section in Chapter 7</section>
+  <footnote>This is a footnote in Chapter 7</footnote>
+  <footnote>This is another footnote in Chapter 7</footnote>
+  <footnote>This is yet another footnote in Chapter 7</footnote>
+</chapter>  <!-- -->  <!-- -->
+<chapter>
+  <title>Chapter 8</title>
+  <section>This is a section in Chapter 8</section>
+  <footnote>This is a footnote in Chapter 8</footnote>
+</chapter>  <!-- -->
+<chapter>

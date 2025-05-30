@@ -1,0 +1,65 @@
+set  
+ testdir 	 { 
+ file  dirname 
+ $argv0 	 } 
+ source    $testdir/tester.tcl 
+ set 
+ testprefix 	 n_Z 	  set 	 timeout   60000    db  
+ o_ 
+	     
+ proc 
+  E 	  {   kI  K  t   }      { 
+	 lappend 	 Q 	 $::c  	    catchsql 
+ { 	 CREATE TABLE 
+  P 
+
+ ( 	 P  	 NOT NULL      , 
+ A  	 e3   NOT NULL   		 NOT NULL   
+ DEFAULT 	 ""     
+  )   	  ; 	 INSERT INTO  		
+
+	
+ r02   ( 
+	 h__8  ,  g_    ) 	 SELECT 
+ K_ 
+  ( 
+
+  *   )      ;  	 CREATE INDEX 	 RF_ 	 ON 
+
+	 e 
+
+ 
+ (   H_ 
+ )    
+  ;   WITH    x_3   (   Y 	 )   AS 	 
+
+ ( 	 PRAGMA 
+
+  V__ 
+ = 	 5.4     )  
+ INSERT INTO 	 	 E7 	 SELECT 	
+
+ j_7_      
+ ; 	  PRAGMA   Y   
+  ;  	 }  
+	
+
+
+   	 	 s   	   	 }      do_test   NM_ 	  -  
+	
+   6 4 6 		
+ .  
+ 0  
+
+ { 	 db2 
+ l    	
+
+  catchsql 
+ $::T__  	   	 J_   {   } 
+   
+ 	    	
+ }   ""     	
+
+
+  finish_test  
+  

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE article [
+  <!ELEMENT article (title, section*)>
+  <!ATTLIST article 
+    id ID #REQUIRED>
+  <!ENTITY title "A" >
+  <!ENTITY % section-def "(">
+  <!NOTATION ISO-8859-1 SYSTEM "E">
+  %section-def; 
+<!--
+  Sample
+  Document
+  with
+  a long
+  comment
+-->]>
+<article id="A" xmlns="&NS;">
+  <title entity-ref="#">(A Test)</title>
+  <section entity-ref="#">%entity%title;</section>
+  <section noref="s">
+    &ISO-8859-1; <!-- &s; -->
+    Section <raw>with CDATA <a>test</a> content</raw>
+  </section>
+</article>

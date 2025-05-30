@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (book+)>
+  <!ELEMENT book (title, author, publisher)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT bookid (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT rating (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ELEMENT publicationdate (#PCDATA)>
+  <!ELEMENT publicationlocation (#PCDATA)>
+]>
+<books>
+  <book>
+    <title>War and Peace</title>
+    <author>Leo Tolstoy</author>
+    <publisher>Penguin</publisher>
+    <address>London</address>
+    <phone>020 1234 5678</phone>
+    <email>info@penguin.co.uk</email>
+    <bookid>978-0-14-119-234</bookid>
+    <price>£12.99</price>
+    <rating>4.5/5</rating>
+    <genre>Classics</genre>
+    <publicationdate>1869</publicationdate>
+    <publicationlocation>St Petersburg</publicationlocation>
+  </book>
+  <book>
+    <title>To Kill a Mockingbird</title>
+    <author>Harper Lee</author>
+    <publisher>HarperCollins</publisher>
+    <address>New York</address>
+    <phone>212 1234 5678</phone>
+    <email>info@harpercollins.com</email>
+    <bookid>978-0-06-112-020</bookid>
+    <price>$15.99</price>
+    <rating>4.7/5</rating>
+    <genre>Classics</genre>
+    <publicationdate>1960</publicationdate>
+    <publicationlocation>Monroeville</publicationlocation>
+  </book>
+</books>

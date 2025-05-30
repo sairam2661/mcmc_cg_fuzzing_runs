@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+  <title>Test</title>
+  <style>
+    @namespace svg 'http://www.w3.org/2000/svg';
+    svg|rect { fill: red; }
+  </style>
+  <link rel='stylesheet' type='text/css' href='style.css'/>
+  <link rel='alternate' type='application/rss+xml' title='RSS' href='rss.xml'/>
+  <meta name='author' content='John Doe'/>
+  <meta name='description' content='This is a test page'/>
+  <meta name='keywords' content='test,page'/>
+  <script type='text/javascript'>
+    var x = 10;
+    var y = 20;
+  </script>
+  <script type='application/x-javascript' src='script.js'/>
+  <script type='application/javascript' src='script2.js'/>
+  <script type='text/javascript' src='script3.js'/>
+  <script type='text/javascript' src='script4.js'/>
+  <script type='text/javascript' src='script5.js'/>
+  <script type='text/javascript' src='script6.js'/>
+  <script type='text/javascript' src='script7.js'/>
+  <script type='text/javascript' src='script8.js'/>
+  <script type='text/javascript' src='script9.js'/>
+  <script type='text/javascript' src='script10.js'/>
+  <script type='text/javascript' src='script11.js'/>
+  <script type='text/javascript' src='script12.js'/>
+  <script type='text/javascript' src='script13.js'/>
+  <script type='text/javascript' src='script14.js'/>
+  <script type='text/javascript' src='script15.js'/>
+  <script type='text/javascript' src='script16.js'/>
+  <script type='text/javascript' src='script17.js'/>
+  <script type='text/javascript' src='script18.js'/>
+  <script type='text/javascript' src='script19.js'/>
+  <script type='text/javascript' src='script20.js'/>
+  <script type='text/javascript' src='script21.js'/>
+  <script

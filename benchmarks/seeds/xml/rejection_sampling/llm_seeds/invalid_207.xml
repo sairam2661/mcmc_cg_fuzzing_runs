@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE book [
+<!ENTITY % book Entities; "book entities">
+<!ENTITY % general General Entities; "general entities">
+<!ENTITY % special Special Entities; "special entities">
+<!ELEMENT book (#PCDATA | title | author | publisher | year | price | chapter)*>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT chapter (#PCDATA | section | subchapter | para | table | figure | bibliography)*>
+<!ELEMENT section (#PCDATA | para | table | figure | bibliography)*>
+<!ELEMENT subchapter (#PCDATA | section | para | table | figure | bibliography)*>
+<!ELEMENT para (#PCDATA | table | figure | bibliography)*>
+<!ELEMENT table (#PCDATA | para | figure | bibliography)*>
+<!ELEMENT figure (#PCDATA | para | bibliography)*>
+<!ELEMENT bibliography (#PCDATA)>
+<!ATTLIST chapter id ID #REQUIRED>
+<!ATTLIST chapter number CDATA #IMPLIED>
+<!ATTLIST section id ID #REQUIRED>
+<!ATTLIST section number CDATA #IMPLIED>
+<!ATTLIST subchapter id ID #REQUIRED>
+<!ATTLIST subchapter number CDATA #IMPLIED>
+<!ATTLIST para id ID #REQUIRED>
+<!ATTLIST para number CDATA #IMPLIED>
+<!ATTLIST table id ID #REQUIRED>
+<!ATTLIST table number CDATA #IMPLIED>
+<!ATTLIST figure id ID #REQUIRED>
+<!ATTLIST figure number CDATA #IMPLIED>
+<!ATTLIST bibliography id ID #REQUIRED>
+<!ATTLIST bibliography number CDATA #IMPLIED>
+]>
+<book>
+<chapter id="ch1" number="1">
+<title>Introduction</title>
+<para id="p1" number="1">This is the introduction.</para>
+<figure id="fig1" number="1">This is a figure.</figure>
+</chapter>
+<chapter id="ch2" number="2">
+<title>Chapter 2</title>
+<section id="s1" number="1">
+<para id="p2" number="1">This is a section.</para>
+<figure id="fig2" number="1">This is another figure.</figure>
+</section>
+<section id="s2" number="2">
+<para id="p3" number="1">This is

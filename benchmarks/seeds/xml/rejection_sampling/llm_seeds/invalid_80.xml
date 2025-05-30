@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE doc [
+<!ELEMENT doc (header, body)>
+<!ELEMENT header (#PCDATA)>
+<!ELEMENT body (section*, footer)>
+<!ELEMENT section (title, p*, ul?, ol?, table?)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT p (#PCDATA)>
+<!ELEMENT ul (li*)>
+<!ELEMENT li (#PCDATA)>
+<!ELEMENT ol (li*)>
+<!ELEMENT table (tr*)>
+<!ELEMENT tr (td*)>
+<!ELEMENT td (#PCDATA)>
+<!ELEMENT footer (#PCDATA)>
+]>
+<doc>
+  <header>XML Document</header>
+  <body>
+    <section>
+      <title>Introduction</title>
+      <p>This is the introduction.</p>
+      <p>This is the second paragraph.</p>
+    </section>
+    <section>
+      <title>History</title>
+      <p>XML has a long and complex history.</p>
+      <p>XML is based on SGML.</p>
+      <ul>
+        <li>1996</li>
+        <li>1998</li>
+        <li>2000</li>
+      </ul>
+      <ol>
+        <li>First</li>
+        <li>Second</li>
+        <li>Third</li>
+      </ol>
+      <table>
+        <tr>
+          <td>Column 1</td>
+          <td>Column 2</td>
+          <td>Column 3</td>
+        </tr>
+        <tr>
+          <td>Value 1</td>
+          <td>Value 2</td>
+          <td>Value 3</td>
+        </tr>
+      </table>
+    </section>
+    <footer>Copyright 2023</footer>
+  </body>
+</doc>

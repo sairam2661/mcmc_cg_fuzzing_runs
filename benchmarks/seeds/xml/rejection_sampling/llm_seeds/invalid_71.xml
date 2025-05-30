@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE notes [
+  <!ENTITY nbsp "&#160;">
+  <!ENTITY lt "&#60;">
+  <!ENTITY gt "&#62;">
+]>
+<notes>
+  <note>
+    <date>&nbsp;</date>
+    <title>Important Note</title>
+    <author>
+      <name>John Doe</name>
+      <email>john@example.com</email>
+    </author>
+    <text>
+      &lt;!-- This is a note about &gt;important things --&gt;
+    </text>
+    <tag>
+      <tagname>Priority</tagname>
+      <tagvalue>High</tagvalue>
+    </tag>
+  </note>
+  <note>
+    <date>2022-01-01</date>
+    <title>Another Note</title>
+    <author>
+      <name>Jane Smith</name>
+      <email>jane@example.com</email>
+    </author>
+    <text>This is a note about something.</text>
+    <tag>
+      <tagname>Priority</tagname>
+      <tagvalue>Medium</tagvalue>
+    </tag>
+  </note>
+</notes>

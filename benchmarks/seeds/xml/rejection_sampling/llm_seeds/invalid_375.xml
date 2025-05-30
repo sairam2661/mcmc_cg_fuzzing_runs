@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document [
+  <!ENTITY ns1 SYSTEM "namespace1.xml">
+  <!ENTITY ns2 SYSTEM "namespace2.xml">
+  <!ENTITY ns3 SYSTEM "namespace3.xml">
+]>
+<document xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+          xmlns:xs2="http://www.example.org/XMLSchema2" 
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:ns1 "&ns1;" 
+          xmlns:ns2 "&ns2;" 
+          xmlns:ns3 "&ns3;"
+          xmlns="http://www.example.org/document">
+  <xs:element name="root" type="xs:string"/>
+  <xs2:element name="root2" type="xs:string"/>
+  <xsi:schemaLocation="http://www.example.org/document document.xsd"/>
+  <ns1:element name="root3" type="xs:string"/>
+  <ns2:element name="root4" type="xs:string"/>
+  <ns3:element name="root5" type="xs:string"/>
+  <ns1:element name="root6" type="xs:string"/>
+  <xs:element name="root7" type="xs:string"/>
+  <xs2:element name="root8" type="xs:string"/>
+  <ns2:element name="root9" type="xs:string"/>
+  <ns1:element name="root10" type="xs:string"/>
+  <ns3:element name="root11" type="xs:string"/>
+  <xs:attribute name="attr" type="xs:string"/>
+  <xs:attribute name="attr2" type="xs:string"/>
+  <xs2:attribute name="attr3" type="xs:string"/>
+  <xsi:attribute name="attr4" type="xs:string"/>
+  <ns1:attribute name="attr5" type="xs:string"/>
+  <ns2:attribute name="attr6" type="xs:string"/>
+  <ns3:attribute name="attr7" type="xs:string"/>
+  <xs:element name="root12" type="xs:string">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="child" type="xs:string"/>
+        <xs:element name="child2" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>

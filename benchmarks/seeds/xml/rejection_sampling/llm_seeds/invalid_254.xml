@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE doc [
+  <!ELEMENT doc (header, body) >
+  <!ELEMENT header (#PCDATA) >
+  <!ELEMENT body (section+, subsection*) >
+  <!ELEMENT section (title, content) >
+  <!ELEMENT title (#PCDATA) >
+  <!ELEMENT content (#PCDATA) >
+  <!ELEMENT subsection (title, content) >
+  <!ELEMENT subcontent (#PCDATA) >
+]>
+<doc>
+  <header>My Document</header>
+  <body>
+    <section>
+      <title>Introduction</title>
+      <content>
+        <p>This is a test paragraph.</p>
+        <p>This is another test paragraph.</p>
+      </content>
+    </section>
+    <section>
+      <title>Conclusion</title>
+      <content>
+        <p>This is a test paragraph.</p>
+      </content>
+    </section>
+    <subsection>
+      <title>Additional Information</title>
+      <content>
+        <p>This is a test paragraph.</p>
+      </content>
+    </subsection>
+  </body>
+</doc>

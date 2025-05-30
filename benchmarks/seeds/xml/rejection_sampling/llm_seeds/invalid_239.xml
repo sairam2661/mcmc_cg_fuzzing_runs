@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book*)>
+  <!ELEMENT book (#PCDATA|title|author|price|year)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    type (novel|poem) "novel"
+    lang CDATA #IMPLIED
+    edition (first|second|third) "first"
+  >
+]>
+<catalog>
+  <book id="bk1" type="novel" lang="en" edition="first">
+    <title>Ulysses</title>
+    <author>James Joyce</author>
+    <price>$10.99</price>
+    <year>1922</year>
+  </book>
+  <book id="bk2" type="poem" lang="fr" edition="second">
+    <title>Les Illuminations</title>
+    <author>Aragon</author>
+    <price>$8.99</price>
+    <year>1896</year>
+  </book>
+</catalog>

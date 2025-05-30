@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note SYSTEM "note.dtd">
+<!ENTITY % ent SYSTEM "ent.ent">
+<!ENTITY % att SYSTEM "att.ent">
+<!ENTITY % ent2 SYSTEM "ent2.ent">
+<!ENTITY % att2 SYSTEM "att2.ent">
+<!ENTITY % ent3 SYSTEM "ent3.ent">
+<!ENTITY % att3 SYSTEM "att3.ent">
+<!ENTITY % ent4 SYSTEM "ent4.ent">
+<!ENTITY % att4 SYSTEM "att4.ent">
+<!ENTITY % ent5 SYSTEM "ent5.ent">
+<!ENTITY % att5 SYSTEM "att5.ent">
+<!ENTITY % ent6 SYSTEM "ent6.ent">
+<!ENTITY % att6 SYSTEM "att6.ent">
+<!DOCTYPE root SYSTEM "root.dtd" [
+  <!ELEMENT root (#PCDATA)>
+  <!ATTLIST root
+    id CDATA #IMPLIED
+    lang (en|fr|de) "en"
+   !>
+]>
+<root xmlns="http://example.com/root" id="root1" lang="en">
+  <note xmlns="http://example.com/note" id="note1" lang="en">
+    <to xmlns="http://example.com/to">John</to>
+    <from xmlns="http://example.com/from">Jane</from>
+    <heading xmlns="http://example.com/heading">Reminder</heading>
+    <body xmlns="http://example.com/body">
+      <p xmlns="http://example.com/p">Buy milk</p>
+      <p xmlns="http://example.com/p">Buy eggs</p>
+    </body>
+  </note>
+  <note xmlns="http://example.com/note" id="note2" lang="fr">
+    <to xmlns="http://example.com/to">Jean</to>
+    <from xmlns="http://example.com/from">Jeanne</from>
+    <heading xmlns="http://example.COM/HEADING">Rappel</heading>
+    <body xmlns="http://example.com/body">
+      <p xmlns="http://example.com/p">Acheter le lait</p>
+      <p xmlns="http://example.com/p">Acheter les oeufs</p>
+    </body>
+  </note>
+</root>

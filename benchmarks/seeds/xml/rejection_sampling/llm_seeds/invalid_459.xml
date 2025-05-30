@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE book [
+  <!ENTITY bookauthor "John Smith">
+  <!ENTITY booktitle "My Book">
+  <!ENTITY bookisbn "1234567890">
+]>
+<book xmlns:fb="http://www.facebook.com/2008/fbml"
+      xmlns:fbml="http://www.facebook.com/2008/fbml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.w3.org/2001/XMLSchema-instance
+                          http://www.w3.org/2001/XMLSchema.xsd"
+      xmlns="http://www.example.org/book"
+      fb:fbml="This is a book.">
+  <title entity-ref="booktitle"/>
+  <author entity-ref="bookauthor"/>
+  <publisher>
+    <name>John Smith Publishing</name>
+  </publisher>
+  <price currency="USD">19.99</price>
+  <isbn entity-ref="bookisbn"/>
+  <tag name="tag1" value="value1"/>
+  <tag name="tag2" value="value2"/>
+  <tag name="tag3" value="value3"/>
+  <section>
+    <title>Chapter 1</title>
+    <content>This is the content of chapter 1.</content>
+  </section>
+  <section>
+    <title>Chapter 2</title>
+    <content>This is the content of chapter 2.</content>
+  </section>
+</book>

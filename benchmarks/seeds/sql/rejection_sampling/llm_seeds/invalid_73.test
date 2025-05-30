@@ -1,0 +1,148 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix sync
+
+proc sync_proc {} {
+  global syncargs
+  lappend syncargs
+  expr {[llength $syncargs] <= 2}
+}
+
+do_test sync-1.1 {
+  execsql {
+    CREATE TABLE a(x);
+    INSERT INTO a VALUES(1),(2),(3);
+  }
+  execsql {SELECT count(*) FROM a}
+} {3}
+
+ifcapable journalMode {
+  catchsql {PRAGMA journal_mode=WAL}
+} {0 {}}
+
+ifcapable auto_vacuum {
+  do_test sync-1.2 {
+    execsql {
+      PRAGMA auto_vacuum=1
+      VACUUM
+    }
+  } {}
+}
+
+ifcapable tempdb {
+  do_test sync-1.3 {
+    execsql {
+      CREATE TABLE t1(a, b);
+      CREATE TABLE t2 AS SELECT * FROM t1;
+      CREATE TABLE t3 AS SELECT * FROM t2;
+    }
+  } {}
+}
+
+do_test sync-1.4 {
+  execsql {
+    CREATE TABLE t4(x INTEGER PRIMARY KEY, y);
+    INSERT INTO t4 VALUES(NULL, 'one');
+    INSERT INTO t4 VALUES(NULL, 'two');
+  }
+  execsql {
+    SELECT rowid, x, y FROM t4 ORDER BY rowid;
+  }
+} {1 0 one 2 0 two}
+
+do_test sync-1.5 {
+  execsql {
+    CREATE TABLE t5(x);
+    INSERT INTO t5 VALUES('one');
+    INSERT INTO t5 VALUES('two');
+  }
+  execsql {SELECT * FROM t5}
+} {one two}
+
+do_test sync-1.6 {
+  execsql {
+    CREATE TABLE t6(x INTEGER PRIMARY KEY, y);
+    INSERT INTO t6 VALUES(NULL, 'one');
+    INSERT INTO t6 VALUES(NULL, 'two');
+  }
+  execsql {SELECT rowid, x, y FROM t6 ORDER BY rowid}
+} {1 0 one 2 0 two}
+
+do_test sync-1.7 {
+  execsql {
+    CREATE TABLE t7(x INTEGER PRIMARY KEY, y);
+    INSERT INTO t7 VALUES(NULL, 'one');
+    INSERT INTO t7 VALUES(NULL, 'two');
+  }
+  execsql {
+    SELECT rowid, x, y FROM t7 ORDER BY x
+  }
+} {1 0 one 2 0 two}
+
+do_test sync-1.8 {
+  execsql {
+    CREATE TABLE t8(x INTEGER PRIMARY KEY, y);
+    INSERT INTO t8 VALUES(NULL, 'one');
+    INSERT INTO t8 VALUES(NULL, 'two');
+  }
+  execsql {
+    SELECT rowid, x, y FROM t8 ORDER BY y
+  }
+} {2 0 two 1 0 one}
+
+do_test sync-1.9 {
+  execsql {
+    CREATE TABLE t9(x INTEGER PRIMARY KEY, y);
+    INSERT INTO t9 VALUES(NULL, 'one');
+    INSERT INTO t9 VALUES(NULL, 'two');
+  }
+  execsql {
+    SELECT rowid, x, y FROM t9 ORDER BY x, y
+  }
+} {1 0 one 2 0 two}
+
+do_test sync-1.10 {
+  execsql {
+    CREATE TABLE t10(x INTEGER PRIMARY KEY, y);
+    INSERT INTO t10 VALUES(NULL, 'one');
+    INSERT INTO t10 VALUES(NULL, 'two');
+  }
+  execsql {
+    SELECT rowid, x, y FROM t10 ORDER BY y, x
+  }
+} {2 0 two 1 0 one}
+
+do_test sync-1.11 {
+  execsql {
+    CREATE TABLE t11(x INTEGER PRIMARY KEY, y);
+    INSERT INTO t11 VALUES(NULL, 'one');
+    INSERT INTO t11 VALUES(NULL, 'two');
+  }
+  execsql {
+    SELECT rowid, x, y FROM t11 ORDER BY x, y
+  }
+} {1 0 one 2 0 two}
+
+do_test sync-1.12 {
+  execsql {
+    CREATE TABLE t12(x INTEGER PRIMARY KEY, y);
+    INSERT INTO t12 VALUES(NULL, 'one');
+    INSERT INTO t12 VALUES(NULL, 'two');
+  }
+  execsql {
+    SELECT rowid, x, y FROM t12 ORDER BY x DESC, y DESC
+  }
+} {2 0 two 1 0 one}
+
+do_test sync-1.13 {
+  execsql {
+    CREATE TABLE t13(x INTEGER PRIMARY KEY, y);
+    INSERT INTO t13 VALUES(NULL, 'one');
+    INSERT INTO t13 VALUES(NULL, 'two');
+  }
+  execsql {
+    SELECT rowid, x, y FROM t13 ORDER BY x DESC, y
+  }
+} {2 0 two 1 0 one}
+
+do_test sync-1.

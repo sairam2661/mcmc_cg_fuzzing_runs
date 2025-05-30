@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author,sections*)>
+  <!ATTLIST book id ID #REQUIRED>
+  <!ENTITY chapter1 "A">
+  <!ENTITY % xml-attrs "x"  >
+  <!NOTATION book-format SYSTEM "e" >
+  %xml-attrs;
+  <!-- external DTD not allowed within this document -->
+]>
+<book id="B">
+  <title>The Book of Knowledge</title>
+  <author>John Doe</author>
+  <sections>
+    <section>&chapter1;</section>
+  </sections>
+  <xi:include href="x" xmlns:xi="&xi;" x="1"/>
+  <xi:include href="e" type="&book-format;"/>
+</book>

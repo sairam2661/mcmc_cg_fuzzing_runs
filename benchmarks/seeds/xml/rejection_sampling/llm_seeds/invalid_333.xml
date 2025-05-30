@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+<!ENTITY % book-author "Author">
+<!ENTITY % book-title "Book Title">
+<!ENTITY % book-publisher "Publisher">
+<!ENTITY % book-date "Date">
+<!ENTITY % book-price "Price">
+<!ELEMENT books (book+)>
+<!ELEMENT book (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ATTLIST book
+id ID #REQUIRED
+lang CDATA #IMPLIED
+<!ENTITY % book1 "book">
+<!ENTITY % book2 "book">
+<!ENTITY % book3 "book">
+<!ENTITY % book4 "book">
+<!ENTITY % book5 "book">
+<!ENTITY % book6 "book">
+<!ENTITY % book7 "book">
+<!ENTITY % book8 "book">
+<!ENTITY % book9 "book">
+<!ENTITY % book10 "book">
+<!ENTITY % book11 "book">
+<!ENTITY % book12 "book">
+<!ELEMENT book1 (#PCDATA)>
+<!ELEMENT book2 (#PCDATA)>
+<!ELEMENT book3 (#PCDATA)>
+<!ELEMENT book4 (#PCDATA)>
+<!ELEMENT book5 (#PCDATA)>
+<!ELEMENT book6 (#PCDATA)>
+<!ELEMENT book7 (#PCDATA)>
+<!ELEMENT book8 (#PCDATA)>
+<!ELEMENT book9 (#PCDATA)>
+<!ELEMENT book10 (#PCDATA)>
+<!ELEMENT book11 (#PCDATA)>
+<!ELEMENT book12 (#PCDATA)>
+<!ELEMENT book13 (#PCDATA)>
+<!ELEMENT book14 (#PCDATA)>
+<!ELEMENT book15 (#PCDATA)>
+<!ELEMENT book16 (#PCDATA)>
+<!ELEMENT book17 (#PCDATA)>
+<!ELEMENT book18 (#PCDATA)>
+<!ELEMENT book19 (#PCDATA)>
+<!ELEMENT book20 (#PCDATA)>
+<!ELEMENT book21 (#PCDATA)>
+<!ELEMENT book22 (#PCDATA)>
+<!ELEMENT book23 (#PCDATA)>
+<!ELEMENT book24 (#PCDATA)>
+<!ELEMENT book25 (#PCDATA)>
+<!ELEMENT book26 (#PCDATA)>
+<!ELEMENT book27 (#PCDATA)>
+<!ELEMENT book28 (#PCDATA)>
+<!ELEMENT book29 (#PCDATA)>
+<!ELEMENT book30 (#PCDATA)>
+<!ELEMENT book31 (#PCDATA)>
+<!ELEMENT book32 (#PCDATA)>
+<!ELEMENT book33 (#PCDATA)>
+<!ELEMENT book34 (#PCDATA)>
+<!ELEMENT book35 (#PCDATA)>
+<!ELEMENT book36 (#PCDATA

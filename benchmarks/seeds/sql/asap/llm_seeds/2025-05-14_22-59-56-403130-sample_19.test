@@ -1,0 +1,83 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix dbstats
+
+set ::timeout 60000
+testvfs tvfs
+tvfs filter xRead
+
+proc setup {} {
+  db close
+  sqlite3 db test database
+  execsql {
+    CREATE TABLE x(a, b);
+    INSERT INTO x VALUES(1, 2);
+    INSERT INTO x VALUES(3, 4);
+  }
+  tvfs filter mLock
+}
+
+proc query1 {} {
+  execsql {
+    SELECT a FROM x WHERE a = 1;
+  }
+}
+
+proc test_execsql_and_update {sql} {
+  execsql $sql
+  execsql {UPDATE x SET b$b WHERE a$B}
+}
+
+proc rollback {} {
+  execsql {ROLLBACK}
+}
+
+proc set_sync_mode {mode} {
+  execsql "PRAGMA journal_mode=$mode"
+}
+
+proc delete_database {} {
+  file delete test
+  file mkdir test
+}
+
+do_test dbstats-1.1 {
+  setup
+  execsql {
+    SELECT * FROM x;
+  }
+} {1 2 3 4}
+
+dbstats_begin_test dbstats
+do_test dbstats-1.2 {
+  set_sync_mode WAL
+  test_execsql_and_update "INSERT INTO x VALUES(5, 6)"
+  execsql {SELECT * FROM x}
+} {1 2 3 4 5 6}
+
+test_execsql_and_update "DELETE FROM x WHERE a%2"
+
+dbstats_end_test dbstats
+
+do_test dbstats-1.3 {
+  set_sync_mode DELETE
+  query1
+} {1}
+
+test_execsql_and_update "UPDATE x SET a=a+b"
+
+query1
+
+set_sync_mode TRUNCATE
+query1
+
+set_sync_mode PERSIST
+
+do_test dbstats-1.4 {
+  rollback
+  execsql {SELECT * FROM x}
+} {1 2 3 4 5 6}
+
+delete_database
+
+finish_test

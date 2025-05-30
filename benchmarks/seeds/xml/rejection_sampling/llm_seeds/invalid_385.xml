@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Complex XML Document</title>
+    <meta name="author" content="John Doe"/>
+    <meta name="keywords" content="XML, XHTML, HTML, DOCTYPE"/>
+    <link rel="stylesheet" href="styles.css" type="text/css"/>
+  </head>
+  <body>
+    <h1>Hello World!</h1>
+    <p>This is a paragraph of text.</p>
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+    <pre>
+      This is a block of preformatted text.
+      It has multiple lines.
+    </pre>
+    <a href="http://www.example.com">Visit Example.com</a>
+    <img src="image.jpg" alt="An image"/>
+    <script type="text/javascript">
+      alert("Hello World!");
+    </script>
+  </body>
+</html>

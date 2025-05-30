@@ -1,0 +1,42 @@
+set 
+	
+ testdir 
+  {  file   dirname 	 $argv0 
+ }    source 	 $testdir/tester.tcl 
+ set 	  testprefix  
+ 	
+ k5 	 set 
+  timeout  60000 
+ 	 set 
+   w_K0 
+	 	 a    
+   	  ifcapable   c4 
+ {    proc 
+ z  { 			 a_  J  	 v 
+ symVx6  z__9 
+
+ N3  Ll 
+		 }     { 	 
+
+ } 
+ 
+   
+  ifcapable 	 Ia 	 { 	
+ 
+ return   { 		 }  
+	      	 do_execsql_test   o   - 
+ 5 6 7 0 2  . 
+ 8 7  
+ { 
+ CREATE INDEX  Sg   	  ON   z   (    D12 
+ )   	 ; 
+ PRAGMA   P0    
+ } 
+
+  { 	 $::t  
+ }       
+
+	 }     
+ 	 	
+ }     
+   finish_test    

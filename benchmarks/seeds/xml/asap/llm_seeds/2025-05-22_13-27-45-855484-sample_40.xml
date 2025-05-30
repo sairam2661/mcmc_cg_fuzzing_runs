@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE persons [
+  <!ELEMENT persons (person+)>
+  <!ATTLIST persons 
+    id CDATA #IMPLIED 
+    lang (en|fr|de) "c"
+  >
+  <!ENTITY author "L"
+  >
+  <!ENTITY % include " ">
+  <!NOTATION html SYSTEM " ">
+  %include;
+  <!--
+    This XML document is used for illustration only
+    It conforms to the schema for persons with 
+    attributes and entities used
+  -->
+]>
+<persons xml:space="3" lang="c" id="n">
+  <person xml:lang="f">
+    <name>John</name>
+    <birthdate>1973/12/01</birthdate>
+    <address>
+      <street>123 Street</street>
+      <city>Any Town</city>
+      <state>CA</state>
+    </address>
+  </person>
+  <person xml:lang="e">
+    <name>Jane</name>
+    <birthdate>1976/03/09</birthdate>
+    <address>
+      <street>456 Street</street>
+      <city>Any Town</city>
+      <state>NY</state>
+    </address>
+  </person>
+</persons>

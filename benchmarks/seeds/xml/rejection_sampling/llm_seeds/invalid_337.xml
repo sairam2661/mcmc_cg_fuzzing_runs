@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog SYSTEM "catalog.dtd">
+<!ELEMENT catalog (item*)>
+<!ELEMENT item (description,price,category)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT category (#PCDATA)>
+<!ATTLIST item id ID #REQUIRED>
+<!ELEMENT subcategory (#PCDATA)>
+<!ELEMENT subitem (description,price,subcategory)>
+<!ELEMENT vendor (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT fax (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT itemref (#PCDATA)>
+<!ELEMENT inventory (itemref*)>
+<!ELEMENT stock (itemref*)>
+<!ELEMENT shipping (itemref*)>
+<!ELEMENT payment (itemref*)>
+<!ELEMENT order (itemref*)>
+<!ELEMENT customer (name,address,phone,fax,email)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT orders (order*)>
+<!ELEMENT orderitem (itemref,quantity)>
+<!ELEMENT quantity (#PCDATA)>
+<!ELEMENT tax (#PCDATA)>
+
+<catalog>
+  <item id="IT001">
+    <description>This is a new item</description>
+    <price>$50.00</price>
+    <category>Electronics</category>
+    <subcategory>Computers</subcategory>
+    <vendor>Acme</vendor>
+    <address>123 Main St</address>
+    <phone>123-456-7890</phone>
+    <fax>123-456-7891</fax>
+    <email>info@acme.com</email>
+  </item>
+  <item id="IT002">
+    <description>This is another item</description>
+    <price>$75.00</price>
+    <category>Electronics</category>
+    <subcategory>Computers</subcategory>
+    <vendor>Acme</vendor>
+    <address>123 Main St</address>
+    <phone>123-456-7890</phone>
+    <fax>123-456-7891</fax>
+    <email>info@acme.com</email>
+    <itemref ref="IT001"/>
+    <itemref ref="IT003"/>
+  </item>
+  <item id="IT003">
+    <description>This is yet another item</description>
+    <price>$100.00</price>
+    <category>Electronics</category>
+    <subcategory>Computers</subcategory>
+    <vendor

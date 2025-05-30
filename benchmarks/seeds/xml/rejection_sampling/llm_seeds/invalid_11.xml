@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, content)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT content (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ELEMENT section (#PCDATA)>
+  <!ELEMENT paragraph (#PCDATA)>
+  <!ELEMENT sentence (#PCDATA)>
+  <!ELEMENT word (#PCDATA)>
+  <!ELEMENT bookinfo (#PCDATA)>
+  <!ELEMENT authorinfo (#PCDATA)>
+]>
+<book>
+  <title>My Book</title>
+  <author>John Doe</author>
+  <content>
+    <chapter>Chapter 1</chapter>
+    <section>Section 1.1</section>
+    <paragraph>This is a paragraph.</paragraph>
+    <sentence>This is a sentence.</sentence>
+    <sentence>This is another sentence.</sentence>
+    <sentence>This is yet another sentence.</sentence>
+    <word>word</word>
+    <word>words</word>
+  </content>
+  <bookinfo>Book information</bookinfo>
+  <authorinfo>Author information</authorinfo>
+</book>

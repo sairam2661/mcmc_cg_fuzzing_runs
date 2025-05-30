@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:fb="http://www.facebook.com/2008/fbml"
+ xmlns:fbq="http://www.facebook.com/2009/fbml">
+  <head>
+    <title>My Facebook Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+    <meta name="description" content="This is my Facebook page"/>
+    <meta name="keywords" content="Facebook, page, my"/>
+  </head>
+  <body>
+    <div fb:profile="1234567890">
+      <img fb:src="http://graph.facebook.com/1234567890/picture" fb:width="150" fb:height="150" />
+      <span fb:color="blue">Hello World!</span>
+      <fb:qwidget href="http://www.facebook.com/1234567890" />
+    </div>
+    <div fb:page="9876543210">
+      <h1 fb:title="My Facebook Page">My Facebook Page</h1>
+      <p fb:text="Welcome to my Facebook page!">Welcome to my Facebook page!</p>
+    </div>
+  </body>
+</html>

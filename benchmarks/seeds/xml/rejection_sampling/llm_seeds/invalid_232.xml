@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+ "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title>Complex XML Document</title>
+  <style type="text/css">
+   body { background-color: #f2f2f2; }
+   h1 { color: #00698f; }
+  </style>
+ </head>
+ <body>
+  <p>This is a paragraph with <span style="font-size: 24px">large</span> text.</p>
+  <h1>Heading with <sub>subscript</sub> and <sup>superscript</sup> text.</h1>
+  <ul>
+   <li>Item 1</li>
+   <li>Item 2</li>
+   <li>Item 3 with <a href="#anchor">link</a> to an anchor.</li>
+  </ul>
+  <p>Here is a blockquote with <cite>citation</cite> and a <q>quote</q>.</p>
+  <blockquote>
+   <p>This is a blockquote with <i>italic</i> text.</p>
+   <p>This is another paragraph in the blockquote.</p>
+  </blockquote>
+  <p>Here is a table with <th>header</th> cells.</p>
+  <table>
+   <thead>
+    <tr>
+     <th>Column 1</th>
+     <th>Column 2</th>
+     <th>Column 3</th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td>Cell 1</td>
+     <td>Cell 2</td>
+     <td>Cell 3</td>
+    </tr>
+    <tr>
+     <td>Cell 4</td>
+     <td>Cell 5</td>
+     <td>Cell 6</td>
+    </tr>
+   </tbody>
+  </table>
+ </body>
+</html>

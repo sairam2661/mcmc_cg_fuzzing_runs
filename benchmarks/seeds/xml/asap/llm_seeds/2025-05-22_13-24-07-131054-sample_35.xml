@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ATTLIST catalog year CDATA #REQUIRED>
+  <!ENTITY part "A" >
+  <!ENTITY % ent "a">
+  <!NOTATION SYSTEM SYSTEM "d" >
+  %ent;
+  <!--, 1 --><!ELEMENT book (title, price, author)>
+  <!ATTLIST book id ID #REQUIRED>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA) >  
+  <!ELEMENT price (#PCDATA) >
+]>
+<catalog year="1">
+  <book id="1">
+    <title>The Book</title>
+    <price>$10.99</price>
+    &part;
+    <author>John Doe</author>
+  </book>
+  <notIncluded/>
+  <book id="2">
+    <title>The Other Book</title>
+    <price>$5.99</price>
+    <author>Jane Doe</author>
+  </book>
+</catalog>

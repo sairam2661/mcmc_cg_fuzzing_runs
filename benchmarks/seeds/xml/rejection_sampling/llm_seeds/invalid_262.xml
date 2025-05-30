@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<!DOCTYPE catalog SYSTEM "catalog.dtd" [<!ENTITY % ent SYSTEM "ent.ent">]>
+<catalog xmlns:xs="http://www.w3.org/2001/XMLSchema-instance">
+  <title>Example Catalog</title>
+  <product id="1">
+    <name>Product 1</name>
+    <description>
+      <p>This is a description of product 1.</p>
+    </description>
+    <price>19.99</price>
+  </product>
+  <product id="2">
+    <name>Product 2</name>
+    <description>
+      <p>This is a description of product 2.</p>
+    </description>
+    <price>9.99</price>
+  </product>
+  <product id="3">
+    <name>Product 3</name>
+    <description>
+      <p>This is a description of product 3.</p>
+    </description>
+    <price>29.99</price>
+  </product>
+  <product id="4">
+    <name>Product 4</name>
+    <description>
+      <p>This is a description of product 4.</p>
+    </description>
+    <price>4.99</price>
+  </product>
+</catalog>

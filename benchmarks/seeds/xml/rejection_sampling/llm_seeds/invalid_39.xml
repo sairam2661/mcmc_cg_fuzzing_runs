@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document [
+  <!ENTITY % ent SYSTEM "entities.xml">
+  %ent;
+]>
+<document>
+  <header>
+    <title>Sample Document</title>
+    <author>
+      <name>John Doe</name>
+      <email>john.doe@example.com</email>
+      <phone>123-456-7890</phone>
+    </author>
+  </header>
+  <content>
+    <section>
+      <title>Introduction</title>
+      <para>This is a sample document.</para>
+      <para>It contains multiple paragraphs.</para>
+    </section>
+    <section>
+      <title>Conclusion</title>
+      <para>This is the final section.</para>
+      <para>It is also the last paragraph.</para>
+    </section>
+  </content>
+  <footer>
+    <copyright>2023 Sample Document</copyright>
+    <revision>1.0</revision>
+  </footer>
+  <metadata>
+    <dc:title>Sample Document</dc:title>
+    <dc:creator>John Doe</dc:creator>
+    <dc:date>2023-02-20</dc:date>
+  </metadata>
+  <processing-instruction target="parser">
+    This is a processing instruction.
+  </processing-instruction>
+</document>

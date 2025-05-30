@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE doc [
+<!ELEMENT doc (root, root)>
+<!ELEMENT root (title, paragraph, paragraph, paragraph, paragraph, paragraph)>
+<!ATTLIST root
+id CDATA #REQUIRED
+type (type1|type2) "type1"
+>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT paragraph (#PCDATA)>
+<!ELEMENT list (#PCDATA)>
+<!ELEMENT item (#PCDATA)>
+<!ELEMENT link (#PCDATA)>
+<!ELEMENT anchor (#PCDATA)>
+<!ELEMENT sub (item, item, item)>
+<!ATTLIST sub
+id CDATA #REQUIRED
+>
+<!ELEMENT ref (#PCDATA)>
+<!ATTLIST ref
+id CDATA #REQUIRED
+>
+<!ELEMENT img (#PCDATA)>
+<!ATTLIST img
+src CDATA #REQUIRED
+>
+]>
+<doc>
+<root id="root1" type="type2">
+<title>Example</title>
+<paragraph>This is a paragraph.</paragraph>
+<paragraph>This is another paragraph.</paragraph>
+<paragraph>This is yet another paragraph.</paragraph>
+<paragraph>This is the last paragraph.</paragraph>
+<list>This is a list:</list>
+<item>Item 1</item>
+<item>Item 2</item>
+<item>Item 3</item>
+<sub id="sub1">
+<item>Item 4</item>
+<item>Item 5</item>
+<item>Item 6</item>
+</sub>
+<link>This is a link:</link>
+<anchor>This is an anchor:</anchor>
+<img src="image.jpg"/>
+<ref id="ref1">This is a reference.</ref>
+</root>
+<root id="root2" type="type1">
+<title>Another example</title>
+<paragraph>This is another paragraph.</paragraph>
+</root>
+</doc>

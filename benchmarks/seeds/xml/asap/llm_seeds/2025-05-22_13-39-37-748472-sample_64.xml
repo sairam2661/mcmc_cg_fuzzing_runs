@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (category*)>
+  <!ATTLIST catalog author CDATA #REQUIRED>
+  <!ENTITY address "1" > 
+  <!ENTITY % specialAtt "#">
+  <!NOTATION HTML SYSTEM "m">
+  %specialAtt;
+  <!--
+    This is a comment describing the catalog.
+  --> 
+]>
+<catalog xmlns:dc="&dc;"
+        author="J"
+        xml:lang='en'>
+  <category id="&address;">Books</category>
+  <category>Electronics</category>
+  <category name="&address;">Music</category>
+  <catalog xmlns:a="a"> <!-- Namespace for root element -->
+    <a:a>Cat1</a:a>
+    <a:a>Cat2</a:a>
+  </catalog>
+</catalog>

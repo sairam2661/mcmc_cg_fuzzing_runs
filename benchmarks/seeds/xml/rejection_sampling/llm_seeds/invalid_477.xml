@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE notes SYSTEM "notes.dtd">
+<root xmlns:xs="http://www.w3.org/2001/XMLSchema-instance">
+  <note id="1">
+    <to>John</to>
+    <from>Jane</from>
+    <heading>Reminder</heading>
+    <body>
+      <para>Do not forget to call your mom</para>
+    </body>
+    <tags>
+      <tag>Reminder</tag>
+      <tag>Personal</tag>
+    </tags>
+  </node>
+  <note id="2">
+    <to>Bob</to>
+    <from>Jane</from>
+    <heading>Meeting</heading>
+    <body>
+      <para>Meet at 2pm at the conference room</para>
+      <para>Do not be late</para>
+    </body>
+    <tags>
+      <tag>Meeting</tag>
+      <tag>Work</tag>
+    </tags>
+  </note>
+  <note id="3">
+    <to>Jane</to>
+    <from>John</from>
+    <heading>Question</heading>
+    <body>
+      <para>What is the meaning of life?</para>
+    </body>
+    <tags>
+      <tag>Philosophy</tag>
+      <tag>Question</tag>
+    </tags>
+  </note>
+  <note id="4">
+    <to>Jane</to>
+    <from>Bob</from>
+    <heading>Appointment</heading>
+    <body>
+      <para>Meet me at 10am</para>
+    </body>
+    <tags>
+      <tag>Appointment</tag>
+      <tag>Personal</tag>
+    </tags>
+  </note>
+</root>

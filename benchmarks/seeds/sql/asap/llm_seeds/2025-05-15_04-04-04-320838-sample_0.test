@@ -1,0 +1,107 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix complex_sqlite_test
+
+set ::timeout 60000
+set temp_store_dir $env HOME
+testvfs vs_tfile
+
+proc insert_data {} {
+  global db
+  execsql {
+    CREATE TABLE b(x);
+  }
+  for {set i 1} {$i le 100} {incr i} {
+    execsql "INSERT INTO b VALUES($i)"
+  }
+  execsql {
+    CREATE TABLE c(x);
+  }
+  for {set i 101} {$i le 200} {incr i} {
+    execsql "INSERT INTO c VALUES($i)"
+  }
+}
+
+do_test 5.0 {
+  execsql {
+    SELECT x FROM b ORDER BY x LIMIT 1
+  }
+} {1}
+
+do_execsql_test 5.1 {
+  CREATE TABLE d AS SELECT x FROM b WHERE x BETWEEN 80 AND 90
+} {}
+do_execsql_test 5.2 {
+  SELECT x FROM d ORDER BY x
+} {80 81 82 83 84 85 86 87 88 89}
+do_execsql_test 5.3 {
+  SELECT x FROM d ORDER BY x DESC
+} {89 88 87 86 85 84 83 82 81 80}
+do_execsql_test 5.4 {
+  SELECT x FROM d ORDER BY x LIMIT 3
+} {80 81 82}
+do_execsql_test 5.5 {
+  SELECT x FROM d ORDER BY x DESC LIMIT 3
+} {89 88 87}
+do_execsql_test 5.6 {
+  SELECT x FROM b INTERSECT SELECT x FROM c
+} {101}
+
+do_test 6.0 {
+  insert_data
+} {}
+
+do_test 6.1 {
+  execsql {SELECT count(*) FROM b}
+} {100}
+do_test 6.2 {
+  execsql {SELECT count(*) FROM c}
+} {100}
+
+do_execsql_test 7.0 {
+  DROP TABLE b
+}
+do_test 7.1 {
+  execsql {
+    SELECT count(*) FROM sqlite_master
+  }
+} {3}
+
+do_execsql_test 8.0 {
+  BEGIN;
+  CREATE TABLE t1(x);
+  COMMIT;
+  CREATE TABLE t2(x);
+  BEGIN;
+  INSERT INTO t2 VALUES(10);
+  COMMIT;
+}
+
+do_test 9.0 {
+  set stmt  execsql {
+    SELECT x FROM t1 UNION SELECT x FROM t2
+  }
+  $stmt get
+} {1 10}
+
+do_test 10.0 {
+  execsql {
+    SELECT x FROM t2 EXCEPT SELECT x FROM t1
+  }
+} {10}
+
+ifcapable wal {
+  do_test 10.1 {
+    execsql {PRAGMA journal_mode = 'wal'}
+  }
+} else {
+  do_test 10.2 {
+  }
+}
+ifcapable temp {
+  set temp_store_dir $temp_store_dir
+  execsql {
+    CREATE VIRTUAL TABLE t3 USING temp AS SELECT x FROM t1
+  }
+}
+finish_test

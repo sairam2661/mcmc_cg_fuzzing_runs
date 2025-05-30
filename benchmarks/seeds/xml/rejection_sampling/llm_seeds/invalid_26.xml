@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!ELEMENT book (title,author,year)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+<!ATTLIST book 
+  id CDATA #REQUIRED
+  lang (eng|spa|fra) "eng"
+  version CDATA "1.0"
+>
+<!ENTITY % book-atts "id CDATA #REQUIRED lang (eng|spa|fra) 'eng' version CDATA '1.01'">
+<!ELEMENT catalog (book*)>
+<!ELEMENT book (title,author,year)>
+<!ATTLIST book 
+  %book-atts;
+  title CDATA #IMPLIED
+  author CDATA #IMPLIED
+  year CDATA #IMPLIED
+>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT chapter (#PCDATA)>
+<!ELEMENT section (#PCDATA)>
+<!ELEMENT figure (#PCDATA)>
+<!ELEMENT table (#PCDATA)>
+<!ELEMENT table-row (#PCDATA)>
+<!ELEMENT table-cell (#PCDATA)>
+<!ELEMENT image (#PCDATA)>
+<!ELEMENT link (#PCDATA)>
+<!ELEMENT anchor (#PCDATA)>
+<!ELEMENT link-end (#PCDATA)>
+<!ELEMENT title-ref (#PCDATA)>
+<!ELEMENT book-ref (#PCDATA)>
+<!ELEMENT figure-ref (#PCDATA)>
+<!ELEMENT table-ref (#PCDATA)>
+<!ELEMENT author-ref (#PCDATA)>
+<!ELEMENT title-id (#PCDATA)>
+<!ELEMENT book-id (#PCDATA)>
+<!ELEMENT figure-id (#PCDATA)>
+<!ELEMENT table-id (#PCDATA)>
+<!ELEMENT author-id (#PCDATA)>
+<!ELEMENT title-name (#PCDATA)>
+<!ELEMENT book-name (#PCDATA)>
+<!ELEMENT figure-name (#PCDATA)>
+<!ELEMENT table-name (#PCDATA)>
+<!ELEMENT author-name (#PCDATA)>
+<!ELEMENT title-title (#PCDATA)>
+<!ELEMENT book-title (#PCDATA)>
+<!ELEMENT figure-title (#PCDATA)>
+<!ELEMENT table-title (#PCDATA)>
+<!ELEMENT author-title (#PCDATA)>
+<!ELEMENT section-title (#PCDATA)>
+<!ELEMENT section-ref (#PCDATA)>
+<!ELEMENT section-name (#PCDATA)>
+<!ELEMENT section-id (#PCDATA)>
+<!ELEMENT link-ref (#PCDATA)>
+<!ELEMENT anchor-ref (#PCDATA)>
+<!ELEMENT anchor-name (#PCDATA)>
+<!ELEMENT anchor-id (#PCDATA)>
+<!ELEMENT link-name (#PCDATA)>
+<!ELEMENT link-id (#PCDATA)>
+<!ELEMENT chapter-ref (#PCDATA)>

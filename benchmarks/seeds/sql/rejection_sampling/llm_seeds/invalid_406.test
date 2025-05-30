@@ -1,0 +1,110 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix sync
+ifcapable!wal {
+  finish_test
+  return
+}
+
+set sqlite_default_journal_mode [sqlite3 journal_mode]
+
+do_test sync-1.1 {
+  execsql {
+    CREATE TABLE a(x);
+    INSERT INTO a VALUES(1),(2),(3);
+  }
+  execsql {SELECT count(*) FROM a}
+} {3}
+
+if {[lindex $sqlite_default_journal_mode 0]!= "WAL"} {
+  catchsql {PRAGMA journal_mode=WAL}
+} {0 {}}
+
+do_test sync-1.2 {
+  execsql {
+    CREATE TABLE b(x);
+    INSERT INTO b VALUES(4),(5),(6);
+  }
+  execsql {SELECT count(*) FROM b}
+} {3}
+
+set syncargs {}
+proc sync_proc {} {
+  global syncargs
+  lappend syncargs
+  expr {[llength $syncargs] <= 2}
+}
+
+do_test sync-1.3 {
+  execsql {
+    CREATE TABLE c(x);
+    INSERT INTO c VALUES(7),(8),(9);
+  }
+  execsql {SELECT count(*) FROM c}
+} {3}
+
+do_test sync-1.4 {
+  execsql {
+    SELECT * FROM c
+  }
+} {7 8 9}
+
+do_test sync-1.5 {
+  execsql {
+    CREATE TABLE d(x);
+    INSERT INTO d VALUES(10),(11),(12);
+  }
+  execsql {SELECT count(*) FROM d}
+} {3}
+
+do_test sync-1.6 {
+  execsql {
+    SELECT * FROM d
+  }
+} {10 11 12}
+
+do_test sync-1.7 {
+  execsql {
+    SELECT * FROM a, b, c, d
+  }
+} {1 4 7 10 2 4 8 11 3 5 9 12}
+
+do_test sync-1.8 {
+  execsql {
+    CREATE TABLE e(x);
+    INSERT INTO e VALUES(13),(14),(15);
+  }
+  execsql {SELECT count(*) FROM e}
+} {3}
+
+do_test sync-1.9 {
+  execsql {
+    SELECT * FROM a, b, c, d, e
+  }
+} {1 4 7 10 13 2 4 8 11 14 3 5 9 12 15}
+
+do_test sync-1.10 {
+  execsql {
+    SELECT * FROM a, b, c, d, e
+  }
+} {1 4 7 10 13 2 4 8 11 14 3 5 9 12 15}
+
+do_test sync-1.11 {
+  execsql {
+    SELECT * FROM a, b, c, d, e
+  }
+} {1 4 7 10 13 2 4 8 11 14 3 5 9 12 15}
+
+if {[lindex $sqlite_default_journal_mode 0]!= "WAL"} {
+  execsql {PRAGMA journal_mode=MEMORY}
+} else {
+  execsql {PRAGMA journal_mode=MEMORY}
+}
+
+do_test sync-1.12 {
+  execsql {
+    SELECT * FROM a, b, c, d, e
+  }
+} {1 4 7 10 13 2 4 8 11 14 3 5 9 12 15}
+
+finish_test

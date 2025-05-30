@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ENTITY % catalog PUBLIC "-//OASIS//DTD Catalog DTD 1.1//EN"
+    "catalog.dtd">
+  %catalog;
+]>
+<catalog>
+  <group id="1">
+    <item id="1.1">
+      <name>Book</name>
+      <author>John</author>
+      <description>
+        <p>This is a book.</p>
+        <p>This book is very good.</p>
+      </description>
+      <price currency="USD">$10.00</price>
+      <availability>in stock</availability>
+      <review>
+        <rating>5</rating>
+        <text>Great book!</text>
+      </review>
+    </item>
+    <item id="1.2">
+      <name>Pen</name>
+      <author>None</author>
+      <description>
+        <p>This is a pen.</p>
+      </description>
+      <price currency="EUR">5.00</price>
+      <availability>out of stock</availability>
+    </item>
+  </group>
+  <group id="2">
+    <item id="2.1">
+      <name>Pencil</name>
+      <author>None</author>
+      <description>
+        <p>This is a pencil.</p>
+      </description>
+      <price currency="GBP">2.50</price>
+      <availability>in stock</availability>
+    </item>
+  </group>
+</catalog>

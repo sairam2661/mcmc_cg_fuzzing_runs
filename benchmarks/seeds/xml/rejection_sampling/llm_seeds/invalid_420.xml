@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE book [
+<!ELEMENT book (title, author, publisher, publication-date)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ELEMENT publication-date (#PCDATA)>
+<!ELEMENT edition (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT isbn (#PCDATA)>
+<!ELEMENT copyright (#PCDATA)>
+<!ELEMENT language (#PCDATA)>
+<!ELEMENT genre (#PCDATA)>
+<!ELEMENT content (#PCDATA)>
+<!ELEMENT chapter (title, content)>
+<!ELEMENT section (title, content)>
+<!ELEMENT paragraph (#PCDATA)>
+<!ELEMENT sentence (#PCDATA)>
+<!ELEMENT word (#PCDATA)>
+<!ELEMENT publisher-website (#PCDATA)>
+<!ELEMENT publisher-email (#PCDATA)>
+<!ELEMENT publisher-phone (#PCDATA)>
+<!ELEMENT publisher-address (#PCDATA)>
+<!ELEMENT publisher-city (#PCDATA)>
+<!ELEMENT publisher-state (#PCDATA)>
+<!ELEMENT publisher-country (#PCDATA)>
+<!ELEMENT publisher-postal-code (#PCDATA)>
+<!ATTLIST chapter id CDATA #REQUIRED>
+<!ATTLIST section id CDATA #REQUIRED>
+<!ATTLIST publisher-website href CDATA #REQUIRED>
+<!ATTLIST publisher-email email CDATA #REQUIRED>
+<!ATTLIST publisher-phone phone CDATA #REQUIRED>
+<!ATTLIST publisher-address address CDATA #REQUIRED>
+<!ATTLIST publisher-city city CDATA #REQUIRED>
+<!ATTLIST publisher-state state CDATA #REQUIRED>
+<!ATTLIST publisher-country country CDATA #REQUIRED>
+<!ATTLIST publisher-postal-code postal-code CDATA #REQUIRED>
+]>
+<book>
+<title>Complex Book</title>
+<author>John Doe</author>
+<publisher>ABC Publishers</publisher>
+<publisher-website href="https://www.abc.com">https://www.abc.com</publisher-website>
+<publisher-email email="info@abc.com">info@abc.com</publisher-email>
+<publisher-phone phone="123-456-7890">123-456-7890</publisher-phone>
+<publisher-address address="123 Main St">123 Main St</publisher-address>
+<publisher-city city="New York">New York</publisher-city>
+<publisher-state state="NY">NY</publisher-state>
+<publisher-country country="USA">USA</publisher-country>
+<publisher-postal-code postal-code="10001">10001</publisher-postal-code>
+<publication-date>2022-01-01</publication-date

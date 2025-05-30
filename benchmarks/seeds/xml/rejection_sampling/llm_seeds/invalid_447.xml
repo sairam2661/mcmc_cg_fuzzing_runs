@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<!DOCTYPE note SYSTEM 'note.dtd'>
+<note>
+  <to>John</to>
+  <from>Paul</from>
+  <heading>Reminder</heading>
+  <body>
+    <p>This is a test</p>
+    <p xml:lang='en'>Hello World!</p>
+    <p xml:lang='en' dir='ltr'>This is a test</p>
+    <p xml:lang='en' dir='ltr' xml:space='preserve'>This is a test</p>
+  </body>
+</note>

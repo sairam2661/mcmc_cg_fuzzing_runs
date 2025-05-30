@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!ELEMENT book (title, author, chapters)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT chapters (chapter+)>
+<!ELEMENT chapter (#PCDATA)>
+<!ATTLIST chapter id CDATA #REQUIRED>
+<!ATTLIST chapter title CDATA #IMPLIED>
+<!ENTITY % generalEntities SYSTEM "general.ent">
+<!ENTITY % generalParams SYSTEM "general-param.ent">
+<!ENTITY % chapterEntities SYSTEM "chapter.ent">
+<!ENTITY % chapterParams SYSTEM "chapter-param.ent">
+<!ENTITY chapter "Chapter 1">
+<!ENTITY title "My Book">
+<!ENTITY author "John Doe">
+<!ENTITY chapters "<chapter id='ch1' title='Introduction'><p>This is the introduction.</p></chapter><chapter id='ch2'><p>This is the second chapter.</p></chapter>">
+<!ELEMENT p (#PCDATA)>
+<!ATTLIST p id CDATA #REQUIRED>
+]>
+<book>
+<title>&title;</title>
+<author>&author;</author>
+<chapters>&chapters;</chapters>
+</book>

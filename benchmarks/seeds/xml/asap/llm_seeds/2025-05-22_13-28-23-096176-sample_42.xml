@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE stockMarket [
+  <!ELEMENT stockMarket (company+,customer*)>
+  <!ATTLIST company id ID #REQUIRED name CDATA #REQUIRED>
+  <!ENTITY symbol "T">
+  <!ENTITY % xInclude "X">
+  <!NOTATION CDATA SYSTEM "d">
+  %xInclude;
+  <!---->
+]>
+<stockMarket>
+  <company id="c" name="T">
+    &symbol;
+    <address country="U" state="N"><city>New York</city></address>
+  </company>
+  <company id="d" name="G">D</company>
+  <customer cID="1">Alice</customer>
+  <!--<![comment]-->',
+  <customer cID="2">Bob</customer>
+</stockMarket>

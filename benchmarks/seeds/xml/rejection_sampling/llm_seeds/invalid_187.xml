@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (author, title, publisher, (book | article)*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT article (#PCDATA)>
+]>
+<catalog>
+  <author>John Smith</author>
+  <title>Introduction to Programming</title>
+  <publisher>ABC Corporation</publisher>
+  <book>Introduction to Programming with Java</book>
+  <book>Introduction to Programming with C++</book>
+  <article>Introduction to Artificial Intelligence</article>
+</catalog>

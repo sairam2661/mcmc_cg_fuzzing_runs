@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE notes SYSTEM 'notes.dtd'>
+<notes>
+  <note>
+    <title>Important</title>
+    <author>John</author>
+    <date>2020-01-01</date>
+    <category>Work</category>
+    <content>
+      <![CDATA[
+        This is a note about a very important project.
+        It involves a lot of complex details and many different tasks.
+        We need to make sure we get it right.
+      ]]>
+    </content>
+  </note>
+  <note>
+    <title>Reminder</title>
+    <author>Jane</author>
+    <date>2020-01-15</date>
+    <category>Personal</category>
+    <content>
+      <![CDATA[
+        Don't forget to pick up milk on the way home.
+        It's a crucial item for our dinner plans.
+      ]]>
+    </content>
+  </note>
+  <note>
+    <title>Meeting</title>
+    <author>Bob</author>
+    <date>2020-01-20</date>
+    <category>Work</category>
+    <content>
+      <![CDATA[
+        We need to discuss the project timeline and make some adjustments.
+        It's going to be a challenging conversation.
+      ]]>
+    </content>
+  </note>
+</notes>

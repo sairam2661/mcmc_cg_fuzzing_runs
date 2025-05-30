@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ENTITY author "John Doe">
+  <!ELEMENT book (title, publisher, author, content)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT content (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    lang CDATA #IMPLIED
+    xmlns CDATA #IMPLIED
+  >
+]>
+<book id="bk101" xmlns="http://www.example.com/book" lang="en">
+  <title>XML for Dummies</title>
+  <publisher>John Wiley &amp; Sons</publisher>
+  <author entity-ref="#author" />
+  <content>This is a sample book about XML.</content>
+</book>

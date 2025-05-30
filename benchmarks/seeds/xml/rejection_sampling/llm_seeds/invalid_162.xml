@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ENTITY % general "IGNORE">
+  <!ENTITY % books "INCLUDE">
+  %books;
+]>
+<books>
+  <author>
+    <name>John Smith</name>
+    <email>j.smith@example.com</email>
+    <address>
+      <street>123 Main St</street>
+      <city>New York</city>
+      <state>NY</state>
+      <country>USA</country>
+    </address>
+  </assistant>
+  <book>
+    <title>Book Title</title>
+    <author>John Smith</author>
+    <publisher>Publisher</publisher>
+    <isbn>1234567890</isbn>
+    <edition>1</edition>
+    <copyright>2020</copyright>
+  </book>
+  <book>
+    <title>Another Book</title>
+    <author>John Smith</author>
+    <publisher>Publisher</publisher>
+    <isbn>1234567890</isbn>
+    <edition>2</edition>
+    <copyright>2020</copyright>
+  </book>
+</books>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author,edition)>
+  <!ATTLIST book lang CDATA #IMPLIED>
+  <!ENTITY title "W"
+                  >
+  <!ENTITY 
+  %author
+  "O"
+                  >
+  <!NOTATION iso-8859-1 SYSTEM "i"
+                         >
+  %book;
+  <!--& book; -->
+]>
+<book lang="g" xmlns="x"
+      xmlns:xi="x" xi:noNamespaceSchemaLocation="n"
+      iso-8859-1="o">
+  <title>&title;</title>
+  <author>&author;</author>
+  <edition>first</edition>
+</book>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, publisher, chapter+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ELEMENT abstract (#PCDATA)>
+  <!ELEMENT section (#PCDATA)>
+  <!ELEMENT section-ref (#PCDATA)>
+  <!ELEMENT reference (#PCDATA)>
+  <!ELEMENT figure (#PCDATA)>
+  <!ELEMENT figure-ref (#PCDATA)>
+  <!ELEMENT table (#PCDATA)>
+  <!ELEMENT table-ref (#PCDATA)>
+  <!ELEMENT index (#PCDATA)>
+  <!ELEMENT index-ref (#PCDATA)>
+  <!ELEMENT bibliography (#PCDATA)>
+  <!ELEMENT bibliography-ref (#PCDATA)>
+  <!ELEMENT appendix (#PCDATA)>
+  <!ELEMENT appendix-ref (#PCDATA)>
+]>
+<book>
+  <title>XML Book</title>
+  <author>Author</author>
+  <publisher>Publisher</publisher>
+  <abstract>This is a book about XML.</abstract>
+  <section>This is a section.</section>
+  <section-ref>Section 1</section-ref>
+  <chapter>This is a chapter.</chapter>
+  <figure>This is a figure.</figure>
+  <figure-ref>Figure 1</figure-ref>
+  <table>This is a table.</table>
+  <table-ref>Table 1</table-ref>
+  <index>This is an index.</index>
+  <index-ref>Index 1</index-ref>
+  <bibliography>This is a bibliography.</bibliography>
+  <bibliography-ref>Bibliography 1</bibliography-ref>
+  <appendix>This is an appendix.</appendix>
+  <appendix-ref>Appendix 1</appendix-ref>
+</book>

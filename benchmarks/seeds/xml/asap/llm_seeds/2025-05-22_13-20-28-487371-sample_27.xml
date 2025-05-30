@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE notes [
+  <!ELEMENT notes (note+)>
+  <!ATTLIST notes
+    id CDATA #IMPLIED
+    version CDATA #REQUIRED
+  >
+  <!ENTITY eacute "&#x00E9;">
+  <!ENTITY  % entities "<" 	 	 	 				 		 					 	 	  	 	  		  	  	 > <!NOTATION GIF SYSTEM 'image/gif'> 
+                        	       	 
+                        	                       	
+                        	%entity ; 	
+                         		  	  		 	 		  	  		
+                        	<!--
+                        CDATA]]>
+
+<notes xmlns="http://example.org/schema" id="mynotes" version="1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema_instance"
+  xsi:schemaLocation="http://example.org/schema../schema.xsd"
+  <note>
+    <author>John Doe</author>
+    <content>Some text with &eacute;</content>
+  </note>
+  <note>
+    <author>Jane Doe</author>
+    <content>This is another note</content>
+  </note>
+</notes>
+
+<!—

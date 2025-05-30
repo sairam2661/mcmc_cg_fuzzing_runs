@@ -1,0 +1,106 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix sync
+
+proc sync_proc {} {
+  global syncargs
+  lappend syncargs
+  expr {[llength $syncargs] <= 2}
+}
+
+do_test sync-1.1 {
+  execsql {
+    CREATE TABLE a(x);
+    INSERT INTO a VALUES(1),(2),(3);
+  }
+  execsql {SELECT count(*) FROM a}
+} {3}
+
+ifcapable journalMode {
+  catchsql {PRAGMA journal_mode=WAL}
+} {0 {}}
+
+ifcapable wal {
+  do_test sync-1.2 {
+    execsql {
+      PRAGMA journal_mode=WAL
+      BEGIN;
+      INSERT INTO a VALUES(4);
+      COMMIT;
+    }
+  } {}
+}
+
+ifcapable wal {
+  do_test sync-1.3 {
+    execsql {
+      PRAGMA journal_mode=WAL
+      BEGIN;
+      INSERT INTO a VALUES(5);
+      COMMIT;
+    }
+  } {}
+}
+
+ifcapable wal {
+  do_test sync-1.4 {
+    execsql {
+      PRAGMA journal_mode=WAL
+      BEGIN;
+      INSERT INTO a VALUES(6);
+      COMMIT;
+    }
+  } {}
+}
+
+ifcapable wal {
+  do_test sync-1.5 {
+    execsql {
+      PRAGMA journal_mode=WAL
+      BEGIN;
+      INSERT INTO a VALUES(7);
+      COMMIT;
+    }
+  } {}
+}
+
+ifcapable wal {
+  do_test sync-1.6 {
+    execsql {
+      PRAGMA journal_mode=WAL
+      BEGIN;
+      INSERT INTO a VALUES(8);
+      COMMIT;
+    }
+  } {}
+}
+
+ifcapable wal {
+  do_test sync-1.7 {
+    execsql {
+      PRAGMA journal_mode=WAL
+      BEGIN;
+      INSERT INTO a VALUES(9);
+      COMMIT;
+    }
+  } {}
+}
+
+ifcapable wal {
+  do_test sync-1.8 {
+    execsql {
+      PRAGMA journal_mode=WAL
+      BEGIN;
+      INSERT INTO a VALUES(10);
+      COMMIT;
+    }
+  } {}
+}
+
+do_test sync-1.9 {
+  execsql {
+    SELECT * FROM a
+  }
+} {1 2 3 4 5 6 7 8 9 10}
+
+finish_test

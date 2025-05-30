@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Complex XML Document</title>
+<xml:lang xml:space="preserve">en</xml:lang>
+<meta name="keywords" content="complex xml, features, markup"/>
+<meta name="description" content="example document"/>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+<link rel="alternate" type="application/rss+xml" href="rss.xml"/>
+</head>
+<body>
+<p xml:lang="en" xml:space="preserve">This is a complex XML document.</p>
+<p xml:lang="en" xml:space="preserve"><span style="font-family: Times New Roman">This is a span with a specific font.</span></p>
+<p xml:lang="en" xml:space="preserve">This is another paragraph with some <i>italic</i> text.</p>
+<p xml:lang="en" xml:space="preserve">This is a paragraph with a <script type="text/javascript">javascript code</script> block.</p>
+<p xml:lang="en" xml:space="preserve">This is a paragraph with a <style type="text/css">css code</style> block.</p>
+<p xml:lang="en" xml:space="preserve">This is a paragraph with a <xsl:template match="/">&lt;![CDATA[<xsl:value-of select="/"/>]]&gt;</xsl:template> block.</p>
+<p xml:lang="en" xml:space="preserve">This is a paragraph with a <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msup><mi>x</mi><mrow><mn>2</mn></mrow></msup><mo>+</mo><msup><mi>y</mi><mrow><mn>2</mn></mrow></msup><mo>=</mo><mn>1</mn></mrow></math> block.</p>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+<!ELEMENT book (title, author, paragraph+)>
+<!ATTLIST book
+  edition CDATA #IMPLIED
+  lang CDATA #REQUIRED
+  country CDATA #IMPLIED
+>
+<!ENTITY booktitle "A" >
+<!ENTITY % attr "#"
+  >
+<!NOTATION svg SYSTEM "S">
+  %attr;
+ 
+<!--not allowed -->]>
+<book lang="n" country="e" edition="2" xmlns="a">
+  &booktitle;
+  <title>The Great Gatsby</title>
+  <author>Scott Fitzegerald</author>
+  <paragraph>This is a sample <b>paragraph</b></paragraph>
+  <paragraph xml:lang="n"> This sample <b>paragraph</b>.</paragraph>
+  <note svg:systemId="-"> <p>This is an image <x>note</x> and an <y> image and text</y> </p></note>
+</book>

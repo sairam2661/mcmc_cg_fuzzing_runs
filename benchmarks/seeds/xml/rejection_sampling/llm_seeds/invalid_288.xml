@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note SYSTEM "note.dtd">
+<note>
+    <to>John</to>
+    <from>Jane</from>
+    <heading>Reminder</heading>
+    <body>
+        <para>Don't forget the meeting.</para>
+        <para>
+            <b>Important:</b> 
+            <i>Attend the conference.</i>
+        </para>
+    </body>
+    <sig>
+        <name>Jane Doe</name>
+        <date>2023-02-20</date>
+    </sig>
+    <attachments>
+        <attachment name="file1.txt" href="file:///home/user/file1.txt" />
+        <attachment name="file2.pdf" href="file:///home/user/file2.pdf" />
+    </attachments>
+    <comment>
+        <author>John</author>
+        <text>This is a comment.</text>
+    </comment>
+    <category>Reminder</category>
+</note>

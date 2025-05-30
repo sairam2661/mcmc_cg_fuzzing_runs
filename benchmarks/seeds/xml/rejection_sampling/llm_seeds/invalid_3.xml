@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author,year)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ELEMENT section (#PCDATA)>
+  <!ELEMENT para (#PCDATA)>
+  <!ELEMENT list (item*)>
+  <!ELEMENT item (#PCDATA)>
+  <!ELEMENT bibref (#PCDATA)>
+  <!ELEMENT note (#PCDATA)>
+  <!ELEMENT index (#PCDATA)>
+]>
+<book>
+  <title>Some title</title>
+  <author>John Doe</author>
+  <year>2023</year>
+  <chapter>Some chapter</chapter>
+  <section>Some section</section>
+  <para>Some paragraph</para>
+  <list>
+    <item>Some item 1</item>
+    <item>Some item 2</item>
+    <item>Some item 3</item>
+  </list>
+  <bibref>Some bibref</bibref>
+  <note>Some note</note>
+  <index>Some index</index>
+</book>

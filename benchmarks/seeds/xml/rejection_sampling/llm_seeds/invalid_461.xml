@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (item*)>
+  <!ELEMENT item (name,description,price,author,year)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ATTLIST item id ID #REQUIRED>
+  <!ATTLIST item category CDATA #IMPLIED>
+]>
+<catalog>
+  <item id="item1" category="fiction">
+    <name>The Lord of the Rings</name>
+    <description>A fantasy novel by J.R.R. Tolkien</description>
+    <price>10.99</price>
+    <author>J.R.R. Tolkien</author>
+    <year>1954</year>
+  </item>
+  <item id="item2" category="non-fiction">
+    <name>The Origin of Species</name>
+    <description>A scientific book by Charles Darwin</description>
+    <price>8.99</price>
+    <author>Charles Darwin</author>
+    <year>1859</year>
+  </item>
+  <item id="item3" category="biography">
+    <name>The Autobiography of Malcolm X</name>
+    <description>A memoir by Malcolm X</description>
+    <price>12.99</price>
+    <author>Malcolm X</author>
+    <year>1965</year>
+  </item>
+</catalog>

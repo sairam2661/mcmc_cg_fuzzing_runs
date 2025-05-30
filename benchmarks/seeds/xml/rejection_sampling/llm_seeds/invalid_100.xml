@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE notes SYSTEM "notes.dtd">
+<root xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <note>
+    <dc:title>My Note</dc:title>
+    <dc:creator>Me</dc:creator>
+    <dc:date>2002-01-01</dc:date>
+    <dc:language>en</dc:language>
+    <link xlink:href="http://example.org/othernote.xml" xlink:title="Other Note"/>
+    <para>This is a test</para>
+    <para>This is another test</para>
+  </note>
+  <note>
+    <dc:title>My Other Note</dc:title>
+    <dc:creator>You</dc:creator>
+    <dc:date>2002-01-02</dc:date>
+    <dc:language>en</dc:language>
+    <link xlink:href="http://example.org/othernote.xml" xlink:title="Other Note"/>
+    <para>This is a test</para>
+  </note>
+</root>

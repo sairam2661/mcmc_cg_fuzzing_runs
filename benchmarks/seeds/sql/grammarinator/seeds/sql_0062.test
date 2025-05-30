@@ -1,0 +1,43 @@
+set  
+	 testdir  {   file 
+			 dirname 
+ $argv0 	
+ }   source   $testdir/tester.tcl 
+ set 	
+	 testprefix 		 J 	  set 	 timeout 
+ 60000    set 	 k 	 {   $::m  
+
+ } 	  
+  	 set  	 F 			 { 
+ 	 'a'    $q    } 	    	
+   
+ set 
+ E_  $::I6E4_     
+  set 	  V 		 { 
+ 
+	
+	 	 }  	  
+  	    if   U  	  { 
+ } 	 else   { 
+  return 
+	
+ {   SELECT   14   	 FROM  H 	 WHERE 
+
+ U   = 	 01.5        }     catchsql  $::A0_   	   	 j 	 {  $j__5     } 	   	 
+ {   $w0h_  
+  $::v    142.969   	
+  $::z8    } 
+      W_  
+
+
+    	 
+ return    $z    	 u 	   
+ catchsql 	 x        
+
+ 	 }     
+
+ proc  i 
+ n  
+ { 
+ } 	
+      finish_test 	  

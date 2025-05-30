@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note SYSTEM "note.dtd">
+<!ELEMENT note (#PCDATA)>
+<!ATTLIST note
+  id ID #REQUIRED
+  title CDATA #IMPLIED
+  author CDATA #IMPLIED
+  date CDATA #IMPLIED
+  body CDATA #IMPLIED
+  attachment CDATA #IMPLIED
+  type CDATA #IMPLIED
+>
+<note id="n1">
+  <title>My Note</title>
+  <author>John Doe</author>
+  <date>2023-02-20</date>
+  <body>This is my note.</body>
+  <attachment>file://example.com/example.txt</attachment>
+  <type>Private</type>
+</note>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT state (#PCDATA)>
+<!ELEMENT zip (#PCDATA)>
+<!ELEMENT country (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT fax (#PCDATA)>
+<!ELEMENT company (#PCDATA)>
+<!ELEMENT department (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT address>
+<!ATTLIST address
+  id ID #REQUIRED
+  street CDATA #IMPLIED
+  city CDATA #IMPLIED
+  state CDATA #IMPLIED
+  zip CDATA #IMPLIED
+  country CDATA #IMPLIED
+  phone CDATA #IMPLIED
+  email CDATA #IMPLIED
+  fax CDATA #IMPLIED
+  company CDATA #IMPLIED
+  department CDATA #IMPLIED
+  title CDATA #IMPLIED
+  name CDATA #IMPLIED
+>
+<!ELEMENT person (#PCDATA)>
+<!ATTLIST person
+  id ID #REQUIRED
+  name CDATA #IMPLIED
+  age CDATA #IMPLIED
+  address CDATA #IMPLIED
+  email CDATA #IMPLIED
+  phone CDATA #IMPLIED
+  fax CDATA #IMPLIED
+>
+<!ELEMENT employee (#PCDATA)>
+<!ATTLIST employee
+  id ID #REQUIRED
+  name CDATA #IMPLIED
+  address CDATA #IMPLIED
+  email CDATA #IMPLIED
+  phone CDATA #IMPLIED
+  fax CDATA #IMPLIED
+  title CDATA #IMPLIED
+  department CDATA #IMPLIED
+>
+<!ELEMENT manager (#PCDATA)>
+<!ATTLIST manager
+  id ID #REQUIRED
+  name CDATA #IMPLIED
+  address CDATA

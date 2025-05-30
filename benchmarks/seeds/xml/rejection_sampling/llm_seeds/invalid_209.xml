@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE notes [
+<!ENTITY % entity "Some Entity">
+<!ELEMENT notes (note+)>
+<!ATTLIST note
+  id CDATA #REQUIRED
+  title CDATA #IMPLIED
+  date CDATA #IMPLIED
+  author CDATA #IMPLIED
+>
+<!ENTITY % note "%entity; %note;">
+<!ELEMENT note (#PCDATA)>
+<!ELEMENT address (street, city, state, zip) >
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT state (#PCDATA)>
+<!ELEMENT zip (#PCDATA)>
+<!ELEMENT country (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT fax (#PCDATA)>
+<!ELEMENT url (#PCDATA)>
+]>
+<notes>
+<note id="1" title="A Note" date="2022-01-01" author="John">
+<address>
+<street>123 Main St</street>
+<city>Anytown</city>
+<state>CA</state>
+<zip>12345</zip>
+<country>USA</country>
+<phone>123-456-7890</phone>
+<email>johndoe@example.com</email>
+<fax>123-456-7891</fax>
+<url>http://www.example.com</url>
+</address>
+</note>
+</notes>

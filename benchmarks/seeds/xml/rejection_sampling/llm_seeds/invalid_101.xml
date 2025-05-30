@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book SYSTEM "book.dtd">
+<!ELEMENT book - - (#PCDATA)>
+<!ELEMENT chapter - - (#PCDATA)>
+<!ELEMENT section - - (#PCDATA)>
+<!ELEMENT paragraph - - (#PCDATA)>
+<!ELEMENT title - - (#PCDATA)>
+<!ELEMENT author - - (#PCDATA)>
+<!ELEMENT bookinfo - - (#PCDATA)>
+<!ELEMENT publisher - - (#PCDATA)>
+<!ELEMENT date - - (#PCDATA)>
+
+<book>
+    <title>My Book</title>
+    <author>John Smith</author>
+    <bookinfo>
+        <publisher>Publisher</publisher>
+        <date>2000-01-01</date>
+    </bookinfo>
+    <chapter>
+        <section>
+            <title>Chapter 1</title>
+            <paragraph>
+                This is the first paragraph of the first chapter.
+            </paragraph>
+        </section>
+        <section>
+            <title>Chapter 2</title>
+            <paragraph>
+                This is the first paragraph of the second chapter.
+            </paragraph>
+        </section>
+    </chapter>
+</book> 
+<!ELEMENT chapter - - (section*, (title, paragraph)*)>
+<!ELEMENT section - - (title, paragraph)+>
+<!ELEMENT paragraph - - (#PCDATA)> 
+<!ELEMENT title - - (#PCDATA)> 
+<!ELEMENT author - - (#PCDATA)> 
+<!ELEMENT bookinfo - - (publisher, date)> 
+<!ELEMENT publisher - - (#PCDATA)> 
+<!ELEMENT date - - (#PCDATA)> 
+
+
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book SYSTEM "book.dtd">
+<!ELEMENT book - - (#PCDATA)>
+<!ELEMENT chapter - - (#PCDATA)>
+<!ELEMENT section - - (#PCDATA)>
+<!ELEMENT paragraph - - (#PCDATA)>
+<!ELEMENT title - - (#PCDATA)>
+<!ELEMENT author - - (#PCDATA)>
+<!ELEMENT bookinfo - - (#PCDATA)>
+<!ELEMENT publisher - - (#PCDATA)>
+<!ELEMENT date - - (#PCDATA)>
+
+
+
+<book>
+    <title>My Book</title>
+    <author>John Smith</author>
+    <bookinfo>
+        <publisher>Publisher</publisher>
+        <date>2000-01-01</date>
+    </bookinfo>
+    <chapter>
+        <section>
+            <title>Chapter 1</title>
+            <paragraph>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE notes [
+  <!ENTITY nbsp "&#160;">
+  <!ENTITY amp "&#38;">
+  <!ENTITY lt "&#60;">
+  <!ENTITY gt "&#62;">
+  <!ENTITY quot "&#34;">
+]>
+<notes>
+  <note>
+    <title>My First Note</title>
+    <author>
+      <name>John Doe</name>
+      <email>johndoe@example.com</email>
+    </author>
+    <date>2022-07-25</date>
+    <body>
+      <p>This is a sample note. &nbsp;It has multiple paragraphs. &amp; It even has some HTML: <span style="color:red">&lt;b&gt;bold&lt;/b&gt;</span> and <span style="color:blue">&lt;i&gt;italic&lt;/i&gt;</span>.</p>
+      <p>This is another paragraph with a link: <a href="https://www.example.com">Example Website</a>.</p>
+    </body>
+  </note>
+  <note>
+    <title>My Second Note</title>
+    <author>
+      <name>Jane Doe</name>
+      <email>janedoe@example.com</email>
+    </author>
+    <date>2022-07-26</date>
+    <body>
+      <p>This is another sample note.</p>
+    </body>
+  </note>
+</notes>

@@ -1,0 +1,110 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix db_corrupt 
+
+set ::timeout 60000
+
+proc db_corrupt_procedure {} {
+  global db_corruptargs
+  lappend db_corruptargs 10
+  expr {0}
+}
+
+do_execsql_test 1 {
+  CREATE TABLE t1(a PRIMARY KEY, b);
+} {} 
+
+do_execsql_test 2 {
+  INSERT INTO t1 VALUES('a', 'b');
+} {} 
+
+do_execsql_test 3 {
+  CREATE INDEX i1 ON t1(b);
+} {} 
+
+do_test 4 {
+  execsql {
+  BEGIN TRANSACTION DEFERRED EXCLUSIVE LOCK MODE
+  VACUUM
+ }
+ set db_corruptargs {}
+} {} 
+
+do_execsql_test 5 {
+  INSERT INTO t1 VALUES('c', 'd');
+} {} 
+
+do_test 6 {
+  execsql {
+    COMMIT;
+  } 
+  set i 0
+  set cnt 0
+  while { $i 10 } {
+    set i incr i
+  }
+} {} 
+
+ifcapable journalMode {
+  catchsql {
+    PRAGMA journal_mode = "DELETE"
+  } {0 {}}
+} 
+
+execsql {
+  DROP TABLE t1
+  DROP INDEX i1
+} 
+
+do_test 7 {
+   execsql {
+    CREATE TABLE t2(a UNIQUE, b);
+   }
+} {} 
+
+execsql {
+  INSERT INTO t2 VALUES(1, 'b')
+  }  
+
+do_execsql_test 8 {
+  SELECT a FROM t2
+} {1} 
+
+do_test 9 {
+  set db_corruptargs {}
+  execsql {
+    BEGIN EXCLUSIVE TRANSACTION MODE
+  }
+  execsql {
+    VACUUM
+  }
+} {} 
+
+ifcapable attach {
+  do_test 10 {
+    execsql {
+      ATTACH 'file:test2.db' AS t2
+    }
+  } {} 
+  do_execsql_test 11 {
+    CREATE TABLE t22(a PRIMARY KEY) 
+  } {}
+  set db t2
+  set db_file test2
+  set dbcorruptargs {}
+  do_execsql_test 12 {
+    PRAGMA journal_mode = "DELETE"
+  } {}  
+} 
+
+ifcapable journalMode {
+  execsql {
+    DROP TABLE t1
+    DROP TABLE t22
+    DROP INDEX i1
+    DROP TABLE t2
+    DROP TABLE t2
+  }
+}
+
+finish_test

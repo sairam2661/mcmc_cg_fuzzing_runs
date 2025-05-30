@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-16"?>
+<!DOCTYPE root SYSTEM "d"
+  [
+    <!ELEMENT root (item*)>
+    <!ATTLIST root id ID #REQUIRED>
+    <!ENTITY x "9">
+  <!ENTITY % y "z">
+<!NOTATION n SYSTEM "i">
+  																		%y; 	<!-- internal entity reference, internal parsed entity  -->
+]>
+<root xmlns:r="r" id="x" n:href="y" n:name="n"></root>

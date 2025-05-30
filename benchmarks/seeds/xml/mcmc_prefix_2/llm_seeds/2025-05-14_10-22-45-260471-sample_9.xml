@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE notes SYSTEM "d"
+  [
+    <!ELEMENT notes (note+)>
+    <!ATTLIST note id ID #REQUIRED>
+    <!ENTITY entityOne "&#65;" >
+  <!ENTITY % entityTwo "a" >
+  <!NOTATION A1 PUBLIC "A" "a">
+  %entityTwo;
+  <!-->
+  ]>
+<notes xmlns:xsi="http://www.w3.org/2001/XMLSchema_instances">
+  <note id="note1" xsi:type="note">
+    <title>This is note1</title>
+    <body>This is the note body</body>
+  </note>
+  <note id="note2">
+    <title>This is note2</title>
+    <body>This is the body for note2</body>
+  </note>
+</notes> 
+<!ENTITY note3 "This is entity not set in doctype declaration">
+<!ENTITY note4 "This is entity defined here">
+<!ATTLIST!document SYSTEM "d"  PUBLIC "d" "d"> 
+<!DOCTYPE a:document SYSTEM "d" >
+<!DOCTYPE document [<!ENTITY % e SYSTEM 'd.doc'>]>
+<!DOCTYPE document [
+  <!ENTITY c1 '1'>
+  <!ENTITY c2 'Two & c1;'>
+  <!ATTLIST note %id;  id CDATA #REQUIRED>
+]>
+<!DOCTYPE document [
+<![ CDATA [
+<!ENTITY % p Public "Public ID">
+<!ENTITY % s System "System ID">
+<!ENTITY note "Note" >
+<!ENTITY % d>
+<!ENTITY % systemId '%s'>
+<!ENTITY % publicId '%p'>
+<!ENTITY % systemId PUBLIC '%publicId' '%systemId'>
+<!ENTITY % d PUBLIC '#PUBLIC' '%publicId'>
+<!ATTLIST!document id CDATA #IMPLIED>
+<!ATTLIST!xref publicId CDATA #IMPLIED>
+<!ATTLIST note %id; >
+<!ATTLIST note id ID #REQUIRED>
+]]]>
+<a:document xmlns:a="http://a.com" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <note id="note99">Note</note>
+</a:document> 
+<!DOCTYPE document [
+  <!ENTITY p "Public">
+  <!ENTITY s "System">
+  <!ENTITY % e SYSTEM 'd.doc'>
+  ]]>
+<p>Sample document</p> 
+<!DOCTYPE document [
+ <!ELEMENT!

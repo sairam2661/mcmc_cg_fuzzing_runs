@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE notes [
+  <!ELEMENT notes (note+)>
+  <!ELEMENT note (title, content)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT content (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT date (#PCDATA)>
+  <!ELEMENT note-id (#PCDATA)>
+  <!ATTLIST note id CDATA #REQUIRED>
+  <!ATTLIST note author CDATA #IMPLIED>
+  <!ATTLIST note address CDATA #IMPLIED>
+  <!ATTLIST note phone CDATA #IMPLIED>
+  <!ATTLIST note email CDATA #IMPLIED>
+  <!ATTLIST note date CDATA #IMPLIED>
+]>
+<notes>
+  <note id="123" author="John" address="123 Main St" phone="555-555-5555" email="john@example.com" date="2020-01-01">
+    <title>Meeting Notes</title>
+    <content>Discuss the project plan.</content>
+  </note>
+  <note id="456" author="Jane" address="456 Elm St" phone="555-555-1234" email="jane@example.com" date="2020-01-15">
+    <title>Project Update</title>
+    <content>Review the project progress.</content>
+  </note>
+</notes>

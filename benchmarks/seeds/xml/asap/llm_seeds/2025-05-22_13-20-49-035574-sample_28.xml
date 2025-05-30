@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE data SYSTEM "m" [
+  <!ELEMENT data (item+, header+)> 
+  <!ATTLIST data lang CDATA #IMPLIED> 
+  <!ENTITY booktitle "T" 
+      >            
+  <!ENTITY % comment "(">            
+  <!NOTATION XPS SYSTEM '(http://www.xml-page-show.com)'> 
+  %comment;    
+  <!---->    
+]>
+<baby>
+  <!-- XML attribute declaration -->
+  <item id="1" foo="9" lang="2">item 1</item>
+  <header>Header</header>
+</baby>

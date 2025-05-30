@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE doc [
+  <!ELEMENT doc (title, body)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT body (p, section, section)>
+  <!ELEMENT p (#PCDATA)>
+  <!ELEMENT section (#PCDATA)>
+  <!ATTLIST section id CDATA #REQUIRED>
+]>
+<doc>
+  <title>My XML Document</title>
+  <body>
+    <p>This is a paragraph of text.</p>
+    <section id="sect1">This is the first section.</section>
+    <section id="sect2">This is the second section.</section>
+  </body>
+</doc>

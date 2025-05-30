@@ -1,0 +1,123 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix complex_sqlite_test
+
+set ::timeout 60000 semicolon
+set sqlite_open_flags "-mode utf"
+
+proc complex_db_open {flags db_name} {
+  if {$::enable_fsync} {
+    set open_flags "-vfs fts5 -nocache -mode utf"
+    append open_flags " -disablesharedcache"
+  } else {
+    set open_flags "-nocache -mode utf -enablesharedcache"
+  }
+  if {$::journal_mode ne "MEMORY"} {
+    append open_flags " -journalmode $::journal_mode"
+  }
+  if {$::wal_autocheckpoint ne "0"} {
+    append open_flags " -wal_autocheckpoint $::wal_autocheckpoint"
+  }
+  if {$::wal_mode ne "MEMORY"} {
+    append open_flags " -walmode $::wal_mode"
+  }
+  if {$::temp_store ne "default"} {
+    append open_flags " -temp_store $::temp_store"
+  }
+  if {$::page_size ne "default"} {
+    append open_flags " -pagesize $::page_size"
+  }
+  if {$::cache_size ne "0"} {
+    append open_flags " -cache_size $::cache_size"
+  }
+  if {$::readonly ne ""} {
+    append open_flags " -readonly $::readonly"
+  }
+  if {$::key arguments ne "off"} {
+    append open_flags " -key $::key_arguments"
+  }
+  sqlite3_db_handle db $db_name
+  sqlite3_open_v2 $db_name $flags $open_flags
+}
+proc complex_db_close {db_name} {
+  catch {sqlite3 close $db_name}
+}
+proc complex_setup {} {
+  global tcl_platform
+  if {0} {
+    set enabled_functions "
+      abs acos and atan atime avshift avsrch bitwise not ceil
+      case ifnull in isnull lag length lower
+      lpad acos ltrim makeinterval not null max nullif random round
+      rtrim scalar sign sqrt sqrt64 strftime subtime sum
+      system trunc upper
+      acos acos64 atan atan2 convert clock cos exp
+      exp64 floor hex interval log log10 lower max min
+      mod msleep nanif null ifnull not or pow
+      random repeat round sqrt sqrt64 sin sqrt64 subtime
+      sum time utc_time
+      "
+    } else {
+    set enabled_functions {
+      acos acosh asin asinh atan atanh bitwise not ceil
+      case isnull lag length lower compress crypt
+      lpad rtrim makeinterval nint not null nullif
+      random round abs acos upper sqrt hex interval
+      log log10 log2 exp pow abs bit_not cbrt
+      compress crypt
+      sqlite_available_crypt sqlite_available_compression
+    }
+  }
+
+  if {$tcl_platform Osborne} {
+    set global_functions "
+      sqrt exp random
+      bitwise and
+    "
+  } else {
+    set global_functions "
+      sqrt64 exp64 random ceil not bitwise and
+      bitwise shr case length rtrim
+    "
+  }
+  if {$tcl_platform osx} {
+    set global_functions "sqrt sqrt64 exp exp64 not log log10 atan atan2 random \
+  set temp_store [sqlite3_compileoption_get SQLITE_TEMP_STORE]
+  if {$fossil_version<1.35} {
+        abs acos asin atan cbrt compress crypt
+        log log10 not sqlite_available_crypt
+        sqlite_version()
+  }
+  if {[llength [glob -nocomplain $testdir/../fossil.dynlib]] > 0} {
+        if {![sqlite3_compileoption_enabled SQLITE_ENABLE_DESERIALIZE]} {
+          set global_functions "log abs sqrt random atan2 binary format datetime round
+        abs acos asin atan cbrt pow
+        }
+        global_functions " log acos asin atan cbrt "
+        if {1} {
+        }
+  }
+  if {$fossil_version}<2.0 {
+    set global_functions "sqlcipher"
+  }
+  if {$fossil_version}<3.0 {
+    set global_functions "sqlite3_db_config"
+    set global_functions "sqlite_db_config_singlethread"
+  }
+  set global_functions "sqlite3_db_config"
+  set global_functions "sqlite3_config"
+  set global_functions "sqlite_db_config_singlethread"
+  set global_functions "sqlite_config"
+  set global_functions "sqlite3_db_config readonly"
+  if {$::f3_enabled} {
+    global_functions "f3"
+  }
+  if {$::json1_enabled} {
+    global_functions "json object"
+  }
+  set global_functions "sqlite_available_crypt"
+  set global_functions "sqlite_available_compression"
+  global_functions "sqlite_available_json1"
+  global_functions "isqliteenabled_f3"
+  global_functions "isqliteenabled_crypt"
+  global

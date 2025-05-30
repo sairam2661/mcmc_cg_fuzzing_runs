@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book SYSTEM "book.dtd">
+<!ELEMENT book (title, author, chapters+)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT chapters (chapter+)>
+<!ELEMENT chapter (#PCDATA)>
+<!ELEMENT section (#PCDATA)>
+<!ELEMENT quote (#PCDATA)>
+<!ELEMENT footnote (#PCDATA)>
+<!ELEMENT reference (#PCDATA)>
+<!ELEMENT bibliography (reference+)>
+<!ELEMENT index (index+)>
+<!ELEMENT index (#PCDATA)>
+<!ELEMENT chapter (title, section*, quote?, footnote?, reference?, bibliography?, index?)>
+<!ATTLIST chapter id CDATA #REQUIRED>
+<!ATTLIST book title CDATA #IMPLIED>
+<!ATTLIST book author CDATA #IMPLIED>
+<!ATTLIST chapter number CDATA #IMPLIED>
+<!ATTLIST section title CDATA #IMPLIED>
+<!ATTLIST quote source CDATA #IMPLIED>
+<!ATTLIST footnote source CDATA #IMPLIED>
+<!ATTLIST reference title CDATA #IMPLIED>
+<!ATTLIST bibliography title CDATA #IMPLIED>
+<!ATTLIST index title CDATA #IMPLIED>
+<book title="A Book" author="An Author">
+  <chapters>
+    <chapter id="1" number="One" title="Chapter One">
+      <section title="Section One">Section One content</section>
+      <quote source="A Source">Quote One</quote>
+      <footnote source="A Source">Footnote One</footnote>
+      <reference title="A Reference">Reference One</reference>
+      <bibliography title="A Bibliography">
+        <reference title="A Reference">Reference Two</reference>
+      </bibliography>
+      <index title="An Index">
+        <index>Index One</index>
+      </index>
+    </chapter>
+    <chapter id="2" number="Two" title="Chapter Two">
+      <section title="Section Two">Section Two content</section>
+      <quote source="A Source">Quote Two</quote>
+      <footnote source="A Source">Footnote Two</footnote>
+      <reference title="A Reference">Reference Three</reference>
+      <bibliography title="A Bibliography">
+        <reference title="A Reference">Reference Four</reference>
+      </bibliography>
+      <index title="An Index">
+        <index>Index Two</index>
+      </index>
+    </chapter>

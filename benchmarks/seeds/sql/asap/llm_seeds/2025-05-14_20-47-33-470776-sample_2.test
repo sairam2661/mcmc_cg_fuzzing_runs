@@ -1,0 +1,196 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix complex_sqlite_tests
+
+set ::timeout 60000
+
+proc query_timer {} {
+  set t1 1643723400
+  expr {int_clock_sec} $t1
+}
+
+proc select_all {} {
+  global db
+  db eval "SELECT * FROM sqlite_master"
+}
+
+ifcapable!=all_schema_primitives {
+  finish_test
+  return
+}
+
+if { sqlite_one_row_only } {
+  finish_test
+  return
+}
+
+set timeout "TIMEOUT: " query_timer "
+
+do_test complex-1.1 {
+  execsql {
+    CREATE TABLE b(id INTEGER PRIMARY KEY,y UNIQUE);
+    CREATE TABLE c(id INTEGER PRIMARY KEY,x UNIQUE);
+  }
+} {}
+
+do_test complex-2.1 {
+  execsql {
+    BEGIN;
+    INSERT INTO b VALUES(NULL, 'one');
+    INSERT INTO b VALUES(NULL, 'two');
+    INSERT INTO c VALUES(NULL, 'three');
+  }
+} {}
+
+do_test complex-3.1 {
+  execsql {
+    SELECT b.id, b.y, c.x, c.id
+    FROM b
+    JOIN c
+    ON b.id = c.id
+  }
+} {}
+
+do_test complex-3.2 {
+  execsql {
+    CREATE TABLE d(id INTEGER PRIMARY KEY);
+    ALTER TABLE d ADD COLUMN a TEXT;
+  }
+} {}
+
+do_execsql_test complex-4.1 {
+  BEGIN;
+  ALTER TABLE c ADD COLUMN t TEXT;
+  ALTER TABLE b ADD COLUMN k TEXT;
+  ROLLBACK;
+  PRAGMA schema_list;
+} {b c d sqlite}
+
+do_execsql_test complex-4.2 {
+  ALTER TABLE c ADD COLUMN s INTEGER DEFAULT 0;
+} {0 {table c altered}}
+
+do_execsql_test complex-5.1 {
+  CREATE INDEX idx ON b(y);
+  SELECT sql
+  FROM sqlite_master
+  WHERE name = 'idx';
+} {CREATE INDEX idx ON b(y)}
+
+do_execsql_test complex-5.2 {
+  ALTER TABLE c
+  ADD CONSTRAINT ck_id CHECK (id BETWEEN 10 AND 20);
+} {0 {table c altered}}
+
+do_execsql_test complex-6.1 {
+  SELECT *
+  FROM c
+  WHERE (x LIKE 'tre%' OR x LIKE 'tr%')
+  AND x LIKE 't%' OR id BETWEEN 2 AND 5;
+} {}
+
+set ::db [sqlitopen :memory:]
+foreach {name sql} {
+  b "CREATE TABLE b"
+  c "CREATE TABLE c"
+  d "CREATE TABLE d"
+  idx "CREATE INDEX idx"
+} {
+  db eval $sql
+}
+
+ifcapable!fts5 {
+  finish_test
+  return
+}
+
+set name2 {fts5}
+set type2 {tokenize tokenizer text}
+db eval {
+  CREATE VIRTUAL TABLE abc
+  USING fts5($name2, $type2)
+}
+
+finish_test
+
+db eval {
+  INSERT INTO abc(docid, data)
+  VALUES(1, 'one two three');
+} 
+do_test complex-9.2 {
+  execsql {
+    SELECT name FROM abc;
+  }
+} {fts5} 
+
+do_execsql_test complex-9.3 {
+  SELECT * FROM abc;
+} {} 
+
+set name3 {docid}
+set type3 {integer}
+db eval {
+  CREATE VIRTUAL TABLE doc
+  USING fts5($name3, $type3)
+}
+
+finish_test
+do_execsql_test complex-10.1 {
+  CREATE VIRTUAL TABLE abc
+  USING fts5
+} {}
+do_test complex-10.2 {
+  execsql {
+    SELECT name FROM abc;
+  }
+} {fts5} 
+
+do_execsql_test complex-10.3 {
+  SELECT * FROM abc;
+} {}  
+finish_test
+sqlitclose db 
+do_test complex-11.1 {
+  execsql {
+    CREATE TABLE e(id INTEGER PRIMARY KEY, a TEXT);
+    CREATE TABLE f(id INTEGER PRIMARY KEY, a TEXT);
+  }
+} 1 
+do_test complex-11.2 {
+  execsql {
+    WITH RECURSIVE r AS (
+      SELECT id, a, p FROM e
+      UNION ALL
+      SELECT id, a, p
+      FROM r
+      JOIN f ON r.id = f.id
+    )
+    SELECT p FROM r;
+} 1 }
+finish_test 
+
+set ::db [sqlitopen :memory:]
+execsql {
+  PRAGMA journal_mode = WAL
+}
+if { [catch {execsql {PRAGMA read_uncommitted}} res] } {
+  unset -nocomplain res
+  finish_test
+}
+
+do_test complex-12.1 {
+  execsql {
+    CREATE TABLE a(id INTEGER PRIMARY KEY);
+    CREATE TABLE b(id INTEGER PRIMARY KEY, p INTEGER);
+  }
+} {1 {}}
+
+execsql {INSERT INTO a VALUES(1)}
+execsql {INSERT INTO a VALUES(2)}
+execsql {INSERT INTO b VALUES(1,1)}
+
+do_test complex-12.2 {
+  execsql {
+    BEGIN;
+    SELECT id FROM a WHERE id=1;
+    SELECT

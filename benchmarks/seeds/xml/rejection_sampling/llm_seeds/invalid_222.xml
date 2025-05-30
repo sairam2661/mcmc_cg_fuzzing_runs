@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE note SYSTEM "note.dtd">
+<!ENTITY % ent SYSTEM "ent.ent">
+<!ENTITY % ref SYSTEM "ref.ent">
+<!ENTITY % att SYSTEM "att.ent">
+<!ENTITY % def SYSTEM "def.ent">
+<!ELEMENT note (to,from,heading,body)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+<!ATTLIST note 
+  xmlns:xs "http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsi "http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="note.xsd"
+  id CDATA #IMPLIED>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT state (#PCDATA)>
+<!ELEMENT zip (#PCDATA)>
+<!ATTLIST address 
+  xmlns:xs "http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsi "http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="address.xsd"
+  id CDATA #IMPLIED>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ATTLIST phone 
+  xmlns:xs "http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsi "http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="phone.xsd"
+  id CDATA #IMPLIED>
+<!ATTLIST email 
+  xmlns:xs "http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsi "http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="email.xsd"
+  id CDATA #IMPLIED>
+<!ELEMENT phonebook (#PCDATA)>
+<!ELEMENT entry (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT number (#PCDATA)>
+<!ELEMENT country (#PCDATA)>
+<!ATTLIST phonebook 
+  xmlns:xs "http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsi "http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="phonebook.xsd"
+  id CDATA #IMPLIED>
+<!ATTLIST entry 
+  xmlns:xs "http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsi "http://www.w3.org/2001

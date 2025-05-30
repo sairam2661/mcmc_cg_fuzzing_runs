@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note SYSTEM "note.dtd">
+<!ELEMENT note (to,from,heading,body)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+<!ELEMENT address (#PCDATA)><!ELEMENT author (#PCDATA)><!ELEMENT title (#PCDATA)>
+<note>
+  <to>John Doe</to>
+  <from>Jane Doe</from>
+  <heading>Reminder</heading>
+  <body>This is a reminder to pay the bills.</body>
+  <address>123 Main St</address>
+  <author>John Doe</author>
+  <title>Important Reminder</title>
+</note>

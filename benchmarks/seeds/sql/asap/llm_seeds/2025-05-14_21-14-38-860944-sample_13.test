@@ -1,0 +1,59 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix transaction
+
+set ::timeout 60000 	refresh interval in ms for SQLite database
+execsql {
+  PRAGMA journal_mode = 'WAL'
+  }
+proc transaction_proc {callback {retry 1}} {
+  global timeout retry 
+  uplevel $callback 
+  if {$retry} { 
+    after $timeout {
+    execute_sql "ROLLBACK" 
+    transaction_proc $callback $retry 
+    }
+  }
+}
+
+do_execsql_test transaction-1.1 {
+  CREATE TABLE t1(a);
+  INSERT INTO t1(a) VALUES(1);
+} {}
+
+do_execsql_test transaction-1.2 {
+  SELECT count(*) FROM t1 WHERE a = 1;
+} {1}
+
+proc do_transaction_checkpoint {} {
+  do_execsql_test transactioncheckpoint {
+    PRAGMA wal_checkpoint;
+    PRAGMA wal_checkpoint=2;
+    PRAGMA wal_checkpoint=3;
+    INSERT INTO t1 VALUES(2);
+    SELECT * FROM t1;
+  } {}
+}
+
+set retry 1
+transaction_proc {
+  do_execsql_test transactioncheckpoint {
+    PRAGMA journal_mode = 'WAL';
+    CREATE TABLE t3(a,w);
+    INSERT INTO t3 VALUES('a','a');
+  } {}
+} $retry
+
+do_execsql_test transactioncheckpoint {
+  VACUUM
+  EXPLAIN SELECT id FROM t1 WHERE w2_int_64_0x8f8a8b00 BETWEEN 9223372036854775800 AND 9223372036854775800
+  } {explain text}
+
+do_execsql_test transactioncheckpoint {
+    DROP TABLE t3
+    DROP TABLE t1
+  } {}
+
+
+finish_test

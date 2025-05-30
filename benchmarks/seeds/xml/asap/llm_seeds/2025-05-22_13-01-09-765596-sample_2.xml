@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book | cd | book* | cd+)>
+  <!ATTLIST catalog label CDATA #IMPLIED>
+  <!ENTITY booksystem "B">
+  <!ENTITY %x "E">
+  <!NOTATION xpdf PUBLIC "a" "b">
+  %xi.include;
+  <!--%booksystem% -->
+]>
+<catalog label="G"> 
+  <cd><artist>Nirvana</artist><title>Nevermind</title></cd>
+  <book>Book 1</book> 
+</catalog>

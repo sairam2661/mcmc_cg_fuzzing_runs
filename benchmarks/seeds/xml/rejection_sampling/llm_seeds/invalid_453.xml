@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (category*)>
+  <!ELEMENT category (name, description, product+)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT product (id, name, price, (color, size)?)>
+  <!ELEMENT id (#PCDATA)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT color (#PCDATA)>
+  <!ELEMENT size (#PCDATA)>
+]>
+<catalog>
+  <category>
+    <name>Electronics</name>
+    <description>Our Electronics section offers a wide variety of products</description>
+    <product>
+      <id>1</id>
+      <name>TV</name>
+      <price>1000.00</price>
+      <color>Black</color>
+    </product>
+    <product>
+      <id>2</id>
+      <name>Laptop</name>
+      <price>800.00</price>
+      <size>15.6</size>
+    </product>
+  </category>
+  <category>
+    <name>Home Goods</name>
+    <description>Our Home Goods section offers a wide variety of products</description>
+    <product>
+      <id>3</id>
+      <name>Bed</name>
+      <price>500.00</price>
+    </product>
+    <product>
+      <id>4</id>
+      <name>Chair</name>
+      <price>200.00</price>
+      <size>Large</size>
+    </product>
+  </category>
+</catalog>

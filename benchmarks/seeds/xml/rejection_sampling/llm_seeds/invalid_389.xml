@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note SYSTEM "note.dtd">
+<note xmlns:xs="http://www.w3.org/2001/XMLSchema-instance">
+  <to>John</to>
+  <from>Mike</from>
+  <heading>Meeting</heading>
+  <body>
+    <p>This is a meeting invitation</p>
+    <p>It will be at 2pm on Friday</p>
+  </body>
+  <note>
+    <to>Jane</to>
+    <from>Mike</from>
+    <heading>Reminder</heading>
+    <body>
+      <p>This is a reminder</p>
+    </body>
+  </note>
+  <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="note" type="noteType"/>
+    <xs:complexType name="noteType">
+      <xs:sequence>
+        <xs:element name="to" type="xs:string"/>
+        <xs:element name="from" type="xs:string"/>
+        <xs:element name="heading" type="xs:string"/>
+        <xs:element name="body" type="bodyType"/>
+      </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="bodyType">
+      <xs:sequence>
+        <xs:element name="p" type="xs:string" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:schema>
+</note>

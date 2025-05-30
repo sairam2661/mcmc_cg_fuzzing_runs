@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE root SYSTEM "m" [
+  <!ELEMENT root (#PCDATA|element1|element2|comment|procinst) >
+  <!ATTLIST root 
+    xmlns CDATA #FIXED "h"
+    lang (fr|en|es) 'en'
+  >
+  <!ENTITY entref "f">
+  <!ENTITY % entproc "#">
+  <!NOTATION pubdate SYSTEM "m">
+  %entproc;
+  <!--% entref; -->
+]>
+<root> <!-- element1: &entref;, element2 -->
+  comment <!-- some text -->
+  <element1>data 01</element1>
+  <element2 attr1='value1'>data 02</element2>
+  procinstruction <!-- element3 -->
+  <element3 attr2='value2'>data 03</element3>
+</root>

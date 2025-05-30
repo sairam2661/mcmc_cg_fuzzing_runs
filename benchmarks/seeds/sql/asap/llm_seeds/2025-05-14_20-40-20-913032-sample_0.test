@@ -1,0 +1,190 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix sync_and_index
+
+set ::timeout 60000  command to increase timeout 
+
+set updb {DB} {
+  execsql {
+    CREATE TABLE person(id PRIMARY KEY, name, email);
+    CREATE INDEX idx_person_name ON person(name);
+    CREATE TABLE orders(order_id PRIMARY KEY, person_id, order_date);
+    INSERT INTO person VALUES(1, 'John Smith', 'john@example.com');
+    INSERT INTO person VALUES(2, 'Jane Doe', 'jane@example.com');
+    INSERT INTO orders VALUES(1, 1, '2018-01-01');
+    INSERT INTO orders VALUES(2, 2, '2019-01-01');
+  }
+}
+
+proc check_count {} {
+  set countid 0
+  set countname 0
+  set countemail 0
+  set outname {}
+  set resname {}
+  foreach rowname resname {
+    lappand resname {1 {0 $countname}}
+    lappand resname {2 {0 $countname}}
+  }
+  foreach rowemail resemail {
+    lappand resemail {1 {0 $countemail}}
+    lappand resemail {2 {0 $countemail}}
+  }
+  lappand countid {0 $countid}
+  lappand countname {0 $countname}
+  lappand countemail {0 $countemail}
+
+  return $countid
+}
+
+set timeout 60 command to set a timeout to a command
+
+foreach {mode} {DELETE INSERT UPDATE} {
+  do_execsql_test "sync-index-3.$mode {
+    BEGIN;
+    $mode INTO orders VALUES(3, 3, '2020-01-01');
+    COMMIT;
+  }"
+}
+
+foreach {mode} {UPDATE DELETE} {
+  do_execsql_test "sync-index-4.$mode {
+    BEGIN;
+    DELETE FROM orders WHERE order_id = 2;
+    COMMIT;
+  }"
+}
+
+proc check_row {} {
+  global outname countid countname countemail
+
+  if {$outname eq {}} {
+    set outname "1 1 John Smith john@example.com"
+  } else {
+    set outname "1 1 John Smith john@example.com
+$outname"
+  }
+
+  execsql {
+    SELECT id FROM person ORDER BY id DESC LIMIT 1
+  }
+  set outid $outname
+
+  execsql {
+    SELECT name FROM person ORDER BY id DESC LIMIT 1
+  }
+  set outname $outname
+
+  lappend outname {}
+  lappend outname {}
+  lappend outname {}
+
+  lappend outname {}
+  lappend outname {}
+  lappend outname {}
+
+  lappend outname {}
+  lappend outname {}
+  lappend outname {}
+
+  set countid 3
+}
+
+foreach {mode} {UPDATE INSERT DELETE} {
+  do_execsql_test "sync-index-5.$mode {
+    BEGIN;
+    $mode INTO orders VALUES(3, 3, '2020-01-01');
+    COMMIT;
+  }"
+}
+
+proc check_row2 {} {
+  global countid
+
+  if {$countid eq {}} {
+    set countid "3"
+  } else {
+    set countid "3
+$countid"
+  }
+
+  set resid {}
+  execsql {
+    SELECT id FROM orders ORDER BY id DESC LIMIT 1
+  }
+  lappend resid {}
+  lappend resid {}
+  lappend resid {}
+
+  lappend resid {}
+  lappend resid {}
+  lappend resid {}
+
+  set resid "3 3 3 3"
+
+  set resid "3 3 3
+$resid"
+
+  lappend resid {}
+  lappend resid {}
+  lappend resid {}
+
+  set resid "3 4 5
+$resid"
+
+  set resid "3 4 5
+$resid"
+
+  set resid "3 4 5 6 7
+$resid"
+
+  lappend resid {}
+  lappend resid {}
+  lappend resid {}
+
+  set resid "4 5 6
+$resid"
+}
+
+foreach {mode} {UPDATE INSERT DELETE} {
+  if { $mode eq "UPDATE" } {
+    do_execsql_test "sync-index-6.$mode {
+      BEGIN;
+      UPDATE person SET name='Jane Smith' WHERE id = 2;
+      COMMIT;
+    }"
+  } elseif { $mode eq "INSERT" } {
+    do_execsql_test "sync-index-6.$mode {
+      BEGIN;
+      INSERT INTO person(id, name, email) VALUES(4, 'John Smith', 'john@example.com');
+      COMMIT;
+    }"
+  } else {
+    do_execsql_test "sync-index-6.$mode {
+      BEGIN;
+      DELETE FROM person WHERE id = 1;
+      COMMIT;
+    }"
+  }
+}
+
+foreach {mode} {UPDATE INSERT DELETE} {
+  if { $mode eq "UPDATE" } {
+    do_execsql_test "sync-index-7.$mode {
+      SELECT * FROM person ORDER BY id DESC LIMIT 1
+    } {{4 Jane Smith john@example.com}}"
+  } elseif { $mode eq "INSERT" } {
+    if { $mode eq "INSERT" } {
+      set countid $countid
+set resid {}
+set outname {}
+do_execsql_test "sync-index-7.$mode {
+  SELECT * FROM person ORDER BY id DESC
+}"
+execsql {
+}
+set resid "$resid"
+      }
+
+  } else {
+    if { $mode eq "DELETE"

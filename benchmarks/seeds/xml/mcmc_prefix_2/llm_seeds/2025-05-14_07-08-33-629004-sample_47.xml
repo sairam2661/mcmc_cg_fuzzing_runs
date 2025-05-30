@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article [
+  <!ELEMENT article (title,author,paras)>
+  <!ATTLIST article lang CDATA #IMPLIED>
+  <!ENTITY author "J">
+  <!ENTITY % ent-set "("
+  > <!NOTATION xml-external-parsed-entity SYSTEM "x">
+  %ent-set; 
+  <!--%ent;-->
+]>
+<article xml:lang="x"> 
+  <title entity-ref="x"> &author;</title>
+  <author entity-ref="x">&author;</author>
+  <para id="x" xml:lang="x" entity-ref="x">Hello, &author;!</para>
+</article>

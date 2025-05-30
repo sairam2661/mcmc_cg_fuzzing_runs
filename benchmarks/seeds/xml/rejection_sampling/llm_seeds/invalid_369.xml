@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE book SYSTEM 'book.dtd'>
+<!ELEMENT book (title, author, publisher, copyright, contents)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ELEMENT copyright (#PCDATA)>
+<!ELEMENT contents (chapter+)>
+<!ELEMENT chapter (#PCDATA)>
+<!ELEMENT section (#PCDATA)>
+<!ELEMENT paragraph (#PCDATA)>
+<!ELEMENT heading (#PCDATA)>
+
+<book>
+    <title>My Book</title>
+    <author>John Doe</author>
+    <publisher>My Publisher</publisher>
+    <copyright>2023</copyright>
+    <contents>
+        <chapter>
+            <section>
+                <heading>Section 1.1</heading>
+                <paragraph>This is a paragraph.</paragraph>
+            </section>
+            <section>
+                <heading>Section 1.2</heading>
+                <paragraph>This is another paragraph.</paragraph>
+            </section>
+        </chapter>
+        <chapter>
+            <section>
+                <heading>Section 2.1</heading>
+                <paragraph>This is yet another paragraph.</paragraph>
+            </section>
+        </chapter>
+    </contents>
+</book>

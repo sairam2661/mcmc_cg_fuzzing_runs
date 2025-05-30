@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="ISO-8859-5"?>
+<!DOCTYPE book [
+  <!ELEMENT book (author, publisher, title)>
+  <!ATTLIST book id  CDATA  #REQUIRED>
+  <!ENTITY booktitle "T" >
+  <!ENTITY  % author "A">
+  <!NOTATION ISO-8859-6 SYSTEM "E">
+ 	%singlebook
+ 	;
+  <!-->
+
+<![% author;[
+<!ELEMENT author (#PCDATA|email+)>
+<!ELEMENT email (emailaddress)*>
+<!ATTLIST email address CDATA #REQUIRED
+                   type  (work|home) #IMPLIED  > 
+<!ELEMENT emailaddress EMPTY>
+<!ATTLIST emailaddress address CDATA #REQUIRED>
+    ];
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT publisher (#PCDATA|address+)>
+<!ELEMENT address (#PCDATA)>
+
+<!ELEMENT section (#PCDATA)>
+]>
+<book id="B1" xmlns:xi="http://www.w3.org/2001/XInclude" xi:noNamespaceSchemaLocation="schema.xsd">
+  <author><email><emailaddress address="A@B.com"/></email></author>
+  <publisher><address>My Book Publishers</address></publisher>
+  <title>&booktitle;, &singlebook;</title>
+  <section>In the beginning of the book...</section>
+</book> 
+
+<!ENTITY singlebook "n">
+<!ENTITY ISO-->
+<!ENTITY ISO-639-
+"4"> 
+<!ENTITY iso "6"> 
+<!ENTITY pubtitle "T"> 
+<!ENTITY  A "A">
+<!ENTITY xmlns "3"> 
+<!ENTITY emailaddress "E"> 
+<!ENTITY booktitle "T">
+<!ENTITY ISO-8859-5 "5"> 
+<!ENTITY E "E">
+<!ENTITY  H "6">
+<!ENTITY author "B">
+<!ENTITY date-added "<"> 
+<!ENTITY type "7"> 
+<!ENTITY booktitle "T"> 
+<!ENTITY title "E"> 
+<!ENTITY value "4"> 
+<!ENTITY iso-8859-6 "E">
+<!ENTITY xmlencoding "<"> 
+<!ENTITY author "<"> 
+<!ENTITY ISO-8859-5-prefixed "<"> 
+<!ENTITY booktitle "&booktitle;"> 
+<!ENTITY iso-8859-8-ibm "&iso-8859-8-ibm;"> 
+<!ENTITY iso-8859-5-prefixed "4"> 
+<!ENTITY xmlversion "<"> 
+<!ENTITY author-ibm "&author;"> 
+<!ENTITY pubtitle "{"> 
+<!ENTITY pubtitle-ibm "&pubtitle;"> 
+<!ENTITY H "<"> 
+<!ENTITY iso-8859-5 "<"> 
+<!ENTITY ISO-8859-5 "<"> 
+<!ENTITY ISO-8859-6 "3"> 
+<!ENTITY ISO-8859-8-ibm "7"> 
+<!ENTITY iso-8859-8-ibm "&iso-8859-8-ibm;"> 
+<!ENTITY booktitle "c"> 
+<!ENTITY booktitle-ibm "3"> 
+<!ENTITY  R "E"> 
+<!ENTITY booktitle-ibm "&booktitle-ibm;"> 
+<!ENTITY iso-8859-5-prefixed-ibm "b"> 
+<!ENTITY pubtitle "&pubtitle;"> 
+<!ENTITY pubtitle-ibm "c"> 
+<!ENTITY A "8"> 
+<!ENTITY author-ibm "3"> 
+<!ENTITY type "E"> 
+<!ENTITY iso-8859-5-prefixed "&iso-8859-5-prefixed

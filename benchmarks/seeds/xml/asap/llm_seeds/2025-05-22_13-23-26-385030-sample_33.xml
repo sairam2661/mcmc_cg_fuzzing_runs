@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author,chapter*)>
+  <!ATTLIST book  id ID #REQUIRED>
+  <!ENTITY chapter1 "A">
+  <!ENTITY % chapter2 "B">
+  <!NOTATION tcd SYSTEM "c">
+ 					   %chapter2;
+ 	<!--
+      Sample comment
+	  -->
+]>
+<book id="x">
+<xi:include href="x" xmlns:xi="&#x27;  	"></xi:include>
+ 	<title> Book Title</title>
+  <author Name="A"><mail address="a"/></author>
+  <chapter>Chapter Chapter 1</chapter>
+  <chapter>B</chapter>
+<ref notatt="t">linklink</ref>
+</book>

@@ -1,0 +1,45 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix query
+
+set ::timeout 60000
+proc do_test2 {n s r} {
+  if { "$r == $s" } { return 1 } else { return 0 }
+}
+
+do_test query-1.1 {
+  execsql {
+    CREATE TABLE b(y);
+    INSERT INTO b VALUES(5);
+    INSERT INTO b VALUES(6);
+    INSERT INTO b VALUES(7);
+  }
+  execsql {SELECT sum(*) FROM b}
+} {18}
+
+do_execsql_test query-1.2 {
+  WITH T1(c) AS (
+     SELECT rowid
+       FROM b
+      WHERE y=5
+     UNION ALL
+     SELECT rowid
+       FROM b
+      WHERE y=6
+     UNION ALL
+     SELECT rowid
+       FROM b
+      WHERE y=7
+  )
+  BEGIN;
+  INSERT INTO b VALUES(8);
+  INSERT INTO b VALUES(9);
+  COMMIT;
+  SELECT T1 FROM T1
+} {{5} {6} {7} {8} {9}}
+
+catchsql {
+  PRAGMA recursive_triggers=1
+} {1 {Cannot change setting of'recursive_triggers' recursively}}
+
+finish_test

@@ -1,0 +1,102 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix multi
+
+set ::timeout 60000
+db close
+
+proc multi_proc {} {
+  global multiargs
+  lappend multiargs
+  expr {$multiargs}
+}
+
+do_test multi-1.1 {
+  execsql {
+    CREATE TABLE b(y);
+    INSERT INTO b VALUES(11);
+  }
+  expr $::env
+} {}
+
+do_test multi-1.2 {
+  set multiargs {}
+  multi_proc
+  list $::env b
+} {}
+
+catch {expr $::env} error1
+expr error1 eq "" error1_match
+
+do_test multi-2.1 {
+  execsql {
+    CREATE TABLE c(z);
+    INSERT INTO c VALUES(12);
+  }
+  expr $::env
+} {}
+
+db config synchronous 0
+do_test multi-2.2 {
+  execsql {
+    INSERT OR ROLLBACK INTO c VALUES 13
+  }
+  expr {integrity_constraint c active}
+} {0}
+
+do_execsql_test multi-3.1 {
+  PRAGMA encoding
+} {UTF8}
+
+set multiargs {}
+execsql {
+  BEGIN;
+  INSERT INTO c VALUES(14);
+  COMMIT;
+}
+expr {$multiargs eq {14 c}}
+
+
+do_test multi-4.1 {
+  execsql {
+    CREATE INDEX i ON c(z);
+    SELECT * FROM c
+  }
+  expr {count}
+} {1 12 2 12}
+
+do_test multi-4.2 {
+  execsql {
+    SELECT name FROM sqlite_master WHERE type="index"
+  }
+  count
+} {1 i c}
+
+set tmp_dir "/tmp"
+
+set temp_store 3
+do_test multi-5.1 {
+  execsql {
+    CREATE TABLE d(w);
+    INSERT INTO d VALUES(32);
+  }
+  expr {is_temp}
+} {1}
+
+set temp_store 1
+do_test multi-5.2 {
+  catch {file delete "$tmp_dir/d.db"}
+} {}
+set sync
+set is_temp 0
+
+set temp_store 2
+do_test multi-5.3 {
+  execsql {
+    SELECT name FROM db
+    SELECT name FROM db
+  }
+} {d {1 sqlite_master}}
+
+db close
+finish_test

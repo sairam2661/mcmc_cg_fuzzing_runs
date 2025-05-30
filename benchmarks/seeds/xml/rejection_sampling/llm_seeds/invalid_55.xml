@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ENTITY % entity "Entity %s">
+  <!ENTITY % cat "Catalog %s">
+]>
+<%cat; "catalog"?>
+<!ELEMENT catalog (title,description,product+)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT product (name,price,description)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ATTLIST product id CDATA #REQUIRED>
+<!ENTITY % entity;>
+<!ENTITY entity2 "Entity 2">
+<!ENTITY % cat2 "Catalog 2">
+<catalog>
+  <title>Product Catalog</title>
+  <description>This is a catalog of products</description>
+  <product id="prod1">
+    <name>Product 1</name>
+    <price>$10.99</price>
+    <description>This is product 1</description>
+  </product>
+  <product id="prod2">
+    <name>Product 2</name>
+    <price>$5.99</price>
+    <description>This is product 2</description>
+  </product>
+</catalog>
+<%cat2; "catalog2"?>
+<catalog>
+  <title>Product Catalog 2</title>
+  <description>This is a catalog of products 2</description>
+  <product id="prod3">
+    <name>Product 3</name>
+    <price>$20.99</price>
+    <description>This is product 3</description>
+  </product>
+</catalog>

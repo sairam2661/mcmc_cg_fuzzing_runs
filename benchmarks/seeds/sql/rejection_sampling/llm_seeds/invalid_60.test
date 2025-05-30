@@ -1,0 +1,192 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix sync
+
+proc sync_proc {} {
+  global syncargs
+  lappend syncargs
+  expr {[llength $syncargs] <= 2}
+}
+
+set syncargs {}
+
+do_test sync-1.1 {
+  execsql {
+    CREATE TABLE a(x);
+    INSERT INTO a VALUES(1),(2),(3);
+  }
+  execsql {SELECT count(*) FROM a}
+} {3}
+
+ifcapable journalMode {
+  catchsql {PRAGMA journal_mode=WAL}
+} {0 {}}
+
+do_test sync-1.2 {
+  execsql {
+    BEGIN;
+    INSERT INTO a VALUES(4);
+    SELECT x FROM a ORDER BY x LIMIT 1;
+  }
+} {1}
+
+do_test sync-1.3 {
+  execsql {
+    ROLLBACK;
+    SELECT x FROM a ORDER BY x LIMIT 1;
+  }
+} {1}
+
+do_test sync-1.4 {
+  execsql {
+    CREATE TABLE b(x);
+    INSERT INTO b VALUES(1);
+  }
+  execsql {
+    BEGIN;
+    INSERT INTO b VALUES(2);
+    SELECT x FROM b ORDER BY x LIMIT 1;
+  }
+} {1}
+
+do_test sync-1.5 {
+  execsql {
+    ROLLBACK;
+    SELECT x FROM b ORDER BY x LIMIT 1;
+  }
+} {1}
+
+do_test sync-1.6 {
+  execsql {
+    BEGIN;
+    INSERT INTO b VALUES(2);
+    SELECT x FROM b ORDER BY x LIMIT 1;
+  }
+} {2}
+
+do_test sync-1.7 {
+  execsql {
+    COMMIT;
+    SELECT x FROM b ORDER BY x LIMIT 1;
+  }
+} {2}
+
+ifcapable wal {
+  do_test sync-1.8 {
+    execsql {
+      PRAGMA journal_mode=WAL;
+    }
+    execsql {
+      INSERT INTO a VALUES(5);
+      SELECT x FROM a ORDER BY x LIMIT 1;
+    }
+  } {1}
+} else {
+  do_test sync-1.8 {
+    execsql {
+      PRAGMA journal_mode=DELETE;
+    }
+    execsql {
+      INSERT INTO a VALUES(5);
+      SELECT x FROM a ORDER BY x LIMIT 1;
+    }
+  } {1}
+}
+
+do_test sync-1.9 {
+  execsql {
+    PRAGMA wal_checkpoint;
+    SELECT x FROM a ORDER BY x LIMIT 1;
+  }
+} {1}
+
+do_test sync-1.10 {
+  execsql {
+    PRAGMA wal_checkpoint;
+    SELECT x FROM a ORDER BY x LIMIT 1;
+  }
+} {1}
+
+do_test sync-1.11 {
+  execsql {
+    PRAGMA wal_checkpoint(1);
+    SELECT x FROM a ORDER BY x LIMIT 1;
+  }
+} {1}
+
+do_test sync-1.12 {
+  execsql {
+    PRAGMA wal_checkpoint(2);
+    SELECT x FROM a ORDER BY x LIMIT 1;
+  }
+} {1}
+
+do_test sync-1.13 {
+  execsql {
+    PRAGMA wal_checkpoint(3);
+    SELECT x FROM a ORDER BY x LIMIT 1;
+  }
+} {1}
+
+do_test sync-1.14 {
+  execsql {
+    PRAGMA wal_checkpoint(4);
+    SELECT x FROM a ORDER BY x LIMIT 1;
+  }
+} {1}
+
+do_test sync-1.15 {
+  execsql {
+    PRAGMA wal_checkpoint(5);
+    SELECT x FROM a ORDER BY x LIMIT 1;
+  }
+} {1}
+
+do_test sync-1.16 {
+  execsql {
+    PRAGMA wal_checkpoint(6);
+    SELECT x FROM a ORDER BY x LIMIT 1;
+  }
+} {1}
+
+do_test sync-1.17 {
+  execsql {
+    PRAGMA wal_checkpoint(7);
+    SELECT x FROM a ORDER BY x LIMIT 1;
+  }
+} {1}
+
+do_test sync-1.18 {
+  execsql {
+    PRAGMA wal_checkpoint(8);
+    SELECT x FROM a ORDER BY x LIMIT 1;
+  }
+} {1}
+
+do_test sync-1.19 {
+  execsql {
+    PRAGMA wal_checkpoint(9);
+    SELECT x FROM a ORDER BY x LIMIT 1;
+  }
+} {1}
+
+do_test sync-1.20 {
+  execsql {
+    PRAGMA wal_checkpoint(10);
+    SELECT x FROM a ORDER BY x LIMIT 1;
+  }
+} {1}
+
+ifcapable wal {
+  do_test sync-1.21 {
+    execsql {
+      PRAGMA journal_mode=WAL;
+      INSERT INTO a VALUES(6);
+      SELECT x FROM a ORDER BY x LIMIT 1;
+    }
+  } {1}
+} else {
+  do_test sync-1.21 {
+    execsql {
+      PRAGMA journal_mode=DELETE;
+      INSERT INTO a VALUES(

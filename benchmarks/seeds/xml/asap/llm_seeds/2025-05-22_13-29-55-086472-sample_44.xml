@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+ <!ELEMENT book (title,author,chapter*)>
+ <!ATTLIST book lang CDATA #IMPLIED>
+ <!ENTITY chapter1 "A">
+ <!ENTITY % section SYSTEM "c" >
+ <!NOTATION iso-8859-1 PUBLIC " "
+ " ">
+  %iso-8859-1;
+ <!--%iso-->
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT chapter (#PCDATA)>
+<!ATTLIST chapter id CDATA #REQUIRED>
+]>
+<books xmlns:xi=" "http:www.w3.org2001XInclude.xsd

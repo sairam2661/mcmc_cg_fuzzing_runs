@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!ENTITY % entity1 "test entity 1">
+<!ENTITY % entity2 "test entity 2">
+<!ENTITY % entity3 "test entity 3">
+<!ENTITY % entity4 "test entity 4">
+<!ENTITY % entity5 "test entity 5">
+<!ENTITY % entity6 "test entity 6">
+<!ENTITY % entity7 "test entity 7">
+<!ENTITY % entity8 "test entity 8">
+<!ENTITY % entity9 "test entity 9">
+<!ENTITY % entity10 "test entity 10">
+<!ELEMENT html (head, body)>
+<!ELEMENT head (title)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT body (p, ul)>
+<!ELEMENT p (#PCDATA)>
+<!ELEMENT ul (li)>
+<!ELEMENT li (#PCDATA)>
+<!ATTLIST ul id CDATA #IMPLIED>
+<!ATTLIST p class CDATA #IMPLIED>
+<!ATTLIST li type CDATA #IMPLIED>
+<!ENTITY % entities "entity1 entity2 entity3 entity4 entity5 entity6 entity7 entity8 entity9 entity10">
+<!ENTITY % entity11 "%entities;">
+<!ENTITY % entity12 "%entities;">
+<!ENTITY % entity13 "%entities;">
+<!ENTITY % entity14 "%entities;">
+<!ELEMENT list (%entity11;)>
+<!ELEMENT list (%entity12;)>
+<!ELEMENT list (%entity13;)>
+<!ELEMENT list (%entity14;)>
+<!ATTLIST list id CDATA #IMPLIED>
+<!ELEMENT root (%entity1;,%entity2;,%entity3;,%entity4;,%entity5;,%entity6;,%entity7;,%entity8;,%entity9;,%entity10;,%entity11;,%entity12;,%entity13;,%entity14;)>>
+<!ATTLIST root id CDATA #IMPLIED>
+<html>
+<head>
+<title>test title</title>
+</head>
+<body>
+<p class="test" id="test">test paragraph</p>
+<ul id="test-ul" type="test">
+<li type="test" class="test">test item 1</li>
+<li type="test" class="test">test item 2</li>
+<li type="test" class="test">test item 3</li>
+</ul>
+<list id="test-list"

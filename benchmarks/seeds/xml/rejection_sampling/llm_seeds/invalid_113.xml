@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ELEMENT language (#PCDATA)>
+  <!ELEMENT ISBN (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+]>
+<catalog>
+  <book>
+    <author>George R.R. Martin</author>
+    <title>A Game of Thrones</title>
+    <price>15.99</price>
+    <publisher>Bantam Books</publisher>
+    <genre>Science Fiction</genre>
+    <language>English</language>
+    <ISBN>9780553563801</ISBN>
+    <category>Fantasy</category>
+  </book>
+  <book>
+    <author>Isaac Asimov</author>
+    <title/Foundation</title>
+    <price>10.99</price>
+    <publisher>Avon Books</publisher>
+    <genre>Science Fiction</genre>
+    <language>English</language>
+    <ISBN>9780380803611</ISBN>
+    <category>Science</category>
+  </book>
+</catalog>

@@ -1,0 +1,171 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix async_insert
+
+set ::timeout 60000
+
+proc create_table {} {
+  execsql {
+    DROP TABLE IF EXISTS async_insert_table1
+    DROP TABLE IF EXISTS async_insert_table2
+    CREATE TABLE async_insert_table1 AS SELECT 'table-1' AS id
+    CREATE TABLE async_insert_table2 AS SELECT 'table-2' AS id
+  }
+}
+
+proc async_insert {}
+  global async_timeout syncargs
+  if { $async_timeout } {
+    thread {
+      set ret_val NULL
+      db eval {
+        INSERT INTO async_insert_table1 VALUES ('async-value')
+      }
+      set ret_val $sql_return_count
+    } sync
+  }
+  do_execsql_test async-1.1 {
+    SELECT count(*) FROM async_insert_table1
+  } {1}
+  if { $async_timeout } {
+    set timeout 0
+    db eval {
+      INSERT INTO async_insert_table2 VALUES ('async-value')
+    }
+    after 1000 {set timeout 1}
+    while { $timeout } {
+      db eval {
+        SELECT count(*) FROM async_insert_table2
+      } ret_val
+      if {$ret_val} {
+        break
+      }
+      after 1000 ms
+    }
+  }
+  set test_counter async_insert_test_001
+  incr test_counter
+  append test_counter ".sql
+  do_execsql_test async-$test_counter.1 {
+    SELECT * FROM async_insert_table2
+  } {}
+  append test_counter
+}
+proc init_db {} {
+  set ::db [sqlite3 db test.db]
+  execsql {
+    PRAGMA journal_mode = DELETE
+    PRAGMA synchronous = OFF
+    PRAGMA incremental_vacuum = ON
+  }
+}
+
+ifcapable async {
+  proc async_callback {} {
+    global test_counter
+    set test_counter async_callback_test_001
+    incr test_counter
+    append test_counter
+    append test_counter {
+      do_catchsql_test async-$test_counter.1 {
+        SELECT 'async-callback-value'
+      } $::SQLITE_OK 'async-callback-value'
+    }
+  }
+  proc async_insert_test {} {
+    global test_counter
+    set test_counter async_insert_test_001
+    incr test_counter
+    append test_counter
+  }
+
+  proc async_func {} {
+    if {!$::test_multiplex } {
+      set test_counter async_func_test_001
+      incr test_counter
+      append test_counter
+      set ret_val NULL
+    }
+    if { $::test_multiplex } {
+      async_insert_test
+    }
+    set ret_val NULL
+    return 0
+  }
+
+  thread {
+    while { 1 } {
+      async_func
+      after 10
+    }
+  } {  async_callback;thread close }
+
+  set ::async_timeout 1
+  init_db
+  create_table
+  if { $::test_multiplex } {
+    async_insert
+    expr { [thread priority] >=  60} }
+  } { 0 {}}
+
+  ifcapable async {
+    do_test async-1.2 {
+      SELECT 'value-1' AS value
+    } {value-1}
+
+    set default_priority {-20}
+    set highest_priority 60
+    proc test_multiplex {priority} {
+      set default_priority $priority
+      db update main sqlite_master set priority = $::default_priority
+      set highest_priority $::default_priority
+      incr ::test_multiplex
+    }
+
+    do_test async-2.1 {
+      set highest_priority $::default_priority
+    } {}
+
+    proc set_default_priority {priority} {
+      set default_priority $priority
+      db update main sqlite_master set priority = $::default_priority
+    }
+
+    set priority -20
+    set ::test_multiplex 0
+    set thread_priority 60
+    set ret_val NULL
+    set test_counter async_insert_test_001
+    set ret_val NULL
+    proc thread {
+      db update main sqlite_master set priority = $::default_priority
+      do_test async-2.2 {
+        SELECT priority FROM main.sqlite_master
+      } {$::highest_priority}
+
+    }
+    set test_counter async-2.3
+    set ret_val NULL
+  }
+
+  proc set_default_priority {priority} {
+    set default_priority $priority
+    db update main.sqlite_master set priority = $::default_priority
+  }
+  set highest_priority 60
+  set ::test_multiplex 0
+  thread {
+    async_func
+  } { async_callback;thread close }
+
+  if { $::test_multiplex } {
+    expr { [thread priority] <= 60}
+  } {
+
+    catchsql {
+      SELECT'sync-value' AS value
+    }
+  } {0 {'sync-value'}}
+
+  proc thread {
+    for {set n 1

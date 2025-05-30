@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE book [
+<!ENTITY % entity 'ent'>
+<!ELEMENT book (author, title, chapter*)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT chapter (#PCDATA)>
+<!ATTLIST chapter id CDATA #REQUIRED>
+<!ATTLIST chapter title CDATA #IMPLIED>
+<!ATTLIST chapter author CDATA #IMPLIED>
+<!ENTITY % ent SYSTEM 'ent.xml'>
+]>
+<book>
+<author>John Doe</author>
+<title>My Book</title>
+<chapter id='c1' title='Chapter 1' author='Jane Doe'>This is chapter 1</chapter>
+<chapter id='c2' author='Bob Smith'>This is chapter 2</chapter>
+<chapter id='c3' title='Chapter 3'>This is chapter 3</chapter>
+</book>

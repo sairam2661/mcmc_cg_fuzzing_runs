@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+<!ELEMENT book (title, author, edition, publication, content)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT edition (#PCDATA)>
+<!ELEMENT publication (#PCDATA)>
+<!ELEMENT content (#PCDATA | p | fig | table | list | item)>
+<!ELEMENT p (#PCDATA)>
+<!ELEMENT fig (#PCDATA | graphic)>
+<!ELEMENT graphic (#PCDATA | image)>
+<!ELEMENT image (#PCDATA)>
+<!ELEMENT table (#PCDATA | row | cell)>
+<!ELEMENT row (#PCDATA | cell)*>
+<!ELEMENT cell (#PCDATA | row | cell)*>
+<!ELEMENT list (#PCDATA | item)*>
+<!ELEMENT item (#PCDATA | item)*>
+]>
+<book>
+<title>XML Programming</title>
+<author>Jane Doe</author>
+<edition>Second Edition</edition>
+<publication>2010</publication>
+<content>
+<p>This is a sample book.</p>
+<fig>Figure 1: This is a sample figure.</fig>
+<graphic>This is a sample graphic.</graphic>
+<image>This is a sample image.</image>
+<table>
+<row>
+<cell>Cell 1</cell>
+<cell>Cell 2</cell>
+</row>
+<row>
+<cell>Cell 3</cell>
+<cell>Cell 4</cell>
+</row>
+</table>
+<list>
+<item>Item 1</item>
+<item>Item 2</item>
+</list>
+</content>
+</book>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ENTITY % booksgeneral "general book information">
+  <!ENTITY % booksspecific "specific book information">
+  <!ENTITY % bookstitle "book title">
+  <!ENTITY % bookssubtitle "book subtitle">
+  <!ENTITY % booksauthor "book author">
+  <!ENTITY % bookspublisher "book publisher">
+  <!ENTITY % bookspages "book pages">
+  <!ENTITY % bookspublishdate "book publish date">
+  <!ENTITY % booksseries "book series">
+  <!ENTITY % bookssubjects "book subjects">
+  <!ENTITY % bookscategories "book categories">
+  <!ENTITY % bookskeywords "book keywords">
+  <!ENTITY % bookssummary "book summary">
+  <!ENTITY % bookscollections "book collections">
+]>
+<catalog xmlns="http://example.org/books">
+  <book id="bk1">
+    &bookstitle;
+    <title>The Great Gatsby</title>
+    &bookssubtitle;
+    <subtitle>A Novel</subtitle>
+    &bookssubjects;
+    <subject>Classics</subject>
+    &bookscategories;
+    <category>Fiction</category>
+    &bookspages;
+    <pages>180</pages>
+    &bookspublishdate;
+    <publishDate>1925</publishDate>
+    &bookspublisher;
+    <publisher>Charles Scribner's Sons</publisher>
+    &booksseries;
+    <series>The Great Gatsby</series>
+    &bookscollections;
+    <collection>Classic Novels</collection>
+    &bookssummary;
+    <summary>The story of the mysterious millionaire Jay Gatsby and his obsession with winning back his lost love.</summary>
+  </book>
+  <book id="bk2">
+    &bookstitle;
+    <title>To Kill a Mockingbird</title>
+    &bookssubtitle;
+    <subtitle>A Novel</subtitle>
+    &bookssubjects;
+    <subject>Classics</subject>
+    &bookscategories;
+    <category>Fiction</category>
+    &bookspages;
+    <pages>281</pages>
+    &bookspublishdate;
+    <publishDate>1960</publishDate>
+    &bookspublisher;
+    <publisher>J.B. Lippincott &amp; Co.</publisher>
+    &booksseries

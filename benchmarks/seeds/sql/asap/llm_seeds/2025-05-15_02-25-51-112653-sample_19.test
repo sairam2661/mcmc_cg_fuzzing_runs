@@ -1,0 +1,89 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix syncdb
+
+set ::timeout 60000
+if {$::state} {
+  db config shared_cache 1
+}
+
+proc random_select {} {
+  global db
+  set sql "SELECT * FROM random;"
+  for {set i 1} {$i le 10} {incr i} {
+    execsql "CREATE TABLE random(r$ i integer);"
+  }
+  foreach i {1 2 3 4 5 6} {
+    execsql "INSERT INTO random(r$ i) VALUES($ i * $ i);"
+  }
+  execsql $sql
+}
+
+proc random_create_index {} {
+  global db
+  execsql {
+    CREATE INDEX random_index ON random(r1);
+    CREATE INDEX random_index2 ON random(r2);
+  }
+}
+
+proc query_executable {} {
+  global db
+  execsql {
+    SELECT * FROM random;
+  }
+}
+
+register_repair_handler sqlite_query_func_1 {args} {
+  query_executable
+}
+
+register_repair_handler sqlite_query_func_2 {args} {
+  random_create_index
+}
+
+do_execsql_test syncdb-1.1 {
+  PRAGMA page_size=1024;
+} {}
+
+do_test syncdb-1.2 {
+  random_select
+  query_executable
+} {}
+
+ifcapable alter_table {
+  do_execsql_test syncdb-1.3 {
+    PRAGMA page_size=1024;
+    CREATE TABLE x(a);
+    CREATE INDEX x1 ON x(a);
+    PRAGMA index_xinfo='x1';
+    PRAGMA page_needed;
+    PRAGMA page_count;
+  } {}
+}
+
+do_exectcl_test syncdb_1.4 {
+  proc select_callback {} {
+    global db
+    query_executable
+  }
+  proc repair_handler {} {
+    sqlite_query_func_1
+  }
+  sqlite3 db2 testfixture cache_spill_size 1048576
+  register_repair_handler db2 repair_handler
+} {}
+
+ifcapable alter_table {
+  ifcapable journalMode {
+    do_test syncdb-1.5 {
+      db eval {
+        ALTER TABLE x ADD COLUMN b INTEGER
+        ANALYZE x
+        PRAGMA index_list
+      }
+    } {x1}
+  }
+}
+
+finish_test

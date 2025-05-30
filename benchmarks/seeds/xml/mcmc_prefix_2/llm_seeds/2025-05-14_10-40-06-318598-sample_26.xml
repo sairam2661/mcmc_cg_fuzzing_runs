@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author,chapter)*>
+  <!ATTLIST book
+          lang CDATA #IMPLIED
+          version CDATA #IMPLIED
+  >
+  <!ENTITY author-name "J">
+  <!ENTITY  % ch-start ">"
+  ><!NOTATION text-notation SYSTEM "M">
+  %ch-start;
+  <!--%>
+]>
+<book lang="en" version="2.5">
+  <title>Book Title</title>
+  <author>&author1;</author>
+  <chapter>
+    <title>Chapter 1</title>
+    <text>&text-->
+      <!-- Sample XML processing instruction -->
+      <?pi-target php echo 5 4 6 3 7  2 8 5  5 4 7 4 7 6 2 6 3 4 3  7 5 8 9 7 6 6 7 6 5 8 3 6  5 2 3 9 4 9 6 3 4 6 6 2 4 9 7 8 4 7 6 9 7 9 8 4  8 7 6 3 2 9 6  6 5 7 4 8  3 4 5 4 2 3 8 2 7 3 4 9 5 7 4  4 9 3 5  6 3 7 5 8 9 6 8 7 6 7 8 4 5 8 3 2 7 3 2 5 7 6 4 7 7 9 7 9 9 6 9 9 7 6 8 4 7 8 5 7 2 3 4 8 5 6 2 3 9 2 6 2 9 3 2 4 5 6 9 4 7 2 4 7 8 6 5 9 7 6 3 5 5 3 6 8 9 4 2 7 5 6 9

@@ -1,0 +1,92 @@
+set  testdir 	    { 
+ file 
+ dirname 	
+
+
+    $argv0   }   source 
+ $testdir/tester.tcl   set    testprefix    u   set  	 timeout  	
+
+ 60000 	
+ set  t 
+ $::l     
+  ifcapable   w 	 {  if  	 Mw     != 
+ 1.059555860    
+ { 	 } 		
+     do_execsql_test  a9 	 - 
+ 4 5 6 	
+ . 	 1  			 {   CREATE TABLE 	  B  (   	
+ 	 l  
+	 , 
+
+ X  
+ ,   k  UNIQUE  			 DEFAULT  	 '^'     	
+ )   	 ;  
+ } 		 
+ 
+ { 	 c  	
+ f200__  		 }       
+ 
+
+	 } 	    if 
+	 WR   	
+ { 	
+ }   	
+  else    {  db2  A   	     } 	    do_test 
+  Tm   -  0 4 2   . 	 4  		
+ 	 		  { 	  return    37     	 b 	 { 	 SELECT 	  Z  	
+ FROM  M6      }  	
+ Z   
+	 { 
+ } 
+       	 }   {   }       
+ do_test   g_  -  
+ 2 2   . 	
+ 7  	  { 
+  db 
+ u 
+    	 }  { 
+ } 			        do_test 
+ M  -   7 5 1   . 
+ 9 6   
+
+	 
+ {   execsql 	 {  CREATE TABLE  
+	 d 
+  	  			 ( 	  M  e     	 , 
+	 V   UNIQUE    DEFAULT 
+ 65    
+ PRIMARY KEY  
+ UNIQUE   
+ ,   K   	 )     ;    }     
+ 	 } 
+			 {  }  
+
+      if 
+ '~'   			 >= 
+	 $e     {  db2  
+ u  		     db 
+ D 	 {   COMMIT     ;  
+ }  
+      } 
+   	 do_execsql_test  
+
+ B 
+ - 	 5 	 .     4    { 
+ BEGIN 
+   
+ 	
+  ;   BEGIN 
+ IMMEDIATE   
+   ; 
+ ROLLBACK   
+	 ;   SELECT 
+  p 	 (   * 
+ )  	 	 FROM 
+ n   
+ ;  		 }  { 	 	 {  
+ N   } 	   
+
+ 514     } 
+       do_execsql_test  wp   -  4 0 4 
+  .  5 0  	 { 	 ROLLBACK   	  
+ ;    }   0       finish_test   

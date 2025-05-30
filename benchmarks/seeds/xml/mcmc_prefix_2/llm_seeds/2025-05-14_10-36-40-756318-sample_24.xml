@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-5"?>
+<!DOCTYPE article SYSTEM "d" [
+  <!ELEMENT note (#PCDATA)>
+  <!ATTLIST note style CDATA #IMPLIED>
+  <!ENTITY title "T"
+          ><!ENTITY % i "t">
+  <!NOTATION FES PUBLIC "F" "l">
+  %i;<!-->>]]>
+<article xml:lang="en">
+  <title_Entity reference="title"><!ENTITY title "The"><![key:1 key:value]="1">Test</title>
+  <note style="italic">And another &title; note</note>
+  <not--><!NOTATION FES PUBLIC "F" "l"><!ENTITY % i "t">
+  <!-- <include --><!ENTITY % i "t" > %i;  %i;
+  <!-- <include href="xinclude.xml" xi:type="xsl:stylesheet" xi:fallback="text:No xsl:stylesheet exists" /> -->
+  <!-->!ENTITY % i "t" > %i;>
+  <not> <!-->
+  <!ENTITY title "t"><!ENTITY % i "t" ><!ELEMENT note (#PCDATA)><!ATTLIST note style CDATA #IMPLIED><!ENTITY title "T">
+  %i;<!-- -->
+  <!ENTITY % i "t" > %i; <!-- -->
+  <!ENTITY title "t"><!ENTITY % i "t"> <!ELEMENT note (#PCDATA)><!-- <note style="bold">bold note</note> --><!ATTLIST note style CDATA #IMPLIED><!-- --> %i;<!ENTITY title "T"> %i;<!ENTITY % i "t" > %i;<!-->  <note style="bold">bold note</note>
+  <note>simple note</note>
+</article> 
+<!ENTITY note "test">-->
+<!ELEMENT note (#PCDATA)><!--><!ELEMENT article (#PCDATA)><!--><!ATTLIST article id CDATA #REQUIRED><!--><!ATTLIST article creator CDATA #IMPLIED><!--><!ATTLIST article date CDATA #IMPLIED><!--><!ELEMENT title (#PCDATA)><!--><!ELEMENT subsection (#PCDATA)><!--><!ELEMENT text (#PCDATA)><!--><!ELEMENT note (#PCDATA)><!--><!ELEMENT section (#PCDATA)><!--><!ELEMENT section (#PCDATA)><!--><

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+<!ELEMENT bookstore (book)*>
+<!ELEMENT book (title,author,price,editorial-review)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT editorial-review (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT state (#PCDATA)>
+<!ELEMENT zip (#PCDATA)>
+<!ELEMENT country (#PCDATA)>
+<!ELEMENT review (#PCDATA)>
+<!ELEMENT rating (#PCDATA)>
+]>
+<bookstore>
+<book>
+<title>The Great Gatsby</title>
+<author>F. Scott Fitzgerald</author>
+<price>$10.99</price>
+<editorial-review>
+The Great Gatsby is a classic American novel about the corrupting influence of wealth.
+</editorial-review>
+<publisher>
+<address>123 Main St</address>
+<phone>555-555-5555</phone>
+<email>publisher@example.com</email>
+</publisher>
+<city>New York</city>
+<state>NY</state>
+<zip>10001</zip>
+<country>USA</country>
+<review>
+This book is great!
+</review>
+<rating>5</rating>
+</book>
+<book>
+<title>The Catcher in the Rye</title>
+<author>J.D. Salinger</author>
+<price>$12.99</price>
+<editorial-review>
+The Catcher in the Rye is a classic coming-of-age novel about a young boy's struggles with identity and belonging.
+</editorial-review>
+<publisher>
+<address>456 Elm St</address>
+<phone>555-555-5556</phone>
+<email>publisher2@example.com</email>
+</publisher>
+<city>Chicago</city>
+<state>IL</state>
+<zip>60601</zip>
+<country>USA</country>
+<review>
+This book is okay, I guess.
+</review>
+<rating>3</rating>
+</book>
+</bookstore>  <?xml version="1.0" encoding="UTF-8"?>  <!DOCTYPE bookstore [<!ELEMENT bookstore (book)*>  <!ELEMENT book (title,author,price,editorial-review)>  <!ELEMENT title (#PCDATA)>  <!ELEMENT author (#PCDATA)>  <!ELEMENT price (#PC

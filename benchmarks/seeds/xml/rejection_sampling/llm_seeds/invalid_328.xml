@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book SYSTEM "book.dtd">
+<!ENTITY % bookentities SYSTEM "book.entities">
+<!ENTITY % bookentITIES SYSTEM "book.ENTITIES">
+<!ENTITY &bookentities;>
+<!ENTITY &bookentITIES;>
+<!ELEMENT book (#PCDATA | para | table | figure | &bookentities;)>
+<!ELEMENT para (#PCDATA | table | figure | &bookentITIES;)>
+<!ELEMENT table (#PCDATA | &bookentities;)>
+<!ELEMENT figure (#PCDATA | &bookentITIES;)>
+<!ELEMENT link (#PCDATA)>
+<!ELEMENT img (#PCDATA)>
+<!ATTLIST book
+  id CDATA #REQUIRED
+  title CDATA #REQUIRED
+  author CDATA #IMPLIED
+  date CDATA #IMPLIED
+  revision CDATA #IMPLIED>
+<!ATTLIST para
+  id CDATA #IMPLIED
+  class CDATA #IMPLIED>
+<!ATTLIST table
+  border CDATA #IMPLIED
+  align CDATA #IMPLIED>
+<!ATTLIST figure
+  width CDATA #IMPLIED
+  height CDATA #IMPLIED>
+<!ATTLIST link
+  href CDATA #REQUIRED
+  target CDATA #IMPLIED>
+<!ATTLIST img
+  src CDATA #REQUIRED
+  alt CDATA #IMPLIED>
+<book id="book1" title="My Book" author="Me" date="2022-01-01" revision="1">
+  <para id="para1" class="class1">This is a paragraph.</para>
+  <table border="1" align="center">
+    <tr>
+      <td>Cell 1</td>
+      <td>Cell 2</td>
+    </tr>
+    <tr>
+      <td>Cell 3</td>
+      <td>Cell 4</td>
+    </tr>
+  </table>
+  <figure width="100" height="100">
+    <img src="image.jpg" alt="An image"/>
+    <link href="http://www.example.com" target="_blank">Example link</link>
+  </figure>
+  <para id="para2" class="class2">This is another paragraph.</para>
+</book>

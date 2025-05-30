@@ -1,0 +1,118 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix query_optimization
+
+set ::timeout 60000
+unset env HOMEDRIVE
+unset env HOMEPATH
+unset env TMP
+unset env TEMP
+unset env TEMPFILE
+if { $tcl_platform_os eq "windows" } {
+  file delete "c:\\temp.txt"
+  catch {file delete "c:\temp"}
+  exec "rmdir /s/q c:\\temp" 
+}
+proc test_malloc {size} {
+  set x ""
+  for {set i 0} {$i $size} {incr i} {
+    append x X
+  }
+  return $x
+}
+
+proc init_schema {} {
+  execsql {
+    CREATE TABLE main Personnel
+    NOLOGGING
+    COMPRESS
+    PARTITION BY LIST
+    MODIFY PART
+    UPDATE PART
+    DROP PART
+    REMOVE PART
+    LIST PART
+    CLEAR PART
+    LIST ALL PARTS
+    DROP LIST PARTITION
+    UPDATE LIST PARTITION
+    DELETE FROM PARTITION
+    TRUNCATE PARTITION
+    TRUNCATE TABLE
+    VACUUM
+  } {
+    x
+    y
+    z
+  }
+
+  CREATE INDEX idx_name ON main Personnel
+  CREATE INDEX idx_no_name ON main Personnel
+
+  CHECK TABLE main Personnel
+  CHECK INDEX main Personnel idx_name
+  CHECK INDEX main Personnel idx_no_name
+}
+
+proc test_result {sql} {
+  execsql $sql
+  do_test "10.1.$sql" {
+    db eval "$sql"
+  } {1}
+}
+
+test_malloc 1000000
+
+do_execsql_test 1.1 {
+  CREATE TABLE main Personnel
+  } {}
+do_execsql_test 2.1 {
+  SELECT x FROM main Personnel
+  } {}
+do_execsql_test 5.1 {SELECT * FROM sqlite_master WHERE type='table'   } {}
+do_execsql_test 10.1 { SELECT db_name(      *)  FROM main   } {}
+do_execsql_test 15.1 {
+  SELECT *
+  FROM Personnel
+  WHERE x='x'
+  } {}
+do_execsql_test 20.1 {
+  SELECT *
+  FROM main
+  WHERE x = 'x'
+  } {}
+do_execsql_test 25.1 {SELECT * FROM Personnel} {}
+do_execsql_test 30.1 {
+  SELECT x FROM Personnel
+  } {}
+
+init_schema
+test_result "CREATE TABLE main test (y varchar(25), x char(18)) WITHOUT ROWID"
+test_result "DROP TABLE main test, personnel"
+test_result {ATTACH 'test.db' AS test}
+test_result "CREATE TABLE test Personnel (z TEXT(19, 19), c INT, o REAL);"
+test_result "SELECT c FROM Personnel WHERE o = 0.9;"
+test_result {DETACH DATABASE  test}
+test_result {SELECT c FROM Personnel WHERE o = 0.9;}
+if { $tcl_platform_os eq "windows" } {
+  test_result "CREATE TABLE Personnel2 (z TEXT(29, 29), c INT, o REAL);"
+  test_result {ATTACH 'C:\\windows\\temp.db' AS temp}
+  test_result "INSERT INTO Personnel (z, c, o) VALUES (2, 44, 44)"
+  test_result "CREATE UNIQUE INDEX Personnel_c_idx ON Personnel2 c"
+  test_result {INSERT INTO Personnel2 VALUES (10, 0, 0.9)}
+  test_result {INSERT INTO Personnel2 VALUES ('zzzzz', 1, 110)}
+  test_result {INSERT INTO Personnel2 VALUES ('a', 0.1,44)}
+  test_result {INSERT INTO Personnel2 VALUES (0, 55, 111)}
+  test_result {INSERT INTO Personnel2 VALUES ('z','zzz', 1.0)}
+  test_result {INSERT INTO Personnel2 VALUES ('z','zz',44.9)}
+  test_result {SELECT c FROM Personnel2 WHERE o = 44}
+  test_result {INSERT INTO Personnel2 VALUES (2, 55, 5.2)}
+  test_result {INSERT INTO Personnel2 VALUES (0, 0, 43.1)}
+  test_result {INSERT INTO Personnel2 VALUES ('c', 1, 3)}
+  test_result {INSERT INTO Personnel2 VALUES (0, 101, 9.1)}
+  test_result {INSERT INTO Personnel2 VALUES ('b', 0, 43.9)}
+  test_result {INSERT INTO Personnel2 VALUES (2, 77,44)}
+  test_result {INSERT INTO Personnel2 VALUES ('zz', 0.9, 42)}
+  test_result {INSERT INTO Personnel2 VALUES ('z', 1, 101)}
+  test_result {INSERT INTO Personnel2 VALUES (7, 101, 43)}
+  test_result {INSERT INTO Personnel

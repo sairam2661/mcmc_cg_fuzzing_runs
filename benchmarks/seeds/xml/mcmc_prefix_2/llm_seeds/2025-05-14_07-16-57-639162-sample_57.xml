@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE complex-document [
+  <!ELEMENT complex-document (person, address, phone)>
+  <!ATTLIST complex-document version CDATA #REQUIRED>
+  <!ENTITY address "<"> <!ENTITY 	%endtag " "><!NOTATION paper SYSTEM 'print' >  
+ 	%address; <!--> <address> <!ENTITY endtag="">
+]>
+<complex_document version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema#">
+  <person firstName="Jane" lastName="Doe">
+    <title>Ms</title>
+  </person>
+  <address streetAddress="123 Main St" city="New York" 
+  postcode="10001" country="United States">
+    <phone type="home">555--> 
+    <!-- entity reference --> 
+    <!ENTITY endtag ">"><!-- not closed --><!ENTITY startg " "> <!-- closed -->
+    <!ENTITY note "I" > <!-- referenced -->
+    <!ENTITY name "J"> <!-- referenced -->
+    <!ENTITY phone "1">  <!-- referenced -->
+    <!NOTATION xml-ext SYSTEM 'zip-file' > <!-- reference to an ExtEntity > -->
+     <!NOTATION  internal-system SYSTEM 'external-file.xml' >
+        <!NOTATION  external-system SYSTEM 'external.xml' >
+          <!NOTATION  ext-ref SYSTEM 'ext.dtd' > <!-- ext ref -->
+       
+     <!ELEMENT address (#PCDATA)> 
+     
+  	<!-- close the element here --><!ENTITY address "1"> <!-- referenced -->
+    <!-- This should not be parsed <address><!xml--> 
+  	<!ELEMENT person (#PCDATA)> <!-- close here -->
+    <!-- close tag with CDATA --><!ENTITY phone2 "5">
+    	<!ENTITY endtag2 ">"><!-- open --><!ENTITY starttag6 ">"><!-- closed -->
+        <!ELEMENT complex-document EMPTY> <!-- close here--> 
+        <!ENTITY starttag1 ">"><!-- closed -->
+        <!-- close tag with entities --><!ENTITY entityaddr1 "<">
+    	<!-- end entity reference --><!ENTITY endtag5 ">"><!-- open --><!ENTITY starttag1 " "><!-- closed -->
+      <!ELEMENT person (#PCDATA)> <!-- open -->
+
+        <!ELEMENT complex-document EMPTY> <!-- open --><!ELEMENT person (#PCDATA)> <!-- close -->
+
+       <!ELEMENT address (#PCDATA)> <!-- close --><!ELEMENT person (#PCDATA)> <!-- open -->
+       <!ELEMENT complex-document EMPTY> <!-- close -->
+	 <!-- close tag with CDATA --><!ENTITY phone3 "0">
+	<!ELEMENT address (#PCDATA)><!ELEMENT complex-document (#PCDATA)><!-- close -->
+  <!-- close with this tag --><!ELEMENT address (#PCDATA)><!ELEMENT person (#PCDATA)><!-- close --><!ELEMENT complex-document (#PCDATA)> 
+    <!-- no close <address> --><!ENTITY name2 "D"> 
+     <!ELEMENT complex-document (#PCDATA)> <!-- closed -->
+   
+   <!ENTITY name3 "o">   <!-- reference to entity -->
+  <!ELEMENT person (#PCDATA)><!ELEMENT address (#PCDATA)><!-- close --><!ELEMENT
+  complex-document

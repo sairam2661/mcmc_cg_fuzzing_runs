@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE doc SYSTEM "http://example.com/doc.dtd">
+<!ELEMENT doc (title, (person | group), (section | article)*, footnote*)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT person (#PCDATA, email*, phone*)>
+<!ELEMENT group (#PCDATA, member*)>
+<!ELEMENT member (#PCDATA)>
+<!ELEMENT section (#PCDATA, (subsection | paragraph)*)>
+<!ELEMENT subsection (#PCDATA)>
+<!ELEMENT paragraph (#PCDATA)>
+<!ELEMENT article (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT footnote (#PCDATA, ref*)>
+<!ELEMENT ref (#PCDATA)>
+<doc>
+  <title>Example Document</title>
+  <person>
+    <name>John Doe</name>
+    <email>johndoe@example.com</email>
+    <phone>123-456-7890</phone>
+  </person>
+  <group>
+    <name>Example Group</name>
+    <member>John Doe</member>
+  </group>
+  <section>
+    <name>Introduction</name>
+    <subsection>
+      <name>Background</name>
+      <paragraph>
+        This is an example paragraph.
+      </paragraph>
+    </subsection>
+    <subsection>
+      <name>Methodology</name>
+      <paragraph>
+        This is another example paragraph.
+      </paragraph>
+    </subsection>
+  </section>
+  <article>
+    <name>Example Article</name>
+    <paragraph>
+      This is an example article.
+    </paragraph>
+  </article>
+  <footnote>
+    <text>This is an example footnote.</text>
+    <ref>Example Ref</ref>
+  </footnote>
+  <footnote>
+    <text>This is another example footnote.</text>
+  </footnote>
+</doc>

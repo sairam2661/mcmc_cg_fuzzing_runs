@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ENTITY % book1 SYSTEM "book1.xml">
+  <!ENTITY % book2 SYSTEM "book2.xml">
+  <!ENTITY % book3 SYSTEM "book3.xml">
+  <!ENTITY % book4 SYSTEM "book4.xml">
+  <!ENTITY % book5 SYSTEM "book5.xml">
+]>
+<books>
+  <book>
+    <title entityref="book1">Book Title 1</title>
+    <author entityref="book2">Author Name 2</author>
+    <publisher entityref="book3">Publisher Name 3</publisher>
+    <year entityref="book4">Year 4</year>
+    <isbn entityref="book5">ISBN 5</isbn>
+  </book>
+</books>

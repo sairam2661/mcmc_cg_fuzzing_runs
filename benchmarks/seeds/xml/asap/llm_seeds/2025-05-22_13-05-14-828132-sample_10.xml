@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author,chapter+,bibliography)>
+  <!ATTLIST book
+    title CDATA #IMPLIED
+    author CDATA #REQUIRED>
+  <!ENTITY chapter1 "A"
+  >
+  <!ENTITY % chapter2 "<">
+  <!NOTATION ISO-8859-1 SYSTEM " ">
+  %chapter2;
+  <!---->
+  <!ENTITY booktitle   "P"  >
+]>
+<book title="A" author="J">
+  <title>&booktitle;</title>
+  <chapter1/>
+  <chapter1/>
+  <chapter2/>
+  <bibliography>
+    <entry><ref>1</ref></entry>
+  </bibliography>
+</book>

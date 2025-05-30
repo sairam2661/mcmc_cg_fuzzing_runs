@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog SYSTEM "catalog.dtd">
+<!ELEMENT catalog (book+)>
+<!ELEMENT book (#PCDATA)>
+<!ATTLIST book
+  title CDATA #REQUIRED
+  author CDATA #IMPLIED
+  price CDATA #IMPLIED
+>
+<!ELEMENT author (#PCDATA)>
+
+<catalog>
+  <book title="The Lord of the Rings" author="J.R.R. Tolkien">
+    <author>
+      <name>John</name>
+      <address>123 Main St</address>
+    </author>
+  </book>
+  <book title="The Shining" author="Stephen King">
+    <author>
+      <name>Emily</name>
+      <address>456 Elm St</address>
+    </author>
+  </book>
+</catalog>

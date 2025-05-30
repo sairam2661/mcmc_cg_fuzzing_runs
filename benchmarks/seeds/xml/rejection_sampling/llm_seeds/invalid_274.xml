@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE document SYSTEM 'document.dtd'>
+<!ELEMENT document (title, header, section+)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT header (#PCDATA)>
+<!ELEMENT section (#PCDATA | p | ul | ol | li | a | img | b | i | u | s | code | pre)>
+<!ELEMENT p (#PCDATA)>
+<!ELEMENT ul (li+)>
+<!ELEMENT ol (li+)>
+<!ELEMENT li (#PCDATA)>
+<!ELEMENT a (#PCDATA, @href)>
+<!ELEMENT img (#PCDATA, @src, @alt)>
+<!ELEMENT b (#PCDATA)>
+<!ELEMENT i (#PCDATA)>
+<!ELEMENT u (#PCDATA)>
+<!ELEMENT s (#PCDATA)>
+<!ELEMENT code (#PCDATA)>
+<!ELEMENT pre (#PCDATA)>
+<document>
+    <title>Document Title</title>
+    <header>Document Header</header>
+    <section>This is a section.</section>
+    <section>
+        <p>This is a paragraph.</p>
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+        </ul>
+        <ol>
+            <li>Item 3</li>
+            <li>Item 4</li>
+        </ol>
+        <a href='#'>Link</a>
+        <img src='#' alt='Image'/>
+        <b>Bold text</b>
+        <i>Italic text</i>
+        <u>Underlined text</u>
+        <s>Strikethrough text</s>
+        <code>Code</code>
+        <pre>This is a code block.</pre>
+    </section>
+</document>

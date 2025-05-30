@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+<!DOCTYPE book SYSTEM 'book.dtd'>
+<!ENTITY % bookEntity SYSTEM 'book.ent'>
+<!ENTITY % bookEntity2 SYSTEM 'book.ent'>
+<!ATTLIST book title CDATA #REQUIRED>
+<!ATTLIST book author CDATA #IMPLIED>
+<!ELEMENT book (title,author,chapter+)>
+<!ELEMENT chapter (title,paragraph*)>
+<!ELEMENT paragraph (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ENTITY bookEntity SYSTEM 'book.ent'>
+<!ENTITY bookEntity3 SYSTEM 'book.ent'>
+<!ELEMENT chapter2 EMPTY>
+<!ELEMENT paragraph2 (#PCDATA)>
+<!ELEMENT title2 (#PCDATA)>
+<!ELEMENT author2 (#PCDATA)>
+<!ATTLIST chapter title CDATA #REQUIRED>
+<!ATTLIST chapter author CDATA #IMPLIED>
+<!ATTLIST chapter2 title CDATA #REQUIRED>
+<!ATTLIST chapter2 author CDATA #IMPLIED>
+<!ELEMENT book2 (title2,author2,chapter2+)>
+<!ELEMENT chapter3 (title3,paragraph3*)>
+<!ELEMENT paragraph3 (#PCDATA)>
+<!ELEMENT title3 (#PCDATA)>
+<!ELEMENT author3 (#PCDATA)>
+<!ELEMENT book3 (title3,author3,chapter3+)>
+<!ELEMENT chapter4 (title4,paragraph4*)>
+<!ELEMENT paragraph4 (#PCDATA)>
+<!ELEMENT title4 (#PCDATA)>
+<!ELEMENT author4 (#PCDATA)>
+<!ELEMENT book4 (title4,author4,chapter4+)>
+<!ELEMENT chapter5 (title5,paragraph5*)>
+<!ELEMENT paragraph5 (#PCDATA)>
+<!ELEMENT title5 (#PCDATA)>
+<!ELEMENT author5 (#PCDATA)>
+<!ELEMENT book5 (title5,author5,chapter5+)>
+<!ELEMENT chapter6 (title6,paragraph6*)>
+<!ELEMENT paragraph6 (#PCDATA)>
+<!ELEMENT title6 (#PCDATA)>
+<!ELEMENT author6 (#PCDATA)>
+<!ELEMENT book6 (title6,author6,chapter6+)>
+<!ELEMENT chapter7 (title7,paragraph7*)>
+<!ELEMENT paragraph7 (#PCDATA)>
+<!ELEMENT title7 (#PCDATA)>
+<!ELEMENT author7 (#PCDATA)>
+<!ELEMENT book7 (title7,author7,chapter7+)>
+<!ELEMENT chapter8 (title8,paragraph8*)>
+<!ELEMENT paragraph8 (#PCDATA)>
+<!ELEMENT title8 (#PCDATA)>
+<!ELEMENT author8 (#

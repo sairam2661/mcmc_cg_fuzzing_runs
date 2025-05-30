@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE note [
+  <!ELEMENT note (header, section+)>
+  <!ATTLIST note
+    id  CDATA  #REQUIRED
+    author CDATA  #IMPLIED
+  >
+  <!ENTITY date "#"><!ENTITY % entity "a">
+  <!NOTATION ISO-8859-1SYSTEM "C">
+ %XInclude;  <!--  -->%XInclude;]
+><note id="n" xmlns:xi="x">
+  <header><title>My Note</title><author>Alice</author></header>
+  <section><xi:include xpath="X" href="B"/>
+    <paragraph>This is line one.
+      &date;
+  </section><xi:include href="C"/>
+  <section>&note;</section>
+</note>[[]]>   ]]><section>(</section><section>[]])</note><![CDATA[![]]>]]]><!--[<!>CDATA<] --><![CDATA[<! -->]]><section>"</section><!--[!-->[!]]>]]]><section>X]]</note>]]> [[]]>]]]]]<note id="n" xmlns:m="m"><m:root><m:sub>Sub</m:sub></m:root></note> ]]><section></note>]]]><section>]]]><note id="n" version="1" xmlns:xsi="x"><xsi:schemaLocation xmlns:xsi="x"></note>]]][[</section></note>][[</section>

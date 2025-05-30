@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ENTITY % book "book">
+  <!ENTITY % bookref "bookref">
+  <!ENTITY % bookinfo "bookinfo">
+  <!ENTITY % bookdesc "bookdesc">
+  <!ENTITY % bookauthor "bookauthor">
+  <!ENTITY % booktitle "booktitle">
+  <!ENTITY % bookyear "bookyear">
+  <!ENTITY % bookpublisher "bookpublisher">
+  <!ENTITY % bookprice "bookprice">
+  <!ENTITY % bookcover "bookcover">
+  <!ENTITY % bookpages "bookpages">
+]>
+<catalog>
+  <books>
+    <&bookref;>
+      <&bookinfo;>
+        <&booktitle;>Title 1</&booktitle;>
+        <&bookyear;>2001</&bookyear;>
+      </&bookinfo;>
+      <&bookdesc;>
+        <&bookauthor;>Author 1</&bookauthor;>
+        <&bookcover;>Cover 1</&bookcover;>
+        <&bookpages;>Pages 1</&bookpages;>
+      </&bookdesc;>
+      <&bookpublisher;>Publisher 1</&bookpublisher;>
+      <&bookprice;>Price 1</&bookprice;>
+    </&bookref;>
+    <&bookref;>
+      <&bookinfo;>
+        <&booktitle;>Title 2</&booktitle;>
+        <&bookyear;>2002</&bookyear;>
+      </&bookinfo;>
+      <&bookdesc;>
+        <&bookauthor;>Author 2</&bookauthor;>
+        <&bookcover;>Cover 2</&bookcover;>
+        <&bookpages;>Pages 2</&bookpages;>
+      </&bookdesc;>
+      <&bookpublisher;>Publisher 2</&bookpublisher;>
+      <&bookprice;>Price 2</&bookprice;>
+    </&bookref;>
+  </books>
+</catalog>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+<!ENTITY % ent SYSTEM "ent.dtd">
+<!ENTITY % ext SYSTEM "ext.dtd">
+<!ENTITY &ent;>
+<!ENTITY &ext;>
+<!ATTLIST catalog name CDATA #REQUIRED>
+<!ELEMENT catalog (prod+)>
+<!ELEMENT prod (name,desc,price,sku)>
+
+<!ENTITY name "John Doe">
+<!ENTITY desc "This is a product">
+<!ENTITY price "9.99">
+<!ENTITY sku "12345">
+
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT desc (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT sku (#PCDATA)>
+
+<!ELEMENT prod (#PCDATA)>
+<!ELEMENT products (#PCDATA)>
+
+<!ELEMENT products (prod+)>
+
+<!ELEMENT product (#PCDATA)>
+<!ELEMENT products (#PCDATA)>
+
+<!ELEMENT product (#PCDATA)>
+
+<!ELEMENT products (#PCDATA)>
+
+<!ELEMENT product (#PCDATA)>
+
+<!ELEMENT products (#PCDATA)>
+
+<!ELEMENT product (#PCDATA)>
+
+<!ELEMENT products (#PCDATA)>
+
+<!ELEMENT product (#PCDATA)>
+
+<!ELEMENT products (#PCDATA)>
+
+<!ELEMENT product (#PCDATA)>
+
+<!ELEMENT products (#PCDATA)>
+
+<!ELEMENT product (#PCDATA)>
+
+<!ELEMENT products (#PCDATA)>
+
+<!ELEMENT product (#PCDATA)>
+
+<!ELEMENT products (#PCDATA)>
+
+<!ELEMENT product (#PCDATA)>
+
+<!ELEMENT products (#PCDATA)>
+
+<!ELEMENT product (#PCDATA)>
+
+<!ELEMENT products (#PCDATA)>
+
+<!ELEMENT product (#PCDATA)>
+
+<!ELEMENT products (#PCDATA)>
+
+<!ELEMENT product (#PCDATA)>
+
+<!ELEMENT products (#PCDATA)>
+
+<!ELEMENT product (#PCDATA)>
+
+<!ELEMENT products (#PCDATA)>
+
+<!ELEMENT product (#PCDATA)>
+
+<!ELEMENT products (#PCDATA)>
+
+<!ELEMENT product (#PCDATA)>
+
+<!ELEMENT products (#PCDATA)>
+
+<!ELEMENT product (#PCDATA)>
+
+<!ELEMENT products (#PCDATA)>
+
+<!ELEMENT product (#PCDATA)>
+
+<!ELEMENT products (#PCDATA)>
+
+<!ELEMENT product (#PCDATA)>
+
+<!ELEMENT products (#PCDATA)>
+
+<!ELEMENT product (#PCDATA)>
+
+<!ELEMENT products (#PCDATA)>
+
+<!ELEMENT product (#PCDATA)>
+
+<!ELEMENT products (#PCDATA)>
+
+<!ELEMENT product (#PCDATA)>
+
+<!ELEMENT products (#PCDATA)>
+
+<!ELEMENT product (#PCDATA)>
+
+<!ELEMENT products (#PC

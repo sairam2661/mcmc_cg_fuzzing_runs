@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE db [
+    <!ELEMENT db (header,tables,queries)>
+    <!ATTLIST db 
+        id ID #REQUIRED
+    >
+    <!ENTITY query0 "I">
+    <!ENTITY % query1 "t">
+    <!NOTATION XHTML PUBLIC "+"
+            "-"
+            >
+    %query1; 
+    <!-- Sample comment -->
+    <!ENTITY content "S" >
+]>
+<db id="1" xmlns:db="x" xmlns:dbx="y">
+  <header>Header</header>
+  <tables>
+    <table><![CDATA[Table 1]]></table>
+  </tables>
+  <queries>
+    <query entity-ref="%">
+        &content;&note;!&Content;&query0;
+    </query>
+  </queries>
+</db>

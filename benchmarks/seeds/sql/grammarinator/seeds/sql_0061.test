@@ -1,0 +1,70 @@
+set  
+ testdir  {   file  dirname   $argv0 
+ }    source 
+   $testdir/tester.tcl  
+
+ set 
+	  testprefix   S   set 	 timeout  60000   set 	 Vu 	 D  
+    set   L_ 	 { 	 $uU  
+ $L  
+
+ } 
+	  	  
+  do_execsql_test 
+ l 
+ - 	 0 9 8 1 9 3 5 
+  . 	 3  	
+
+	 {    BEGIN 
+   	 ; 
+
+ SELECT  	 Y 	 ( 
+ *   )  	 FROM 
+	 e 
+ WHERE 
+
+ V  =   92.7      	 } 
+	 {  {   ROLLBACK    	 ;     }    
+ { 	 
+	 CREATE TABLE 	  N 	
+
+
+
+  ( 
+ W 	 q7  
+ DEFAULT 	 '7K'     	 )   	 ; 
+ CREATE TABLE   r  ( 	 n 	 jP    	 )     }  	 } 	        do_execsql_test   O 	
+		
+ - 	 2 	 . 	 0 7 0  	 {  	 COMMIT   
+  ; 		 WITH   r_9p 
+ ( 	 q_  
+ ) 	  AS 
+
+	 ( 
+ PRAGMA  Ir_yx_     ) 	
+	 SELECT  
+ count(*)    FROM 	 
+ hh   WHERE 
+ B   =  
+ sg_      
+ ;  WITH 
+  			 d 
+ ( 	 w  		 ) 	 AS 
+  ( 
+
+ INSERT INTO 	 LU__ 
+ ( 	 R_6  
+  ) 
+
+  SELECT 		 SP      
+	
+
+	 ) 
+
+ 
+  PRAGMA  l_   = 
+ 544       	
+  ;  
+ BEGIN   IMMEDIATE     	 ;   BEGIN 
+   
+ ;  	 } 	 18.9        finish_test    

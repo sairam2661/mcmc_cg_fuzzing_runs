@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE root SYSTEM "m"
+
+  [
+
+  <!ELEMENT root (child*)>
+  <!ATTLIST root id ID #IMPLIED>
+  <!ENTITY part "<">
+
+  <!ENTITY % part-macro "<">
+
+  <!NOTATION xml-stylesheet SYSTEM "x">
+
+  %part-macro;
+
+  <!--child 0-->
+
+  <!----> <!-- blank space -->
+
+  <!--<!ENTITY ent "ent1 ent2">-->
+
+]>
+<root id="r"> 
+  <title xml:lang="x">Sample</title>
+  <child><![CDATA[child <a>text</a>]]></child>
+  <message entity-public-id="e" entity-system-id="x">&part;</message>
+  <!-- comment -->
+</root>

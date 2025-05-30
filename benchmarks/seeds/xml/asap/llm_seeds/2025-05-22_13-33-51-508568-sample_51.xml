@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE catalogs
+  SYSTEM "c" [
+    <!ELEMENT catalogs    (catalog*)>
+    <!ATTLIST catalogs    xmlns:xs        CDATA  #REQUIRED
+                         xmlns           CDATA  #FIXED  "d"
+                         version        CDATA  #FIXED  "1">
+    <!ENTITY catalog     "("
+    >
+  <!ENTITY % catalog-list ";">
+  <!NOTATION print      PUBLIC  "d"  "e"
+              >
+  %catalog-list;
+  <!--
+    catalog--><!NOTATION html PUBLIC  "-"  "_"
+  >
+  ]>
+<catalogs  xml:lang="e"
+            xml:space="d"
+            xsi:noNamespaceSchemaLocation="g">
+  <catalog  href="#">
+      <id  i18n="F"/>
+      <name  lang="f"
+             type="h"><?CDATAcallable-xml-multiplication i14n and translocations etc etc etc i18n name i18n name namei14n n n name i18n n name n name namei14n name i14nm i14n namename name n n a n a i name n name ni name n namen i name na name i i a n name name name i n name na n na n a i18n name n n na i n name i n name n n a na na n name name n na na na na i18n n name n name name n na na name name n a na na a na n n n name na name n na na n a name a name name n na n a n name name name name name na name na name n na a na na na n name na name name na na na na na na na na na na na i18n na na i18n name na i name na i18n n n i18n na na i n i18n na i i a na n i18n name name na n a i na name n n na i18n na na na i na i18n i18n na na na i18n na na i18n name na na na na name na i na i18n na na name n name name na i na na na i18n n n na na na i na name na n name n a na name name name na na name name name n n name i18n n na i na name n i i18n na name  na na i18n na name n n n i na na name na na a na na i18n na i18n na na i18n name name i18n i na name na na name na i na name i18n n a na name n a i n i18n na i na name name n n name name na na i18n n n n name name i18n name name na na i18n n i18n i18n n na na a na na na na na name name name n name n na i18n n name i18n name n name i18n name n i18n na na i18n n name n name n a na i na i18n na name i18n n n name na i na a na i e na na na i n na name na i n name i  na na name i n n na i i a name n n na na i18n n n i18n na a na na na i18n name i i18n n na i i18n na i18n name a na na na name n name na na na na na na na i i18n a na i na i i a name na name i18n name i18n na i n i i a name na name n i18n na na i i a na a na na name na na name na na a na i na name na name n i18n a na i na i i name name na na i na n na i na i na na i na i18n name n na na na i a i18n i na name na na i na i name na i na na name na i na na na i18n i a na n i n a name na i i na na na na i i name na i name na name na i na na i18n na i na name i na na i na name i na i a na name na i na na na na i na name na name na na i na name i na name na i i a na na na name na na

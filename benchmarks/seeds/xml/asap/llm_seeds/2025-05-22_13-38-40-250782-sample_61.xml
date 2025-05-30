@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author*, dedication?)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    titleType (book | article | thesis) " "
+  >
+  <!ENTITY author1 "J">
+  <!ENTITY %author2 "(">
+  <!NOTATION external-entity PUBLIC "X" "x">
+   %author2
+  ; <!--comment--><!ENTITY author2 "K">
+]>
+<book xmlns:t9="h" xmlns:xi="x" xml:lang="L">
+  <title>Book Title</title>
+  <author xml:space="p" name="A" t9:order="0">A &B;
+  <dedication>C</dedication>
+  <note><p>sample</p><cdata><![CDATA[content
+<!ENTITY content "with special chars"]]></cdata></note>
+</book> 
+<!--book end of line--><note> another note that spans several lines,
+<!----><note> and is also nested</note>, and ends
+!</note> here 
+<!----></book>

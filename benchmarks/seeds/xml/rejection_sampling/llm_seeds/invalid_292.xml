@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ENTITY book-title "The Great Gatsby">
+  <!ENTITY author "F. Scott Fitzgerald">
+  <!ENTITY publisher "Charles Scribner's Sons">
+  <!ENTITY date "1925">
+]>
+<book xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title entity-ref="#book-title"/>
+  <author entity-ref="#author"/>
+  <publisher entity-ref="#publisher"/>
+  <year entity-ref="#date"/>
+  <xi:include href="chapter1.xml" xmlns="http://www.w3.org/1999/xhtml"/>
+  <xi:include href="chapter2.xml" xmlns="http://www.w3.org/1999/xhtml"/>
+  <xi:include href="chapter3.xml" xmlns="http://www.w3.org/1999/xhtml"/>
+  <xi:fallback>
+    <html:body>
+      <html:p>Cannot include chapter.</html:p>
+    </html:body>
+  </xi:fallback>
+</book>

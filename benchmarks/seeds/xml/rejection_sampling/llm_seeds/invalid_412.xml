@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE doc [
+  <!ENTITY % nbsp "&#160;">
+  <!ENTITY % amp "&#38;">
+  <!ENTITY % lt "&#60;">
+  <!ENTITY % gt "&#62;">
+  <!ENTITY % quot "&#34;">
+  <!ENTITY % ap "&#39;">
+]>
+<doc xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2001/XMLSchema-instance http://www.w3.org/2001/XMLSchema.xsd">
+  <chapter>
+    <title>Chapter 1</title>
+    <section>
+      <title>Section 1.1</title>
+      <para>Some text with a reference to &amp; section 1.2.</para>
+      <para>Another paragraph with a reference to &lt;figure 1&gt;.</para>
+      <para>A paragraph with a quotation: &quot;This is a quote&quot;.</para>
+      <para>A paragraph with an apostrophe: It's a beautiful day.</para>
+      <para>A paragraph with a non-breaking space: It&#160;s a beautiful day.</para>
+    </section>
+    <section>
+      <title>Section 1.2</title>
+      <para>This is another paragraph.</para>
+    </section>
+    <section>
+      <title>Section 1.3</title>
+      <figure id="fig1">
+        <title>Figure 1</title>
+        <image url="image1.jpg"/>
+      </figure>
+    </section>
+  </chapter>
+  <chapter>
+    <title>Chapter 2</title>
+    <section>
+      <title>Section 2.1</title>
+      <para>This is a paragraph.</para>
+    </section>
+  </chapter>
+</doc>

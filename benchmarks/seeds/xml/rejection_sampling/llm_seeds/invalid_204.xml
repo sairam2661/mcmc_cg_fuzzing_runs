@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Document Title</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <meta charset="utf-8" content="description"/>
+    <script type="text/javascript" src="script.js"></script>
+  </head>
+  <body>
+    <h1>Heading</h1>
+    <p>This is a paragraph.</p>
+    <div class="container">
+      <img src="image.jpg" alt="Image Description"/>
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+      </ul>
+      <p>This is another paragraph.</p>
+    </div>
+    <pre>
+      This is a preformatted block of text.
+    </pre>
+    <a href="http://www.example.com">Link</a>
+  </body>
+</html>

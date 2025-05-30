@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ENTITY % bookDTD SYSTEM "book.dtd">
+  %bookDTD;
+  <!ENTITY book-author "John Doe">
+  <!ENTITY book-title "The Great Gatsby">
+  <!ENTITY book-publisher "Harper & Brothers">
+]>
+<book xmlns="http://www.example.com/book"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.example.com/book book.xsd"
+       id="bk-123"
+       lang="en">
+  <title entity-ref="#book-title"/>
+  <author entity-ref="#book-author">
+    <name>John Doe</name>
+    <email>johndoe@example.com</email>
+  </author>
+  <publisher entity-ref="#book-publisher"/>
+  <content>
+    <chapter id="ch-1">
+      <title>Chapter 1</title>
+      <text>
+        <p>This is the first chapter.</p>
+        <p>It is a great book.</p>
+      </text>
+    </chapter>
+  </content>
+</book>

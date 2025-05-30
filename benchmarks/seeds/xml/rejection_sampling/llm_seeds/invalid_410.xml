@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+<!ENTITY % ent SYSTEM "ent.dtd">
+%ent;
+<!ELEMENT book - - (#PCDATA|title|author|chapter+|para*)>
+<!ELEMENT title - - (#PCDATA)>
+<!ELEMENT author - - (#PCDATA)>
+<!ELEMENT chapter - - (#PCDATA|title|author|para*)>
+<!ELEMENT para - - (#PCDATA)>
+<!ELEMENT link - - (#PCDATA)>
+<!ELEMENT ref - - (#PCDATA)>
+<!ELEMENT cite - - (#PCDATA)>
+<!ELEMENT note - - (#PCDATA)>
+<!ELEMENT desc - - (#PCDATA)>
+<!ELEMENT id - - (#PCDATA)>
+<!ELEMENT code - - (#PCDATA)>
+<!ELEMENT opt - - (#PCDATA)>
+<!ELEMENT optgroup - - (#PCDATA)>
+<!ELEMENT option - - (#PCDATA)>
+<!ELEMENT select - - (#PCDATA|option+)>
+<!ELEMENT optiongroup - - (#PCDATA|option+)>
+<!ELEMENT optgroup - - (#PCDATA|option*)>
+<!ELEMENT table - - (#PCDATA|row*)>
+<!ELEMENT row - - (#PCDATA|cell*)>
+<!ELEMENT cell - - (#PCDATA|row*)>
+<!ELEMENT tr - - (#PCDATA|td*)>
+<!ELEMENT td - - (#PCDATA)>
+<!ELEMENT th - - (#PCDATA)>
+<!ELEMENT col - - (#PCDATA)>
+<!ELEMENT caption - - (#PCDATA)>
+<!ELEMENT summary - - (#PCDATA)>
+<!ELEMENT tablemodel - - (#PCDATA|table*)>
+<!ELEMENT model - - (#PCDATA|table*)>
+<!ELEMENT frame - - (#PCDATA|table*)>
+<!ELEMENT tableheader - - (#PCDATA|table*)>
+<!ELEMENT tablefooter - - (#PCDATA|table*)>
+<!ELEMENT tablebody - - (#PCDATA|table*)>
+<!ELEMENT table - - (#PCDATA|row*)>
+<!ELEMENT row - - (#PCDATA|cell*)>
+<!ELEMENT cell - - (#PCDATA|row*)>
+<!ELEMENT tr - - (#PCDATA|td*)>
+<!ELEMENT td - - (#PCDATA)>
+<!ELEMENT th - - (#PCDATA)>
+<!ELEMENT col - - (#PCDATA)>
+<!ELEMENT caption - - (#PCDATA)>
+<!ELEMENT summary - - (#PCDATA)>
+<!ELEMENT tablemodel - - (#PCDATA|table*)>
+<!ELEMENT model - - (#PCDATA|table*)>
+<!

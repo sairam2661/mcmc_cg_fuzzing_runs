@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (#PCDATA | chapter | section | para | title | author | publisher | title-group | year | edition | volume | table | figure | graphic | list | part | appendix | bibliography | index | glossary | abstract | synopsis | dedication | epigraph |
+      xi:include | xi:fallback | xi:redirect | xi:include-result | xi:fallback-result | xi:redirect-result | xi:parse)>
+  <!ATTLIST book
+    xmlns:xi CDATA #IMPLIED
+    xmlns CDATA #IMPLIED>
+  <!ENTITY title-group "A">
+  <!ENTITY % section PUBLIC "A" "A">
+  <!NOTATION graphic SYSTEM "B">
+  %section;
+<!-->
+<book xml:lang="en" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Sample Document</title>
+  <author>&title;</author>
+  <publisher>XYZ Publisher</publisher>
+  <copyright>
+    <year>2024</year>
+    <edition>First Edition</edition>
+  </copyright>
+  <chapter>
+    <section><para>Some text with special character &amp;</para></section>
+  </chapter>
+  <message>&title;</message>
+  <xi:include href="external_file.xml"/>
+</book> 
+
+ 
+<!DOCTYPE part [
+  <!ELEMENT part (#PCDATA | chapter | section)>
+]>
+<part xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:fallback>
+    <para>Alternate content</para>
+  </xi:fallback>
+  <xi:redirect href="external_file.xml#target"/>
+  <section>&title;</section>
+</part> 
+
+<!DOCTYPE index [
+  <!ELEMENT index (#PCDATA | keywd | author | title | bibitem | chapter | section | table | figure)>
+]>
+<index>
+  <xi:parse xml:space="preserve" data="Some sample text &#8594; with special character & in it!" />
+</index> 
+<!DOCTYPE abstract [
+  <!ELEMENT abstract (#PCDATA | title | section)>
+]>
+<abstract>
+  <title>Abstract</title>
+  <xi:parse xml:space="preserve" data="Some sample abstract text with &#172; and & in it! " />
+</abstract> 
+<!DOCTYPE synopsis [
+  <!ELEMENT synopsis (#PCDATA | title |

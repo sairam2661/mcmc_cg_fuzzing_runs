@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE glossary [
+  <!ELEMENT glossary (entry+)>
+  <!ATTLIST glossary
+          version CDATA #IMPLIED
+          author CDATA #IMPLIED
+          xmlns CDATA #REQUIRED>
+  <!ENTITY ent1 "V"
+  >
+  <!ENTITY % ent2 "#">
+  <!NOTATION HTML PUBLIC "-"
+  "B"
+  >
+  %ent2;
+  <!--
+  Sample documentation
+  -->
+  <!ELEMENT entry (#PCDATA)>
+  <!ATTLIST entry
+          id ID #IMPLIED
+          sort CDATA #IMPLIED
+          date CDATA #IMPLIED>
+]>
+<document
+    xmlns="h"
+    xmlns:xlink="f"
+    xmlns:xsi="h"
+    version="1"
+    author="A">
+  <glossary xml:space="p" xml:lang="e">
+    <entry id="a" sort="b" date="c">
+      Glossary entry text with XML character reference: &amp;
+    </entry>
+  </glossary>
+</document>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE note SYSTEM "h" [
+  <!ELEMENT note (#PCDATA|b|i|u|list|item)>
+  <!ATTLIST note lang CDATA #REQUIRED>
+  <!ENTITY b "b" >
+  <!ENTITY % b "%">
+  <!NOTATION isbn PUBLIC "s" "f">
+  %b;
+  <!--%s -->
+]>
+<note lang="n" xmlns:xi="x" xmlns:xsi="x">
+  <title>Example</title>
+  <item> <p> Text <b>Bold</b> </p> </item>
+  <item> <list> <item> list <i> item </i>  </item> </list> </item>
+</note>

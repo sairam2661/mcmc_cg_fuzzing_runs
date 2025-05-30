@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ATTLIST book id CDATA #REQUIRED>
+  <!ENTITY book-author "J">
+  <!ENTITY % comment "A">
+  <!NOTATION book-notation SYSTEM "Z">
+  %comment; 
+  <!-- book catalog -->
+]>
+<catalog xmlns:xsi="w"http:xsi.org.xsd.xsd.xsd.xsd.xsd.xsd.xd.xn.xb.cns.xsd.xsd.xsd.xsd.xsd.xsd.xds.xsd.xsd.xsd.xsd.xsd.nln.b.xd.b.xd.xsd.xsd.xsds.xp.xs.xs.sv.sxds.xd.x.xsd.xs.xxs.dxbs.xs.x.xsds.xsd.x.xd.x.p.xs.xxs.svs.xs.xsdxs.dx.x.xs.xssbds.xds.x.x.xds.x.x.x.x.xpds.xdpss.x.x.xds.x.xsb.x.xsss.xsssb.xssss.xdd.xxsddd.x.xs.x.vt.vss.vvs.xsd.xbsbx.xs.xxs.xsxsdxsdds.xsd.xbsb.vt.vdx.x.s.xds.xxs.xs.xsxs.xsdd.xds.xss.xds.xss.x.xs.xss.xxs.xss.x.xs.x.vttss.xsdd.xss.vss.xss.x.x.sss.xsdx.xss.xss.xsxs.xvs.x.xs.x.xs.xss.x.xs.xss.xss.xss.x.xdd.xssss.xdd.xxs.x.vss.vvs.vts.xv.x.xs.xvx.vss.vss.vss.vv.xs.xss.xss.x.xs.xsss.xssss.xssss.xssss.x.sssss.xss.xss.xss.xss.xssss.x.sssss.xss.xssss.x.xsss.xsssss.xsssx.xsss.xsssx.xss.xsssx.xsssx.xsssx.xsss.sssss.sssss.x.xssss.xss.xss.xsssss.xsssx.xsssx.x.vvv.xss.xsss.xsssx.xsss.x.vssss.xxs.v.xs.x.vssss.xsss.xsss.xsssss.xss.x.xsssx.sssss.ssss.xvvssss.vvssss.ssss.x.v.sss.xs.x.v.v.v.vsvs

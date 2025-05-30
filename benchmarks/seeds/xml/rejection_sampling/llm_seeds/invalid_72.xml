@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author,chapter*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ATTLIST chapter id CDATA #REQUIRED>
+  <!ATTLIST chapter authorref CDATA #IMPLIED>
+]>
+<book>
+  <title>On the Origin of Species</title>
+  <author>Charles Darwin</author>
+  <chapter id="chap1">Chapter 1: Variation Under Domestication</chapter>
+  <chapter id="chap2" authorref="ch1">Chapter 2: Variation Under Domestication</chapter>
+  <chapter id="chap3">Chapter 3: Variation Under Domestication</chapter>
+</book>

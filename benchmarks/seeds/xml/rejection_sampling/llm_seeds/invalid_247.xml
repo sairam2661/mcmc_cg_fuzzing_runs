@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author,year)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ELEMENT section (#PCDATA)>
+  <!ELEMENT paragraph (#PCDATA)>
+  <!ELEMENT sentence (#PCDATA)>
+  <!ELEMENT word (#PCDATA)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT url (#PCDATA)>
+]>
+<book>
+  <title>My Book</title>
+  <author>John Doe</author>
+  <year>2001</year>
+  <chapter>Chapter 1</chapter>
+  <section>Section 1.1</section>
+  <paragraph>This is a paragraph with several <word>words</word> and <word>words</word> and <word>words</word>.</paragraph>
+  <sentence>This is a <word>sentence</word> with <word>several</word> <word>words</word>.</sentence>
+  <name>
+    <first-name>John</first-name>
+    <middle-name>Michael</middle-name>
+    <last-name>Doe</last-name>
+  </name>
+  <address>
+    <street>123 Main St</street>
+    <city>Anytown</city>
+    <state>CA</state>
+    <zip>12345</zip>
+  </address>
+  <phone>123-456-7890</phone>
+  <email>johndoe@example.com</email>
+  <url>http://www.example.com</url>
+</book>

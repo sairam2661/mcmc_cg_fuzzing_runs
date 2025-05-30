@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "document.dtd">
+<!ENTITY % entity1 "This is entity1.">
+<!ENTITY % entity2 "This is entity2.">
+<!ENTITY % entity3 "This is entity3.">
+<!ENTITY % entity4 "This is entity4.">
+<!ENTITY % entity5 "This is entity5.">
+<!ENTITY % entity6 "This is entity6.">
+<!ENTITY % entity7 "This is entity7.">
+<!ENTITY % entity8 "This is entity8.">
+<!ENTITY % entity9 "This is entity9.">
+<!ENTITY % entity10 "This is entity10.">
+<!ENTITY % entity11 "This is entity11.">
+<!ENTITY % entity12 "This is entity12.">
+<!ENTITY % entity13 "This is entity13.">
+<!ENTITY % entity14 "This is entity14.">
+<!ENTITY % entity15 "This is entity15.">
+<!ENTITY % entity16 "This is entity16.">
+<!ENTITY % entity17 "This is entity17.">
+<!ENTITY % entity18 "This is entity18.">
+<!ENTITY % entity19 "This is entity19.">
+<!ENTITY % entity20 "This is entity20.">
+<!ENTITY % entity21 "This is entity21.">
+<!ENTITY % entity22 "This is entity22.">
+<!ENTITY % entity23 "This is entity23.">
+<!ENTITY % entity24 "This is entity24.">
+<!ENTITY % entity25 "This is entity25.">
+<!ENTITY % entity26 "This is entity26.">
+<!ENTITY % entity27 "This is entity27.">
+<!ENTITY % entity28 "This is entity28.">
+<!ENTITY % entity29 "This is entity29.">
+<!ENTITY % entity30 "This is entity30.">
+<!ENTITY % entity31 "This is entity31.">
+<!ENTITY % entity32 "This notations.">
+<!NOTATION notation1 SYSTEM "notation1.dtd">
+<!NOTATION notation2 SYSTEM "notation2.dtd">
+<!NOTATION notation3 SYSTEM "notation3.dtd">
+<!NOTATION notation4 SYSTEM "notation4.dtd">
+<!NOTATION notation5 SYSTEM "notation5.dtd">
+<!NOTATION notation6 SYSTEM "notation6.dtd">
+<!NOTATION notation7 SYSTEM "notation7.dtd">
+<!NOTATION notation8 SYSTEM "notation8.dtd">
+<!NOTATION notation9 SYSTEM "notation9.dtd">
+<!NOTATION notation10 SYSTEM "notation

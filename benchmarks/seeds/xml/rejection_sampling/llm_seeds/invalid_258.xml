@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE book [
+<!ENTITY % ent SYSTEM "entities.ent">
+%ent;
+<!ATTLIST book author CDATA #REQUIRED>
+<!ATTLIST book year CDATA #IMPLIED>
+<!ELEMENT book (title, publisher, author, title, publisher, author, year)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT section (#PCDATA)>
+<!ELEMENT paragraph (#PCDATA)>
+<!ELEMENT quote (#PCDATA)>
+<!ELEMENT figure (#PCDATA)>
+<!ELEMENT table (#PCDATA)>
+<!ELEMENT table-row (#PCDATA)>
+<!ELEMENT table-cell (#PCDATA)>
+<!ELEMENT caption (#PCDATA)>
+<!ELEMENT abstract (#PCDATA)>
+<!ELEMENT keyword (#PCDATA)>
+<!ELEMENT ref (#PCDATA)>
+<!ELEMENT sub (#PCDATA)>
+<!ELEMENT sup (#PCDATA)>
+<!ELEMENT subscript (#PCDATA)>
+<!ELEMENT superscript (#PCDATA)>
+<!ELEMENT subscript (#PCDATA)>
+<!ELEMENT superscript (#PCDATA)>
+<!ELEMENT bibliography (#PCDATA)>
+<!ELEMENT bibliography-entry (#PCDATA)>
+<!ELEMENT note (#PCDATA)>
+<!ELEMENT notes (#PCDATA)>
+<!ELEMENT table-of-contents (#PCDATA)>
+<!ELEMENT index (#PCDATA)>
+<!ELEMENT glossary (#PCDATA)>
+<!ELEMENT glossentry (#PCDATA)>
+<!ELEMENT crossref (#PCDATA)>
+<!ELEMENT appendix (#PCDATA)>
+<!ELEMENT footnotes (#PCDATA)>
+<!ELEMENT footnote (#PCDATA)>
+<!ELEMENT footnotetext (#PCDATA)>
+<!ELEMENT footnote-body (#PCDATA)>
+<!ELEMENT figure-caption (#PCDATA)>
+<!ELEMENT table-caption (#PCDATA)>
+<!ELEMENT table-title (#PCDATA)>
+<!ELEMENT figure-title (#PCDATA)>
+<!ELEMENT figure-number (#PCDATA)>
+<!ELEMENT table-number (#PCDATA)>
+<!ELEMENT figure-number (#PCDATA)>
+<!ELEMENT table-number (#PCDATA)>
+<!ELEMENT list (#PCDATA)>
+<!ELEMENT item (#PCDATA)>
+<!ELEMENT enumeration (#PCDATA)>
+<!ELEMENT enum (#PCDATA)>
+<!ELEMENT enum (#PCDATA)>
+<!ELEMENT enum (#PCDATA)>
+<!ELEMENT enum (#PCDATA)>
+<!ELEMENT enum (#PCDATA)>
+<!ELEMENT enum (#PCDATA)>
+<!ELEMENT enum (#PCDATA)>
+<!ELEMENT enum (#PCDATA)>
+<!ELEMENT enum (#PCDATA)>
+<!ELEMENT enum (#PCDATA)>
+<!ELEMENT enum (#PCDATA)>
+<!ELEMENT enum (#PCDATA)>
+<!ELEMENT enum (#PCDATA)>
+<!ELEMENT enum (#

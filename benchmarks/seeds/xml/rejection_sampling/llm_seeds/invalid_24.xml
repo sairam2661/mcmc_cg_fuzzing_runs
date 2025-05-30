@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!DOCTYPE document SYSTEM 'document.dtd'>
+<!ENTITY ent1 'Entity 1'>
+<!ENTITY ent2 'Entity 2'>
+<!ATTLIST document
+  xmlns:xs CDATA #IMPLIED
+  xmlns:xs2 CDATA #IMPLIED
+  xmlns:xs3 CDATA #IMPLIED
+  xmlns:xs4 CDATA #IMPLIED
+>
+<document xmlns:xs='http://www.w3.org/2001/XMLSchema'
+  xmlns:xs2='http://www.w3.org/2001/XMLSchema'
+  xmlns:xs3='http://www.w3.org/2001/XMLSchema'
+  xmlns:xs4='http://www.w3.org/2001/XMLSchema'>
+  <title>Example Document</title>
+  <section>
+    <para>Paragraph 1</para>
+    <para>Paragraph 2</para>
+  </section>
+  <section>
+    <para>Paragraph 3</para>
+    <para>Paragraph 4</para>
+  </section>
+  <note>&ent1;</note>
+  <note>&ent2;</note>
+  <table>
+    <row>
+      <cell>Cell 1</cell>
+      <cell>Cell 2</cell>
+    </row>
+    <row>
+      <cell>Cell 3</cell>
+      <cell>Cell 4</cell>
+    </row>
+  </table>
+</document>

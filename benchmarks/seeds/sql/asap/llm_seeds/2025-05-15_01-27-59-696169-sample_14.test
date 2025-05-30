@@ -1,0 +1,73 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix complex_tests
+
+set ::timeout 60000
+
+proc generate_sequence {sql_text} {
+  if { $::sql stmt } { db eval {halt} }
+  if { $::sql type } { sqlite3 db test_db}
+  db eval $sql_text
+}
+
+do_test complex-1.1 {
+  execsql {
+    CREATE TABLE c(x);
+    INSERT INTO c VALUES(1);
+  }
+  execsql {SELECT rowid FROM c}
+} {1}
+
+do_execsql_test complex-1.2 {
+  CREATE TABLE d(y UNIQUE);
+  SELECT name FROM sqlite_master;
+} {c d}
+
+ifcapable journalMode {
+  set db journal_mode
+  set db wal_mode
+}
+
+do_test complex-1.3 {
+  execsql {
+    DROP TABLE d
+  }
+  execsql {
+    CREATE TABLE e(x, y);
+    INSERT INTO e VALUES('key', 'value');
+    SELECT x FROM e;
+  }
+} {key}
+
+do_execsql_test complex-1.4 {
+  BEGIN;
+  INSERT INTO e VALUES('key2', 'value2');
+  COMMIT;
+  SELECT * FROM e;
+} {key value key2 value2}
+
+do_execsql_test complex-1.5 {
+  PRAGMA synchronous = 1;
+  BEGIN;
+  INSERT INTO e VALUES('sync','syncdata');
+  COMMIT;
+} {}
+
+set db journal_mode OFF
+set db wal_mode OFF
+set db synchronous 0
+
+do_execsql_test complex-1.6 {
+  BEGIN;
+  INSERT INTO e VALUES('nosync', 'nosyncdata');
+  COMMIT;
+} {}
+
+do_test complex-1.7 {
+  execsql {
+    PRAGMA integrity_check;
+    SELECT * FROM e;
+  }
+} {ok key value key2 value2 nosync nosyncdata}
+
+finish_test

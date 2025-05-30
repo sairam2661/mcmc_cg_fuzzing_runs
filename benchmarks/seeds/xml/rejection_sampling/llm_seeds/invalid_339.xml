@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, publisher, edition, chapter*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT edition (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)<!ATTLIST chapter id CDATA #REQUIRED>>
+]>
+<book>
+  <title>Programming the Universe</title>
+  <author>Sean Carroll</author>
+  <publisher>Penguin Books</publisher>
+  <edition>First Edition</edition>
+  <chapter id="c1">Chapter 1: Introduction</chapter>
+  <chapter id="c2">Chapter 2: Quantum Mechanics</chapter>
+  <chapter id="c3">Chapter 3: Relativity</chapter>
+  <chapter id="c4">Chapter 4: Cosmology</chapter>
+  <chapter id="c5">Chapter 5: Conclusion</chapter>
+</book>

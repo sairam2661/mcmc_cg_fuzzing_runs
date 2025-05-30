@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document [
+  <!ENTITY % general "">
+  <!ENTITY % entity "Entity">
+  <!ENTITY % entities SYSTEM "entities.xml">
+  <!ENTITY % external SYSTEM "external.xml">
+  <!ENTITY % external2 SYSTEM "external.xml" NDATA external-type>
+  <!ENTITY % external3 SYSTEM "external.xml" NDATA external-type2>
+  <!ENTITY % external4 SYSTEM "external.xml" NDATA external-type3>
+]>
+<document xmlns="http://example.org/schemas" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://example.org/schemas http://example.org/schemas.xsd">
+  <info>
+    <name>John</name>
+    <age>30</age>
+  </info>
+  <data>
+    <value>&entities;</value>
+  </data>
+  <data>
+    <value>&entity;</value>
+  </data>
+  <data>
+    <value>&entity;</value>
+  </data>
+  <data>
+    <value>&entity;</value>
+  </data>
+  <data>
+    <value>&entity;</value>
+  </data>
+  <data>
+    <value>&entity;</value>
+  </data>
+  <data>
+    <value>&entity;</value>
+  </data>
+  <data>
+    <value>&entity;</value>
+  </data>
+  <data>
+    <value>&entity;</value>
+  </data>
+  <data>
+    <value>&entity;</value>
+  </data>
+  <data>
+    <value>&entity;</value>
+  </data>
+  <data>
+    <value>&entity;</value>
+  </data>
+  <data>
+    <value>&entity;</value>
+  </data>
+  <data>
+    <value>&entity;</value>
+  </data>
+  <data>
+    <value>&entity;</value>
+  </data>
+  <data>
+    <value>&entity;</value>
+  </data>
+  <data>
+    <value>&entity;</value>
+  </data>
+  <data>
+    <value>&entity;</value>
+  </data>
+  <data>
+    <value>&entity;</value>
+  </data>
+  <data>
+    <value>&entity;</value>
+  </data>
+  <data>
+    <value>&entity;</value>
+  </

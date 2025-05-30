@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (item+)>
+  <!ELEMENT item (name,description,price,category)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+]>
+<catalog>
+  <item>
+    <name>Product A</name>
+    <description>Product A is a great product.</description>
+    <price>$19.99</price>
+    <category>Electronics</category>
+  </item>
+  <item>
+    <name>Product B</name>
+    <description>Product B is an okay product.</description>
+    <price>$29.99</price>
+    <category>Electronics</category>
+  </item>
+  <item>
+    <name>Product C</name>
+    <description>Product C is a terrible product.</description>
+    <price>$39.99</price>
+    <category>Home Goods</category>
+  </item>
+</catalog>

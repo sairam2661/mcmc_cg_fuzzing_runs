@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding="ISO-8859-1"?>
+<!DOCTYPE root SYSTEM 'file.dtd' [
+  <!ELEMENT name ANY>
+  <!ATTLIST person id ID #REQUIRED>
+  <!ENTITY percent "&#37;" >
+  <!ENTITY 	%x "x" >
+  <!NOTATION SGML-system PUBLIC '-//ISO//DTD SGML//EN' 'http://www.iso.ch/iso/en/CatalogueDetailPage.CatalogueDetail?CSNUMBER=11411&ICS1

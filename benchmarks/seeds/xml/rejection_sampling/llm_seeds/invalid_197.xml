@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root [
+  <!ENTITY % ent SYSTEM "entities.ent">
+  <!ELEMENT root (elem1, elem2, elem3)>
+  <!ELEMENT elem1 (#PCDATA)>
+  <!ELEMENT elem2 (elem21, elem22)>
+  <!ELEMENT elem21 (#PCDATA)>
+  <!ELEMENT elem22 (#PCDATA)>
+  <!ELEMENT elem3 (#PCDATA)>
+  <!ATTLIST elem2 id CDATA #REQUIRED>
+  <!ATTLIST elem1 attr1 CDATA #IMPLIED>
+  <!ATTLIST elem1 attr2 CDATA #REQUIRED>
+]>
+<root>
+  <elem1 attr1="value1" attr2="value2">content</elem1>
+  <elem2 id="id2">
+    <elem21>content21</elem21>
+    <elem22>content22</elem22>
+  </elem2>
+  <elem3>content3</elem3>
+</root>
+<!ENTITY % ent SYSTEM "entities.ent">

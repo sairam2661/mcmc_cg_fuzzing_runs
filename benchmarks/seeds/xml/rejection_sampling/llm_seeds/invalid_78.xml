@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!ENTITY % pub "publisher">
+<!ENTITY % ed "editor">
+<!ENTITY % aut "author">
+<!ENTITY % con "contents">
+<!ENTITY % app "appendix">
+<!ENTITY % bib "bibliography">
+<!ENTITY % sec "section">
+<!ENTITY % sub "subsection">
+<!ENTITY % subsub "subsubsection">
+<!ENTITY % item "item">
+<!ENTITY % term "term">
+<!ENTITY % def "definition">
+<!ENTITY % ex "example">
+<!ENTITY % fig "figure">
+<!ENTITY % tab "table">
+<!ENTITY % list "list">
+<!ENTITY % itemized "itemized">
+<!ENTITY % ordered "ordered">
+<!ENTITY % unordered "unordered">
+<!ENTITY % description "description">
+<!ENTITY % note "note">
+<!ENTITY % footnote "footnote">
+<!ENTITY % tableofcontents "table of contents">
+<!ENTITY % index "index">
+<!ENTITY % glossary "glossary">
+<!ENTITY % reference "reference">
+<!ENTITY % bibliography "bibliography">
+<!ENTITY % abstract "abstract">
+<!ENTITY % dedication "dedication">
+<!ENTITY % preface "preface">
+<!ENTITY % acknowledgements "acknowledgements">
+<!ENTITY % toc "table of contents">
+<!ENTITY % tocitem "table of contents item">
+<!ENTITY % tocsubitem "table of contents subitem">
+<!ENTITY % tocsubsubitem "table of contents subsubitem">
+<!ENTITY % tocsubsubsubitem "table of contents subsubsubitem">
+<!ENTITY % tocsubsubsubsubitem "table of contents subsubsubsubitem">
+<!ENTITY % tocsubsubsubsubsubitem "table of contents subsubsubsubsubitem">
+<!ENTITY % tocsubsubsubsubsubsubitem "table of contents subsubsubsubsubsubitem">
+<!ENTITY % tocsubsubsubsubsubsubsubitem "table of contents subsubsubsubsubsubsubitem">
+<!ENTITY % tocsubsubsubsubsubsubsubsubitem "table of contents subsubsubsubsubsubsubsubitem">
+<!ENTITY % tocsubsubsubsubsubsubsubsubsubitem "table of contents subsubsubsubsubsubsubsubsubitem">
+<!ENTITY % tocsubsubsubsubsubsubsubsubsubsubitem "table of contents subsubsubsubsubsubsubsubsubsubitem">
+<!ENTITY % tocsubsubsubsubsubsubsubsubsubsub

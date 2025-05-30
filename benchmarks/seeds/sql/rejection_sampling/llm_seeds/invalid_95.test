@@ -1,0 +1,191 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix sync
+
+proc sync_proc {} {
+  global syncargs
+  lappend syncargs
+  expr {[llength $syncargs] <= 2}
+}
+
+do_test sync-1.2 {
+  execsql {
+    CREATE TABLE a(x);
+    INSERT INTO a VALUES(1),(2),(3);
+  }
+  execsql {SELECT count(*) FROM a}
+} {3}
+
+ifcapable journalMode {
+  catchsql {PRAGMA journal_mode=WAL}
+} {0 {}}
+
+do_test sync-1.3 {
+  execsql {
+    SELECT x FROM a ORDER BY x
+  }
+} {1 2 3}
+
+do_test sync-1.4 {
+  execsql {
+    SELECT x FROM a ORDER BY x DESC
+  }
+} {3 2 1}
+
+do_test sync-1.5 {
+  execsql {
+    SELECT x FROM a ORDER BY x DESC LIMIT 1
+  }
+} {3}
+
+do_test sync-1.6 {
+  execsql {
+    SELECT x FROM a ORDER BY x DESC LIMIT 2
+  }
+} {3 2}
+
+do_test sync-1.7 {
+  execsql {
+    SELECT x FROM a ORDER BY x DESC LIMIT 2 OFFSET 1
+  }
+} {2 3}
+
+do_test sync-1.8 {
+  execsql {
+    SELECT x FROM a ORDER BY x DESC LIMIT 2 OFFSET 3
+  }
+} {}
+
+do_test sync-1.9 {
+  execsql {
+    SELECT x FROM a ORDER BY x DESC LIMIT 2 OFFSET 4
+  }
+} {}
+
+do_test sync-1.10 {
+  execsql {
+    SELECT x FROM a ORDER BY x DESC LIMIT 2 OFFSET 5
+  }
+} {}
+
+do_test sync-1.11 {
+  execsql {
+    SELECT x FROM a ORDER BY x DESC LIMIT 2 OFFSET 6
+  }
+} {}
+
+do_test sync-1.12 {
+  execsql {
+    SELECT x FROM a ORDER BY x DESC LIMIT 2 OFFSET 7
+  }
+} {}
+
+do_test sync-1.13 {
+  execsql {
+    SELECT x FROM a ORDER BY x DESC LIMIT 2 OFFSET 8
+  }
+} {}
+
+do_test sync-1.14 {
+  execsql {
+    SELECT x FROM a ORDER BY x DESC LIMIT 2 OFFSET 9
+  }
+} {}
+
+do_test sync-1.15 {
+  execsql {
+    SELECT x FROM a ORDER BY x DESC LIMIT 2 OFFSET 10
+  }
+} {}
+
+do_test sync-1.16 {
+  execsql {
+    SELECT x FROM a ORDER BY x DESC LIMIT 2 OFFSET 11
+  }
+} {}
+
+do_test sync-1.17 {
+  execsql {
+    SELECT x FROM a ORDER BY x DESC LIMIT 2 OFFSET 12
+  }
+} {}
+
+do_test sync-1.18 {
+  execsql {
+    SELECT x FROM a ORDER BY x DESC LIMIT 2 OFFSET 13
+  }
+} {}
+
+do_test sync-1.19 {
+  execsql {
+    SELECT x FROM a ORDER BY x DESC LIMIT 2 OFFSET 14
+  }
+} {}
+
+do_test sync-1.20 {
+  execsql {
+    SELECT x FROM a ORDER BY x DESC LIMIT 2 OFFSET 15
+  }
+} {}
+
+do_test sync-1.21 {
+  execsql {
+    SELECT x FROM a ORDER BY x DESC LIMIT 2 OFFSET 16
+  }
+} {}
+
+do_test sync-1.22 {
+  execsql {
+    SELECT x FROM a ORDER BY x DESC LIMIT 2 OFFSET 17
+  }
+} {}
+
+do_test sync-1.23 {
+  execsql {
+    SELECT x FROM a ORDER BY x DESC LIMIT 2 OFFSET 18
+  }
+} {}
+
+do_test sync-1.24 {
+  execsql {
+    SELECT x FROM a ORDER BY x DESC LIMIT 2 OFFSET 19
+  }
+} {}
+
+do_test sync-1.25 {
+  execsql {
+    SELECT x FROM a ORDER BY x DESC LIMIT 2 OFFSET 20
+  }
+} {}
+
+do_test sync-1.26 {
+  execsql {
+    SELECT x FROM a ORDER BY x DESC LIMIT 2 OFFSET 21
+  }
+} {}
+
+do_test sync-1.27 {
+  execsql {
+    SELECT x FROM a ORDER BY x DESC LIMIT 2 OFFSET 22
+  }
+} {}
+
+do_test sync-1.28 {
+  execsql {
+    SELECT x FROM a ORDER BY x DESC LIMIT 2 OFFSET 23
+  }
+} {}
+
+do_test sync-1.29 {
+  execsql {
+    SELECT x FROM a ORDER BY x DESC LIMIT 2 OFFSET 24
+  }
+} {}
+
+do_test sync-1.30 {
+  execsql {
+    SELECT x FROM a ORDER BY x DESC LIMIT 2 OFFSET 25
+  }
+} {}
+
+do_test sync

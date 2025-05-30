@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE books SYSTEM "n"
+
+         [
+           <!ELEMENT books (book+)>
+           <!ATTLIST books
+                xml:lang CDATA #REQUIRED
+                xsi:schemaLocation CDATA #IMPLIED
+                xsi:noNamespaceSchemaLocation CDATA #IMPLIED
+           >
+           <!ENTITY author "J"
+                >
+           <!ENTITY % entity "#">
+         <!NOTATION n SYSTEM "n">
+         %entity;    <!-- use the entity within the doctype -->
+         <!ENTITY n SYSTEM "n" NDATA a>
+         ]>
+<books xml:lang="e" xmlns:xsi="x" xsi:noNamespaceSchemaLocation="s">
+ <book>
+  <title>&author;</title>
+  <author>Me</author>
+  <publication>Pub</publication>
+</book>
+</books>

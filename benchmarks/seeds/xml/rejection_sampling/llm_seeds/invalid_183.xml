@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>My Website</title>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="alternate" type="application/rss+xml" href="feed.xml" />
+  <script type="text/javascript" src="script.js"></script>
+  <style type="text/css">
+    body {
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div id="header">
+    <h1>Welcome to My Website</h1>
+  </div>
+  <div id="main">
+    <h2>Section 1</h2>
+    <p>This is a paragraph of text.</p>
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+  </div>
+  <div id="footer">
+    <p>&copy; 2023 My Website</p>
+  </div>
+</body>
+</html>

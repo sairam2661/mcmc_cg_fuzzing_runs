@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+<!ELEMENT catalog (book+)>
+<!ELEMENT book (title,author,price,description)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ATTLIST book id CDATA #REQUIRED>
+<!ATTLIST book year CDATA #IMPLIED>
+<!ATTLIST book lang CDATA #IMPLIED>
+<!ENTITY book1 "A1">
+<!ENTITY book2 "A2">
+<!ENTITY book3 "A3">
+<!ENTITY book4 "A4">
+<!ENTITY book5 "A5">
+<!ENTITY title1 "T1">
+<!ENTITY title2 "T2">
+<!ENTITY title3 "T3">
+<!ENTITY title4 "T4">
+<!ENTITY title5 "T5">
+<!ENTITY author1 "A1">
+<!ENTITY author2 "A2">
+<!ENTITY author3 "A3">
+<!ENTITY author4 "A4">
+<!ENTITY author5 "A5">
+<!ENTITY price1 "P1">
+<!ENTITY price2 "P2">
+<!ENTITY price3 "P3">
+<!ENTITY price4 "P4">
+<!ENTITY price5 "P5">
+<!ENTITY description1 "D1">
+<!ENTITY description2 "D2">
+<!ENTITY description3 "D3">
+<!ENTITY description4 "D4">
+<!ENTITY description5 "D5">
+]>
+<catalog>
+<book id="B1" year="2001" lang="EN" >
+<title>&title1;</title>
+<author>&author1;</author>
+<price>&price1;</price>
+<description>&description1;</description>
+</book>
+<book id="B2" year="2002" lang="FR">
+<title>&title2;</title>
+<author>&author2;</author>
+<price>&price2;</price>
+<description>&description2;</description>
+</book>
+<book id="B3" year="2003" lang="DE">
+<title>&title3;</title>
+<author>&author3;</author>
+<price>&price3;</price>
+<description>&description3;</description>
+</book>
+<book id="B4" year="2004" lang="ES">
+<title>&title4;</title>
+<author>&author4;</author>
+<price>&price4;</price>
+<description>&description4;</description>
+</book>
+<book id="B5" year="

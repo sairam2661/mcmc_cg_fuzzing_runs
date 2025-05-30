@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE root PUBLIC 
+  "M" "M"
+  [
+  <!ELEMENT root (author, content)>
+  <!ATTLIST root id CDATA #REQUIRED>
+  <!ENTITY author-email "j">
+
+  <!ENTITY % xinclude SYSTEM "x" >
+  <!NOTATION xinclude SYSTEM "x">
+  %xinclude;
+
+  <!--
+    Note: entity declaration with a hyphen in the name is valid, 
+    but it may cause confusion in some tools or editors.
+  --><!ENTITY hyphen-entity "a">]>
+
+<root id="r" xmlns:xlink="&xinclude;" xmlns:xsi="&xinclude;" xsi:schemaLocation="&xinclude;">
+   <author xlink:title='title'><![CDATA[<b>Author Name</b>]]></author>
+   <content>&hyphen-entity;</content>
+</root>

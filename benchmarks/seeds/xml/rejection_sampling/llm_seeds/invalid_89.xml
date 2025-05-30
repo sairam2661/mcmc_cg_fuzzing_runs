@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE book [
+<!ELEMENT book (title, author, chapter*, section*)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT chapter (#PCDATA)>
+<!ELEMENT section (#PCDATA)>
+<!ELEMENT titlepart (#PCDATA)>
+<!ELEMENT titlepartseq (#PCDATA)>
+<!ELEMENT titlepartseqitem (#PCDATA)>
+<!ELEMENT subchapter (#PCDATA)>
+<!ELEMENT subchapterseq (#PCDATA)>
+<!ELEMENT subchapterseqitem (#PCDATA)>
+<!ATTLIST title id ID #REQUIRED>
+<!ATTLIST author name CDATA #REQUIRED>
+<!ATTLIST chapter num CDATA #REQUIRED>
+<!ATTLIST section num CDATA #REQUIRED>
+<!ATTLIST titlepart titlepartseqitem CDATA #REQUIRED>
+<!ATTLIST titlepartseq titlepartseqitem CDATA #REQUIRED>
+<!ATTLIST titlepartseqitem titlepartseqitem CDATA #REQUIRED>
+<!ATTLIST subchapter subchapterseqitem CDATA #REQUIRED>
+<!ATTLIST subchapterseq subchapterseqitem CDATA #REQUIRED>
+<!ATTLIST subchapterseqitem subchapterseqitem CDATA #REQUIRED>
+]>
+<book>
+<title id="Book1">My Book</title>
+<author name="John Doe">
+<chapter num="1">
+<subchapter>Chapter 1 Subchapter 1</subchapter>
+<subchapter>Chapter 1 Subchapter 2</subchapter>
+<subchapterseq>
+<subchapterseqitem>Chapter 1 Subchapter 3</subchapterseqitem>
+<subchapterseqitem>Chapter 1 Subchapter 4</subchapterseqitem>
+</subchapterseq>
+</chapter>
+<chapter num="2">
+<subchapter>Chapter 2 Subchapter 1</subchapter>
+<subchapter>Chapter 2 Subchapter 2</subchapter>
+<subchapterseq>
+<subchapterseqitem>Chapter 2 Subchapter 3</subchapterseqitem>
+<subchapterseqitem>Chapter 2 Subchapter 4</subchapterseqitem>
+</subchapterseq>
+</chapter>
+<section num="1">My Section</section>
+<titlepart>My Title Part</titlepart>
+<titlepartseq>
+<titlepartseqitem>My Title Part Item 1</titlepartseqitem>
+<titlepartseqitem>My Title Part Item 2</titlepartseqitem>
+</titlepart

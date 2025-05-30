@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE doc [
+  <!ENTITY % dtd SYSTEM "dtd.dtd">
+  <!ENTITY % public SYSTEM "public.ent">
+  %dtd;
+  %public;
+]>
+<doc xmlns="http://www.example.com/ns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.example.com/ns ns.xsd">
+  <title>XML Document Example</title>
+  <author>
+    <name>John Doe</name>
+    <email>john@example.com</email>
+  </author>
+  <section>
+    <title>Section Title</title>
+    <p>This is a paragraph of text.</p>
+    <p>This is another paragraph of text.</p>
+  </section>
+  <figure>
+    <title>Figure Title</title>
+    <image src="image.jpg" alt="An image"/>
+  </figure>
+  <bibl>
+    <author>Author1</author>
+    <title>Book Title</title>
+    <publisher>Publisher1</publisher>
+    <year>2020</year>
+  </bibl>
+  <bibl>
+    <author>Author2</author>
+    <title>Book Title2</title>
+    <publisher>Publisher2</publisher>
+    <year>2021</year>
+  </bibl>
+</doc>

@@ -1,0 +1,194 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix complex_sqlite_test
+
+set ::timeout 60000
+reset_database
+set testprefix complex_sqlite_test
+ifcapable attach {
+  attach 'file:test.db attaches/a.db'
+  execsql {
+    SELECT name FROM sqlite_master
+  } {main attaches}
+}
+
+proc test_insert_and_count {} {
+  global DB
+  set rows 5
+  db func rand random
+  db func insert_with_data {
+    rand
+    return
+  }
+  db eval {
+    CREATE TABLE b(
+      id,
+      i,
+      x,
+      y,
+      data
+    );
+    INSERT INTO b SELECT rowid
+      (  					    											  	*
+                         		                                                              			   		)
+      	                                                           	  	                           			                                                               								                                                              	 	                            	                                  	                        	                     	                    			 		                                       							                                                        					 		       											}
+    SELECT countFROM b
+  } result
+  db eval {
+    DROP TABLE b
+  }
+  unset db_function
+  return $result
+  set result
+  execsql {SELECT count(*) FROM b}
+  return $result
+  set bcount $result
+  if {$result  5} {
+    set bcount 0
+  }
+  execsql {SELECT x FROM a UNION ALL SELECT i FROM b}
+  if {$bcount  5} {
+    return
+  }
+  return $result
+  return $result
+  lappend result $result
+  execsql {SELECT count(*) FROM a}
+  return $result
+  set result 0
+  proc insert_with_sql {} {
+    execsql {
+      SELECT COUNT(*) FROM main
+    } rows
+    return "INSERT INTO a SELECT %s AS x FROM main WHERE rowid < $rows"
+  }
+  set result
+  execsql {
+    SELECT count(*) FROM b
+  } rows
+  set bcount
+  ifcapable journalMode {
+    do_execsql_test complex-5.4 {
+      PRAGMA journal_mode
+	} {wal}
+  } else {
+    do_execsql_test complex 5.4 {
+      PRAGMA synchronous
+	} {FULL}
+  }
+  if {$bcount  5} {
+    set bcount 0
+  }
+  return $bcount
+  set result
+  set bcount
+  execsql {SELECT x FROM a}
+  if {$bcount  5} {
+    return
+  }
+  set result
+  set bcount
+  execsql {SELECT i FROM b}
+  if {$bcount  5} {
+    return
+  }
+  set result
+  set bcount
+  execsql {SELECT * FROM a}
+  return $result
+  ifcapable wal_limit {
+    register_shutdown_callback {db_wal_limit}
+  }
+  db proc {register_shutdown_callback {} {
+      db_wal_limit
+    }
+  }
+  set result
+  ifcapable {
+    execsql {PRAGMA wal_checkpoint}
+  } {1 {}}
+  test_insert_and_count
+  ifcapable wal_limit {
+    db eval {
+      INSERT INTO a VALUES (10)
+    }
+  }
+  return $result
+  db transaction {
+    set result 0
+    ifcapable {
+      db eval {
+        INSERT INTO a SELECT 5
+      }
+    }
+    ifcapable {
+      db eval {
+        INSERT INTO a SELECT 6
+      }
+    }
+    ifcapable {
+      db eval {
+        INSERT INTO a SELECT 7
+      }
+    }
+    ifcapable {
+      db eval {
+        INSERT INTO a SELECT 8
+      }
+    }
+    ifcapable {
+      db eval {
+        INSERT INTO a SELECT 9
+      }
+    }
+    ifcapable {
+      db eval {
+        INSERT INTO a SELECT 10
+      }
+    }
+    ifcapable {
+      db eval {
+        INSERT INTO b SELECT 1
+      }
+    }
+    db eval {
+      CREATE TABLE c(id,x)
+    }
+    set result 1
+    ifcapable {
+      execsql {
+        SELECT * FROM c
+      }
+    }
+    db eval {
+      CLEAR c
+      INSERT INTO c SELECT 1
+    }
+    db eval {
+      CREATE TABLE d(id,x)
+    }
+    set result 2
+    ifcapable {
+      execsql {
+        SELECT * FROM d
+      }
+    }
+    set result 3
+  }
+  ifcapable wal_limit {
+    db eval {
+      DELETE FROM a WHERE rowid IN $result
+    }
+  }
+  global bcount
+  ifcapable wal_limit {
+    set bresult
+    ifcapable {
+      db eval {
+        CREATE INDEX idx_a ON a(x)
+      }
+    }
+    ifcapable {
+      db eval {
+        SELECT x FROM a
+      }

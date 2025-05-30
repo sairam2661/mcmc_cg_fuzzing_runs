@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE notes [
+  <!ENTITY nbsp "&#160;">
+  <!ENTITY amp "&#38;">
+  <!ENTITY lt "&#60;">
+  <!ENTITY gt "&#62;">
+]>
+<notes>
+  <note id="1" date="2022-01-01">
+    <title>Test Note 1</title>
+    <author>
+      <name>John Doe</name>
+      <email>johndoe@example.com</email>
+      <phone>123-456-7890</phone>
+    </author>
+    <body>
+      <p>This is a test note. It contains multiple paragraphs.</p>
+      <p>
+        This is the second paragraph of the test note.
+        <span style="color: blue;">This text is blue.</span>
+      </p>
+    </body>
+  </note>
+  <note id="2" date="2022-01-02">
+    <title>Test Note 2</title>
+    <author>
+      <name>Jane Doe</name>
+      <email>janedoe@example.com</email>
+      <phone>987-654-3210</phone>
+    </author>
+    <body>
+      <p>This is another test note.</p>
+      <p>
+        This note contains a table.
+        <table>
+          <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+          </tr>
+          <tr>
+            <td>Cell 1</td>
+            <td>Cell 2</td>
+          </tr>
+        </table>
+      </p>
+    </body>
+  </note>
+</notes>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, publisher, year, chapters)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT chapters (chapter+)>
+  <!ELEMENT chapter (title, section, paragraph+)>
+  <!ELEMENT section (#PCDATA)>
+  <!ELEMENT paragraph (#PCDATA)>
+]>
+<book>
+  <title>My Book</title>
+  <author>Me</author>
+  <publisher>Publishing House</publisher>
+  <year>2020</year>
+  <chapters>
+    <chapter>
+      <title>Chapter 1</title>
+      <section>Section 1.1</section>
+      <paragraph>This is a paragraph.</paragraph>
+      <paragraph>This is another paragraph.</paragraph>
+    </chapter>
+    <chapter>
+      <title>Chapter 2</title>
+      <section>Section 2.1</section>
+      <paragraph>This is a paragraph in chapter 2.</paragraph>
+    </chapter>
+  </chapters>
+</book>

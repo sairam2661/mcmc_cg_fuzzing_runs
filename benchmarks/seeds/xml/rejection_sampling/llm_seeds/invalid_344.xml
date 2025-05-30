@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!ENTITY book "book">
+<!ELEMENT book (title, author, publisher, content)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ELEMENT content (#PCDATA)>
+<!ATTLIST book lang CDATA #REQUIRED>
+<!ATTLIST book format CDATA #IMPLIED>
+<!ENTITY author1 "John Doe">
+<!ENTITY author2 "Jane Doe">
+<!ENTITY book1 "My Book">
+<!ENTITY publisher1 "My Publisher">
+<!ENTITY publisher2 "Your Publisher">
+]>
+<book lang="en" format="PDF">
+  <title entity-ref="book1"/>
+  <author entity-ref="author1"/>
+  <publisher entity-ref="publisher1"/>
+  <content>This is my book content.</content>
+  <chapter entity-ref="book1">
+    <section entity-ref="publisher1">
+      <subsection entity-ref="author1">
+        <para>This is my paragraph.</para>
+      </subsection>
+    </section>
+  </chapter>
+</book>

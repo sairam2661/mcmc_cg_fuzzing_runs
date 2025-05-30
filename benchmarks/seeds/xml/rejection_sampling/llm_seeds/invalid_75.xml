@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ENTITY book1 "book1">
+  <!ENTITY book2 "book2">
+  <!ENTITY book3 "book3">
+  <!ENTITY book4 "book4">
+  <!ENTITY book5 "book5">
+]>
+<books>
+  <book id="1" name="&book1;">
+    <author>Author1</author>
+    <title>Book1</title>
+    <description>Some text.</description>
+    <year>2010</year>
+    <price>20.00</price>
+    <isbn>1234567890</isbn>
+    <publisher>
+      <name>Publisher1</name>
+      <address>Address1</address>
+      <phone>Phone1</phone>
+    </publisher>
+  </book>
+  <book id="2" name="&book2;">
+    <author>Author2</author>
+    <title>Book2</title>
+    <description>Some text.</description>
+    <year>2011</year>
+    <price>25.00</price>
+    <isbn>1234567891</isbn>
+    <publisher>
+      <name>Publisher2</name>
+      <address>Address2</address>
+      <phone>Phone2</phone>
+    </publisher>
+  </book>
+  <book id="3" name="&book3;">
+    <author>Author3</author>
+    <title>Book3</title>
+    <description>Some text.</description>
+    <year>2012</year>
+    <price>30.00</price>
+    <isbn>1234567892</isbn>
+    <publisher>
+      <name>Publisher3</name>
+      <address>Address3</address>
+      <phone>Phone3</phone>
+    </publisher>
+  </book>
+  <book id="4" name="&book4;">
+    <author>Author4</author>
+    <title>Book4</title>
+    <description>Some text.</description>
+    <year>2013</year>
+    <price>35.00</price>
+    <isbn>1234567893</isbn>
+    <publisher>
+      <name>Publisher4</name>
+      <address>Address4</address>
+      <phone>Phone4</phone>
+    </publisher>
+  </book>
+  <book id="5" name="

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE note [
+  <!ELEMENT note (#PCDATA)>
+  <!ATTLIST note id ID #REQUIRED>
+  <!ENTITY author "W"><!ENTITY  % emsg "A"><!NOTATION PDF SYSTEM "K">    
+  %emsg;
+  <!---->
+]>
+<note xmlns:g="g">This note was created by <g:name>&author;</g:name>.</note>

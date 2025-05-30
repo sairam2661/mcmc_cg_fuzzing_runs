@@ -1,0 +1,79 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix sync
+
+proc sync_proc {} {
+  global syncargs
+  lappend syncargs
+  expr {[llength $syncargs] <= 2}
+}
+
+ifcapable!wal {
+  finish_test
+  return
+}
+
+do_test sync-1.1 {
+  execsql {
+    CREATE TABLE a(x);
+    INSERT INTO a VALUES(1),(2),(3);
+  }
+  execsql {SELECT count(*) FROM a}
+} {3}
+
+do_test sync-1.2 {
+  execsql {
+    INSERT INTO a VALUES(4);
+    SELECT count(*) FROM a
+  }
+} {4}
+
+do_test sync-1.3 {
+  execsql {
+    BEGIN;
+    INSERT INTO a VALUES(5);
+    SELECT count(*) FROM a
+  }
+} {4}
+
+do_test sync-1.4 {
+  execsql {
+    COMMIT;
+    SELECT count(*) FROM a
+  }
+} {5}
+
+do_test sync-1.5 {
+  execsql {
+    DELETE FROM a WHERE x = 5;
+    SELECT count(*) FROM a
+  }
+} {4}
+
+do_test sync-1.6 {
+  execsql {
+    BEGIN;
+    DELETE FROM a WHERE x = 5;
+    SELECT count(*) FROM a
+  }
+} {4}
+
+do_test sync-1.7 {
+  execsql {
+    COMMIT;
+    SELECT count(*) FROM a
+  }
+} {4}
+
+do_test sync-1.8 {
+  execsql {
+    DROP TABLE a;
+    SELECT name FROM sqlite_master
+  }
+} {{}}
+
+ifcapable journalMode {
+  catchsql {PRAGMA journal_mode=WAL}
+} {0 {}}
+
+finish_test

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Test Document</title>
+  <meta charset="UTF-8"/>
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+  <link rel="stylesheet" type="text/css" href="style2.css"/>
+  <script type="text/javascript" src="script.js"></script>
+  <script type="text/javascript" src="script2.js"></script>
+</head>
+<body>
+  <p>This is a test paragraph.</p>
+  <p>This is another test paragraph.</p>
+  <p>This is a third test paragraph.</p>
+  <p>This is a paragraph with a <span>span</span> element.</p>
+  <p>This is a paragraph with a <b>bold</b> element.</p>
+  <p>This is a paragraph with a <i>italic</i> element.</p>
+  <p>This is a paragraph with a <u>underline</u> element.</p>
+  <p>This is a paragraph with a <s>strike</s> element.</p>
+  <p>This is a paragraph with a <strike>strike</strike> element.</p>
+  <p>This is a paragraph with a <font face="Arial">Arial</font> element.</p>
+  <p>This is a paragraph with a <font size="6">size 6</font> element.</p>
+  <p>This is a paragraph with a <font color="red">red</font> element.</p>
+  <p>This is a paragraph with a <font face="Arial" size="6" color="red">Arial size 6 red</font> element.</p>
+  <p>This is a paragraph with a <abbr title="World Wide Web">WWW</abbr> element.</p>
+  <p>This is a paragraph with a <acronym title="World Wide Web">WWW</acronym> element.</p>
+  <p>This is a paragraph with a <cite>This is a cite</cite> element.</p>
+  <p>This is a paragraph with a <q>This is a quote</q> element.</

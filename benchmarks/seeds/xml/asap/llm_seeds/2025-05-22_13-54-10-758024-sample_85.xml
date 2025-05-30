@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, chapter+)>
+  <!ATTLIST book
+    id  CDATA  #REQUIRED
+    lang (EN|FR|ES) 'EN'>
+  <!ENTITY author "J">
+  <!ENTITY % chapter-template "c">
+  <!NOTATION ISO-8859-1 SYSTEM " ">
+  %chapter-template;
+  <!--> <!--> <!--> <!--> <!--> <!--> <!--> <!-->
+]>
+<book id="b" lang="F" xmlns:xi="x" xmlns:isbn="y">
+   <ix:include href="x" xmlns:ix="x" xsi:nil="t"/>
+ 
+  <title>XML Book</title>
+  <author ref="&author;">J</author>
+  %chapter-template;
+
+  <![CDATA[This is some CDATA text. with <tags>]]>
+  <chapter id="c" date="y">
+    <title>Chapter 1</title>
+    <content>Chapter 1 content</content>
+  </chapter>
+
+  <chapter id="c" ref="&chapter-template;">
+    <title>Chapter 2</title>
+    <content>Chapter 2 content</content>
+  </chapter>
+</book>

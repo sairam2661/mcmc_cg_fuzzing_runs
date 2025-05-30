@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (item*, (comment | doc)*, (author | contributor)*, (bibref | ref)*, (biblioentry | entry)*)>
+  <!ELEMENT item (title, price, description?, (image | imageurl)?)>
+  <!ELEMENT comment (#PCDATA)>
+  <!ELEMENT doc (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT contributor (#PCDATA)>
+  <!ELEMENT bibref (#PCDATA)>
+  <!ELEMENT ref (#PCDATA)>
+  <!ELEMENT biblioentry (#PCDATA)>
+  <!ELEMENT entry (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT image (#PCDATA)>
+  <!ELEMENT imageurl (#PCDATA)>
+]>
+<catalog>
+  <item>
+    <title>Widget</title>
+    <price>12.99</price>
+    <description>Small widget</description>
+    <image>widget.jpg</image>
+  </item>
+  <comment>This is a comment</comment>
+  <author>John Doe</author>
+  <bibref>ref1</bibref>
+  <biblioentry>entry1</biblioentry>
+  <doc>This is a doc</doc>
+  <contributor>Jane Doe</contributor>
+  <ref>ref2</ref>
+  <entry>entry2</entry>
+  <item>
+    <title>Gadget</title>
+    <price>9.99</price>
+    <imageurl>gadget.jpg</imageurl>
+  </item>
+</catalog>

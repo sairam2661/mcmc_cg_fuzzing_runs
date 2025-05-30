@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE book [
+<!ELEMENT book (title, author, publisher, chapter*, section*)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ELEMENT chapter (#PCDATA)>
+<!ELEMENT section (#PCDATA)>
+<!ATTLIST chapter id CDATA #REQUIRED>
+<!ATTLIST chapter name CDATA #IMPLIED>
+<!ATTLIST section id CDATA #REQUIRED>
+<!ATTLIST section name CDATA #IMPLIED>
+<!ELEMENT figure (#PCDATA)>
+<!ELEMENT image (#PCDATA)>
+<!ELEMENT table (#PCDATA)>
+<!ELEMENT footnote (#PCDATA)>
+<!ELEMENT bibliography (#PCDATA)>
+<!ELEMENT appendix (#PCDATA)>
+<!ELEMENT introduction (#PCDATA)>
+<!ELEMENT dedication (#PCDATA)>
+<!ELEMENT epigraph (#PCDATA)>
+<!ELEMENT colophon (#PCDATA)>
+<!ELEMENT titlepage (#PCDATA)>
+<!ELEMENT frontispiece (#PCDATA)>
+<!ELEMENT contents (#PCDATA)>
+<!ELEMENT index (#PCDATA)>
+<!ELEMENT glossary (#PCDATA)>
+<!ELEMENT indexterm (#PCDATA)>
+<!ELEMENT indexentry (#PCDATA)>
+<!ELEMENT glossaryterm (#PCDATA)>
+<!ELEMENT glossaryentry (#PCDATA)>
+<!ELEMENT entry (#PCDATA)>
+<!ELEMENT ref (#PCDATA)>
+<!ELEMENT citation (#PCDATA)>
+<!ELEMENT bibitem (#PCDATA)>
+<!ELEMENT entrytype (#PCDATA)>
+<!ELEMENT entrytypevalue (#PCDATA)>
+<!ELEMENT entrytypevaluevalue (#PCDATA)>
+<!ELEMENT entrytypevaluelabel (#PCDATA)>
+<!ELEMENT entrytypevaluecontent (#PCDATA)>
+<!ELEMENT entrytypevaluelabelcontent (#PCDATA)>
+<!ELEMENT entrytypevaluename (#PCDATA)>
+<!ELEMENT entrytypevaluenamecontent (#PCDATA)>
+<!ELEMENT entrytypevaluenamevalue (#PCDATA)>
+<!ELEMENT entrytypevaluenamevaluecontent (#PCDATA)>
+<!ELEMENT entrytypevaluenamevaluevalue (#PCDATA)>
+<!ELEMENT entrytypevaluenamevaluevaluecontent (#PCDATA)>
+<!ELEMENT entrytypevaluenamevaluevaluecontent (#PCDATA)>
+<!ELEMENT entrytypevaluenamevaluevaluecontent (#PCDATA)>
+<!ELEMENT entrytypevaluenamevaluevaluecontent (#PCDATA)>
+<!ELEMENT entrytypevaluenamevaluevaluecontent (#PCDATA)>
+<!ELEMENT entrytypevaluenamevaluevaluecontent (#PCDATA)>
+<!ELEMENT entrytypevaluenamevaluevaluecontent (#PCDATA)>
+<!ELEMENT entrytypevaluenamevaluevaluecontent (#PCDATA)>
+<!ELEMENT entrytypevaluename

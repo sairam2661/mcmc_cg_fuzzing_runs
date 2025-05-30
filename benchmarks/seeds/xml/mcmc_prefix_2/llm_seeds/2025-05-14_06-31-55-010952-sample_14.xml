@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE notes [
+  <!ELEMENT notes (note+)>
+  <!ATTLIST note id ID #REQUIRED>
+  <!ENTITY e-mail "j"
+    ><!ENTITY % e-f "#">
+    <!NOTATION print SYSTEM "P"
+  >
+  %e-f;
+  <!-- Other entities
+       -->
+]>
+<notes>
+  <note id="1">Hello</note>
+  <note id="2" type="p">Important!</note>
+</notes>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book SYSTEM "book.dtd">
+<!ENTITY entity1 "This is entity 1">
+<!ENTITY entity2 "This is entity 2">
+<!ENTITY entity3 "This is entity 3">
+<!ELEMENT book - - (#PCDATA|&entity1;|&entity1;&entity2;|&entity3;)*>
+<!ELEMENT chapter - - (#PCDATA|&entity1;|&entity1;&entity2;|&entity3;)*>
+<!ELEMENT section - - (#PCDATA|&entity1;|&entity1;&entity2;|&entity3;)*>
+<!ELEMENT paragraph - - (#PCDATA|&entity1;|&entity1;&entity2;|&entity3;)*>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT isbn (#PCDATA)>
+<!ELEMENT bookinfo - - (title|author|publisher|date|isbn)*>
+<!ELEMENT bibliography - - (bookinfo|bookinfo)*>
+<!ELEMENT reference - - (title|author|publisher|date|isbn)*>
+<!ELEMENT citation - - (reference|reference)*>
+<!ELEMENT page (#PCDATA)>
+<!ELEMENT citationref (#PCDATA)>
+<!ELEMENT chapterref (#PCDATA)>
+<!ELEMENT figure (#PCDATA)>
+<!ELEMENT table (#PCDATA)>
+<!ELEMENT list - - (item|item)*>
+<!ELEMENT item - - (#PCDATA)>
+<!ELEMENT tableofcontents - - (chapterref|chapterref)*>
+<!ELEMENT glossary - - (term|term)*>
+<!ELEMENT term - - (#PCDATA)>
+<!ELEMENT definition - - (#PCDATA)>
+<!ELEMENT acronym - - (#PCDATA)>
+<!ELEMENT abbreviation - - (#PCDATA)>
+<!ELEMENT note - - (#PCDATA)>
+<!ELEMENT noteinfo - - (note|note)*>
+<!ELEMENT appendix - - (noteinfo|noteinfo)*>
+<!ELEMENT index - - (term|term)*>
+<!ELEMENT indexentry - - (#PCDATA)>
+<!ELEMENT indexnote - - (#PCDATA)>
+<!ELEMENT indexref - - (#PCDATA)>
+<!ELEMENT glossaryref - - (#PCDATA)>
+<!ELEMENT bibliographyref - - (#PCDATA)>
+<!ELEMENT citationref - - (#PCDATA)>
+<!ELEMENT chapterref - - (#PCDATA)>
+<!ELEMENT figureref - - (#PCDATA)>
+<!ELEMENT tableref - - (#PCDATA

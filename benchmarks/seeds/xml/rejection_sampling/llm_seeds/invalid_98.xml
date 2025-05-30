@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE doc [
+  <!ELEMENT doc (head, body, tail)>
+  <!ELEMENT head (#PCDATA)>
+  <!ELEMENT body (#PCDATA)>
+  <!ELEMENT tail (#PCDATA)>
+]>
+<doc>
+  <head>My Head</head>
+  <body>
+    <p>This is a paragraph.</p>
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+  </body>
+  <tail>This is the end.</tail>
+</doc>

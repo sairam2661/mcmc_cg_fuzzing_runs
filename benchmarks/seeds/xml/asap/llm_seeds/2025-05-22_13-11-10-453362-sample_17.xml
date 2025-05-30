@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<!DOCTYPE book [
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book author CDATA #IMPLIED>
+  <!ENTITY year  " ">
+  <!ENTITY  % iInclude "a" > 
+  <!NOTATION sgf SYSTEM "S" >
+  %iInclude;
+  <!---->  
+]>
+<book     author="J"  
+  xmlns:xlink= "x" 
+  xmlns:xi="x"  
+  xmlns:c14n="x"  
+  xmlns:xsi =  "h" 
+   xmlns  = "y"  
+   xmlns:xsd =  "p">
+  <chapter xlink:href="#"></chapter>
+  <section xml:lang="x">Some sample text</section>
+  <message>This book was published in&year;</message>
+</book>

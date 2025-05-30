@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ATTLIST catalog 
+    id CDATA #REQUIRED
+    lang (EN|ES|FR) #REQUIRED>
+  <!ENTITY author "J"
+    >
+  <!ENTITY % entity-ref "J">
+  <!NOTATION ISO-8859-1 SYSTEM " ">
+  %entity-ref;
+  <!--
+  Document written using XML 1.0
+  -->
+  <!ENTITY doc "A">
+]>
+<catalog id="a" lang="f">
+    <product name="B">
+      <item price="x"/>
+    </product>
+    <product id="y" name="A">
+      <item price="z" sku="a"/>
+    </product>
+</catalog>

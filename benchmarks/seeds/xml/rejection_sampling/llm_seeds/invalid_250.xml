@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+<!ENTITY % ent SYSTEM "entities.ent">
+%ent;
+<!ENTITY book "The Great Gatsby">
+<!ELEMENT catalog (title,author,year)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT book (#PCDATA)>
+<!ATTLIST book title CDATA #IMPLIED>
+<!ATTLIST book author CDATA #IMPLIED>
+<!ATTLIST book year CDATA #IMPLIED>
+<!ELEMENT chapter (#PCDATA)>
+<!ELEMENT paragraph (#PCDATA)>
+<!ELEMENT sentence (#PCDATA)>
+<!ELEMENT section (#PCDATA)>
+<!ELEMENT list (item)*>
+<!ELEMENT item (#PCDATA)>
+<!ELEMENT table (row)*>
+<!ELEMENT row (cell)*>
+<!ELEMENT cell (#PCDATA)>
+<!ELEMENT image (#PCDATA)>
+<!ELEMENT footer (#PCDATA)>
+<!ELEMENT header (#PCDATA)>
+<!ELEMENT footer (image,year)>
+<!ELEMENT header (title,author)>
+]>
+<catalog>
+  <title>The Great Gatsby</title>
+  <author>F. Scott Fitzgerald</author>
+  <year>1925</year>
+  <book title="The Great Gatsby" author="F. Scott Fitzgerald" year="1925">
+    <chapter>
+      <paragraph>
+        <sentence>This is a sentence.</sentence>
+        <sentence>This is another sentence.</sentence>
+      </paragraph>
+      <paragraph>
+        <sentence>This is a third sentence.</sentence>
+        <sentence>This is a fourth sentence.</sentence>
+      </paragraph>
+    </chapter>
+    <section>
+      <list>
+        <item>Item 1</item>
+        <item>Item 2</item>
+        <item>Item 3</item>
+      </list>
+    </section>
+    <table>
+      <row>
+        <cell>Cell 1</cell>
+        <cell>Cell 2</cell>
+        <cell>Cell 3</cell>
+      </row>
+      <row>
+        <cell>Cell 4</cell>
+        <cell>Cell 5</cell>
+        <cell>Cell 6</cell>
+      </row>
+    </table>
+    <image>image.jpg</image>
+    <footer>footer text</footer>
+    <header>header text</header>
+  </book>
+</catalog>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!ENTITY % bookentity SYSTEM "book.ent">
+%bookentity;
+<!ENTITY % bookattlist SYSTEM "bookattlist.ent">
+%bookattlist;
+<!ATTLIST bookauthor (
+  name CDATA #REQUIRED,
+  birthyear CDATA #IMPLIED,
+  deathyear CDATA #IMPLIED
+) #IMPLIED
+<!ELEMENT bookauthor (#PCDATA)>
+<!ELEMENT book (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ELEMENT publicationdate (#PCDATA)>
+<!ELEMENT isbn (#PCDATA)>
+<!ELEMENT pages (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT edition (#PCDATA)>
+<!ELEMENT lang (#PCDATA)>
+<!ELEMENT bookref (#PCDATA)>
+<!ELEMENT ref (#PCDATA)>
+<!ELEMENT footnote (#PCDATA)>
+<!ELEMENT bibliography (#PCDATA)>
+<!ELEMENT reference (#PCDATA)>
+<!ELEMENT citation (#PCDATA)>
+<!ELEMENT footnote-ref (#PCDATA)>
+<!ELEMENT abstract (#PCDATA)>
+<!ELEMENT keyword (#PCDATA)>
+<!ELEMENT index (#PCDATA)>
+<!ELEMENT keywordref (#PCDATA)>
+<!ELEMENT keywordref-ref (#PCDATA)>
+<!ELEMENT keywordref-ref-ref (#PCDATA)>
+<!ELEMENT index-ref (#PCDATA)>
+<!ELEMENT index-ref-ref (#PCDATA)>
+<!ELEMENT index-ref-ref-ref (#PCDATA)>
+<!ELEMENT index-ref-ref-ref-ref (#PCDATA)>
+<!ELEMENT index-ref-ref-ref-ref-ref (#PCDATA)>
+<!ELEMENT index-ref-ref-ref-ref-ref-ref (#PCDATA)>
+<!ELEMENT index-ref-ref-ref-ref-ref-ref-ref (#PCDATA)>
+<!ELEMENT index-ref-ref-ref-ref-ref-ref-ref-ref (#PCDATA)>
+<!ELEMENT index-ref-ref-ref-ref-ref-ref-ref-ref-ref (#PCDATA)>
+<!ELEMENT index-ref-ref-ref-ref-ref-ref-ref-ref-ref-ref (#PCDATA)>
+<!ELEMENT index-ref-ref-ref-ref-ref-ref-ref-ref-ref-ref-ref (#PCDATA)>
+<!ELEMENT index-ref-ref-ref-ref-ref-ref-ref-ref-ref-ref-ref-ref (#PCDATA)>
+<!ELEMENT index-ref-ref-ref-ref-ref-ref-ref-ref-ref-ref-ref-ref-ref (#PCDATA)>
+<!ELEMENT index-ref-ref-ref-ref-ref-ref-ref-ref-ref-ref-ref-ref-ref-ref (#PCDATA)>
+<!ELEMENT index-ref-ref-ref-ref-ref-ref-ref-ref-ref-ref-ref-ref-ref-ref-ref (#PCDATA)>
+<!ELEMENT index-ref-ref-ref-ref-ref-ref-ref-ref-ref-ref-ref-ref-ref-ref-ref-ref (#PCDATA

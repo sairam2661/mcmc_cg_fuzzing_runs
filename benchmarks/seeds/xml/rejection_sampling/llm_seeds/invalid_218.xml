@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!ELEMENT book (title, author, (chapter | section)*, annotation?)>
+<!ELEMENT chapter (#PCDATA)>
+<!ELEMENT section (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT annotation (#PCDATA)>
+<!ATTLIST chapter id CDATA #REQUIRED>
+<!ATTLIST section id CDATA #REQUIRED>
+<!ATTLIST author name CDATA #REQUIRED>
+<!ATTLIST author age CDATA #REQUIRED>
+<!ATTLIST annotation type CDATA #REQUIRED>
+<!ATTLIST annotation date CDATA #REQUIRED>
+]>
+<book>
+<title>XML</title>
+<author name="John Smith" age="30"/>
+<section id="S1">This is a section</section>
+<chapter id="C1">This is a chapter</chapter>
+<section id="S2">This is another section</section>
+<annotation type="editorial" date="2020-01-01">This is an annotation</annotation>
+</book>  <!--  -->
+<!--  -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>XML</title>
+</head>
+<body>
+<p>This is a paragraph</p>
+</body>
+</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; choice; charset=UTF-8" />
+<title>XML</title>
+</head>
+<body>
+<p>This is a paragraph</p>
+</body>
+</html>  <!--  -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>XML</title>
+</head>
+<body>
+<p>This is a paragraph</p>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+          "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:fb="http://www.facebook.com/2008/fbml"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="http://www.facebook.com/2008/fbml">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A short description of this page." />
+    <title>Page Title</title>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <fb:like href="http://example.com" send="false" width="450" show_faces="false" />
+    <div id="fb-comments"></div>
+    <div id="fb-share"></div>
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+    <script type="text/javascript">
+      (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(po, s);
+      })();
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Page Title",
+        "image": "https://example.com/image.jpg",
+        "datePublished": "2015-06-15T14:30:00+08:00",
+        "author": {
+          "@type": "Person",
+          "name": "John Doe"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Example.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://example.com/logo.jpg"
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

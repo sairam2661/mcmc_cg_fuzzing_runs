@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, publisher)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ELEMENT section (#PCDATA)>
+  <!ELEMENT paragraph (#PCDATA)>
+  <!ELEMENT note (#PCDATA)>
+]>
+<book>
+  <title>The Great Gatsby</title>
+  <author>F. Scott Fitzgerald</author>
+  <publisher>Scribner</publisher>
+  <chapter>
+    <section>
+      <paragraph>
+        <note>This is a note</note>
+        <note>This is another note</note>
+      </paragraph>
+      <paragraph>
+        <note>This is another note</note>
+        <note>This is yet another note</note>
+      </paragraph>
+    </section>
+    <section>
+      <paragraph>
+        <note>This is a note</note>
+      </paragraph>
+      <paragraph>
+        <note>This is another note</note>
+      </paragraph>
+    </section>
+  </chapter>
+  <chapter>
+    <section>
+      <paragraph>
+        <note>This is a note</note>
+        <note>This is another note</note>
+        <note>This is yet another note</note>
+      </paragraph>
+      <paragraph>
+        <note>This is another note</note>
+      </paragraph>
+    </section>
+  </chapter>
+</book>

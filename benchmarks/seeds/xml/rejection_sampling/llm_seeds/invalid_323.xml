@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ENTITY nbsp "&#160;">
+  <!ELEMENT book - - (title,author,chapter+)>
+  <!ELEMENT title - - (#PCDATA)>
+  <!ELEMENT author - - (#PCDATA)>
+  <!ELEMENT chapter - - (section+,footnote*)>
+  <!ELEMENT section - - (#PCDATA)>
+  <!ELEMENT footnote - - (#PCDATA)>
+  <!ELEMENT bibliography - - (reference+)>]>
+<book>
+  <title>My Book</title>
+  <author>John Doe</author>
+  <chapter>
+    <section>This is the first section</section>
+    <footnote>This is the first footnote</footnote>
+  </chapter>
+  <chapter>
+    <section>This is the second section</section>
+    <footnote>This is the second footnote</footnote>
+  </chapter>
+  <bibliography>
+    <reference>Reference 1</reference>
+    <reference>Reference 2</reference>
+  </bibliography>
+</book>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE note [
+  <!ELEMENT note (#PCDATA)>
+  <!ATTLIST note lang CDATA #REQUIRED>
+  <!ENTITY amp "&amp;">
+  <!ENTITY % gen "a">
+  <!NOTATION ISO-8859-1 PUBLIC "A" "B" >
+  %gen;
+  <!--%ISO-->  
+]>
+<note lang="G">Hello &amp; <xref linkend="a">A</xref><xi:include xmlns:xi='http://www.w3.org/2001/XInclude' href='a.xml'/></note>

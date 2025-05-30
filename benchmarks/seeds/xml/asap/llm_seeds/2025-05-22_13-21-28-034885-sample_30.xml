@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, chapter*)>
+  <!ATTLIST book
+    id    CDATA   #REQUIRED
+    lang  (en|fr|de)   "f"
+  >
+  <!ENTITY book-author "J"
+  >
+  <!ENTITY % chapter-ref "a"
+  >
+  <!NOTATION notation-name-
+  SYSTEM "m"
+  >    
+  %chapter-ref;                                                                                                           
+  <!-- internal subset-->
+]>
+<book xmlns="x" xmlns:xsi="x" xsi:schemaLocation="x"
+       id="X" lang="e">
+  <title><![CDATA[Test title &#65;]]></title>
+  <author>John &lt;author&gt;</author>
+  <chapter>
+    <p>A <b>Note</b> on Chapter 1.</p>
+  </chapter>
+  <chapter>
+    <p>Chapter 2</p>
+  </chapter>
+</book>

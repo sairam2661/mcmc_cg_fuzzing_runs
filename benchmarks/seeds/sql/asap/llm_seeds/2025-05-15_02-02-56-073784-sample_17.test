@@ -1,0 +1,131 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix complex_sql
+
+set ::timeout 60000 	 setzen timeout to 1 minute
+
+proc complex_proc {} {
+  upvar argout argout
+  global a b
+  set a 5
+  set b 10
+  set argout $a
+  return $a
+}
+
+do_execsql_test complex-1.1 {
+  CREATE TABLE t1(a);
+  INSERT INTO t1 VALUES(1);
+  INSERT INTO t1 VALUES(2);
+  SELECT a FROM t1;
+} {1 2} 
+
+do_test complex-1.2 {
+  sqlite3 db2 complex_test
+  set result 0
+  lappend result stdout
+  lappend result stderr
+  execsql {
+    BEGIN;
+    INSERT INTO t1 VALUES(3);
+    COMMIT;
+  } db2
+  db2 close
+  execsql "SELECT a FROM t1" db2
+  set result $result
+  set result
+} {3}
+
+ifcapable subquery {
+  do_execsql_test complex-1.3 {
+    CREATE TABLE t2(b);
+    INSERT INTO t2 VALUES(20);
+    INSERT INTO t2 VALUES(30);
+    SELECT a FROM t1 WHERE a = 
+    	INSERTORUPDATE
+     	     		}
+     {
+ SELECT c
+ FROM t2
+ WHERE b IN 
+ SELECT b FROM t2 WHERE b BETWEEN 20 AND 30
+     	     		}
+  } 	 DbSet 5
+
+ifcapable view {
+  do_execsql_test complex-1.4 {
+    CREATE TABLE t3(c);
+    CREATE TABLE t4(d);
+    CREATE TABLE t5(e);
+    CREATE TABLE t6(f);
+    CREATE TABLE t7(g);
+    CREATE TABLE t8(h);
+    CREATE TABLE t9(i);
+    CREATE TABLE t10(j);
+    CREATE TABLE t11(k);
+    CREATE TABLE t12(l);
+    CREATE TABLE t13(m);
+    CREATE TABLE t14(n);
+    CREATE TABLE t15(o);
+    CREATE TABLE t16(p);
+    CREATE TABLE t17(q);
+    CREATE TABLE t18(r);
+    CREATE TABLE t19(s);
+    CREATE TABLE t20(t);
+    CREATE TABLE t21(u);
+    CREATE TABLE t22(v);
+    CREATE TABLE t23(w);
+    CREATE TABLE t24(x);
+    CREATE TABLE t25(y);
+    CREATE TABLE t26(z);
+    CREATE TABLE view1(i, l, j, k, q) 		}
+     {
+ SELECT c
+ FROM t7
+}
+SELECT g
+FROM t23 AS t1
+  RIGHT JOIN t21 AS t2
+    ON t2
+SELECT l
+FROM t25
+  NATURAL JOIN t23
+}
+ SELECT t1
+FROM t17
+ AS t1
+  RIGHT JOIN t7
+  AS t2 ON t1
+  INNER JOIN t21
+  AS t3 ON t3
+ RIGHT JOIN t5  AS t4 on t4
+  RIGHT JOIN t1  AS t5 ON T1
+  INNER JOIN t2  AS t6 ON T2
+  INNER JOIN t12  AS t7 ON t7
+  INNER JOIN t15  AS t8 ON t5
+  RIGHT JOIN t24  AS t9 ON T9
+  LEFT JOIN t18  AS t10 ON t2
+  LEFT JOIN t15  AS t11 ON T11
+  LEFT JOIN t21  AS t12 ON t12
+  LEFT JOIN t9 ON T9 INNER JOIN t6 AS t13 ON t13
+  RIGHT JOIN t6  AS t14 ON t14
+  RIGHT JOIN t22  AS t15 ON t15
+  RIGHT JOIN t20 AS t16 ON T16
+  RIGHT JOIN t1  AS t17 ON T1
+  RIGHT JOIN t4  AS t18 ON t18
+  RIGHT JOIN t22 AS t19 ON T19
+  INNER JOIN t3  AS t20 ON t20
+  INNER JOIN t12 AS t21 ON T21
+  RIGHT JOIN t11 AS t22 ON T22
+  INNER JOIN t18 ON T18
+  INNER JOIN t23 AS t23 ON t23
+  INNER JOIN t21 AS t24 ON T24
+  INNER JOIN t20 AS t25 ON t25
+  RIGHT JOIN t3 AS t26 ON t26
+ ORDER BY q NULLS FIRST
+ORDER BY l DESC NULLS FIRST
+SET limit 100
+  SELECT j FROM t12 AS t1 	{9 14 18  19 22  100 101 102 103 104 
+  105 106 107  110 111  113 115 117  121 122 125 126 129
+  131 132 133
+  135 138 141

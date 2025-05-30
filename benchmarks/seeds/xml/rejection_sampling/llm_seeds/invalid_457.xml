@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ENTITY % pubinfo SYSTEM "pubinfo.ent">
+  <!ENTITY % catalog SYSTEM "catalog.ent">
+  %catalog;
+  %pubinfo;
+]>
+<catalog>
+  <book id="bk101">
+    <author>John Smith</author>
+    <title>XML for Beginners</title>
+    <genre>Computer</genre>
+    <price>39.95</price>
+    <publish_date>2000-10-01</publish_date>
+    <description>An introduction to XML.</description>
+  </book>
+  <book id="bk102">
+    <author>Jane Doe</author>
+    <title>XSLT and XPath</title>
+    <genre>Computer</genre>
+    <price>49.95</price>
+    <publish_date>2001-05-01</publish_date>
+    <description>A comprehensive guide to XSLT and XPath.</description>
+  </book>
+  <book id="bk103">
+    <author>John Smith</author>
+    <title>XML Schema</title>
+    <genre>Computer</genre>
+    <price>29.95</price>
+    <publish_date>2002-01-01</publish_date>
+    <description>A guide to XML Schema.</description>
+  </book>
+  <book id="bk104">
+    <author>Jane Doe</author>
+    <title>XML and Web Services</title>
+    <genre>Computer</genre>
+    <price>39.95</price>
+    <publish_date>2003-03-01</publish_date>
+    <description>A guide to XML and Web Services.</description>
+  </book>
+  <catalog id="cat101">
+    <book id="bk105">
+      <author>John Smith</author>
+      <title>XML for Dummies</title>
+      <genre>Computer</genre>
+      <price>19.95</price>
+      <publish_date>2004-06-01</publish_date>
+      <description>A beginner's guide to XML.</description>
+    </book>
+    <book id="bk106">
+      <author>Jane Doe</author>
+      <title>XSLT and XPath for Dummies</title>
+      <genre>Computer</genre>
+      <price>29.95</price>
+      <publish_date>2005-08-01</publish_date>

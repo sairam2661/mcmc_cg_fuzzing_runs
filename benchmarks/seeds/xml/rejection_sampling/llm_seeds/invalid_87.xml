@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog SYSTEM "catalog.dtd">
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="catalog.xsd">
+  <item id="1">
+    <name>Example Item</name>
+    <description>This is an example item.</description>
+    <price>19.99</price>
+    <quantity>10</quantity>
+    <image href="item1.jpg"/>
+    <reviews>
+      <review rating="5">
+        <author>John Doe</author>
+        <text>This item is amazing!</text>
+      </review>
+      <review rating="1">
+        <author>Jane Doe</author>
+        <text>This item is terrible.</text>
+      </review>
+    </reviews>
+  </item>
+  <item id="2">
+    <name>Another Item</name>
+    <description>This is another item.</description>
+    <price>9.99</price>
+    <quantity>5</quantity>
+    <image href="item2.jpg"/>
+    <reviews>
+      <review rating="3">
+        <author>Bob Smith</author>
+        <text>This item is okay.</text>
+      </review>
+    </reviews>
+  </item>
+</catalog>

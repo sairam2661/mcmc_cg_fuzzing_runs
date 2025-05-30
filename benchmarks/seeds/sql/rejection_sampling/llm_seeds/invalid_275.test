@@ -1,0 +1,31 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix sync
+
+do_test sync-1.1 {
+  db close
+  sqlite3 db test.db
+  execsql {
+    CREATE TABLE a(x);
+    INSERT INTO a VALUES(1),(2),(3);
+  }
+  execsql {SELECT count(*) FROM a}
+} {3}
+
+ifcapable journalMode {
+  catchsql {PRAGMA journal_mode=WAL}
+} {0 {}}
+
+do_test sync-1.2 {
+  set res [execsql {
+    PRAGMA wal_checkpoint
+  }]
+  lappend res 0
+  set res
+} {0 0 0}
+
+ifcapable journalMode {
+  catchsql {PRAGMA journal_mode=DELETE}
+} {0 {}}
+
+finish_test

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!ENTITY % general-public
+"<!ENTITY % book-info SYSTEM 'book-info.xml'>
+<!ENTITY % book-content SYSTEM 'book-content.xml'>
+<!ENTITY % book-index SYSTEM 'book-index.xml'>
+<!ENTITY % book-appendix SYSTEM 'book-appendix.xml'>
+<!ENTITY % book-bibliography SYSTEM 'book-bibliography.xml'>
+<!ENTITY % book-index-2 SYSTEM 'book-index-2.xml'>
+<!ENTITY % book-appendix-2 SYSTEM 'book-appendix-2.xml'>
+<!ENTITY % book-bibliography-2 SYSTEM 'book-bibliography-2.xml'>
+<!ENTITY % book-title SYSTEM 'book-title.xml'>
+<!ENTITY % book-subtitle SYSTEM 'book-subtitle.xml'>
+<!ENTITY % book-author SYSTEM 'book-author.xml'>
+<!ENTITY % book-abstract SYSTEM 'book-abstract.xml'>
+<!ENTITY % book-acknowledgments SYSTEM 'book-acknowledgments.xml'>
+<!ENTITY % book-tableofcontents SYSTEM 'book-tableofcontents.xml'>
+<!ENTITY % book-index-3 SYSTEM 'book-index-3.xml'>
+<!ENTITY % book-appendix-3 SYSTEM 'book-appendix-3.xml'>
+<!ENTITY % book-bibliography-3 SYSTEM 'book-bibliography-3.xml'>
+<!ENTITY % book-appendix-4 SYSTEM 'book-appendix-4.xml'>
+<!ENTITY % book-bibliography-4 SYSTEM 'book-bibliography-4.xml'>
+<!ENTITY % book-index-4 SYSTEM 'book-index-4.xml'>
+<!ENTITY % book-appendix-5 SYSTEM 'book-appendix-5.xml'>
+<!ENTITY % book-bibliography-5 SYSTEM 'book-bibliography-5.xml'>
+<!ENTITY % book-index-5 SYSTEM 'book-index-5.xml'>
+<!ENTITY % book-appendix-6 SYSTEM 'book-appendix-6.xml'>
+<!ENTITY % book-bibliography-6 SYSTEM 'book-bibliography-6.xml'>
+<!ENTITY % book-index-6 SYSTEM 'book-index-6.xml'>
+<!ENTITY % book-appendix-7 SYSTEM 'book-appendix-7.xml'>
+<!ENTITY % book-bibliography-7 SYSTEM 'book-bibliography-7.xml'>
+<!ENTITY % book-index-7 SYSTEM 'book-index-7.xml'>
+<!ENTITY % book-appendix-8 SYSTEM 'book-appendix-8.xml'>
+<!ENTITY % book-bibliography-8 SYSTEM 'book-bibliography-8.xml'>
+<!

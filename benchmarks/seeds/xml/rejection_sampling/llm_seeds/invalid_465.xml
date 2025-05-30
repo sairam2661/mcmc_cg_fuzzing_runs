@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE root SYSTEM 'root.dtd'>
+<!ELEMENT root (child1,child2,child3)>
+<!ELEMENT child1 (#PCDATA)>
+<!ELEMENT child2 EMPTY>
+<!ELEMENT child3 (#PCDATA)>
+<!ATTLIST child2 attr1 CDATA #REQUIRED>
+<!ATTLIST child3 attr2 CDATA #IMPLIED>
+<!ATTLIST root attr3 CDATA #IMPLIED>
+<root attr3='abc'>
+  <child1>Hello</child1>
+  <child2 attr1='def'/>
+  <child3 attr2='ghi' attr3='jkl'/>
+</root>

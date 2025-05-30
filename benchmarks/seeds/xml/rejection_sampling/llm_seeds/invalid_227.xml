@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!ELEMENT book (author, title, price, chapter*, section*)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT chapter (#PCDATA)>
+<!ELEMENT section (#PCDATA)>
+<!ATTLIST chapter id CDATA #REQUIRED>
+<!ATTLIST section id CDATA #REQUIRED>
+<!ELEMENT contributors (contributor+)> 
+<!ELEMENT contributor (#PCDATA)>]>
+<book>
+<author>John Smith</author>
+<title>Introduction to XML</title>
+<price>49.99</price>
+<chapter id="chap1">Chapter 1: Introduction</chapter>
+<section id="sec1">Section 1.1: History of XML</section>
+<section id="sec2">Section 1.2: XML Syntax</section>
+<contributors>
+<contributor>Michael Brown</contributor>
+<contributor>Jane Doe</contributor>
+</contributors>
+</book>

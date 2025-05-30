@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="refresh" content="5"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="This is a test page"/>
+  <meta name="keywords" content="test,page,example"/>
+  <meta name="author" content="John Doe"/>
+  <title>Test Page</title>
+ </head>
+ <body>
+  <div id="main" class="container">
+   <h1>Heading</h1>
+   <p>Paragraph with <span style="color:red">bold</span> text.</p>
+   <p>Paragraph with <b>bold</b> and <i>italic</i> text.</p>
+   <p>Paragraph with <a href="http://www.example.com">link</a> to external site.</p>
+   <p>Paragraph with <a href="mailto:john.doe@example.com">email</a> link.</p>
+   <p>Paragraph with <img src="image.jpg" alt="Image description" title="Image title" width="100" height="100"/> image.</p>
+   <p>Paragraph with <ul><li>list item 1</li><li>list item 2</li></ul> list.</p>
+   <p>Paragraph with <table border="1">
+    <tr><th>Column 1</th><th>Column 2</th></tr>
+    <tr><td>Cell 1</td><td>Cell 2</td></tr>
+   </table> table.</p>
+  </div>
+ </body>
+</html>

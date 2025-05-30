@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE document SYSTEM 'http://www.example.com/dtd'>
+<!ENTITY % entities 'entity1 "entity1" entity2 "entity2"'>
+<!ENTITY entity1 'value1'>
+<!ENTITY entity2 'value2'>
+<!ATTLIST document
+  xmlns:custom 'http://www.example.com/custom'
+  xmlns:xsi 'http://www.w3.org/2001/XMLSchema-instance'
+  xsi:schemaLocation 'http://www.example.com/custom http://www.example.com/custom.xsd'>
+<document xmlns:custom='http://www.example.com/custom'>
+  <custom:element1 custom:attribute1='value1' custom:attribute2='value2'>
+    <custom:element2 custom:attribute1='value1'>
+      <custom:element3 custom:attribute1='value1'>text</custom:element3>
+      <custom:element4 custom:attribute1='value1'>text</custom:element4>
+    </custom:element2>
+  </custom:element1>
+  <custom:element5 custom:attribute1='value1' custom:attribute2='value2'>
+    <custom:element6 custom:attribute1='value1' custom:attribute3='value3'>
+      <custom:element7 custom:attribute1='value1' custom:attribute4='value4'>
+        <custom:element8 custom:attribute1='value1' custom:attribute5='value5'>
+          <custom:element9 custom:attribute1='value1' custom:attribute6='value6'>
+            <custom:element10 custom:attribute1='value1' custom:attribute7='value7'>
+              <custom:element11 custom:attribute1='value1' custom:attribute8='value8'>
+                <custom:element12 custom:attribute1='value1' custom:attribute9='value9'>
+                  <custom:element13 custom:attribute1='value1' custom:attribute10='value10'>
+                    <custom:element14 custom:attribute1='value1' custom:attribute11='value11'>
+                      <custom:element15 custom:attribute1='value1' custom:attribute12='value12'>
+                        <custom:element16 custom:attribute1='value1' custom:attribute13='value13'>
+                          <custom:element17 custom:attribute1='value1' custom:attribute14='value14'>

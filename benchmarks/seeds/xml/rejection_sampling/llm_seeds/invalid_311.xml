@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE notes [
+<!ELEMENT notes (note+)>
+<!ELEMENT note (to|from|date|heading|body)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+<!ATTLIST note id CDATA #REQUIRED>
+<!ATTLIST note category (work|personal) #IMPLIED>
+<!ATTLIST note author CDATA #IMPLIED>
+<!ATTLIST note modified CDATA #IMPLIED>
+<!ELEMENT address (street|city|state|zip)>
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT state (#PCDATA)>
+<!ELEMENT zip (#PCDATA)>
+<!ELEMENT company (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT note-type (meeting|phone-call|email)>
+<!ELEMENT meeting (#PCDATA)>
+<!ELEMENT phone-call (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+]>
+<notes>
+<note id="123" category="work" author="John Smith" modified="2022-01-01">
+<to>Mr. Smith</to>
+<from>John Doe</from>
+<date>2022-01-02</date>
+<heading>Meeting</heading>
+<body>This is a meeting note.</body>
+<address>
+<street>123 Main St</street>
+<city>New York</city>
+<state>NY</state>
+<zip>10001</zip>
+</address>
+<note-type>meeting</note-type>
+</note>
+</notes>

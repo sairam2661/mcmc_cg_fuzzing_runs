@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<!DOCTYPE xml:lang [<!ATTLIST xml:lang lang CDATA #REQUIRED> ]>
+<root xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns="http://www.example.com/xmlns"
+  xmlns:ex="http://www.example.com/ex"
+  xml:lang="en"
+  xml:space="preserve">
+  <ex:header>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      elementFormDefault="qualified"
+      attributeFormDefault="unqualified"
+      targetNamespace="http://www.example.com/ex"
+      xmlns:ex="http://www.example.com/ex"
+      version="1.0"
+      xsi:schemaLocation="http://www.example.com/ex ex.xsd">
+      <xs:annotation>
+        <xs:documentation>This is a schema for example.com</xs:documentation>
+      </xs:annotation>
+      <xs:element name="header">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="subtitle" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </ex:header>
+  <ex:title>Example Title</ex:title>
+  <ex:subtitle>Example Subtitle</ex:subtitle>
+  <ex:para>
+    <ex:span xml:lang="fr">This is an example paragraph.</ex:span>
+  </ex:para>
+  <ex:link xlink:href="http://www.example.com" xlink:title="Example Link">
+    <ex:anchor>Link</ex:anchor>
+  </ex:link>
+  <ex:list>
+    <ex:item>Item 1</ex:item>
+    <ex:item>Item 2</ex:item>
+  </ex:list>
+</root>

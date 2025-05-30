@@ -1,0 +1,104 @@
+set 	 testdir 	 {   file  dirname    $argv0    } 	 source 	 $testdir/tester.tcl 	 set   testprefix 	 c 	 set  timeout 
+ 60000    ifcapable 	
+  D 	  {  do_execsql_test   z_ 	
+ - 
+ 4 	 . 
+  9  			 { 
+  CREATE TABLE 
+ M__ 
+	 ( 
+ qD 	
+ JK    NOT NULL    	 )    
+ ;  	 } 	 {  $::n    }       
+	 if 
+ o_w    {   db 	
+ dXw4__3B8  "J"    { 
+ 54116.0   	 $d4   
+	 } 	
+   	   		 } 	
+
+  	    	  if 
+ $::s  
+	 < 	 $H___7_   		 {  } 	
+    } 
+    ifcapable 
+ v3 	 { 
+  do_test   F 	 -  4 4 0 
+ . 
+ 0 8  
+  {  db 	 d     
+	 catchsql   {   	 BEGIN 
+ EXCLUSIVE   	  ; 
+
+ 
+	 SELECT 
+ tN2  
+
+	 FROM 
+ Po  
+
+ WHERE 
+ qm_  	 
+ =  t      ; 	 CREATE INDEX   G 		 ON 
+ Dg958  	 (   b   )     ;   WITH 	  t 
+ ( 
+   A  )  
+ AS  ( 	 BEGIN 
+ EXCLUSIVE   
+ UNION ALL  
+ CREATE INDEX   K_   ON 
+ p 	 ( 	 B 	 )   
+
+ UNION ALL 
+ 
+ COMMIT   
+ 	  ) 	
+ COMMIT        }  
+
+ 
+     } 		 {  {  	 "Hu)"    { 	 
+ PRAGMA 
+
+ j 	
+ = 	  61    	  ;   INSERT INTO  
+ O  	
+ ( 
+ h_ 
+ , 
+ a 	 , 
+   o 
+ , 
+ co_J 
+ ,   C  	 ) 
+  SELECT 		 *      ;  WITH   B   ( 
+ 
+	 	 F 
+  )  	 AS 
+ ( 	 BEGIN 
+	
+ IMMEDIATE   	 UNION ALL   
+	  CREATE TABLE 	 Z 	 (  Co   PRIMARY KEY   		 NOT NULL  
+ PRIMARY KEY  	 NOT NULL     , 	 G3  
+ , 
+ 
+ u    )    ) 
+ CREATE TABLE   
+  JF  
+  (   ET   	 )      
+ }    }  	   		 02    
+ } 	      	 } 
+   
+
+ ifcapable 	  e 	  {  	 b 
+	 { 	 SELECT   count(*)   FROM    U_      ;   INSERT INTO 	 P 	  SELECT  M_   ( 
+ * 
+	 	
+	  )    
+  ;   CREATE TABLE 
+	
+ F 	 (   f__   
+ )    	 }          } 		   
+ 
+  finish_test 
+
+		  

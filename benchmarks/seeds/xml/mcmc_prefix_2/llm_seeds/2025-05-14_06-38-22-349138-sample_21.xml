@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE student [
+  <!ELEMENT student EMPTY>
+  <!ATTLIST student
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+  >
+  <!ENTITY note "B">
+  <!ENTITY % studentEntity "D">
+  <!NOTATION print SYSTEM "l">
+  %studentEntity;
+  <!-- other data -->
+]>
+<student xmlns="x" xmlns:xs="w" id="1" name="D" xi:nil="t">0</student>

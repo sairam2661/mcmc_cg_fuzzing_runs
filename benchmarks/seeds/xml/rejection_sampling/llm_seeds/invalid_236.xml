@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "document.dtd">
+<!ENTITY % ent "value">
+<!ELEMENT document (#PCDATA|element1|element2|element3)*>
+<!ELEMENT element1 (element2|element3)*>
+<!ELEMENT element2 (#PCDATA)>
+<!ELEMENT element3 (#PCDATA)>
+<!ATTLIST element1 id CDATA #REQUIRED>
+<!ATTLIST element2 name CDATA #IMPLIED>
+<!ATTLIST element3 value CDATA #REQUIRED>
+<document>
+  <element1 id="1">
+    <element2 name="John">Hello</element2>
+    <element3 value="World"/>
+  </element1>
+</document>

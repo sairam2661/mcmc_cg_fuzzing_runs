@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE doc [
+<!ENTITY % ent SYSTEM 'entities.ent'>
+<!ENTITY % decl SYSTEM 'dtddecl.ent'>
+%decl;
+<!ENTITY x1 "one">
+<!ENTITY x2 "two">
+<!ENTITY x3 "three">
+<!ENTITY x4 "four">
+<!ENTITY x5 "five">
+<!ENTITY x6 "six">
+<!ENTITY x7 "seven">
+<!ENTITY x8 "eight">
+<!ENTITY x9 "nine">
+<!ENTITY x10 "ten">
+<!ENTITY x11 "eleven">
+<!ENTITY x12 "twelve">
+<!ENTITY x13 "thirteen">
+<!ENTITY x14 "fourteen">
+<!ENTITY x15 "fifteen">
+<!ENTITY x16 "sixteen">
+<!ENTITY x17 "seventeen">
+<!ENTITY x18 "eighteen">
+<!ENTITY x19 "nineteen">
+<!ENTITY x20 "twenty">
+<!ELEMENT doc (para*)>
+<!ELEMENT para (#PCDATA)>
+<!ATTLIST para
+  name CDATA #IMPLIED
+  lang CDATA #IMPLIED
+  id CDATA #IMPLIED
+  title CDATA #IMPLIED
+  ref CDATA #IMPLIED
+  type CDATA #IMPLIED
+  style CDATA #IMPLIED
+  href CDATA #IMPLIED
+  media CDATA #IMPLIED
+  rel CDATA #IMPLIED
+  rev CDATA #IMPLIED
+  scope CDATA #IMPLIED
+  charset CDATA #IMPLIED
+  xml:lang CDATA #IMPLIED
+>
+<!ELEMENT img (#PCDATA)>
+<!ATTLIST img
+  src CDATA #REQUIRED
+  alt CDATA #IMPLIED
+  width CDATA #IMPLIED
+  height CDATA #IMPLIED
+  ismap CDATA #IMPLIED
+  usemap CDATA #IMPLIED
+  longdesc CDATA #IMPLIED
+  lowsrc CDATA #IMPLIED
+  ref CDATA #IMPLIED
+  type CDATA #IMPLIED
+  style CDATA #IMPLIED
+  media CDATA #IMPLIED
+  rel CDATA #IMPLIED
+  rev CDATA #IMPLIED
+  scope CDATA #IMPLIED
+  charset CDATA #IMPLIED
+  xml:lang CDATA #IMPLIED
+>
+<!ELEMENT table (#PCDATA)>
+<!ATTLIST table
+  summary CDATA #IMPLIED
+  width CDATA #IMPLIED
+  border CDATA #IMPLIED
+  frame CDATA #IMPLIED
+  rules CDATA #IMPLIED
+  cellspacing CDATA #IMPLIED

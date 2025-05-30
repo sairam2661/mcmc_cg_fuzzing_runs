@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE book [
+<!ENTITY % bookentities SYSTEM "bookentities.ent">
+%bookentities;
+<!ELEMENT book (title, &titleelement;, &contentelement;)*>
+<!ATTLIST book
+id CDATA #REQUIRED
+author CDATA #IMPLIED
+title CDATA #IMPLIED
+>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT &titleelement; (#PCDATA)>
+<!ELEMENT &contentelement; (#PCDATA)>
+<!ELEMENT section (#PCDATA)>
+<!ELEMENT paragraph (#PCDATA)>
+<!ELEMENT quote (#PCDATA)>
+<!ELEMENT chapter (#PCDATA)>
+<!ELEMENT figure (#PCDATA)>
+<!ELEMENT table (#PCDATA)>
+<!ELEMENT &tableelement; (#PCDATA)>
+<!ELEMENT &tablecontent; (#PCDATA)>
+<!ELEMENT tablecell (#PCDATA)>
+<!ELEMENT caption (#PCDATA)>
+<!ELEMENT &captionelement; (#PCDATA)>
+<!ELEMENT &figureelement; (#PCDATA)>
+<!ELEMENT &paragraphelement; (#PCDATA)>
+<!ELEMENT &sectionelement; (#PCDATA)>
+<!ELEMENT &quot;element" (#PCDATA)>
+<!ATTLIST title
+id CDATA #IMPLIED
+>
+<!ATTLIST section
+id CDATA #IMPLIED
+>
+<!ATTLIST chapter
+id CDATA #IMPLIED
+>
+<!ATTLIST figure
+id CDATA #IMPLIED
+>
+<!ATTLIST table
+id CDATA #IMPLIED
+>
+<!ATTLIST &tableelement;>
+<!ATTLIST &tablecontent;>
+<!ATTLIST &captionelement;>
+<!ATTLIST &figureelement;>
+<!ATTLIST &paragraphelement;>
+<!ATTLIST &sectionelement;>
+<!ATTLIST &quot;element" id CDATA #IMPLIED>
+]>
+<book id="mybook" author="John Doe" title="My Book">
+<chapter id="ch1">
+<figure id="fig1">This is a figure</figure>
+<figure id="fig2">This is another figure</figure>
+</chapter>
+<chapter id="ch2">
+<section id="sec1">
+<quote>This is a quote</quote>
+<quote>This is another quote</quote>
+</section>
+<section id="sec2">
+<paragraph id="p1">This is a paragraph</paragraph>
+<paragraph id="p2">This is another paragraph</paragraph>
+</section>
+</chapter>
+</book>

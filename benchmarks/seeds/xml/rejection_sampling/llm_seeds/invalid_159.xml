@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ENTITY % bookentities SYSTEM "bookentities.ent">
+  %bookentities;
+]>
+<book xmlns="http://www.example.com/book"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.example.com/book book.xsd"
+  title="The Book"
+  author="John Doe"
+  publicationDate="2022-01-01">
+  <chapter id="chap1">
+    <title>Chapter One</title>
+    <section id="sec1">
+      <title>Section One</title>
+      <para>This is the first paragraph.</para>
+      <para>This is the second paragraph.</para>
+      <itemizedlist>
+        <listitem>
+          <para>This is the first item.</para>
+        </listitem>
+        <listitem>
+          <para>This is the second item.</para>
+        </listitem>
+        <listitem>
+          <para>This is the third item.</para>
+        </listitem>
+      </itemizedlist>
+    </section>
+  </chapter>
+  <chapter id="chap2">
+    <title>Chapter Two</title>
+    <section id="sec2">
+      <title>Section Two</title>
+      <para>This is the first paragraph in chapter two.</para>
+    </section>
+  </chapter>
+  <bibliography>
+    <biblioentry>
+      <title>Book One</title>
+      <author>John Doe</author>
+      <date>2022</date>
+    </biblioentry>
+    <biblioentry>
+      <title>Book Two</title>
+      <author>Jane Doe</author>
+      <date>2021</date>
+    </biblioentry>
+  </bibliography>
+</book>

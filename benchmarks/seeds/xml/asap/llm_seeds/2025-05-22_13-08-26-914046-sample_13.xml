@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- XML Declaration with a public identifier -->
+<!DOCTYPE book SYSTEM "b" [
+  <!ELEMENT book (title, author+, comment*)>
+  <!ATTLIST book 
+    id  CDATA #REQUIRED
+    lang CDATA #IMPLIED
+  >
+  <!ENTITY epi "A">
+  <!ENTITY % ent "x">
+  <!NOTATION book-system SYSTEM'system'>
+  %ent;
+  <!--><!--><!--><!--><!--><!--><!---->
+]>
+<book id='myBook' lang='en' xmlns:xi="x" xmlns:xs="x">
+  <xi:include href='c'/>
+  <xs:element name="e" namespace="x">
+    <xs:complexType>
+      <xs:attribute name="a" default="d">
+        <xs:simpleType>
+          <xs:restriction base="z">
+            <xs:enumeration value="d"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+</book>

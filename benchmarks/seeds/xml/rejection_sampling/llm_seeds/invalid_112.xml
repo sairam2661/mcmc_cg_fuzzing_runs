@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE book [
+<!ELEMENT book (title,author,chapter+)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT chapter (heading,para+)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT para (#PCDATA)>
+<!ELEMENT para (#PCDATA) -->
+]>
+<book>
+<title>My Book</title>
+<author>John Doe</author>
+<chapter>
+<heading>Chapter 1</heading>
+<para>This is the first paragraph of chapter 1.</para>
+<para>This is the second paragraph of chapter 1.</para>
+</chapter>
+<chapter>
+<heading>Chapter 2</heading>
+<para>This is the first paragraph of chapter 2.</para>
+<para>This is the second paragraph of chapter 2.</para>
+</chapter>
+</book>

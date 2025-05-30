@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author,chapter*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapter (title,paragraph+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT paragraph (#PCDATA|inline*)>
+  <!ELEMENT inline (#PCDATA)>
+]>
+<book>
+  <title>My Book</title>
+  <author>John Doe</author>
+  <chapter>
+    <title>Chapter 1</title>
+    <paragraph>This is a paragraph with some text.</paragraph>
+    <paragraph>This is another paragraph with some text.</paragraph>
+    <paragraph>This is a paragraph with some <inline>inline</inline> text.</paragraph>
+  </chapter>
+  <chapter>
+    <title>Chapter 2</title>
+    <paragraph>This is a paragraph with some text.</paragraph>
+    <paragraph>This is another paragraph with some text.</paragraph>
+    <paragraph>This is a paragraph with some <inline>inline</inline> text.</paragraph>
+  </chapter>
+</book>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+<!ENTITY book1 "Book1">
+<!ENTITY book2 "Book2">
+<!ENTITY book3 "Book3">
+<!ELEMENT books (book+)>
+<!ELEMENT book (#PCDATA)>
+<!ATTLIST book id CDATA #REQUIRED>
+<!ATTLIST book author CDATA #IMPLIED>
+<!ATTLIST book price CDATA #IMPLIED>
+<!ATTLIST book genre CDATA #IMPLIED>
+<!ATTLIST book year CDATA #IMPLIED>
+<!ELEMENT publisher (#PCDATA)>
+<!ATTLIST publisher name CDATA #IMPLIED>
+<!ELEMENT author (#PCDATA)>
+<!ATTLIST author name CDATA #IMPLIED>
+<!ELEMENT booktitle (#PCDATA)>
+<!ATTLIST booktitle name CDATA #IMPLIED>
+<!ELEMENT address (#PCDATA)>
+<!ATTLIST address street CDATA #IMPLIED>
+<!ATTLIST address city CDATA #IMPLIED>
+<!ATTLIST address state CDATA #IMPLIED>
+<!ATTLIST address zip CDATA #IMPLIED>
+<!ATTLIST address country CDATA #IMPLIED>
+]>
+<books>
+<book id="1" author="John Smith" price="20.00" genre="Fiction" year="2019">
+<publisher name="ABC Publishing"/>
+<author name="John Smith"/>
+<booktitle name="Book Title"/>
+<address street="123 Main St" city="Anytown" state="CA" zip="12345" country="USA"/>
+</book>
+</books>
+<book id="2" author="Jane Doe" price="15.00" genre="Non-Fiction" year="2020">
+<publisher name="XYZ Publishing"/>
+<author name="Jane Doe"/>
+<booktitle name="Book Title 2"/>
+<address street="456 Elm St" city="Othertown" state="NY" zip="67890" country="USA"/>
+</book>
+<book id="3" author="Bob Brown" price="30.00" genre="Fiction" year="2018">
+<publisher name="ABC Publishing"/>
+<author name="Bob Brown"/>
+<booktitle name="Book Title 3"/>
+<address street="789 Oak St" city="Thistown" state="FL" zip="34567" country="USA"/>
+</book>  </books>  </book>  </book>  </book>  </books>  </book>  </book>  </book>  </

@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE notes [
+  <!ELEMENT notes (note+)>
+  <!ELEMENT note (title,author,date,body)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT date (#PCDATA)>
+  <!ELEMENT body (#PCDATA)>
+]>
+<notes>
+  <note>
+    <title>Meeting Minutes</title>
+    <author>Jane Doe</author>
+    <date>2022-02-22</date>
+    <body>
+      <p>This is a note about a meeting.</p>
+      <p>It was held on February 22, 2022.</p>
+      <p>Attendees included John Smith and Jane Doe.</p>
+    </body>
+  </note>
+  <note>
+    <title>Project Plan</title>
+    <author>John Smith</author>
+    <date>2022-03-01</date>
+    <body>
+      <p>This is a note about a project plan.</p>
+      <p>It was created on March 1, 2022.</p>
+      <p>Tasks include planning, designing, and testing.</p>
+    </body>
+  </note>
+</notes>

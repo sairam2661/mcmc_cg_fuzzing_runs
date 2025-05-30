@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE doc [
+  <!ENTITY nbsp "&#160;">
+  <!ENTITY copy "Copyright 2023 ABC Inc.">
+]>
+<doc>
+  <title>Sample XML Document</title>
+  <author>
+    <name>John Doe</name>
+    <affiliation>ABC Inc.</affiliation>
+  </author>
+  <abstract>
+    <p>This is a sample XML document.</p>
+    <p>&nbsp;It is a test.</p>
+  </abstract>
+  <section>
+    <title>Introduction</title>
+    <para>This is an introduction.</para>
+    <para>&copy; 2023 ABC Inc.</para>
+  </section>
+  <section>
+    <title>Conclusion</title>
+    <para>This is a conclusion.</para>
+  </section>
+</doc>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product+)>
+  <!ATTLIST catalog language CDATA #REQUIRED>
+  <!ENTITY author "<">
+  <!ENTITY % xinclude "<">
+  <!NOTATION ISO-8859-1 SYSTEM "1">
+  %xinclude;
+  <!---->
+]>
+<catalog xmlns="&NS;">
+
+  <product name="A">
+    <price>1.0</price>
+  </product>
+  <product name="A">
+    <price>2.0</price>
+  </product>
+</catalog>

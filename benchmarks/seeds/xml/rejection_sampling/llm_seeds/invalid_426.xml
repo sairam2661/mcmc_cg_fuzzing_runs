@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note [
+  <!ELEMENT note (to,from,heading,body)>
+  <!ELEMENT to (#PCDATA)>
+  <!ELEMENT from (#PCDATA)>
+  <!ELEMENT heading (#PCDATA)>
+  <!ELEMENT body (#PCDATA)>
+  <!ATTLIST note
+    id CDATA #REQUIRED
+    type (letter|memo) "letter"
+  >
+]>
+<note id="N001" type="memo">
+  <to>John Smith</to>
+  <from>Jane Smith</from>
+  <heading>Reminder</heading>
+  <body>
+    <p>Do not forget the meeting at 2 PM today!</p>
+    <p>Best regards, Jane</p>
+  </body>
+</note>

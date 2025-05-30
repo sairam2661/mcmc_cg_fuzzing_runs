@@ -1,0 +1,136 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix complex_sql
+
+set ::timeout 60000
+
+proc select_count {table} {
+  execsql {SELECT count(*) FROM sqlite_master WHERE type='table'  }
+}
+
+proc do_test_sql {nName {sql {}} {expected {}} {error {}}} {
+  set name $nName
+  if {$error eq "continue"} {
+    do_test $name {
+      execsql $sql
+    } {0}
+    return
+  }
+  if {$error ne {}} {
+    if { $expected eq "continue" } {
+      do_test $name {
+        catchsql { $sql }
+      } {0 {}}
+    } else {
+      do_test $name {
+        catchsql { $sql }
+      } $error
+    }
+  } else {
+    do_test $name {
+      catchsql { $sql }
+    } $expected
+  }
+}
+
+set sql_script {
+  CREATE TABLE a(x);
+  INSERT INTO a VALUES(1);
+  CREATE TABLE b(y);
+  INSERT INTO b VALUES(2);
+  CREATE TABLE c(z);
+  INSERT INTO c VALUES(3);
+  CREATE TABLE d(t);
+  INSERT INTO d VALUES(4);
+  CREATE TABLE e(v);
+  INSERT INTO e VALUES(5);
+}
+
+do_execsql_test complex-1.1 {
+  BEGIN;
+  CREATE TABLE f(w);
+  INSERT INTO f VALUES(6);
+  COMMIT;
+}
+  {0 {table f already exists} 1 {SQL logic error or missing database}}
+
+do_execsql_test complex-1.2 {
+  SELECT * FROM a
+}
+  {1 1}
+
+do_execsql_test complex-1.3 {
+  SELECT * FROM b
+}
+  {2 2}
+
+do_execsql_test complex-1.4 {
+  SELECT * FROM c
+}
+  {3 3}
+
+do_execsql_test complex-1.5 {
+  SELECT * FROM d
+}
+  {4 4}
+
+do_execsql_test complex-1.6 {
+  SELECT * FROM e
+}
+  {5 5}
+
+do_execsql_test complex-1.7 {
+  SELECT * FROM f
+}
+{1 6}
+
+do_execsql_test complex-1.8 {
+  SELECT * FROM a
+  WHERE x=1
+}
+{1 1}
+
+do_execsql_test complex-1.9 {
+  SELECT * FROM a
+  WHERE x=NOT  	                             
+}
+{0 {}}
+
+do_execsql_test complex-1.10 {
+  SELECT * FROM a
+  WHERE x=null 
+}
+{0 {}}
+
+do_execsql_test complex-1.11 {
+  SELECT * FROM a
+  WHERE x=null
+}
+{0 {}}
+
+do_execsql_test complex-1.12 {
+  CREATE INDEX i ON a(x);
+  BEGIN;
+  INSERT INTO a VALUES(7);
+  COMMIT;
+}
+{0 {table a already has an index i_x}}
+
+do_execsql_test complex-1.13 {
+  SELECT * FROM a
+}
+{1 1 7}
+
+do_execsql_test complex-1.14 {
+  CREATE INDEX i1 ON a(x);
+  CREATE INDEX i2 ON a(x);
+}
+{0 {there is already an index named i1 on 'a(x)'}}
+
+execsql {PRAGMA auto_vacuum=1}
+
+execsql {PRAGMA wal_checkpoint}
+
+execsql {VACUUM}
+
+finish_test

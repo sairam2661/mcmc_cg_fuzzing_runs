@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE book [
+<!ENTITY % ent SYSTEM "ent.ent">
+%ent;
+<!ELEMENT book (title, author, publisher, edition)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ELEMENT edition (#PCDATA)>
+<!ELEMENT chapter (#PCDATA)>
+<!ELEMENT section (#PCDATA)>
+<!ELEMENT paragraph (#PCDATA)>
+<!ELEMENT sentence (#PCDATA)>
+<!ELEMENT word (#PCDATA)>
+<!ELEMENT title-group (title, subtitle)>
+<!ELEMENT subtitle (#PCDATA)>
+<!ELEMENT address (street, city, state, zip)>
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT state (#PCDATA)>
+<!ELEMENT zip (#PCDATA)>
+<!ELEMENT person (name, age)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT age (#PCDATA)>
+<!ELEMENT product (name, description)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT product-group (product+)>
+<!ELEMENT book-group (book+)>
+<!ELEMENT book-title-group (book-title+)>
+<!ELEMENT book-title (#PCDATA)>
+<!ELEMENT book-group-title (#PCDATA)>
+<!ELEMENT book-group-author (#PCDATA)>
+<!ELEMENT book-group-publisher (#PCDATA)>
+<!ELEMENT book-group-edition (#PCDATA)>
+<!ELEMENT book-group-year (#PCDATA)>
+<!ELEMENT book-group-price (#PCDATA)>
+<!ELEMENT book-group-description (#PCDATA)>
+<!ELEMENT book-group-chapter (chapter+)>
+<!ELEMENT book-group-section (section+)>
+<!ELEMENT book-group-paragraph (paragraph+)>
+<!ELEMENT book-group-sentence (sentence+)>
+<!ELEMENT book-group-word (word+)>
+<!ELEMENT book-group-title-group (title-group+)>
+<!ELEMENT book-group-address (address+)>
+<!ELEMENT book-group-person (person+)>
+<!ELEMENT book-group-product (product+)>
+<!ELEMENT book-group-product-group (product-group+)>
+<!ELEMENT book-group-book-group (book-group+)>
+<!ELEMENT book-group-book-title-group (book-title-group+)>
+<!ELEMENT book-group-book-group-title (book-group-title+)>
+<!ELEMENT book-group-book-group-author (book-group-author+)>
+<!ELEMENT book-group-book-group-publisher (book-group-publisher+)>
+<!ELEMENT book-group-book-group-edition (book-group-edition+)>
+<!ELEMENT book-group-book-group-year (book-group-year+)>
+<!ELEMENT book-group-book-group-price (book-group-price+)>
+<!ELEMENT book-group-book-group-description (

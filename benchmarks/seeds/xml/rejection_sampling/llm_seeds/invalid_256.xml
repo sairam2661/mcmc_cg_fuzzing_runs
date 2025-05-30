@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE inventory [
+  <!ELEMENT inventory (product+)>
+  <!ELEMENT product (#PCDATA|price|quantity|description)*>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT quantity (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+]>
+<inventory>
+  <product>Apple</product>
+  <price>1.99</price>
+  <quantity>100</quantity>
+  <description>Red juicy apple</description>
+  <product>Banana</product>
+  <price>0.49</price>
+  <quantity>200</quantity>
+  <description>Yellow curved fruit</description>
+  <product>Orange</product>
+  <price>0.99</price>
+  <quantity>150</quantity>
+  <description>Orange fruit with seeds</description>
+</inventory>

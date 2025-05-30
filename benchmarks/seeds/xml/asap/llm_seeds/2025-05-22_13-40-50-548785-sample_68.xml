@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE notes [
+  <!ELEMENT notes (note+)>
+  <!ATTLIST note
+    id ID #REQUIRED
+    author CDATA #REQUIRED
+  >
+  <!ENTITY eacute "&#233;">
+  <!ENTITY  % entity-group "&eacute;">
+
+  <!NOTATION ISO-8859-1 SYSTEM "f">
+  %entity-group;
+  <!--
+  A comment that breaks over multiple lines
+  -->
+]>
+<notes>
+  <note id="n" author="J">Sample text: &eacute;cole</note>
+  <note id="c" author="A">Another line</note>
+</notes>

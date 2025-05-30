@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE doc [
+<!ELEMENT doc (title, desc, author, (name|year), (book|mag)*)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT desc (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT book (#PCDATA)>
+<!ELEMENT mag (#PCDATA)>
+]>
+<doc>
+<title>My Document</title>
+<desc>This is a description of my document.</desc>
+<author>John Doe</author>
+<name>John Smith</name>
+<year>2022</year>
+<book>The Great Gatsby</book>
+<mag>Scientific American</mag>
+</doc>  <!--  -->
+<!ELEMENT book (#PCDATA)>
+<!ELEMENT mag (#PCDATA)>  <!--  -->
+<!ENTITY % x "x">  <!--  -->
+<!ELEMENT title (#PCDATA)>  <!--  -->
+<!ELEMENT book (#PCDATA)>  <!--  -->
+<!ELEMENT mag (#PCDATA)>  <!--  -->  <!--  -->
+<!ELEMENT desc (#PCDATA)>  <!--  -->
+<!ELEMENT author (#PCDATA)>  <!--  -->
+<!ELEMENT name (#PCDATA)>  <!--  -->
+<!ELEMENT year (#PCDATA)>  <!--  -->
+<!ELEMENT book (#PCDATA)>  <!--  -->
+<!ELEMENT mag (#PCDATA)>  <!--  -->
+<!ELEMENT desc (#PCDATA)>  <!--  -->
+<!ELEMENT author (#PCDATA)>  <!--  -->
+<!ELEMENT name (#PCDATA)>  <!--  -->
+<!ELEMENT year (#PCDATA)>  <!--  -->
+<!ELEMENT book (#PCDATA)>  <!--  -->
+<!ELEMENT mag (#PCDATA)>  <!--  -->
+<!ELEMENT desc (#PCDATA)>  <!--  -->
+<!ELEMENT author (#PCDATA)>  <!--  -->
+<!ELEMENT name (#PCDATA)>  <!--  -->
+<!ELEMENT year (#PCDATA)>  <!--  -->
+<!ELEMENT book (#PCDATA)>  <!--  -->
+<!ELEMENT mag (#PCDATA)>  <!--  -->
+<!ELEMENT desc (#PCDATA)>  <!--  -->
+<!ELEMENT author (#PCDATA)>  <!--  -->
+<!ELEMENT name (#PCDATA)>  <!--  -->
+<!ELEMENT year (#PCDATA)>  <!--  -->
+<!ELEMENT book (#PCDATA)>  <!--  -->
+<!ELEMENT mag (#PCDATA)>  <!--  -->
+<!ELEMENT desc (#PCDATA)>  <!--  -->
+<!ELEMENT author (#PCDATA)>  <!--

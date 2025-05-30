@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (store+)>
+  <!ATTLIST catalog xmlns:xsdsys (http:www.example.comxsdsystems) #REQUIRED>
+  <!ENTITY ent1 "v">
+  <!ENTITY % ent2 "i">
+  <!NOTATION NotationName SYSTEM "1" >
+  %ent2;  <!-- reference notations -->
+]>
+<catalog
+ xmlns:xi="h"
+ xmlns:xsdsys="h"  xml:lang="e"
+ xml:space="p"
+ xml:base="b"
+ xml:id="a"
+xmlns:xlink="r">
+  <xsdsys:elements>
+    <xi:include href="x"/>
+  </xsdsys:elements>
+  <store id="s">
+    <name>c</name>
+    <price>10.99$</price>
+  </store>
+  <store id="s">
+    <name>d</name>
+  </store>
+</catalog>

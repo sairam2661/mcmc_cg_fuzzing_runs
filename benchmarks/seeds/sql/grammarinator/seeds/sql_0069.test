@@ -1,0 +1,138 @@
+set   testdir  { 
+
+  file 
+ dirname 	 $argv0   }   source  $testdir/tester.tcl 
+ set 
+
+ testprefix 
+ Mi5   set 	 timeout  60000 	
+ set 	 c 	  {   
+ }       
+  do_test 
+
+	 R 
+
+ - 
+	 6 	 . 
+			 7 3  
+ {  		 db2 
+  X       }  { 
+ 	 } 	
+     
+	
+ proc   D   gb3149  	 
+ { 
+ } 	      ifcapable 
+ z 	 {   proc 
+ z  {   T5  w_5  } 	  
+ { 		 execsql 	
+ { 
+ SELECT 	 4.426      FROM 
+ F8   		 ;  	  }      q 
+	   	 } 	   
+ } 	    proc    b0_ 
+  T_B_32O6  	 { 
+ db2 
+
+
+ yK 	 { 	 SELECT 
+ h  ( 	 * 
+ )  	 FROM 	   w6 	 
+		
+ WHERE 	 M4Dg0   = 	 C_    	 ;   COMMIT     
+	 ;  		 }  
+   
+ execsql  { 	 BEGIN 	    
+ ; 
+  	 WITH 	 v4 
+ (  
+ x_ 	 ) 		 AS 	 ( 
+ INSERT INTO  A_  	 SELECT   count(*)    	 UNION ALL 
+ CREATE INDEX 
+ J 	
+ 
+ ON   G 	
+ ( 	
+ Fm 
+ 
+ )   		
+	 ) 	 CREATE INDEX 
+	 g  ON 
+ p4_ 
+ (   I  )        }       } 
+   
+ ifcapable  	 rJ 	 { 
+ if  
+ z  	 
+ { 
+ catchsql 
+ 		 $rt_  	    	 } 	 else 	 { 
+ j       execsql   { 	 BEGIN 
+ 
+	    ; 	 ROLLBACK   	 ;    		
+ SELECT   *  	 FROM 
+ Q___G_7T    
+ 	 } 
+   
+		 } 
+   
+
+
+ do_test 
+	 	 F  - 	 6 5  	 
+
+   . 	
+
+ 9  
+	 {  	 }  
+ 488     	 } 
+    if 	 I3  
+  < 
+	
+ f   
+ 
+ { 	 lappend 	
+
+	
+ H 	 $k  
+	
+    	 z  $m  	
+ 	 			 { 
+ WITH 	 L4 
+ (    J 
+ )   AS 
+			 ( 
+	
+ PRAGMA 
+   v   	 UNION ALL  
+  BEGIN 
+ EXCLUSIVE   	 UNION ALL   PRAGMA  
+ F_  = 
+ '<'     UNION ALL 
+	 WITH  q_ 	 ( 
+ o  )  
+ AS   (   ROLLBACK    UNION ALL 
+  CREATE TABLE   
+ rs1  	 ( 	 oO__Z2    UNIQUE   
+
+ , 
+ n_   
+ )   
+ ) 		 BEGIN   EXCLUSIVE       
+  ) 	 ROLLBACK     	 ; 
+
+  CREATE TABLE    E  ( 	 O 
+
+ PRIMARY KEY     , 
+
+	 M 
+ DEFAULT   "/"     
+ )   	  ;  	
+	 
+
+ }  	
+
+ 	    	 } 	 else   {  execsql 	 { 	 BEGIN     	  ;   	 } 	   
+ H2     
+   } 	   	
+  finish_test   

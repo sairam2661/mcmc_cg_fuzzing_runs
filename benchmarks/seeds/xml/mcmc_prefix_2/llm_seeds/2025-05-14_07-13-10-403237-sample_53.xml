@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE article [
+  <!ELEMENT article (title, section+)>
+  <!ATTLIST article
+    id  CDATA  #REQUIRED
+    lang  NMTOKEN  #IMPLIED>
+  <!ENTITY chap1 "A" >
+  <!ENTITY % ent "D">
+  <!NOTATION F80 PUBLIC "X" "F">
+  %ent;
+  <!--
+    Sample comment in XML
+  -->]>
+<annotation target="F" notationName="F">
+  <annotation target="Q">
+    <article id="A" lang="x">
+      <title>Chapter</title>
+      <!-- Nested section -->
+      <section>
+        <!-- Nested section with a CDATA section -->
+        <section><![CDATA[Some <raw> text]]></section>
+      </section>
+      <!-- External reference -->
+      <xi:include href="x"></xi:include>
+      &chap1;
+    </article>
+  </annotation>
+</annotation>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (item*)>
+  <!ELEMENT item (description, price, image)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT image (#PCDATA)>
+  <!ATTLIST item
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+    category CDATA #IMPLIED
+  >
+]>
+<catalog>
+  <item id="1" name="Sneaker" category="Shoes">
+    <description>
+      The perfect shoe for the perfect run.
+    </description>
+    <price>$99.99</price>
+    <image>https://example.com/shoe.jpg</image>
+  </item>
+  <item id="2" name="Sunglasses" category="Accessories">
+    <description>
+      Protect your eyes from the sun.
+    </description>
+    <price>$29.99</price>
+    <image>https://example.com/sunglasses.jpg</image>
+  </item>
+  <item id="3" name="Watch" category="Jewelry">
+    <description>
+      Keep perfect time with this beautiful watch.
+    </description>
+    <price>$199.99</price>
+    <image>https://example.com/watch.jpg</image>
+  </item>
+</catalog>

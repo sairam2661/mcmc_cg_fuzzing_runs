@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE book SYSTEM "book.dtd">
+<!ENTITY % bookEntities SYSTEM "book.entities" NDATA bookEntities>
+<!ELEMENT book (title, (author | editor), (year | edition), chapter*)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT editor (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT edition (#PCDATA)>
+<!ELEMENT chapter (#PCDATA)>
+<!ATTLIST chapter id CDATA #REQUIRED>
+<!ATTLIST chapter title CDATA #IMPLIED>
+<!ENTITY bookEntities SYSTEM "book.entities" NDATA bookEntities>
+<!NOTATION book NOTATION "book notation">
+<book>
+  <title>My Book</title>
+  <author>John Doe</author>
+  <year>2022</year>
+  <chapter id="chap1" title="Introduction">
+    <chapter id="chap1.1" title="Chapter 1.1"/>
+  </chapter>
+  <chapter id="chap2">
+    <chapter id="chap2.1"/>
+  </chapter>
+  <chapter id="chap3">
+    <chapter id="chap3.1" title="Chapter 3.1"/>
+  </chapter>
+</book>

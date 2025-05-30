@@ -1,0 +1,6 @@
+set 
+ testdir 		 { 	 file 		 dirname 	 $argv0  	  }  source 
+ $testdir/tester.tcl  	 set 	 testprefix  	
+ BS 	 set   timeout 	
+ 60000 
+  return  U        finish_test 	   

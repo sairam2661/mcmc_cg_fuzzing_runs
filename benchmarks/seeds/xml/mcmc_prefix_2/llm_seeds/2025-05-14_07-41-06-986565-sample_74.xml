@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author,year)>
+  <!ATTLIST book lang CDATA #IMPLIED>
+  <!ENTITY booktitle "A" >
+  <!ENTITY % bookauthor "("
+  > 
+<!NOTATION XLink SYSTEM "X">
+  %bookauthor;
+  
+<!--
+  --><!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT chapter (#PCDATA)>
+<!ATTLIST chapter id ID #REQUIRED>
+<!ELEMENT section (#PCDATA)>
+<!ELEMENT table (#PCDATA)>
+<!ELEMENT row (#PCDATA)>
+<!ELEMENT cell (#PCDATA)>
+
+<!ENTITY x "Z">
+]>
+<book lang="f"
+     xmlns:xi="w"
+     version="1"
+     xmlns="h">
+  <xi:include href="i"/>
+  <title>&booktitle;</title>
+  <author>Bob, &x;</author>
+  <year>99</year>
+  <table>
+    <row>
+      <cell>1</cell>
+      <cell>2</cell>
+    </row>
+  </table>
+  <chapter id="y">Chapter 1</chapter>
+  <section>
+    Some 
+    <raw> text 
+    </raw>
+  </section>
+</book>

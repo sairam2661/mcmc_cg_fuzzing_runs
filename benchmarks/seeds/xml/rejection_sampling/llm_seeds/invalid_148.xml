@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (book+)>
+  <!ELEMENT book (title, author, price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+]>
+<bookstore>
+  <book>
+    <title>Book Title</title>
+    <author>Author Name</author>
+    <price>$19.99</price>
+    <publisher>Publishing House</publisher>
+    <address>123 Main St</address>
+    <city>Anytown</city>
+    <state>CA</state>
+    <zip>12345</zip>
+  </book>
+  <book>
+    <title>Another Book Title</title>
+    <author>Another Author</author>
+    <price>$29.99</price>
+    <publisher>Publishing House</publisher>
+    <address>456 Elm St</address>
+    <city>Anytown</city>
+    <state>CA</state>
+    <zip>12345</zip>
+  </book>
+</bookstore>  <?xml-stylesheet type="text/xsl" href="book.xsl"?><bookstore>  <book>    <title>Book Title</title>    <author>Author Name</author>    <price>$19.99</price>    <publisher>Publishing House</publisher>    <address>123 Main St</address>    <city>Anytown</city>    <state>CA</state>    <zip>12345</zip>  </book>  <book>    <title>Another Book Title</title>    <author>Another Author</author>    <price>$29.99</price>    <publisher>Publishing House</publisher>    <address>456 Elm St</address>    <city>Anytown</city>    <state>CA</state>    <zip>12345</zip>  </book></bookstore><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE book [
+  <!ELEMENT book (title, author, price, publisher, address, city, state, zip)>
+  <!ELEMENT title (#PCDATA)>

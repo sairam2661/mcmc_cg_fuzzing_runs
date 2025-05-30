@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ATTLIST catalog id ID #REQUIRED>
+  <!ENTITY book1 "B"
+          >
+  <!ENTITY % book2 "<"
+          >
+  <!NOTATION HTML PUBLIC '-//W3C//DTD HTML 4.01//EN'
+          'http://www.w3.org/TR/html4/strict.dtd'>
+  																			%book2; 									<!--
+<http://example.com/book.dtd>
+-->																 																<!ELEMENT book (title, author, price)>
+  <!ATTLIST book
+          id ID #REQUIRED
+          bookType CDATA
+          #REQUIRED>
+]>
+<catalog id="C" xmlns:xlink="&ns:xlink;">
+  <xsl:stylesheet href="x" xmlns:x="&ns:x;"/>
+  <book id="B" bookType="F">
+    <title xml:lang="x">Some Title</title>
+    <author xml:space="x">Some Author</author>
+    <price>2.4</price>
+    <xi:include href="x" xmlns:xi="&ns:xi;"/>
+  </book>
+  <xsl:value-of select="B" xpath-default-namespace="&ns:x;"/>
+</catalog>

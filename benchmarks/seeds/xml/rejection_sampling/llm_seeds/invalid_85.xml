@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+  <!ENTITY nbsp "&#160;">
+  <!ELEMENT book - - (title, (author | editor), (year | edition), publisher)>
+  <!ELEMENT title - - (#PCDATA)>
+  <!ELEMENT author - - (#PCDATA)>
+  <!ELEMENT editor - - (#PCDATA)>
+  <!ELEMENT year - - (#PCDATA)>
+  <!ELEMENT edition - - (#PCDATA)>
+  <!ELEMENT publisher - - (#PCDATA)>
+  <!ATTLIST book
+    lang CDATA #REQUIRED
+    id ID #REQUIRED
+  >
+]>
+<book lang="en" id="bk123">
+  <title>My Book</title>
+  <author>John Doe</author>
+  <year>2020</year>
+  <publisher>&nbsp;Acme Press</publisher>
+  <editor>Jane Smith</editor>
+  <edition>2</edition>
+</book>

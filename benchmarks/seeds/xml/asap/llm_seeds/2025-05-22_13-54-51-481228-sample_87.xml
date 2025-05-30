@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT brands (#PCDATA)>
+  <!ATTLIST book id ID #REQUIRED>
+  <!ENTITY amp "&amp;">
+  <!ENTITY % section PUBLIC " " "d">
+  <!NOTATION html PUBLIC "-" " ">
+  %section; 
+  <!--> <!-->
+]>
+<books>
+  <brand>Test</brand>
+  <book id="1">
+    <title>Hello World</title>
+    <author><fn>&amp;</fn></author>
+    <sections><s>This is raw text!</s></sections>
+  </book>
+  <ref href="#"/>
+</books>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ENTITY book "This is a book">
+  <!ENTITY author "John Doe">
+  <!ENTITY title "My Book">
+  <!ENTITY year "2014">
+  <!ENTITY publisher "ABC">
+]>
+<book xmlns="http://example.org/book"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://example.org/book book.xsd"
+      xsi:noNamespaceSchemaLocation="book-no-ns.xsd"
+      id="bk001">
+  <title>&title;</title>
+  <author>&author;</author>
+  <publisher>&publisher;</publisher>
+  <year>&year;</year>
+  <content>
+    <section>
+      <title>Chapter 1</title>
+      <para>&book;</para>
+    </section>
+  </content>
+  <metadata>
+    <subject>Programming</subject>
+    <subject>Computer Science</subject>
+    <subject>Technology</subject>
+  </metadata>
+  <appendix>
+    <title>Appendix</title>
+    <para>This is the appendix.</para>
+  </appendix>
+</book>

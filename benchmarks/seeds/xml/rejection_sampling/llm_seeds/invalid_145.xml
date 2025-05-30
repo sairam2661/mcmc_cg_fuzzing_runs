@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+<!ELEMENT catalog (book+)>
+<!ELEMENT book (title, author, price)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ATTLIST book
+id CDATA #REQUIRED
+lang (en|fr|de) "en"
+<!ATTLIST author
+id CDATA #REQUIRED
+<!ELEMENT bookref (#PCDATA)>
+<!ENTITY book1 "book1">
+<!ENTITY book2 "book2">
+<!ENTITY book3 "book3">
+<!ENTITY book4 "book4">
+<!ENTITY book5 "book5">
+<!ENTITY book6 "book6">
+<!ENTITY book7 "book7">
+<!ENTITY book8 "book8">
+<!ENTITY book9 "book9">
+<!ENTITY book10 "book10">
+<!ELEMENT catalogref (#PCDATA)>
+]>
+<catalog>
+<book id="bk1" lang="en">
+<title>Book 1</title>
+<author id="au1">John Doe</author>
+<price>19.99</price>
+</book>
+<book id="bk2" lang="fr">
+<title>Book 2</title>
+<author id="au2">Jane Doe</author>
+<price>14.99</price>
+</book>
+<bookref>book1</bookref>
+<catalogref>book1</catalogref>
+<book id="bk3" lang="de">
+<title>Book 3</title>
+<author id="au3">John Smith</author>
+<price>24.99</price>
+</book>
+<book id="bk4" lang="en">
+<title>Book 4</title>
+<author id="au4">Jane Smith</author>
+<price>19.99</price>
+</book>
+<book id="bk5" lang="fr">
+<title>Book 5</title>
+<author id="au5">John Brown</author>
+<price>14.99</price>
+</book>
+<book id="bk6" lang="de">
+<title>Book 6</title>
+<author id="au6">Jane Brown</author>
+<price>24.99</price>
+</book>
+<book id="bk7" lang="en">
+<title>Book 7</title>
+<author id="au7">John Green</author>
+<price>19.99</price>

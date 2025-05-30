@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (item+)>
+  <!ATTLIST catalog
+    id (A|B|C) #REQUIRED
+    version CDATA #IMPLIED
+  >
+  <!ENTITY entity "A">
+  <!ENTITY % ent "1">
+  <!NOTATION notation-name SYSTEM "C">
+ %xinclude
+  	
+   	;<!---->]>     <catalog id="B" version="2">
+  <item><title>Test</title><price>&entity;</price><pub>Pub</pub></item>
+  <item><title>Test1</title><price>&ent;</price><pub>Pub1</pub></item>  
+</catalog>

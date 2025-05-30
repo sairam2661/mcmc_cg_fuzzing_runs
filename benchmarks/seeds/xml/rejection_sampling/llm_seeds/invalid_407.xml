@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ENTITY book-id "1234">
+  <!ELEMENT book (#PCDATA|chapter|author|title|year)*>
+  <!ELEMENT chapter (#PCDATA|title|year)*>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+]>
+<book xmlns:xi="http://www.w3.org/2001/XInclude">
+  <chapter>
+    <xi:include href="chapter1.xml" xpointer="xpointer(/chapter[1])"/>
+    <title>Chapter 1</title>
+    <year>2022</year>
+  </chapter>
+  <author>John Doe</author>
+  <title>The Big Book</title>
+  <year>2020</year>
+  <chapter>
+    <title>Chapter 2</title>
+    <year>2021</year>
+  </chapter>
+</book>

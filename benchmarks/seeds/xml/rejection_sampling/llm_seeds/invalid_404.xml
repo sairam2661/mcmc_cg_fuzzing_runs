@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document [
+  <!ELEMENT document (root, meta, header, body)>
+  <!ELEMENT root (#PCDATA)>
+  <!ELEMENT meta (#PCDATA)>
+  <!ELEMENT header (#PCDATA)>
+  <!ELEMENT body (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT section (#PCDATA)>
+  <!ELEMENT p (#PCDATA)>
+  <!ELEMENT img (#PCDATA)>
+  <!ELEMENT a (#PCDATA)>
+  <!ELEMENT b (#PCDATA)>
+  <!ELEMENT i (#PCDATA)>
+  <!ELEMENT u (#PCDATA)>
+  <!ELEMENT ol (#PCDATA)>
+  <!ELEMENT li (#PCDATA)>
+  <!ELEMENT table (#PCDATA)>
+  <!ELEMENT tr (#PCDATA)>
+  <!ELEMENT th (#PCDATA)>
+  <!ELEMENT td (#PCDATA)>
+]>
+<document>
+  <root>Root Element</root>
+  <meta>Meta Element</meta>
+  <header>
+    <title>Page Title</title>
+    <section>Section 1</section>
+  </header>
+  <body>
+    <p>This is a paragraph.</p>
+    <img src="image.jpg" alt="An image"/>
+    <a href="http://www.example.com">Example Link</a>
+    <b>Bold Text</b>
+    <i>Italic Text</i>
+    <u>Underlined Text</u>
+    <ol>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ol>
+    <table>
+      <tr>
+        <th>Column 1</th>
+        <th>Column 2</th>
+      </tr>
+      <tr>
+        <td>Cell 1</td>
+        <td>Cell 2</td>
+      </tr>
+    </table>
+  </body>
+</document>

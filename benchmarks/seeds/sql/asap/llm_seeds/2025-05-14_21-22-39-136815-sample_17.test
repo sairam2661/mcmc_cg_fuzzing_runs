@@ -1,0 +1,174 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix multiwallet
+
+set ::timeout 60000
+
+proc multiwallet_test1 {} {
+  db eval {PRAGMA journal_mode="WAL"}
+
+  foreach wallet {
+    "data1" data2
+  } {
+    db eval "ATTACH '$::testdir/$wallet.db'"
+    lappend tcl_platform_wallets $wallet
+  }
+
+  do_test 1.1 "SELECT name FROM sqlite_master ORDER BY type, name" {}
+  do_test 1.2 "SELECT name FROM sqlite_master WHERE type='table'" {}
+}
+
+proc multiwallet_test2 {} {
+  execsql {
+    CREATE TABLE t1(a, b);
+    INSERT INTO t1 VALUES(1, 2);
+    INSERT INTO t1 VALUES(3, 4);
+    SELECT a FROM t1
+  }
+  do_test 2.1 {
+    SELECT t2_a FROM multiwallet_test_2
+    WHERE t2_db = 'data2.db' 
+  } {3}
+}
+
+proc multiwallet_test3 {} {
+  do_execsql_test 3.0 {
+    PRAGMA wal_checkpoint;
+  } {}
+}
+
+proc multiwallet_test4 {} {
+  do_execsql_test 4.2 {
+    PRAGMA wal_checkpoint;
+  } {}
+}
+
+proc multiwallet_test5 {} {
+  do_execsql_test 5.1 {
+    ATTACH 'file:wallet1.db' AS db1
+  } {}
+}
+
+proc multiwallet_test6 {} {
+  do_execsql_test 6.0 {
+    SELECT quote( 
+    	* 
+    	) 
+    FROM sqlite_master WHERE type='table'
+  } {1 2}
+}
+
+proc multiwallet_test7 {} {
+  do_execsql_test 7.1 {
+    DROP TABLE t2
+  } {}
+}
+
+proc multiwallet_test8 {} {
+  execsql {
+    CREATE TABLE a(b);
+  }
+  execsql {
+    INSERT INTO a(b) VALUES("Hello, world!");
+  }
+}
+
+do_catchsql_test 41.1 {
+  PRAGMA main_journal_mode = 'wal';
+} {1 {PRAGMA journal_mode = 'wal'}}
+
+proc multiwallet_test10 {} {
+  execsql {
+    PRAGMA main_journal_mode='wal';
+    PRAGMA foreign_keys=1;
+  }
+}
+do_execsql_test multiwallet1.1 {
+  WITH RECURSIVE 
+  temp  AS 
+  SELECT a_id FROM a
+
+  UNION SELECT p_id FROM p WHERE a_id not in
+  SELECT Id FROM temp
+
+} {}
+
+do_execsql_test multiwallet1.2 {
+  WITH RECURSIVE 
+     a AS 
+     SELECT a_id
+     FROM A 
+     WHERE Id not in
+     SELECT Id FROM B
+
+  SELECT a_id FROM a
+} {}
+
+set tcl_platform_wallets {}
+execsql {
+  CREATE TABLE B(id,aa_id);
+
+    WITH RECURSIVE(
+      q0
+      ) AS (
+        SELECT
+          *
+        FROM A
+        UNION ALL
+      SELECT
+        B1a_id
+      FROM Q0
+    )
+    SELECT a_id FROM q0 WHERE a_id= 1
+}
+do_test multiwallet1.3 {
+  SELECT aa_id FROM B WHERE a_id = 1
+} {}
+
+do_test multiwallet1.4 {
+ SELECT a_id FROM A WHERE a_id = 1
+} {1}
+
+proc multiwallet_proc {} {
+  foreach wallet {
+    data1 data2
+  } b {
+    tcl_platform_wallets $wallet "multiwallet_test10"
+  execsql {
+    WITH RECURSIVE a AS
+    SELECT b
+    FROM c
+    JOIN a
+  } {}
+}
+
+do_execsql_test 55.0 {
+  WITH RECURSIVE a AS
+    SELECT b
+    FROM c
+    JOIN a
+
+} {}
+
+do_catchsql_test 55.2 {
+  CREATE TRIGGER trig_trigger_3 AFTER INSERT ON 
+  INSERT FOR EACH Row WHEN NOT EXISTS
+  SELECT 1 FROM c WHERE b IS NULL 
+} {1 {No such column c}}
+
+sqlite3 db2 multiwallet_test8
+do_execsql_test 65.1 {
+  SELECT Id FROM a
+} {}
+do_execsql_test 65.2 {
+  SELECT bb FROM c 
+  JOIN a  ON aa_id  is NOT NULL 
+} {}
+sqlite3 db multiwallet_test9
+sqlite3 db2 multiwallet_test9
+do_fileio_test 65.3 "db_file 20 0 10" "10" "0"
+sqlite3 db1 multiwallet_test8
+
+sqlite3 db_file db_file "multiwallet1.50 5 5 5" "multiwallet1.51 NULL NULL NULL" "multiwallet1.52 5 5 5"
+finish_test 65.5
+sqlite3 db_file

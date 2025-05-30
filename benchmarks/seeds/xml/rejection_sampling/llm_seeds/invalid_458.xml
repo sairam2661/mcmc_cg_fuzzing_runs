@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!ELEMENT book (author, title, publisher)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ELEMENT chapter (#PCDATA)>
+<!ELEMENT section (#PCDATA)>
+<!ELEMENT subsection (#PCDATA)>
+<!ELEMENT section-list (section+)>
+<!ELEMENT subsection-list (subsection+)>
+<!ATTLIST book 
+  id ID #REQUIRED
+  version CDATA #IMPLIED
+  lang CDATA #IMPLIED>
+<!ATTLIST chapter 
+  id ID #REQUIRED
+  version CDATA #IMPLIED
+  lang CDATA #IMPLIED>
+<!ATTLIST section 
+  id ID #REQUIRED
+  version CDATA #IMPLIED
+  lang CDATA #IMPLIED>
+<!ATTLIST subsection 
+  id ID #REQUIRED
+  version CDATA #IMPLIED
+  lang CDATA #IMPLIED>
+<!ENTITY % book-attrs "id CDATA #REQUIRED version CDATA #IMPLIED lang CDATA #IMPLIED">
+<!ENTITY % chapter-attrs "id CDATA #REQUIRED version CDATA #IMPLIED lang CDATA #IMPLIED">
+<!ENTITY % section-attrs "id CDATA #REQUIRED version CDATA #IMPLIED lang CDATA #IMPLIED">
+<!ENTITY % subsection-atts "id CDATA #REQUIRED version CDATA #IMPLIED lang CDATA #IMPLIED">
+]>
+<book id="bk1" version="1.0" lang="en">
+  <author>John Doe</author>
+  <title>My Book</title>
+  <publisher>ABC Publishers</publisher>
+  <chapter id="ch1" version="1.0" lang="en">This is chapter 1</chapter>
+  <chapter id="ch2" version="1.0" lang="en">This is chapter 2</chapter>
+  <section id="s1" version="1.0" lang="en">
+    <subsection id="ss1" version="1.0" lang="en">This is subsection 1</subsection>
+    <subsection id="ss2" version="1.0" lang="en">This is subsection 2</subsection>
+  </section>
+  <section-list>
+    <section id="s2" version="1.0" lang="en">This is section 2</section>
+    <section id="s3" version="1.0" lang="en">This is section 3</section

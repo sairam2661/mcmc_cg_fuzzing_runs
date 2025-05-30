@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note SYSTEM "http://www.example.com/dtds/note.dtd">
+<!ELEMENT note (to,from,heading,body)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+
+<note>
+    <to>John</to>
+    <from>Sam</from>
+    <heading>This is a note</heading>
+    <body>This is the body of the note</body>
+    <note>
+        <to>Jane</to>
+        <from>John</from>
+        <heading>This is a sub-note</heading>
+        <body>This is the body of the sub-note</body>
+    </note>
+</note>

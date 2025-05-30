@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE books SYSTEM "d"
+          [<!ELEMENT books (entry+)>
+           <!ATTLIST books date CDATA #REQUIRED>
+           <!ENTITY entry "<"              
+           >
+          <!ENTITY % content "b">
+          <!NOTATION bookformat SYSTEM "B">
+           %content; 
+           <!-- &books -->
+           ]
+>
+<books date="2">
+ <xi:fallback xmlns:xi="x" xmlns="c">Non well formed in XSI.</xi:fallback>
+ <book>
+  <title xml:lang="e">To Kill a </title>
+ </book>
+ <entry date="2"><book1></book1></entry>
+</books>

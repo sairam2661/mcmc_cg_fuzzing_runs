@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ENTITY book-id "bk12345">
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT publication-date (#PCDATA)>
+  <!ELEMENT ISBN (#PCDATA)>
+]>
+<book xml:lang="en" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <author>John Smith</author>
+  <title>My Big Book</title>
+  <genre>Non-Fiction</genre>
+  <publisher>Big Publisher</publisher>
+  <publication-date>2020-01-01</publication-date>
+  <ISBN>&book-id;</ISBN>
+  <xi:include href="included.xml"/>
+</book>

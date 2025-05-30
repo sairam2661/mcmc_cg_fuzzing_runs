@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book SYSTEM "book.dtd">
+<book xmlns:xs="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="book.xsd"
+      version="1.0"
+      lang="en"
+      xmlns="http://example.com/book">
+  <info>
+    <title>Some Book</title>
+    <subtitle>Subtitle of the book</subtitle>
+  </info>
+  <author>
+    <name>John Doe</name>
+    <email>john@example.com</email>
+  </author>
+  <publisher>
+    <name>Example Publisher</name>
+    <address>
+      <street>123 Main St</street>
+      <city>Anytown</city>
+      <state>CA</state>
+      <zip>12345</zip>
+    </address>
+  </publisher>
+  <content>
+    <chapter>
+      <title>Chapter 1</title>
+      <section>
+        <title>Section 1.1</title>
+        <para>This is a paragraph.</para>
+      </section>
+    </chapter>
+  </content>
+  <bibliography>
+    <citation>
+      <author>Some Author</author>
+      <title>Some Book</title>
+      <year>2000</year>
+    </citation>
+  </bibliography>
+  <appendix>
+    <title>Appendix A</title>
+    <para>This is an appendix.</para>
+  </appendix>
+</book>

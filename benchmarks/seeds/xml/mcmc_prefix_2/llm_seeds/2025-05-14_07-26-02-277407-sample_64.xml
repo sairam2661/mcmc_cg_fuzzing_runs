@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE article [
+  <!ELEMENT article (title, section*)>
+  <!ATTLIST article id CDATA #REQUIRED>
+  <!ENTITY person "L"> 
+  <!ENTITY %D  "("> 
+  <!NOTATION xsl SYSTEM "x" >  
+ %X
+  	   
+  		;	
+<!-->_i
+<!ELEMENT (title|author|year)>>]>
+<article
+id="ART1" xmlns="http://example.com/article/xsd"
+
+     xmlns:xsi=http://www.w3.org/2001/XMLSchema 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+xsi:noNamespaceSchemaLocation="https://example.com/article.xsd"  
+xsi:schemaLocation="https://example/schema.xsd">
+
+<title>Artic</title>
+<section>
+<para>&person;</para>
+<figure linkend="IMAGE1" xref="fig1" xmlns:a="http://www.elearning.com/xschema">
+<alt>Figure 1 : </alt>
+<img linkend="IMAGE1"   xml:space="preserve"
+  <a:t>
+<b>Cool Picture</b>
+<italic> Picture</italic></a:t>
+</img>
+</figure>
+</section>
+<a:attr>a="value"</a:attr>
+<author xlink:href="mailto:author@example.com">Author&{%person%};</author>
+<copyright>&D</copyright>
+<year/>
+  <%person%> year</article> ; 
+
+  } 
+~<|eom_id|><|start_header_id|>assistant<|end_header_id|>
+
+Note: I've removed the extra lines of XML added after the last close tag in your example. The closing tag of the document must always match its opening tag, including any additional information. It seems that some of the extra lines you provided were causing an `XML parsing error`. If you want the same but without errors, then here is the revised version. In this version, I moved the entities to the internal DTD declaration, so they are defined within the document, because your example made it seem that this would be a suitable approach and not removed them as they did add complexity. 
+
+Here is the simplified and corrected version of your specified XML document:
+
+```xml
+<?xml version="1.0" encoding="ISO-->
+<!ELEMENT article (title, section*)>
+<!ATTLIST article id CDATA #REQUIRED>
+<!ENTITY person "L">
+<!

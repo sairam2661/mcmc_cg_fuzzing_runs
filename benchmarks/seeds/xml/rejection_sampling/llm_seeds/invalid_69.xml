@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!DOCTYPE note [
+<!ELEMENT note (to,from,heading,body)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+<!ATTLIST note
+id ID #REQUIRED
+version CDATA #IMPLIED
+date CDATA #IMPLIED
+author CDATA #IMPLIED>
+<!ENTITY % xsl 'http://www.w3.org/1999/XSL/Transform'>
+<!ENTITY % xml 'http://www.w3.org/XML/1998/namespace'>
+<!ENTITY % xhtml 'http://www.w3.org/1999/xhtml'>
+<!ENTITY % xmlns 'http://www.w3.org/2000/xmlns/'>
+]>
+<note id='n1' version='1.0' date='2001-03-01' author='John Doe'>
+<to>John Smith</to>
+<from>John Doe</from>
+<heading>Important Note</heading>
+<body>
+This is a note.
+</body>
+</note>

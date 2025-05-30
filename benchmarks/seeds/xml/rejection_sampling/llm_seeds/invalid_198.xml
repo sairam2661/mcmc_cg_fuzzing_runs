@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ENTITY bookid "book-123">
+  <!ENTITY booktitle "My Book">
+  <!ENTITY bookauthor "John Smith">
+]>
+<book xmlns:xs="http://www.w3.org/2001/XMLSchema" xs:noNamespaceSchemaLocation="book.xsd">
+  <&bookid;>
+    <title><&booktitle;></title>
+    <author><&bookauthor;></author>
+    <&bookid;>
+      <&booktitle;>
+        <para>This is a paragraph of text.</para>
+        <para>This is another paragraph.</para>
+      </&booktitle;>
+    </&bookid;>
+  </&bookid;>
+</book>

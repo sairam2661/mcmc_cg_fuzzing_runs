@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE book [
+  <!ENTITY book_title SYSTEM 'title.txt'>
+  <!ENTITY author SYSTEM 'author.txt'>
+]>
+<book xmlns="http://example.org/book"
+  xmlns:isbn="http://example.org/isbn"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://example.org/book book.xsd"
+  xml:lang="en"
+  xml:space="preserve"
+  id="book1">
+  <title>&book_title;</title>
+  <author>&author;</author>
+  <isbn:isbn>1234567890</isbn:isbn>
+  <publisher>
+    <name>Example Publisher</name>
+    <address>
+      <street>123 Main St</street>
+      <city>Anytown</city>
+      <state>CA</state>
+      <country>USA</country>
+      <postalcode>12345</postalcode>
+    </address>
+  </publisher>
+  <sections>
+    <section id="chap1">
+      <title>Chapter 1</title>
+      <content>
+        <p>This is a sample chapter.</p>
+        <p>It has multiple paragraphs.</p>
+        <p>Each paragraph has a different style.</p>
+      </content>
+    </section>
+    <section id="chap2">
+      <title>Chapter 2</title>
+      <content>
+        <p>This is another chapter.</p>
+        <p>It also has multiple paragraphs.</p>
+      </content>
+    </section>
+  </sections>
+  <bibliography>
+    <entry>
+      <author>John Doe</author>
+      <title>Sample Book</title>
+      <publisher>Example Publisher</publisher>
+      <year>2020</year>
+    </entry>
+    <entry>
+      <author>Jane Doe</author>
+      <title>Another Book</title>
+      <publisher>Example Publisher</publisher>
+      <year>2021</year>
+    </entry>
+  </bibliography>
+</book>

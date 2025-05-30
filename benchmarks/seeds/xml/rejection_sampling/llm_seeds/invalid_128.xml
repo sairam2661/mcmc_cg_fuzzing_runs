@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note SYSTEM "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!ELEMENT note (to,from,heading,body)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+<!ATTLIST note id CDATA #REQUIRED>
+<!ATTLIST to name CDATA #IMPLIED>
+<!ATTLIST to email CDATA #IMPLIED>
+<!ATTLIST from name CDATA #IMPLIED>
+<!ATTLIST from email CDATA #IMPLIED>
+<!ATTLIST heading priority CDATA #IMPLIED>
+<!ATTLIST heading color CDATA #IMPLIED>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT state (#PCDATA)>
+<!ELEMENT zip (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ATTLIST address type CDATA #IMPLIED>
+<!ATTLIST phone type CDATA #IMPLIED>
+<note id="123">
+  <to name="John Smith" email="john.smith@example.com">
+    <address>
+      <street>123 Main St</street>
+      <city>Anytown</city>
+      <state>CA</state>
+      <zip>12345</zip>
+    </address>
+    <phone type="home">123-456-7890</phone>
+  </to>
+  <from name="Jane Doe" email="jane.doe@example.com">
+    <address>
+      <street>456 Elm St</street>
+      <city>Anytown</city>
+      <state>CA</state>
+      <zip>12345</zip>
+    </address>
+    <phone type="work">987-654-3210</phone>
+  </from>
+  <heading priority="high" color="red">Important Meeting</heading>
+  <body>
+    This is a very important meeting. Please attend.
+  </body>
+</note>  <!-- end of note -->  <!-- note is the root element of this document -->  <!-- the end of the document is indicated by the closing tag of the root element -->  <!-- this is the end of the XML document -->  <!-- end of document -->  <!-- this is the end of the XML document -->  <!-- end of document -->  <!-- end of document -->  <!-- end of document -->  <!-- end of document -->  <!-- end of document -->

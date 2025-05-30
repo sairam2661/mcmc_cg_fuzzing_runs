@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book SYSTEM "book.dtd">
+<!ELEMENT book (title,author,chapter*)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT chapter (#PCDATA)>
+<!ELEMENT para (#PCDATA)>
+<!ELEMENT quote (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
+
+<book>
+  <title>War and Peace</title>
+  <author>
+    <name>Leo Tolstoy</name>
+    <address>Yasnaya Polyana</address>
+  </author>
+  <chapter>
+    <para>War is a necessary evil.</para>
+    <quote>"The only thing necessary for the triumph of evil is for good men to do nothing."</quote>
+  </chapter>
+  <chapter>
+    <para>Peace is a beautiful thing.</para>
+  </chapter>
+</book>

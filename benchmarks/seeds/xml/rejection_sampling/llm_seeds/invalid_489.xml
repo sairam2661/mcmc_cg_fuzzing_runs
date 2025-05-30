@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note SYSTEM "note.dtd">
+<!ELEMENT note (to,from,heading,body)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+<!ATTLIST note
+  id ID #REQUIRED
+  type CDATA #IMPLIED
+  date CDATA #IMPLIED
+  to CDATA #IMPLIED
+  from CDATA #IMPLIED
+>
+<!ENTITY % x "x">
+<!ENTITY % y "%x;y">
+<!ENTITY % z "%y;z">
+<!ENTITY % w "%z;w">
+<!ENTITY % v "%w;v">
+<!ENTITY % u "%v;u">
+<!ENTITY % t "%u;t">
+<!ENTITY % s "%t;s">
+<!ENTITY % r "%s;r">
+<!ENTITY % q "%r;q">
+<!ENTITY % p "%q;p">
+<!ENTITY % o "%p;o">
+<!ENTITY % n "%o;n">
+<!ENTITY % m "%n;m">
+<!ENTITY % l "%m;l">
+<!ENTITY % k "%l;k">
+<!ENTITY % j "%k;j">
+<!ENTITY % i "%j;i">
+<!ENTITY % h "%i;h">
+<!ENTITY % g "%h;g">
+<!ENTITY % f "%g;f">
+<!ENTITY % e "%f;e">
+<!ENTITY % d "%e;d">
+<!ENTITY % c "%d;c">
+<!ENTITY % b "%c;b">
+<!ENTITY % a "%b;a">
+<!ENTITY % aa "%a;a">
+<!ENTITY % ab "%aa;b">
+<!ENTITY % ac "%ab;c">
+<!ENTITY % ad "%ac;d">
+<!ENTITY % ae "%ad;e">
+<!ENTITY % af "%ae;f">
+<!ENTITY % ag "%af;g">
+<!ENTITY % ah "%ag;h">
+<!ENTITY % ai "%ah;i">
+<!ENTITY % aj "%ai;j">
+<!ENTITY % ak "%aj;k">
+<!ENTITY % al "%ak;l">
+<!ENTITY % am "%al;m">
+<!ENTITY % an "%am;n">
+<!ENTITY % ao "%an;o">
+<!ENTITY % ap "%ao;p">
+<!ENTITY % aq "%ap;q">
+<!ENTITY % ar "%aq;r">
+<!ENTITY % as "%ar;s">
+<!ENTITY % at "%as;t">
+<!ENTITY % au "%at;u">
+<!ENTITY % av "%au;v">
+<!ENTITY % aw "%av;w">
+<!

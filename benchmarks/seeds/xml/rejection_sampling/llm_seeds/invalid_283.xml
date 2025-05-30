@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog SYSTEM "catalog.dtd">
+<!ENTITY % ent SYSTEM "ent.ent">
+<!ENTITY % ent2 SYSTEM "ent2.ent">
+<!ELEMENT catalog (book+)>
+<!ELEMENT book (title,author,price)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ATTLIST book id ID #REQUIRED>
+<!ATTLIST book year CDATA #IMPLIED>
+<!ATTLIST book lang CDATA #IMPLIED>
+<!ENTITY ent "ent-value">
+<!ENTITY ent2 "ent2-value">
+<catalog>
+    <book id="bk-1" year="2020" lang="en">
+        <title>Book 1</title>
+        <author>Author 1</author>
+        <price>10.99</price>
+    </book>
+    <book id="bk-2" year="2021" lang="fr">
+        <title>Book 2</title>
+        <author>Author 2</author>
+        <price>9.99</price>
+    </book>
+    <book id="bk-3" year="" lang="">
+        <title>Book 3</title>
+        <author>Author 3</author>
+        <price>8.99</price>
+    </book>
+</catalog>

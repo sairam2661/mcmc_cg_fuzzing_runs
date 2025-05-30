@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+  <!ELEMENT book (#PCDATA|title|author|year|chapter|section|paragraph|emphasis |
+               subscript|super|italic|bold|underline|code)> 
+  <!ATTLIST book
+     id ID #REQUIRED
+     lang CDATA #IMPLIED>
+  <!ENTITY chapter1 "1">
+  <!ENTITY % section "1">
+  <!NOTATION iso8601 PUBLIC "W" "W" >
+  %section;
+  <!-- internal subset end -->]>
+<book id="b" lang="f">
+  <!-- comment -->
+  <title><xi:include href="#"title2.xinclude.xml--t1234567890--t1--s1234567890--s1--v--c1234567890--c1--e--u1234567890--u1--t1234567890--t2--s1234567890--s2--v--c1234567890--c2--e--u1234567890--u2--t1234567890--t3--s1234567890--s3--v--c1234567890--c3--e--u1234567890--u3--v--1234567890--v--1--w--w--1--i--i--1--j--j--1234567890--1234567890--t1234567890--t4--s1234567890--s4--v--c1234567890--c4--e--u1234567890--u4--t1234567890--t5--s1234567890--s5--v--c1234567890--c5--e--u1234567890--u5--v--1234567890--v--2--w--w--2--i--i--2--j--j--1234567890--1234567890--t1234567890--t6--s1234567890--s6--v--c1234567890--c6--e--u1234567890--u6--t1234567890--t7--s1234567890--s7--v--c1234567890--c7--e--u1234567890--u7--t--t--s--s--v--c--e--u--1234567890--1234567890--1234567890--1234567890--1234567890--1234567890--1234567890--1234567890--v--1234567890--v--w--w--i--i--j--j--1234567890--1234567890--1234567890--1234567890--t

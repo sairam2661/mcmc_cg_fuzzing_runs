@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author*,bibliography)>
+  <!ATTLIST book lang CDATA #REQUIRED>
+  <!ENTITY author1 "J">
+  <!ENTITY % author2 "K">
+  <!NOTATION PDF PUBLIC "P" "D">
+  %author2;
+  <!--comment--> %author2;
+]>
+<book lang="f" xsi:noNamespaceSchemaLocation="s">
+  <title>Sample xml document</title>
+  <author>John</author>
+  <author entity-ref="#">Kate</author>
+  <bibliography>
+    <entry>
+      <year>1999</year>
+      <reference>&author1;</reference>
+    </entry>
+  </bibliography>
+  <link href="s" type="&PDF;">s</link>
+  <!-- comment is here -->
+</book>

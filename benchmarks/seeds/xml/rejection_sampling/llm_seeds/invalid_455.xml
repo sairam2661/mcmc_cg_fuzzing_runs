@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE doc [
+<!ENTITY % ent SYSTEM "ent.xml">
+%ent;
+<!ENTITY % sec SYSTEM "sec.xml">
+%sec;
+<!ELEMENT doc (title,para*,sec+)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT para (#PCDATA)>
+<!ELEMENT sec (#PCDATA)>
+<!ATTLIST sec id ID #REQUIRED>
+<!ATTLIST sec name CDATA #IMPLIED>
+<!ATTLIST sec type (A|B|C) "A">
+<!ATTLIST sec class CDATA #IMPLIED>
+<!ATTLIST sec link CDATA #IMPLIED>
+<!ENTITY % ent2 SYSTEM "ent2.xml">
+<!ENTITY % sec2 SYSTEM "sec2.xml">
+%ent2;
+%sec2;
+]>
+<doc>
+<title>This is a title</title>
+<para>This is a paragraph</para>
+<sec id="sec1" name="Section 1" type="A" class="normal" link="link1">This is a section</sec>
+<para>This is another paragraph</para>
+<sec id="sec2" name="Section 2" type="B">This is another section</sec>
+</doc> 
+<?xml-stylesheet href="style.xsl" type="text/xsl"?>
+<?xml:lang en?>
+<?xml:space preserve?> 
+<?xml-stylesheet type="text/xsl" href="style.xsl"?>
+<?xml-stylesheet href="style.css" type="text/css"?>
+<?xml:lang en?>
+<?xml:space preserve?> 
+<?xml-stylesheet type="text/xsl" href="style.xsl"?>
+<?xml-stylesheet href="style.css" type="text/css"?>
+<?xml:lang en?>
+<?xml:space preserve?> 
+<?xml-stylesheet type="text/xsl" href="style.xsl"?>
+<?xml-stylesheet href="style.css" type="text/css"?>
+<?xml:lang en?>
+<?xml:space preserve?> 
+<?xml-stylesheet type="text/xsl" href="style.xsl"?>
+<?xml-stylesheet href="style.css" type="text/css"?>
+<?xml:lang en?>
+<?xml:space preserve?> 
+<?xml-stylesheet type="text/xsl" href="style.xsl"?>
+<?xml-stylesheet href="style.css" type="text/css"?>
+<?xml:lang en?>
+<?xml:space preserve?> 
+<?xml-stylesheet type="text/xsl" href="style.x

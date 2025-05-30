@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "http://www.example.com/schema.dtd">
+<!ELEMENT document (header, body)>
+<!ELEMENT header (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+<!ELEMENT table (#PCDATA)>
+<!ELEMENT row (#PCDATA)>
+<!ELEMENT column (#PCDATA)>
+<!ELEMENT footnote (#PCDATA)>
+
+<document>
+  <header>
+    <title>Sample Document</title>
+    <author>John Doe</author>
+    <date>2022-01-01</date>
+  </header>
+  <body>
+    <p>This is a sample paragraph.</p>
+    <table>
+      <row>
+        <column>1</column>
+        <column>2</column>
+        <column>3</column>
+      </row>
+      <row>
+        <column>4</column>
+        <column>5</column>
+        <column>6</column>
+      </row>
+    </table>
+    <footnote>This is a footnote.</footnote>
+  </body>
+</document>

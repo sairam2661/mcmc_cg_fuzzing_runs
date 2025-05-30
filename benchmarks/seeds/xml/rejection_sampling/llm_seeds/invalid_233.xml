@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE books [
+<!ENTITY % general "entity">
+<!ENTITY % books "%general;books">
+<!ENTITY % pubinfo "%books;pubinfo">
+<!ENTITY % title "%books;title">
+<!ENTITY % author "%books;author">
+<!ELEMENT books (%books;)*>
+<!ATTLIST books
+    lang (en|fr|de) #REQUIRED
+    style (roman|italic) #IMPLIED
+    pub-date CDATA #IMPLIED
+>
+<!ELEMENT %books;pubinfo (#PCDATA)>
+<!ELEMENT %books;title (#PCDATA)>
+<!ELEMENT %books;author (#PCDATA)>
+<!ELEMENT %books;book (%books;title, %books;author, %books;pubinfo)>
+<!ATTLIST %books;book
+    id CDATA #IMPLIED
+    year CDATA #IMPLIED
+>
+<!ELEMENT %books;title (#PCDATA)>
+<!ELEMENT %books;author (#PCDATA)>
+<!ELEMENT %books;pubinfo (#PCDATA)>
+<!ELEMENT %books;book (%books;title, %books;author, %books;pubinfo)>
+<!ATTLIST %books;book
+    id CDATA #IMPLIED
+    year CDATA #IMPLIED
+>
+<!ELEMENT %books;title (#PCDATA)>
+<!ELEMENT %books;author (#PCDATA)>
+<!ELEMENT %books;pubinfo (#PCDATA)>
+<!ELEMENT %books;book (%books;title, %books;author, %books;pubinfo)>
+<!ATTLIST %books;book
+    id CDATA #IMPLIED
+    year CDATA #IMPLIED
+>
+<!ELEMENT %books;title (#PCDATA)>
+<!ELEMENT %books;author (#PCDATA)>
+<!ELEMENT %books;pubinfo (#PCDATA)>
+<!ELEMENT %books;book (%books;title, %books;author, %books;pubinfo)>
+<!ATTLIST %books;book
+    id CDATA #IMPLIED
+    year CDATA #IMPLIED
+>
+<!ELEMENT %books;title (#PCDATA)>
+<!ELEMENT %books;author (#PCDATA)>
+<!ELEMENT %books;pubinfo (#PCDATA)>
+<!ELEMENT %books;book (%books;title, %books;author, %books;pubinfo)>
+<!ATTLIST %books;book
+    id CDATA #IMPLIED
+    year CDATA #IMPLIED
+>
+<!ELEMENT %books;title (#PCDATA)>
+<!ELEMENT %books;author

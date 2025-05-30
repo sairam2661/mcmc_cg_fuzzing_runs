@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author,edition)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT edition (publisher,year,price)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+]>
+<book>
+  <title>My Book</title>
+  <author>John Doe</author>
+  <edition>
+    <publisher>ABC Press</publisher>
+    <year>2022</year>
+    <price>$19.99</price>
+  </edition>
+</book>

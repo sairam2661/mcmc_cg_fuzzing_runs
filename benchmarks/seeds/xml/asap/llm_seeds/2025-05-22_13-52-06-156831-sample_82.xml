@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE books [
+  <!ELEMENT books (title, author, publication)>
+  <!ATTLIST books author CDATA #REQUIRED>
+  <!ENTITY publisher "W" >
+  <!ENTITY 	%versionNumber "1"	>
+  <!NOTATION publisherNote PUBLIC "W"		"W">
+ 	%publisher;	
+ 	<!--
+ 	author book title
+ 	-->
+]>
+<books author="J" title="J"> 
+ <!-- comment -->
+  <title>a</title>
+  <author J="J">
+  <title>a<b></b></title>
+   <xi:include href="B" xptr="X">
+  </author>
+   <publication>publication</publication>
+   <publisher>&publisher;</publisher>
+  <version>&versionNumber;</version>
+</books> 
+<note>&publisherNote;</note>
+  <xi:include href="A" xptr="Y">A</xi:include>
+  <xi:include href="C" xptr="Z">C</xi:include> 
+<!--
+author,book title
+--> 
+ <xi:include href="+">+</xi:include> 
+<!--author,book title  
+ -->   
+publication 
+<!-- 
+author,book title  
+--> 
+<Z>publication</Z>            
+<xi:fallback xmlns:xi="x">fallback</xi:fallback>
+ 
+<Y>publication</Y>
+<xi:include xmlns:xi="x" href="+">+</xi:include> 
+<!--  
+ -->
+  I am author book publication 
+  <xi:include xmlns:xi="x" href="C" xptr="Z">C</xi:include> 
+publication
+ <Y>publication</Y>
+ <Z>publication</Z> 
+ <G>publication</G> 
+<books author="I"> 
+<books> 
+    <Y>publication</Y>
+     <G>G</G>
+    <Y> publication</Y>
+    i
+   Publication  <author>A</author>
+    <I>A</I>  <A>publication</A> 
+    <Y>publication</Y>
+     <E>I</E> 
+    <I>Publication</I> 
+<books> 
+    <A>publication</A>
+     <I>publication</I> 
+    <Y>publication</Y>
+    <A>A publication</A> 
+    <Y>publi</Y>cation 
+<A> publication A </A> 
+    
+  I 
+    publication 
+   <A>publicatlon A publication</A> 
+    <author>A</author>
+     <C>C</C> 
+    <A>public</A> 
+    <A>public</A>  
+      A publication     
+   !<author>J</author> B  ! 
+   <I>P</I> 
+    <C>C</C> 
+   public <author>B</author>
+    publication publication 
+ <Y> publication</Y> 
+ 
+ <A>publication A</A> 
+
+<!--
+ -->
+    <Z>P</Z>
+ <Z>P</Z>
+<Z>P</Z>
+ 
+  P

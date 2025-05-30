@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE note SYSTEM "note.dtd">
+<!ELEMENT note (to,from,heading,body)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+<!ATTLIST note
+  id ID #REQUIRED
+  type (personal|work) "personal"
+  date CDATA #IMPLIED
+  to CDATA #REQUIRED
+  from CDATA #REQUIRED
+  cc CDATA #IMPLIED
+>
+<!ELEMENT cc (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT state (#PCDATA)>
+<!ELEMENT zip (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT fax (#PCDATA)>
+
+<note id="n1" type="work" date="2022-01-01" to="John" from="Jane" cc="Bob">
+  <heading>Meeting</heading>
+  <body>Hello world</body>
+  <cc>Bob</cc>
+  <author>John</author>
+  <title>Something</title>
+  <date>2022-01-01</date>
+  <publisher>ABC</publisher>
+  <address>123 Main St</address>
+  <city>New York</city>
+  <state>NY</state>
+  <zip>10001</zip>
+  <phone>123-456-7890</phone>
+  <fax>123-456-7891</fax>
+</note>  <!-- note.dtd is not included -->  <!-- note.dtd is not included -->  <!-- note.dtd is not included -->  <!-- note.dtd is not included -->  <!-- note.dtd is not included -->  <!-- note.dtd is not included -->  <!-- note.dtd is not included -->  <!-- note.dtd is not included -->  <!-- note.dtd is not included -->  <!-- note.dtd is not included -->  <!-- note.dtd is not included -->  <!-- note.dtd is not included -->  <!-- note.dtd is not included -->  <!-- note.dtd is not included -->  <!-- note.dtd is not included -->  <!-- note.dtd is not included -->  <!-- note.dtd is not included -->  <!-- note.dtd is not included -->  <!-- note.dtd is not included -->  <!-- note.dtd is not included -->  <!--

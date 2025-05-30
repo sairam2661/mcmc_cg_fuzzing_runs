@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product+)>
+  <!ATTLIST catalog
+    author CDATA #IMPLIED>
+  <!ENTITY article "A">
+  <!ENTITY % percent "%">
+  <!NOTATION SVG SYSTEM "A">
+  %percent;
+  <!--%>comment<%>
+]>
+<catalog xmlns="http://example.org/catalog" author="John Doe">
+  <product>
+    <title>&article; Article Title</title>
+    <price>&percent;20</price>
+    <notations>
+      <notation name="PDF" system="F" public="true"/>
+      <notation name="SVG" system="A" public="false"/>
+    </notations>
+  </product>
+</catalog>  <!-->]   >   <comment>   []&comment;   [> ]   ^   _   ~   <br/>   ~]   ~  !] ]]>   ]></comment>

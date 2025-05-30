@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+<!ELEMENT catalog (book+)>
+<!ELEMENT book (author, title, price, publisher)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ATTLIST book id CDATA #REQUIRED>
+<!ATTLIST book year CDATA #IMPLIED>
+<!ENTITY book1 "book1">
+<!ENTITY book2 "book2">
+]>
+<catalog>
+<book id="bk1" year="2022">
+<author>John Doe</author>
+<title>My Book</title>
+<price>19.99</price>
+<publisher>My Publisher</publisher>
+</book>
+<book id="bk2">
+<author>Jane Smith</author>
+<title>Her Book</title>
+<price>9.99</price>
+<publisher>Her Publisher</publisher>
+</book>
+<book id="bk3" year="2023">
+<author>Bob Brown</author>
+<title>His Book</title>
+<price>29.99</price>
+<publisher>His Publisher</publisher>
+</book>
+</catalog>

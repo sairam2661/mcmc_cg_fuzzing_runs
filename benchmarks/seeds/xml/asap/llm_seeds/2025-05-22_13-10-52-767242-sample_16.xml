@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author,chapter* )>
+  <!ATTLIST book 
+    id CDATA #REQUIRED 
+    lang (en|fr|de) " "
+  >
+  <!ENTITY chapter1 "<" >
+  <!ENTITY % chapter2 "<" >
+  <!NOTATION XHTML PUBLIC "#"
+         "W" >
+ 				      	
+ 	%cchap2; 	 		<!-- % of chapter2 -->
+]>
+<book xmlns="h" id="1" lang="f"><title>Test</title>
+	<author>Author</author>
+	<chapter id="1" xmlns:xsi="h" xsi:schemaLocation="h"
+		 xsi:noNamespaceSchemaLocation="h" xsi:schemaLocation="h">
+	  <subchapter>subchapter1</subchapter>
+	  &chapter1;
+	</chapter>
+	<chapter>chapter2<xi:include xmlns:xi="h" href="h"/>
+	</chapter>
+ <annotation XHTML:NONE="1" CDATA="2">CDATA</annotation>	
+  <subannotation>sub</subannotation>
+ 
+</book>

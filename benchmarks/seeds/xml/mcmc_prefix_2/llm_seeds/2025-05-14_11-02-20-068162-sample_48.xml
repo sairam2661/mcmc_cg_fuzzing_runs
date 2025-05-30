@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+  <!ELEMENT book (author,title,section+)>
+  <!ATTLIST book lang CDATA #REQUIRED>
+  <!ENTITY author "J">
+  <!ENTITY % sects ";">
+  <!NOTATION isbn PUBLIC "1" "2">
+  %sects;
+  <!---->
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT section (subsection*,h1,title,para)>
+  <!ELEMENT subsection (#PCDATA)>
+  <!ELEMENT h1 (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT para (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+]>
+<book lang="g">
+  &author;
+  &sect1;
+  <section>
+    <title>&sect2;</title>
+    <para>Paragraph&sect3;</para>
+  </section>
+  <title>&sect4;</title>
+</book>

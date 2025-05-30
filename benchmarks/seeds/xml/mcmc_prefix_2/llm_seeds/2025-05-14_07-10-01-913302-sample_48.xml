@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ATTLIST catalog 
+    id CDATA #REQUIRED 
+    author CDATA #REQUIRED
+  >
+  <!ENTITY product1-system "l">
+  <!ENTITY % product1 "p">
+  <!NOTATION product1-notation SYSTEM "l">
+  %product1;
+  <!--
+    Sample comment for the product element.
+  -->
+]>
+<catalog id="c" author="A">
+  <xi:include href="x" xmlns:xi=" ">
+    <xi:fallback xmlns:xi=" ">
+      Product includes
+    </xi:fallback>
+  </xi:include>
+  <notabrowser><![CDATA[No tab browser]]></notabrowser>
+  <product id="p" type="%"/>
+  <product id="%">l</product>
+  <product id="%">%product1-system;</product>
+  <product id="2">l</product>
+</catalog>

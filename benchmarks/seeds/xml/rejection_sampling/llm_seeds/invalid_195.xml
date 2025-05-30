@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+<!ELEMENT catalog (book, bookset)>
+<!ELEMENT book (title, author, price)>
+<!ELEMENT bookset (book+)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT bookid (#PCDATA)>
+<!ELEMENT genre (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ELEMENT publicationdate (#PCDATA)>
+<!ATTLIST book bookid CDATA #REQUIRED>
+<!ATTLIST book genre CDATA #IMPLIED>
+<!ATTLIST book publisher CDATA #IMPLIED>
+<!ATTLIST book publicationdate CDATA #IMPLIED>
+<!ELEMENT review (#PCDATA)>
+<!ELEMENT rating (#PCDATA)>
+<!ELEMENT comment (#PCDATA)>
+<!ELEMENT bookinfo (bookid, title, author, price, genre, publisher, publicationdate)>
+<!ELEMENT bookinfo2 (bookinfo, review, rating, comment)>
+<!ELEMENT cataloginfo (catalog, bookinfo2)>
+]>
+<catalog>
+<book bookid="BK001" genre="Fantasy" publisher="Random House" publicationdate="2010">
+<title>The Hobbit</title>
+<author>J.R.R. Tolkien</author>
+<price>14.99</price>
+</book>
+<bookset>
+<book bookid="BK002" genre="Mystery" publisher="Penguin" publicationdate="2005">
+<title>The Murder on the Orient Express</title>
+<author>Agatha Christie</author>
+<price>12.99</price>
+</book>
+<book bookid="BK003" genre="Romance" publisher="HarperCollins" publicationdate="2001">
+<title>The Notebook</title>
+<author>Nicholas Sparks</author>
+<price>10.99</price>
+</book>
+</bookset>
+</catalog>

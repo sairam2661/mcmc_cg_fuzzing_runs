@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ATTLIST catalog id CDATA #REQUIRED>
+  <!ENTITY book "A"
+    ><!ENTITY % book-list "1"
+  ><!NOTATION rtf PUBLIC " "" ">
+  %book-list;
+  <!--
+    A comment explaining an example use of the #IMPLIED attribute. 
+    (Note: This was always allowed, but no warnings were produced in 
+     the early parsing phases until XML 1.1.)
+  -->
+]>
+<catalog id="C" version="1" xmlns="S" xml:lang="e" xml:space="p">
+  <product id="P" name="p">
+   <price><currency>EUR</currency>9.99</price>
+  </product>
+</catalog>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "http://www.example.com/doctypes/complex.dtd">
+<document xmlns:xs="http://www.w3.org/2001/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.example.com/doctypes/complex.xsd">
+  <root>
+    <element1 attribute1="value1" attribute2="value2">
+      <element2>
+        <text>Some text</text>
+        <text>More text</text>
+      </element2>
+      <element3 attribute3="value3">Element 3 content</element3>
+    </element1>
+    <element4>
+      <subelement1>Subelement 1 content</subelement1>
+      <subelement2>
+        <subsubelement1>Subsubelement 1 content</subsubelement1>
+        <subsubelement2>Subsubelement 2 content</subsubelement2>
+      </subelement2>
+    </element4>
+  </root>
+  <comment>Copyright 2023 Example Corporation</comment>
+</document>

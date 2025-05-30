@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (store+)>
+  <!ATTLIST store id CDATA #REQUIRED>
+  <!ENTITY entity "a">
+  <!ENTITY % entityRef "%">
+  <!NOTATION iso8601 PUBLIC "W" "x">
+  %iso8601;
+  <!--
+   <NOTATION
+    iso8601;
+   -->
+  ]>
+<catalog>
+  <store id="s">
+    <!--
+      <!-->
+
+    <price attribute="W">20</price>
+  </store>
+  <store id="s">
+    <name>&entity;</name>
+    <price entityRef="W">10</price>
+  </store>
+</catalog>

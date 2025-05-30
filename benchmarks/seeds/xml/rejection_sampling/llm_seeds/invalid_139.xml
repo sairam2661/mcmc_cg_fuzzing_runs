@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book SYSTEM "book.dtd">
+<!ENTITY % bookEntity SYSTEM "book.ent">
+%bookEntity;
+<book>
+    <author>
+        <name>John Smith</name>
+        <email>john.smith@example.com</email>
+        <phone>123-456-7890</phone>
+    </author>
+    <title>The Great Gatsby</title>
+    <publisher>Example Publisher</publisher>
+    <date>2022-01-01</date>
+    <edition>1</edition>
+    <isbn>1234567890</isbn>
+    <copyright>2022</copyright>
+    <subject>
+        <keyword>fiction</keyword>
+        <keyword>novel</keyword>
+    </subject>
+    <abstract>
+        <p>This is a book about a wealthy man named Gatsby.</p>
+        <p>Gatsby is known for his extravagant lifestyle.</p>
+    </abstract>
+    <review>
+        <rating>5</rating>
+        <comment>This is a great book!</comment>
+    </review>
+</book>

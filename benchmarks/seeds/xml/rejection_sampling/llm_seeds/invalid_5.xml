@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE note SYSTEM "note.dtd">
+<!ELEMENT note (to,from,heading,body)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+
+<note>
+    <to xml:lang="en">John</to>
+    <from xml:lang="en">Jane</from>
+    <heading xml:lang="en">Hello World!</heading>
+    <body xml:lang="en">
+        <p>Dear John,
+            <b>Hello</b> from Jane.
+            <br/>Best regards,
+            <i>Jane</i>
+        </p>
+    </body>
+</note>

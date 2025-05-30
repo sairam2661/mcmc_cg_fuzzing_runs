@@ -1,0 +1,66 @@
+set  testdir 
+  {   file 
+  dirname  
+ $argv0 	
+ } 
+ source    $testdir/tester.tcl  	
+
+ set 
+ testprefix 
+ o  
+	 set   timeout 
+
+ 60000 
+ set  l8A__ 
+ $::i6  
+  
+ set 	
+ f 
+
+
+    { 
+ ROLLBACK   
+	 ;   CREATE INDEX   A 	 ON 	
+ a 
+ (   r_ 		 
+ )   		 ;  	  }  		  
+	  ifcapable 
+
+ H 
+ {   proc 
+
+ k 
+
+  { 	 b     	
+  } 		  
+ {  lappend  	 lZ 
+ 2.1       	 } 	   		
+	 do_execsql_test 
+
+
+ k_8ei 		 - 
+  9 	 . 	
+ 9  
+ { 
+ INSERT INTO 
+		 L_  ( 
+
+ I   ) 
+ VALUES  ( 
+ 9.54102  
+	 ,  9718.9    )   	 ; 
+ CREATE INDEX  j4 
+ ON 	 R9 	 ( 	 v35E 
+ )    ; 	 CREATE TABLE 
+ N16   ( 
+ d    	
+ W   	 DEFAULT 
+  5     
+ )   	
+  ; 	
+ PRAGMA 	
+ f 
+ =  'd|'       } 
+ {  }      	
+ }     
+   finish_test    

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE document [
+  <!ELEMENT document (header, main, footer)>
+  <!ELEMENT header (#PCDATA)>
+  <!ELEMENT main (section, section, section)>
+  <!ELEMENT section (title, p, ul, ol)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT p (#PCDATA)>
+  <!ELEMENT ul (#PCDATA)>
+  <!ELEMENT ol (#PCDATA)>
+  <!ELEMENT footer (#PCDATA)>
+]>
+<document>
+  <header>This is a header</header>
+  <main>
+    <section>
+      <title>Section 1</title>
+      <p>This is paragraph 1</p>
+      <ul>This is an unordered list</ul>
+      <ol>This is an ordered list</ol>
+    </section>
+    <section>
+      <title>Section 2</title>
+      <p>This is paragraph 2</p>
+      <ul>This is an unordered list</ul>
+      <ol>This is an ordered list</ol>
+    </section>
+    <section>
+      <title>Section 3</title>
+      <p>This is paragraph 3</p>
+      <ul>This is an unordered list</ul>
+      <ol>This is an ordered list</ol>
+    </section>
+  </main>
+  <footer>This is a footer</footer>
+</document>

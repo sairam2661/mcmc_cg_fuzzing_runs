@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (book*)>
+  <!ATTLIST bookstore 
+    lang CDATA #IMPLIED 
+    id   ID   #IMPLIED>
+  <!ENTITY author "R">  
+  <!ENTITY % section "B">
+  <!NOTATION iso-8859-1 PUBLIC "M"
+  "M">
+  %iso-8859-1;
+  <!--
+  --><!ENTITY book "<" 
+  		   			                          
+		                  
+		                  
+  																			 										
+  																			 										
+  																			 										  
+  																															
+  																						 		
+		                  
+		              
+		            
+	                      
+	                      																                  
+	 					 
+	 				
+  																				 		
+		                
+		            
+ 
+		      
+		                 
+			 
+		      
+																				 	
+  																			
+  																				 	
+  																			
+
+			>
+
+ <!ENTITY cdata "C">
+ <!ENTITY ref "A">
+]>
+<bookstore xmlns:xi="x" id="a" lang="e">
+  <!-- Sample comment -->
+  <xi:include href="#"/>
+  <message>&cdata;</message>
+  <book>&book;</book>
+  <title>&author; &section;</title>
+  <note>&ref;</note>
+</bookstore>

@@ -1,0 +1,113 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix complex_sql
+
+set ::timeout 60000
+set sqlite_options "-enable-fuzzer-coverage"
+
+proc complex_sql_func {} {
+  global complexargs
+  lappend complexargs
+  expr {2}
+}
+
+do_execsql_test complex-2.1 {
+  CREATE TABLE IFEXISTSemployees(id, name, email);
+  INSERT INTO employees VALUES(1, 'John Doe', 'john@example.com');
+  SELECT name FROM employees WHERE email = 'john@example.com';
+  SELECT * FROM employees WHERE email = 'non-existent@example.com';
+}
+
+  {
+  CREATE VIEW IFNOTEXISTS departments AS SELECT 'Sales' UNION ALL
+  SELECT 'Engineering' UNION ALL SELECT 'Accounting' UNION ALL
+  SELECT 'Management' UNION ALL SELECT 'Operations' UNION ALL
+  SELECT 'Development' UNION ALL SELECT 'Product'
+  }
+
+do_execsql_test complex-4.1 {
+BEGIN;
+INSERT INTO employees VALUES(2, 'Jane Doe', 'jane@example.com' );
+CREATE TABLE IFNOTEXISTSwork_history(id, employee_id, to_date, from_date);
+INSERT INTO work_history VALUES(1, 1, '2022-01-01', '2022-12-31');
+INSERT INTO work_history VALUES(2, 2, '2022-02-01', '2022-09-01');
+COMMIT;
+}
+
+  {
+  SELECT e1employee_id FROM employees AS e1 WHERE e1email IN
+    SELECT e3email FROM employees AS e3 WHERE e3employee_id IN
+      SELECT w1employee_id FROM work_history AS w1 WHERE w1from_date BETWEEN '2022-01-01' AND '2022-02-28'
+    }
+  CREATE TABLE IFNOTEXISTS temp_work_history AS SELECT employee_id FROM work_history WHERE from_date BETWEEN '2022-01-01' AND '2022-02-28' 
+  SELECT employee_id FROM temp_work_history GROUP BY employee_id HAVING COUNTIF employee_id IN 2
+  DROP TABLE IF EXISTSTempWork_history
+  SELECT name FROM employees WHERE id IN 2 
+  SELECT email FROM employees WHERE employee_id IN 2 
+
+ifcapable journalMode {
+  ifcapable {wal_journal} {
+    do_execsql_test complex_sql_multi_wal {
+      ATTACH 'test.db-journal' AS j1
+      SELECT name FROM employees WHERE email IN 'jane.2.example@com'
+      DETACH Database j1
+    } {}
+  }
+  do_test common_3_5_wal_0001 {PRAGMA journal_mode} {wal}
+}
+
+ifcapable {shared_cache} {
+  set DB 0
+}
+
+ifcapable fts4 {
+  do_execsql_test complex-3.7 {
+    CREATE TABLE term_document(
+      term, document_id, docsize, hits
+      );
+    SELECT type FROM DBMS_SQLmeta WHERE name='term_document'
+  } {
+    fts4
+  }
+}
+
+set up_db2 {
+  forcedelete autovacuum_wal
+  ifcapable wal_journal {
+    set testprefix autovacuum_wal
+  }  elseifcapable {auto_vacuum} {
+    set testprefix autovacuum
+  } else {
+    set testprefix common
+  }
+  set DB2 0
+  file mkdir autovacuum_wal autovacuum
+  forcedelete autovacuum
+}
+
+do_execsql_test common-9.1 {
+  CREATE TABLE IFEXISTSautoincrement_table(id);
+  INSERT INTO autoincrement_table VALUES
+    (1,'2009','January','31','31','Saturday'); 
+  INSERT INTO autoincrement_table VALUES
+    (2,'2010','January','31','31','Sunday'); 
+}
+{
+  SELECT id FROM
+   SELECT aaaaaaaaaaaaaaaaajulian_day_of_week AS id1
+     FROM autoincrement_table 
+    ORDER BY year FROM_date ASC
+}
+
+  ifcapable trigger {
+  DBDHandle1 close
+  DBDHandle2 close
+  ifcapable {writable_schema} {
+    do_execsql_test common_9_6_journal_0001 {
+      PRAGMA writable_schema = 1
+       								        
+				}
+  }
+  
+}
+finish_test

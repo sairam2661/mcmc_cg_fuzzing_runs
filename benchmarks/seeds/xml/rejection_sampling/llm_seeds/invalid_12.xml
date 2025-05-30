@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note SYSTEM "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<note xmlns="http://www.w3.org/2001/XMLSchema-instance">
+    <to>John</to>
+    <from>Me</from>
+    <heading>Important</heading>
+    <body>
+        <![CDATA[
+        <p>This is a test</p>
+        <p>of the XML</p>
+        <p>parser</p>
+        ]]>
+    </body>
+    <signature>
+        <name>Me</name>
+        <title>Software Developer</title>
+    </signature>
+    <attachment>
+        <filename>image.jpg</filename>
+        <mimetype>image/jpeg</mimetype>
+        <size>1024</size>
+    </attachment>
+    <nested>
+        <item>
+            <name>Item 1</name>
+            <description>This is item 1</description>
+        </item>
+        <item>
+            <name>Item 2</name>
+            <description>This is item 2</description>
+        </item>
+    </nested>
+    <group>
+        <member>
+            <name>Member 1</name>
+            <role>Admin</role>
+        </member>
+        <member>
+            <name>Member 2</name>
+            <role>Member</role>
+        </member>
+    </group>
+</note>

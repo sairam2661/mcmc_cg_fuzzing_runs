@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, publisher, date, edition, volume, chapter+, section+)> 
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT date (#PCDATA)>
+  <!ELEMENT edition (#PCDATA)>
+  <!ELEMENT volume (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ELEMENT section (#PCDATA)>
+  <!ELEMENT section (#PCDATA)>
+  <!ATTLIST chapter id CDATA #REQUIRED>
+  <!ATTLIST section id CDATA #REQUIRED>
+]>
+<book>
+  <title>My Book</title>
+  <author>John Doe</author>
+  <publisher>Publishing House</publisher>
+  <date>2022</date>
+  <edition>1</edition>
+  <volume>1</volume>
+  <chapter id="C1">Introduction</chapter>
+  <chapter id="C2">Chapter 2</chapter>
+  <section id="S1">Introduction to XML</section>
+  <section id="S2">XML Features</section>
+  <section id="S3">XML Applications</section>
+</book>

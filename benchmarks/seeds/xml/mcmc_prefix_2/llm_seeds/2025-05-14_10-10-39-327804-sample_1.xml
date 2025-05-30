@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, chapter+)>
+  <!ATTLIST book
+    lang CDATA #IMPLIED
+    version CDATA #REQUIRED
+  >
+  <!ENTITY chapter1 "A">
+  <!ENTITY % chapter2 "B">
+  <!NOTATION pdf PUBLIC "z"
+    "A"
+  >
+  %chapter2;
+  <!--
+     -->]>
+<book lang="e" version="3">
+  <title>Book Title</title>
+  <author>Author</author>
+  <chapter>Chapter 1</chapter>
+  <chapter>Chapter 2 &chapter1;</chapter>
+  <notation name="z" publicId="z"/>
+</book>

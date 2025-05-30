@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (book*, msg)*>
+  <!ATTLIST bookstore lang CDATA #IMPLIED>
+  <!ENTITY msg "A"> <!ENTITY % book "b"> <!NOTATION ISO-8859-1 SYSTEM "W">
+ 		                        %public;
+  <!--
+    public identifier for the public subset
+  -->
+]>
+<Bookstore xmlns="P" lang="e">
+  <Bookset xmlns:xsi="w">
+    <Book xml:lang='e'>
+      <author>AU</author><title>Ti</title>
+    </Book>
+    <Book><author>AUA</author><title>Tit</title></Book>
+  </Bookset>
+  <message>&msg;</message>
+  <P>Books are <b>&book;</b> books</P>
+</Bookstore>

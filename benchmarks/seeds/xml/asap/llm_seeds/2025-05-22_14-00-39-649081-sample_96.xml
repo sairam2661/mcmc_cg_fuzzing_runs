@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, chapter*, notes?)>
+  <!ATTLIST book
+    id CDATA #IMPLIED
+    version CDATA #IMPLIED
+  >
+  <!ENTITY bookauthor "["  
+  >
+  <!ENTITY % booktitle "T" >
+  <!NOTATION iso-8859-1 SYSTEM " "
+  >
+  %booktitle; <!-- notating -->
+]>
+<book
+  id="b"
+  version="v"
+  xmlns:xsi="x"
+  xsi:noNamespaceSchemaLocation="y"
+  xmlns:xi="x"
+  xi:include="z"
+  book:attribute="w"
+>
+  <title><![CDATA[Title of the book]]>, attribute="a" />&bookauthor; Name</title>
+  <chapter id="c">Chapter 1</chapter>
+  <chapter id="c">Chapter 2</chapter>
+  <notes entities-only="y">note: &copy; &trade;</notes>
+</book>

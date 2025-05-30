@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ENTITY % ent SYSTEM "ent.xml">
+  %ent;
+  <!ENTITY book-name "My Book">
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ELEMENT section (#PCDATA)>
+  <!ELEMENT sub-section (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT date (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT copyright (#PCDATA)>
+  <!ELEMENT isbn (#PCDATA)>
+  <!ELEMENT author-note (#PCDATA)>
+  <!ELEMENT publisher-note (#PCDATA)>
+  <!ELEMENT dedication (#PCDATA)>
+  <!ELEMENT acknowledgement (#PCDATA)>
+  <!ELEMENT index (#PCDATA)>
+  <!ELEMENT bibliography (#PCDATA)>
+  <!ELEMENT glossary (#PCDATA)>
+  <!ELEMENT appendix (#PCDATA)>
+  <!ELEMENT table (#PCDATA)>
+  <!ELEMENT figure (#PCDATA)>
+  <!ELEMENT image (#PCDATA)>
+  <!ELEMENT link (#PCDATA)>
+  <!ELEMENT quote (#PCDATA)>
+  <!ELEMENT chapter-list (chapter+)>
+  <!ELEMENT section-list (section+)>
+  <!ELEMENT sub-section-list (sub-section+)>
+  <!ELEMENT author-list (author+)>
+  <!ELEMENT publisher-list (publisher+)>
+  <!ELEMENT date-list (date+)>
+  <!ELEMENT title-list (title+)>
+  <!ELEMENT copyright-list (copyright+)>
+  <!ELEMENT isbn-list (isbn+)>
+  <!ELEMENT author-note-list (author-note+)>
+  <!ELEMENT publisher-note-list (publisher-note+)>
+  <!ELEMENT dedication-list (dedication+)>
+  <!ELEMENT acknowledgement-list (acknowledgement+)>
+  <!ELEMENT index-list (index+)>
+  <!ELEMENT bibliography-list (bibliography+)>
+  <!ELEMENT glossary-list (glossary+)>
+  <!ELEMENT appendix-list (appendix+)>
+  <!ELEMENT table-list (table+)>
+  <!ELEMENT figure-list (figure+)>
+  <!ELEMENT image-list (image+)>
+  <!ELEMENT link-list (link+)>
+  <!ELEMENT quote-list (quote+)>
+]>
+<book>
+  <title>My Book</title>
+  <author-list>
+    <author>John Smith</author>
+    <author>Jane Doe</author>
+  </author-list>
+  <publisher-list>
+    <publisher>Publisher 1</publisher>
+    <publisher>Publisher 2</publisher>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog SYSTEM "catalog.dtd">
+<catalog>
+  <book>
+    <title>Book Title</title>
+    <author>
+      <name>John Doe</name>
+      <address>
+        <street>123 Main St</street>
+        <city>Anytown</city>
+        <state>CA</state>
+        <zip>12345</zip>
+      </address>
+    </author>
+    <price>19.99</price>
+    <description>
+      <p>This is a book.</p>
+      <p>It is very interesting.</p>
+    </description>
+  </book>
+  <book>
+    <title>Another Book</title>
+    <author>
+      <name>Jane Smith</name>
+      <address>
+        <street>456 Elm St</street>
+        <city>Othertown</city>
+        <state>NY</state>
+        <zip>67890</zip>
+      </address>
+    </author>
+    <price>9.99</price>
+    <description>
+      <p>This is another book.</p>
+      <p>It is also very interesting.</p>
+    </description>
+  </book>
+</catalog>

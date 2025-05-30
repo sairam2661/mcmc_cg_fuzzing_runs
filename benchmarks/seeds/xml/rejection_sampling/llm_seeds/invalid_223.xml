@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book SYSTEM "book.dtd">
+<book xmlns="http://www.example.com/books" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.example.com/books book.xsd">
+  <author>
+    <name>John Smith</name>
+    <birthDate>1970-01-01</birthDate>
+  </author>
+  <title>My First Book</title>
+  <chapter>
+    <heading>Introduction</heading>
+    <section>
+      <title>Chapter 1</title>
+      <para>This is a paragraph of text.</para>
+    </section>
+    <section>
+      <title>Chapter 2</title>
+      <para>This is another paragraph of text.</para>
+    </section>
+  </chapter>
+  <appendix>
+    <title>Appendix A</title>
+    <para>This is an appendix.</para>
+  </appendix>
+  <bibliography>
+    <entry>
+      <author>John Doe</author>
+      <title>Book Title</title>
+      <year>2010</year>
+    </entry>
+    <entry>
+      <author>Jane Doe</author>
+      <title>Book Title</title>
+      <year>2011</year>
+    </entry>
+  </bibliography>
+  <metadata>
+    <keyword>XML</keyword>
+    <keyword>DTD</keyword>
+    <keyword>XSD</keyword>
+  </metadata>
+</book>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (category*)>
+  <!ELEMENT category (name, description, product*)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT product (name, price, image)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT image (#PCDATA)>
+]>
+<catalog>
+  <category name="Electronics" description="Electronics products">
+    <product name="TV" price="$1,000" image="TV.jpg">
+      <product name="Smartphone" price="$500" image="Smartphone.jpg">
+        <product name="Laptop" price="$1,500" image="Laptop.jpg"/>
+      </product>
+    </product>
+  </category>
+</catalog>

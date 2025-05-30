@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE root SYSTEM "m" [
+  <!ELEMENT foo (baz*, bar) >
+  <!ATTLIST foo id ID #REQUIRED>
+  <!ENTITY fooNote "A">
+  <!ENTITY % test "<" >
+  <!NOTATION xsl PUBLIC 'xsl' 'xsl'>
+  %test;
+  <!--
+  This is a multi-->
+  <!-- comment -->
+]>
+<root xmlns="x" xmlns:xi="x">
+  <xsl:stylesheet version="1" href="y"/>
+  <fo:id='a'/> <!-- An example of an element with a required attribute -->
+  <bar>Text with &fooNote; entity.</bar>
+  <baz>&fooNote;</baz>
+</root>

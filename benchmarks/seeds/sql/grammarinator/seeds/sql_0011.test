@@ -1,0 +1,49 @@
+set  
+ testdir    {  file 	
+	  dirname 
+  $argv0 
+ }  source  
+ $testdir/tester.tcl 
+ set 		    testprefix 
+ k    set 
+ timeout 
+ 60000 
+  		  do_execsql_test 
+ 
+ G 		 		 	 -  9 1  	 .   
+ 5  	
+ { 
+ 
+
+ SELECT 	 Yy_    FROM 	  Y_      } 	 
+  69.5273     	  if 	 8.1    >=   0.31    
+ { 
+ }  else 	
+ { 	 	 catchsql 
+ { 	  $::n68_  
+	
+
+ } 	 	       
+
+
+ 	  Y_   $::ZK___6W  		 $i_  
+   	 return   { 
+	 $::E3  
+  } 	       execsql    {  CREATE INDEX 
+
+ t 	 ON 	 R2 
+ (  xx8   )    ;  	
+
+ } 	      } 	    	
+ do_execsql_test   N1_W  - 
+  5 9 7 8 
+	 . 
+ 1   	 {  	  SELECT 	  *  	 FROM  W_ 
+ 	   WHERE 
+ z  
+ = 	 aE    	 ; 	 BEGIN  IMMEDIATE      }   { 	 $p  	 $::S  
+	  }       	 proc  a 
+ u    {  } 
+   
+  finish_test  
+  

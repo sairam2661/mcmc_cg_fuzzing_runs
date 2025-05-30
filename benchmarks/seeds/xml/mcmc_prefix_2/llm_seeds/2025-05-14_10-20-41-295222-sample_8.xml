@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE items SYSTEM "d" [
+  <!ELEMENT items (item*)>
+  <!ATTLIST item
+    id CDATA  #REQUIRED
+    price CDATA  #REQUIRED
+  >
+  <!ENTITY item1 "A">
+  <!ENTITY % ent "1">
+  <!NOTATION html PUBLIC "-" "-" >
+  %ent;<!--%>
+]>
+<items xmlns:xsi="http://www.w3.org/2001/XMLSchema_instance" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+       xsi:noNamespaceSchemaLocation="d.xsd">
+  <item id="1" price="99.99">&item1;</item>
+</items> 
+
+&amp;<![CDATA[<foo>Text</foo>]]> Element content is here. &note&#60;/note&#62; 
+&amp;#160;  &amp;  &quot;  &apos; 
+
+&quot;Hello&quot; &apos;&apos; &#39;  &#60; & #62; &amp; 
+
+&amp;#169;  &copy;,  &reg;,  &trade;  
+&quot;Hello&quot;  
+
+&amp;<[CDATA[&lt;foo&gt;  bar</foo>]&gt;  4  5  6  ]&gt; 7  8  9  
+
+Element [foo] has 3 attributes. Element [foo] has 2 children: [name] and [phone].  Element [foo] has 0 attributes and 2 children 
+A &#60; &#62; B  C   &#33;    D .  E  , ,   F  G , .  
+
+&quot;  "   &quot;  '' '   ]'  "   ] "  '  &quot;   &#39;   "   &#39;  &apos;  
+
+Note: &#37;  &#63;    &#60;           &#62;&#60;  &#64;   &#39;   &#x2f;   &#x00;   &#x09;   &#x0a;   &#x0d;   &#x0b;   &#x0c;   &#x0e;  &#x2e;   &#x2f;  &#x3c;  &#x3e;  &#x7b;  &#x5b;  &#x7d;  &#x5d;  
+
+&#x26;   &#x2a;  and   &#x2f;   &#x21;   and   &#x0;   &#x0;   &#x0;   &#x27;  &#x3f;   and   &amp;.   &#x27;   &#x2f;   &#x21;   &#x20;   &#x20;   &#x20;   &#x20;   and   &#x26;   '&#26;   &#x27;  &#x20;   and   &#x26;   &#x9;  &#x1;   '&#9;  '  &#x2f;   &#x21;   '&#31;   '; &#62;.   ]'   &#x5b;   &#x5d;   &#x27; '  ]'  ]' '''' ]'  &#x2e;   ]'  '&#x5b;   &#x27;  
+&#x27;  &#39;  &#39;  &#39;  &#x27;  &#x27;  &#x27;

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE system [
+  <!ELEMENT system (#PCDATA)>
+  <!ATTLIST system language CDATA #REQUIRED>
+  <!ENTITY city "R"
+  ><!ENTITY % section "("> 
+  <!NOTATION xsl SYSTEM "x">
+  
+   	%entitydecls;
+	<!--[ 
+	   CDATA [ Some nested comments ]] CDATA
+	    ]-->
+  ]>
+<system xmlns:xi="w" xmlns:m="x" language="e"> 
+  <m:group>
+    <section>&city;</section>
+    <group><message>Testing</message>&section;</group>
+  </m:group>
+</system>

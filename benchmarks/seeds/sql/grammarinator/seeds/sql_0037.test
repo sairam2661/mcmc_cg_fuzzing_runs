@@ -1,0 +1,66 @@
+set  testdir 	   {   file  dirname 	
+ $argv0  }   source 
+
+	 $testdir/tester.tcl  set 
+ testprefix   N 
+ set 
+ timeout   60000   set 
+
+
+
+ G 
+
+	 $V_D6  
+    	 set  W 
+	  { 		 }     	      if  { 	 BEGIN 	 EXCLUSIVE   
+ ; 
+	
+ ROLLBACK   	 ;   }  
+
+  == 
+  C   
+ {   lappend   N_ 	 G_  
+	
+   
+ 
+	 db2 
+
+ Kw  $Kn9  
+ $::E_67   { 
+ WITH  	 J 
+ (   AK 	 ) 
+ AS 	
+ ( 		 CREATE INDEX 
+   
+
+ 
+	 I  	 ON 
+ S 
+ ( 		 T_ 
+ )   	 UNION ALL 
+ SELECT 	
+	 K  
+
+ FROM 
+	 w_   WHERE  k__ 	
+ = 	    k     ) 	 INSERT INTO    z 	 ( 
+ V  
+
+ ) 
+ SELECT   0.7        
+
+	
+	 
+ }      }  else 	
+ { 
+
+  lappend 		 f 	 L_mp        lappend 
+ z 
+
+ 5.28588       
+ 		
+ lappend 	 N  	
+  05        } 
+     finish_test 
+
+   

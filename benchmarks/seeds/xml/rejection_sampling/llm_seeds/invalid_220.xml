@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE notes [
+  <!ENTITY nbsp "&#160;">
+  <!ELEMENT notes (note+)>
+  <!ELEMENT note (to|from|subject|body|date|flagged)>
+  <!ELEMENT to (#PCDATA)>
+  <!ELEMENT from (#PCDATA)>
+  <!ELEMENT subject (#PCDATA)>
+  <!ELEMENT body (#PCDATA)>
+  <!ELEMENT date (#PCDATA)>
+  <!ELEMENT flagged (#PCDATA)>
+  <!ATTLIST note
+    id ID #REQUIRED
+    type (email|memo) #REQUIRED
+    priority (low|medium|high) #IMPLIED
+  >
+]>
+<notes>
+  <note id="note1" type="email" priority="high">
+    <to>john.doe@example.com</to>
+    <from>example.com</from>
+    <subject>Meeting at 2 PM</subject>
+    <body>&nbsp;Please arrive on time.</body>
+    <date>2016-12-12</date>
+    <flagged>yes</flagged>
+  </note>
+  <note id="note2" type="memo" priority="low">
+    <to>mary.smith@example.com</to>
+    <from>example.com</from>
+    <subject>Reminder: Meeting at 2 PM</subject>
+    <body>&nbsp;Don't forget to bring your ID.</body>
+    <date>2016-12-12</date>
+    <flagged>no</flagged>
+  </note>
+</notes>  </notes>  <notes>  <note id="note3" type="email" priority="high">  <to>john.doe@example.com</to>  <from>example.com</from>  <subject>Meeting at 2 PM</subject>  <body>&nbsp;Please arrive on time.</body>  <date>2016-12-12</date>  <flagged>yes</flagged>  </note>  </notes>  <note id="note4" type="memo" priority="low">  <to>mary.smith@example.com</to>  <from>example.com</from>  <subject>Reminder: Meeting at 2 PM</subject>  <body>&nbsp;Don't forget to bring your ID.</body>  <date>2016-12-12</date>  <flagged

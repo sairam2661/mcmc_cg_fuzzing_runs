@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE module [
+  <!ELEMENT module (header, content*)>
+  <!ATTLIST module lang CDATA #REQUIRED>
+  <!ENTITY percent "%">
+  <!ENTITY  
+  %year " ">
+  <!NOTATION EPS PUBLIC "A" "B">
+  %year; <!--
+  --><!ENTITY % foo SYSTEM "C">
+]>
+<module xmlns:uri="a" lang="J">
+  <!-- sample comment -->
+  <header role="H">
+    <title><alt>Some
+    <!-- XML declaration inside a comment
+    -->
+    </alt> Document</title>&percent;
+  </header>
+  <content uri:tag='1'>
+    <p>&foo;</p>
+  </content>
+</module>

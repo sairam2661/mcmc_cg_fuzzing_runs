@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!ENTITY % entity "this is an entity">
+<!ENTITY % param "this is a parameter entity">
+<!ELEMENT book - - (%param;)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT chapter (#PCDATA)>
+<!ELEMENT section (#PCDATA)>
+<!ATTLIST book
+  id CDATA #REQUIRED
+  lang (en|fr|es) "en"
+  version CDATA #IMPLIED
+>
+<!ATTLIST author
+  name CDATA #REQUIRED
+  email CDATA #IMPLIED
+>
+<!ATTLIST title
+  subtitle CDATA #IMPLIED
+>
+<!ELEMENT contributor (#PCDATA)>
+<!ATTLIST contributor
+  role CDATA #REQUIRED
+>
+<!ELEMENT bibliography (#PCDATA)>
+<!ELEMENT reference (#PCDATA)>
+<!ELEMENT note (#PCDATA)>
+<!ELEMENT footnote (#PCDATA)>
+<!ELEMENT figure (#PCDATA)>
+<!ATTLIST figure
+  width CDATA #IMPLIED
+  height CDATA #IMPLIED
+>
+<!ELEMENT table (#PCDATA)>
+<!ATTLIST table
+  caption CDATA #IMPLIED
+>
+<!ELEMENT row (#PCDATA)>
+<!ATTLIST row
+  id CDATA #IMPLIED
+>
+<!ELEMENT cell (#PCDATA)>
+<!ATTLIST cell
+  width CDATA #IMPLIED
+  height CDATA #IMPLIED
+>
+]>
+<book id="my_book" lang="en">
+  <author name="John Smith" email="john.smith@example.com"/>
+  <title>My Book</title>
+  <chapter>Chapter 1</chapter>
+  <section>Section 1</section>
+  <contributor role="editor">Jane Doe</contributor>
+  <bibliography>
+    <reference>Reference 1</reference>
+    <reference>Reference 2</reference>
+  </bibliography>
+  <note>This is a note</note>
+  <figure width="100" height="200">Figure 1</figure>
+  <table caption="Table 1">
+    <row id="row1">
+      <cell width="50" height="20">Cell 1</cell>
+      <cell width="50" height="20">Cell 2</cell>
+    </row>
+    <row id="row2">
+      <cell width="50" height="20">Cell 3</cell>
+      <cell width="50" height

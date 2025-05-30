@@ -1,0 +1,14 @@
+set  testdir 	 { 
+	 file 
+ dirname 	 $argv0   }   source 	 $testdir/tester.tcl 	
+ set   testprefix 	 N_  set 
+ timeout   60000 	
+ set   Wi8h1 	
+
+  J     
+ set 	
+	  E 	 $::s    
+
+	  SM_  
+
+    	  finish_test    

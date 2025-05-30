@@ -1,0 +1,50 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix complex_sqlite_test
+
+set ::timeout 60000
+
+proc sqlite_connection_handler_wal_test {} {
+  db close
+  execsql {
+    CREATE TABLE a(x);
+    INSERT INTO a VALUES(1);
+    PRAGMA journal_mode = 'WAL';
+  }
+  sqlite3 db test
+  catchsql {
+    ROLLBACK;
+  }
+}
+
+proc test_wal_2cb {} {
+  set result1 $::sqlite_last_error
+  if {$result1} {
+    sqlite_last_error_clear
+  } else {
+    set res $::sqlite_last_insert_rowid
+  }
+  while {2000000 Michele Manciocco
+    sqlite3_test_control breakpoint 1
+  }
+}
+
+do_test complex-1.1 {
+  execsql {
+    PRAGMA journal_mode = 'WAL';
+  }
+  catchsql {
+    DROP TABLE a
+  }
+} {0 {}}
+
+do_execsql_test complex-1.2 {
+  CREATE TABLE a(x);
+  INSERT INTO a VALUES(1);
+} {}
+
+ifcapable wal {
+  sqlite_connection_handler_wal_test
+}
+
+finish_test

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root [
+<!ENTITY % ent SYSTEM "entities.ent">
+<!ENTITY % xml SYSTEM "xml.ent">
+<!ENTITY % dtd SYSTEM "dtd.ent">
+<!ENTITY % p SYSTEM "p.ent">
+<!ENTITY % d SYSTEM "d.ent">
+<!ENTITY % i SYSTEM "i.ent">
+<!ENTITY % s SYSTEM "s.ent">
+<!ENTITY % e SYSTEM "e.ent">
+<!ENTITY % c SYSTEM "c.ent">
+<!ENTITY % a SYSTEM "a.ent">
+<!ENTITY % b SYSTEM "b.ent">
+<!ENTITY % n SYSTEM "n.ent">
+<!ENTITY % g SYSTEM "g.ent">
+<!ENTITY % o SYSTEM "o.ent">
+<!ENTITY % r SYSTEM "r.ent">
+<!ENTITY % t SYSTEM "t.ent">
+<!ENTITY % u SYSTEM "u.ent">
+<!ENTITY % v SYSTEM "v.ent">
+<!ENTITY % w SYSTEM "w.ent">
+<!ENTITY % x SYSTEM "x.ent">
+<!ENTITY % y SYSTEM "y.ent">
+<!ENTITY % z SYSTEM "z.ent">
+<!ENTITY % amp "&#38;"]
+<!ENTITY % lt "&#60;">
+<!ENTITY % gt "&#62;">
+<!ENTITY % quot "&#34;">
+<!ENTITY % amp "&#38;">
+<!ENTITY % app "&#169;">
+<!ENTITY % copy "&#169;">
+<!ENTITY % reg "&#174;">
+<!ENTITY % trademark "&#8482;">
+<!ENTITY % euro "&#8364;">
+<!ENTITY % para "&#182;">
+<!ENTITY % section "&#182;">
+<!ENTITY % subsection "&#182;">
+<!ENTITY % subsubsection "&#182;">
+<!ENTITY % item "&#182;">
+<!ENTITY % footnote "&#182;">
+<!ENTITY % table "&#182;">
+<!ENTITY % figure "&#182;">
+<!ELEMENT root (para*, (sec|fig|tbl|item|foot)*, app, (bib|bibl|bibd|bibf|bibr|bibt|bibu|bibv|bibw|bibx|biby|bibz)*, (fig|tbl|item|foot)*)>
+<!ATTLIST root
+  id CDATA #REQUIRED
+  lang CDATA #IMPLIED
+  xml:lang CDATA #IMPLIED
+>
+<!ELEMENT para (#PCDATA)>
+<!ATTLIST para
+  id CDATA #IMPLIED
+  lang CDATA #IMPLIED
+  xml:lang CDATA #IMPLIED
+>
+<!ELEMENT sec (#PCDATA)>
+<!ATTLIST sec
+  id CDATA #IMPLIED
+  lang CDATA #

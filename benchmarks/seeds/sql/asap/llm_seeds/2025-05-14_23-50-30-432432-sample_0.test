@@ -1,0 +1,46 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix transactions
+
+set ::timeout 60000
+
+proc error_func {x} {
+  puts "Error: $x"
+}
+
+proc execsql_log_args {{sql {}} {args {}}} {
+  lappend args "$sql"
+  puts $args
+  eval $sql
+}
+
+proc transaction_proc {} {
+  set tid $global_transaction_count
+  set global_transaction_count 0
+  incr global_transaction_count
+}
+
+do_test transactions-1.1 {
+  set db main
+  execsql {
+    CREATE TABLE t1(x, y, z);
+  }
+  db eval {
+    INSERT INTO t1 VALUES(1, 2, 3);
+    INSERT INTO t1 VALUES(4, 5, 6);
+  }
+  execsql {
+    SELECT count(*) FROM t1;
+  }
+} {2}
+
+do_execsql_test transactions-1.2 {
+  INSERT INTO t1 VALUES(7, 8, 9);
+  SELECT count(*) FROM t1;
+} {3}
+
+do_teardown transactions {
+  db close
+}
+
+finish_test

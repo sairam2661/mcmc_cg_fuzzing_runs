@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ATTLIST catalog author CDATA #IMPLIED>
+  <!ENTITY year "2">
+  <!ENTITY % section "B" >
+  <!NOTATION svg PUBLIC "-" "w">
+ 	%section; <!-- Include the section entity -->
+]>
+<catalog author="J" xmlns:xsi="w" xmlns="x">
+  <book id="b"><author>John</author><title>Book on &year;XML</title></book>
+</catalog>

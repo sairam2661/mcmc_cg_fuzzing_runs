@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document [
+  <!ELEMENT document (title,header,main,footer) >
+  <!ELEMENT title (#PCDATA) >
+  <!ELEMENT header (#PCDATA) >
+  <!ELEMENT main (para,para,para) >
+  <!ELEMENT para (#PCDATA | table | img) >
+  <!ELEMENT table (tr+,tr+) >
+  <!ELEMENT tr (td+) >
+  <!ELEMENT td (#PCDATA | img) >
+  <!ELEMENT img (#PCDATA) >
+  <!ELEMENT footer (#PCDATA) >
+]>
+<document>
+  <title>This is a title</title>
+  <header>This is a header</header>
+  <main>
+    <para>This is a paragraph with an image</para>
+    <para>This is a paragraph with a table</para>
+    <para>This is a paragraph with text only</para>
+  </main>
+  <footer>This is a footer</footer>
+</document>
+<document xmlns="http://example.com/ns">
+  <title>This is a title</title>
+  <header>This is a header</header>
+  <main>
+    <para>This is a paragraph with an image</para>
+    <para>This is a paragraph with a table</para>
+    <para>This is a paragraph with text only</para>
+  </main>
+  <footer>This is a footer</footer>
+</document>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book SYSTEM "book.dtd">
+<!ELEMENT book (title,author,chapter+)>
+<!ELEMENT chapter (title,para+,section+)>
+<!ELEMENT para (#PCDATA)>
+<!ELEMENT section (title,para+,list+)>
+<!ELEMENT list (item+)>
+<!ELEMENT item (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+
+<book>
+    <title>My Book</title>
+    <author>John Doe</author>
+    <chapter>
+        <title>Chapter 1</title>
+        <para>This is a paragraph.</para>
+        <para>This is another paragraph.</para>
+        <section>
+            <title>Section 1</title>
+            <para>This is a paragraph in a section.</para>
+            <list>
+                <item>Item 1</item>
+                <item>Item 2</item>
+                <item>Item 3</item>
+            </list>
+        </section>
+    </chapter>
+    <chapter>
+        <title>Chapter 2</title>
+        <para>This is a paragraph.</para>
+        <para>This is another paragraph.</para>
+        <section>
+            <title>Section 2</title>
+            <para>This is a paragraph in a section.</para>
+            <list>
+                <item>Item 1</item>
+                <item>Item 2</item>
+                <item>Item 3</item>
+            </list>
+        </section>
+    </chapter>
+</book>

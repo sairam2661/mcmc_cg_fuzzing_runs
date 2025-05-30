@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE doc [
+  <!ENTITY % ent SYSTEM "ent.xml">
+  <!ENTITY % ext SYSTEM "ext.xml">
+  <!ENTITY % ex SYSTEM "ex.xml">
+  <!ENTITY % entity1 "entity1">
+  <!ENTITY % entity2 "entity2">
+  <!ENTITY % entity3 "entity3">
+  <!ENTITY % entity4 "entity4">
+  <!ENTITY % entity5 "entity5">
+]>
+<doc xmlns:xs="http://www.w3.org/2001/XMLSchema"
+     xmlns:fn="http://www.w3.org/2005/xpath-functions"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.w3.org/2001/XMLSchema.xsd http://www.w3.org/2001/XMLSchema.xsd"
+     xmlns:abc="http://www.abc.com"
+     xmlns:def="http://www.def.com"
+     xmlns:ghi="http://www.ghi.com"
+     xmlns:jkl="http://www.jkl.com"
+     xmlns:xyz="http://www.xyz.com"
+     xml:lang="en"
+     xml:space="preserve"
+     xmlns:myns="http://www.mynamespace.com">
+  <root>
+    <abc:tag1 abc:attr1="abc-attr1" abc:attr2="abc-attr2">abc-text</abc:tag1>
+    <def:tag2 def:attr1="def-attr1" def:attr2="def-attr2">def-text</def:tag2>
+    <ghi:tag3 ghi:attr1="ghi-attr1" ghi:attr2="ghi-attr2">ghi-text</ghi:tab3>
+    <jkl:tag4 jkl:attr1="jkl-attr1" jkl:attr2="jkl-attr2">jkl-text</jkl:tag4>
+    <xyz:tag5 xyz:attr1="xyz-attr1" xyz:attr2="xyz-attr2">xyz-text</xyz:tag5>
+    <myns:tag6 myns:attr1="myns-attr1" myns:attr2="myns-attr2">myns-text</myns:tag6>
+    <myns:tag7 myns:attr1="m

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE note SYSTEM "m"
+ [
+   <!ELEMENT top (#PCDATA)>
+   <!ATTLIST top attr1 CDATA #IMPLIED>
+   <!ENTITY foo "c">
+   <!ENTITY % bar "d">
+   <!NOTATION iso-8859-1 PUBLIC "1" "1">
+   %bar;
+   <!---->
+ ]>
+<note
+  xmlns:xi = "h"
+  xsi:noNamespaceSchemaLocation="m"
+  xsi:schemaLocation="h"
+  version="b"
+  top:attr1="e"
+  xmlns:xsi="i"
+  xmlns:f="g"
+  f:id="h"
+  f:comment="i"
+>
+<![CDATA[
+Some <raw> text
+&foo;
+]]>
+<f:block/>
+</note>

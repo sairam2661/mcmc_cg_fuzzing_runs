@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-16"?>
+<!DOCTYPE users [
+  <!ELEMENT users (user+)>
+  <!ATTLIST users
+    lang CDATA #IMPLIED
+    xmlns CDATA #FIXED 'http://example.com/schema'>
+  <!ENTITY system "E" >
+  <!ENTITY % gen "%" >
+  <!NOTATION GIF PUBLIC "G" "I" >
+ %Xinclude 
+    ;<!--><!>]]>
+<users lang="eng" xmlns="http://example.com/schema">
+  <user name="John">
+    <phone countryCode="+1" number="123-->  <?PI system system  system  system  system  system  system  system  system  system system system system system system system system system system system system system system system system system system system system system system system system system system system system system system system service  system  system system system system system system system system system  system  system  system  system  system  system service  system service service service service  system  system service service service service  system  system  system system service  system  system system system 2000000000 phone2 systemservice service1service service1service1service1systems system service1service1service systems system service service  service  system service systems syst service service service service syst 200011100111service systems syst service  service  system 200011120200110111 syst syst service syst 2system 11system service2 system service1system system service service syst 1service1 syst 20011002011011011111 service service syst syst syst syst syst service syst syst syst syst syst syst1syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst sist syst syst syst syst syst sist syst syst syst syst sist syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst sist syst syst syst syst syst syst sist syst syst syst syst syst syst sist syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst syst

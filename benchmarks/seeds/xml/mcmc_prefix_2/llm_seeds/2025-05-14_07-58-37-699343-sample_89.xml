@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-16"?>
+<!DOCTYPE notes [
+  <!ELEMENT notes (note+)>
+  <!ATTLIST note id ID #REQUIRED>
+  <!ENTITY msg "W" >
+  <!ENTITY % special "X"><!NOTATION xmlns:xsi
+     PUBLIC '-//W3C//DTD MathML 2.0//EN' 'http://www.w3.org/2000/10/xmlns.dtd'>
+  %special;
+<!-->]>
+<notes xmlns:xsi="http://www.w3.org/2001/XMLSchema Instance" xsi:noNamespaceSchemaLocation="mathml.xsd">
+  <note id='1'><title>TITLE</title><msg>&msg;</msg></note>
+  <note id='2'><title>OTHER</title><note inner='yes'><msg>&msg;</msg></note>  </note>
+</notes>  <!--> <!--comment--><!---->  <!--> -->  <!--> -->  <!--> -->  <!--> -->  <!--> -->  <!-->  <!-->  <!-->  <!-->  <!-->  <!-->  <!-->  <!-->  <!-->  -->  <!-->  <!-->  <!-->  <!-->  <!---->  <!--  --><!-->  <!-->   <!--  -->  <!-- -->  <!-->  <!-->  <!--  -->  <!--  --><!--  -->  <!--  -->  <!---->  <!--  -->  <!--  --> <!--  >  <!--> <!-->  <!-->  <!-->  <!--> <!--  -->  <!--  -->  <!-->  <!-->    <!--  -->  <!-->  <!--> <!--  -->  <!--  -->  <!-->  <!-->  <!--  -->  <!--  -->  <!--  --> <!-->  <!-->  <!-->  <!-->  <!--  -->  <!-->  <!-->  <!-->  <!-->  <!--  -->  <!--  -->  <!-->  <!-->  <!--  -->  <!--  -->     <!--  -->  <!--  -->     <!--  -->  <!--  -->  <!--  -->  <!--  -->  <!-->  <!

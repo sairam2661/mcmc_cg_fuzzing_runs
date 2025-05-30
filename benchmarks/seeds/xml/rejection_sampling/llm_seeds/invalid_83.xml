@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!ELEMENT book (title,author,chapter*)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT chapter (#PCDATA)>
+<!ELEMENT section (#PCDATA)>
+<!ATTLIST chapter id CDATA #REQUIRED>
+<!ATTLIST chapter title CDATA #REQUIRED>
+<!ATTLIST chapter author CDATA #REQUIRED>
+<!ATTLIST chapter section CDATA #REQUIRED>
+<!ATTLIST section id CDATA #REQUIRED>
+<!ATTLIST section title CDATA #REQUIRED>
+<!ATTLIST section author CDATA #REQUIRED>
+<!ATTLIST section chapter CDATA #REQUIRED>
+<!ENTITY chapter1 "Chapter 1">
+<!ENTITY chapter2 "Chapter 2">
+<!ENTITY chapter3 "Chapter 3">
+<!ENTITY section1 "Section 1">
+<!ENTITY section2 "Section 2">
+<!ENTITY section3 "Section 3">
+<!ENTITY title "The Book">
+<!ENTITY author "John Doe">
+]>
+<book>
+<chapter id="c1" title="Introduction" author="Jane Smith" section="s1"/>
+<chapter id="c2" title="Chapter 1" author="John Doe" section="s2"/>
+<chapter id="c3" title="Chapter 2" author="Jane Smith" section="s3"/>
+<section id="s1" title="Section 1" author="John Doe" chapter="c1"/>
+<section id="s2" title="Section 2" author="Jane Smith" chapter="c2"/>
+<section id="s3" title="Section 3" author="John Doe" chapter="c3"/>
+<title>The Book</title>
+<author>John Doe</author>
+</book>

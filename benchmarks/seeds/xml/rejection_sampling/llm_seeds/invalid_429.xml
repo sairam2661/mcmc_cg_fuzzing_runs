@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note SYSTEM "note.dtd">
+<!ELEMENT note (to,from,heading,body)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+<!ATTLIST note id CDATA #REQUIRED>
+<!ATTLIST note date CDATA #IMPLIED>
+<!ENTITY % note-atts "id CDATA #REQUIRED date CDATA #IMPLIED">
+<!ENTITY % note-content "to (#PCDATA) from (#PCDATA) heading (#PCDATA) body (#PCDATA)">
+<!ENTITY % note-ent "note-atts note-content">
+<!ENTITY % note-ent-decl "%note-ent; %note-ent;">
+<!ENTITY % note-ent-decl-decl "%note-ent-decl;">
+<!ENTITY % note-ent-decl-decl-decl "%note-ent-decl-decl;">
+<!ELEMENT note (%note-ent-decl-decl-decl)>
+<!ATTLIST note id CDATA #REQUIRED>
+<!ATTLIST note date CDATA #IMPLIED>
+<!ELEMENT note (%note-ent)>
+<!ATTLIST note id CDATA #REQUIRED>
+<!ATTLIST note date CDATA #IMPLIED>
+<!ELEMENT note (#PCDATA)>
+<!ELEMENT note (%note-ent-decl)>
+<!ELEMENT note (#PCDATA)>
+<!ELEMENT note (%note-ent-decl-decl-decl)>
+<!ELEMENT note (#PCDATA)>
+<!ELEMENT note (%note-ent-decl-decl)>
+<!ELEMENT note (#PCDATA)>
+<!ELEMENT note (%note-ent-decl-decl-decl)>
+<!ELEMENT note (#PCDATA)>
+<!ELEMENT note (%note-ent-decl)>
+<!ELEMENT note (#PCDATA)>
+<!ELEMENT note (%note-ent-decl-decl-decl)>
+<!ELEMENT note (#PCDATA)>
+<!ELEMENT note (%note-ent-decl-decl)>
+<!ELEMENT note (#PCDATA)>
+<!ELEMENT note (%note-ent-decl-decl-decl)>
+<!ELEMENT note (#PCDATA)>
+<!ELEMENT note (%note-ent-decl-decl)>
+<!ELEMENT note (#PCDATA)>
+<!ELEMENT note (%note-ent-decl-decl-decl)>
+<!ELEMENT note (#PCDATA)>
+<!ELEMENT note (%note-ent-decl-decl)>
+<!ELEMENT note (#PCDATA)>
+<!ELEMENT note (%note-ent-decl-decl-decl)>
+<!ELEMENT note (#PCDATA)>
+<!ELEMENT note (%note-ent

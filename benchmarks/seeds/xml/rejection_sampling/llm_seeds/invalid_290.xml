@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE catalog [
+  <!ENTITY % catalog.ent SYSTEM "catalog.ent">
+  <!ENTITY % catalog.dtd SYSTEM "catalog.dtd">
+]>
+<catalog xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:mods="http://www.loc.gov/mods/v3"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="catalog.xsd"
+         xsi:schemaLocation="http://www.loc.gov/mods/v3
+         http://www.loc.gov/standards/mods/v3/mods-3-3.xsd">
+  <dc:identifier>12345</dc:identifier>
+  <mods:accessCondition>
+    <mods:restriction>Public</mods:restriction>
+  </mods:accessCondition>
+  <mods:titleInfo>
+    <mods:title>Some Title</mods:title>
+  </mods:titleInfo>
+  <mods:subject>
+    <mods:topic>Art</mods:topic>
+  </mods:subject>
+  <mods:abstract>
+    <mods:p>Some abstract text.</mods:p>
+  </mods:abstract>
+  <mods:note>
+    <mods:note>Some note.</mods:note>
+  </mods:note>
+  <mods:relatedItem>
+    <mods:identifier>67890</mods:identifier>
+  </mods:relatedItem>
+  <mods:identifier>34567</mods:identifier>
+  <mods:subject>
+    <mods:topic>Music</mods:topic>
+  </mods:subject>
+  <mods:note>
+    <mods:p>Another note.</mods:p>
+  </mods:note>
+  <mods:relatedItem>
+    <mods:identifier>90123</mods:identifier>
+  </mods:relatedItem>
+</catalog>

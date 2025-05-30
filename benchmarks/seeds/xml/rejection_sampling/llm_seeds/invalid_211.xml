@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ENTITY % bookEntity SYSTEM "book.ent">
+  %bookEntity;
+]>
+<book>
+  <title>Book Title</title>
+  <author>
+    <name>Author Name</name>
+    <address>
+      <street>123 Main St</street>
+      <city>New York</city>
+      <state>NY</state>
+      <zip>10001</zip>
+    </address>
+    <phone>
+      <type>Home</type>
+      <number>555-1234</number>
+    </phone>
+  </author>
+  <chapter>
+    <title>Chapter 1</title>
+    <section>
+      <title>Section 1</title>
+      <para>This is a paragraph.</para>
+    </section>
+    <section>
+      <title>Section 2</title>
+      <para>This is another paragraph.</para>
+    </section>
+  </chapter>
+  <appendix>
+    <title>Appendix A</title>
+    <table>
+      <thead>
+        <tr>
+          <th>Column 1</th>
+          <th>Column 2</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Row 1, Column 1</td>
+          <td>Row 1, Column 2</td>
+        </tr>
+        <tr>
+          <td>Row 2, Column 1</td>
+          <td>Row 2, Column 2</td>
+        </tr>
+      </tbody>
+    </table>
+  </appendix>
+</book>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+<!ELEMENT books (book+)>
+<!ELEMENT book (title, author, price)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT state (#PCDATA)>
+<!ELEMENT zip (#PCDATA)>
+<!ATTLIST book
+ id CDATA #REQUIRED
+>
+]>
+<books>
+ <book id="1">
+  <title>XML Bible</title>
+  <author>Jim Melton</author>
+  <price>$49.99</price>
+  <publisher>Wiley</publisher>
+  <address>1111 Broadway</address>
+  <city>New York</city>
+  <state>NY</state>
+  <zip>10010</zip>
+ </book>
+ <book id="2">
+  <title>XML and SQL</title>
+  <author>Jonathan Leffler</author>
+  <price>$29.99</price>
+  <publisher>O'Reilly</publisher>
+  <address>2222 Main St</address>
+  <city>San Francisco</city>
+  <state>CA</state>
+  <zip>94105</zip>
+ </book>
+ <book id="3">
+  <title>XML and XSLT</title>
+  <author>John Chodera</author>
+  <price>$39.99</price>
+  <publisher>Prentice Hall</publisher>
+  <address>3333 5th Ave</address>
+  <city>Brooklyn</city>
+  <state>NY</state>
+  <zip>11215</zip>
+ </book>
+</books>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!ELEMENT book (title,author,chapter+|abstract)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT chapter (title,abstract,section+)> 
+<!ELEMENT section (title,para+)>
+<!ELEMENT para (#PCDATA)>
+<!ELEMENT abstract (#PCDATA)>
+]>
+<book>
+  <title>XML</title>
+  <author>James</author>
+  <abstract>XML is a markup language</abstract>
+  <chapter>
+    <title>History</title>
+    <abstract>XML was created by James Clark</abstract>
+    <section>
+      <title>XML 1.0</title>
+      <para>XML 1.0 was released in 1998</para>
+    </section>
+    <section>
+      <title>XML 1.1</title>
+      <para>XML 1.1 was released in 2004</para>
+    </section>
+  </chapter>
+  <chapter>
+    <title>Features</title>
+    <abstract>XML features include tags and attributes</abstract>
+    <section>
+      <title>Tags</title>
+      <para>Tags are used to define structure</para>
+    </section>
+    <section>
+      <title>Attributes</title>
+      <para>Attributes are used to add extra information</para>
+    </section>
+  </chapter>
+</book> 
+
+
+
+
+
+<!-- END OF FILE -->

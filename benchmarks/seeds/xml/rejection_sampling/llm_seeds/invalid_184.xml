@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, chapter*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapter (title, section*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT section (#PCDATA)>
+]>
+<book>
+  <title>Example Book</title>
+  <author>John Doe</author>
+  <chapter>
+    <title>Chapter 1</title>
+    <section>Section 1.1</section>
+    <section>Section 1.2</section>
+  </chapter>
+  <chapter>
+    <title>Chapter 2</title>
+    <section>Section 2.1</section>
+  </chapter>
+  <chapter>
+    <title>Chapter 3</title>
+    <section>Section 3.1</section>
+    <section>Section 3.2</section>
+  </chapter>
+</book>

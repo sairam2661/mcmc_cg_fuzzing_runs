@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root [
+  <!ELEMENT root (head, body)>
+  <!ELEMENT head (#PCDATA)>
+  <!ELEMENT body (section, section, section)>
+  <!ELEMENT section (p, p, p)>
+  <!ELEMENT p (#PCDATA)>
+]>
+<root>
+  <head>This is a title</head>
+  <body>
+    <section>
+      <p>This is a paragraph</p>
+      <p>This is another paragraph</p>
+      <p>This is the last paragraph in this section</p>
+    </section>
+    <section>
+      <p>This is the first paragraph in the next section</p>
+      <p>This is the second paragraph in the next section</p>
+      <p>This is the last paragraph in the next section</p>
+    </section>
+    <section>
+      <p>This is the first paragraph in the last section</p>
+      <p>This is the second paragraph in the last section</p>
+      <p>This is the last paragraph in the last section</p>
+    </section>
+  </body>
+</root>

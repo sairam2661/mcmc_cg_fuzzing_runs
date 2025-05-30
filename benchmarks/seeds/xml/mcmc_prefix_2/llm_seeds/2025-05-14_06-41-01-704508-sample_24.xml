@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE notes [
+  <!ELEMENT notes (note+)>
+  <!ATTLIST note id CDATA #REQUIRED>
+  <!ENTITY author "J"
+  >
+  <!ENTITY % entity-macro "I">
+  <!NOTATION XSD SYSTEM "x"
+         >
+ 	
+ 	%entity-macro;
+ 	<!--= comment -->		
+]>
+<notes xmlns:xi="q" xmlns:xsi="a">
+  <note id="N">Hello</note>
+  <note id="Y">World</note>
+</notes>

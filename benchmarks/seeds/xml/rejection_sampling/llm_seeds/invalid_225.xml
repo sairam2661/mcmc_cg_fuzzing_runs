@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note [
+<!ELEMENT note (to,from,heading,body)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+
+<!ATTLIST note
+    id CDATA #IMPLIED
+    type (note|warning|error) "note"
+    lang CDATA #IMPLIED
+>
+
+<!ENTITY % note.ent "note entity">
+<!ENTITY % note.ent2 "another note entity">
+
+<!ENTITY name "John Doe">
+<!ENTITY address "123 Main St">
+<!ENTITY city "Anytown">
+<!ENTITY state "CA">
+<!ENTITY zip "12345">
+
+<!ELEMENT address-info (street,city,state,zip)>
+<!ELEMENT street (#PCDATA)>
+
+<!ELEMENT person (name,age,address-info)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT age (#PCDATA)>
+
+<!ELEMENT contact-info (phone,email)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+
+<!ELEMENT product (name,price,description)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+
+<!ELEMENT description (#PCDATA)>
+
+<!ELEMENT inventory (product+)>
+<!ELEMENT store (name,location,contact-info,inventory)>
+<!ELEMENT location (#PCDATA)>
+
+<!ELEMENT store-info (store+)>
+<!ELEMENT order (product+,store-info)>
+<!ELEMENT store-ref (#PCDATA)>
+
+<!ATTLIST order
+    id CDATA #REQUIRED
+    date CDATA #IMPLIED
+>
+
+<!ELEMENT product-ref (#PCDATA)>
+
+<!ATTLIST product-ref
+    id CDATA #REQUIRED
+>
+
+<!ELEMENT order-line (product-ref,quantity)>
+<!ELEMENT quantity (#PCDATA)>
+
+<!ELEMENT order-ref (#PCDATA)>
+
+<!ATTLIST order-ref
+    id CDATA #REQUIRED
+>
+
+<!ELEMENT order-line-ref (#PCDATA)>
+
+<!ATTLIST order-line-ref
+    id CDATA #REQUIRED
+>
+
+<!ELEMENT order-ref-list (order-ref+)>
+
+<!ELEMENT order-line-list (order-line+)>
+
+<!ELEMENT order-info (order-ref-list,order-line-list)>
+<!ELEMENT order (order-info)>
+<!ELEMENT store-info-list (store-info+)>
+
+<!ELEMENT order-list (order+)>
+
+<!ELEMENT note-list (note+)>
+
+<!ELEMENT order-ref-list-list (order-ref-list+)>
+
+<!ELEMENT store-list (store+)>
+
+<!ELEMENT order-line-list-list (order-line

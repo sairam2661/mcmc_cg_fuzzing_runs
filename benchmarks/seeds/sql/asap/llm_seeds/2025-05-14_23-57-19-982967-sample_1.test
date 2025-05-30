@@ -1,0 +1,173 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix transaction_rollbacks
+
+set ::timeout 60000
+set master_db db
+
+proc timeout {time} {
+  set timeout "$time"
+  expr {$timeout}
+}
+
+do_test tran1.1 {
+  db close
+  sqlite3_db_open master_db 
+  execsql {
+    PRAGMA journal_mode="writabledb"
+  }
+  db next_stmt
+} {}
+
+proc check_journal_mode {} {
+  list "PRAGMA journal_mode;" "writabledb"
+}
+
+do_test tran1.2 {
+  execsql {
+    CREATE TABLE a(x);
+    INSERT INTO a VALUES(1)
+  }
+  execsql {
+    PRAGMA journal_mode;
+  }
+} "writabledb"
+
+proc test_rollback {} {
+  db eval {
+    TRANSACTION
+    INSERT INTO a VALUES 2
+    INSERT INTO a VALUES 3
+    VACUUM
+    ROLLBACK
+  }
+}
+
+do_test tran1.3 {
+  execsql {
+    SELECT * FROM a;
+  }
+} {}
+do_test tran1.4 {
+  test_rollback
+  set ans 0
+  db eval {
+    INSERT INTO a VALUES 2
+  }
+  execsql {
+    SELECT count(*) FROM a
+  }
+  incr ans
+  set ans
+} {1}
+
+catch {eval global $::tcl_hidden_errordata}
+set timeout 10000
+do_test tran1.5 {
+  set t_sql {
+  	ROLLBACK
+    execsql {
+    	SELECT * FROM a;
+    }
+  }
+} {}
+
+execsql {
+	CREATE TABLE t1(a,b);
+}
+
+proc test_rollback2 {} {
+  db eval {
+    INSERT INTO a VALUES(4)
+    	
+   	}
+    } {
+  }
+  do_test tran1.7 {
+    execsql {
+      SELECT * FROM a;
+    }
+  } {4}
+rollback 
+execsql {
+  SELECT * FROM a;
+}
+execsql {
+        COMMIT
+}
+   set timeout 1000
+catch {
+  execsql {
+    SELECT * FROM a;
+  }
+}
+proc test_2 {} {
+  set timeout 12000
+  execsql {
+  	INSERT INTO a VALUES(5);
+  }
+  sqlite3 db2 db
+  db2 eval {
+  	INSERT INTO a VALUES(5)
+  }
+  db2 close
+  execsql {
+  	SELECT * FROM a;
+  }
+}
+execsql {
+  COMMIT
+}
+catch {
+  execsql {
+  	SELECT * FROM a;
+  }
+}
+
+do_test tran1.8 {
+  db eval {
+    execsql {
+      PRAGMA journal_mode
+    }
+  }
+} {}
+set sql_timeout 12000
+catch {
+	set res 3
+  do_test tran1.9 {
+    execsql {
+      SELECT count(*) FROM a;
+    }
+  } $res
+}
+
+do_test tran1.10 {
+  catch sql_timeout
+} {}
+
+catch {
+	timer t1 60000
+  execsql {
+  	INSERT INTO a VALUES(6)
+  
+  }
+} {}
+do_test tran1.11 {
+  set ans 0
+  db eval {
+    if $ans then
+      execsql {
+        SELECT count(*) FROM a
+      }
+  }
+  set ans
+}  {6}
+catch {
+  finish_test
+} 
+
+execsql {
+  COMMIT
+} 
+
+finish_test

@@ -1,0 +1,150 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix db_config
+
+set ::timeout 60000
+set loglevel WARNING
+
+proc db_config_check {} {
+  global db_config_opt
+  lappend db_config_opt
+  expr {db_config_opt eq {}}
+}
+
+do_execsql_test db_config-1.1 {
+  PRAGMA synchronous = 1;
+}
+
+   "PRAGMA journal_mode = DELETE"
+    db_config_check
+  do_execsql_test db_config-1.2 {
+    PRAGMA synchronous = 2;
+  }
+  {
+      "PRAGMA journal_mode = WAL"
+    db_config_check
+  }
+
+ifcapable wal {
+  if { "$tcl_platform(platform)" eq "windows" } {
+    do_execsql_test db_config_3.3 {
+      PRAGMA page_size = 4096;
+    }
+  }
+}
+
+ifcapable {wal journal_warm} {
+  do_execsql_test db_config_4.1 {
+    CREATE TABLE test4(t1);
+  }
+  
+  do_execsql_test db_config_4.2 {
+    PRAGMA wal_checkpoint;
+    SELECT name FROM sqlite_master;
+  }
+
+  do_execsql_test db_config_5.1 {
+    PRAGMA database_list;
+  }
+
+}
+
+proc sync_proc {} {
+  global syncargs
+  lappend syncargs
+  expr {1}
+}
+set timeout 60
+do_test1_sync {
+  catch {db close}
+  set syncargs {}
+  execsql { SELECT * FROM sqlite_master}
+  execsql {
+    CREATE TABLE t1(a,c,d);
+    CREATE TABLE t2(a,c,d);
+    INSERT INTO t2 VALUES('aaa',1,1);
+    COMMIT;
+  }
+  execsql { SELECT * FROM t2}
+  set syncargs
+} {}
+do_sync2 {
+  execsql {
+    CREATE TABLE t1(a,c,d);
+    INSERT INTO t1 VALUES('aaa',1,1);
+    COMMIT;
+  }
+  set syncargs
+} {}
+do_test1 {  
+  execsql {
+    CREATE TABLE t1(a,c,d);
+    INSERT INTO t1 VALUES('aaa',1,1);
+    COMMIT;
+  }
+  set syncargs
+} {}
+proc do_test1 {sql} {
+  uplevel do_execsql_test sync1.1 $sql
+  set syncargs
+}
+
+proc do_test2 {sql} {
+  set res {}
+  set db handle
+  execsql {
+    BEGIN;
+    CREATE TABLE t1(a,c,d);
+    INSERT INTO t1 VALUES('aaa',1,1);
+    COMMIT;
+  }
+  do_execsql_test sync2.1 $sql
+  set res
+}
+set syncargs {}
+do_test sync-2.5 {
+  execsql {
+    SELECT * FROM t1
+  }
+  set syncargs
+} {}
+set timeout 90
+do_execsql_test db_config_6.6 {
+  VACUUM
+}
+set timeout 1000
+do_execsql_test db_config_7.3 {
+  PRAGMA synchronous = 0
+}
+set db_config_opt {}
+proc do_sync1 {} {
+  catch {db close}
+  set db_config_opt {}
+}
+
+do_execsql_test db_config_3.4 {
+  PRAGMA synchronous = 0;
+  PRAGMA page_size = 4096;
+}
+proc do_test_db_config{
+  set db_config_check
+  set db_config_opt {}
+}
+
+set db_config_opt {}
+do_execsql_test db_config_8.3 {
+  PRAGMA cache_size = 100000
+}
+do_test_db_config {}
+
+do_execsql_test db_config_9.1 "PRAGMA journal_mode = TRUNCATE"
+set db_config_opt {}
+do_execsql_test db_config_10.2 {
+  PRAGMA temp_store = 2;
+}
+set timeout 60
+do_execsql_test db_config_11.1 {
+  CREATE TABLE t1(a,c,d);
+}
+set db_config_opt {}
+finish_test

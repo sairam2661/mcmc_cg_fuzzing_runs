@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<root xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/1999/xhtml">
+  <title>Complex Document</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      background-color: #F7F7F7;
+    }
+  </style>
+  <div>
+    <h1>Hello World!</h1>
+    <p>This is a complex XML document that includes various markup declarations.</p>
+    <p>It contains a DOCTYPE declaration, a stylesheet, and a variety of XML features.</p>
+  </div>
+  <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">
+    <circle cx="50" cy="50" r="40" fill="#FF0000" />
+  </svg>
+  <root xmlns:math="http://www.w3.org/1998/Math/MathML">
+    <math:math display="block">
+      <math:semantics>
+        <math:annotation encoding="application/x-tex">
+          \frac{x^2}{y^2}
+        </math:annotation>
+        <math:annotation encoding="MathML-Content">
+          <apply>
+            <divide/>
+            <apply>
+              <power/>
+              <ci>x</ci>
+              <cn>2</cn>
+            </apply>
+            <apply>
+              <power/>
+              <ci>y</ci>
+              <cn>2</cn>
+            </apply>
+          </apply>
+        </math:annotation>
+      </math:semantics>
+    </math:math>
+  </root>
+</root>

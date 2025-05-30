@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE root-element [
+   <!ELEMENT root-element (title | message)*>
+   <!ATTLIST root-element
+       id  CDATA  #REQUIRED
+       lang (en|fr|de) ">"
+   >
+   <!ENTITY author "J">
+   <!ENTITY % section-type "#">
+   <!NOTATION iso-8859-7  PUBLIC "-"
+     "A"
+    >
+  %section-type;
+  <!--><!ELEMENT message (#PCDATA)>
+]>
+
+<root xmlns:xi="http://www.w3.org/2001/XInclude" id="1" lang="en">
+    <title xml:lang="en">Title of a document</title>
+    <message>Example of a message</message>
+</root> 
+
+ <!--><!ELEMENT xinclude (source)*>
+   <!ATTLIST xinclude
+       href  CDATA  #REQUIRED
+       xmlns:xi CDATA #IMPLIED
+   > 
+<!ELEMENT source (#PCDATA)> 
+<!--><!ENTITY % xi "%section%define" "text" "http://example.org">  --> 
+
+<!--><!ELEMENT xinclude (source)*>
+<!ELEMENT source (#PCDATA)>  
+
+<! NOTATION iso--><!NOTATION iso  PUBLIC "A" "B"> 
+<!ELEMENT sec (sec)> 
+<!--><!SECTION sec = 6 6" --> 
+ 
+<!ATTLIST doc  id  CDATA  #REQUIRED  xml:lang (en|fr|de) "B" >
+<!ENTITY doc  "C">
+<!ELEMENT doc  (#PCDATA)>
+
+
+<!ELEMENT name EMPTY>
+<!ELEMENT name EMPTY>
+<!ELEMENT name EMPTY>
+<!ELEMENT name EMPTY>
+
+<!ELEMENT book (name+,price)>
+<!ELEMENT book (name,price)>
+<!ELEMENT book (name)>
+<!ELEMENT name (#PCDATA)>
+
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT name EMPTY> 
+
+<!ELEMENT book > <!ELEMENT book>
+<!ATTLIST book  isbn CDATA  #REQUIRED> <!ATTLIST book  id CDATA  #REQUIRED> 
+<!ELEMENT name(#PCDATA)><!ELEMENT name (#PCDATA)> 
+<!ELEMENT name EMPTY>
+
+<!ELEMENT section EMPTY>
+<!ELEMENT  section (#PCDATA)>
+<!ELEMENT book EMPTY>
+<!ELEMENT book (#PCDATA)>
+<!ELEMENT book (#PCDATA)> 
+<!ELEMENT section (#PCDATA)>
+<!ELEMENT book (#PCDATA)>

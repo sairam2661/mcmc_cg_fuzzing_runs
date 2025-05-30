@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE catalog SYSTEM "M" [
+  <!ELEMENT catalog (product)*>
+  <!ATTLIST catalog
+    idCDATA #REQUIRED
+    lang (en|fr|de) "f"
+  >
+  <!ENTITY entity "a">
+  <!ENTITY % percent "a">
+  <!NOTATION external SYSTEM "X">
+  %percent;
+  <!-- Internal entity used to insert string "b" -->
+  %internal;
+]>
+<catalog id="x" lang="f">
+  <product>
+    <description>&entity;</description>
+    <availability>
+      <in-stock>Available</in-stock>
+      <pre-order>Yes</pre-order>
+    </availability>
+  </product>
+  <product n="3" d="2" id="y">
+    <!-- Element with multiple attribute types -->
+    <id attribute="5">ID1</id>
+    <url xmlns:ns="X">http://example.org</url>
+  </product>
+  <!-- Processing instruction with 2 arguments -->
+  <?pi target systemid attribute argument2 argument3 argument4 targetid arg1 content arg4 arg5 anotherarg7 another2arg otherarg1 idarg1 anotheridid9 anotherid13arg21 parg17 idp15arg18 otharg11 otherarg14arg18 argument6 argx5 parg13 somearg7 arg14 id17 argx11 argid1 22 p3 p5arg arg27 arg18 arg15 another2p13arg23arg10 somep14 otherp15arg12 some2p10argx15 p19 p6arg18 oth7 id15id6p11 idx16arg19 id7id2 other8id12 pid9xid5 pid15x2 p2id14id1 otherp14id11 other18idx7arg18idx5 id18p8id8 othp11 other12id14 other9id4arg6id8id3 22id2 some17pid6id16 other17otherid15 p19p9arg8idx14id16 other17p17 otherx12id17 oth8id10arg20 arg19 1arg16id9 someid11some15id8 otherp9x5 p2id6pid22 id18x4 otherp14p5argx14 id1otherid18 id14otherx17idp2id15 otherx9id12arg9 other14id2some5 otherp15 other3x16id14 arg21id18 oth9arg13 oth1p4id10 4id2 p18arg9 arg6id7id1other2id4id1idx3id2 11id8arg7 other6p14 other20 some3pix16 other17p18id17 other10p17 other6p1id3id2id17 othx12arg11 other5id11arg12 other21id17some9pidothr14arg18 oth4id12arg16 somep5some17id19pid3idx4 arg4idx11some20p8id17id8p2 idx17arg7 19id5p19other4arg17id11oth2p14 other6arg2id6id4id10 argx16 someid9arg16oth4id4 1other11arg1 other19arg17othx4arg9 othargx14 2id9argp3 4arg4arg1id10idx11argx18 id21somearg6 id13id18 oth18other15id22arg12 arg27id9 arg2id9 id14p15 other6arg14othx8id20arg12 12p2 some

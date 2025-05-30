@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root [
+  <!ELEMENT root (title,desc,para)*>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT desc (#PCDATA)>
+  <!ELEMENT para (#PCDATA)>
+  <!ATTLIST para
+    id ID #REQUIRED
+    type (note|warning|error) "note"
+    lang CDATA #IMPLIED
+  >
+]>
+<root>
+  <title>Sample Document</title>
+  <desc>This is a sample document.</desc>
+  <para id="p1" type="note" lang="en">This is a note.</para>
+  <para id="p2" type="warning">This is a warning.</para>
+  <para id="p3" type="error" lang="fr">C&#39;est une erreur.</para>
+</root>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE tutorial [
+  <!ELEMENT tutorial (chapter,chapter) >
+  <!ATTLIST tutorial
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED
+  >
+  <!ENTITY chapter1 "A">
+  <!ENTITY % chapter2 "B">
+  <!NOTATION XSL PUBLIC '-//W3C//DTD XSL Transformation 1.0//EN' 'http://www.w3.org/TR/xslt#internalSubset'>
+  %chapter2;
+  <!---->
+]>
+<tutorial title="A" author="Z">
+  <chapter>&chapter1;</chapter>
+  <chapter>&chapter2;</chapter>
+</tutorial>

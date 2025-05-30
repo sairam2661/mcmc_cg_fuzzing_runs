@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!ELEMENT book (title,author,chapter*)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT chapter (#PCDATA)>
+<!ATTLIST chapter id CDATA #REQUIRED>
+]>
+<book>
+<chapter id="1">Chapter 1</chapter>
+<chapter id="2">Chapter 2</chapter>
+<chapter id="3">Chapter 3</chapter>
+<title>The Book</title>
+<author>John Doe</author>
+</book>

@@ -1,0 +1,47 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix sync
+
+proc sync_proc {} {
+  global syncargs
+  lappend syncargs
+  expr {[llength $syncargs] <= 2}
+}
+
+do_test sync-1.1 {
+  execsql {
+    CREATE TABLE a(x);
+    INSERT INTO a VALUES(1),(2),(3);
+  }
+  execsql {SELECT count(*) FROM a}
+} {3}
+
+ifcapable journalMode {
+  catchsql {PRAGMA journal_mode=WAL}
+} {0 {}}
+
+ifcapable tempdb {
+  do_test sync-2.1 {
+    execsql {
+      CREATE TABLE t1(a INTEGER PRIMARY KEY, b TEXT);
+      CREATE TABLE t2(c INTEGER PRIMARY KEY, d TEXT);
+      CREATE INDEX i1 ON t1(b);
+      CREATE INDEX i2 ON t2(d);
+    }
+  } {}
+  do_test sync-2.2 {
+    execsql {
+      INSERT INTO t1 VALUES(1, 'hello');
+      INSERT INTO t2 VALUES(2, 'world');
+      SELECT * FROM t1 WHERE b='hello';
+    }
+  } {1 hello}
+  do_test sync-2.3 {
+    execsql {
+      DELETE FROM t1 WHERE b='hello';
+      SELECT * FROM t2 WHERE d='world';
+    }
+  } {2 world}
+}
+
+finish_test

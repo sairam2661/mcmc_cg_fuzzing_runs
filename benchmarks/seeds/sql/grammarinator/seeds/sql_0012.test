@@ -1,0 +1,128 @@
+set 	 testdir  { 	 file 		 dirname  	 $argv0   }   source  	
+
+ $testdir/tester.tcl  set 		 testprefix 
+ Gp90 
+ set 	 timeout 
+ 60000 	
+
+	 set 
+  Y 	  { 
+ } 	
+  	  	  ifcapable 	 b  
+  {  ifcapable   J 
+  { 
+  if 
+ $g   == 
+ {   ROLLBACK   
+  ; 
+ COMMIT    
+ }    
+  {  	 w 
+
+ $::CR  
+    
+			 lappend   rhL4   { 	
+ } 		
+	        	
+ catchsql 
+ {   BEGIN 	 EXCLUSIVE   	 ;  	 }      		 } 
+ 	 
+	   
+ } 	    } 	
+   	 ifcapable  OFM_   {  
+ ifcapable  m 	  { 
+	 if   BO  		 == 
+	 $::V   
+ 	 {   } 
+	
+   	   ifcapable 
+  cC  {  	 do_test 
+	 f_  - 	 5 6 
+ . 
+ 9   {     	 l     	 } 
+  "G"       do_test  g 
+ -   6 	 . 
+		 4 1 7  
+ { 
+	  } 	 ''     	  }    
+ proc 
+ wTH5 
+
+ mN    { 
+ lappend 
+ f8nh 	 '5y'         } 
+     do_execsql_test 	
+ T 	 	 -  2 2 	 . 	 1  
+
+ {  WITH   W___1  
+ ( 	 X 
+
+ )   AS  ( 	 WITH  i_ 	
+ (   A   ) 
+ AS 	 (  
+ INSERT INTO  
+ cD_Z__   VALUES  
+  ( 	 9.565  	
+	 ,    236.99      )     UNION ALL 
+
+ CREATE INDEX 
+  QP02  		 		
+ ON   P0_ 
+ (   A_ 
+  )     ) 	 SELECT 	 *   	  FROM  k  WHERE   v  = 
+ "bd"        )   WITH 	   e__3 	  (   y 
+
+	   ) 	 AS  ( 	
+ WITH   P  (  B_1   ) 		 AS  	
+  ( 
+
+ PRAGMA 
+	 w4 
+ =  	 6.4    
+
+		 UNION ALL 	 BEGIN 	   	 UNION ALL   PRAGMA   J 	 =  
+	 "g#"      UNION ALL 
+
+ WITH 
+ S   ( 
+ U 	 ) 		 AS 	 ( 	 BEGIN    	 ) 
+ 
+ BEGIN 
+
+	 EXCLUSIVE      UNION ALL  	 INSERT INTO 
+ m0zT  VALUES 
+ (  "+"     , 
+ ''  	 , 
+ ""  	
+	 , 	 ''   ,  ''   	
+  )   
+ )  	    INSERT INTO 	 x 			 
+	 (  S5__BG   )  SELECT 			 f_0w        UNION ALL   SELECT 	 	 
+ count(*)   
+
+	 FROM   UK  WHERE 
+ V 
+
+ =  L4__     ) 	
+ INSERT INTO 	
+  y  ( 	 MF 
+ , 
+ f__0_  	 ) 
+		 VALUES   ( 	 ""    	 )        ;  
+ } 	 'w'      
+	 }      if  { 
+ ROLLBACK    
+	 ;  ROLLBACK   
+ ;  
+
+	   		 }  
+ <   $::L2     { 
+ return 		 $::un    
+	 }   else  { 
+ b 
+  	   	 g7_8_45 	 Ye_       	 lappend 
+ W  $p__  
+      } 
+    } 	
+     finish_test 
+  

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note SYSTEM "note.dtd">
+<!ENTITY % ent SYSTEM "ent.ent">
+<!ENTITY &ent; "Hello World">
+<!ELEMENT note (to,from,heading,body)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+<!ATTLIST note id CDATA #REQUIRED>
+<!ATTLIST note date CDATA #IMPLIED>
+<!ATTLIST note type CDATA #IMPLIED>
+<!ENTITY % p SYSTEM "p.xml">
+<!ENTITY % p2 SYSTEM "p2.xml">
+<!ENTITY % p3 SYSTEM "p3.xml">
+<!ENTITY % p4 SYSTEM "p4.xml">
+<!ENTITY % p5 SYSTEM "p5.xml">
+<!ENTITY % p6 SYSTEM "p6.xml">
+<!ENTITY % p7 SYSTEM "p7.xml">
+<!ENTITY % p8 SYSTEM "p8.xml">
+<!ENTITY % p9 SYSTEM "p9.xml">
+<!ENTITY % p10 SYSTEM "p10.xml">
+<!ENTITY % p11 SYSTEM "p1.xml">
+<!ENTITY % p12 SYSTEM "p2.xml">
+<!ENTITY % p13 SYSTEM "p3.xml">
+<!ENTITY % p14 SYSTEM "p4.xml">
+<!ENTITY % p15 SYSTEM "p5.xml">
+<!ENTITY % p16 SYSTEM "p6.xml">
+<!ENTITY % p17 SYSTEM "p7.xml">
+<!ENTITY % p18 SYSTEM "p8.xml">
+<!ENTITY % p19 SYSTEM "p9.xml">
+<!ENTITY % p20 SYSTEM "p10.xml">
+<!ENTITY % p21 SYSTEM "p11.xml">
+<!ENTITY % p22 SYSTEM "p12.xml">
+<!ENTITY % p23 SYSTEM "p13.xml">
+<!ENTITY % p24 SYSTEM "p14.xml">
+<!ENTITY % p25 SYSTEM "p15.xml">
+<!ENTITY % p26 SYSTEM "p16.xml">
+<!ENTITY % p27 SYSTEM "p17.xml">
+<!ENTITY % p28 SYSTEM "p18.xml">
+<!ENTITY % p29 SYSTEM "p19.xml">
+<!ENTITY % p30 SYSTEM "p20.xml">
+<!ENTITY % p31 SYSTEM "p21.xml">
+<!ENTITY % p32 SYSTEM "p22.xml">
+<!ENTITY % p33 SYSTEM "p23.xml">
+<!ENTITY % p34 SYSTEM "p24.xml">
+<!ENTITY % p35 SYSTEM "p25.xml">
+<!ENTITY % p36 SYSTEM "p26.xml">
+<!ENTITY %

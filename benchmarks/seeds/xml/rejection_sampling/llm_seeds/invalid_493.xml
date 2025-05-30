@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+ "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <title>Complex XML Document</title>
+  <meta name="keywords" content="XML, HTML, XHTML, complex, document"/>
+  <meta name="description" content="This is a complex XML document that showcases various features of XML. It includes a variety of markup declarations and complex structures."/>
+  <style>
+    body { background-color: #f2f2f2; }
+    h1 { color: #00698f; }
+  </style>
+</head>
+<body>
+  <h1>Complex XML Document</h1>
+  <p>This is a complex XML document that showcases various features of XML.</p>
+  <ul>
+    <li>XML is a markup language used for storing and transporting data.</li>
+    <li>XML can be used for a variety of purposes, including data exchange, data storage, and data presentation.</li>
+    <li>XML is a self-descriptive language, meaning that it contains information about its own structure and meaning.</li>
+  </ul>
+  <p>Here is an example of a complex XML structure:</p>
+  <pre>
+    &lt;root&gt;
+      &lt;child&gt;
+        &lt;grandchild&gt;
+          &lt;great-grandchild&gt;
+            &lt;great-great-grandchild&gt;
+              &lt;great-great-great-grandchild&gt;
+            &lt;/great-great-grandchild&gt;
+          &lt;/great-grandchild&gt;
+        &lt;/grandchild&gt;
+      &lt;/child&gt;
+    &lt;/root&gt;
+  </pre>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ENTITY book1 SYSTEM "book1.xml">
+  <!ENTITY book2 SYSTEM "book2.xml">
+  <!ENTITY book3 SYSTEM "book3.xml">
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ELEMENT paragraph (#PCDATA)>
+  <!ELEMENT section (#PCDATA)>
+  <!ELEMENT bibliography (#PCDATA)>
+  <!ELEMENT footnote (#PCDATA)>
+  <!ELEMENT figure (#PCDATA)>
+  <!ELEMENT table (#PCDATA)>
+  <!ELEMENT index (#PCDATA)>
+]>
+<book xmlns:xi="http://www.w3.org/2001/XMLSchema-instance">
+  <xi:schemaLocation="http://www.example.com/books http://www.example.com/books.xsd"/>
+  <xi:noNamespaceSchemaLocation="http://www.example.com/books.xsd"/>
+  <author>John Doe</author>
+  <title>My Book</title>
+  <chapter>Chapter 1</chapter>
+  <paragraph>Paragraph 1.</paragraph>
+  <section>Section 1</section>
+  <bibliography>Bibliography 1.</bibliography>
+  <footnote>Footnote 1.</footnote>
+  <figure>Figure 1.</figure>
+  <table>Table 1.</table>
+  <index>Index 1.</index>
+  &book1;
+  &book2;
+  <xi:nonSchemaLocation>http://www.example.com/books.xsd</xi:nonSchemaLocation>
+  <xi:namespace xml:lang="en">http://www.example.com/books</xi:namespace>
+  <xi:import namespace="http://www.example.com/books" schemaLocation="books.xsd"/>
+  <xi:include href="books.xsd" xmlns="http://www.example.com/books"/>
+  <xi:annotation>
+    <xi:appinfo>
+      <xi:documentation>This is a documentation.</xi:documentation>
+    </xi:appinfo>
+  </xi:annotation>
+</book>

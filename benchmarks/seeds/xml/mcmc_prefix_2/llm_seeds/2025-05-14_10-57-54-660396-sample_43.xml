@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ATTLIST book id CDATA #REQUIRED title CDATA #REQUIRED>
+  <!ENTITY author "J"> 
+  <!ENTITY  % pub-year "("> <!NOTATION xsl PUBLIC "-" ">">
+  %pub-year;
+<!--
+
+<!ATTLIST! catalog PUBLIC "--> 
+<!ATTLIST catalog id CDATA #REQUIRED>
+]>
+<catalog xmlns:xs="&#x1C;  " id='my-cat'>
+  <book id='bk1' title='Maths'>&author;</book>
+  <book id='bk2' title='English'>
+    <title xml:lang='en'>Book Title</title>
+    <title xml:lang='it'>Titolo del libro</title>
+  </book>
+</catalog>

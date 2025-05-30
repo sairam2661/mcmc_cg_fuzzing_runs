@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<!DOCTYPE root [
+  <!ELEMENT root (person|place|thing)*>
+  <!ELEMENT person (#PCDATA|address|phone|email)*>
+  <!ELEMENT place (#PCDATA|city|state|zip|country)*>
+  <!ELEMENT thing (#PCDATA|weight|size|color)*>
+  <!ELEMENT address (#PCDATA|street|apt|city|state|zip|country)*>
+  <!ELEMENT phone (#PCDATA|type|number)*>
+  <!ELEMENT email (#PCDATA|type|address)*>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ELEMENT country (#PCDATA)>
+  <!ELEMENT weight (#PCDATA)>
+  <!ELEMENT size (#PCDATA)>
+  <!ELEMENT color (#PCDATA)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT apt (#PCDATA)>
+  <!ELEMENT type (#PCDATA)>
+  <!ELEMENT number (#PCDATA)>
+  <!ELEMENT address2 (#PCDATA)>
+]>
+<root>
+  <person>
+    <name>John Doe</name>
+    <address>
+      <street>123 Main St</street>
+      <apt>APT 101</apt>
+      <city>Anytown</city>
+      <state>CA</state>
+      <zip>12345</zip>
+      <country>USA</country>
+    </address>
+    <phone>
+      <type>cell</type>
+      <number>555-555-5555</number>
+    </phone>
+    <email>
+      <type>work</type>
+      <address>johndoe@work.com</address>
+    </email>
+  </person>
+  <place>
+    <name>Anytown Park</name>
+    <city>Anytown</city>
+    <state>CA</state>
+    <zip>12345</zip>
+    <country>USA</country>
+  </place>
+  <thing>
+    <name>Apple</name>
+    <weight>0.5</weight>
+    <size>3</size>
+    <color>red</color>
+  </thing>
+</root>

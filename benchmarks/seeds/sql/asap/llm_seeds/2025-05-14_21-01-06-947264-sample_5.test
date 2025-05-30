@@ -1,0 +1,55 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix backup
+
+set ::timeout 60000
+set up_script {
+  execsql {
+    CREATE TABLE t1(a, b);
+    CREATE TABLE t2(c, d);
+    INSERT INTO t1 VALUES('1', 'a');
+    INSERT INTO t1 VALUES('2', 'b');
+    INSERT INTO t1 VALUES('3', 'c');
+    INSERT INTO t2 VALUES('x', 'y');
+  }
+}
+
+proc start_backup {} {
+  set result "[execsql {PRAGMA backup_api_disabled, backup_keep = 3;}];"
+  puts "Result of backup start command: $result"
+  set result "[execsql {SELECT * FROM t1}];"
+  puts "Result of query before backup: $result"
+}
+
+proc finish_backup {} {
+  set result "[execsql {SELECT * FROM t2}];"
+  puts "Result of query after backup: $result"
+  incr test_counter
+}
+
+do_test backup-1.0 {
+  set test_counter 0
+  set up_script
+  start_backup
+  finish_backup
+} {t1 1 a t1 2 b t1 3 c t2 x y}
+
+do_test backup-2.0 {
+  set temp_file ""
+  set result "[execsql {SELECT * FROM t1, t2}];"
+  lassign $result value1 value2 value3 value4
+  append temp_file " $value1 $value2 $value3 $value4"
+  set value3 "Test Value After Backup"
+  set result "[execsql {INSERT INTO t1 VALUES('100', 'Test Value After Backup');}];"
+  lassign $result temp1 temp2 temp3 temp4
+  append temp_file " $temp1 $temp2 $temp3 $temp4"
+  set value1 "New Change In File"
+  set result "[execsql {UPDATE t1 SET a = 'New Change In File', b = 'backup_value3' WHERE a = '100';}];"
+  lassign $result temp1 temp2 temp3 temp4
+  append temp_file " $temp1 $temp2 $temp3 $temp4"
+  finish_backup
+  set expected "New Change In File backup_value3 Test Value After Backup t2 x y t1 1 a t1 2 b t1 3 c t2 x y"
+  set temp_file
+} {New Change In File backup_value3 Test Value After Backup t2 x y t1 1 a t1 2 b t1 3 c t2 x y}
+
+finish_test

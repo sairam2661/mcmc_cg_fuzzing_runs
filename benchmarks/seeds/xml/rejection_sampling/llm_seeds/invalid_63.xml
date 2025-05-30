@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "http://www.example.com/dtd/complex.dtd">
+<!ELEMENT document (title,section*,chapter+)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT section (#PCDATA)>
+<!ELEMENT chapter (#PCDATA)>
+<!ELEMENT article (#PCDATA)>
+<!ELEMENT book (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ATTLIST chapter id CDATA #REQUIRED>
+<!ATTLIST section title CDATA #IMPLIED>
+<!ATTLIST section author CDATA #IMPLIED>
+<!ATTLIST book title CDATA #REQUIRED>
+<!ENTITY book1 "Harry Potter and the Philosopher's Stone">
+<!ENTITY author1 "J.K. Rowling">
+<!ENTITY chapter1 "Chapter 1: The Boy Who Lived">
+<!ENTITY section1 "Section 1: Introduction">
+<!ELEMENT figure (#PCDATA)>
+<!ELEMENT table (#PCDATA)>
+<!ELEMENT ul (#PCDATA)>
+<!ELEMENT li (#PCDATA)>
+<!ELEMENT p (#PCDATA)>
+<!ELEMENT img (#PCDATA)>
+<!ELEMENT span (#PCDATA)>
+<!ELEMENT em (#PCDATA)>
+<!ELEMENT strong (#PCDATA)>
+<!ELEMENT sub (#PCDATA)>
+<!ELEMENT sup (#PCDATA)>
+<!ELEMENT code (#PCDATA)>
+<!ELEMENT pre (#PCDATA)>
+<!ELEMENT tabledata (#PCDATA)>
+<!ELEMENT tableheader (#PCDATA)>
+<!ELEMENT tr (#PCDATA)>
+<!ELEMENT th (#PCDATA)>
+<!ELEMENT td (#PCDATA)>
+<!ELEMENT hr (#PCDATA)>
+<!ELEMENT br (#PCDATA)>
+<!ELEMENT b (#PCDATA)>
+<!ELEMENT i (#PCDATA)>
+<!ELEMENT u (#PCDATA)>
+<!ELEMENT strike (#PCDATA)>
+<!ELEMENT sub (#PCDATA)>
+<!ELEMENT sup (#PCDATA)>
+<!ELEMENT font (#PCDATA)>
+<!ELEMENT center (#PCDATA)>
+<!ELEMENT blockquote (#PCDATA)>
+<!ELEMENT q (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT abbr (#PCDATA)>
+<!ELEMENT acronym (#PCDATA)>
+<!ELEMENT applet (#PCDATA)>
+<!ELEMENT param (#PCDATA)>
+<!ELEMENT object (#PCDATA)>
+<!ELEMENT embed (#PCDATA)>
+<!ELEMENT img (#PCDATA)>
+<!ELEMENT map (#PCDATA)>
+<!ELEMENT area (#PCDATA)>
+<!ELEMENT script (#PCDATA)>
+<!ELEMENT iframe (#PCDATA)>
+<!ELEMENT frame (#PCDATA)>
+<!ELEMENT frameset (#PCDATA)>
+<!ELEMENT noscript (#PCDATA)>
+<!ELEMENT optgroup (#PCDATA)>
+<!ELEMENT option (#PC

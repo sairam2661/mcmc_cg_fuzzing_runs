@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ENTITY book-author "John Doe">
+  <!ENTITY book-title "The Book">
+  <!ENTITY book-subtitle "A very long subtitle">
+  <!ENTITY book-publisher "ABC Publishers">
+  <!ENTITY book-date "2022-01-01">
+]>
+<book xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:isbn="http://www.isbn.org/isbn.xsd" xmlns="http://www.example.org/book.xsd"
+  id="book-1" version="1.0">
+  <dc:title entity-ref="#book-title"/>
+  <dc:creator entity-ref="#book-author"/>
+  <dc:description>
+    <p>This is a <b>very</b> <i>long</i> <u>description</u></p>
+  </dc:description>
+  <dc:subject>
+    <topic>Computing</topic>
+    <topic>Programming</topic>
+    <topic>Software</topic>
+  </dc:subject>
+  <dc:language>en</dc:language>
+  <dc:contributor xlink:href="http://www.example.org/contributor" xlink:title="Contributor"/>
+  <dc:identifier xlink:href="http://www.example.org/identifier" xlink:title="Identifier"/>
+  <dc:date entity-ref="#book-date"/>
+  <dc:publisher entity-ref="#book-publisher"/>
+  <isbn:issn>1234-5678</isbn:issn>
+  <isbn:isbn>978-1234-5678-9</isbn:isbn>
+  <chapter id="chapter-1">
+    <title>Chapter 1: Introduction</title>
+    <p>This is the introduction to the book.</p>
+  </chapter>
+  <chapter id="chapter-2">
+    <title>Chapter 2: The Main Content</title>
+    <p>This is the main content of the book.</p>
+  </chapter>
+  <appendix id="appendix-1">
+    <title>Appendix 1: Additional Information</title>
+    <p>This is the additional information.</p>
+  </appendix>
+</book>

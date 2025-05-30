@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+  <!ENTITY % entity PUBLIC "-//W3C//ENTITIES Standard Entity Names 1.0//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+  <!ELEMENT book - - (#PCDATA|&entity;)>
+  <!ELEMENT chapter - - (#PCDATA|&entity;)>
+  <!ELEMENT section - - (#PCDATA|&entity;)>
+  <!ELEMENT paragraph - - (#PCDATA|&entity;)>
+  <!ELEMENT title - - (#PCDATA|&entity;)>
+  <!ELEMENT author - - (#PCDATA|&entity;)>
+]>
+<book>
+  &entity;
+  <chapter>
+    <title>Introduction</title>
+    <author>John Smith</author>
+    <section>
+      <paragraph>This is a paragraph with some text.</paragraph>
+      <paragraph>This is another paragraph.</paragraph>
+    </section>
+    <section>
+      <paragraph>This is a paragraph with some <b>bold</b> text.</paragraph>
+    </section>
+  </chapter>
+  <chapter>
+    <title>Conclusion</title>
+    <author>Jane Doe</author>
+    <section>
+      <paragraph>This is the final chapter.</paragraph>
+    </section>
+  </chapter>
+</book>

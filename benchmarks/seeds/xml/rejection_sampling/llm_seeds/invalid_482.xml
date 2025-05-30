@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ENTITY book1 "A book about books">
+  <!ENTITY book2 "A book about cats">
+]>
+<books>
+  <book>
+    <title>&book1;</title>
+    <author>John Doe</author>
+    <publisher>ABC Publishing</publisher>
+    <price>19.99</price>
+    <description>This is a book about books.</description>
+  </book>
+  <book>
+    <title>&book2;</title>
+    <author>Jane Doe</author>
+    <publisher>ABC Publishing</publisher>
+    <price>9.99</price>
+    <description>This is a book about cats.</description>
+  </book>
+  <book>
+    <title>Harry Potter and the Philosopher's Stone</title>
+    <author>J.K. Rowling</author>
+    <publisher>Bloomsbury</publisher>
+    <price>7.99</price>
+    <description>This is a book about magic.</description>
+  </book>
+</books>

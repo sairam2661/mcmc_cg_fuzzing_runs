@@ -1,0 +1,239 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix locking
+
+set ::timeout 60000
+
+proc tcltest_setup_pager {} {
+  global tcltest_pager_page_size
+  set tcltest_pager_page_size 1024
+  execsql {
+    PRAGMA page_size = 1024;
+    PRAGMA synchronous = 0;
+  }
+}
+
+proc tcltest_teardown_pager {} {
+  execsql {
+    PRAGMA synchronous = 1
+  }
+}
+
+proc tcltest_setup_journal_mode {} {
+  ifcapable vacuum {
+    catchsql {
+      PRAGMA journal_mode="writelist"
+    }
+  } else {
+    execsql {
+      PRAGMA journal_mode=0
+    }
+  }
+}
+
+proc tcltest_teardown_journal_mode {} {
+  ifcapable vacuum {
+    catchsql {
+      PRAGMA journal_mode = 0;
+    }
+  } else {
+    execsql {
+      PRAGMA journal_mode = 0;
+    }
+  }
+}
+
+proc tcltest_setup_fulljournal_mode {} {
+  catchsql {
+    PRAGMA journal_mode= 'persist'
+  }
+}
+
+proc tcltest_teardown_fulljournal_mode {} {
+  catchsql {
+    PRAGMA journal_mode = 'delete';
+  }
+}
+
+proc tcltest_setup_persistent_journal_mode {} {
+  catchsql {
+    PRAGMA journal_mode= 'persist'
+  }
+}
+
+proc tcltest_teardown_persistent_journal_mode {} {
+  catchsql {
+    PRAGMA journal_mode = 'delete';
+  }
+}
+
+proc tcltest_setup_mmap {size} {
+  db close
+  set cmd "PRAGMA cache_size=3000"
+  if { $size eq "off" } {
+    append cmd " PRAGMA main.mmap_size=off"
+  }
+  set cmd "$cmd PRAGMA temp.mmap_size=$size"
+  do_execsql_test tcltestsetup_mmap "$cmd" {}
+  sqlite3 db test2
+  do_execsql_test tcltestsetup_mmap {
+    SELECT name FROM sqlite_master
+  } {sqlite_master}
+  db close
+}
+
+proc tcltest_teardown_mmap {size} {
+  tcltest_setup_mmap "off"
+  set cmd "PRAGMA cache_size=3000"
+  if { $size eq "off" } {
+    append cmd " PRAGMA main.mmap_size=off"
+  }
+  set cmd "$cmd PRAGMA temp.mmap_size=off"
+  do_execsql_test tcltestteardown_mmap "$cmd" {}
+  sqlite3 db test2
+  do_execsql_test tcltestteardown_mmap {
+    SELECT name FROM sqlite_master
+  } {sqlite_master}
+  db close
+}
+
+proc lock_test {sql} {
+  set tcl_test_fileid 1
+  set res {}
+  ifcapable mmap {
+    tcltest_teardown_fulljournal_mode
+  }
+  set timeout 3000
+  after $timeout {
+    error "timeout"
+  }
+  flush
+  foreach statement $sql {
+    execsql "$statement"
+    flush
+    after 100
+  }
+  flush
+  set res 0
+  if { $::tcl_test_fileid eq 2 } {
+    set res 1
+  }
+  if { $::timeout eq "" } {
+    if { $res eq 0 } {
+      result {1 { database is locked }}
+    } else {
+      execsql {ROLLBACK}
+    }
+  }
+  if { $::tcl_test_fileid eq 1 } {
+    execsql {PRAGMA synchronous = 0}
+    execsql {
+      INSERT INTO t1 VALUES('X','Y','Z');
+    }
+    execsql {PRAGMA synchronous = 1}
+  } else {
+    execsql ROLLBACK
+  }
+  deletefile lock_test_id
+  if { $::timeout eq "" } {
+    return $res
+  }
+}
+
+proc tcltest_lockfile { } {
+  set testfile lock_test_id
+  rename deletefile {}
+  rename deletefile_bak deletefile
+  rename delete file1
+  rename delete_bak delete
+  proc deletefile { } {
+    set testfile lock_test_id
+    file delete lock_test_id
+    rename deletefile deletefile_bak
+    rename delete file
+    rename file1 deletefile
+    proc delete {} {
+      file delete $::testfile
+    }
+  }
+  proc delete { } {
+    file delete $testfile
+  }
+}
+
+proc tcltest_check {expr} {
+  result $expr
+}
+
+proc tcltest_check_expr {expr {error {}} } {
+  if { $expr eq "0" } {
+    if { $::error eq {}} {
+      return {0 {}}
+    } else {
+      error "$::error $expr"
+    }
+  } else {
+    if { $::error eq {}} {
+      return 1
+    } else {
+      error "$::error expr $expr"
+    }
+  }
+}
+
+proc tcltest_result { {expr {}} } {
+  set res ""
+  if { $expr eq "" } {
+    return {{}}
+  } elseif { $expr eq "0" } {
+    return {0 {}}
+  } elseif { $::error eq "" } {
+    return "0 $expr"
+  } else {
+    return 1 "$::error"
+  }
+}
+
+proc tcltest_step {sql {db db}} {
+  set st 0
+  sqlite3 db2
+  catchsql "SELECT * FROM sqlite_master " db2
+  ifcapable vacuum {
+    db2 eval {VACUUM}
+  }
+  set stmt 0
+  foreach line $::statements {
+    db eval $line
+    if { $stmt eq 0 } {
+      incr stmt
+    }
+  }
+  execsql $sql db
+}
+
+proc tcltest_reset {}  {
+  set stmts {}
+  set nstmts 0
+  set stmt {}
+  set timeout {}
+}
+
+proc tcltest_step_and_result {sql} {
+  error_log
+  sqlite3 db2
+  execsql $sql db2
+}
+
+catch {set nDb} db
+if { $::nDb ne 1 } {
+  throw error "open_db: expected 1 database opened, but opened: $nDb"
+}
+
+proc tcltest_db_list {} {
+  set list ""
+  set count 0
+  foreach d $::DB_LIST {
+    set list "$list $d"
+    incr count
+  }
+  set list "list=$list count

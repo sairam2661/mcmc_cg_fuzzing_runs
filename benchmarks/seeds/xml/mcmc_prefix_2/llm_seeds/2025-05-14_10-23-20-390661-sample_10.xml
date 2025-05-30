@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE chapter SYSTEM "m"
+
+    [
+    	<!ELEMENT chapter (para+)>
+    	<!ATTLIST chapter
+    		author CDATA #REQUIRED
+			year CDATA #REQUIRED
+		>
+    	<!ENTITY nbd "M">
+    	<!ENTITY  % ent "x" >
+   	<!NOTATION iso8601SYSTEM "m" >
+   		%ent;
+  	<!--% ent;%--><!NOTATION iso8601 SYSTEM "m">
+   	<!ELEMENT para (#PCDATA)>
+    	<!ELEMENT title (#PCDATA)>
+    	<!ELEMENT isbn (#PCDATA)>
+    	<!ELEMENT author (#PCDATA)>
+    ]
+>
+<chapter id="1"  author="j" year="a" xml:lang="f">
+
+   <title>La Salle Noire </title>
+   <para><isbn>999</isbn></para>
+   <para><author> jh</author></para>
+
+</chapter>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*,comment+)>
+  <!ATTLIST catalog 
+    id CDATA #REQUIRED 
+    version CDATA #IMPLIED>
+  <!ENTITY book "A" >
+  <!ENTITY % books "|">
+  <!NOTATION book-formats PUBLIC "M" "M">
+  %books;
+  <!---->
+  <!ELEMENT product (description,price*)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST product 
+    id CDATA #REQUIRED 
+    type (hardcover|paperback) " ">
+  <!ELEMENT price (#PCDATA)>
+  <!NOTATION e-book-formats SYSTEM "E">
+]>
+<catalog id="1" version="0">
+  <comment>A comment</comment>
+  <product id="1" type="A"   xmlns:xsi="x" xmlns="x" xsi:noNamespaceSchemaLocation="x">
+    <description>Test book</description>
+    <price>15.99</price>
+    <price>16.99</price>
+  </product>
+  <product id="2" type="B">
+    <description>&book;</description>
+    <price>16.99</price>
+  </product>
+  <product id="3" type="B">  
+    <description>&book;</description>
+    <price>17.99</price>
+  </product>
+  <comment>Comment</comment>
+</catalog>

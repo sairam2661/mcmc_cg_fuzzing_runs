@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root SYSTEM "http://example.com/dtd">
+<!ENTITY myentity "value">
+<!ELEMENT root (element1, element2, element3)>
+<!ELEMENT element1 (#PCDATA)>
+<!ELEMENT element2 EMPTY>
+<!ELEMENT element3 (#PCDATA | element2)*>
+<!ATTLIST element2 attr1 CDATA #REQUIRED attr2 CDATA #IMPLIED>
+<!ATTLIST element3 attr3 CDATA #IMPLIED>
+<!NOTATION mynotation SYSTEM "notation.dtd">
+<root>
+  <element1>content</element1>
+  <element2 attr1="value" attr2="other value"/>
+  <element3 attr3="yet another value">
+    <element2 attr1="nested value" attr2="nested other value"/>
+  </element3>
+</root>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, chapter*, bibliography?)>
+  <!ATTLIST book lang CDATA #FIXED "H">
+  <!ENTITY chap1 "S">
+  <!ENTITY  % b "Z">
+  <!NOTATION pdf PUBLIC '-D* A-123 PDF-123 ABCD- 98765.01-23.0010 9.9 8 7 6 5 4 3 2 1.- -.-.''' >  														%b;  								<!--> 	%b;   '. -->
+]>
+<book lang="H">
+  <title>Great Book</title>
+  <chapter num="1">
+    <heading>First Heading</heading>
+    <para>
+      Text <entity-ref entity-name="H"/>
+      for &chap1;&b;
+      Entity Reference and a <tag1/> and <tag2/> or some CDATA <![CDATA[ raw ]]>
+    </para>
+  </chapter>
+  <chapter num="2">
+    <heading>Second Heading</heading>
+    <paragraph>Paragraph 2 <ref target='ref.xml' hreflang='en'/></paragraph>
+  </chapter>
+  <chapter num="3" xmlns:xi="P">
+    <heading>Third Heading</heading>
+    <ref target='ref.xml' xi:include='I'/>
+  </chapter>
+  <bibliography>
+    <reference>Author Name</reference>
+  </bibliography>
+</book>

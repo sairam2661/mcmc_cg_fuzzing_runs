@@ -1,0 +1,77 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix transaction_isolation_levels
+
+set ::timeout 60000
+set sqlite_options "-DSQLITE_DEFAULT_ISOLATION_LEVEL=1"
+
+proc rollback {args} {
+  global tcl_interactive
+  if { $tcl_interactive } {
+    puts stderr "ROLLBACK"
+  }
+}
+
+proc commit {args} {
+  global tcl_interactive
+  if { $tcl_interactive } {
+    puts stderr "COMMIT"
+  }
+}
+
+proc exec_with_isolation_level {cmd} {
+  set isolation_level 1
+  catchsql "PRAGMA isolation_level = $isolation_level"
+  return $cmd
+}
+
+set db_master ":memory:"
+
+set db1_opened 0
+
+do_test transaction_isolation_levels-1.1 {
+  execsql {
+    CREATE TABLE x(id PRIMARY KEY, data);
+  } $db_master
+} {}
+
+do_test transaction_isolation_levels-1.2 {
+  exec_with_isolation_level {
+    BEGIN;
+    INSERT INTO x VALUES(1, 'zero');
+  } $db_master
+} {}
+
+ifcapable {fts5} {
+  do_execsql_test transaction_isolation_levels 2.1 {
+    CREATE VIRTUAL TABLE a USING fts5a
+  }
+}
+
+ifcapable {async} {
+  do_execsql_test transaction_isolation_levels 3.1 {
+    PRAGMA main_async_commit = '[expr { [info exists SQLITE_ASYNC_DEFAULT]? $SQLITE_ASYNC_DEFAULT : 0 }]'
+    }
+} else {
+  do_execsql_test transaction_isolation_levels 3.1 {
+    PRAGMA main_async_commit = '0'
+  } {}
+}
+
+ifcapable vacuum {
+  do_execsql_test transaction_isolation_levels 3.2 {
+    DELETE FROM a WHERE 1
+  }
+}
+
+do_test transaction_isolation_levels-3.3 {
+  execsql {
+    CREATE TABLE b(x);
+  } $db_master
+} {}
+
+do_execsql_test transaction_isolation_levels 4.1 {
+  CREATE TEMP TABLE c AS SELECT x FROM b UNION ALL SELECT x FROM b
+}
+
+finish_test

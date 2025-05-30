@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ENTITY book "My Book">
+  <!ENTITY author "John Doe">
+]>
+<book xmlns="http://www.example.com/book"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.example.com/book http://www.example.com/book.xsd"
+      id="BK001">
+  <title>My Book</title>
+  <author>John Doe</author>
+  <publisher>
+    <name>Example Publisher</name>
+    <address>
+      <street>123 Main St</street>
+      <city>Anytown</city>
+      <state>CA</state>
+      <zip>12345</zip>
+    </address>
+  </publisher>
+  <copyright>2019</copyright>
+  <toc>
+    <chapter id="CH001">
+      <title>Chapter 1</title>
+      <section id="SEC001">
+        <title>Section 1.1</title>
+        <para>This is a paragraph.</para>
+      </section>
+    </chapter>
+  </toc>
+  <appinfo>
+    <meta>
+      <creator>XML Creator</creator>
+      <generator>XML Generator</generator>
+    </meta>
+  </appinfo>
+</book>

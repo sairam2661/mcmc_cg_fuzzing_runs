@@ -1,0 +1,44 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix sync
+
+proc sync_proc {} {
+  global syncargs
+  lappend syncargs
+  expr {[llength $syncargs] <= 2}
+}
+
+do_test sync-1.1 {
+  execsql {
+    CREATE TABLE a(x);
+    INSERT INTO a VALUES(1),(2),(3);
+  }
+  execsql {SELECT count(*) FROM a}
+} {3}
+
+ifcapable journalMode {
+  catchsql {PRAGMA journal_mode=WAL}
+} {0 {}}
+
+do_test sync-1.2 {
+  set syncargs {}
+  set ::sqlite_busy_timeout 1000
+  set ::sqlite_unlock_notify 1
+  set ::sqlite_db_config {
+    synchronous 1
+    wal_autocheckpoint 100
+    wal_checkpoint 1
+  }
+  set ::sqlite_db_config2 {
+    synchronous 2
+    wal_autocheckpoint 200
+    wal_checkpoint 2
+  }
+  execsql {
+    CREATE TABLE b(x);
+    INSERT INTO b VALUES(4),(5),(6);
+  }
+  set syncargs
+} {1 1 1 2 2 2}
+
+finish_test

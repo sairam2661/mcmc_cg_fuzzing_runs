@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE document SYSTEM "document.dtd">
+<!ELEMENT document (header, body, footer)>
+<!ELEMENT header (#PCDATA)>
+<!ELEMENT body (section*, paragraph*)>
+<!ELEMENT section (title, (paragraph|list)*)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT paragraph (#PCDATA)>
+<!ELEMENT list (item*)>
+<!ELEMENT item (#PCDATA)>
+<!ELEMENT footer (#PCDATA)>
+<?xml-stylesheet href="style.css"?>
+<document>
+  <header>
+    <title>Document Title</title>
+  </header>
+  <body>
+    <section>
+      <title>Section Title</title>
+      <paragraph>This is a paragraph.</paragraph>
+      <list>
+        <item>Item 1</item>
+        <item>Item 2</item>
+      </list>
+    </section>
+    <paragraph>This is another paragraph.</paragraph>
+  </body>
+  <footer>
+    Copyright 2024
+  </footer>
+</document>

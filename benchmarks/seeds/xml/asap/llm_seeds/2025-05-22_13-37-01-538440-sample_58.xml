@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-16"?>
+<!DOCTYPE document [
+  <!ELEMENT document (root, message, element)*>
+  <!ATTLIST document id ID #REQUIRED>
+  <!ENTITY example "A">
+  <!ENTITY % entities "b">
+  <!NOTATION SYSTEM SYSTEM "J">
+ %Xinclude
+    	;<!----> %entities;
+    	<!---->
+]>
+<document xmlns="&ns;" xmlns:xs="X" xmlns:xsi="y" id="x" xml:space="1">
+  <root><![CDATA[Text with &example; and <b>bold</b>]]></root>
+  <message>&note;</message>
+  <element attr1="#" attr2='"' attrs='{"a", "b"}' xsi:nil="n"/>
+</document>

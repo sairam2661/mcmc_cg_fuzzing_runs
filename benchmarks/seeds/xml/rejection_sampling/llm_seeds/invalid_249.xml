@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, publisher, date, chapter*, section*, para*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT date (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ELEMENT section (#PCDATA)>
+  <!ELEMENT para (#PCDATA)>
+  <!ELEMENT para (#PCDATA)<!ATTLIST para id CDATA #REQUIRED>>
+]>
+<book>
+  <title>The Adventures of Sherlock Holmes</title>
+  <author>Arthur Conan Doyle</author>
+  <publisher>Longman</publisher>
+  <date>1892</date>
+  <chapter>Chapter 1: A Scandal in Bohemia</chapter>
+  <section>Section 1.1: The Client</section>
+  <para id="p1">Mr. Holmes, I beg to you, help me.</para>
+  <para id="p2">The game's afoot!</para>
+  <para id="p3">But what about the dog?</para>
+  <section>Section 1.2: The Investigation</section>
+  <para id="p4">We must follow the trail of clues.</para>
+  <para id="p5">But where does it lead?</para>
+  <para id="p6">To the very heart of the mystery!</para>
+</book>

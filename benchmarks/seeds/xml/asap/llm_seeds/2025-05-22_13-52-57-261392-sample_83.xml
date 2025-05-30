@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE doc [
+  <!ELEMENT doc (title, author, chapter*)>
+  <!ATTLIST doc lang CDATA #IMPLIED>
+  <!ENTITY chapter2 "A"
+  >
+  <!ENTITY % chapterEntities "1" >
+  <!NOTATION ISO-Normalization SYSTEM "e">
+ 					    	%XIncludeNotation 
+						                          
+ 	                                                              	
+  	
+  	
+ 	            
+   			 
+  
+ 	                         	
+  		                        
+  
+ 	                                     
+	
+  
+  		
+      	                        
+		                  
+      		
+       	            
+    		      
+		                          
+  		   							  
+ 	                  
+      
+   	;			<!----> 
+  ]>
+<doc lang="x">
+  <title>Learn XML</title>
+  <author>
+    <name>Alice Smith</name>
+  </author>
+  <chapter id="c">
+    Chap 1
+  </chapter>
+  <chapter2/>
+  <chapter>&chapterEntities;</chapter>
+</doc>

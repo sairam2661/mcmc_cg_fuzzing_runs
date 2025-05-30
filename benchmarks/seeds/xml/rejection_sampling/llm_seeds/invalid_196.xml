@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE book [
+<!ELEMENT book (title,author,chapter+,(para|fig|tbl)*,appendix*)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT chapter (#PCDATA)>
+<!ELEMENT para (#PCDATA)>
+<!ELEMENT fig (#PCDATA)>
+<!ELEMENT tbl (#PCDATA)>
+<!ELEMENT appendix (#PCDATA)>
+<!ATTLIST chapter id CDATA #REQUIRED>
+<!ATTLIST fig src CDATA #REQUIRED>
+<!ATTLIST tbl src CDATA #REQUIRED>
+<!ATTLIST appendix id CDATA #REQUIRED>
+]>
+<book>
+<title>My Book</title>
+<author>Me</author>
+<chapter id="c1">Introduction</chapter>
+<chapter id="c2">Chapter 2</chapter>
+<para>Some text.</para>
+<fig src="fig1.jpg">Figure 1</fig>
+<tbl src="table1.xml">Table 1</tbl>
+<appendix id="a1">Appendix 1</appendix>
+</book>  <?xml version='1.0' encoding='UTF-8'?><book>
+<title>My Book</title>
+<author>Me</author>
+<chapter id="c1">Introduction</chapter>
+<chapter id="c2">Chapter 2</chapter>
+<para>Some text.</para>
+<fig src="fig1.jpg">Figure 1</fig>
+<tbl src="table1.xml">Table 1</tbl>
+<appendix id="a1">Appendix 1</appendix>
+</book>  <?xml version='1.0' encoding='UTF-8'?><book>
+<title>My Book</title>
+<author>Me</author>
+<chapter id="c1">Introduction</chapter>
+<chapter id="c2">Chapter 2</chapter>
+<para>Some text.</para>
+<fig src="fig1.jpg">Figure 1</fig>
+<tbl src="table1.xml">Table 1</tbl>
+<appendix id="a1">Appendix 1</appendix>
+</book>  <?xml version='1.0' encoding='UTF-8'?><book>
+<title>My Book</title>
+<author>Me</author>
+<chapter id="c1">Introduction</chapter>
+<chapter id="c2">Chapter 2</chapter>
+<para>

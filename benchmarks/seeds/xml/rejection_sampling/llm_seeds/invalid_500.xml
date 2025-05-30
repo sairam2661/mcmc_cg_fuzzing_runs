@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!DOCTYPE book [
+  <!ELEMENT book (author, publisher, copyright, content)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT copyright (#PCDATA)>
+  <!ELEMENT content (section, section, section)>
+  <!ELEMENT section (title, p, list)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT p (#PCDATA)>
+  <!ELEMENT list (item, item)>
+  <!ELEMENT item (#PCDATA)>
+]>
+<book>
+  <author>John Smith</author>
+  <publisher>ABC Publishers</publisher>
+  <copyright>2023</copyright>
+  <content>
+    <section>
+      <title>Introduction</title>
+      <p>This is the introduction.</p>
+      <list>
+        <item>Item one</item>
+        <item>Item two</item>
+      </list>
+    </section>
+    <section>
+      <title>Chapter One</title>
+      <p>This is chapter one.</p>
+      <list>
+        <item>Item one</item>
+        <item>Item two</item>
+      </list>
+    </section>
+    <section>
+      <title>Conclusion</title>
+      <p>This is the conclusion.</p>
+      <list>
+        <item>Item one</item>
+        <item>Item two</item>
+      </list>
+    </section>
+  </content>
+</book> 
+
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!DOCTYPE html [
+  <!ELEMENT html (head, body)>
+  <!ELEMENT head (#PCDATA)>
+  <!ELEMENT body (#PCDATA)>
+]>
+<html>
+  <head>
+    <title>My Webpage</title>
+  </head>
+  <body>
+    <h1>This is a heading</h1>
+    <p>This is a paragraph</p>
+  </body>
+</html>
+
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!DOCTYPE note [
+  <!ELEMENT note (to, from, heading, body)>
+  <!ELEMENT to (#PCDATA)>
+  <!ELEMENT from (#PCDATA)>
+  <!ELEMENT heading (#PCDATA)>
+  <!ELEMENT body (#PCDATA)>
+]>
+<note>
+  <to>Jane</to>
+  <from>John</from>
+  <heading>Reminder</

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+<!ENTITY % booktypes SYSTEM "booktypes.ent">
+%booktypes;
+<!ENTITY % booktypes "">
+<!ELEMENT bookstore (title, publisher, author, title*, publisher*, author*, title+, publisher+, author+)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ATTLIST author id CDATA #IMPLIED>
+<!ELEMENT book (#PCDATA)>
+<!ELEMENT chapter (#PCDATA)>
+<!ELEMENT paragraph (#PCDATA)>
+<!ELEMENT section (#PCDATA)>
+<!ELEMENT note (#PCDATA)>
+<!ELEMENT footnote (#PCDATA)>
+<!ELEMENT bibliography (#PCDATA)>
+<!ELEMENT glossary (#PCDATA)>
+<!ELEMENT index (#PCDATA)>
+<!ELEMENT list (#PCDATA)>
+<!ELEMENT item (#PCDATA)>
+<!ELEMENT option (#PCDATA)>
+<!ELEMENT preference (#PCDATA)>
+<!ELEMENT titlepage (#PCDATA)>
+<!ELEMENT dedication (#PCDATA)>
+<!ELEMENT preface (#PCDATA)>
+<!ELEMENT appendix (#PCDATA)>
+<!ELEMENT abstract (#PCDATA)>
+<!ELEMENT ack (#PCDATA)>
+<!ELEMENT biblio (#PCDATA)>
+<!ELEMENT citation (#PCDATA)>
+<!ELEMENT figure (#PCDATA)>
+<!ELEMENT table (#PCDATA)>
+<!ELEMENT figurecaption (#PCDATA)>
+<!ELEMENT tablecaption (#PCDATA)>
+<!ELEMENT image (#PCDATA)>
+<!ELEMENT imagecaption (#PCDATA)>
+<!ELEMENT label (#PCDATA)>
+<!ELEMENT legend (#PCDATA)>
+<!ELEMENT key (#PCDATA)>
+<!ELEMENT keycap (#PCDATA)>
+<!ELEMENT keycapref (#PCDATA)>
+<!ELEMENT legendentry (#PCDATA)>
+<!ELEMENT legendlabel (#PCDATA)>
+<!ELEMENT legendref (#PCDATA)>
+<!ELEMENT note (#PCDATA)>
+<!ELEMENT notebody (#PCDATA)>
+<!ELEMENT noteheader (#PCDATA)>
+<!ELEMENT noteinfo (#PCDATA)>
+<!ELEMENT noteid (#PCDATA)>
+<!ELEMENT noteorigin (#PCDATA)>
+<!ELEMENT noteoriginid (#PCDATA)>
+<!ELEMENT noteref (#PCDATA)>
+<!ELEMENT notetext (#PCDATA)>
+<!ELEMENT notetitle (#PCDATA)>
+<!ELEMENT notetype (#PCDATA)>
+<!ELEMENT notetypedef (#PCDATA)>
+<!ELEMENT noteanchor (#PCDATA)>
+<!ELEMENT footnoteanchor (#PCDATA)>
+<!ELEMENT footnotebody (#PCDATA)>
+<!ELEMENT footnoteheader (#PCDATA)>
+<!ELEMENT footnoteinfo (#PCDATA)>
+<!ELEMENT footnoteid (#PCDATA)>
+<!ELEMENT footnoteorigin (#PCDATA)>
+<!ELEMENT footnote

@@ -1,0 +1,71 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix main
+
+set ::timeout 60000
+foreach {scheme1 port1} {temp 31415} {set environment TEMPORY_FILE_PATH schema1 $scheme1 $port1}
+set temp_directory "${testdir}/sqlite"
+
+proc setup_database {} {
+  global db
+  if { $db eq "" } {
+    set db "mydb"
+    execsql "PRAGMA synchronous=0"
+    execsql "PRAGMA journal_mode=WAL"
+    execsql "CREATE TABLE users (id integer, name text)"
+  }
+}
+
+proc teardown_database {} {
+  global db
+  if { $db ne "mydb" } {
+    execsql "DROP TABLE users"
+    execsql "DELETE FROM sqlite_master WHERE name='mydb'"
+    set db ""
+  }
+}
+
+setup_database
+do_execsql_test 1.1 {
+  INSERT INTO users VALUES(1, 'John')
+  										 	}
+  {1 John}
+
+do_execsql_test 1.2 {
+  INSERT INTO users VALUES(2, 'Alice')
+  										  }
+  {1 John}
+do_execsql_test 1.3 {
+  INSERT INTO users VALUES(3, 'Bob')
+  									     }
+  {1 John}
+do_execsql_test 1.4 {
+  UPDATE users SET name TO 'Johny'
+  									 } { 3 {name} }
+execsql {ROLLBACK}
+setup_database
+do_execsql_test 2.1 {
+ INSERT INTO users VALUES(4, 'Johny')
+   		  }
+ {1 Johny}
+teardown_database
+setup_database
+execsql {PRAGMA synchronous=1}
+setup_database
+do_execsql_test 3.1 {
+   UPDATE users SET name TO 'Johny'
+  									 } { 3 {name} }
+execsql {ROLLBACK}
+setup_database
+execsql {PRAGMA journal_mode="wal"}
+setup_database
+do_execsql_test 4.1 {
+    INSERT INTO users VALUES(5, 'Johny')
+} {5 John}
+setup_database
+execsql {PRAGMA wal_checkpoint}
+do_execsql_test 5.1 {
+   INSERT INTO users VALUES(6, 'Johny')
+} {6 John}
+teardown_database
+finish_test

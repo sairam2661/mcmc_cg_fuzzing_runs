@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, publisher)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ATTLIST author id ID #REQUIRED>
+  <!ATTLIST publisher year CDATA #IMPLIED>
+  <!ATTLIST book lang CDATA #IMPLIED>
+]>
+<book lang="en">
+  <title>The Hitchhiker's Guide to the Galaxy</title>
+  <author id="Douglas-Adams" year="1950">Douglas Adams</author>
+  <publisher year="1979">Pan Books</publisher>
+  <chapter id="c1">
+    <title>Chapter 1: The Guide</title>
+    <content>
+      <paragraph>
+        <p>It is a common perception that the universe is a pretty big place.</p>
+      </paragraph>
+    </content>
+  </chapter>
+  <chapter id="c2">
+    <title>Chapter 2: The Hitchhiker</title>
+    <content>
+      <paragraph>
+        <p>He was a normal human being until he was hit by a car.</p>
+      </paragraph>
+    </content>
+  </chapter>
+</book>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, publisher, author+, contributor+, chapter*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT author (name, affiliation)>
+  <!ELEMENT contributor (#PCDATA)>
+  <!ELEMENT chapter (title, section*)>
+  <!ELEMENT section (#PCDATA)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT affiliation (#PCDATA)>
+]>
+<book>
+  <title>Introduction to XML</title>
+  <publisher>O'Reilly</publisher>
+  <author>
+    <name>John Smith</name>
+    <affiliation>University of California</affiliation>
+  </author>
+  <author>
+    <name>Jane Doe</name>
+    <affiliation>University of Michigan</affiliation>
+  </author>
+  <contributor>Robert Brown</contributor>
+  <chapter>
+    <title>Chapter 1: Introduction</title>
+    <section>This is the first section of the chapter.</section>
+    <section>This is the second section of the chapter.</section>
+  </chapter>
+  <chapter>
+    <title>Chapter 2: XML Basics</title>
+    <section>This is the first section of the second chapter.</section>
+  </chapter>
+</book>

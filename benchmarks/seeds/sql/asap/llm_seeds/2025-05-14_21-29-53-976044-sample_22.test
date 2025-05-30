@@ -1,0 +1,124 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix multi_thread_test
+
+set ::timeout 60000  sqlite database connection timeout is 60 seconds
+set test_number 0
+set test_step 0
+
+proc set_test_number {value} {
+  global test_number
+  set test_number $value
+}
+
+proc test {number {message {}}} {
+  global test_number
+  global test_step
+  set test_step $test_number
+  do_test $number {$message}
+}
+
+proc multi_thread_test {} {
+  global test_number
+  if {$test_number} {
+    incr test_number
+  } else {
+    set test_number 1
+  }
+}
+
+proc cleanup {} {
+  global test_number
+  set test_number 0
+}
+
+proc multi_thread_proc {} {
+  global test_number
+  set test_number $test_number
+  incr test_number
+}
+
+proc append_string {string var_name} {
+  upvar $var_name var
+  append var $string
+}
+
+proc array_to_string {array_name} {
+  set str {}
+  foreach key $array_name {
+    append str $key "=" $array_name{$key} " "
+  }
+  set str
+}
+
+proc test_step {step message} {
+  global test_step
+  incr test_step
+  do_test $step {$message}
+}
+
+set dbfile test_2level_journal_mode_test
+test 1.1 {
+  sqlite3 db test_2level_journal_mode_test
+}
+
+test 1.2 {
+  execsql {
+    PRAGMA journal_mode=2;
+  } db
+}
+
+test 2.1 {
+  global db
+  execsql {
+    CREATE TABLE t1(x);
+  } db
+  set test_1a {}
+}
+
+test_step 2.2 "INSERT 1 to 10"
+for {set i 1} {$i le 10} {incr i} {
+  append_string "test_1a " $test_1b
+}
+test 3.3 {
+  execsql {
+    INSERT INTO t1 SELECT *;
+  } db
+  set test_1b {}
+  execsql {SELECT * FROM t1}
+} {1 2 3 4 5 6 7 8 9 10}
+
+test 4.4 {
+  execsql {
+    CREATE TABLE t2(x);
+  } db
+  set test_2a {}
+}
+
+test 5.5 "INSERT 11 to 20"
+for {set i 11} {$i le 20} {incr i} {
+  append_string "test_2a " $test_2b
+}
+test 6.6 {
+  execsql {
+    INSERT INTO t2 SELECT *;
+  } db
+  set test_2b {}
+  execsql {SELECT * FROM t2}
+} {11 12 13 14 15 16 17 18 19 20}
+
+test 7.7 {
+  execsql {SELECT * FROM t1} db
+}
+
+test 8.8 {
+  execsql {SELECT * FROM t2} db
+}
+
+cleanup
+set db null
+test 9.9 {
+  file delete test_2level_journal_mode_test
+}
+
+finish_test

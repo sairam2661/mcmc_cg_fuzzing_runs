@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE notes [
+  <!ELEMENT notes (note+)> 
+  <!ATTLIST note 
+    id ID #REQUIRED 
+    type (personal|work) #REQUIRED
+  >
+  <!ENTITY book "9">
+  <!ENTITY % p "b"> 
+  <!NOTATION ISO-8859-1 SYSTEM "A">
+  %p;
+  <!--=This is a multi-->
+]>
+<notes xmlns="d">
+  <note id="n" type="b">
+    Title: &book;
+    <notebook>
+      <note>&ISO-8859-1;</note>
+    </notebook>
+  </note>
+  <note id="m" type="w">
+    &note;
+  </note>
+</notes>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author,year)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+]>
+<book>
+  <title>War and Peace</title>
+  <author>
+    <first-name>Leo</first-name>
+    <last-name>Tolstoy</last-name>
+  </author>
+  <year>1865</year>
+  <translator>
+    <first-name>Constance</first-name>
+    <last-name>Garrett</last-name>
+  </translator>
+  <edition>
+    <number>1</number>
+    <language>English</language>
+  </edition>
+  <note>
+    <type>annotation</type>
+    <content>This is a note.</content>
+  </note>
+  <related-book>
+    <title>Anna Karenina</title>
+    <year>1877</year>
+  </related-book>
+</book>

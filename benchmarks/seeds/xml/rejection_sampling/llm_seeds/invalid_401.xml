@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE doc [
+  <!ENTITY % entity PUBLIC "-//Your Company//DTD Your Doc DTD 1.0//EN"
+  "your_doc.dtd">
+  %entity;
+]>
+<root>
+  <elem attr1="value1" attr2="value2">text</elem>
+  <elem1 attr1="value1" attr2="value2">
+    <elem2 attr1="value1" attr2="value2">
+      <elem3 attr1="value1" attr2="value2">text</elem3>
+    </elem2>
+  </elem1>
+  <elem4 attr1="value1" attr2="value2">text</elem4>
+  <elem5 attr1="value1" attr2="value2">
+    <elem6 attr1="value1" attr2="value2">
+      <elem7 attr1="value1" attr2="value2">text</elem7>
+    </elem6>
+    <elem8 attr1="value1" attr2="value2">text</elem8>
+  </elem5>
+  <elem9 attr1="value1" attr2="value2">text</elem9>
+</root>

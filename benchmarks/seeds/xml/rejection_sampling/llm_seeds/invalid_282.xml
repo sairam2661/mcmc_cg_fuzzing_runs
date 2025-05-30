@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE xml-stylesheet [
+  <!ENTITY % general-public-identifier 'http://www.example.org/xml-stylesheet'>
+  <!ENTITY % general-public-identifier2 '%general-public-identifier;'>
+]>
+<xml-stylesheet type='text/xsl' href='%general-public-identifier2;'/>
+<xml-stylesheet type='text/xsl' href='http://www.example.org/xml-stylesheet2'/>
+<xml-stylesheet type='text/xsl' href='http://www.example.org/xml-stylesheet3'/>
+<xml-stylesheet type='text/xsl' href='http://www.example.org/xml-stylesheet4'/>
+<xml-stylesheet type='text/xsl' href='http://www.example.org/xml-stylesheet5'/>
+<xml-stylesheet type='text/xsl' href='http://www.example.org/xml-stylesheet6'/>
+<xml-stylesheet type='text/xsl' href='http://www.example.org/xml-stylesheet7'/>
+<xml-stylesheet type='text/xsl' href='http://www.example.org/xml-stylesheet8'/>
+<xml-stylesheet type='text/xsl' href='http://www.example.org/xml-stylesheet9'/>
+<xml-stylesheet type='text/xsl' href='http://www.example.org/xml-stylesheet10'/>
+<xml-stylesheet type='text/xsl' href='http://www.example.org/xml-stylesheet11'/>
+<xml-stylesheet type='text/xsl' href='http://www.example.org/xml-stylesheet12'/>
+<xml-stylesheet type='text/xsl' href='http://www.example.org/xml-stylesheet13'/>
+<xml-stylesheet type='text/xsl' href='http://www.example.org/xml-stylesheet14'/>
+<xml-stylesheet type='text/xsl' href='http://www.example.org/xml-stylesheet15'/>
+<xml-stylesheet type='text/xsl' href='http://www.example.org/xml-stylesheet16'/>
+<xml-stylesheet type='text/xsl' href='http://www.example.org/xml-stylesheet17'/>
+<xml-stylesheet type='text/xsl' href='http://www.example.org/xml-stylesheet18'/>
+<xml-stylesheet type='text/xsl' href='http://www.example.org/xml-stylesheet19'/>
+<xml-stylesheet type='text/xsl' href='http://www.example.org/xml-stylesheet20'/>
+<xml-stylesheet type='text/xsl' href='http://www.example

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note SYSTEM "note.dtd">
+<!ELEMENT note (to,from,heading,body)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+<!ATTLIST note id ID #REQUIRED>
+<!ATTLIST note version CDATA #IMPLIED>
+<!ENTITY % note "note">
+<!ENTITY % noteAtt "noteAtt">
+<!ENTITY % noteAttAtt "noteAttAtt">
+<!ENTITY % att "att">
+<!ENTITY % attAtt "attAtt">
+<!ELEMENT att EMPTY>
+<!ELEMENT attAtt EMPTY>
+<!ATTLIST att id ID #REQUIRED>
+<!ATTLIST attAtt id ID #REQUIRED>
+<!ELEMENT p (#PCDATA)>
+<!ELEMENT ul (#PCDATA)>
+<!ELEMENT li (#PCDATA)>
+<!ELEMENT h (#PCDATA)>
+<!ELEMENT h1 (#PCDATA)>
+<!ELEMENT h2 (#PCDATA)>
+<!ELEMENT h3 (#PCDATA)>
+<!ELEMENT h4 (#PCDATA)>
+<!ELEMENT h5 (#PCDATA)>
+<!ELEMENT h6 (#PCDATA)>
+<!ELEMENT span (#PCDATA)>
+<!ELEMENT sub (#PCDATA)>
+<!ELEMENT sup (#PCDATA)>
+<!ELEMENT strong (#PCDATA)>
+<!ELEMENT em (#PCDATA)>
+<!ELEMENT b (#PCDATA)>
+<!ELEMENT i (#PCDATA)>
+<!ELEMENT u (#PCDATA)>
+<!ELEMENT s (#PCDATA)>
+<!ELEMENT strike (#PCDATA)>
+<!ELEMENT ins (#PCDATA)>
+<!ELEMENT del (#PCDATA)>
+<!ELEMENT a (#PCDATA)>
+<!ELEMENT img (#PCDATA)>
+<!ELEMENT map (#PCDATA)>
+<!ELEMENT object (#PCDATA)>
+<!ELEMENT table (#PCDATA)>
+<!ELEMENT tr (#PCDATA)>
+<!ELEMENT td (#PCDATA)>
+<!ELEMENT th (#PCDATA)>
+<!ELEMENT caption (#PCDATA)>
+<!ELEMENT col (#PCDATA)>
+<!ELEMENT colgroup (#PCDATA)>
+<!ELEMENT thead (#PCDATA)>
+<!ELEMENT tfoot (#PCDATA)>
+<!ELEMENT tbody (#PCDATA)>
+<!ELEMENT trgroup (#PCDATA)>
+<!ELEMENT tgroup (#PCDATA)>
+<!ELEMENT theadgroup (#PCDATA)>
+<!ELEMENT tfootgroup (#PCDATA)>
+<!ELEMENT tbodygroup (#PCDATA)>
+<!ELEMENT colgroupgroup (#PCDATA)>
+<!ELEMENT row (#PCDATA)>
+<!ELEMENT cell (#PCDATA)>
+<!ELEMENT group (#PCDATA)>
+<!ELEMENT list (#PCDATA)>
+<!ELEMENT item (#PCDATA)>
+<!ELEMENT dir (#PC

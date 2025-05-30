@@ -1,0 +1,117 @@
+set 
+  testdir 
+ { 
+ file 
+		
+	
+	 dirname   $argv0   } 
+ source  $testdir/tester.tcl 	 set   testprefix 
+ T0__0_w  set 	  timeout 	 60000   set  E   'Ng'   
+
+  	  ifcapable  
+
+	 w 		 {  	 do_test   
+	 h_   - 
+
+ 2 4 
+ . 
+ 7  	 { 	 
+
+ }  
+ {   {   BEGIN 
+ IMMEDIATE     ; 
+ INSERT INTO  Y_   		 VALUES 
+ ( 	 ''   	 ,  	
+ ""    )   	 ; 	 SELECT 	 count(*)   FROM   m2__   	 ;  
+ }  
+	 } 	
+	       do_execsql_test 
+
+ b2_ 
+
+ -    4 3 	 . 
+ 2  
+ { 
+
+
+	
+ INSERT INTO  EV   ( 
+  BW  	 ) 
+ SELECT 	 BH     		 ;  INSERT INTO  Z7T 	 
+ SELECT 	
+
+ M4__l     
+	  
+	 } 	 {   } 
+
+	     	  }  
+	 
+       do_test 
+ r 
+ - 	 6  . 
+  3    { 
+
+
+ } 
+
+	 5        ifcapable  J  {  ifcapable  M 	 { 
+ lappend 	 b0__  
+ ''       
+ } 	    		 db2  
+	 m  	     } 
+   
+	 ifcapable 	 Cs 	
+
+ { 
+	 if 
+ { 
+
+ { 
+	 ""   
+ }     } 
+ 	     != 
+ { 	  } 
+    	 {  
+	  } 
+    
+	 
+	   ifcapable 
+ E237 	  { 	 do_execsql_test 	 n_ 
+
+ - 	  5 6    . 	
+
+	 3 5 0   { 	 INSERT INTO 	 c_  
+ VALUES 
+ ( 	 "G"  
+ , 
+ 86   	
+	
+ )     ;   WITH 	  vx0_  ( 		 n2__P6_v  )   AS   
+ ( 	
+ COMMIT      UNION ALL   INSERT INTO 
+ mLQ    ( 
+ 
+
+  mf_ 
+	 , 
+ C 	 , 
+  g  
+		
+  ) 
+ SELECT 	 	
+			 count(*)     UNION ALL   INSERT INTO    H1   SELECT 	 *    
+ ) 
+ CREATE INDEX 
+ V 	
+	 ON   d   (   D    )     	  ; 	 ROLLBACK    
+ } 	 "VM"     
+ proc 	 	 
+ j 	 y    { 	   catchsql   $SL       lappend 
+	 W7    Sg  	    }  		   	 } 	     if     j44  
+	
+ { 	 } 	         o 
+ $p  	     
+ }    
+	 if    S   { 
+ } 
+     finish_test 	  

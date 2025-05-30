@@ -1,0 +1,26 @@
+set 
+ testdir 
+	
+ { 	  file 		 dirname   $argv0 
+
+ } 	 source 
+	 $testdir/tester.tcl 	 set 	 testprefix 
+  m   set 	 timeout 	 60000    ifcapable 	 
+ Y 
+ {   do_execsql_test 	 h0_   -  5 	 . 
+
+ 	 3   { 	  INSERT INTO 	 v 
+ VALUES 
+		  (  
+
+ "Fd}"  	 ,   ""   , 
+ ""    , 
+ 1  	 , 
+ 027.2    )    	 	 }   0     	 do_test  FJ_G    -   	   4   . 
+
+ 1 6    {  } 	
+
+ '8'      	  } 	     proc 	 m   { 
+ Kb   } 
+    
+ { 		 }       finish_test   

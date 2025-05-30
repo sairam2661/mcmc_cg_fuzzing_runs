@@ -1,0 +1,25 @@
+set 	 testdir 	 {  file 	 dirname   $argv0  }   source 
+ $testdir/tester.tcl  set   testprefix  	  vj 	 set  	 timeout 	 
+ 60000 	  proc 		 y8_L 
+ 
+ v_  	 { 
+	 	 } 
+   
+ if   $e7   	
+
+
+ >= 		 { 	 CREATE INDEX 	 iu 	 
+ ON   w_z 	
+		  (  b 
+  )    ; 	 BEGIN  
+ IMMEDIATE    ; 	 	
+		 COMMIT   	
+ ;  COMMIT      }    {  db2 	  c__    	  
+  } 	
+
+		   	 do_execsql_test 	 K 
+ -  6 5   .   6     {  	 COMMIT   
+ ;  
+ } 
+	 { 	 $K    }          finish_test 	
+		   

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE notes SYSTEM "d" [
+  <!ELEMENT notes (note+)>
+  <!ATTLIST note id ID #REQUIRED>
+  <!ENTITY desc SYSTEM "d">
+  <!ENTITY % ent1 "1">
+  <!NOTATION svg SYSTEM "f">
+  %ent1;
+  <!--
+  This is a sample XML document containing various markup declarations 
+  as well as a reference to a system entity, parameter entity, ID,
+  and CDATA sections. The document is also notated with a notation type.
+  -->
+]>
+<notes xmlns="m">
+  <xi:include href="f" xmlns:xi="x"/>
+  <note id="y" style="&desc;"/><!-- Some <raw> data -->
+  <note id="u">Another <note id="t" style="&desc;">note</note> note</note>
+  <info><![CDATA[
+    For the purposes of readability and clarity, we include this message as 
+    a series of nested CDATA sections within an otherwise text content.
+  ]]></info>
+  <title svg:width="4" svg:height="3" style="&desc;">Title</title>
+</notes>

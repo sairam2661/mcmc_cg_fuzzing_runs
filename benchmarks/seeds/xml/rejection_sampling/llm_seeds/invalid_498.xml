@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+<!ENTITY % ent SYSTEM "entities.ent">
+%ent;
+<!ENTITY pi "3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679">
+<!ENTITY e "2.71828182845904523536028747135266249775724709369995957496696762772407663035354759457138217852516642742746639193200305992181741359662904357290033608499838098425689262838058185981015253283624689918309486">
+<!ENTITY half "0.5">
+<!ENTITY quarter "0.25">
+<!ENTITY one "1">
+<!ENTITY two "2">
+<!ENTITY three "3">
+<!ENTITY four "4">
+<!ENTITY five "5">
+<!ENTITY six "6">
+<!ENTITY seven "7">
+<!ENTITY eight "8">
+<!ENTITY nine "9">
+<!ENTITY zero "0">
+<!ATTLIST book title CDATA #REQUIRED>
+<!ATTLIST book author CDATA #IMPLIED>
+<!ATTLIST book year CDATA #IMPLIED>
+<!ELEMENT book - - (title,author,year,chapter*)>
+<!ELEMENT chapter - - (title,section*)>
+<!ELEMENT section - - (title,para*)>
+<!ELEMENT para - - (#PCDATA)>
+<!ELEMENT title - - (#PCDATA)>
+<!ELEMENT author - - (#PCDATA)>
+<!ELEMENT year - - (#PCDATA)>
+<!ELEMENT chaptertitle - - (#PCDATA)>
+<!ELEMENT sectiontitle - - (#PCDATA)>
+]>
+<book title="Calculus" author="Isaac Newton">
+<year>1687</year>
+<chapter title="Limits">
+<section title="Introduction to Limits">
+<para>Mathematical analysis is the branch of mathematics dealing with limits and related theory of differentiation and integration.</para>
+</section>
+<section title="Types of Limits">
+<para>There are several types of limits, including one-sided limits, two-sided limits, and infinite limits.</para>
+</section>
+</chapter>
+<chapter title="Derivatives">
+<section title="Introduction to Derivatives">
+<para>A derivative is a measure of how a function changes as its input changes.</para>
+</section>
+<section title="Types of Derivatives">
+<para>There are several types of derivatives,

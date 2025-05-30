@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note SYSTEM "note.dtd">
+<!ELEMENT note (to,from,heading,body)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+<!ATTLIST note
+  id  CDATA  #REQUIRED
+  type (note|letter|memo) "note"
+  author CDATA #IMPLIED
+  date  CDATA  #IMPLIED
+>
+<note id="N001" type="letter" author="John Doe" date="2021-01-01">
+  <to>John Smith</to>
+  <from>John Doe</from>
+  <heading>Dear John</heading>
+  <body>
+    <p>This is a test.</p>
+    <p>This is another test.</p>
+  </body>
+</note>

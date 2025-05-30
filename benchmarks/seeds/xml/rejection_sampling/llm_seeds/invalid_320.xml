@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root [
+<!ELEMENT root (header,footer,section*)>
+<!ELEMENT header (#PCDATA)>
+<!ELEMENT footer (#PCDATA)>
+<!ELEMENT section (title,para+,list+)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT para (#PCDATA)>
+<!ELEMENT list (item+)>
+<!ELEMENT item (#PCDATA)>
+]>
+<root>
+<header>This is the header</header>
+<footer>This is the footer</footer>
+<section>
+<title>Section 1</title>
+<para>This is the first paragraph in section 1.</para>
+<para>This is the second paragraph in section 1.</para>
+<list>
+<item>Item 1</item>
+<item>Item 2</item>
+<item>Item 3</item>
+</list>
+</section>
+<section>
+<title>Section 2</title>
+<para>This is the first paragraph in section 2.</para>
+<para>This is the second paragraph in section 2.</para>
+<list>
+<item>Item 4</item>
+<item>Item 5</item>
+</list>
+</section>
+</root>

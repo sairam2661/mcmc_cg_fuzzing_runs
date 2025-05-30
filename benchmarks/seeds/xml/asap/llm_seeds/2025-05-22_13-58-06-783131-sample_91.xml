@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE note SYSTEM "m" [
+  <!ELEMENT note (from, to, body) >
+  <!ATTLIST note
+    id  ID #REQUIRED
+    version CDATA #IMPLIED
+  >
+  <!ENTITY x "x">
+  <!ENTITY % y "#">
+  <!NOTATION iso-8859-1SYSTEM "m">
+  %iso-8859-1;
+  <!--
+    Sample comment
+    in multiple lines
+  -->
+]>
+<note xmlns:db="m"
+  xmlns:xlink="x"
+  id="n"
+  version="1"
+  xml:lang="e"
+  xmlns="h">
+  <from db:href="a"/><to>Me</to>
+  <body>Some &x;.<br/>Some &y;
+    <xi:include xi:href="m" href="h" />
+  </body>
+</note>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE book PUBLIC '-//WAPFORUM//DTD WML 1.3//EN'
+ 'http://www.wapforum.org/DTD/wml13.dtd' [
+  <!ELEMENT book (title, body+)>
+  <!ATTLIST book
+   id  CDATA  #REQUIRED
+   lang  CDATA  #IMPLIED
+  >
+  <!ENTITY book-author "J"
+   >
+  <!ENTITY % book-title '(<i>)'
+   >
+  <!NOTATION wml-file SYSTEM 'wml-file.dtd'>
+ 									
+ 	%cdata-comment
+  	;<!-- &book; is the document’s

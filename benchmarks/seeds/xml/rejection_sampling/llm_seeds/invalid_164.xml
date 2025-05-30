@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+  <!ENTITY book-title "The Great Gatsby">
+  <!ENTITY book-author "F. Scott Fitzgerald">
+  <!ENTITY book-year "1925">
+]>
+<book xmlns="http://www.example.com/book" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.com/book http://www.example.com/book.xsd">
+  <title>&book-title;</title>
+  <author>&book-author;</author>
+  <year>&book-year;</year>
+  <summary>
+    <p>Set in the jazz age of the 1920s, the novel is a poignant and tragic love story.</p>
+    <p>It follows the enigmatic millionaire Jay Gatsby and his obsession with winning back his lost love, Daisy Buchanan.</p>
+  </summary>
+  <characters>
+    <character>
+      <name>Daisy Buchanan</name>
+      <description>Beautiful and charming, but also shallow and materialistic.</description>
+    </character>
+    <character>
+      <name>Jay Gatsby</name>
+      <description>A self-made millionaire with a mysterious past and a penchant for grandeur.</description>
+    </character>
+  </characters>
+  <sections>
+    <section>
+      <title>Chapter 1</title>
+      <text>
+        <p>The story begins with Nick Carraway, a young man from the Midwest, moving to New York City.</p>
+        <p>He rents a small house in Long Island, which is next to a grand mansion owned by his mysterious neighbor, Jay Gatsby.</p>
+      </text>
+    </section>
+    <section>
+      <title>Chapter 2</title>
+      <text>
+        <p>Nick and Gatsby become friends, and Nick learns more about Gatsby's past.</p>
+        <p>Gatsby's obsession with Daisy is revealed, and Nick begins to understand the complexities of their relationship.</p>
+      </text>
+    </section>
+  </sections>
+</book>

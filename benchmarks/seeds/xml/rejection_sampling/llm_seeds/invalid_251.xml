@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author,year,chapter+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST chapter id CDATA #REQUIRED>
+]>
+<book>
+  <title>My Book</title>
+  <author>John Doe</author>
+  <year>2022</year>
+  <chapter id="ch1">This is chapter 1.</chapter>
+  <chapter id="ch2">This is chapter 2.</chapter>
+  <description>This is a book about nothing.</description>
+  <chapter id="ch3">This is chapter 3.</chapter>
+</book>

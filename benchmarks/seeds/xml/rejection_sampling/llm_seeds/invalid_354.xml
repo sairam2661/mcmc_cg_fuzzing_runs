@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+<!ENTITY % entities "entities.ent">
+%entities;
+<!ENTITY book "book.dtd">
+<!ENTITY book-system "book-system.dtd">
+<!ENTITY book-system-internal "book-system-internal.dtd">
+<!ENTITY % book-system-param "%book-system; %book-system-internal;">
+<!ENTITY % book-param "%book; %book-system-param;">
+<!ENTITY % catalog-param "%book-param; %book-system-param;">
+<!ENTITY % book-list "%book; %book-system-param;">
+<!ENTITY % book-list-param "%book-list; %book-system-param;">
+<!ENTITY % book-list-param-internal "%book-list-param;">
+<!ENTITY % book-list-param-ext "%book-list-param-internal; %book-system-param;">
+<!ENTITY % book-list-param-ext-internal "%book-list-param-ext;">
+<!ENTITY % book-list-param-ext-internal-internal "%book-list-param-ext-internal;">
+<!ENTITY % book-list-param-ext-internal-internal-internal "%book-list-param-ext-internal-internal;">
+<!ENTITY % book-list-param-ext-internal-internal-internal-internal "%book-list-param-ext-internal-internal-internal;">
+<!ENTITY % book-list-param-ext-internal-internal-internal-internal-internal "%book-list-param-ext-internal-internal-internal-internal;">
+<!ENTITY % book-list-param-ext-internal-internal-internal-internal-internal-internal "%book-list-param-ext-internal-internal-internal-internal-internal;">
+<!ENTITY % book-list-param-ext-internal-internal-internal-internal-internal-internal-internal "%book-list-param-ext-internal-internal-internal-internal-internal-internal;">
+<!ENTITY % book-list-param-ext-internal-internal-internal-internal-internal-internal-internal-internal "%book-list-param-ext-internal-internal-internal-internal-internal-internal-internal;">
+<!ENTITY % book-list-param-ext-internal-internal-internal-internal-internal-internal-internal-internal-internal "%book-list-param-ext-internal-internal-internal-internal-internal-internal-internal-internal;">
+<!ENTITY % book-list-param-ext-internal-internal-internal-internal-internal-internal-internal-internal-internal-internal "%book-list-param-ext-internal-internal-internal-internal-internal-internal-internal-internal-internal;">
+<!ENTITY % book-list-param-ext-internal-internal-internal-internal-internal-

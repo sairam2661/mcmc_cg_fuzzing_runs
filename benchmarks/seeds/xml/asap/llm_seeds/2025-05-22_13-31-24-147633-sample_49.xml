@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE catalog SYSTEM "g" [
+  <!ELEMENT catalog (prod+)>
+  <!ATTLIST catalog author CDATA #REQUIRED>
+  <!ENTITY g SYSTEM "g">
+  <!ENTITY % f "#">
+  <!NOTATION g SYSTEM "g" >
+  %i;
+  <!--[ This is an inline comment ]--> 
+]>
+<catalog xmlns="h"
+  author="J"
+  xsi:noNamespaceSchemaLocation="d"
+  xml:lang="e"
+  xi:include="c">
+  <prod n="1">%f</prod>
+  <prod n="2">a</prod>
+  <prod n="3">B</prod>
+</catalog>

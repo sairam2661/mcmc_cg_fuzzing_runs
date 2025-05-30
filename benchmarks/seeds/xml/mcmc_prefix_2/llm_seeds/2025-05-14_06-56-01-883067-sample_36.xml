@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE catalog SYSTEM "d" [
+  <!ELEMENT catalog (book+)>
+  <!ATTLIST catalog id ID #REQUIRED>
+  <!ENTITY bookref "B">
+  <!ENTITY % entity-macro "B" >
+  <!NOTATION iso-plus-plus PUBLIC "D" "d">
+  %HOLD

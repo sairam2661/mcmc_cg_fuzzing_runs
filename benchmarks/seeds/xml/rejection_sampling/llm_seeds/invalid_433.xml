@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, publisher, copyright, contents)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT copyright (#PCDATA)>
+  <!ELEMENT contents (chapter+, section+)>  
+  <!ELEMENT chapter (#PCDATA)>
+  <!ELEMENT section (#PCDATA)>
+  <!ELEMENT table (#PCDATA)>
+  <!ELEMENT tr (#PCDATA)>
+  <!ELEMENT td (#PCDATA)>
+  <!ELEMENT figure (#PCDATA)>
+  <!ELEMENT figcaption (#PCDATA)>
+]>
+<book>
+  <title>The Great Gatsby</title>
+  <author>F. Scott Fitzgerald</author>
+  <publisher>Charles Scribner's Sons</publisher>
+  <copyright>1925</copyright>
+  <contents>
+    <chapter>Chapter 1</chapter>
+    <chapter>Chapter 2</chapter>
+    <section>Section 1.1</section>
+    <section>Section 1.2</section>
+    <table>
+      <tr>Row 1</tr>
+      <tr>Row 2</tr>
+    </table>
+    <figure>Figure 1</figure>
+    <figcaption>Caption 1</figcaption>
+  </contents>
+</book> 
+
+
+
+
+
+<!--xml file ends here-->
+
+
+
+
+<!--xml file ends here-->
+
+
+
+
+
+<!--xml file ends here-->
+
+
+
+
+
+<!--xml file ends here-->
+
+
+
+
+
+<!--xml file ends here-->
+
+
+
+
+
+<!--xml file ends here-->
+
+
+
+
+
+<!--xml file ends here-->
+
+
+
+
+
+<!--xml file ends here-->
+
+
+
+
+
+<!--xml file ends here-->
+
+
+
+
+
+<!--xml file ends here-->
+
+
+
+
+
+<!--xml file ends here-->
+
+
+
+
+
+<!--xml file ends here-->
+
+
+
+
+
+<!--xml file ends here-->
+
+
+
+
+
+<!--xml file ends here-->
+
+
+
+
+
+<!--xml file ends here-->
+
+
+
+
+
+<!--xml file ends here-->
+
+
+
+
+
+<!--xml file ends here-->
+
+
+
+
+
+<!--xml file ends here-->
+
+
+
+
+
+<!--xml file ends here-->
+
+
+
+
+
+<!--xml file ends here-->
+
+
+
+
+
+<!--xml file ends here-->
+
+
+
+
+
+<!--xml file ends here-->
+
+
+
+
+
+<!--xml file ends here-->
+
+
+
+
+
+<!--xml file ends here-->
+
+
+
+
+
+<!--xml file ends here-->
+
+
+
+
+
+<!--xml file ends here-->
+
+
+
+
+
+<!--xml file ends here-->
+
+
+
+
+
+<!--xml file ends here-->
+
+
+
+
+
+<!--xml file ends here-->
+
+
+
+
+
+<!--xml file ends here-->
+
+
+
+
+
+<!--xml file ends here-->
+
+
+
+
+
+<!--xml file ends here-->
+
+
+
+
+
+<!--

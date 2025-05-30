@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book SYSTEM "book.dtd">
+<!ENTITY nbsp "&#160;">
+<!ELEMENT book (title,author,year,chapter+,section+,para+)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT chapter (#PCDATA)>
+<!ELEMENT section (#PCDATA)>
+<!ELEMENT para (#PCDATA)>
+
+<book>
+  <title>The Book</title>
+  <author>John Doe</author>
+  <year>2000</year>
+  <chapter>Chapter 1</chapter>
+  <section>Section 1.1</section>
+  <para>This is a paragraph.</para>
+  <section>Section 1.2</section>
+  <para>This is another paragraph.</para>
+  <chapter>Chapter 2</chapter>
+  <section>Section 2.1</section>
+  <para>This is a third paragraph.</para>
+</book>

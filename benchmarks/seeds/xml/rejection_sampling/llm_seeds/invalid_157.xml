@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document [
+  <!ENTITY % general_entities SYSTEM "general-entities.dtd">
+  <!ENTITY % specific_entities SYSTEM "specific-entities.dtd">
+  %general_entities;
+  %specific_entities;
+]>
+<document xmlns:xs="http://www.w3.org/2001/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.w3.org/2001/XMLSchema document.xsd"
+          xmlns:ns1="http://example.org/ns1"
+          xmlns:ns2="http://example.org/ns2"
+          ns1:attr1="value1"
+          ns2:attr2="value2"
+          ns1:attr3="value3"
+          ns2:attr4="value4"
+          ns1:attr5="value5"
+          ns2:attr6="value6"
+          ns1:attr7="value7"
+          ns2:attr8="value8"
+          ns1:attr9="value9"
+          ns2:attr10="value10"
+          ns1:attr11="value11"
+          ns2:att12="value12"
+          ns1:attr13="value13"
+          ns2:attr14="value14"
+          ns1:attr15="value15"
+          ns2:attr16="value16">
+  <element>
+    <xs:attribute name="attr1" type="xs:string"/>
+    <xs:attribute name="attr2" type="xs:string"/>
+    <xs:attribute name="attr3" type="xs:string"/>
+    <xs:attribute name="attr4" type="xs:string"/>
+    <xs:attribute name="attr5" type="xs:string"/>
+    <xs:attribute name="attr6" type="xs:string"/>
+    <xs:attribute name="attr7" typeassistant="xs:string"/>
+    <xs:attribute name="attr8" typeassistant="xs:string"/>
+    <xs:attribute name="attr9" typeassistant="xs:string"/>
+    <xs:attribute name="attr10" typeassistant="xs:string"/>
+    <xs:attribute name="attr11" typeassistant="xs:string"/>
+    <xs:attribute name="attr12" typeassistant="xs:string"/>
+    <xs:attribute name="attr13" typeassistant="xs:string"/>
+    <xs:attribute name="attr

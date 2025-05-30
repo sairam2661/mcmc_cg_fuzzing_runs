@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root [
+<!ENTITY nbsp "&#160;">
+<!ENTITY amp "&#38;">
+<!ENTITY lt "&#60;">
+<!ENTITY gt "&#62;">
+<!ENTITY quot "&#34;">
+<!ENTITY apos "&#39;">
+<!ELEMENT root (person+)>
+<!ATTLIST root
+  id ID #REQUIRED
+  lang CDATA #IMPLIED
+  title CDATA #IMPLIED>
+<!ELEMENT person (name, address, phone, email)>
+<!ATTLIST person
+  id ID #REQUIRED
+  type (home|work|mobile) #IMPLIED>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT company (#PCDATA)>
+<!ELEMENT country (#PCDATA)>
+<!ELEMENT state (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT zip (#PCDATA)>
+<!ELEMENT stateabbr (#PCDATA)>
+<!ELEMENT countrycode (#PCDATA)>
+<!ELEMENT phone-type (#PCDATA)>
+<!ELEMENT email-type (#PCDATA)>
+
+<root id="r1" lang="en" title="Test Title">
+  <person id="p1" type="home">
+    <name>John Doe</name>
+    <address>
+      <company>Doe Inc.</company>
+      <country>USA</country>
+      <state>California</state>
+      <stateabbr>CA</stateabbr>
+      <city>San Francisco</city>
+      <street>123 Main St</street>
+      <zip>94111</zip>
+    </address>
+    <phone>
+      <phone-type>Home Phone</phone-type>
+      <email-type>Residential</email-type>
+      <email>johndoe@example.com</email>
+    </phone>
+    <phone>
+      <phone-type>Work Phone</phone-type>
+      <email-type>Business</email-type>
+      <email>johndoe@example.com</email>
+    </phone>
+  </person>
+  <person id="p2" type="mobile">
+    <name>Jane Doe</name>
+    <address>
+      <company>Doe Inc.</company>
+      <country>USA</country>
+      <state>California</state>
+      <stateabbr>CA</stateabbr>
+      <city>Los Angeles</city>
+      <street>456 Elm St</street>
+      <zip>90001</

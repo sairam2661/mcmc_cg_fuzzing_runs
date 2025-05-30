@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<!DOCTYPE root [
+<!ENTITY ent1 SYSTEM "file:///path/to/resource">
+<!ENTITY ent2 SYSTEM "http://www.example.com/resource">
+<!ENTITY ent3 SYSTEM "file:///path/to/resource2">
+<!ENTITY ent4 SYSTEM "http://www.example.com/resource2">
+<!ENTITY ent5 SYSTEM "file:///path/to/resource3">
+<!ENTITY ent6 SYSTEM "http://www.example.com/resource3">
+<!ATTLIST root xmlns:ext "http://www.example.com/ext">
+<!ATTLIST root xmlns:local "http://www.example.com/local">
+<!ELEMENT root (#PCDATA | ext:element | local:element)*>
+<!ELEMENT ext:element (#PCDATA | ext:element)*>
+<!ELEMENT local:element (#PCDATA | local:element)*>
+<!ELEMENT comment ((#PCDATA | ext:element | local:element)*, (#PCDATA | ext:element | local:element)*)>
+<!ELEMENT doc ((#PCDATA | ext:element | local:element)*, (#PCDATA | ext:element | local:element)*)>
+<!ELEMENT child ((#PCDATA | ext:element | local:element)*, (#PCDATA | ext:element | local:element)*)>
+<!ELEMENT ext:child ((#PCDATA | ext:element)*, (#PCDATA | ext:element)*)>
+<!ELEMENT local:child ((#PCDATA | local:element)*, (#PCDATA | local:element)*)>
+<!ELEMENT element ((#PCDATA | ext:element | local:element)*, (#PCDATA | ext:element | local:element)*)>
+<!ELEMENT local:element ((#PCDATA | local:element)*, (#PCDATA | local:element)*)>
+<!ELEMENT ext:element ((#PCDATA | ext:element)*, (#PCDATA | ext:element)*)>
+<!ELEMENT comment ((#PCDATA | ext:element | local:element)*, (#PCDATA | ext:element | local:element)*)>
+<!ELEMENT child ((#PCDATA | ext:element | local:element)*, (#PCDATA | ext:element | local:element)*)>
+<!ELEMENT doc ((#PCDATA | ext:element | local:element)*, (#PCDATA | ext:element | local:element)*)>
+<!ELEMENT local:child ((#PCDATA | local:element)*,

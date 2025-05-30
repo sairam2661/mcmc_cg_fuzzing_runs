@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE book [
+<!ELEMENT book (title,author,chapter+)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT chapter (#PCDATA)>
+<!ATTLIST chapter id CDATA #REQUIRED>
+<!ATTLIST chapter title CDATA #IMPLIED>
+]>
+<book>
+<chapter id="C001" title="Introduction">
+Introduction to XML
+</chapter>
+<chapter id="C002">
+Chapter 2: XML Syntax
+</chapter>
+</book>

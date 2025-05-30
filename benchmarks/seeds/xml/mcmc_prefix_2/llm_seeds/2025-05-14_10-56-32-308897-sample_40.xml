@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE books [
+  <!ELEMENT books (book+)>
+  <!ATTLIST books
+    lang CDATA #IMPLIED
+    id ID #IMPLIED
+  >
+  <!ENTITY author "J">
+  <!ENTITY 	%t1 "&#x0A;">
+  <!NOTATION xslt SYSTEM "x">

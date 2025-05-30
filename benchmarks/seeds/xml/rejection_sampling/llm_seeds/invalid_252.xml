@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ENTITY chapter1 "Chapter 1">
+  <!ENTITY chapter2 "Chapter 2">
+  <!ENTITY chapter3 "Chapter 3">
+  <!ENTITY chapter4 "Chapter 4">
+]>
+<book>
+  <title>My Book</title>
+  <author>
+    <name>Me</name>
+    <affiliation>
+      <institution>My University</institution>
+      <department>My Department</department>
+    </affiliation>
+  </author>
+  <publisher>
+    <name>My Publisher</name>
+    <address>
+      <street>123 Main St</street>
+      <city>New York</city>
+      <state>NY</state>
+      <country>USA</country>
+      <postalcode>10001</postalcode>
+    </address>
+  </publisher>
+  <copyright>
+    <year>2022</year>
+    <holder>Me</holder>
+  </copyright>
+  <toc>
+    <chapter refid="chapter1">
+      <title>Introduction</title>
+    </chapter>
+    <chapter refid="chapter2">
+      <title>Methodology</title>
+    </chapter>
+    <chapter refid="chapter3">
+      <title>Results</title>
+    </chapter>
+    <chapter refid="chapter4">
+      <title>Conclusion</title>
+    </chapter>
+  </toc>
+  <body>
+    <section>
+      <title>Introduction</title>
+      <para>
+        This is a paragraph.
+      </para>
+    </section>
+    <section>
+      <title>Methodology</title>
+      <para>
+        This is another paragraph.
+      </para>
+    </section>
+  </body>
+</book>

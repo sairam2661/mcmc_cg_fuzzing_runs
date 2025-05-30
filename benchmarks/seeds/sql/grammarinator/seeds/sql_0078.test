@@ -1,0 +1,24 @@
+set 
+
+ 	 testdir  	
+	 { 
+
+ file  dirname 
+ $argv0 
+  } 
+ source 
+	
+   $testdir/tester.tcl  set   testprefix 	 b0 
+  		
+  set   timeout 
+ 60000 			
+ set 	 f7 	 4   	    set  	
+
+ Ac 
+
+ M    	  ifcapable 	  O  	 { 	 db2 
+  SH 	
+	
+ K_ln  	    
+ } 
+    				  finish_test    

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+<!ELEMENT catalog (item*)>
+<!ELEMENT item (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT quantity (#PCDATA)>
+<!ELEMENT category (#PCDATA)>
+<!ELEMENT subcategory (#PCDATA)>
+<!ATTLIST item id CDATA #REQUIRED>
+<!ATTLIST item category CDATA #IMPLIED>
+<!ATTLIST item subcategory CDATA #IMPLIED>
+<!ENTITY % p1 "product">
+<!ENTITY % p2 "product2">
+<!ENTITY % p3 "product3">
+<!ENTITY % p4 "product4">
+<!ENTITY % p5 "product5">
+<!ENTITY % p6 "product6">
+<!ENTITY % p7 "product7">
+<!ENTITY % p8 "product8">
+<!ENTITY % p9 "product9">
+<!ENTITY % p10 "product10">
+<!ELEMENT products (%p1;,%p2;,%p3;,%p4;,%p5;,%p6;,%p7;,%p8;,%p9;,%p10;)>
+<!ELEMENT product (%p1;,%p2;,%p3;,%p4;,%p5;,%p6;,%p7;,%p8;,%p9;,%p10;)>
+<!ATTLIST products id CDATA #REQUIRED>
+<!ATTLIST product id CDATA #REQUIRED>
+]>
+<catalog>
+  <item id="1" category="Electronics" subcategory="Laptops">
+    <name>Apple MacBook</name>
+    <description>Apple MacBook laptop with 16GB RAM and 512GB SSD.</description>
+    <price>$1,999.99</price>
+    <quantity>10</quantity>
+  </item>
+  <item id="2" category="Electronics" subcategory="Smartphones">
+    <name>Samsung Galaxy S22</name>
+    <description>Samsung Galaxy S22 smartphone with 12GB RAM and 128GB storage.</description>
+    <price>$999.99</price>
+    <quantity>20</quantity>
+  </item>
+  <item id="3" category="Fashion" subcategory="Clothing">
+    <name>Nike T-Shirt</name>
+    <description>Nike T-Shirt in black color.</description>
+    <price>$29.99</price>
+    <quantity

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, chapter+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ATTLIST chapter id CDATA #REQUIRED>
+  <!ELEMENT content (#PCDATA)>
+  <!ELEMENT text (#PCDATA)>
+  <!ELEMENT link (#PCDATA)>
+  <!ELEMENT image (#PCDATA)>
+  <!ELEMENT list (item+)>
+  <!ELEMENT item (#PCDATA)>
+  <!ELEMENT note (#PCDATA)>
+  <!ELEMENT footnote (#PCDATA)>
+  <!ELEMENT bibliography (entry+)>
+  <!ELEMENT entry (#PCDATA)>
+  <!ELEMENT section (#PCDATA)>
+  <!ELEMENT quote (#PCDATA)>
+  <!ELEMENT reference (#PCDATA)>
+]>
+<book>
+  <title>The History of Rome</title>
+  <author>Unknown</author>
+  <chapter id="Chapter 1">The Founding of Rome</chapter>
+  <content>...</content>
+  <text>...</text>
+  <link>https://example.com</link>
+  <image>image1.jpg</image>
+  <list>
+    <item>Item 1</item>
+    <item>Item 2</item>
+  </list>
+  <note>Important note</note>
+  <footnote>Footnote 1</footnote>
+  <bibliography>
+    <entry>Book 1</entry>
+    <entry>Book 2</entry>
+  </bibliography>
+  <section>Introduction</section>
+  <quote>“Roma, non est Roma.”</quote>
+  <reference>Source: Wikipedia</reference>
+</book>

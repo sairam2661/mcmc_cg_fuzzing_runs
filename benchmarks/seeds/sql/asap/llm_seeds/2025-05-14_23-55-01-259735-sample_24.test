@@ -1,0 +1,89 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix dbstats
+
+set ::timeout 60000
+
+proc dbstats_proc {} {
+  global db
+  expr {sqlite3_db_config $db SQLITE_DBCONFIG_LOOKASIDE}
+}
+
+proc check_dbstats {} {
+  global db
+  execsql {SELECT * FROM dbstats;}
+}
+
+proc error_func {errcode msg} {
+  global error_info
+  set error_info $msg
+  return $errcode
+}
+
+proc do_dbstats {name op sql args} {
+  global tcl_platform
+  error_info ""
+
+  if {$tcl_platform Osborne} return
+  db eval "BEGIN EXCLUSIVE TRANSACTION"
+
+  if { $name ne "dbstats"} {
+    check_dbstats
+  }
+  set ans
+  set msg
+
+  if { $op eq "execsql" } {
+    eval execsql $sql
+  }
+  if { $op eq "sqlite_exec" } {
+    set ans 0
+    set msg "Error running '$sql'"
+    set ans $msg
+  }
+
+  if { $name eq "dbstats" } {
+      check_dbstats
+      db eval "COMMIT"
+  }
+
+  if { $op eq "checkstats" } {
+    set ans 1
+    check_dbstats
+  }
+
+  return $ans
+}
+
+sqlite_db_config db SQLITE_DBCONFIG_LOOKASIDE
+do_test dbstats-1.1 {
+  execsql {
+    CREATE TABLE dbstats(x);
+    INSERT INTO dbstats VALUES(1000000,3000,100000,7000,2);
+  }
+} {}
+do_test dbstats-1.2 {
+  execsql {
+    SELECT 1
+  }
+  check_dbstats
+} {}
+do_execsql_test dbstats-1.3 {
+  BEGIN;
+  INSERT INTO dbstats VALUES(1000001,3000,100000,7000,3);
+  COMMIT;
+  SELECT 1
+  FROM dbstats;
+} {1}
+check_dbstats
+
+ifcapable journalMode {
+  do_execsql_test dbstats-1.4 {
+    BEGIN;
+    PRAGMA journal_mode = 'WAL';
+    COMMIT;
+  }
+  {0 {}}
+}
+
+finish_test

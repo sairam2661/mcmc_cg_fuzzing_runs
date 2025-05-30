@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!DOCTYPE book [
+  <!ENTITY entity "a symbol">
+  <!ELEMENT book (author, title, &entity;)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+]>
+<book>
+  <author>Richard Feynman</author>
+  <title>The Feynman Lectures</title>
+  <entity/>
+</book>
+<?xml-stylesheet href="feynman.css" type="text/css"?>
+<!ATTLIST book attr1 CDATA #REQUIRED attr2 (yes|no) 'yes'>
+<!NOTATION MathML PUBLIC '-//W3C//DTD MathML 2.0//EN'>
+<!ELEMENT math (#PCDATA)>
+<!ELEMENT fraction (#PCDATA)>
+<!ELEMENT numerator (#PCDATA)>
+<!ELEMENT denominator (#PCDATA)>
+<!ATTLIST math system (MathML|LaTeX) 'MathML'>
+<!ATTLIST math lang CDATA #IMPLIED>
+<!ENTITY % entity-set "entity1 entity2 entity3">
+<!ENTITY entity1 "one">
+<!ENTITY entity2 "two">
+<!ENTITY entity3 "three">
+<!ELEMENT entities (%entity-set;)>
+<!ELEMENT entity (#PCDATA)>
+<!ELEMENT section (%entity-set;)>
+<!ELEMENT chapter (%entity-set;)>
+<!ELEMENT book (%entity-set;)>
+<!ELEMENT author (%entity-set;)>
+<!ELEMENT title (%entity-set;)>
+<!ELEMENT note (%entity-set;)>
+<!ELEMENT ref (%entity-set;)>
+<!ELEMENT sub (%entity-set;)>
+<!ELEMENT sup (%entity-set;)>
+<!ELEMENT subsub (%entity-set;)>
+<!ELEMENT supsup (%entity-set;)>
+<!ELEMENT frac (%entity-set;)>
+<!ELEMENT root (%entity-set;)>
+<!ELEMENT sign (%entity-set;)>
+<!ELEMENT degree (%entity-set;)>
+<!ELEMENT radicand (%entity-set;)>
+<!ELEMENT radicand (%entity-set;)>
+<!ELEMENT sqrt (%entity-set;)>
+<!ELEMENT integrand (%entity-set;)>
+<!ELEMENT integral (%entity-set;)>
+<!ELEMENT lim (%entity-set;)>
+<!ELEMENT dfrac (%entity-set;)>
+<!ELEMENT mfrac (%entity-set;)>
+<!ELEMENT mtable (%entity-set;)>
+<!ELEMENT mtr (%entity-set;)>
+<!ELEMENT mtd (%entity-set;)>
+<!ELEMENT mtd (%entity-set;)>
+<!ELEMENT mrow (%entity-set;)>
+<!ELEMENT mi (%entity-set;)>
+<!ELEMENT mfrac (%entity-set;)

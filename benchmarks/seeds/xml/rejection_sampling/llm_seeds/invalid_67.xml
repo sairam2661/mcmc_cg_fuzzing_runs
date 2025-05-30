@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE catalog [
+<!ELEMENT catalog (product+)>
+<!ELEMENT product (name, description, price)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ATTLIST product id CDATA #REQUIRED>
+<!ATTLIST product vendor CDATA #IMPLIED>
+<!ENTITY product1 "Pencil">
+<!ENTITY product2 "Erasers">
+<!ENTITY product3 "Notebook">
+<!ENTITY product4 "Calculator">
+<!ENTITY product5 "Scanner">
+<!ENTITY product6 "Printer">
+<!ENTITY product7 "Mouse">
+<!ENTITY product8 "Keyboard">
+<!ENTITY product9 "Monitor">
+<!ENTITY product10 "Speakers">
+<!ELEMENT vendor (address, contact)>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT contact (#PCDATA)>
+<!ATTLIST vendor id CDATA #REQUIRED>
+<!ATTLIST vendor name CDATA #IMPLIED>
+]>
+<catalog>
+<product id="1" vendor="Acme Inc." name="&product1;" description="Writing utensil" price="0.99"/>
+<product id="2" vendor="Widget Corp." name="&product2;" description="Eraser" price="1.99"/>
+<product id="3" vendor="Acme Inc." name="&product3;" description="Notebook" price="2.99"/>
+<product id="4" vendor="Widget Corp." name="&product4;" description="Calculator" price="4.99"/>
+<product id="5" vendor="Acme Inc." name="&product5;" description="Scanner" price="5.99"/>
+<product id="6" vendor="Widget Corp." name="&product6;" description="Printer" price="6.99"/>
+<product id="7" vendor="Acme Inc." name="&product7;" description="Mouse" price="7.99"/>
+<product id="8" vendor="Widget Corp." name="&product8;" description="Keyboard" price="8.99"/>
+<product id="9" vendor="Acme Inc." name="&product9;" description="Monitor" price="9.99"/>
+<product id="10" vendor="Widget Corp." name="&product10;" description="Speakers" price="10.99"/>
+<vendor id="1" name="Acme Inc." address="123 Main St" contact="555-1234"/>

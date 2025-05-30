@@ -1,0 +1,37 @@
+set   testdir  
+ { 	 file  		 dirname   $argv0 
+ } 	 source  	  $testdir/tester.tcl 
+ set   testprefix 
+
+	 
+ K 	 set 
+ timeout 
+ 60000 
+ set    p 
+	 f7     	 set  t  v  
+	
+		    set   B9C 	 U  
+
+  
+ set 		 Q7  	 a       set 		
+ R_X_  	 
+ {  COMMIT    ;  
+	 }  
+ 
+   
+ set 		  m 	  { 
+ BEGIN 	   
+ ; 
+ 		 ROLLBACK    ;  	 	 }  	
+  
+ set   I   1     		 set 	 y1_ 	 { 
+
+ }        
+
+  proc 
+ r 		 M4   
+ {   return 	 
+ $::zbn60     db 
+
+ k_V2 
+    	 }    	  finish_test   

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, publisher, copyright)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT copyright (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ELEMENT section (#PCDATA)>
+  <!ELEMENT paragraph (#PCDATA)>
+  <!ELEMENT quote (#PCDATA)>
+  <!ELEMENT citation (#PCDATA)>
+  <!ELEMENT bibliography (#PCDATA)>
+  <!ELEMENT figure (#PCDATA)>
+  <!ELEMENT table (#PCDATA)>
+  <!ELEMENT table-row (#PCDATA)>
+  <!ELEMENT table-data (#PCDATA)>
+]>
+<book>
+  <title>XML Tutorial</title>
+  <author>John Smith</author>
+  <publisher>ABC Publishing</publisher>
+  <copyright>2023</copyright>
+  <chapter>Chapter 1</chapter>
+  <section>Section 1.1</section>
+  <paragraph>This is a paragraph.</paragraph>
+  <quote>This is a quote.</quote>
+  <citation>Citation 1</citation>
+  <bibliography>Bibliography 1</bibliography>
+  <figure>Figure 1</figure>
+  <table>
+    <table-row>Row 1</table-row>
+    <table-row>Row 2</table-row>
+  </table>
+  <table-data>Data 1</table-data>
+</book>

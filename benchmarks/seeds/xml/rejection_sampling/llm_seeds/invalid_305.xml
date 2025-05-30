@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ENTITY book-author "John Doe">
+  <!ENTITY book-title "The Great Gatsby">
+  <!ENTITY book-publisher "HarperCollins">
+  <!ELEMENT book (title, author, publisher, chapter*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ATTLIST chapter (id CDATA #REQUIRED)>
+]>
+<book>
+  &book-title;
+  &book-author;
+  &book-publisher;
+  <chapter id="chap1">This is chapter one.</chapter>
+  <chapter id="chap2">This is chapter two.</chapter>
+  <chapter id="chap3">This is chapter three.</chapter>
+</book>

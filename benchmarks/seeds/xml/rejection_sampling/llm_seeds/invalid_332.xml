@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE doc [
+<!ELEMENT doc (header,section*)>
+<!ELEMENT header (#PCDATA)>
+<!ELEMENT section (title,para+,fig+)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT para (#PCDATA)>
+<!ELEMENT fig (image,legend)>
+<!ELEMENT image (#PCDATA)>
+<!ELEMENT legend (#PCDATA)>
+]>
+<doc>
+<header>This is the header</header>
+<section>
+<title>Section 1</title>
+<para>This is paragraph 1</para>
+<para>This is paragraph 2</para>
+<fig>
+<image>image1.jpg</image>
+<legend>This is the legend for image1</legend>
+</fig>
+<fig>
+<image>image2.jpg</image>
+<legend>This is the legend for image2</legend>
+</fig>
+</section>
+<section>
+<title>Section 2</title>
+<para>This is paragraph 3</para>
+<para>This is paragraph 4</para>
+<fig>
+<image>image3.jpg</image>
+<legend>This is the legend for image3</legend>
+</fig>
+</section>
+</doc>

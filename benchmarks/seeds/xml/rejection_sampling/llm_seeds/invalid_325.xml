@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root SYSTEM "root.dtd">
+<!ENTITY ent1 "ENTITY ent1">
+<!ENTITY ent2 "ENTITY ent2">
+<!ELEMENT root (person+, address?)>
+<!ELEMENT person (name, phone+, email+)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
+<!ATTLIST root id CDATA #REQUIRED>
+<!ATTLIST person id CDATA #REQUIRED>
+<!ATTLIST address id CDATA #REQUIRED>
+<!ENTITY % ent3 "%ent1; %ent2;">
+<root id="rootid">
+  <person id="pid1">
+    <name>John Doe</name>
+    <phone>123-456-7890</phone>
+    <phone>987-654-3210</phone>
+    <email>johndoe@example.com</email>
+    <email>johndoe2@example.com</email>
+  </person>
+  <person id="pid2">
+    <name>Jane Doe</name>
+    <phone>555-555-5555</phone>
+    <email>janedoe@example.com</email>
+  </person>
+  <address id="aid1">
+    123 Main St
+    Anytown, USA 12345
+  </address>
+</root>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book SYSTEM "book.dtd">
+<!ELEMENT book (title, author, chapter*))
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT chapter (title, paragraph*)>
+<!ELEMENT paragraph (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT book SYSTEM "book.dtd">
+<!ELEMENT chapter SYSTEM "chapter.dtd">
+<!ATTLIST chapter id CDATA #REQUIRED>
+<!ELEMENT paragraph SYSTEM "paragraph.dtd">
+<!ATTLIST paragraph id CDATA #REQUIRED>
+<!ELEMENT title SYSTEM "title.dtd">
+<!ATTLIST title author CDATA #IMPLIED>
+<!ELEMENT author SYSTEM "author.dtd">
+<!ATTLIST author name CDATA #IMPLIED>
+<!ELEMENT book (title, author, chapter+)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT chapter (title, paragraph+)>
+<!ELEMENT paragraph (#PCDATA)>
+<book>
+  <title>The Great Gatsby</title>
+  <author>F. Scott Fitzgerald</author>
+  <chapter id="chap1">
+    <title>Chapter 1</title>
+    <paragraph id="para1">It was a cold and dark winter morning.</paragraph>
+    <paragraph id="para2">The sky was gray and the wind was blowing.</paragraph>
+  </chapter>
+  <chapter id="chap2">
+    <title>Chapter 2</title>
+    <paragraph id="para1">The snow was falling gently.</paragraph>
+    <paragraph id="para2">The world was quiet and still.</paragraph>
+  </chapter>
+</book>

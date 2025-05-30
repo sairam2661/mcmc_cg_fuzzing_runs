@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE catalog[
+  <!ELEMENT catalog (product*)>
+  <!ATTLIST catalog id ID #IMPLIED>
+  <!ENTITY product1 "L" >
+  <!ENTITY % product2 "P">
+  <!NOTATION xml PUBLIC " "
+    " ">
+  %product2;
+  <!-- xml-->
+]><catalog id="1" xml:lang='en'>
+  <product>Product 1</product>
+  <description>
+    &product1;
+    Some text
+  </description>
+</catalog>

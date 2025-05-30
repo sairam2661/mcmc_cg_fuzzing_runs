@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (title,author,price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT fax (#PCDATA)>
+  <!ELEMENT country (#PCDATA)>
+  <!ELEMENT company (#PCDATA)>
+]>
+<catalog>
+  <book>
+    <title>XML: The Definitive Guide</title>
+    <author>Michael Kay</author>
+    <price>49.95</price>
+    <address>123 Main St</address>
+    <phone>123-456-7890</phone>
+    <email>mkay@xml.com</email>
+    <fax>123-456-7891</fax>
+    <country>USA</country>
+    <company>Wrox Press</company>
+  </book>
+  <book>
+    <title>XML in 10 Easy Steps</title>
+    <author>Mark Lutz</author>
+    <price>29.95</price>
+    <address>456 Elm St</address>
+    <phone>987-654-3210</phone>
+    <email>mlutz@xml.com</email>
+    <fax>987-654-3211</fax>
+    <country>Canada</country>
+    <company>O'Reilly Media</company>
+  </book>
+</catalog>

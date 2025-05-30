@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "file:///C:/Users/username/Documents/HTML5.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <title>Sample Page</title>
+  </head>
+  <body>
+    <p>This is a sample paragraph.</p>
+    <section id="main-section">
+      <h2>Main Section</h2>
+      <p>This is a sample paragraph in a section.</p>
+      <p>This is another sample paragraph in a section.</p>
+    </section>
+    <nav>
+      <ul>
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
+      </ul>
+    </nav>
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript">
+      var x = 5;
+      alert(x);
+    </script>
+  </body>
+</html>

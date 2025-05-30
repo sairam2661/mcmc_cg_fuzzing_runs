@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE inventory [
+<!ENTITY % dtd PUBLIC "-//example//DTD example DTD 1.0//EN"
+  "http://example.com/example.dtd">
+  %dtd;
+<!ATTLIST myroot
+  id ID #REQUIRED
+  name CDATA #IMPLIED
+  version CDATA #IMPLIED
+  xmlns:xs "http://www.w3.org/2001/XMLSchema-instance"
+  xs:noNamespaceSchemaLocation "http://example.com/schema.xsd"
+  xmlns:xsi "http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation "http://example.com/ http://example.com/schema.xsd"
+<!ELEMENT myroot (item+)>
+<!ELEMENT item (description*, (quantity|weight|price)*)>
+<!ELEMENT description (#PCDATA)>
+<!ATTLIST description
+  id ID #REQUIRED
+  language CDATA #IMPLIED
+<!ELEMENT quantity (#PCDATA)>
+<!ATTLIST quantity
+  unit CDATA #IMPLIED
+<!ELEMENT weight (#PCDATA)>
+<!ATTLIST weight
+  unit CDATA #IMPLIED
+<!ELEMENT price (#PCDATA)>
+<!ATTLIST price
+  currency CDATA #IMPLIED
+<!ELEMENT itemref (#PCDATA)>
+<!ATTLIST itemref
+  id IDREF #REQUIRED
+  relation CDATA #IMPLIED
+<!ELEMENT itemset (itemref+|item+)>
+<!ELEMENT itemsetref (#PCDATA)>
+<!ATTLIST itemsetref
+  id IDREF #REQUIRED
+  relation CDATA #IMPLIED
+<!ELEMENT itemsetset (itemsetref+|itemset+)>
+<!ELEMENT itemsetsetref (#PCDATA)>
+<!ATTLIST itemsetsetref
+  id IDREF #REQUIRED
+  relation CDATA #IMPLIED
+<!ELEMENT itemsetsetref (itemsetsetref+, itemsetset+)>
+]>
+<myroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://example.com/ http://example.com/schema.xsd"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+  id="root"
+  name="My Inventory"
+  version="1.0">
+  <item>
+    <description id="desc1" language="en">This is a description</description>
+    <quantity unit="kg">2</quantity>
+    <price currency="USD">10.99</

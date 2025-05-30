@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author,chapter+)>
+  <!ATTLIST book
+    id ID #REQUIRED
+  >
+  <!ENTITY chapter-num "1">
+  <!ENTITY % sectionEntities "b" >
+  <!NOTATION iso-8859-15 PUBLIC "I" "I">
+  %sectionEntities;
+  <!--
+    Internal DTD subset declaration
+  -->
+]>
+<book id="B">
+  <title>My Book</title>
+  <author>John Doe</author>
+  <chapter ref="c">
+    &chapter-num;
+    <title>Chapter 1</title>
+    <section>Some text in the first chapter section</section>
+  </chapter>
+  <chapter ref="c">
+    <title>Chapter 2</title>
+    <section>Some text in the second chapter section</section>
+  </chapter>
+</book>

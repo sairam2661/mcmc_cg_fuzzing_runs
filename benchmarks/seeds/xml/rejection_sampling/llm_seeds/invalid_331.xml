@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE notes [
+  <!ELEMENT notes (note+)>
+  <!ELEMENT note (title, body)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT body (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT date (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT address (street, city, state, zip)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ELEMENT contact (phone, email)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT phonebook (phone+)>
+  <!ELEMENT emailbook (email+)>
+  <!ELEMENT phonebookref (#PCDATA)>
+  <!ELEMENT emailbookref (#PCDATA)>
+  <!ATTLIST note id CDATA #REQUIRED>
+  <!ATTLIST note author CDATA #IMPLIED>
+  <!ATTLIST note date CDATA #IMPLIED>
+  <!ATTLIST note category CDATA #IMPLIED>
+]>
+<notes>
+  <note id="1" author="John Doe" date="2022-01-01" category="Work">
+    <title>Meeting Notes</title>
+    <body>Attendees: John, Jane, Bob</body>
+    <author>John Doe</author>
+    <date>2022-01-01</date>
+    <category>Work</category>
+    <address>
+      <street>123 Main St</street>
+      <city>Anytown</city>
+      <state>CA</state>
+      <zip>12345</zip>
+    </address>
+    <contact>
+      <phone>555-1234</phone>
+      <email>johndoe@example.com</email>
+    </contact>
+    <phonebook>
+      <phone>555-5678</phone>
+      <phone>555-9012</phone>
+    </phonebook>
+    <emailbook>
+      <email>jane@example.com</email>
+      <email>bob@example.com</email>
+    </emailbook>
+  </note>
+  <note id="2" author="Jane Doe" date="2022-01-02" category="Personal">
+    <title>Personal Notes</title>
+    <body>Buy milk</body>
+    <author>Jane Doe</author>
+    <

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document [
+  <!ELEMENT document (root)>,
+  <!ELEMENT root (header, body, footer)>,
+  <!ELEMENT header (#PCDATA)>,
+  <!ELEMENT body (section*)>,
+  <!ELEMENT section (title, paragraph+)>,
+  <!ELEMENT title (#PCDATA)>,
+  <!ELEMENT paragraph (#PCDATA)>,
+  <!ELEMENT footer (#PCDATA)>,
+  <!ATTLIST section id ID #REQUIRED, class CDATA #IMPLIED>
+]>
+<document>
+  <root>
+    <header>This is the header</header>
+    <body>
+      <section id="s1" class="main">This is section 1</section>
+      <section id="s2" class="main">This is section 2</section>
+      <section id="s3" class="side">This is section 3</section>
+      <section id="s4" class="side">This is section 4</section>
+    </body>
+    <footer>This is the footer</footer>
+  </root>
+</document>

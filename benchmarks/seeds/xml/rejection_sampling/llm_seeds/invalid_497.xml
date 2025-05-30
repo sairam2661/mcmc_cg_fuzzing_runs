@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog SYSTEM "catalog.dtd">
+<catalog xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+  xs:noNamespaceSchemaLocation="catalog.xsd">
+  <book id="bk101" xmlns="http://www.w3schools.com/xsl">
+    <title>XML</title>
+    <author>John Doe</author>
+    <genre>Computer</genre>
+    <price>39.95</price>
+    <publish_date>2000-10-01</publish_date>
+    <description>An XML tutorial</description>
+  </book>
+  <book id="bk102">
+    <title>XML</title>
+    <author>Jane Doe</author>
+    <genre>Computer</genre>
+    <price>39.95</price>
+    <publish_date>2000-10-01</publish_date>
+    <description>An XML tutorial</description>
+  </book>
+  <book id="bk103">
+    <title>XML</title>
+    <author>John Doe</author>
+    <genre>Computer</genre>
+    <price>39.95</price>
+    <publish_date>2000-10-01</publish_date>
+    <description>An XML tutorial</description>
+  </book>
+</catalog>

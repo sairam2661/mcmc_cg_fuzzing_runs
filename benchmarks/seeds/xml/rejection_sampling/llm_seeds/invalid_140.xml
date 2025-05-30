@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE doc [
+<!ENTITY % ent SYSTEM "ent.ent">
+%ent;
+<!ELEMENT doc (title, body, img*, (link|anchor)*, (para|list|table)*, note?)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+<!ELEMENT img EMPTY>
+<!ELEMENT link (#PCDATA)>
+<!ELEMENT anchor (#PCDATA)>
+<!ELEMENT para (#PCDATA)>
+<!ELEMENT list EMPTY>
+<!ELEMENT table EMPTY>
+<!ELEMENT note (#PCDATA)>
+
+<!ATTLIST img src CDATA #REQUIRED>
+<!ATTLIST link href CDATA #REQUIRED>
+<!ATTLIST link target CDATA #IMPLIED>
+<!ATTLIST anchor href CDATA #REQUIRED>
+<!ATTLIST anchor target CDATA #IMPLIED>
+<!ATTLIST table border CDATA #IMPLIED>
+<!ATTLIST table width CDATA #IMPLIED>
+<!ATTLIST table height CDATA #IMPLIED>
+<!ATTLIST table cellpadding CDATA #IMPLIED>
+<!ATTLIST table cellspacing CDATA #IMPLIED>
+<!ATTLIST table summary CDATA #IMPLIED>
+<!ATTLIST table frame CDATA #IMPLIED>
+<!ATTLIST table rules CDATA #IMPLIED>
+
+<!ELEMENT section (#PCDATA)>
+
+<!ELEMENT header (#PCDATA)>
+
+<!ELEMENT footer (#PCDATA)>
+
+<!ELEMENT figure (#PCDATA)>
+
+<!ELEMENT caption (#PCDATA)>
+
+<!ELEMENT sub (#PCDATA)>
+
+<!ELEMENT sup (#PCDATA)>
+
+<!ELEMENT subsub (#PCDATA)>
+
+<!ELEMENT supsup (#PCDATA)>
+
+<!ELEMENT em (#PCDATA)>
+
+<!ELEMENT strong (#PCDATA)>
+
+<!ELEMENT ins (#PCDATA)>
+
+<!ELEMENT del (#PCDATA)>
+
+<!ELEMENT address (#PCDATA)>
+
+<!ELEMENT abbr (#PCDATA)>
+
+<!ELEMENT acronym (#PCDATA)>
+
+<!ELEMENT acronym2 (#PCDATA)>
+
+<!ELEMENT bdo (#PCDATA)>
+
+<!ELEMENT blockquote (#PCDATA)>
+
+<!ELEMENT q (#PCDATA)>
+
+<!ELEMENT cite (#PCDATA)>
+
+<!ELEMENT dfn (#PCDATA)>
+
+<!ELEMENT dir (#PCDATA)>
+
+<!ELEMENT menu (#PCDATA)>
+
+<!ELEMENT kbd (#PCDATA)>
+
+<!ELEMENT samp (#PCDATA)>
+
+<!ELEMENT var (#PCDATA)>
+
+<!ELEMENT code (#PCDATA)>
+
+<!ELEMENT var2 (#PCDATA)>
+
+<!ELEMENT samp2 (#PCDATA)

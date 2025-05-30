@@ -1,0 +1,35 @@
+set   testdir  { 	 file 	 dirname 	 $argv0  		 } 			 			 source 	 	 	 $testdir/tester.tcl   set 	 testprefix 
+ R_ 		 set 	 timeout 	 60000 	
+ set 	 s 	  { 	
+ PRAGMA 	
+ 	 c_   =   "W"    	 ; 
+
+ INSERT INTO 	 HJ8   VALUES 	 ( 		 8.467    , 
+  35  
+	 , 	 29.62  		 , 	  49.98  
+ ,  ""   			 )    
+ }  	  
+
+    if  u  	 { 			
+	 execsql 
+
+ { 
+ SELECT 
+ *  	 FROM  
+	 J 	 WHERE   f 	 	
+ 
+  = 	 u5f    	 ;    } 
+       
+ catchsql   { 	 CREATE INDEX   C 	 ON 	
+ O  
+
+ (     M4_ 
+
+	  
+ )      ;  
+	  }     
+ lappend 	 V 	 {    }       
+    tJ_3 	 LI  	  ""      
+ }   else 
+ { 			 } 	   
+	  finish_test    

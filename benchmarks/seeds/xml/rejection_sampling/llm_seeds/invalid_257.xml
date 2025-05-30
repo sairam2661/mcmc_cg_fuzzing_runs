@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, publisher, description, price, chapter*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT chapter (title, section*)>
+  <!ELEMENT section (title, paragraph*)>
+  <!ELEMENT paragraph (#PCDATA)>
+]>
+<book>
+  <title>Advanced XML Programming</title>
+  <author>John Doe</author>
+  <publisher>ABC Publishers</publisher>
+  <description>This book covers advanced XML programming techniques.</description>
+  <price>$29.99</price>
+  <chapter>
+    <title>Chapter 1: Introduction to XML</title>
+    <section>
+      <title>1.1 XML Basics</title>
+      <paragraph>XML is a markup language.</paragraph>
+    </section>
+    <section>
+      <title>1.2 XML Syntax</title>
+      <paragraph>XML uses tags to markup data.</paragraph>
+    </section>
+  </chapter>
+  <chapter>
+    <title>Chapter 2: Advanced XML Topics</title>
+    <section>
+      <title>2.1 XML Schema</title>
+      <paragraph>XML Schema is used to define the structure of an XML document.</paragraph>
+    </section>
+    <section>
+      <title>2.2 XML Namespaces</title>
+      <paragraph>XML Namespaces are used to avoid naming conflicts.</paragraph>
+    </section>
+  </chapter>
+</book>  <!-- end book -->  <book>  <title>XML Programming</title>  <author>Jane Doe</author>  <publisher>ABC Publishers</publisher>  <description>This book covers basic XML programming techniques.</description>  <price>$19.99</price>  <chapter>    <title>Chapter 1: Introduction to XML</title>    <section>      <title>1.1 XML Basics</title>      <paragraph>XML is a markup language.</paragraph>    </section>    <section>      <title>1.2 XML Syntax</title>      <paragraph>XML uses tags to markup data.</paragraph>    </section>  </chapter>  <chapter>    <title>Chapter 2: Basic XML Topics</title>

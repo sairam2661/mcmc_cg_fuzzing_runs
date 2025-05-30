@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book SYSTEM "book.dtd">
+<book>
+  <title lang="en">The Great Gatsby</title>
+  <author id="Fitzgerald" name="F. Scott Fitzgerald" born="1896" died="1940">
+    <address street="123 Elm St" city="New York" state="NY" zip="10001"/>
+  </author>
+  <editor id="Gatsby" name="Jay Gatsby" born="1880" died="1920">
+    <address street="456 Park Ave" city="New York" state="NY" zip="10021"/>
+    <note>This is a note.</note>
+  </editor>
+  <chapter id="1">
+    <title lang="en">Chapter 1</title>
+    <content>
+      <p>This is a paragraph.</p>
+      <p>This is another paragraph.</p>
+    </content>
+  </chapter>
+  <chapter id="2">
+    <title lang="en">Chapter 2</title>
+    <content>
+      <p>This is a paragraph.</p>
+      <p>This is another paragraph.</p>
+    </content>
+  </chapter>
+</book>
+
+<!ELEMENT book (title, author, editor, chapter+)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (address)>
+<!ELEMENT editor (address, note?)>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT chapter (title, content)>
+<!ELEMENT content (#PCDATA | p | p)*>
+<!ELEMENT p (#PCDATA)>
+<!ATTLIST author id CDATA #REQUIRED>
+<!ATTLIST author name CDATA #REQUIRED>
+<!ATTLIST author born CDATA #IMPLIED>
+<!ATTLIST author died CDATA #IMPLIED>
+<!ATTLIST editor id CDATA #REQUIRED>
+<!ATTLIST editor name CDATA #REQUIRED>
+<!ATTLIST editor born CDATA #IMPLIED>
+<!ATTLIST editor died CDATA #IMPLIED>
+<!ATTLIST chapter id CDATA #REQUIRED>
+<!ATTLIST title lang CDATA #IMPLIED>
+<!ATTLIST address street CDATA #REQUIRED>
+<!ATTLIST address city CDATA #REQUIRED>
+<!ATTLIST address state CDATA #REQUIRED>
+<!ATTLIST address zip CDATA #REQUIRED>
+<!ATTLIST note CDATA #IMPLIED>

@@ -1,0 +1,65 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix sync
+
+proc sync_proc {} {
+  global syncargs
+  lappend syncargs
+  expr {[llength $syncargs] <= 2}
+}
+
+set testname sync-2.1
+ifcapable!wal {
+  finish_test -code error
+}
+
+do_test 2.1 {
+  execsql {
+    CREATE TABLE t1(a, b, c);
+    CREATE INDEX i1 ON t1(a);
+  }
+} {}
+
+do_test 2.2 {
+  execsql {
+    CREATE TABLE t2(a, b, c);
+    CREATE INDEX i2 ON t2(b);
+  }
+} {}
+
+do_test 2.3 {
+  execsql {
+    INSERT INTO t1 VALUES('one', 1, 1);
+    INSERT INTO t2 VALUES('one', 1, 1);
+  }
+} {}
+
+do_test 2.4 {
+  execsql {
+    INSERT INTO t1 VALUES('two', 2, 2);
+    INSERT INTO t2 VALUES('two', 2, 2);
+  }
+} {}
+
+do_test 2.5 {
+  execsql {
+    SELECT a, b, c FROM t1, t2
+    WHERE t1.a = t2.a
+  }
+} {one one one one one one}
+
+do_test 2.6 {
+  execsql {
+    SELECT a, b, c FROM t1, t2
+    WHERE t1.a = t2.a
+  }
+} {one one one one one one}
+
+do_test 2.7 {
+  execsql {
+    SELECT a, b, c FROM t1, t2
+    WHERE t1.a = t2.a
+  }
+} {one one one one one one}
+
+finish_test

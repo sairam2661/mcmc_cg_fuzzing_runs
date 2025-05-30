@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE doc [
+<!ENTITY % name SYSTEM "name.ent">
+%name;
+<!ENTITY % entity SYSTEM "entity.ent">
+%entity;
+]>
+<doc>
+<root>
+<header>
+<title>Sample XML Document</title>
+<subtitle>A Document Demonstrating XML Features</subtitle>
+</header>
+<body>
+<section id="sec1">
+<heading>Introduction</heading>
+<para>This is a sample XML document.</para>
+</section>
+<section id="sec2">
+<heading>XML Features</heading>
+<para>XML supports various features, including entities and references.</para>
+<list>
+<item>Entities</item>
+<item>References</item>
+<item>Character data</item>
+<item>Elements</item>
+</list>
+</section>
+</body>
+</root>
+</doc> 
+
+<!ENTITY % entity SYSTEM "entity.ent">
+<!ENTITY % entity SYSTEM "entity.ent">
+<!ELEMENT entity (#PCDATA)>
+<!ENTITY entity1 "Entity 1">
+<!ENTITY entity2 "Entity 2">
+<!ENTITY entity3 "Entity 3">
+<!ENTITY entity4 "Entity 4">
+<!ENTITY entity5 "Entity 5">
+<!ENTITY entity6 "Entity 6">
+<!ENTITY entity7 "Entity 7">
+<!ENTITY entity8 "Entity 8">
+<!ENTITY entity9 "Entity 9">
+<!ENTITY entity10 "Entity 10">
+<!ENTITY entity11 "Entity 11">
+<!ENTITY entity12 "Entity 12">
+<!ENTITY entity13 "Entity 13">
+<!ENTITY entity14 "Entity 14">
+<!ENTITY entity15 "Entity 15">
+<!ENTITY entity16 "Entity 16">
+<!ENTITY entity17 "Entity 17">
+<!ENTITY entity18 "Entity 18">
+<!ENTITY entity19 "Entity 19">
+<!ENTITY entity20 "Entity 20">
+<!ENTITY entity21 "Entity 21">
+<!ENTITY entity22 "Entity 22">
+<!ENTITY entity23 "Entity 23">
+<!ENTITY entity24 "Entity 24">
+<!ENTITY entity25 "Entity 25">
+<!ENTITY entity26 "Entity 26">
+<!ENTITY entity27 "Entity 27">
+<!ENTITY entity28 "Entity 28">
+<!ENTITY entity29 "Entity 29">
+<!ENTITY entity30 "Entity 30">
+<!ENTITY entity31 "Entity 31">
+<!ENTITY entity32 "Entity 32">
+<!ENTITY entity33 "Entity 33">
+<!ENTITY entity34 "Entity 34">
+<!ENTITY

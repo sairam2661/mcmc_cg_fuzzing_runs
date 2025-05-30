@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE book SYSTEM "book.dtd">
+<!ENTITY bookid "BK123">
+<!ELEMENT book (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT pages (#PCDATA)>
+<!ELEMENT bookid (#PCDATA)>
+<!ELEMENT isbn (#PCDATA)>
+<!ELEMENT category (#PCDATA)>
+<!ELEMENT location (#PCDATA)>
+
+<book>
+    <title>XML Book</title>
+    <author>John Doe</author>
+    <publisher>ABC Publishers</publisher>
+    <date>2022-01-01</date>
+    <price>19.99</price>
+    <pages>200</pages>
+    <bookid>&bookid;</bookid>
+    <isbn>1234567890</isbn>
+    <category>Computers</category>
+    <location>USA</location>
+</book>

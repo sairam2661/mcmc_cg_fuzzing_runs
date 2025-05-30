@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ENTITY % ent SYSTEM "ent.xml">
+  <!ENTITY % ext SYSTEM "ext.xml">
+]>
+<bookstore xmlns="http://www.example.org/bookstore"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://www.example.org/bookstore schema.xsd">
+  <book>
+    <title>My Book</title>
+    <author>
+      <name>Me</name>
+      <age>30</age>
+    </author>
+    <genre>Biography</genre>
+    <price>19.95</price>
+    <description>This is a great book.</description>
+    <isbn>1234567890</isbn>
+    <review>
+      <rating>5</rating>
+      <comment>This is a great book.</comment>
+    </review>
+  </book>
+  <book>
+    <title>Another Book</title>
+    <author>
+      <name>Another Me</name>
+      <age>25</age>
+    </author>
+    <genre>Science Fiction</genre>
+    <price>14.95</price>
+    <description>This is another great book.</description>
+    <isbn>9876543210</isbn>
+    <review>
+      <rating>4</rating>
+      <comment>This is another great book.</comment>
+    </review>
+  </book>
+  <book>
+    <title>Yet Another Book</title>
+    <author>
+      <name>Yet Another Me</name>
+      <age>35</age>
+    </author>
+    <genre>Romance</genre>
+    <price>9.95</price>
+    <description>This is yet another great book.</description>
+    <isbn>1111111111</isbn>
+    <review>
+      <rating>5</rating>
+      <comment>This is yet another great book.</comment>
+    </review>
+  </book>
+</bookstore>

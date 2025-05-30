@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book SYSTEM "C" [
+  <!ELEMENT catalog (cd*)>
+  <!ATTLIST catalog 
+    title CDATA #IMPLIED 
+    version CDATA #IMPLIED
+  >
+  <!ENTITY author "J"
+  >
+  <!ENTITY % iincludes "<" 	>
+  <!NOTATION ISO8601
+  SYSTEM "C"
+  >
+ 							   								  
+ 									  
+ 								  					%declare
+ 									   
+ 	                                             
+ 																			;
+	<!--
+    Define CDATA rules for character data with a CDATA section in the
+    declared DTD
+  -->
+  ]><book><catalog
+    xmlns:xi="x"
+    xmlns:xsi="x"
+    title="A"
+    version="B"
+  >
+  	<xi:include href="#"></xi:include>
+    <ixml:xml-stylesheet type="x" href="D"/>
+    <xi:fallback xmlns:x="x"><message/></xi:fallback>
+    <ci:date xmlns:c="%"
+    notation="E" format="F"/>
+    <cd
+    	id="%"
+    	author="G">%H</cd>
+  </catalog></book>

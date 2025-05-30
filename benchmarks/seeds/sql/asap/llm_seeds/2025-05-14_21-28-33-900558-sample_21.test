@@ -1,0 +1,74 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix multi_table
+
+set ::timeout 60000
+set n 5
+set start 100000
+
+proc check_db {} {
+  global db
+  expr {db exists}
+}
+
+proc table_info {db table} {
+  set result {}
+  while {1} {
+    set row {}
+    foreach col {name type notnull dflt_value pk} {
+      set row $row
+      if { $db eval {PRAGMA table_info = "$table"} } {
+        lappend row $col
+      } else {
+        break
+      }
+    }
+    lappend result $row
+  }
+}
+
+foreach i $n {
+  do_test i "Inserting row $i" {
+    db eval {
+      CREATE TABLE a(id, data);
+      INSERT INTO a VALUES(1,"data");
+    }
+    execsql {SELECT * FROM a}
+  }
+  do_test i "ExecSQL on table a" {
+    table_info a
+  }
+  lappend tlist1 "1"
+  lappend tlist2 $start
+  lappend testout "Inserting [$tlist1]\n"
+  lappend testout "ExecSQL on table a[$tlist2]\n"
+}
+
+append testout { }
+append testout { }
+append testout { }
+append testout { }
+append testout { }
+
+do_test 1 {
+  catch {db close}
+  execsql {
+    CREATE TABLE b(id, data);
+    CREATE TABLE c(id, data);
+  }
+  db close
+  execsql {
+    SELECT name FROM sqlite_master ORDER BY name
+  }
+} {a b c}
+
+do_execsql_test 2 {
+  INSERT INTO b VALUES(1, "Hello");
+  SELECT * FROM b;
+} {1 Hello}
+do_execsql_test 3 {
+  INSERT INTO c VALUES(2, "World");
+  SELECT * FROM c;
+} {2 World}
+
+finish_test

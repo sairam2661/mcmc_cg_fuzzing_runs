@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE note SYSTEM "http://example.org/dtds/notes.dtd">
+<note>
+    <to>
+        <name>John</name>
+        <address>
+            <street>123 Main St</street>
+            <city>New York</city>
+            <state>NY</state>
+            <zip>10001</zip>
+        </address>
+    </to>
+    <from>
+        <name>Jane</name>
+        <email>jane@example.com</email>
+    </from>
+    <heading>This is a heading</heading>
+    <body>This is the body of the note.</body>
+    <signature>
+        <name>Jane</name>
+        <title>Software Engineer</title>
+    </signature>
+    <attachments>
+        <attachment>
+            <name>example.txt</name>
+            <size>1024</size>
+        </attachment>
+        <attachment>
+            <name>example2.txt</name>
+            <size>2048</size>
+        </assistant>
+    </attachments>
+</note>

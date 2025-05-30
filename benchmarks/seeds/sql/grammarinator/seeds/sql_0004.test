@@ -1,0 +1,51 @@
+set 
+ testdir 
+ {   file  dirname 	 $argv0 		 } 		 source 
+ $testdir/tester.tcl   set 		 testprefix 
+  	
+ m9K   set 
+			
+ timeout  60000 	 set 	 R_ 	
+
+		 { 
+  }       		  set  
+ hh_Z 
+	 {   } 	  	
+
+  
+	 set 	 z0 
+
+ {  	 $B   	 } 	  
+		   
+  set   	 k   { 
+ {     ROLLBACK   
+ ;   }  	 } 
+   	
+  
+ set 	 r  {  }    		    set   h  $::V9  
+   set 	 K0 	  {   $f____  	 
+ 7   	 } 	  
+   set 
+
+  	 y 	 	 {   9.9    $W   }    	 
+    set 	 vC   {   { 	 S  
+	 }  
+   	 $x_4    } 
+
+  	  
+ 	
+ 
+ set   BF  { 
+	  }            execsql  {    BEGIN  IMMEDIATE    
+ 	 ;   	
+ } 
+    
+ proc  R_FW  
+ { 
+ v   	 	 } 	    
+
+
+ {    }  
+
+    	    finish_test 	
+  

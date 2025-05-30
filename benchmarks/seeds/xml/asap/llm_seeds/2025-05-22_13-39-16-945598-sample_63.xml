@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+  <!ELEMENT book (chapter+, bookinfo)>
+  <!ATTLIST book
+    lang CDATA #IMPLIED
+    title CDATA #REQUIRED
+  >
+  <!ENTITY author "J">
+  <!ENTITY % publisher "O">
+  <!NOTATION XML-internal PUBLIC
+    "T" "U"
+  >
+  %publisher;
+  <!--
+    A 
+    sample
+    comment
+  -->
+]>
+<book lang="e"
+      xmlns:xi="x"
+      xml:lang="a"
+      title="B"
+      xml:id="C">
+  <xi:include href="D"/>
+  <!--A comment--><![CDATA[Some E <F> text]]>
+  <G>
+    <chapter>Chapter 1</chapter>
+    <chapter>Chapter 2</chapter>
+  </G>
+  <bookinfo>&author;</bookinfo>
+</book>

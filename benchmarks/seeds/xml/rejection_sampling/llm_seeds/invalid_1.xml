@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, publication, chapter*, section+, appendix+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publication (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ELEMENT section (#PCDATA)>
+  <!ELEMENT appendix (#PCDATA)>
+  <!ATTLIST chapter id CDATA #REQUIRED>
+  <!ATTLIST section id CDATA #REQUIRED>
+  <!ATTLIST appendix id CDATA #REQUIRED>
+]>
+<book>
+  <title>My Book</title>
+  <author>John Doe</author>
+  <publication>2020</publication>
+  <chapter id="chapter1">Chapter 1</chapter>
+  <section id="section1">Section 1</section>
+  <appendix id="appendix1">Appendix 1</appendix>
+  <section id="section2">Section 2</section>
+  <appendix id="appendix2">Appendix 2</appendix>
+</book>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE book [
+  <!ENTITY book "My Book">
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book author CDATA #REQUIRED>
+  <!ATTLIST book year CDATA #REQUIRED>
+]>
+<book author="John Doe" year="2022">
+  <title>My Book Title</title>
+  <chapter>
+    <heading>Chapter 1</heading>
+    <section>
+      <title>Section 1</title>
+      <p>This is a paragraph in section 1.</p>
+    </section>
+    <section>
+      <title>Section 2</title>
+      <p>This is a paragraph in section 2.</p>
+    </section>
+  </chapter>
+  <appendix>
+    <title>Appendix A</title>
+    <p>This is a paragraph in the appendix.</p>
+  </appendix>
+</book>

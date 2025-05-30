@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note SYSTEM "note.dtd">
+<!ENTITY % noteEntity SYSTEM "note.ent">
+<!ENTITY % xmlEntity SYSTEM "http://www.w3.org/XML/1998/namespace">
+<!ENTITY % gmlEntity SYSTEM "http://www.opengis.net/gml">
+<!ATTLIST note
+  id ID #REQUIRED
+  xmlns CDATA #IMPLIED
+  xmlns:xsi CDATA #IMPLIED
+  xsi:schemaLocation CDATA #IMPLIED
+  xsi:noNamespaceSchemaLocation CDATA #IMPLIED
+  xsi:type CDATA #IMPLIED
+  xmlns:gml CDATA #IMPLIED
+  gml:version CDATA #IMPLIED
+  gml:srsName CDATA #IMPLIED
+  gml:targetNamespace CDATA #IMPLIED
+  gml:targetPrefix CDATA #IMPLIED
+  gml:versionDate CDATA #IMPLIED
+  gml:versionLabel CDATA #IMPLIED
+  gml:xmlns CDATA #IMPLIED
+  gml:xmlns:xlink CDATA #IMPLIED
+  gml:xlink:href CDATA #IMPLIED
+  gml:xlink:title CDATA #IMPLIED
+  gml:xlink:type CDATA #IMPLIED
+  gml:abstract CDATA #IMPLIED
+  gml:extent CDATA #IMPLIED
+  gml:identifier CDATA #IMPLIED
+  gml:keywords CDATA #IMPLIED
+  gml:language CDATA #IMPLIED
+  gmldate CDATA #IMPLIED
+  gml:description CDATA #IMPLIED
+  gml:identifier CDATA #IMPLIED
+  gml:keywords CDATA #IMPLIED
+  gml:language CDATA #IMPLIED
+  gml:abstract CDATA #IMPLIED
+  gml:extent CDATA #IMPLIED
+  gml:identifier CDATA #IMPLIED
+  gml:keywords CDATA #IMPLIED
+  gml:language CDATA #IMPLIED
+  gml:abstract CDATA #IMPLIED
+  gml:extent CDATA #IMPLIED
+  gml:identifier CDATA #IMPLIED
+  gml:keywords CDATA #IMPLIED
+  gml:language CDATA #IMPLIED
+  gml:abstract CDATA #IMPLIED
+  gml:extent CDATA #IMPLIED
+  gml:identifier CDATA #IMPLIED
+  gml:keywords CDATA #IMPLIED
+  gml:language CDATA #IMPLIED
+  gml:abstract

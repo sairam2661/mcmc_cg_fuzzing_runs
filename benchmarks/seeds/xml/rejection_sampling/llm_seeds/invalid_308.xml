@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE notes [
+  <!ENTITY % n "notes">
+  <!ELEMENT %n (note+)>
+  <!ELEMENT note (#PCDATA | date | title | body | author | header*)>
+  <!ATTLIST note
+    id ID #REQUIRED
+    type CDATA #IMPLIED
+    date CDATA #IMPLIED
+  >
+  <!ELEMENT date (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT body (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT header (#PCDATA | title)*>
+  <!ELEMENT note-list EMPTY>
+  <!ATTLIST note-list
+    name CDATA #REQUIRED
+  >
+]>
+<notes>
+  <note id="n1">
+    <date>2021-01-01</date>
+    <title>First Note</title>
+    <body>This is the first note.</body>
+    <author>John Doe</author>
+    <header>This is a header</header>
+  </note>
+  <note id="n2" type="meeting">
+    <date>2021-01-15</date>
+    <title>Meeting Notes</title>
+    <body>This is the second note.</body>
+    <author>Jane Doe</author>
+  </note>
+  <note-list name="John's Notes"/>
+</notes>

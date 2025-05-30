@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE root SYSTEM "C" [
+  <!ELEMENT root (foo,bar)*>
+  <!ATTLIST root id ID #IMPLIED>
+  <!ENTITY foo-text "A">
+  <!ENTITY % bar-ref "<">
+  <!NOTATION svg PUBLIC "D" "E">
+  %bar-ref;
+  <!--[ foo ]-->
+]><root xmlns:g="A" id="1" xlink:href="F">
+  <foo entity-ref="\">&foo-text;</foo>
+  <bar notations="M" xmlns="B">some content</bar>
+</root>

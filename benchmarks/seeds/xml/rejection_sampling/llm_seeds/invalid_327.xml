@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog SYSTEM "catalog.dtd">
+<!ENTITY % entity1 "value1">
+<!ENTITY % entity2 "value2">
+<!ENTITY % entity3 "value3">
+<!ENTITY % entity4 "value4">
+<!ENTITY % entity5 "value5">
+<!ENTITY % entity6 "value6">
+<!ENTITY % entity7 "value7">
+<!ENTITY % entity8 "value8">
+<!ENTITY % entity9 "value9">
+<!ENTITY % entity10 "value10">
+<!ENTITY % entity11 "value11">
+<!ENTITY % entity12 "value12">
+<!ENTITY % entity13 "value13">
+<!ENTITY % entity14 "value14">
+<!ENTITY % entity15 "value15">
+<!ENTITY % entity16 "value16">
+<!ENTITY % entity17 "value17">
+<!ENTITY % entity18 "value18">
+<!ENTITY % entity19 "value19">
+<!ENTITY % entity20 "value20">
+<!ENTITY % entity21 "value21">
+<!ENTITY % entity22 "value22">
+<!ENTITY % entity23 "value23">
+<!ENTITY % entity24 "value24">
+<!ENTITY % entity25 "value25">
+<!ENTITY % entity26 "value26">
+<!ENTITY % entity27 "value27">
+<!ENTITY % entity28 "value28">
+<!ENTITY % entity29 "value29">
+<!ENTITY % entity30 "value30">
+<!ELEMENT catalog (book+)>
+<!ELEMENT book (#PCDATA|author|title|year|publisher)>
+<!ATTLIST book
+    id CDATA #REQUIRED
+    title CDATA #REQUIRED
+>
+<!ATTLIST author
+    id CDATA #REQUIRED
+>
+<!ATTLIST title
+    id CDATA #REQUIRED
+>
+<!ATTLIST year
+    id CDATA #REQUIRED
+>
+<!ATTLIST publisher
+    id CDATA #REQUIRED
+>
+<catalog>
+    <book id="b1" title="title1">
+        <author id="a1">author1</author>
+        <year id="y1">year1</year>
+        <publisher id="p1">publisher1</publisher>
+    </book>
+    <book id="b2" title="title2">
+        <author id="a2">author2</author>
+        <year id="y2">year2</year>
+        <publisher id="p2">publisher2</publisher>
+    </book>
+    <book

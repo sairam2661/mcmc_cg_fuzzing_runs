@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author,list)>
+  <!ATTLIST book
+    id ID #IMPLIED
+    lang CDATA #IMPLIED
+  >
+  <!ENTITY book-author "J"
+  >
+  <!ENTITY % book-list "("
+  >
+  <!NOTATION html SYSTEM "I">
+  %book-list;  <!---->
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST title
+    lang CDATA #IMPLIED
+  >
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST author
+    title CDATA #IMPLIED
+  >
+  <!ELEMENT list (item+)>
+  <!ELEMENT item (#PCDATA)>
+]>
+<book id="b" lang="x" xmlns:xsi="x"> 
+  <title  lang="1">T</title>
+  <author title="A">a</author>
+  <list>
+    <item>1</item>
+    <item>2</item>
+    <item>3</item>
+  </list>
+</book>

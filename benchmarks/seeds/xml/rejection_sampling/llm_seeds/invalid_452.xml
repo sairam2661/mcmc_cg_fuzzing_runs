@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE books [
+<!ELEMENT books (book+)>
+<!ELEMENT book (title,author,price,description)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT state (#PCDATA)>
+<!ELEMENT zip (#PCDATA)>
+<!ELEMENT country (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT bookid (#PCDATA)>
+<!ATTLIST book id ID #REQUIRED>
+<!ATTLIST book publisher CDATA #IMPLIED>
+<!ATTLIST book address CDATA #IMPLIED>
+<!ATTLIST book city CDATA #IMPLIED>
+<!ATTLIST book state CDATA #IMPLIED>
+<!ATTLIST book zip CDATA #IMPLIED>
+<!ATTLIST book country CDATA #IMPLIED>
+<!ATTLIST book phone CDATA #IMPLIED>
+<!ATTLIST book email CDATA #IMPLIED>
+]>
+<books>
+<book id="1">
+<title>Harry Potter and the Philosopher's Stone</title>
+<author>J.K. Rowling</author>
+<price>$10.99</price>
+<description>Harry Potter's first year at Hogwarts</description>
+<publisher>Pottermore</publisher>
+<address>123 Main St</address>
+<city>New York</city>
+<state>NY</state>
+<zip>10001</zip>
+<country>USA</country>
+<phone>555-1234</phone>
+<email>info@pottermore.com</email>
+</book>
+<book id="2">
+<title>The Lord of the Rings</title>
+<author>J.R.R. Tolkien</author>
+<price>$12.99</price>
+<description>A journey to destroy the One Ring</description>
+<publisher>Penguin Books</publisher>
+<address>456 Elm St</address>
+<city>Los Angeles</city>
+<state>CA</state>
+<zip>90001</zip>
+<country>USA</country>
+<phone>555-5678</phone>
+<email>info@penguinbooks.com</email>
+</book>
+</books>

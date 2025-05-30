@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!ENTITY % pubinfo SYSTEM "pubinfo.xml">
+%pubinfo;
+<!ELEMENT book (title,author,price,description,contents)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT contents (chapter+,section*)>
+<!ELEMENT chapter (#PCDATA)>
+<!ELEMENT section (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ATTLIST book id ID #REQUIRED>
+<!ATTLIST chapter number CDATA #REQUIRED>
+<!ATTLIST section level CDATA #REQUIRED>
+<!NOTATION print NOTATION "print notation">
+<!ENTITY % pubinfo SYSTEM "pubinfo.xml">
+<!ENTITY author "John Smith">
+<!ENTITY title "My Book">
+<!ENTITY description "This is a book">
+<!ENTITY price "20.00">
+<!ENTITY contents CDATA "This is the contents of the book. It has multiple chapters. Chapter one is about the author. Chapter two is about the book itself. Chapter three is about the publisher. Chapter four is about the contents. Chapter five is about the book's history. Chapter six is about the book's contents again. Chapter seven is about the book's history again. Chapter eight is about the book's contents again. Chapter nine is about the book's history again. Chapter ten is about the book's contents again. Chapter eleven is about the book's history again. Chapter twelve is about the book's contents again. Chapter thirteen is about the book's history again. Chapter fourteen is about the book's contents again. Chapter fifteen is about the book's history again. Chapter sixteen is about the book's contents again. Chapter seventeen is about the book's history again. Chapter eighteen is about the book's contents again. Chapter nineteen is about the book's history again. Chapter twenty is about the book's contents again. Chapter twenty-one is about the book's history again. Chapter twenty-two is about the book's contents again. Chapter twenty-three is about the book's history again. Chapter twenty-four is about the book's contents again. Chapter twenty-five is about the book's history again. Chapter twenty-six is about the book's contents again. Chapter twenty-seven is about the book's history again. Chapter twenty-eight is about the book's contents again. Chapter twenty-nine is about the book's history again. Chapter thirty is about the book's contents again. Chapter thirty-one is about the book

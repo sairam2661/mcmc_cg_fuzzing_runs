@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, publisher, (chapter|appendix)*, (figure|table)*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ELEMENT appendix (#PCDATA)>
+  <!ELEMENT figure (#PCDATA)>
+  <!ELEMENT table (#PCDATA)>
+  <!ELEMENT author-name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT fax (#PCDATA)>
+  <!ELEMENT chapter-title (#PCDATA)>
+  <!ELEMENT section (#PCDATA)>
+  <!ELEMENT subsection (#PCDATA)>
+  <!ELEMENT paragraph (#PCDATA)>
+  <!ELEMENT list (#PCDATA)>
+  <!ELEMENT item (#PCDATA)>
+  <!ELEMENT link (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT keywords (#PCDATA)>
+  <!ELEMENT abstract (#PCDATA)>
+  <!ELEMENT publisher-info (#PCDATA)>
+  <!ELEMENT publisher-location (#PCDATA)>
+  <!ELEMENT publisher-phone (#PCDATA)>
+  <!ELEMENT publisher-email (#PCDATA)>
+  <!ELEMENT publisher-fax (#PCDATA)>
+  <!ELEMENT book-id (#PCDATA)>
+  <!ELEMENT book-date (#PCDATA)>
+  <!ELEMENT book-author (#PCDATA)>
+  <!ELEMENT book-publisher (#PCDATA)>
+  <!ELEMENT book-title (#PCDATA)>
+  <!ELEMENT book-description (#PCDATA)>
+  <!ELEMENT book-keywords (#PCDATA)>
+  <!ELEMENT book-abstract (#PCDATA)>
+  <!ELEMENT book-chapter (#PCDATA)>
+  <!ELEMENT book-abstract-author (#PCDATA)>
+  <!ELEMENT book-abstract-publisher (#PCDATA)>
+  <!ELEMENT book-abstract-title (#PCDATA)>
+  <!ELEMENT book-abstract-keywords (#PCDATA)>
+  <!ELEMENT book-abstract-description (#PCDATA)>
+]>
+<book>
+  <title>Advanced Topics in XML</title>
+  <author>
+    <author-name>John Smith</author-name>
+    <address>123 Main St</address>
+    <phone>123-456-7890</phone>
+    <email>john.smith@example.com</email>
+    <fax>123-456-7891</fax>
+  </author>
+  <publisher-info>
+    <publisher-name>Publisher Inc.</publisher-name>
+    <

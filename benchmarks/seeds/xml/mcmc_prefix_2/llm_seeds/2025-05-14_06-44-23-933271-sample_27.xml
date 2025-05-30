@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE root SYSTEM "b" [
+  <!ELEMENT foo (#PCDATA) >
+  <!ATTLIST bar name CDATA #REQUIRED>
+  <!ENTITY desc SYSTEM "d" NDATA dtd>
+  <!ENTITY % e "e">
+  <!NOTATION dtd PUBLIC "d" "d">
+  %e;
+  <!--[ /* ]-->
+]>
+<root>
+  <bar name="b"/>
+  <foo>Some <elem> text</elem></foo>
+  <elem xml:lang="x">&desc;</elem>
+</root>

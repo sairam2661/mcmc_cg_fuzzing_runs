@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, section+)>
+  <!ATTLIST book lang CDATA #REQUIRED>
+  <!ENTITY author "J"
+           >
+  <!ENTITY % section "a">
+  <!NOTATION Print SYSTEM "l"  >
+  %section;
+  <!--%note;&note;
+]>
+
+<book xmlns="http://www.w3.org/1999/xhtml"
+       lang="en">
+  <xi:include href="doc1.xml"
+         xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <title>Test Book</title>
+  <message>&author;</message>
+  <xsl:stylesheet version="1.0"
+              xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+              exclude Result-->
+  <!-- Sample comments -->
+  <!--  -->
+  <!--  -->
+  <!--
+  Some <raw> text
+ !-->
+  <!ENTITY note "!">
+  <!NOTATION
+   SYSTEM
+   PUBLIC " "
+   " "
+  >
+  <!ATTLIST
+
+  section id CDATA #IMPLIED>
+
+  <!--!-->
+  <!NOTATION Print SYSTEM "l">
+  <!ATTLIST
+
+  section id CDATA #IMPLIED>
+  <!ELEMENT section (p)+>
+  <!ELEMENT p (#PCDATA|strong|emphasis |strong |emphasis |codegroup )>
+
+  <!ELEMENT code (#PCDATA)>
+  <!ELEMENT group (p)+>
+  <!ELEMENT emphasis (#PCDATA)>
+  <!ELEMENT strong (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!--!-->
+  <!ELEMENT section
+  (p)*>
+  <!--!-->
+  <!ELEMENT p (#PCDATA  |strong |emphasis |strong |emphasis |code
+  |group)>
+  <!--!-->
+  <!ELEMENT code (#PCDATA)>
+  <!ELEMENT code (#PCDATA |code |code |code |code |code)>
+  <!ELEMENT section (title,p)+>
+<!ELEMENT section
+(p)*>
+
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT p (#PCDATA|code|strong|emphasis)>
+  <!ELEMENT code (#PCDATA)>
+
+  <!ELEMENT group (p)+>
+
+  <!ELEMENT emphasis (#PCDATA)>
+  <!ELEMENT strong

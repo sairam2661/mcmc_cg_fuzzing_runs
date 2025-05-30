@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE notes [
+  <!ELEMENT notes (note*)>
+  <!ATTLIST note 
+    id CDATA #REQUIRED 
+    type (text|image) #REQUIRED 
+  >
+  <!ENTITY year "0">
+  <!ENTITY  % year-entity "(">  
+  <!NOTATION web-link SYSTEM "W">  
+  %year-entity;
+ <!----> 
+]>
+<notes xmlns:xsi="w" xmlns:xs="h">
+  <note id="R" type="t"><![CDATA[<test text>]]></note>
+  <note id="I" type="i">&year;</note>
+</notes>

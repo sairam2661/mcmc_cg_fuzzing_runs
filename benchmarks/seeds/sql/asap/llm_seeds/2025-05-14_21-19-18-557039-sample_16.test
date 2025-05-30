@@ -1,0 +1,47 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix complex_sqlite_test
+
+set ::timeout 60000
+
+proc complex_sqlite_test_proc {} {
+  global tcl_timeouts
+  incr tcl_timeouts
+  expr {$tcl_timeouts }
+}
+
+proc sqlite_create_table {table_name} {
+  execsql "CREATE TABLE $table_name (key TEXT, value TEXT)"
+}
+
+proc sqlite_insert_table {table_name key value} {
+  execsql "INSERT INTO $table_name VALUES($key, $value)"
+}
+
+proc sqlite_delete_table {table_name key} {
+  execsql "DELETE FROM $table_name WHERE key = $key"
+}
+
+proc sqlite_test_check {expr expected} {
+  uplevel "do_test complex-1.1 {$expr} {$expected}"
+}
+
+do_execsql_test complex-1.1 {
+  CREATE TABLE a(x);
+  INSERT INTO a VALUES(1);
+}
+
+{lappend tcl_timeouts}
+do_catchsql_test complex_2 {
+  DROP TABLE a
+} {1 {table a does not exist}}
+
+sqlite_create_table "test_table"
+sqlite_insert_table "test_table" "key1" "value1"
+sqlite_test_check "SELECT * FROM test_table WHERE key='key1'" "key1 value1"
+
+set dbhandle {test dbhandle}
+sqlite_delete_table "test_table" "key1"
+sqlite_test_check "SELECT * FROM test_table WHERE key='key1'" {}
+
+finish_test

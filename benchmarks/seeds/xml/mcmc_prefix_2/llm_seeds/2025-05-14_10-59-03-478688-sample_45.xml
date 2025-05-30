@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ATTLIST catalog (versionCDATA) #IMPLIED>
+  <!ENTITY product-group "P">
+  <!ENTITY % group-symbol "|">
+  <!NOTATION image-system PUBLIC "n" "o" >
+  %group-symbol;
+  <!--other comment: testing %macro -->
+]>
+<catalog version="1" xmlns="x"
+  xmlns:xsi="x"
+  xsi:schemaLocation="y">
+  <product>
+    <part num="1" id="1"><name>Item</name><price>10</price></part>
+  </product>
+  <product xmlns:other="z">
+    <other:quantity>x</other:quantity><name>MoreItem</name><price>15</price>
+  </product>
+  <product><name>Item3</name><price>20</price>
+    <part num="2" id="2"><name>Sub-part</name></part>
+  </product>
+  <image nspace:system="y" systemId="z" systemTag="&image-system;" />
+</catalog>

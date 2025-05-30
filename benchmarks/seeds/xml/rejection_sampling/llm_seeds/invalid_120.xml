@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book SYSTEM "book.dtd">
+<!ELEMENT book (title,author,description,chapter*,content*)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT chapter (#PCDATA)>
+<!ELEMENT content (#PCDATA)>
+<!ATTLIST chapter id CDATA #REQUIRED>
+<!ATTLIST content type (image|text) #REQUIRED>
+<!ELEMENT image (#PCDATA)>
+<!ELEMENT text (#PCDATA)>
+<!ELEMENT para (#PCDATA)>
+<!ELEMENT img (#PCDATA)>
+<!ELEMENT link (#PCDATA)>
+<!ELEMENT a (#PCDATA)>
+<!ELEMENT b (#PCDATA)>
+<!ELEMENT i (#PCDATA)>
+<!ELEMENT u (#PCDATA)>
+<!ELEMENT s (#PCDATA)>
+<!ELEMENT strike (#PCDATA)>
+<!ELEMENT sup (#PCDATA)>
+<!ELEMENT sub (#PCDATA)>
+<!ELEMENT pre (#PCDATA)>
+<!ELEMENT code (#PCDATA)>
+<!ELEMENT table (#PCDATA)>
+<!ELEMENT tr (#PCDATA)>
+<!ELEMENT th (#PCDATA)>
+<!ELEMENT td (#PCDATA)>
+<!ELEMENT tr (#PCDATA)>
+<!ELEMENT caption (#PCDATA)>
+<!ELEMENT summary (#PCDATA)>
+<!ELEMENT footer (#PCDATA)>
+<!ELEMENT header (#PCDATA)>
+
+<book>
+    <title>XML</title>
+    <author>John Doe</author>
+    <description>This is a book about XML</description>
+    <chapter id="ch1">
+        <content type="text">This is a chapter about XML</content>
+        <image src="image1.jpg">This is an image</image>
+        <content type="text">This is another chapter about XML</content>
+        <image src="image2.jpg">This is another image</image>
+    </chapter>
+    <chapter id="ch2">
+        <content type="text">This is another chapter about XML</content>
+        <content type="text">This is a paragraph of text</content>
+        <para>This is another paragraph of text</para>
+        <content type="text">This is another chapter about XML</content>
+    </chapter>
+</book>

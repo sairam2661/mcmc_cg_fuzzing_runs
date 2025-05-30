@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note SYSTEM "note.dtd">
+<note>
+    <to>John</to>
+    <from>admin</from>
+    <heading>Meeting</heading>
+    <body>
+        <p>This is a meeting notice.</p>
+        <p>It will take place on 2002-12-15.</p>
+        <address>
+            <street>123 Main St</street>
+            <city>Anytown</city>
+            <state>CA</state>
+            <zip>12345</zip>
+        </address>
+        <date>2002-12-15</date>
+        <time>10:00 AM</time>
+    </body>
+    <attachment>
+        <title>report.pdf</title>
+        <description>This is a report.</description>
+        <size>12345</size>
+        <date>2002-12-10</date>
+    </attachment>
+</note>

@@ -1,0 +1,87 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix sync
+
+proc sync_proc {} {
+  global syncargs
+  lappend syncargs
+  expr {[llength $syncargs] <= 2}
+}
+
+do_test sync-1.1 {
+  execsql {
+    CREATE TABLE a(x);
+    INSERT INTO a VALUES(1),(2),(3);
+  }
+  execsql {SELECT count(*) FROM a}
+} {3}
+
+ifcapable journalMode {
+  catchsql {PRAGMA journal_mode=WAL}
+} {0 {}}
+
+do_test sync-1.2 {
+  execsql {
+    CREATE TABLE b(y);
+    INSERT INTO b VALUES(4),(5),(6);
+  }
+  execsql {SELECT count(*) FROM b}
+} {3}
+
+do_test sync-1.3 {
+  execsql {
+    INSERT INTO a VALUES(7),(8),(9);
+  }
+  execsql {SELECT count(*) FROM a}
+} {9}
+
+do_test sync-1.4 {
+  execsql {
+    INSERT INTO b VALUES(10),(11),(12);
+  }
+  execsql {SELECT count(*) FROM b}
+} {12}
+
+do_test sync-1.5 {
+  execsql {
+    INSERT INTO a VALUES(13),(14),(15);
+  }
+  execsql {SELECT count(*) FROM a}
+} {15}
+
+do_test sync-1.6 {
+  execsql {
+    INSERT INTO b VALUES(16),(17),(18);
+  }
+  execsql {SELECT count(*) FROM b}
+} {18}
+
+do_test sync-1.7 {
+  execsql {
+    INSERT INTO a VALUES(19),(20),(21);
+  }
+  execsql {SELECT count(*) FROM a}
+} {21}
+
+do_test sync-1.8 {
+  execsql {
+    INSERT INTO b VALUES(22),(23),(24);
+  }
+  execsql {SELECT count(*) FROM b}
+} {24}
+
+do_test sync-1.9 {
+  execsql {
+    INSERT INTO a VALUES(25),(26),(27);
+  }
+  execsql {SELECT count(*) FROM a}
+} {27}
+
+do_test sync-1.10 {
+  execsql {
+    INSERT INTO b VALUES(28),(29),(30);
+  }
+  execsql {SELECT count(*) FROM b}
+} {30}
+
+finish_test

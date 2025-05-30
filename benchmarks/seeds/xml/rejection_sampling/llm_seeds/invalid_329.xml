@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ENTITY book "my book">
+  <!ELEMENT book (title,author,year,genre,review)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ELEMENT review (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    title CDATA #IMPLIED
+  >
+]>
+<book id="bk001" title="A Book" author="John Smith" year="2022" genre="Fiction" review="It was great!"/>
+<?xml-stylesheet type="text/xsl" href="style.xsl"?>
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ENTITY book "my book">
+  <!ELEMENT book (title,author,year,genre,review)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ELEMENT review (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    title CDATA #IMPLIED
+  >
+]>
+<book id="bk001" title="A Book" author="John Smith" year="2022" genre="Fiction" review="It was great!"/>
+<?xml-stylesheet type="text/xsl" href="style.xsl"?>
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ENTITY book "my book">
+  <!ELEMENT book (title,author,year,genre,review)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ELEMENT review (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    title CDATA #IMPLIED
+  >
+]>
+<book id="bk001" title="A Book" author="John Smith" year="2022" genre="Fiction" review="It was great!"/>
+<?xml-stylesheet type="text/xsl" href="style.xsl"?>
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ENTITY book "my book">
+  <!ELEMENT book (title,author,year,genre,review)>
+  <!ELEMENT

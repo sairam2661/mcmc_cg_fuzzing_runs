@@ -1,0 +1,108 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix complex_sql
+
+set ::timeout 60000        set timeout 60 seconds
+
+proc create_table {} {
+  global db
+  execsql {
+    BEGIN TRANSACTION
+    CREATE TABLE complex_tb1  ID INT PRIMARY KEY AUTOINCREMENT NOT NULL 
+                       NAME TEXT UNIQUE WITH ROWID  
+                       AGE INT NOT NULL DEFAULT 10
+  }
+  execsql {
+    CREATE TABLE IF NOT EXISTS complex_tb2
+          TB_ID INT PRIMARY KEY AUTOINCREMENT 
+         NAME TEXT NOT NULL DEFAULT 'Unknown' 
+          AGE INT NULL DEFUALT 20
+  }
+  execsql COMMIT
+}
+
+proc create_data {table} {
+  global db
+  eval execsql "INSERT INTO $table"
+  SELECT { ID INT PRIMARY KEY AUTOINCREMENT } 
+         { 5 {NAME INT NOT NULL DEFAULT 1 } 
+           7 {NAME TEXT NOT NULL DEFAULT'seven' }  
+         } 
+  }
+  eval execsql {INSERT INTO $table}
+  SELECT { NAME INT NOT NULL DEFAULT 4 } 
+         { 9 {NAME TEXT NOT NULL DEFAULT 'nine'} }
+  SELECT { NAME TEXT NOT NULL DEFAULT 'ten' } 
+         { 10 {AGE INT NOT NULL DEFAULT 2 } 
+           11
+  }
+  INSERT INTO $table
+  SELECT { NAME TEXT NOT NULL DEFAULT 'unknown' } 
+         { 12 {NAME TEXT NOT NULL DEFAULT 'first' }  
+           7
+  }
+  select max AGE from $table
+  return
+do_test complex-1.0 {
+  db close
+  set db  sqlite3 testdb
+  execsql {
+    ATTACH 'test.db'
+  } $db
+  create_table
+  create_data complex_tb1
+  do_test complex_tb1 { db eval {SELECT id FROM complex_tb1 WHERE rowid = 2} } {1}
+  get data
+  do_test complex_tb1 { db eval {SELECT id FROM complex_tb1 WHERE rowid = 2} } {2}
+  do_test complex_tb1 { db eval {SELECT id FROM complex_tb1 WHERE rowid = 2} } {10}
+  execsql {INSERT INTO complex_tb1 SELECT *  }
+  eval execsql {
+    insert into complex_tb2 select rowid  
+    from complex_tb1   }
+  execsql INSERT INTO complex_tb1 SELECT rowid 
+   FROM  complex_tb2         }
+  { execsql {
+     SELECT sum AGE FROM complex_tb1 }
+  do_execsql_test complex_tb2 {
+    ALTER TABLE complex_tb1 ADD COLUMN complex_name text NULL DEFAULT 3
+  }
+  do_execsql_test complex_tb2 {
+    UPDATE complex_tb2 SET complex_name  to 'one' WHERE NAME  to 'one'
+  }
+
+do_execsql_test complex_tb2 {
+   alter table complex_tb1 ADD COLUMN complex_name text NOT NULL DEFAULT "twin"
+}
+
+ifcapable triggers {
+  catchsql {
+    CREATE TRIGGER pre_trig 
+    BEFORE INSERT ON complex_tb2 FOR EACH ROW BEGIN  UPDATE complex_tb4 set complex_name_rowid  to  NEW ROWID
+}
+
+catchsql {
+  CREATE TRIGGER pre_trig 
+  BEFORE UPDATE ON complex_tb2 FOR EACH ROW SET NEW age  to  NEW age  }
+
+catchsql {
+  CREATE TRIGGER pre_trig 
+  AFTER DELETE ON complex_tb2 UPDATE complex_tb4 set age  to "0"
+
+} {
+
+  do_execsql_test 2.2 {
+     BEGIN;
+  INSERT INTO complex_tb2 VALUES(1,12,6)  }
+}
+
+catchsql {
+  DROP  TABLE complex_tb1
+}
+
+  finish_test
+  catch { db close } $db
+} {0 {table complex_tb1 does not exist}}
+}
+
+ catch { db close } $db
+finish_test

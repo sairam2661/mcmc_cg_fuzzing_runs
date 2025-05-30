@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document [
+  <!ELEMENT document (header,section*)>
+  <!ATTLIST document id CDATA #REQUIRED systemID CDATA #REQUIRED>
+  <!ENTITY note "B" >
+  <!ENTITY % entity1 "1">
+  <!NOTATION iso PUBLIC "A" "B">
+ 	   		%xinclude

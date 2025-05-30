@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<!DOCTYPE html SYSTEM "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:fb="http://www.facebook.com/2008/fbml">
+  <head>
+    <title>Hello, World!</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="My web page" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="alternate" type="application/rss+xml" title="News Feed" href="rss.xml" />
+    <script type="text/javascript" src="script.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Hello, <span class="name">world!</span></p>
+    <img src="image.jpg" alt="An image" />
+    <fb:fbml>
+      <fb:if-can-post>
+        <p>Post a comment!</p>
+      </fb:if-can-post>
+    </fb:fbml>
+    <ul>
+      <li><a href="http://www.google.com">Google</a></li>
+      <li><a href="http://www.yahoo.com">Yahoo!</a></li>
+    </ul>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+      </tr>
+      <tr>
+        <td>John Doe</td>
+        <td>30</td>
+      </tr>
+    </table>
+    <pre>
+      Hello,
+      <span class="name">world!</span>
+    </pre>
+    <address>
+      John Doe
+      <br />
+      123 Main St
+      <br />
+      Anytown, USA
+    </address>
+    <hr />
+    <p>&copy; 2012 John Doe</p>
+  </body>
+</html>

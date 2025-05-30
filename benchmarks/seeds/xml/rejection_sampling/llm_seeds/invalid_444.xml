@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!ENTITY bookEntity "My Book">
+<!ELEMENT book (title,author,year,publisher,edition)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ELEMENT edition (#PCDATA)>
+<!ELEMENT chapter (#PCDATA)>
+<!ELEMENT section (#PCDATA)>
+<!ELEMENT para (#PCDATA)>
+<!ELEMENT figure (#PCDATA)>
+<!ELEMENT table (#PCDATA)>
+<!ELEMENT index (#PCDATA)>
+<!ATTLIST chapter id CDATA #REQUIRED>
+<!ATTLIST section id CDATA #REQUIRED>
+<!ATTLIST para id CDATA #REQUIRED>
+<!ATTLIST figure id CDATA #REQUIRED>
+<!ATTLIST table id CDATA #REQUIRED>
+<!ATTLIST index id CDATA #REQUIRED>
+]>
+<book>
+<chapter id="ch1">Chapter 1: Introduction</chapter>
+<section id="s1">Section 1.1: History</section>
+<section id="s2">Section 1.2: Development</section>
+<para id="p1">This is a paragraph.</para>
+<figure id="fig1">Figure 1: A diagram.</figure>
+<table id="tab1">Table 1: Data</table>
+<para id="p2">This is another paragraph.</para>
+<figure id="fig2">Figure 2: Another diagram.</figure>
+<table id="tab2">Table 2: More data.</table>
+<para id="p3">This is the last paragraph.</para>
+<figure id="fig3">Figure 3: A final diagram.</figure>
+<table id="tab3">Table 3: Final data.</table>
+<index id="idx1">Index 1: Topics</index>
+</book>

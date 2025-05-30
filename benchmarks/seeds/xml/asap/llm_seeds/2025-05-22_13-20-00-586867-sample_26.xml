@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-16" standalone="no"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author,chapter+)>
+  <!ATTLIST book lang CDATA #IMPLIED>
+  <!ENTITY title SYSTEM "b" NDATA text>
+  <!ENTITY % text "A" >
+  <!NOTATION text SYSTEM "t">
+  %text;
+  <!--
+    Entity used to generate new document elements:
+    <!-->  %newElement;
+  <!---->  <!ELEMENT newElement EMPTY>
+  <!ENTITY % newElement "<"  >
+  %newElement;
+  <!--
+    General purpose element with multiple instances allowed.
+  -->
+]>
+<book xmlns="h" xmlns:xsi="x" lang="e">
+  <title>My Book</title>
+  <author>John Doe</author>
+  <chapter>
+    <section>
+      This is a &note;text;&title;
+      Example&amp; section.
+    </section><br>
+  </chapter><chapter>
+    <figure><image xlink:href="i" xmlns:xlink="z"/><figcaption>Photo Caption</figcaption></figure>
+    <note>This is just a note</note><br>
+  </chapter>
+</book> 
+<![CDATA[
+  And here's a comment: This is a &newline; comment that spans across
+    two lines.<br>
+  New line without markup: This is some <nope>example
+  ]]>text that doesn't end up
+    having the CDATA tag. 
+]]>
+  &newElement;
+<!---->      
+  %title; 
+<!--
+  Entity used to replace text.
+  
+  <element> This is a element: &x;
+  This is just some <y:text  > random text <b> markup <foo </foo> that won't be replaced <z  > 
+ .
+<!-->  %x;
+<!-->  %y;
+<!-->  %z;
+<!-->  &text;
+<!DOCTYPE! New DOCUMENT type definition 
+<!ENTITY DOCUMENT PUBLIC "Pub DocID" "URI" NDATA XML>   
+<!DOCTYPE document SYSTEM "s" NDATA xml>   
+<!-->  <!--  An alternate entity declaration -->
+<!-->  <!-->
+<!--> !ENTITY note PUBLIC "Pnote" "URI/text" NDATA xml>
+<!DOCTYPE xml>
+<! ELEMENT foo (y+,z+)>
+<!--><!-

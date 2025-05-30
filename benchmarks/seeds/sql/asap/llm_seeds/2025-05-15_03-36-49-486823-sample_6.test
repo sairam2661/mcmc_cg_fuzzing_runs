@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix db_stats
+
+set ::timeout 60000
+
+proc db_stats1 {} {
+  global db
+  set stat1 1
+  set stat2 2
+  execsql {
+    INSERT INTO a VALUES('a', 1, 1.0);
+    INSERT INTO a VALUES('b', 2, 2.0);
+    INSERT INTO a VALUES('c', 3, 3.0);
+  }
+  return $stat1
+}
+
+proc db_stats2 {args} {
+  execsql {
+    UPDATE a SET z_1a_3_b_42_0z5z2f5x4e2g0p1o0d3u2m0l7e4n0d1r0o9k SET x_123_456_789_011223_4455x1a2b3z4u5m6l7k7h8j9_0c1c2_32n4p55n6c_7o4c8t3c9a5t0g5_76e_34d9a8_6e5_4q7a1o3l8i3_7c6i2d9n3l3c8z_2g0i88v7h0_9o4y5k_0_0y_44c6h1o_0x1a_9_7_1a_2_33e4e9n1o9v0e1u_3e1i3o5v_2u_0e_iu6a1_3o7c_34h_5c9d_1c4_0o_9v1i6p7a5z_2_0x_5a3e_3f5b_9_7u8_g_9v5l6_8z1v3i_1p9k4g9_8n0o9e1a_0_0_8a9_9h_3d3u2o2z_e1t0a4e2z_5n5l0d6c3u6_6s1u0h5_4d0a1k4_8l9n4c_6v2h4i_7u5m1_9z9z_68h8_72n2u_6e9i2p_9s_88j_6l1h9g0m_8b_8p_7h1i9z9g_7a6i0_32x9l5d1o0l5o5v_4_4g_62t_9u_9f8d5_3n_2a_1q_55j_2o0k6t0_0a5d3v_2_0l4z9d8t6c4v_9n4m8c_9x_6v1i6e0u4l1p0a_52o_8o9d1k_55j4c0k5p6o1c_0o5y_o65u9k8_5_4e_5z_3e4i2y8n6a0f_6t1_2_79u_9t5d2g_6v6i9u8n0_3a1o_6h9o8_3a9l8g_2i_0l1f4d8n_8i5v8l0a5_1h1c6n2m2_7a2_8m_54c5i3l_6g7c8t3e_1a_49t4i5_9h6e_5g3a4j9i9c8f0g_4m1a6f7j7g9e5v4g9e2s_1_0o4d9c0o5a7y4e_2z14h9q_2f5e5x3v_9z12v_46z8a1c3_0_71g1v_5z3d5i7k5_73d_6_t_9i_2y4m1t0c8g6j_88j5c5a8g3z2i9k4g3k_4k8g1n0_7i_4p1l1k0g_68j9i_2o9k9i8a_

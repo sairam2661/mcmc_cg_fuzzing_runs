@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE note SYSTEM "m"
+  [
+    <!ELEMENT note (head+,body)>
+    <!ATTLIST note
+      id  ID #REQUIRED
+      lang CDATA #IMPLIED>
+    <!ENTITY today "2">
+    <!ENTITY % ent "x">
+    <!NOTATION gif SYSTEM "B">
+    %ent;
+  <!-- -->
+  ]>
+<note xmlns:xi="x" id="n" lang="e"><head>Heading!</head><body>Paragraph <em>with strong</em> text.
+  <ordered-list numStyle="A">
+    <list-item>First item with bold <b>formatted text</b>.</list-item>
+    <list-item>Second item.</list-item>
+  </ordered-list>
+<href hrefAttr="A">Link <sup>ref</sup> to another site.</href>
+<![CDATA[Inline CDATA section, which includes  a <tag> with sub tag <subtag> and another <tag><tag> nested <tag>.]]>
+</note> 
+<!--> 
+<!ELEMENT item EMPTY>
+<!ELEMENT list (item+)>
+<!ELEMENT listoflist (list+)>
+<!ELEMENT para (#PCDATA)> 
+<!ELEMENT text (#PCDATA)> 
+<!ELEMENT tag (#PCDATA)> 
+<!ELEMENT list1 (list+,item)>  
+<!ELEMENT subtag (#PCDATA)> 
+<!ELEMENT link (#PCDATA)> 
+<!ELEMENT list2 ((item,list)*)>
+<!ELEMENT tag1 (#PCDATA)> 
+<!ELEMENT list3 (#PCDATA)>  
+<!ELEMENT link1 (#PCDATA)>  
+<!ELEMENT h1 (#PCDATA)>  
+<!ELEMENT h2 (#PCDATA)> 
+<!ELEMENT h3 (#PCDATA)> 
+<!ELEMENT h4 (#PCDATA)> 
+<!ELEMENT h5 (#PCDATA)> 
+<!ELEMENT h6 (#PCDATA)> 
+<!ELEMENT i (#PCDATA)> 
+<!ELEMENT b (#PCDATA)> 
+<!ELEMENT em (#PCDATA)> 
+<!ELEMENT strong (#PCDATA)> 
+<!ELEMENT sup (#PCDATA)> 
+<!ELEMENT sub (#PCDATA)> 
+<!ELEMENT code (#PCDATA)> 
+<!DOCTYPE comment PUBLIC "Some public comment" "some.dtd">
+  <!-->>-<A
+   HREF="/"> <span  style="
+">some<sub> text<sup><sub>with<sub>inline</sub> sub</sup> in<sup> sup<sup>inline</sup> tag</sup>.<A>HREF=/</A--> 
+ <!--<div style=&quot;border:1px dashed&quot;>
+     <h1>This is <span style=&quot;color:blue&quot;>in <font color=&quot;red&quot;

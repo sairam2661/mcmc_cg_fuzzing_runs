@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE students [
+  <!ELEMENT students (student+)>
+  <!ATTLIST students xml:lang CDATA #REQUIRED>
+  <!ENTITY alpha "A">
+  <!ENTITY % beta "&#60;" >
+  <!NOTATION external-resource PUBLIC "m" "m">
+  %beta;
+  <!---->
+]>
+<students xml:lang="e">
+  <student id="s">
+    <name>John</name>
+  </student>
+  <student id="t">
+    <name>Jane</name>
+  </student>
+</students>

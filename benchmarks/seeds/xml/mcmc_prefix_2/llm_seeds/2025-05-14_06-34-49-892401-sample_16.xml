@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE article PUBLIC
+  "-"
+      "/"
+    [
+      <!ELEMENT article (header, body)>
+      <!ATTLIST article title CDATA #REQUIRED xmlns:xs CDATA #IMPLIED>
+      <!ENTITY date "#"
+        >
+      <!ENTITY % pubinfo "("
+        >
+    <!NOTATION niso PUBLIC "
+"        "n">

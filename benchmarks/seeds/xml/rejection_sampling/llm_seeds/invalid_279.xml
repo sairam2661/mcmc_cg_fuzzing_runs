@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ELEMENT product (name, price, description)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT address (street, city, state, zip)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT website (#PCDATA)>
+  <!ELEMENT productID (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT subcategory (#PCDATA)>
+  <!ELEMENT image (image*)>
+  <!ELEMENT image (#PCDATA)>
+]>
+<catalog>
+  <product>
+    <name>Widget</name>
+    <price>$10.99</price>
+    <description>This is a widget.</description>
+    <address>
+      <street>123 Main St</street>
+      <city>Anytown</city>
+      <state>CA</state>
+      <zip>12345</zip>
+    </address>
+    <phone>555-555-5555</phone>
+    <email>widget@example.com</email>
+    <website>www.widget.com</website>
+    <productID>123</productID>
+    <category>Electronics</category>
+    <subcategory>Computers</subcategory>
+    <image>image1.jpg</image>
+    <image>image2.jpg</image>
+  </product>
+  <product>
+    <name>Gadget</name>
+    <price>$5.99</price>
+    <description>This is a gadget.</description>
+    <address>
+      <street>456 Elm St</street>
+      <city>Anytown</city>
+      <state>CA</state>
+      <zip>12345</zip>
+    </address>
+    <phone>555-555-5555</phone>
+    <email>gadget@example.com</email>
+    <website>www.gadget.com</website>
+    <productID>456</productID>
+    <category>Electronics</category>
+    <subcategory>Computers</subcategory>
+    <image>image3.jpg</image>
+  </product>
+</catalog>

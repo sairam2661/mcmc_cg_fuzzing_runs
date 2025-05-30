@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!ELEMENT book (title,author,price)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT chapter (#PCDATA)>
+<!ELEMENT section (#PCDATA)>
+<!ATTLIST chapter id CDATA #REQUIRED>
+<!ATTLIST section id CDATA #REQUIRED>
+<!ATTLIST book lang (en|fr|es) "en">
+<!ATTLIST book edition CDATA #IMPLIED>
+<!ATTLIST book title CDATA #IMPLIED>
+]>
+<book lang="fr" edition="1st">
+<title>Le livre</title>
+<author>John Doe</author>
+<price>19.99</price>
+<chapter id="chap1">Le premier chapitre</chapter>
+<chapter id="chap2">Le deuxième chapitre</chapter>
+<section id="sec1">La première section</section>
+<section id="sec2">La deuxième section</section>
+</book>

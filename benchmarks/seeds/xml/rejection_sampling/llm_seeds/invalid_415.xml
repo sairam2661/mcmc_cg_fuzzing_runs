@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE doc [
+  <!ELEMENT doc (header, body, footer)>
+  <!ELEMENT header (#PCDATA)>
+  <!ELEMENT body (section+, paragraph+)>
+  <!ELEMENT section (#PCDATA)>
+  <!ELEMENT paragraph (#PCDATA)>
+  <!ELEMENT footer (#PCDATA)>
+  <!ATTLIST doc
+    id CDATA #IMPLIED
+    title CDATA #IMPLIED
+  >
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST author
+    name CDATA #IMPLIED
+    email CDATA #IMPLIED
+  >
+]>
+<doc id="123" title="My Document">
+  <header>Header text</header>
+  <body>
+    <section>Section 1 text</section>
+    <paragraph>Paragraph 1 text</paragraph>
+    <section>Section 2 text</section>
+    <paragraph>Paragraph 2 text</paragraph>
+  </body>
+  <footer>Footer text</footer>
+  <author name="John Doe" email="johndoe@example.com">John Doe</author>
+</doc>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "document.dtd">
+<!ELEMENT document (header, body)>
+<!ELEMENT header (#PCDATA)>
+<!ELEMENT body (section, section, section)>
+<!ELEMENT section (title, paragraph, paragraph)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT paragraph (#PCDATA)>
+
+<document>
+  <header>My Document</header>
+  <body>
+    <section>
+      <title>Introduction</title>
+      <paragraph>This is a sample paragraph of text.</paragraph>
+      <paragraph>This is another sample paragraph of text.</paragraph>
+    </section>
+    <section>
+      <title>Conclusion</title>
+      <paragraph>This is a sample paragraph of text.</paragraph>
+      <paragraph>This is another sample paragraph of text.</paragraph>
+    </section>
+    <section>
+      <title>References</title>
+      <paragraph>This is a sample paragraph of text.</paragraph>
+      <paragraph>This is another sample paragraph of text.</paragraph>
+    </section>
+  </body>
+</document>

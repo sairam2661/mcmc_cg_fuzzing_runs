@@ -1,0 +1,25 @@
+set 	 testdir   {  file  dirname   $argv0   }   
+ 
+	 source 	 $testdir/tester.tcl   set 
+ testprefix   hi8 	 set 	
+ timeout 	 60000 	   do_execsql_test 	 ss 
+ -  9 
+ . 	 7  	 {  
+	
+ INSERT INTO 
+ E  
+  ( 	 D4J   ) 	 VALUES 		 ( 	 'q }'   
+ )    	
+	 } 	 { 	 { 
+ SELECT 
+ *  	 FROM  
+   T 	 WHERE 	
+ Jc 
+  = 
+ 41.46      ;   CREATE TABLE   h_9 
+  ( 	 E 
+ AP     )     	 ;   }  
+ $::Y  	
+ }       
+ if  B__   {  } 		 else 	 { 	 } 	   
+  finish_test     

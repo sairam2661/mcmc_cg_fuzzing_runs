@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE bib [
+  <!ELEMENT bib (entry+)>
+  <!ATTLIST bib lang CDATA #IMPLIED id ID #IMPLIED>
+  <!ENTITY book "L" >
+  <!ENTITY % pub-type "p" >
+  <!NOTATION ISO-8859-1 
+    PUBLIC " " " ">
+  %pub-type;
+  <!--
+  --> 
+]>
+<bib lang="g" id="g">
+  <entry pub-status="&pub-type;"/> 
+  <entry pub-status="&pub-type;">
+    <editor>John</editor>
+    <city>London</city>
+    <organization/>
+    <year>2020</year>
+    <journal/>
+    <title>&book;</title>
+    <volume><int>1</int></volume>
+    <pages>
+      <range from="1">
+        <int>1</int>
+        <int>2</int>
+      </range>
+      <range to="3">
+        <int>3</int>
+        <int>4</int>
+      </range>
+    </pages>
+  </entry>
+</bib>

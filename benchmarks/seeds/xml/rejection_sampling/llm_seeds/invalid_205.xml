@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root SYSTEM "root.dtd">
+<!ELEMENT root (foo|bar)*>
+<!ELEMENT foo (#PCDATA)>
+<!ELEMENT bar (#PCDATA)>
+<!ATTLIST foo attr1 CDATA #REQUIRED>
+<!ATTLIST foo attr2 (a|b) "a">
+<!ATTLIST bar attr3 CDATA #IMPLIED>
+<!ATTLIST bar attr4 (c|d) "d">
+<root>
+  <foo attr1="1" attr2="a">Foo 1</foo>
+  <bar attr3="3" attr4="c">Bar 1</bar>
+  <foo attr1="2" attr2="b">Foo 2</foo>
+  <bar attr3="4" attr4="d">Bar 2</bar>
+</root>

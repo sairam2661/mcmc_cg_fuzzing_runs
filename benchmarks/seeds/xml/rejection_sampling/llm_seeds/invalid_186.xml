@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ENTITY % ent SYSTEM "ent.xml">
+  %ent;
+]>
+<catalog xmlns="http://example.org/catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://example.org/catalog catalog.xsd"
+  <book id="BK101" title="The Great Gatsby" author="F. Scott Fitzgerald"
+    <description>
+      <p>Written in the roaring twenties, this classic novel explores the
+        decadence of the American Dream.</p>
+      <p>It's a great read.</p>
+    </description>
+    <review>
+      <rating>5/5</rating>
+      <comment>A timeless classic.</comment>
+    </review>
+  </book>
+  <book id="BK102" title="1984" author="George Orwell"
+    <description>
+      <p>Set in a dystopian future, this classic novel explores the dangers of
+        totalitarianism.</p>
+      <p>It's a great read.</p>
+    </description>
+    <review>
+      <rating>5/5</rating>
+      <comment>A must-read.</comment>
+    </review>
+  </book>
+]>
+</catalog>

@@ -1,0 +1,14 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+set testprefix sync
+set db [sqlite3 db test.db]
+execsql {
+  CREATE TABLE a(x);
+  INSERT INTO a VALUES(1),(2),(3);
+}
+execsql {SELECT count(*) FROM a}
+ifcapable journalMode {
+  catchsql {PRAGMA journal_mode=WAL}
+} {0 {}}
+sqlite3 db test.db
+finish_test

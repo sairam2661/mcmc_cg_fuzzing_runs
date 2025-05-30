@@ -1,0 +1,22 @@
+set  testdir  { 
+ file  dirname 	 $argv0   }  source   $testdir/tester.tcl  set  testprefix   	
+
+  X 	
+ set   timeout 
+	  60000  	
+  if   $::c8b  	 !=  
+ { 	 } 	     {  } 	 else 
+	 {  lappend 	 tg  		 $Y      
+
+	  } 
+    	
+
+ execsql  
+
+  {  	 PRAGMA   F   	 ; 
+ PRAGMA  Q5 	 =  
+	 ""     	 ;   
+
+ INSERT INTO 	  G   ( 		 q   	  ) 	 VALUES  ( 	  8.3   	
+ )    
+ } 	       finish_test  	  

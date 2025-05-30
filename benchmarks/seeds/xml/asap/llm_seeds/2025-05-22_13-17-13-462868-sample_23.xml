@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC
+"-"
+"-"
+[
+    <!ELEMENT html (#PCDATA|p|head|title|body|script|style|h1|h2|h3|h4|h5|h6|option|select|table|tr|th|td|frameset|frame|meta|link|img|br |
+     iframe|form|input|textarea|label|dl|dt|dd|ul|ol|li|a|map|area|b|i|u|strong|em|span|div|table|thead|tfoot
+     |tbody|caption|col|colgroup|iframe|fieldset|legend|button|select|optgroup|option|canvas|embed|object|param)>
+
+    <!ATTLIST html lang CDATA #IMPLIED>
+
+    <!ENTITY ent1 "1" >
+    <!ENTITY % ent2 "<">
+    <!NOTATION GIF PUBLIC "."
+    "G">
+
+
+
+   %XIncludeProtoEntity;
+    <!--[ include "http://example.com/xinclude.xml" ]-->
+]>
+<html>
+<head>
+<title>
+Entity Example
+</title>
+</head>
+<body>
+<form>
+  Input: <input type="&GIF;">
+  Select: <select>
+    <optgroup label="&ent1;">
+      <option label="X">option</option>
+    </optgroup>
+  </select>
+</form>
+
+<dl>
+  <dt>definition term</dt>
+  <dd>description here <div>This is part of the <abbr>shortened text</abbr> used to describe some text!</div></dd>
+</dl>
+
+    <h1>This is a <var>test</var> document...</h1>
+
+<p>Example <strong>bold</strong>-<em>italic</em> <span>formatted</span>
+<sup>superscript</sup>, <sub>subscript</sub> text with [mathematical] <span class="*">symbols</span>.</p>
+
+<i>italic 1 <i></i></i>, <u>underline 1 <u></u></u>, <b>bold 1 <b></b>1 <b>1</b></b>.
+    <p style="*">&ent2;</p>
+    <p style="*">&ntGIF;</p>
+    <p style="*">&notG;f</p>
+  <p style="*">&notx;f</p>
+<p style="*">&cntx;f</p>
+<p style="*">&cntGIF;</p>
+    <!-- [ if "test" ] -->
+    [ &notx;f ]
+    <!-- [ else ] -->
+    [ notx;f ]
+    <!-- [ endif ] -->
+    <!-- [ xi:nil="true" ] -->
+    1 <p style="*"><img width="1" height="1" src="a"     title="A"

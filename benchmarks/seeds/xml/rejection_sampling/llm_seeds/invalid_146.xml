@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE notes [
+  <!ELEMENT notes (note+)>
+  <!ELEMENT note (title,author,creation-date,editor,version,paragraph+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT creation-date (#PCDATA)>
+  <!ELEMENT editor (#PCDATA)>
+  <!ELEMENT version (#PCDATA)>
+  <!ELEMENT paragraph (#PCDATA)>
+]>
+<notes>
+  <note>
+    <title>My note</title>
+    <author>John Doe</author>
+    <creation-date>2022-01-01</creation-date>
+    <editor>Emily Smith</editor>
+    <version>1.0</version>
+    <paragraph>This is my first note.</paragraph>
+    <paragraph>It has multiple paragraphs.</paragraph>
+  </note>
+  <note>
+    <title>Another note</title>
+    <author>Jane Doe</author>
+    <creation-date>2022-01-02</creation-date>
+    <editor>John Smith</editor>
+    <version>1.1</version>
+    <paragraph>This is my second note.</paragraph>
+  </note>
+</notes>

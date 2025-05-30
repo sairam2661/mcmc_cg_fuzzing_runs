@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE doc [
+<!ENTITY % entity "entity value">
+<!ENTITY % entities "<!ENTITY % entity2 'entity2 value'>">
+<!ENTITY % entities2 "<!ENTITY % entities3 '<!ENTITY % entity4 'entity4 value'>'>">
+<!ENTITY % entities3 "<!ENTITY % entity4 'entity4 value'>">
+<!ENTITY % entities4 "<!ENTITY % entities5 '<!ENTITY % entity5 'entity5 value'>'>">
+<!ENTITY % entities5 "<!ENTITY % entity5 'entity5 value'>">
+<!ENTITY % entities6 "<!ENTITY % entities7 '<!ENTITY % entity6 'entity6 value'>'>">
+<!ENTITY % entities7 "<!ENTITY % entity6 'entity6 value'>">
+<!ENTITY % entities8 "<!ENTITY % entities9 '<!ENTITY % entity7 'entity7 value'>'>">
+<!ENTITY % entities9 "<!ENTITY % entity7 'entity7 value'>">
+<!ENTITY % entities10 "<!ENTITY % entities11 '<!ENTITY % entity8 'entity8 value'>'>">
+<!ENTITY % entities11 "<!ENTITY % entity8 'entity8 value'>">
+<!ENTITY % entities12 "<!ENTITY % entities13 '<!ENTITY % entity9 'entity9 value'>'>">
+<!ENTITY % entities13 "<!ENTITY % entity9 'entity9 value'>">
+<!ENTITY % entities14 "<!ENTITY % entities15 '<!ENTITY % entity10 'entity10 value'>'>">
+<!ENTITY % entities15 "<!ENTITY % entity10 'entity10 value'>">
+<!ENTITY % entities16 "<!ENTITY % entities17 '<!ENTITY % entity11 'entity11 value'>'>">
+<!ENTITY % entities17 "<!ENTITY % entity11 'entity11 value'>">
+<!ENTITY % entities18 "<!ENTITY % entities19 '<!ENTITY % entity12 'entity12 value'>'>">
+<!ENTITY % entities19 "<!ENTITY % entity12 'entity12 value'>">
+<!ENTITY % entities20 "<!ENTITY % entities21 '<!ENTITY % entity13 'entity13 value'>'>">
+<!ENTITY % entities21 "<!ENTITY % entity13 'entity13 value'>">
+<!ENTITY % entities22 "<!ENTITY % entities23 '<!ENTITY % entity14 'entity14 value'>'>">
+<!ENTITY % entities23 "<!ENTITY % entity14 'entity14 value'>">
+<!ENTITY % entities24 "<!ENTITY % entities25 '<!ENTITY % entity

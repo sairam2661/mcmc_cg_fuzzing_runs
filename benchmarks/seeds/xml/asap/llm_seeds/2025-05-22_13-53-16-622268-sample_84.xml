@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, section+)>
+  <!ATTLIST book 
+        lang CDATA #IMPLIED
+        id  ID #REQUIRED>
+  <!ENTITY author "J"><!ENTITY  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  %author "R">
+  <!NOTATION PDF SYSTEM "P">  
+  %entity
+  ;<!--sample comment-->  
+]>
+<book id="m" lang="f" xml:lang="f" xi:nil="t">
+
+  <xi:include href="x" xpointer="q" xsi:type="r"/>
+  <title xml:lang="g"><!--Some <raw> text</raw> title--></title>
+  <message><![CDATA[Here is &author;&author;]]></message>
+  <section>Text</section>
+
+</book>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE books [
+  <!ENTITY book "book">
+  <!ENTITY bookid "id">
+  <!ENTITY booktitle "title">
+  <!ENTITY bookauthor "author">
+  <!ENTITY bookyear "year">
+  <!ENTITY bookprice "price">
+  <!ENTITY bookpublisher "publisher">
+  <!ENTITY bookisbn "isbn">
+  <!ENTITY bookurl "url">
+]>
+<books>
+  <book id="1">
+    <title>XML for Dummies</title>
+    <author>John Smith</author>
+    <year>2000</year>
+    <price>29.95</price>
+    <publisher>Pearson</publisher>
+    <isbn>1234567890</isbn>
+    <url>http://example.com/xml</url>
+  </book>
+  <book id="2">
+    <title>XML for Experts</title>
+    <author>Jane Doe</author>
+    <year>2005</year>
+    <price>49.95</price>
+    <publisher>Wiley</publisher>
+    <isbn>2345678901</isbn>
+    <url>http://example.com/xml/experts</url>
+  </book>
+  <book id="3">
+    <title>XML for Beginners</title>
+    <author>Bob Johnson</author>
+    <year>2010</year>
+    <price>19.95</price>
+    <publisher>O'Reilly</publisher>
+    <isbn>3456789012</isbn>
+    <url>http://example.com/xml/beginners</url>
+  </book>
+</books>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE inventory [
+  <!ELEMENT inventory (item*)>
+  <!ATTLIST inventory lang CDATA #IMPLIED>
+  <!ENTITY book "a"
+         >
+  <!ENTITY % bookID "#"
+         >
+  <!NOTATION html PUBLIC "+" " ">
+  %bookID;
+  <!--[ This is a multi	line 
+comment ]]>
+]>
+<inventory xmlns:xi="http://www.w3.org/2001/XInclude" lang="fr">
+  <item>
+    <title>&book;</title>
+    <description><![CDATA[This is a multi line <b> description of a product]]></description>
+  </item>
+  <item>
+    <title xmlns="http://example.com/schema">&note;</title>
+  </item>
+</inventory><|eom_id|><|start_header_id|>assistant<|end_header_id|>
+
+Solution 2:
+
+  <?xml version="1.0"?>
+  <!DOCTYPE map [
+    <!ELEMENT map (#PCDATA)>
+    <!ATTLIST map version CDATA #REQUIRED>
+    <!ENTITY % penta "<!ENTITY % pentaSYSTEM '%pentaSYSTEM;'
+  <!ENTITY pentaSYSTEM SYSTEM "penta.dtd"
+  [<!ENTITY meta SYSTEM "meta.dtd" NDATA dtd]>
+<!ENTITY sgs "%penta;<![CDATA[]]]>"
+<!ENTITY % pgs
+"<!ENTITY pgsSD '%pgsSD;'
+<!ENTITY pgsSD '%pgsSD% pgsSD'><!ELEMENT sgs (#PCDATA)><!ELEMENT %gs% (#PCDATA)><!ATTLIST %gs% rev CDATA #IMPLIED>]]>"
+<!NOTATION dtd SYSTEM "penta.dtd">
+<!ELEMENT sgs (#PCDATA)>
+<!ELEMENT %gs% (#PCDATA)>
+<!ATTLIST %gs% rev CDATA #IMPLIED>
+<!ENTITY meta SYSTEM "meta.dtd" NDATA dtd>
+<!ENTITY meta SYSTEM "meta.dtd">
+<!ELEMENT meta (#PCDATA)><!ATTLIST meta id CDATA #IMPLIED>]]>;%penta;]>
+<!DOCTYPE map [
+<!ELEMENT map (#PCDATA)>
+<!ATTLIST map version CDATA #IMPLIED>]]">
+<map version="1.0">
+<map>
+<sgs>A place that
+<gs rev="0.0" id="x">map for people</gs>
+<gs>A place that is in a
+<gs rev="1.0">forest for people</gs>, also you can

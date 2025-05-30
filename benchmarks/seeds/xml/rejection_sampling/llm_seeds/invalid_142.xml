@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!ENTITY % book.ent SYSTEM "book.ent">
+%book.ent;
+]>
+<book>
+  <title>My Book</title>
+  <author>
+    <name>John Doe</name>
+    <email>john.doe@example.com</email>
+    <phone>555-1234</phone>
+  </author>
+  <chapter id="chap1">
+    <title>Chapter 1</title>
+    <para>This is the first paragraph.</para>
+    <para>This is the second paragraph.</para>
+    <section id="sect1">
+      <title>Section 1</title>
+      <para>This is a paragraph in a section.</para>
+    </section>
+  </chapter>
+  <chapter id="chap2">
+    <title>Chapter 2</title>
+    <para>This is the first paragraph in chapter 2.</para>
+    <para>This is the second paragraph in chapter 2.</para>
+  </chapter>
+  <index>
+    <entry>
+      <term>John Doe</term>
+      <page>10</page>
+    </entry>
+    <entry>
+      <term>example.com</term>
+      <page>20</page>
+    </entry>
+  </index>
+</book>

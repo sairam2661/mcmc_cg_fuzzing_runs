@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book*)>
+  <!ELEMENT book (title,author,price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT price-list (price+)>
+  <!ELEMENT book-list (book+)>
+  <!ELEMENT catalog-list (catalog+)>
+]>
+<catalog>
+  <book-list>
+    <book>
+      <title>Ulysses</title>
+      <author>James Joyce</author>
+      <price-list>
+        <price>19.99</price>
+        <price>14.99</price>
+      </price-list>
+    </book>
+    <book>
+      <title>To Kill a Mockingbird</title>
+      <author>Harper Lee</author>
+      <price-list>
+        <price>12.99</price>
+        <price>9.99</price>
+      </price-list>
+    </book>
+  </book-list>
+  <catalog-list>
+    <catalog>
+      <book-list>
+        <book>
+          <title>The Great Gatsby</title>
+          <author>F. Scott Fitzgerald</author>
+          <price-list>
+            <price>17.99</price>
+            <price>13.99</price>
+          </price-list>
+        </book>
+        <book>
+          <title>The Catcher in the Rye</title>
+          <author>J.D. Salinger</author>
+          <price-list>
+            <price>11.99</price>
+            <price>8.99</price>
+          </price-list>
+        </book>
+      </book-list>
+    </catalog>
+  </catalog-list>
+</catalog>
