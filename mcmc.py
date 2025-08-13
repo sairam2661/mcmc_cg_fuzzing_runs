@@ -106,6 +106,7 @@ class MCMC:
                     current_raw_logprob - prop_logprob_cur_to_next
 
                 acceptance_prob = min(1, np.exp(log_acc_ratio))
+                acceptance_prob = float(acceptance_prob)
             print(f"Acceptance prob: {acceptance_prob}")
     
             accepted = bool(np.random.rand() < acceptance_prob)
