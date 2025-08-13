@@ -43,7 +43,7 @@ def run_mcmc_fuzz_tasks(benchmark):
 
 	n_samples = 100
 	n_steps = 10
-	max_new_tokens = 256
+	max_new_tokens = 512
 	propose_styles = ["restart", "priority", "prefix"]
  
 	tasks = load_fuzz_tasks()
@@ -53,11 +53,11 @@ def run_mcmc_fuzz_tasks(benchmark):
 		task_id = task["id"] 
 		task_prompt = task["prompt"]
 		task_grammar = task["grammar"]
-		print(f"Task ID: {task_id}")
+		print(f"Benchmark: {task_id}")
 
 		model._set_grammar_constraint(task_grammar)
 		for propose_style in propose_styles:
-			print(f"Task ID: {task_id}, Propose Style: {propose_style}")
+			print(f"Benchmark: {task_id}, Propose Style: {propose_style}")
 
 			model._set_grammar_constraint(task_grammar)
 			mcmc_runner = mcmc.MCMC(

@@ -146,7 +146,7 @@ class MCMC:
 
     def get_samples(self, n_samples: int, n_steps: int, max_new_tokens: int):
         for i in tqdm(range(n_samples)):
-            print(f"Sample {i}")
+            print(f"\nSample {i}")
             sample_start_time = time.time()
             sample = self.get_sample(n_steps, max_new_tokens)
             sample_end_time = time.time()
