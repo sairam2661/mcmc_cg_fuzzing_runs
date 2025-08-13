@@ -39,7 +39,7 @@ This repository contains supplementary artifacts for the fuzzing runs. You will 
 │ ├── run_fuzzing_experiment.sh ← runs afl-fuzz + coverage tracking
 │ └── main.sh ← top-level orchestrator (`[xml|sql|all]`)
 ├── grammars/
-│ |── sqlite_test.ebnf ← grammar used for generating SQLite test cases
+│ |── sql.ebnf ← grammar used for generating SQLite test cases
 │ └── xml.ebnf ← grammar used for generating XML documents
 |
 ├── prompts/
@@ -50,7 +50,7 @@ This repository contains supplementary artifacts for the fuzzing runs. You will 
 │ └── visualize_comparison.ipynb ← interactive plotting
 │
 ├── figures/
-├── requirements.txt ← Python deps for notebook
+├── plot_requirements.txt ← Python deps for notebook
 └── README.md ← this file
 
 ```
@@ -86,15 +86,44 @@ This adds ≤2% runtime overhead and enables precise branch coverage measurement
 
 ## Getting started
 
-1. **Install Python deps** (for the notebook) - (Optional)
+1. **Create a Poetry virtual env and install dependencies**
 
    ```bash
-   python3 -m venv venv
-   source venv/bin/activate
-   pip install -r requirements.txt
+   poetry shell
+   poetry install
    ```
 
-2. **Run the full pipeline**
+2. **Define a `secrets.json` file in the top-leve directory with HuggingFace API key in the following format:**
+
+   ```
+   {
+       "HF_TOKEN": "your_token"
+   }
+   ```
+
+   You must have access to `meta-llama/Llama-3.1-8B-Instruct`
+
+3. **Sampling**
+   To sample seeds for a single method, edit the file and run:
+
+   ```bash
+   python single_fuzz_run.py
+   ```
+
+   To sample seeds for all methods, run:
+
+   ```bash
+    python run_fuzz_tasks.py --benchmark xml
+   ```
+
+4. **Extract seeds**
+   To extract the seeds from the sampled files, run:
+
+   ```bash
+   python extract_fuzz_files.py
+   ```
+
+5. **Run the fuzzing pipeline**
    _(Note: Set `$DATA_DIR` before starting your experiment!)_
    By default this will build everything, run all SQL and XML trials, and collect coverage:
 
@@ -112,9 +141,9 @@ This adds ≤2% runtime overhead and enables precise branch coverage measurement
 
    _Custom configuration_: Edit `scripts/experiments.conf` to modify which methods are evaluated.
 
-3. **Visualize plots**
+6. **Visualize plots**
 
-- _Prerequisites: If you don't have Jupyter installed, run `pip install -r requirements.txt`_
+- _Prerequisites: If you don't have Jupyter installed, run `pip install -r plot_requirements.txt`_
 - Open `notebooks/coverage_comparison.ipynb` in Jupyter.
 
 ## Understanding the Output
@@ -129,7 +158,7 @@ Each trial produces `coverage_data.csv` with columns:
 
 ### Expected Runtime
 
-- **Full reproduction**: ~120-121 hours hours (12 methods x 2 domains x 5 trials )
+- **Fuzzing reproduction**: ~120-121 hours hours (12 methods x 2 domains x 5 trials )
 - **Single method**: ~5-6 hours (5 trials × 1 hour + setup time)
 - **Quick test**: Use shorter durations by modifying `run_fuzzing_experiment.sh`
 
