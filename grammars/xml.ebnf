@@ -1,10 +1,7 @@
 root      ::= document
 document ::= (prolog) ws? (doctype ws) element
-doctype        ::= "<!DOCTYPE" ws name (ws externalid)? ws "[" ws fullIntSubset ws "]" ws ">"
-fullIntSubset  ::= elementdecl attlistdecl GEDecl PEDecl notationdecl PEReference comment ( ws markupdecl )*
-baseName ::= name
-middleName ::= name
-finalName ::= name
+doctype        ::= "<!DOCTYPE" ws name (ws externalid)? ws "[" ws intSubset ws "]" ws ">"
+intSubset  ::= ( ws markupdecl )*
 entityrefContent ::= (entityref | [^%&"])* 
 markupdecl     ::= elementdecl | attlistdecl | entitydecl | notationdecl | PEReference | comment | pi 
 PEReference    ::= "%" name ";" ws
